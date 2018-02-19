@@ -65,12 +65,21 @@ def commonSettings = Seq(
   scalacOptions ++= customScalacOptions
 )
 
+lazy val common = (project in file("common"))
+  .settings(
+    name := "common",
+    commonSettings
+  )
 
 lazy val gui = (project in file("gui"))
   .settings(
     name := "gui",
+    libraryDependencies += "org.scalafx" %% "scalafx" % "8.0.144-R12",
+    libraryDependencies += "org.fxmisc.richtext" % "richtextfx" % "0.8.2",
     commonSettings
-  )
+  ).dependsOn(common)
+
+
 
 lazy val root = (project in file("."))
   .aggregate(gui)
