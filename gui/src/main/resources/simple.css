@@ -1,0 +1,10 @@
+.red {
+  -fx-background-color: red;
+  -fx-padding: 100 100 100 100;
+  -fx-line-spacing: 100;
+
+}
+
+.mystye {
+    -fx-padding: 10 0 0 0;
+}

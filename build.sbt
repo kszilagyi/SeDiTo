@@ -1,6 +1,7 @@
 
 import sbt.Project.projectToRef
 import sbt.Keys._
+import sbt.librarymanagement
 
 name := "SeDiTo"
 
@@ -62,7 +63,11 @@ def commonSettings = Seq(
 
   sources in (Compile, doc) := Seq.empty,
   publishArtifact in (Compile, packageDoc) := false,
-  scalacOptions ++= customScalacOptions
+  scalacOptions ++= customScalacOptions,
+  libraryDependencies += "org.log4s" %% "log4s" % "1.4.0",
+  libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3",
+  resolvers += librarymanagement.Resolver.mavenLocal
+
 )
 
 lazy val common = (project in file("common"))
@@ -75,7 +80,7 @@ lazy val gui = (project in file("gui"))
   .settings(
     name := "gui",
     libraryDependencies += "org.scalafx" %% "scalafx" % "8.0.144-R12",
-    libraryDependencies += "org.fxmisc.richtext" % "richtextfx" % "0.8.2",
+    libraryDependencies += "org.fxmisc.richtext" % "richtextfx" % "1.0.0-SNAPSHOT",
     commonSettings
   ).dependsOn(common)
 
