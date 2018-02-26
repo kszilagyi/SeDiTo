@@ -23,7 +23,7 @@ object PaddableEditor {
   }
 }
 
-class PaddableEditor extends SCodeArea {
+final class PaddableEditor extends SCodeArea {
   delegate.setParagraphGraphicFactory(LineNumberFactory.get(delegate))
   def setPadding(line: Int, paddingSizeInNumberOfLines: Int): Unit = {
     val height = this.delegate.getParagraphBoxHeight(line)

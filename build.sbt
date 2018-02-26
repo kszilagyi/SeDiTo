@@ -64,8 +64,7 @@ def commonSettings = Seq(
   sources in (Compile, doc) := Seq.empty,
   publishArtifact in (Compile, packageDoc) := false,
   scalacOptions ++= customScalacOptions,
-  libraryDependencies += "org.log4s" %% "log4s" % "1.4.0",
-  libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3",
+
   resolvers += librarymanagement.Resolver.mavenLocal
 
 )
@@ -73,6 +72,10 @@ def commonSettings = Seq(
 lazy val common = (project in file("common"))
   .settings(
     name := "common",
+    libraryDependencies += "org.log4s" %% "log4s" % "1.4.0",
+    libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3",
+    libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.4",
+    libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4" % "test",
     commonSettings
   )
 
