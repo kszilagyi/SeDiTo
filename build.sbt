@@ -74,6 +74,7 @@ lazy val common = (project in file("common"))
     name := "common",
     libraryDependencies += "org.log4s" %% "log4s" % "1.4.0",
     libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3",
+    libraryDependencies += "io.spray" %%  "spray-json" % "1.3.4",
     libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.4",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4" % "test",
     commonSettings

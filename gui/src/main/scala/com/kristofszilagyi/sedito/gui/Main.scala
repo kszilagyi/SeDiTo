@@ -1,6 +1,9 @@
 package com.kristofszilagyi.sedito.gui
 
 
+import java.io.File
+
+import com.kristofszilagyi.sedito.common.Alignment
 import com.kristofszilagyi.sedito.common.Warts._
 import com.sun.javafx.css.CssError
 import javafx.collections.ListChangeListener
@@ -12,26 +15,35 @@ import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.Scene
 import scalafx.scene.control.{Menu, MenuBar, MenuItem}
 import scalafx.scene.layout.{BorderPane, HBox, Priority}
+import spray.json.enrichString
+
+import scala.io.Source
 
 
 object Main extends JFXApp {
   private val logger = getLogger
   logger.info("SeDiTo GUI started")
-  val codeArea1 = PaddableEditor.test()
-  codeArea1.setPadding(1, 1)
-  val codeArea2 = PaddableEditor.test()
+  val codeAreaLeft = PaddableEditor.test()
+  codeAreaLeft.setPadding(1, 1)
+  val codeAreaRight = PaddableEditor.test()
   val hbox = new HBox {
-    children = Seq(codeArea1, codeArea2)
+    children = Seq(codeAreaLeft, codeAreaRight)
     spacing = 10
   }
-  HBox.setHgrow(codeArea1, Priority.Always)
-  HBox.setHgrow(codeArea2, Priority.Always)
+  HBox.setHgrow(codeAreaLeft, Priority.Always)
+  HBox.setHgrow(codeAreaRight, Priority.Always)
 
   val openTestCase = new MenuItem("Open test case") {
     onAction = { _ =>
       val chooser = new DirectoryChooser()
       chooser.setTitle("Choose directory")
-      val _ = chooser.showDialog(stage)
+      val directory = chooser.showDialog(stage)
+      //TODO error handling
+      val left = Source.fromFile(new File(directory, "left.txt")).mkString
+      val right = Source.fromFile(new File(directory, "right.txt")).mkString
+      val _ = Source.fromFile(new File(directory, "alignment.json")).mkString.parseJson.convertTo[Alignment]
+      codeAreaLeft.replaceText(left)
+      codeAreaRight.replaceText(right)
     }
   }
 
