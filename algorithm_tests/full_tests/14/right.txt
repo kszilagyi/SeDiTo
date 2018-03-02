@@ -1,0 +1,49 @@
+#ifndef TWOSIDEDDIFFPANE_H
+#define TWOSIDEDDIFFPANE_H
+
+#include <QWidget>
+#include <functional>
+#include <boost/optional/optional_fwd.hpp>
+
+#include "../../mix/logger/logger.h"
+
+class QPainter;
+class TransparentCanvas;
+class CodeEditor;
+class QSplitter;
+enum class DiffSide;
+class QRect;
+class QTextBlock;
+
+using std::vector;
+
+class CanvasedDoubleTextEditor : public QWidget
+{
+  Q_OBJECT
+  TransparentCanvas& mCanvas;
+  CodeEditor& mLeftEditor;
+  CodeEditor& mRightEditor;
+  QSplitter& mSplitter;
+  Logger logger{"CanvasedDoubleTextEditor"};
+  const CodeEditor& getEditor(DiffSide) const;
+  CodeEditor& getEditor(DiffSide);
+protected:
+  void setDrawer(const std::function<void(QPainter&)>& aPaintingCallback);
+  QRect getLinePositionInLC(const QTextBlock& line, DiffSide side) const;
+public:
+  explicit CanvasedDoubleTextEditor(QWidget *parent = nullptr);
+  void setText(DiffSide aSide, const QString&);
+  QString getText(DiffSide aSide) const;
+  boost::optional<QRect> getRectForLineLC(DiffSide aSide, int lineNum) const;
+  int getSplitterPosLC() const;
+  QTextBlock getLine(DiffSide aSide, int aLine) const;
+  vector<QTextBlock> visibleBlocks(DiffSide side) const;
+  vector<QTextBlock> blocks(DiffSide side) const;
+signals:
+  void setManualAlignmentClicked(DiffSide aSide, int lineNum);
+  void scrollBarChanged();
+  void textChanged();
+};
+
+#endif // TWOSIDEDDIFFPANE_H
+

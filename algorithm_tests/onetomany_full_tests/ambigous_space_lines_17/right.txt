@@ -1,0 +1,53 @@
+#ifndef MLPIPELINE_H
+#define MLPIPELINE_H
+#include <vector>
+#include <unordered_map>
+#include "aligner/linepair.h"
+#include <QString>
+#include <unordered_map>
+#include "mix/qstringutils.h"
+
+using std::vector;
+using std::unordered_map;
+class OneToOneAlignment;
+class FeatureExtractor;
+class svm_model;
+
+class MLSample {
+public:
+  MLSample(const std::unordered_map<QString, double>& features, bool same);
+  std::unordered_map<QString, double> mFeatures;
+  bool mSame;
+  bool operator==(const MLSample& other) const {
+    return  mFeatures == other.mFeatures && mSame == other.mSame;
+  }
+  //TODO search for same data different result (contradictions)
+};
+
+struct SVMModelDeleter {
+  void operator()(svm_model* ptr);
+};
+
+using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;
+namespace std {
+  template <> struct hash<MLSample>
+  {
+    size_t operator()(const MLSample& /*sample*/) const
+    {
+      return std::hash<int>()(0); //TODO not optimal, but that's ok 
+    }
+  };
+}
+
+
+QString toStr(const vector<MLSample>& samples);
+
+namespace MLPipeline
+{
+  extern const FeatureExtractor standardExtractor;
+  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model);
+  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);
+  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing
+}
+
+#endif // MLPIPELINE_H

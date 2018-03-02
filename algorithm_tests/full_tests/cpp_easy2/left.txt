@@ -1,0 +1,13 @@
+#ifndef HARDMATCHESNEAR_H
+#define HARDMATCHESNEAR_H
+#include "abovebelowfeature.h"
+
+class HardMatchesNear : public AboveBelowFeature
+{
+  const int mDist;
+public:
+  HardMatchesNear(Dir dir, int dist);
+  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;
+};
+
+#endif // HARDMATCHESNEAR_H

@@ -1,0 +1,155 @@
+#include "mlpipeline.h"
+#include "mix/diffside.h"
+#include "aligner/learning/featureextractor.h"
+#include "mix/qstringutils.h"
+#include "aligner/nonlearning/nonlearningaligner.h"
+#include "featureextractor.h"
+#include "features/abovebelowlinecount.h"
+#include "features/equalcharcount.h"
+#include "features/hardmatchesnear.h"
+#include "features/trivialfeatures.h"
+#include "features/characterfeature.h"
+#include "features/characterfeaturesnear.h"
+#include "mix/setoperations.h"
+#include "3rdparty/libsvm/svm.h"
+#include "mix/make_unique.h"
+#include "mix/func/zipper.h"
+#include "features/levenshteindistance.h"
+#include <QFile>
+#include <QTextStream>
+static Logger logger("MLPipeline");
+
+MLSample::MLSample(const std::unordered_map<QString, double> &features, bool same)
+: mFeatures(features)
+, mSame(same)
+{
+}
+
+vector<unique_ptr<Feature>> createFeatureVector() {
+  //we need this ultra stupid function because of the mega dumb c++ because it can't handle fucking unique_ptrs with init lists
+  vector<unique_ptr<Feature>> features;
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::UP, DiffSide::LEFT));
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::DOWN, DiffSide::LEFT));
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::UP, DiffSide::RIGHT));
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::DOWN, DiffSide::RIGHT));
+  features.emplace_back(make_unique<EqualCharCount>());
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::UP, 1));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::UP, 5));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::UP, 10));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::DOWN, 1));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::DOWN, 5));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::DOWN, 10));
+  features.emplace_back(make_unique<LineLength>(DiffSide::LEFT));
+  features.emplace_back(make_unique<LineLength>(DiffSide::RIGHT));
+  features.emplace_back(make_unique<LevenshteinDistance>());
+
+
+  return features;
+}
+
+const FeatureExtractor MLPipeline::standardExtractor(createFeatureVector());
+
+
+vector<MLSample> MLPipeline::extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor &extractor, const OneToOneAlignmentWithAmbiguity &reference)
+{
+  OneToOneAlignmentWithAmbiguity nonLearnedAlignment = NonLearningAligner::compute(left, right);
+  vector<MLSample> result;
+  for(int leftIdx = 0; leftIdx < nonLearnedAlignment.lines(DiffSide::LEFT).size(); ++leftIdx) {
+    for(int rightIdx = 0; rightIdx < nonLearnedAlignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {
+      if(nonLearnedAlignment.containsEither(LinePair(leftIdx, rightIdx)) == false) {
+        bool isSame = reference.contains(LinePair(leftIdx, rightIdx));
+        result.push_back(MLSample(extractor.computeFeatures(nonLearnedAlignment, leftIdx, rightIdx), isSame));
+      }
+    }
+  }
+  return result;
+}
+
+
+/*
+ * Adapted from svm_scale
+ */
+double MLPipeline::singleScale(double value, double featureMin, double featureMax)
+{
+  static const double lower = -1.0;
+  static const double upper = 1.0;
+  static const double epsilon = 0.0001;
+  /* skip single-valued attribute */
+  if(featureMax - epsilon < featureMin && featureMin < featureMax + epsilon)
+    FAIL("invalid range");
+
+  VERIFY(featureMin < featureMax);
+
+  return lower + (upper-lower) *
+    (value-featureMin)/
+    (featureMax-featureMin);
+}
+
+vector<svm_node> MLPipeline::scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& ranges) {
+  return map(zip(sample, ranges), [](const std::pair<svm_node, FeatureRange> featureWithRange) {
+    return svm_node{featureWithRange.first.index, singleScale(featureWithRange.first.value, featureWithRange.second.mLow, featureWithRange.second.mHigh)};
+  });
+}
+
+OneToOneAlignmentWithAmbiguity MLPipeline::computeAlignment(const QString &leftText, const QString &rightText, const FeatureExtractor &extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges)
+{
+  OneToOneAlignmentWithAmbiguity nonLearnedAlignment = NonLearningAligner::compute(leftText, rightText);
+  unordered_set<LinePair> learnedMatches;
+  if(model != nullptr) {
+    for(int leftIdx = 0; leftIdx < nonLearnedAlignment.lines(DiffSide::LEFT).size(); ++leftIdx) {
+      for(int rightIdx = 0; rightIdx < nonLearnedAlignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {
+        if(nonLearnedAlignment.containsEither(LinePair(leftIdx, rightIdx)) == false) {
+          std::unordered_map<QString, double> features = extractor.computeFeatures(nonLearnedAlignment, leftIdx, rightIdx);
+          vector<svm_node> nodes;
+          int columnIdx = 1;
+          for(const QString& column: extractor.orderedNames()) {
+            double value = features.at(column);
+            nodes.push_back(svm_node{columnIdx, value});
+            ++columnIdx;
+          }
+
+          vector<svm_node> scaledNodes = scaleNodes(nodes, ranges);
+
+          scaledNodes.push_back(svm_node{-1, -1.0});//ending node
+
+          double result = svm_predict(model.get(), &(scaledNodes.at(0)));
+          if(result > 0) { //==1
+            learnedMatches.insert(LinePair(leftIdx, rightIdx));
+          }
+        }
+      }
+    }
+  }
+
+  auto matches = nonLearnedAlignment.matches();
+  addAll(matches, learnedMatches);
+  return OneToOneAlignmentWithAmbiguity::fromInts(matches, leftText, rightText);
+}
+
+
+void SVMModelDeleter::operator()(svm_model *ptr)
+{
+  svm_free_and_destroy_model(&ptr);
+}
+
+
+vector<FeatureRange> MLPipeline::loadRanges(const QString& path)
+{
+  logger.info("Trying to open: " + path);
+  //I assume the features ordered in the right way from 1..x
+  QFile file(path);
+  VERIFY(file.exists());
+  VERIFY(file.open(QIODevice::ReadOnly));
+
+  QTextStream in(&file);
+  vector<FeatureRange> ranges;
+  while(!in.atEnd()) {
+    QString line = in.readLine();
+    QStringList fields = line.split(" ");
+    if(fields.size() == 3) {
+      ranges.push_back(FeatureRange{safeToDouble(fields.at(1)), safeToDouble(fields.at(2))});
+    }
+  }
+  VERIFY(ranges.size() > 0);
+  return ranges;
+}

@@ -1,0 +1,54 @@
+#ifndef QSTRINGUTILS
+#define QSTRINGUTILS
+#include <type_traits>
+#include <QStringList>
+#include <QString>
+#include <list>
+#include <QHash>
+#include "mix/func/maps.h"
+#include "collectionutils.h"
+
+using std::list;
+
+class OneToOneMatch;
+
+template<class C>
+QStringList toStringList(const C& src) {
+  QStringList res;
+  for(auto e: src) {
+    res.append(e);
+  }
+  return res;
+}
+
+template<class N, typename std::enable_if<std::is_arithmetic<N>::value>::type* = nullptr>
+QString toStr(N n)
+{
+  return QString::number(n);
+}
+
+QString toStr(const OneToOneMatch& match);
+
+template<template<class, class...> class C, class T, class... Args>
+QString toStr(const C<T, Args...>& c, const QString& delimiter = ", ") {
+  vector<QString> elemRepresentations = toVector(map(c, [](const T& t) { return toStr(t); }));
+  return "[" + toStringList(elemRepresentations).join(delimiter) + "]";
+}
+
+QString operator/(const QString& left, const QString& right);
+QString operator/(const QString& left, const char* right);
+
+namespace std {
+  template <> struct hash<QString>
+  {
+    size_t operator()(const QString& s) const
+    {
+      return qHash(s);
+    }
+  };
+}
+
+double safeToDouble(const QString& s);
+
+#endif // QSTRINGUTILS
+

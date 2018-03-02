@@ -1,0 +1,154 @@
+#-------------------------------------------------
+#
+# Project created by QtCreator 2014-12-26T13:09:45
+#
+#-------------------------------------------------
+
+QT       += core gui
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+TARGET = ContextBasedGeneralDiffer
+TEMPLATE = app
+
+INCLUDEPATH += "/home/kristof/Work/boost_1_58_0"
+
+SOURCES += main.cpp\
+        sensidiff.cpp \
+    mix/logger/loggingoutput.cpp \
+    mix/logger/logger.cpp \
+    mix/logger/loggercommon.cpp \
+    mix/asserts.cpp \
+    mix/exceptionhandler.cpp \
+    gui/controls/codeeditor.cpp \
+    gui/controls/linenumberarea.cpp \
+    gui/controls/transparentcanvas.cpp \
+    gui/controls/canvaseddoubletexteditor.cpp \
+    gui/controls/twosideddiffwidget.cpp \
+    mix/debugbreak.cpp \
+    gui/mix/qactionwithposition.cpp \
+    gui/logic/twosideddiffwidgetlogic.cpp \
+    gui/logic/manualaligmentstatemachine/manualalignclickstate.cpp \
+    gui/logic/manualaligmentstatemachine/manualalignclickhandler.cpp \
+    gui/logic/manualaligmentstatemachine/clickedstate.cpp \
+    gui/logic/manualaligmentstatemachine/nothingselectedstate.cpp \
+    gui/logic/manualaligmentstatemachine/selectioncompletedstate.cpp \
+    gui/mix/textblockmatchdata.cpp \
+    aligner/onetoonematch.cpp \
+    aligner/onetoonealignment.cpp \
+    aligner/serialisation/onetoonealignmentjsonsupport.cpp \
+    aligner/serialisation/onetoonematchjsonsupport.cpp \
+    mix/lineutils.cpp \
+    mix/displayableerror.cpp \
+    gui/controls/textblocklinkedonetoonematch.cpp \
+    mix/safejsonutils.cpp \
+    aligner/serialisation/onetoonealignmentio.cpp \
+    aligner/nonlearning/nonlearningaligner.cpp \
+    mix/qstringutils.cpp \
+    3rdparty/diff_match_patch/diff_match_patch.cpp \
+    aligner/learning/featureextractor.cpp \
+    aligner/learning/features/equalcharcount.cpp \
+    aligner/learning/features/trivialfeatures.cpp \
+    aligner/learning/features/abovebelowlinecount.cpp \
+    aligner/learning/features/sidedfeature.cpp \
+    aligner/learning/features/hardmatchesnear.cpp \
+    aligner/learning/features/abovebelowfeature.cpp \
+    aligner/learning/features/abovebelowsidedfeature.cpp \
+    mix/safe_numeric_operations.cpp \
+    aligner/learning/mlpipeline.cpp \
+    3rdparty/libsvm/svm.cpp \
+    aligner/linepair.cpp \
+    aligner/learning/features/characterfeature.cpp
+
+HEADERS  += sensidiff.h \
+    mix/logger/logger.h \
+    mix/logger/loggingoutput.h \
+    mix/logger/loggercommon.h \
+    mix/make_unique.h \
+    mix/asserts.h \
+    gui/controls/codeeditor.h \
+    gui/controls/linenumberarea.h \
+    gui/controls/transparentcanvas.h \
+    gui/controls/canvaseddoubletexteditor.h \
+    gui/controls/twosideddiffwidget.h \
+    mix/exceptionhandler.h \
+    mix/debugbreak.h \
+    mix/template_utils.h \
+    mix/either.h \
+    gui/mix/qactionwithposition.h \
+    gui/logic/twosideddiffwidgetlogic.h \
+    gui/mix/diffside.h \
+    gui/logic/manualaligmentstatemachine/manualalignclickstate.h \
+    gui/logic/manualaligmentstatemachine/manualalignclickhandler.h \
+    gui/logic/manualaligmentstatemachine/clickedstate.h \
+    gui/logic/manualaligmentstatemachine/nothingselectedstate.h \
+    gui/logic/manualaligmentstatemachine/selectioncompletedstate.h \
+    gui/mix/textblockmatchdata.h \
+    gui/logic/manualaligmentstatemachine/lineselection.h \
+    aligner/onetoonematch.h \
+    aligner/onetoonealignment.h \
+    aligner/serialisation/onetoonealignmentjsonsupport.h \
+    aligner/serialisation/onetoonematchjsonsupport.h \
+    mix/lineutils.h \
+    mix/c++14type_traits.h \
+    mix/safejsonutils.h \
+    mix/displayableerror.h \
+    gui/controls/textblocklinkedonetoonematch.h \
+    aligner/serialisation/onetoonealignmentio.h \
+    aligner/nonlearning/nonlearningaligner.h \
+    mix/qstringutils.h \
+    mix/setoperations.h \
+    mix/number_utils.h \
+    mix/collectionutils.h \
+    3rdparty/diff_match_patch/diff_match_patch.h \
+    aligner/learning/featureextractor.h \
+    aligner/learning/features/feature.h \
+    aligner/learning/features/equalcharcount.h \
+    aligner/learning/features/trivialfeatures.h \
+    aligner/learning/features/abovebelowlinecount.h \
+    aligner/learning/features/sidedfeature.h \
+    aligner/learning/features/hardmatchesnear.h \
+    aligner/learning/features/abovebelowfeature.h \
+    aligner/learning/features/abovebelowsidedfeature.h \
+    mix/safe_numeric_operations.h \
+    aligner/learning/mlpipeline.h \
+    aligner/linepair.h \
+    3rdparty/libsvm/svm.h \
+    mix/functional_maps.h \
+    mix/functional_filter.h \
+    mix/functional_sort.h \
+    mix/functional_option.h \
+    mix/func/filter.h \
+    mix/func/maps.h \
+    mix/func/optionops.h \
+    mix/func/sort.h \
+    mix/func/testops.h \
+    mix/diffside.h \
+    mix/func/aggregators.h \
+    mix/func/zipper.h \
+    aligner/learning/features/characterfeature.h
+
+FORMS    +=
+
+CONFIG += c++14
+
+QMAKE_CXXFLAGS +=   -Wall -Wextra -Wctor-dtor-privacy -Wnon-virtual-dtor -pedantic \
+                    -Wcast-align -Wcast-qual -Wdisabled-optimization -Wformat=2 -Winit-self \
+                    -Wlogical-op -Wmissing-include-dirs -Wnoexcept \
+                    -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow \
+                    -Wsign-conversion -Wconversion -Wsign-promo -Wstrict-null-sentinel \
+                    -Wstrict-overflow=5 -Wundef -Wfloat-equal\
+                    #-Wpadded \ moc files
+                    \ #-Weffc++ \ #gives stupid not inited errors for default inits
+                    #-Wuseless-cast \ moc files...
+                   # -fstack-protector \ # do i need this? - didn't compile
+                    \ #-Wzero-as-null-pointer-constant
+                    -Wunused -Wwrite-strings \
+                    -isystem /home/kristof/Qt/5.4/gcc_64/include/ \
+                    -isystem /home/kristof/Qt/5.4/gcc_64/include/QtCore \
+                    -isystem /home/kristof/Qt/5.4/gcc_64/include/QtWidgets \
+                    -isystem /home/kristof/Qt/5.4/gcc_64/include/QtGui \
+                    -isystem "/home/kristof/Work/boost_1_58_0" \
+                    -isystem "/home/kristof/Work/boost_1_58_0" \
+
+QMAKE_LFLAGS += -Wl,-Map,ContextBasedGeneralDiffer.map

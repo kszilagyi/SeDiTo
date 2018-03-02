@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v "(__pycache__|compare\.sh|update_slave.sh)"
+

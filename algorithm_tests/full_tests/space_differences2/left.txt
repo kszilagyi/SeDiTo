@@ -1,0 +1,94 @@
+#!/usr/bin/env python3.4
+
+import sys
+import os
+from subprocess import *
+import svm
+from svmutil import *
+import numpy
+import functools
+from pprint import pprint
+
+
+
+
+    
+def read_ranges(path):
+    with open(path) as f:
+        rows = filter(lambda row: len(row) == 3, map(lambda line: line.split(" "), f.read().split("\n")))
+    range_dict = {}
+    for row in rows:
+        range_dict[int(row[0])] = (float(row[1]), float(row[2]))
+    return range_dict
+
+    
+def get_immediate_subdirectories(a_dir):
+    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]
+       
+#dirs = get_immediate_subdirectories('../features_output/')
+def test_files(model, range_dict, file_list_file):
+    with open(file_list_file) as f:
+        dirs = f.read().strip("[]\n").split(", ")
+    n_sum = 0
+    false_pos_sum = 0
+    actual_positives_sum = 0
+    true_pos_sum = 0
+    for dir in dirs:
+        print("Testing:" + dir)
+        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')
+        if len(ref_y) > 0:
+            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)
+            #testing scale method
+            #TODO this doesn't work, i acn't siwtch off auto scaling
+            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)
+           # assert scaled_predict_y == calc_y
+            #assert p_acc == scaled_p_acc
+            assert len(calc_y) == len(ref_y)
+            zipped = list(zip(calc_y, ref_y))
+                
+            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)
+            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)
+            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)
+            false_pos_sum += false_pos
+            true_pos_sum += true_pos
+
+            actual_positives_sum += actual_positives
+            n_sum += len(calc_y)
+            print("Sample count:" + str(len(calc_y)))
+            print("Actual_positives: " + str(actual_positives))
+            print("True positives: " + str(true_pos))
+            print("False positives: " + str(false_pos))
+            precision = 1
+            if false_pos + true_pos != 0:
+                precision = true_pos/(false_pos + true_pos)
+                
+            recall = true_pos/actual_positives
+            print("Precision: " + str(precision))
+            print("Recall: " + str(recall))
+            if precision + recall != 0:
+                print("F1 score: " + str(2*precision*recall/(precision + recall)))
+            print("")
+
+    print("Summary: ")
+    print("Sample count:" + str(n_sum))
+    print("Actual_positives: " + str(actual_positives_sum))
+    print("True positives: " + str(true_pos_sum))
+    print("False positives: " + str(false_pos_sum))
+    precision = true_pos_sum/(false_pos_sum + true_pos_sum)
+    recall = true_pos_sum/actual_positives_sum
+    print("Precision: %.2f" % (true_pos_sum/(true_pos_sum + false_pos_sum)))
+    print("Recall: " + "%.2f" % (true_pos_sum/actual_positives_sum))
+    if precision + recall != 0:
+        print("F1 score: " + "%.2f" % (2*precision*recall/(precision + recall)))
+    print("*********************************************************")
+
+def main():    
+    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')
+    range_dict = read_ranges('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.range')
+    print('Running tests on test data')
+    test_files(model, range_dict, '../features_output/testing_files.txt')
+    print("")
+    print('Running tests on training data')
+    test_files(model, range_dict, '../features_output/training_files.txt')
+    
+main()

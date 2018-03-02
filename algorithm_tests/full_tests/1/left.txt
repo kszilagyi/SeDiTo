@@ -1,0 +1,143 @@
+package aligner.nonlearn;
+
+import static mix.Asserts.costyRequireEq;
+import static mix.Asserts.require;
+import static mix.Asserts.requireEq;
+import static mix.Asserts.requireNotNull;
+import static mix.ImmutableCollectors.collectImmutableList;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Stream;
+
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+
+
+
+/**
+ * The basic idea: find those lines which almost surely the same (long, unique lines on both sides) and use it as a starting point
+ * Then expand these areas with lines which almost entirely surely the same (unique lines, same lines)
+ */
+public class NonLearningAligner {
+	//TODO being immutable needs a copy. Unlikely to cause problem but in low memory situations it can be
+	private final ImmutableList<String> compressedLeftLines;
+	private final ImmutableList<String> compressedRightLines;
+	private final static int UNIQUE_SAFETY_MIN_LEN=30;
+	private enum Dir{ UP, DOWN }
+	
+	public NonLearningAligner(ImmutableList<String> leftLines, ImmutableList<String> rightLines){
+		this.compressedLeftLines=collectImmutableList(leftLines.stream().map(line -> line.replaceAll("\\s+", " ").trim()));
+		this.compressedRightLines=collectImmutableList(rightLines.stream().map(line -> line.replaceAll("\\s+", " ").trim()));
+	}		
+	
+	public ImmutableSet<LineToLineMatch> computeAlignment(){
+		ImmutableSet<String> uniqueMatchingLines=ImmutableSet.copyOf(getAllUniqueMatch());
+		ImmutableList<String> longEnoughUniqueMatchingLines = collectImmutableList(uniqueMatchingLines.stream().filter(line -> line.length() >= UNIQUE_SAFETY_MIN_LEN));
+		
+		ImmutableList<LineToLineMatch> uniqueMatches=getIdxToIdxMatches(uniqueMatchingLines);
+		ImmutableList<LineToLineMatch> longEnoughUniqueMatches=getIdxToIdxMatches(ImmutableSet.copyOf(longEnoughUniqueMatchingLines));
+		
+		return expandMatch(longEnoughUniqueMatches, ImmutableSet.copyOf(uniqueMatches));
+	}
+	
+	private ImmutableList<String> getAllUniqueMatch(){
+		ImmutableSet<String> uniqueLeftLines=ImmutableSet.copyOf(getUniqueLines(compressedLeftLines));
+		ImmutableList<String> uniqueRightLines=getUniqueLines(compressedRightLines);
+		
+		ArrayList<String> uniqueMatchingLines=new ArrayList<>();
+		for(String rightLine: uniqueRightLines){
+			if(uniqueLeftLines.contains(rightLine)){
+				uniqueMatchingLines.add(rightLine);
+			}
+		}
+		return ImmutableList.copyOf(uniqueMatchingLines);
+	}
+	
+	private static ImmutableList<String> getUniqueLines(ImmutableList<String> compressedLines){
+		Map<String, Integer> lineCnt=new HashMap<>();
+
+		for(String line: compressedLines){
+			int currentCnt=lineCnt.getOrDefault(line, 0);
+			lineCnt.put(line, currentCnt+1);
+		}
+		Stream<Map.Entry<String, Integer>> uniqueEntries=lineCnt.entrySet().stream().filter(entry-> entry.getValue()==1);
+		return collectImmutableList(uniqueEntries.map(entry -> entry.getKey()));
+	}
+
+	private static ImmutableMap<String, Integer> getLineToIdxMap(ImmutableSet<String> importantLines, ImmutableList<String> allLines){
+		Map<String, Integer> lineToIdxMap=new HashMap<>();
+		for(int i=0; i<allLines.size(); ++i){
+			if(importantLines.contains(allLines.get(i))){
+				Integer prevValue=lineToIdxMap.put(requireNotNull(allLines.get(i)), i);
+				require(prevValue==null, "Value was already in map. Key:"+allLines.get(i) + ", prevValue:" + prevValue + ", newValue:" + i);
+			}
+		}
+		requireEq(importantLines.size(), lineToIdxMap.size(), "lineToIdxMap should contain one record for every important line");
+		costyRequireEq(importantLines, lineToIdxMap.keySet(), "lineToIdxMap should contain one record for every important line");
+		return ImmutableMap.copyOf(lineToIdxMap);
+	}
+	
+	private ImmutableList<LineToLineMatch> getIdxToIdxMatches(ImmutableSet<String> matchLines) {
+		ImmutableMap<String, Integer> leftLineToIdx=getLineToIdxMap(matchLines, compressedLeftLines);
+		ImmutableMap<String, Integer> rightLineToIdx=getLineToIdxMap(matchLines, compressedRightLines);
+		ArrayList<LineToLineMatch> idxToIdxMatches=new ArrayList<>();
+		for(Map.Entry<String, Integer> leftEntry: leftLineToIdx.entrySet()){
+			Integer leftIdx=leftEntry.getValue();
+			String leftLine=leftEntry.getKey();
+			idxToIdxMatches.add(LineToLineMatch.create(leftIdx, requireNotNull(rightLineToIdx.get(leftLine))));
+		}
+		return ImmutableList.copyOf(idxToIdxMatches);
+	}
+	
+	private ImmutableSet<LineToLineMatch> expandMatch(ImmutableList<LineToLineMatch> longEnoughUniqueMatches, ImmutableSet<LineToLineMatch> allUniqueMatches){
+		Set<LineToLineMatch> expandedMatches=new HashSet<>();
+		expandedMatches.addAll(longEnoughUniqueMatches);
+		for(LineToLineMatch match:longEnoughUniqueMatches){
+			expandedMatches.addAll(expand(allUniqueMatches, expandedMatches, match, Dir.UP));
+			expandedMatches.addAll(expand(allUniqueMatches, expandedMatches, match, Dir.DOWN));
+		}
+		return ImmutableSet.copyOf(expandedMatches);
+	}
+	
+	private List<LineToLineMatch> expand(ImmutableSet<LineToLineMatch> allUniqueMatches, Set<LineToLineMatch> currentMatches, LineToLineMatch start, Dir dir){
+		int diff=dir==Dir.UP?-1:1;
+		int leftIdx=start.getLeftLineIdx()+diff;
+		int rightIdx=start.getRightLineIdx()+diff;
+		List<LineToLineMatch> newMatches=new ArrayList<>();
+		for(; 0<=leftIdx && leftIdx<compressedLeftLines.size() && 0<=rightIdx && rightIdx<compressedRightLines.size();
+				leftIdx += diff, rightIdx += diff){
+			//here we know that the previous ones match (otherwise we would have already broken out of the loop)
+			LineToLineMatch current=LineToLineMatch.create(leftIdx, rightIdx);
+			if(currentMatches.contains(current)){
+				break;
+			}
+			if(allUniqueMatches.contains(current)){
+				newMatches.add(current);
+				continue;
+			}
+			String currentLeft=compressedLeftLines.get(leftIdx);
+			String currentRight=compressedRightLines.get(rightIdx);
+			//the idea here is that something is most likely the same if it's between two sames 
+			if(currentLeft.equals(currentRight)){
+				int nextLeftIdx=leftIdx+diff;
+				int nextRightIdx=rightIdx+diff;
+				if(0<=nextLeftIdx && nextLeftIdx<compressedLeftLines.size() && 0<=nextRightIdx && nextRightIdx<compressedRightLines.size()){
+					String nextLeft=compressedLeftLines.get(nextLeftIdx);
+					String nextRight=compressedRightLines.get(nextRightIdx);
+
+					if(nextLeft.equals(nextRight)){
+						newMatches.add(current);
+						continue;
+					}
+				}
+			}
+		}
+		return newMatches;
+	}
+}

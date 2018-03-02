@@ -1,0 +1,19 @@
+#ifndef SIDEDFEATURE_H
+#define SIDEDFEATURE_H
+#include "mix/diffside.h"
+#include "feature.h"
+
+class SidedFeature: public virtual Feature
+{
+  const QString mName;
+public:
+  const DiffSide mSide;
+  SidedFeature(const QString& name, DiffSide side);
+  QString namePostFix() const;
+  QString name() const override;
+  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;
+  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;
+
+};
+
+#endif // SIDEDFEATURE_H

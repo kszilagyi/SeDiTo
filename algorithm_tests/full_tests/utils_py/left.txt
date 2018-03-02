@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+
+def scaleRow(row, range_dict): 
+    assert len(row) == len(range_dict)
+    for idx in row.keys():
+        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])
+    
+    return row
+    
+def scale_input(x, range_dict):
+    scaled_input = map(lambda row: scaleRow(row, range_dict), x)
+    return scaled_input
+    
+def single_scale(value, featureMin, featureMax):
+    lower = -1.0
+    upper = 1.0
+    epsilon = 0.0001
+    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:
+        assert false, "invalid range"
+    
+    assert featureMin < featureMax;
+    
+    return (lower + (upper-lower) *
+        (value-featureMin)/
+        (featureMax-featureMin))

@@ -1,0 +1,51 @@
+#ifndef CODEEDITOR_H
+#define CODEEDITOR_H
+
+#include <QTextEdit>
+#include <unordered_map>
+#include <boost/optional/optional_fwd.hpp>
+#include <vector>
+
+#include "linenumberarea.h"
+#include "mix/logger/logger.h"
+
+using boost::optional;
+using std::vector;
+
+class CodeEditor : public QTextEdit
+{
+  Q_OBJECT
+  LineNumberArea lineNumberArea;
+  Logger logger{"CodeEditor"};
+  /**line number -> bounding rect*/
+  std::unordered_map<int, QRect> getVisibleLines2LC(const QRect& visibleArea) const;
+  QString prevText;
+  int prevScrollBarValue{0};
+protected:
+  void resizeEvent(QResizeEvent *event);
+
+private slots:
+  void updateLineNumberAreaWidth();
+  void updateLineNumberArea(const QRectF &);
+  void rightClicked(const QPoint& p);
+  void htmlTextChanged();
+
+public:
+  CodeEditor(QWidget* parent = nullptr);
+  void lineNumberAreaPaintEvent(QPaintEvent *event);
+  int lineNumberAreaWidth() const;
+  optional<QRect> getRectForLineLC(int lineNum) const;
+  QTextBlock getLine(int line) const;
+  vector<QTextBlock> visibleBlocks(const QRect& visibleArea) const;
+  vector<QTextBlock> visibleBlocks() const;
+  QRect getRectForTextBlockInLC(const QTextBlock& block) const;
+  vector<QTextBlock> blocks() const;
+
+  void scroll(int diff);
+signals:
+  void setManualAlignmentClicked(int aLineNum);
+  void scrollBarChanged(int diff);
+  void simpleTextChanged(); //isn't triggered on formatting change
+};
+
+#endif // CODEEDITOR_H

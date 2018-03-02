@@ -1,0 +1,149 @@
+#include <QTabWidget>
+#include <QMenu>
+#include <QAction>
+#include <QMenuBar>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <boost/optional.hpp>
+
+#include "sensidiff.h"
+#include "gui/controls/twosideddiffwidget.h"
+#include "gui/logic/twosideddiffwidgetlogic.h"
+#include "aligner/serialisation/onetoonealignmentio.h"
+#include "mix/make_unique.h"
+#include "mix/either.h"
+#include "mix/displayableerror.h"
+#include "aligner/onetoonealignment.h"
+#include "aligner/nonlearning/nonlearningaligner.h"
+
+void SensiDiff::createMenus()
+{
+  QMenu *fileMenu = menuBar()->addMenu(tr("&File"));
+  QAction *openTestCaseAct = new QAction(tr("&Open test case..."), this);
+  connect(openTestCaseAct, SIGNAL(triggered()), this, SLOT(openTestCase()));
+
+  QAction *openToDiffAct = new QAction(tr("&Open to diff..."), this);
+  connect(openToDiffAct, SIGNAL(triggered()), this, SLOT(openDiffFromMenu()));
+
+  QAction *saveTestCaseAct = new QAction(tr("&Save test case..."), this);
+  connect(saveTestCaseAct, SIGNAL(triggered()), this, SLOT(saveTestCase()));
+  fileMenu->addAction(openTestCaseAct);
+  fileMenu->addAction(saveTestCaseAct);
+  fileMenu->addAction(openToDiffAct);
+}
+
+void warnBox(const QString& msg) {
+  QMessageBox warn;
+  warn.setText(msg);
+  warn.setStandardButtons(QMessageBox::Ok);
+  warn.exec();
+}
+
+void SensiDiff::addTab(const OneToOneAlignment& alignment)
+{
+  TwoSidedDiffWidget *diffPane = new TwoSidedDiffWidget;
+  diffPane->setComputedOrLoadedAlignment(alignment);
+  new TwoSidedDiffWidgetLogic(*diffPane);
+  tabs.addTab(diffPane, "default");
+}
+
+void SensiDiff::saveTestCase()
+{
+  //TODO consider having a typesafe tab handler
+  //TODO this relies on the fact that you cannot push save in invalid situations
+  QWidget* currentTab = tabs.currentWidget();
+  VERIFY(currentTab != nullptr && dynamic_cast<TwoSidedDiffWidget*>(currentTab) != nullptr);
+
+  QFileDialog saveDialog(this);
+  saveDialog.setFileMode(QFileDialog::Directory);
+  if(saveDialog.exec()) {
+    QString dirPath = saveDialog.selectedFiles().at(0);
+    if(reallyShouldSave(dirPath)) {
+      TwoSidedDiffWidget* diffTab = static_cast<TwoSidedDiffWidget*>(currentTab);
+      logger.info(QString("Attempting to save test in: ") + dirPath);
+      optional<DisplayableError> err = OneToOneAlignmentIO::write(dirPath, diffTab->alignment());
+      if(err.is_initialized()) {
+        QString msg = QString("Couldn't write to dir: ") + dirPath + ". error = " + err.get().mMsg;
+        logger.info(msg);
+        warnBox(msg);
+      }
+    }
+  }
+}
+
+bool SensiDiff::reallyShouldSave(const QString& dirPath) {
+  QFile dir(dirPath);
+  if(dir.exists() == false)
+    return true;
+
+  QMessageBox sureBox(this);
+  sureBox.setText("This folder already exists, will override everything, are you sure?");
+  sureBox.setStandardButtons(QMessageBox::Yes | QMessageBox::Cancel);
+  if(sureBox.exec() == QMessageBox::Yes) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+void SensiDiff::openTestCase()
+{
+  QFileDialog openDialog(this);
+  openDialog.setFileMode(QFileDialog::Directory);
+  if(openDialog.exec()) {
+    QString dirPath = openDialog.selectedFiles().at(0);
+    logger.info(QString("Attempting to open test in: ") + dirPath);
+    Either<DisplayableError, OneToOneAlignment> alignmentEither = OneToOneAlignmentIO::read(dirPath);
+    if(alignmentEither.isRight()) {
+      addTab(alignmentEither.right());
+    } else {
+      QString msg = "Failed to open test: " + alignmentEither.left().mMsg;
+      logger.warn(msg);
+      warnBox(msg);
+    }
+  }
+}
+
+void SensiDiff::openDiff(QString leftPath, QString rightPath)
+{
+  logger.info(QString("Attempting to open files: ") + leftPath + " and " + rightPath);
+  Either<DisplayableError, QString> leftFile = IO::readTextFile(leftPath);
+  Either<DisplayableError, QString> rightFile = IO::readTextFile(rightPath);
+
+  if(leftFile.isRight() && rightFile.isRight()) {
+    addTab(NonLearningAligner::compute(leftFile.right(), rightFile.right()));
+  } else {
+    QString msg = "Failed to diff: " + flip({leftFile, rightFile}).left().mMsg;
+    logger.warn(msg);
+    warnBox(msg);
+  }
+}
+
+void SensiDiff::openDiffFromMenu()
+{
+  QFileDialog openDialog(this);
+  openDialog.setFileMode(QFileDialog::ExistingFiles);
+  if(openDialog.exec()) {
+    if (openDialog.selectedFiles().size() != 2) {
+      warnBox("Couldn't open files: there must be exactly 2 of them");
+      return;
+    }
+
+    QString leftPath = openDialog.selectedFiles().at(0);
+    QString rightPath = openDialog.selectedFiles().at(1);
+    openDiff(leftPath, rightPath);
+  }
+}
+
+SensiDiff::SensiDiff(const QStringList& args, QWidget *newParent)
+: QMainWindow(newParent, nullptr)
+, tabs(*(new QTabWidget))
+
+{
+    createMenus();
+    setCentralWidget(&tabs);
+    if(args.size() == 2) {
+      openDiff(args.at(0), args.at(1));
+    }
+}
+

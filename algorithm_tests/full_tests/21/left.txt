@@ -1,0 +1,96 @@
+#include "canvaseddoubletexteditor.h"
+#include <QStackedLayout>
+#include <QSplitter>
+#include "codeeditor.h"
+#include "transparentcanvas.h"
+#include <QPainter>
+#include "../../mix/asserts.h"
+#include "gui/mix/diffside.h"
+#include <boost/optional.hpp>
+#include <QTextBlock>
+
+CanvasedDoubleTextEditor::CanvasedDoubleTextEditor(QWidget *aParent)
+: QWidget(aParent)
+, mCanvas(*(new TransparentCanvas))
+, mLeftEditor(*(new CodeEditor))
+, mRightEditor(*(new CodeEditor))
+, mSplitter(*(new QSplitter))
+{
+  QStackedLayout *stackedLayout = new QStackedLayout(this);
+  stackedLayout->setStackingMode(QStackedLayout::StackAll);
+
+  mCanvas.setAttribute(Qt::WA_TransparentForMouseEvents, true);
+  stackedLayout->addWidget(&mCanvas);
+
+  mSplitter.addWidget(&mLeftEditor);
+  mSplitter.addWidget(&mRightEditor);
+  stackedLayout->addWidget(&mSplitter);
+
+  //todo possible memory/resource leak: no automatic disconnection: who owns the function object?
+  connect(&mLeftEditor, &CodeEditor::setManualAlignmentClicked, [this](int line) { this->setManualAlignmentClicked(DiffSide::LEFT, line); } );
+  connect(&mRightEditor, &CodeEditor::setManualAlignmentClicked, [this](int line) { this->setManualAlignmentClicked(DiffSide::RIGHT, line); } );
+}
+
+const CodeEditor& CanvasedDoubleTextEditor::getEditor(DiffSide aSide) const
+{
+  switch(aSide) {
+    case DiffSide::LEFT: return mLeftEditor;
+    case DiffSide::RIGHT: return mRightEditor;
+  }
+  FAIL("Stupid compiler needs return/throw");
+}
+
+CodeEditor& CanvasedDoubleTextEditor::getEditor(DiffSide aSide)
+{
+  const auto* constThis = this;
+  const CodeEditor& constEditor = constThis->getEditor(aSide);
+  return const_cast<CodeEditor&>(constEditor);
+}
+
+void CanvasedDoubleTextEditor::setDrawer(const std::function<void (QPainter &)> &aPaintingCallback)
+{
+  mCanvas.setDrawer(aPaintingCallback);
+}
+
+QRect CanvasedDoubleTextEditor::getLinePositionInLC(const QTextBlock &line, DiffSide side) const
+{
+  return getEditor(side).getRectForTextBlockInLC(line);
+}
+
+void CanvasedDoubleTextEditor::setText(DiffSide aSide, const QString& text)
+{
+  getEditor(aSide).setPlainText(text);
+}
+
+QString CanvasedDoubleTextEditor::getText(DiffSide aSide) const
+{
+  return getEditor(aSide).toPlainText();
+}
+
+boost::optional<QRect> CanvasedDoubleTextEditor::getRectForLineLC(DiffSide aSide, int lineNum) const
+{
+  return getEditor(aSide).getRectForLineLC(lineNum);
+}
+
+int CanvasedDoubleTextEditor::getSplitterPosLC() const
+{
+  QList<int> sizes = mSplitter.sizes();
+  VERIFY(sizes.size() == 2);
+  return sizes.at(0);
+}
+
+QTextBlock CanvasedDoubleTextEditor::getLine(DiffSide aSide, int aLine) const
+{
+  return getEditor(aSide).getLine(aLine);
+}
+
+vector<QTextBlock> CanvasedDoubleTextEditor::visibleBlocks(DiffSide side) const
+{
+  return getEditor(side).visibleBlocks();
+}
+
+vector<QTextBlock> CanvasedDoubleTextEditor::blocks(DiffSide side) const
+{
+  return getEditor(side).blocks();
+}
+

@@ -1,0 +1,23 @@
+#include "abovebelowlinecount.h"
+#include "aligner/onetoonealignment.h"
+#include "mix/asserts.h"
+#include <algorithm>
+
+AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)
+: AboveBelowSidedFeature("AboveBelowLineCount", dir, aSide)
+{}
+
+float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const
+{
+  int aboveBelowlineCnt;
+  if(mDir == Dir::UP) {
+    aboveBelowlineCnt = idx;
+  } else {
+    int allLines = alignment.lines(mSide).size();
+    aboveBelowlineCnt = allLines - idx - 1;
+  }
+
+  VERIFY(aboveBelowlineCnt >= 0);
+  //TODO maybe we could do scaling here
+  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)
+}

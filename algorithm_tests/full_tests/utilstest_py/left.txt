@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+import unittest
+from utils import *
+
+class TestStringMethods(unittest.TestCase):
+    x = [{"1": 1, "2": 2}, {"1": 0, "2": 3}]
+    minMax = {"1": (0, 1), "2": (2, 3)}
+    def testMinMax(self):
+        self.assertEqual(find_min_max(self.x), self.minMax)
+
+    def testScaleVanila(self):
+        self.assertEqual(scale_input(self.x, self.minMax), [{"1": 1, "2": -1}, {"1": -1, "2": 1}])
+    
+    def testScaleOutOfBoound(self):
+        self.assertEqual(scale_input([{"1": 2, "2": 1}], self.minMax), [{"1": 3, "2": -3}])
+
+if __name__ == '__main__':
+    unittest.main()

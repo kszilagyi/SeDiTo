@@ -1,0 +1,53 @@
+#ifndef ONETOMULTIRANGEALIGNMENT_H
+#define ONETOMULTIRANGEALIGNMENT_H
+#include <memory>
+#include <QStringList>
+#include "onetoonematch.h"
+
+class LinePair;
+class DisplayableError;
+template<typename LeftType, typename RightType>
+class Either;
+
+using std::vector;
+using std::unique_ptr;
+
+enum class DiffSide;
+
+/**
+ * @brief one-to-multi range-to-range alignment
+ */
+class OneToOneAlignment
+{
+  using MatchesType = vector<OneToOneMatch>;
+  const MatchesType mMatches;
+  const QString mLeftText;
+  const QString mRightText;
+  const QStringList mLeftLines;
+  const QStringList mRightLines;
+  OneToOneAlignment(const vector<OneToOneMatch>& aMatches, const QString& leftText, const QString& rightText);
+
+public:
+  OneToOneAlignment(const OneToOneAlignment&) = default;
+  MatchesType::const_iterator begin() const { return mMatches.begin(); }
+  MatchesType::const_iterator end() const { return mMatches.end(); }
+  MatchesType::size_type size() const { return mMatches.size(); }
+  //OneToOneAlignment added(const OneToOneMatch& newMatch) const;
+  const QString& leftText() const { return mLeftText; }
+  const QString& rightText() const { return mRightText; }
+  const QString& leftLine(int i) const;
+  const QString& rightLine(int i) const;
+  const QString& line(DiffSide side, int i) const;
+  const QStringList& lines(DiffSide side) const;
+  vector<LinePair> matches() const;
+  bool operator==(const OneToOneAlignment& right) const;
+  bool contains(const LinePair& pair) const;
+  bool containsEither(const LinePair& pair) const;
+
+  static OneToOneAlignment fromInts(const vector<LinePair>& matches, const QString& leftText, const QString& rightText);
+  static OneToOneAlignment fromTrusted(const vector<OneToOneMatch>& aMatches, const QString& leftText, const QString& rightText);
+  static Either<DisplayableError, OneToOneAlignment> fromUntrusted(const vector<OneToOneMatch>& aMatches, const QString& leftText, const QString& rightText);
+  static OneToOneAlignment empty();
+};
+
+#endif // ONETOMULTIRANGEALIGNMENT_H

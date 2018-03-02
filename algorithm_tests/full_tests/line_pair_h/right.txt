@@ -1,0 +1,27 @@
+#ifndef LINEPAIR_H
+#define LINEPAIR_H
+#include <unordered_set>
+class QString;
+
+struct LinePair{
+  const int mLeftIdx;
+  const int mRightIdx;
+  LinePair(int leftIdx, int rightIdx): mLeftIdx(leftIdx), mRightIdx(rightIdx) {}
+  bool operator==(const LinePair& other) const { return mLeftIdx == other.mLeftIdx && mRightIdx == other.mRightIdx; }
+};
+
+namespace std {
+  template <> struct hash<LinePair>
+  {
+    size_t operator()(const LinePair& match) const
+    {
+       //as in a given set lefttext and righttext almost certeainly the same and can be no two different mRight for an mLeft in a valid alignment,
+      //mLeft is pretty good in these conditions
+      return std::hash<int>()(match.mLeftIdx);
+    }
+  };
+}
+
+QString toStr(const LinePair&);
+
+#endif // LINEPAIR_H

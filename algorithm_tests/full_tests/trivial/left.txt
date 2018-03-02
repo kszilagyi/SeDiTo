@@ -1,0 +1,17 @@
+#include "mlpipeline.h"
+#include "aligner/onetoonealignment.h"
+#include "mix/diffside.h"
+#include "aligner/learning/featureextractor.h"
+
+vector<std::tuple<MLPipeline::LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)
+{
+  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;
+  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++i) {
+    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++i) {
+      if(alignment.contains(leftIdx, rightIdx) == false) {
+        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));
+      }
+    }
+  }
+  return result;
+}

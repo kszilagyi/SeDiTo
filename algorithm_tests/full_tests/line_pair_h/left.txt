@@ -1,0 +1,15 @@
+#ifndef LINEPAIR_H
+#define LINEPAIR_H
+
+class QString;
+
+struct LinePair{
+  const int mLeftIdx;
+  const int mRightIdx;
+  LinePair(int leftIdx, int rightIdx): mLeftIdx(leftIdx), mRightIdx(rightIdx) {}
+  bool operator==(const LinePair& other) const { return mLeftIdx == other.mLeftIdx && mRightIdx == other.mRightIdx; }
+};
+
+QString toStr(const LinePair&);
+
+#endif // LINEPAIR_H

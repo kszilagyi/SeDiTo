@@ -1,0 +1,92 @@
+#include <QString>
+#include "../src/aligner/serialisation/onetoonealignmentio.h"
+#include "../src/mix/collectionutils.h"
+#include "aligner/onetoonealignment.h"
+#include "aligner/learning/featureextractor.h"
+#include "aligner/learning/mlpipeline.h"
+#include <boost/filesystem.hpp>
+#include "mix/either.h"
+#include "mix/displayableerror.h"
+#include <iostream>
+#include "mix/exceptionhandler.h"
+#include "mix/logger/logger.h"
+#include <QFile>
+#include <QTextStream>
+#include <QDir>
+#include "mix/asserts.h"
+#include <unordered_set>
+
+using std::unordered_set;
+
+Logger logger{"extractor"};
+
+const QString testCasesDir = "full_tests";
+const QString outputRootDir = "features_output";
+
+void write(const QString& path, const QString& data) {
+  logger.info("Writing file: " + path);
+  QFile file(path);
+  if (file.open(QIODevice::WriteOnly | QIODevice::Truncate))
+  {
+      QTextStream stream(&file);
+      stream << data;
+      VERIFY(stream.status() == QTextStream::Ok);
+  } else FAIL("Failed to open: " + path);
+}
+
+void run()
+{
+  const QString root = "../../";
+  boost::filesystem::path dirPath = (root + testCasesDir).toStdString();
+  if(!boost::filesystem::exists(dirPath)) {
+    FAIL(("Directory doesn't exist:" + QString(dirPath.string().c_str())).toStdString().c_str());
+  }
+
+  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end
+  unordered_set<MLSample> allSamples; //to filter out duplications
+
+  for (boost::filesystem::directory_iterator itr(dirPath); itr != end_itr; ++itr) {
+    if (is_directory(itr->status())) {
+      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());
+      if (result.isLeft()) FAIL(result.left().mMsg.toStdString().c_str());
+      else {
+        OneToOneAlignment reference = result.right();
+        vector<MLSample> samples = MLPipeline::extractSamplesFromReference(reference.leftText(), reference.rightText(), MLPipeline::standardExtractor, reference);
+        QString outputDir = root + outputRootDir / itr->path().filename().c_str();
+        VERIFY(QDir().mkpath(outputDir));
+        write(outputDir / "features.txt", toStr(samples));
+        addAll(allSamples, samples);
+      }
+    }
+  }
+
+  vector<MLSample> shuffledAllSamples(allSamples.begin(), allSamples.end());
+  std::random_shuffle(shuffledAllSamples.begin(), shuffledAllSamples.end());
+  vector<MLSample> trainSamples;
+  vector<MLSample> testSamples;
+  unsigned i = 0;
+  for(const MLSample sample: shuffledAllSamples) {
+    if (i < allSamples.size()/2) {
+      trainSamples.push_back(sample);
+    } else {
+      testSamples.push_back(sample);
+    }
+    ++i;
+  }
+
+  write(root + outputRootDir / "train_samples.txt", toStr(trainSamples));
+  write(root + outputRootDir / "test_samples.txt", toStr(testSamples));
+}
+
+int main(int, char**) {
+  try {
+    initExceptionHandler();
+    run();
+    return 0;
+  } catch(std::exception& e) {
+    //TODO logging
+    std::cout << "exception happened:" << e.what() << std::endl;
+  } catch(...) {
+    std::cout << "exception happened:" << std::endl;
+  }
+}

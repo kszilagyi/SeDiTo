@@ -1,0 +1,9 @@
+#include "trivialfeatures.h"
+#include "aligner/onetoonealignment.h"
+#include "mix/diffside.h"
+
+
+double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const
+{
+  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());
+}

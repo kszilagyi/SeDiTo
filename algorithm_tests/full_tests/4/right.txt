@@ -1,0 +1,47 @@
+#include "loggercommon.h"
+#include <QTime>
+#include "../make_unique.h"
+
+LoggerCommon::LoggerCommon()
+{
+    addOutput(Level::INFO, make_unique<StandardLoggingOutput>());
+    //TODO fix path
+    addOutput(Level::INFO, make_unique<FileLoggingOutput>("/home/kristof/sensi_log.txt"));
+    log(Level::ERROR, "Logger started");
+}
+
+LoggerCommon::~LoggerCommon()
+{
+    log(Level::ERROR, "Logger ended");
+}
+
+void LoggerCommon::log(Level level, const QString& msg) const
+{
+    std::lock_guard<std::mutex> lock(loggingMutex);
+    QString outputMsg = QTime::currentTime().toString() + " - " + levelToString.at(level) + " - " + msg + "\n";
+    for(const LoggingInfo& output: outputs)
+    {
+        if(output.level >= level)
+        {
+            output.output->log(outputMsg);
+        }
+    }
+}
+
+void LoggerCommon::log(Level level, const char * cformat, va_list ap) const
+{
+   log(level, QString().vsprintf(cformat, ap));
+}
+
+void LoggerCommon::addOutput(Level level, std::unique_ptr<ILoggingOutput> output)
+{
+    std::lock_guard<std::mutex> lock(loggingMutex);
+    outputs.push_back(LoggingInfo{std::move(output), level});
+}
+
+const LoggerCommon& LoggerCommon::get()
+{
+    return instance;
+}
+
+const LoggerCommon LoggerCommon::instance;

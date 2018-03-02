@@ -1,0 +1,62 @@
+#include "sensidiff.h"
+#include <QApplication>
+#include "mix/asserts.h"
+#include "mix/exceptionhandler.h"
+#include "mix/logger/logger.h"
+
+#include <QMessageBox>
+
+void printSizes() {
+    Logger logger("SizeLogger");
+    logger.info("sizeof(char) = " + QString::number(sizeof(char)));
+    logger.info("sizeof(short) = " + QString::number(sizeof(short)));
+    logger.info("sizeof(int) = " + QString::number(sizeof(int)));
+    logger.info("sizeof(long int) = " + QString::number(sizeof(long int)));
+    logger.info("sizeof(long long int) = " + QString::number(sizeof(long long int)));
+}
+
+void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)
+{
+    static Logger logger("Qt"); //name won't be logged, it was easier this way
+    switch ( type ) {
+        case QtDebugMsg:
+            logger.info(QString("QtDebug: \n") + msg);
+            break;
+        case QtWarningMsg:
+            logger.warn(QString("QtWarning: \n") + msg);
+            break;
+        case QtCriticalMsg:
+        case QtFatalMsg:
+            logger.error(QString("QtFatal: \n") + msg);
+            VERIFY(false);
+    }
+}
+
+int main(int argc, char *argv[])
+{
+  initExceptionHandler();
+  printSizes();
+  qInstallMessageHandler( qtMessageHandler );
+  Logger logger("MainLogger");
+  try {
+    QApplication app(argc, argv);
+    QStringList args = app.arguments().mid(1);
+    logger.info("Started with arguments:" + args.join(", "));
+    if(args.size() != 0 && args.size() != 2) {
+      QMessageBox error;
+      error.setText("Wrong number of command line arguments, exiting. Arguments:" + args.join(", "));
+      error.setStandardButtons(QMessageBox::Ok);
+      error.exec();
+      return -1;
+    }
+    SensiDiff w(args);
+    w.showMaximized();
+
+    return app.exec();
+  } catch (const std::exception& e) {
+    logger.error(QString("std::exception caught, aborting: ") + e.what());
+    throw;
+  } catch (...) {
+    logger.error("Unknow exception, aborting.");
+  }
+}

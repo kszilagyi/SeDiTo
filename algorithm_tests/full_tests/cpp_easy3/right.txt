@@ -1,0 +1,23 @@
+#include "onetoonealignmenttest.h"
+#include "aligner/onetoonealignment.h"
+#include <QtTest/QtTest>
+#include "aligner/linepair.h"
+
+
+const OneToOneAlignment alignment = OneToOneAlignment::fromInts({
+                                                                 std::make_pair(1, 2),
+                                                                 std::make_pair(2, 3),
+                                                                 std::make_pair(4, 4),
+                                                                 std::make_pair(5, 8)
+                                                               },
+                                                               "this is\nThe left text\nreally\nnot too interesting\nbut works for now\ngood for testing\nlast",
+                                                               "Think so?\nMy opinion is that it's bollocks.\n 1 \n 2 \n 3 \n4\n5\n6\n7"
+                                                               );
+
+void OneToOneAlignmentTest::containsTest()
+{
+  QCOMPARE(alignment.contains(LinePair(1, 2)), true);
+  QCOMPARE(alignment.contains(LinePair(2, 1)), false);
+  QCOMPARE(alignment.contains(LinePair(2, 3)), true);
+  QCOMPARE(alignment.contains(LinePair(4, 4)), true);
+}

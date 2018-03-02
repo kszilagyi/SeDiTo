@@ -1,0 +1,96 @@
+#include "mlpipeline.h"
+#include "mix/diffside.h"
+#include "aligner/learning/featureextractor.h"
+#include "mix/qstringutils.h"
+#include "aligner/nonlearning/nonlearningaligner.h"
+#include "featureextractor.h"
+#include "features/abovebelowlinecount.h"
+#include "features/equalcharcount.h"
+#include "features/hardmatchesnear.h"
+#include "features/trivialfeatures.h"
+#include "mix/setoperations.h"
+
+/*
+vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)
+{
+  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;
+  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {
+    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {
+      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {
+        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));
+      }
+    }
+  }
+  return result;
+}*/
+
+
+
+
+MLSample::MLSample(const std::unordered_map<QString, float> &features, bool same)
+: mFeatures(features)
+, mSame(same)
+{
+
+}
+
+vector<unique_ptr<Feature>> createFeatureVector() {
+  //we need this ultra stupid function because of the mega dumb c++ because it can't handle fucking unique_ptrs with init lists
+  vector<unique_ptr<Feature>> features;
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::UP, DiffSide::LEFT));
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::DOWN, DiffSide::LEFT));
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::UP, DiffSide::RIGHT));
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::DOWN, DiffSide::RIGHT));
+  features.emplace_back(make_unique<EqualCharCount>());
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::UP, 1));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::UP, 5));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::UP, 10));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::DOWN, 1));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::DOWN, 5));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::DOWN, 10));
+  features.emplace_back(make_unique<LineLength>(DiffSide::LEFT));
+  features.emplace_back(make_unique<LineLength>(DiffSide::RIGHT));
+  return features;
+}
+
+const FeatureExtractor MLPipeline::standardExtractor(createFeatureVector());
+
+
+vector<MLSample> MLPipeline::extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor &extractor, const OneToOneAlignment &reference)
+{
+  OneToOneAlignment nonLearnedAlignment = NonLearningAligner::compute(left, right);
+  vector<MLSample> result;
+  for(int leftIdx = 0; leftIdx < nonLearnedAlignment.lines(DiffSide::LEFT).size(); ++leftIdx) {
+    for(int rightIdx = 0; rightIdx < nonLearnedAlignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {
+      if(nonLearnedAlignment.containsEither(LinePair(leftIdx, rightIdx)) == false) {
+        bool isSame = reference.contains(LinePair(leftIdx, rightIdx));
+        result.push_back(MLSample(extractor.computeFeatures(nonLearnedAlignment, leftIdx, rightIdx), isSame));
+      }
+    }
+  }
+  return result;
+}
+
+
+
+
+
+QString toStr(const vector<MLSample>& samples)
+{
+  if(samples.size() == 0) return "";
+  auto headerStrings = QStringList(QList<QString>::fromStdList(toList(keySet(samples.at(0).mFeatures))));
+  QString endLine = "\n";
+  //QString header = headerStrings.join(separator);
+  QString result = /*header + endLine*/ "";
+  for(const MLSample& sample: samples) {
+    result += QString::number(sample.mSame ? 1 : -1) + " ";
+    int columnIdx = 1;
+    for(const QString& column: headerStrings) {
+      float value = sample.mFeatures.at(column);
+      result += QString::number(columnIdx) + ":" + QString::number(value) + " ";
+      ++columnIdx;
+    }
+    result += endLine;
+  }
+  return result;
+}

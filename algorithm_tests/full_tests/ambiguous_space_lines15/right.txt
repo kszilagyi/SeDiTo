@@ -1,0 +1,25 @@
+#include "featureextractor.h"
+#include "mix/functional.h"
+#include "mix/qstringutils.h"
+
+FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)
+  : mFeatures(std::move(features))
+{
+  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));
+}
+
+std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const
+{
+  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {
+    double value = feature->compute(alignment, leftIdx, rightIdx);
+    QString name = feature->name();
+    return std::make_pair(name, value);
+  });
+  return toMap(nameValuePairs);
+}
+
+vector<QString> FeatureExtractor::orderedNames() const
+{
+  return map(mFeatures, [](const unique_ptr<Feature>& feature){ return feature->name(); });
+}
+

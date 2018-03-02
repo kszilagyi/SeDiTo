@@ -1,0 +1,24 @@
+#include <QString>
+#include "qstringutils.h"
+#include "aligner/onetoonematch.h"
+
+
+QString toStr(const QString &s) { return s; }
+
+
+QString toStr(const OneToOneMatch &match)
+{
+  return "(" + match.toString() + ")";
+}
+
+
+QString operator/(const QString &left, const QString &right)
+{
+  return left + "/" + right;
+}
+
+
+QString operator/(const QString &left, const char *right)
+{
+  return left + "/" + right;
+}

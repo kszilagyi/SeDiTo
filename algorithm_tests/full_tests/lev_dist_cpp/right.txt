@@ -1,0 +1,18 @@
+#include "levenshteindistance.h"
+#include "3rdparty/diff_match_patch/diff_match_patch.h"
+#include "aligner/onetoonealignment.h"
+#include "mix/asserts.h"
+#include <QString>
+
+double LevenshteinDistance::compute(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const
+{
+  QString left = alignment.leftLine(leftIdx).trimmed();
+  QString right = alignment.rightLine(rightIdx).trimmed();
+  diff_match_patch lineDiffer;
+  QList<Diff> lineDiff = lineDiffer.diff_main(left, right);
+  lineDiffer.diff_cleanupSemantic(lineDiff);
+  int lev = lineDiffer.diff_levenshtein(lineDiff);
+  VERIFY(lev <= left.size() + right.size(),
+         QString::number(lev) + "should< " + QString::number(left.size()) + "or " + QString::number(right.size()));
+  return static_cast<double>(lev);
+}

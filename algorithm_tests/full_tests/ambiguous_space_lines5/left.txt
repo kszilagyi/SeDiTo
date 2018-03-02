@@ -1,0 +1,16 @@
+#ifndef MLPIPELINE_H
+#define MLPIPELINE_H
+#include <vector>
+#include <unordered_map>
+using std::vector;
+using std::unordered_map;
+class OneToOneAlignment;
+class FeatureExtractor;
+
+
+namespace MLPipeline
+{
+  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);
+}
+
+#endif // MLPIPELINE_H

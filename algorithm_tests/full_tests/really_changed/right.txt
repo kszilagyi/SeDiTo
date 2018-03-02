@@ -1,0 +1,106 @@
+# -*- coding: utf-8 -*-
+#todo: either make it fast through C++ or optimize or user easy.py  + f score
+#interesting: the learning curve is much faster
+import sys
+sys.path.insert(0, './../lib')
+import svm
+from svmutil import *
+import random
+from utils import *
+import os
+import math
+from svm_helper import *
+import time
+from grid_common import *
+import hashlib
+import random
+
+#todo consider implementing stratified cross validation - but i think it will avarage out
+def partition(y, x, k): 
+    assert len(y) == len(x)
+    assert k > 1
+    yx = list(zip(y, x))
+    random.shuffle(yx)
+    size = int(len(y)/k)
+    assert size > 1
+    train_yx = yx[:len(yx)-size]
+    validation_yx = yx[len(yx)-size:]
+    assert len(train_yx) + len(validation_yx) == len(yx)
+    return train_yx, validation_yx
+    
+    
+def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):
+    y_train, x_train = zip(*train_yx)
+    model = train(y_train, x_train, c_exp, g_exp, max_idx)
+    y_valid, x_valid = zip(*validation_yx)
+    valid_prediction = predict(model, x_valid)
+    return f_score_from_data(valid_prediction, y_valid)
+        
+def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):
+    print("eval for " + str(c_exp))
+    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):
+        f_sum_valid = 0
+        for i in range(k):
+            train_yx, validation_yx = partition(y, x, k)
+            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)
+            f_sum_valid += f_valid
+            
+        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall
+
+def evalForCBind(c_exp, y, x, k):
+    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))
+    max_idx = max(idxs)
+    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2
+    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))
+    
+def read_training_data(): 
+    #todo remove file after finished
+    #this is needed so multiple stuff can run in the same directory
+    training_file_path = "./train_samples" + str(random.randint(0, 10000000)) + ".txt"
+    try:
+        os.remove(training_file_path) #hacky :(
+    except FileNotFoundError:
+        print("training file didn't exist")
+        
+    response = traing_file_resource.get()
+    train_data = response['Body'].read()
+    with open(training_file_path, 'wb') as file: #hacky
+        file.write(train_data)
+    
+    y, x = svm_read_problem(training_file_path)
+    print("Number of samples: " + str(len(y)))
+    ranges = find_min_max(x)
+    #save_range_file("./ranges.txt", ranges)
+    x = scale_input(x, ranges)
+    calculated_md5 = hashlib.md5(train_data).hexdigest()
+    return y, x, calculated_md5
+    
+def main():
+    y, x, calculated_md5 = read_training_data()
+    k = 5 #k-fold cross validation
+   
+    while(True):
+        print("Waiting for messages")
+        for message in input_queue.receive_messages():
+            print("received message: " + message.body)
+            c_exp, reference_md5 = message.body.split(",")
+            c_exp = int(c_exp)
+            if(calculated_md5 == reference_md5):
+                print("calculating results")
+                results = evalForCBind(c_exp, y, x, k)
+                for r in results:
+                    result_message = "{0},{1},{2},{3}".format(r[0],r[1],r[2],calculated_md5)
+                    print("Sending result back: " + result_message)
+                    result_queue.send_message(MessageBody = result_message)
+                message.delete()
+            else:
+                 error_queue.send_message(MessageBody = "Md5 check failed at " + host_name + ". Retry.")  
+                 y, x, calculated_md5 = read_training_data()
+
+        time.sleep(5)
+try:
+    main()
+except:
+    print("Fatal error")
+    error_queue.send_message(MessageBody = "Fatal exception at " + host_name)    
+    raise

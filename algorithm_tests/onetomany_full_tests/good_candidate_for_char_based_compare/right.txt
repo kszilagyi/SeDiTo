@@ -1,0 +1,82 @@
+# -*- coding: utf-8 -*-
+
+from grid_common import *
+from operator import itemgetter
+import hashlib
+import time
+import math
+import random
+import json
+
+def upload_training_file():
+    local_training_file_path = '../../features_output/train_samples.txt'
+    with open(local_training_file_path, 'rb') as training_file:
+        training_file_content = training_file.read()
+        s3.Bucket(bucket_name).put_object(Key = training_file_key, Body = training_file_content)
+        return hashlib.md5(training_file_content).hexdigest()
+
+def main():
+    #todo purge queue, find out what to do if calculation is in progress
+    print("Uploading file")
+    training_file_md5 = upload_training_file()
+    print("Training file uploaded, md5 = " + training_file_md5)
+    #c_exp_begin, c_exp_end, c_exp_step = -5,  15,  2
+    c_exp_begin, c_exp_end, c_exp_step = -5,  15,  10
+    
+
+    c_exps = frozenset(range(c_exp_begin, c_exp_end, c_exp_step))
+    random_ids = frozenset(map(lambda x: random.randint(0, 1000000000000000000), c_exps))
+    assert(len(c_exps) == len(random_ids))
+    c_exps_by_id = dict(zip(random_ids, c_exps))
+    
+    for msg_id, c_exp in list(c_exps_by_id.items()):
+        task =  "{0},{1},{2}".format(msg_id, c_exp, training_file_md5)
+        print("Queueing task: " + task)
+        input_queue.send_message(MessageBody= task)
+    
+    received_c_exps = set()
+    all_scores = []
+    while(c_exps != received_c_exps):
+        print("Waiting for messages")
+        for message in error_queue.receive_messages():
+            print("Received error: " + message.body)
+            message.delete()
+            
+        for message in result_queue.receive_messages():
+            print("Received result: " + message.body)
+            json_dict = json.JSONDecoder().decode(message.body)
+            received_msg_id = int(json_dict[json_response_msg_id])
+            results = json_dict[json_response_results]
+            if received_msg_id in c_exps_by_id:
+                expected_c_exp = c_exps_by_id[received_msg_id]
+                
+                c_exps_valid = all(map(lambda result: result[c_exp_key] == expected_c_exp, results))
+                if(c_exps_valid == True):
+                    received_c_exps.add(expected_c_exp)
+                    for r in results:
+                        all_scores.append(r)
+                else:
+                    print("Wrong c_exps! Ignoring.")
+            else:
+                 print("Received invalid msg_id: " + str(received_msg_id) + ", ignored.")   
+            message.delete()
+        
+        time.sleep(5)
+
+
+    valids = list(filter(lambda score: math.isnan(score[f_score_key]) == False, all_scores))
+    print(valids)
+    best = max(valids, key=itemgetter(f_score_key)) 
+    print("Best c: " + str(2**best[c_exp_key]))
+    print("Best g: " + str(2**best[g_exp_key]))
+    print("Best f validation score: " + str(best[f_score_key]))
+    
+    #todo write up the setup (sample size, feature size, results, speed)
+    with open('cross_vaildation_result.txt', 'w') as f:
+        f.write(str(best[c_exp_key]) + "\n")
+        f.write(str(best[g_exp_key]) + "\n")
+        f.write(str(best[f_score_key]) + "\n")
+        
+start_time = time.time()
+main()  
+print("--- %s seconds ---" % (time.time() - start_time))

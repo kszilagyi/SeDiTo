@@ -1,0 +1,26 @@
+#include "lineutils.h"
+#include <QStringList>
+
+auto pattern = QRegExp("\n|\r\n|\r");
+
+QStringList LineUtils::toLines(const QString &text)
+{
+  //TODO not tested, best effort
+  return text.split(pattern);
+}
+
+vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {
+  int start = 0;
+  vector<std::pair<int, int>> results;
+  while(true) {
+    int next = text.indexOf(pattern, start);
+    if(next == -1) break;
+    results.push_back(std::make_pair(start, next));
+    start = next + 1;
+    if(start < text.size() && text.at(start - 1) == '\r' && text.at(start) == '\n') {
+      ++start;
+    }
+  }
+  results.push_back(std::make_pair(start, text.size()));
+  return results;
+}

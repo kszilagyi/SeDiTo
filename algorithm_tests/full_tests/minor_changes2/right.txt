@@ -1,0 +1,22 @@
+#ifndef ZIPPER
+#define ZIPPER
+#include <vector>
+#include <utility>
+
+#include "mix/asserts.h"
+
+using std::vector;
+
+template<class T1, class T2>
+vector<std::pair<T1, T2>> zip(const vector<T1>& c1, const vector<T2>& c2) {
+  VERIFY_EQ(c1.size(), c2.size());
+  vector<std::pair<T1, T2>> res;
+  for(unsigned int i = 0; i < c1.size(); ++i) {
+    res.push_back(std::make_pair(c1.at(i), c2.at(i)));
+  }
+  return res;
+}
+
+
+#endif // ZIPPER
+

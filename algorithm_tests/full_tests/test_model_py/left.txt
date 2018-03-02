@@ -1,0 +1,42 @@
+#!/usr/bin/env python3.4
+
+import sys
+import os
+from subprocess import *
+import svm
+from svmutil import *
+
+def custom_scale(value, featureMin, featureMax):
+    lower = -1.0
+    upper = 1.0
+    epsilon = 0.0001
+    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:
+        assert false, "invalid range"
+    
+    assert featureMin < featureMax;
+    
+    return (lower + (upper-lower) *
+        (value-featureMin)/
+        (featureMax-featureMin))
+
+def get_immediate_subdirectories(a_dir):
+    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]
+       
+#dirs = get_immediate_subdirectories('../features_output/')
+with open('../features_output/testing_files.txt') as f:
+    dirs = f.read().strip("[]\n").split(", ")
+    
+model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')
+
+for dir in dirs:
+    print("Testing:" + dir)
+    ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')
+    if len(y) > 0:
+        calc_y, p_acc, p_val = svm_predict(ref_y, x, model)
+        assert len(calc_y) == len(ref_y)
+        zipped = zip(calc_y, ref_y)
+        false_neg = sum(1 if elem[0] < 0 and elem[1] > 0 else 0 for elem in zipped)
+        false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)
+        print("Sample count:" + str(len(calc_y)))
+        print("False positive rate: " + str(false_pos/len(ref_y)))
+        print("False negative rate: " + str(false_neg/len(ref_y)))

@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+import unittest
+from utils import *
+import math
+
+class TestStringMethods(unittest.TestCase):
+    x = [{"1": 1, "2": 2}, {"1": 0, "2": 3}]
+    minMax = {"1": (0, 1), "2": (2, 3)}
+    def testMinMax(self):
+        self.assertEqual(find_min_max(self.x), self.minMax)
+
+    def testScaleVanila(self):
+        self.assertEqual(scale_input(self.x, self.minMax), [{"1": 1, "2": -1}, {"1": -1, "2": 1}])
+    
+    def testScaleOutOfBoound(self):
+        self.assertEqual(scale_input([{"1": 2, "2": 1}], self.minMax), [{"1": 3, "2": -3}])
+        
+    calc_y1 = [1, 1, -1, -1]    
+    ref_y1 = [1, 1, 1, 1]
+    ref_y2 = [-1, -1, -1, -1]
+    def testFp(self):  
+        self.assertEqual(calc_false_pos(self.calc_y1, self.ref_y1), 0) 
+        self.assertEqual(calc_false_pos(self.calc_y1, self.ref_y2), 2) 
+        
+    def testTp(self):
+        self.assertEqual(calc_true_pos(self.calc_y1, self.ref_y1), 2) 
+        self.assertEqual(calc_true_pos(self.calc_y1, self.ref_y2), 0) 
+        
+    def testPrecision(self):
+        self.assertEqual(precision_from_data(self.calc_y1, self.ref_y1), 1) 
+        self.assertEqual(precision_from_data(self.calc_y1, self.ref_y2), 0) 
+        
+    def testRecall(self):
+        self.assertEqual(recall_from_data(self.calc_y1, self.ref_y1), 0.5) 
+        self.assertTrue(math.isnan(recall_from_data(self.calc_y1, self.ref_y2)))
+        
+    def testF(self):
+        y_always_true = [1, 1, 1, 1]
+        self.assertEqual(f_score_from_data(y_always_true, self.ref_y1), 1.0) 
+        
+if __name__ == '__main__':
+    unittest.main()

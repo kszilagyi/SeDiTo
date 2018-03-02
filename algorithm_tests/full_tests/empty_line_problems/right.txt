@@ -1,0 +1,123 @@
+#-------------------------------------------------
+#
+# Project created by QtCreator 2015-01-28T23:12:09
+#
+#-------------------------------------------------
+
+QT       += testlib
+
+QT       -= gui
+
+TARGET = tst_teststest
+CONFIG   += console
+CONFIG   -= app_bundle
+
+TEMPLATE = app
+
+INCLUDEPATH += "/home/kristof/Work/boost_1_58_0"
+INCLUDEPATH += "../src"
+
+CONFIG += c++14
+
+QMAKE_CXXFLAGS +=   -Wall -Wextra -Wctor-dtor-privacy -Wnon-virtual-dtor -pedantic \
+                    -Wcast-align -Wcast-qual -Wdisabled-optimization -Wformat=2 -Winit-self \
+                    -Wlogical-op -Wmissing-include-dirs -Wnoexcept \
+                    -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow \
+                    -Wsign-conversion -Wconversion -Wsign-promo -Wstrict-null-sentinel \
+                    -Wstrict-overflow=5 -Wundef -Wfloat-equal\
+                    #-Wpadded \ moc files
+                    \ #-Weffc++ \ #gives stupid not inited errors for default inits
+                    #-Wuseless-cast \ moc files...
+                   # -fstack-protector \ # do i need this? - didn't compile
+                    -Wzero-as-null-pointer-constant -Wunused -Wwrite-strings \
+                    -isystem /home/kristof/Qt/5.4/gcc_64/include/  \
+                    -isystem /home/kristof/Qt/5.4/gcc_64/include/QtCore \
+                    -isystem /home/kristof/Qt/5.4/gcc_64/include/QtWidgets \
+                    -isystem /home/kristof/Qt/5.4/gcc_64/include/QtGui \
+                    -isystem /home/kristof/Qt/5.4/gcc_64/include/QtTest \
+                    -isystem "/home/kristof/Work/boost_1_58_0" \
+                    -isystem "/home/kristof/Work/boost_1_58_0/boost" \
+                    -fprofile-arcs -ftest-coverage
+
+QMAKE_LFLAGS  += -lgcov -coverage
+
+LIBS +=              -L/home/kristof/Work/boost_1_58_0/bin.v2/libs/filesystem/build/gcc-4.8/release/threading-multi -l:libboost_filesystem.so.1.58.0 \
+                     -L/home/kristof/Work/boost_1_58_0/bin.v2/libs/system/build/gcc-4.8/release/threading-multi -l:libboost_system.so.1.58.0
+
+DEFINES += SRCDIR=\\\"$$PWD/\\\"
+
+
+SOURCES += tst_teststest.cpp \
+    functionalTests/collectionutilstest.cpp \
+    functionalTests/ziptests.cpp \
+    functionalTests/filtertests.cpp \
+    functionalTests/flatmaptests.cpp \
+    functionalTests/maptests.cpp \
+    functionalTests/sorttests.cpp \
+    functionalTests/testutils.cpp \
+    functionalTests/uniqueoremptytests.cpp \
+    eithertest.cpp \
+    verifytest.cpp \
+    nonlearningalignertest.cpp \
+    numberutilstest.cpp \
+    #prod code
+    ../src/mix/logger/loggingoutput.cpp \
+    ../src/mix/logger/logger.cpp \
+    ../src/mix/logger/loggercommon.cpp \
+    ../src/mix/asserts.cpp \
+    ../src/mix/exceptionhandler.cpp \
+    ../src/mix/debugbreak.cpp \
+    ../src/aligner/onetoonematch.cpp \
+    ../src/aligner/onetoonealignment.cpp \
+    ../src/aligner/serialisation/onetoonealignmentjsonsupport.cpp \
+    ../src/aligner/serialisation/onetoonematchjsonsupport.cpp \
+    ../src/mix/lineutils.cpp \
+    ../src/mix/displayableerror.cpp \
+    ../src/gui/controls/textblocklinkedonetoonematch.cpp \
+    ../src/mix/safejsonutils.cpp \
+    ../src/aligner/serialisation/onetoonealignmentio.cpp \
+    ../src/aligner/nonlearning/nonlearningaligner.cpp \
+    ../src/aligner/learning/features/hardmatchesnear.cpp \
+    ../src/aligner/learning/features/abovebelowfeature.cpp \
+    ../src/mix/qstringutils.cpp \
+    ../src/mix/safe_numeric_operations.cpp \
+    ../src/aligner/learning/features/abovebelowlinecount.cpp \
+    ../src/aligner/learning/mlpipeline.cpp \
+    ../src/aligner/linepair.cpp \
+    ../src/aligner/learning/featureextractor.cpp \
+    ../src/aligner/learning/features/abovebelowsidedfeature.cpp \
+    ../src/aligner/learning/features/sidedfeature.cpp \
+    ../src/aligner/learning/features/equalcharcount.cpp \
+    ../src/aligner/learning/features/trivialfeatures.cpp \
+    ../src/3rdparty/diff_match_patch/diff_match_patch.cpp \
+    ../src/3rdparty/libsvm/svm.cpp \
+    safenumericoperationstest.cpp \
+    hardmatchesneartest.cpp \
+    abovebelowlinecnttest.cpp \
+    equalcharcounttest.cpp \
+    onetoonealignmenttest.cpp \
+    aligner/learning/mlpipelinetests.cpp
+
+
+
+HEADERS += \
+    functionalTests/flatmaptests.h \
+    functionalTests/maptests.h \
+    functionalTests/testutils.h \
+    functionalTests/sorttests.h \
+    functionalTests/filtertests.h \
+    functionalTests/uniqueoremptytests.h \
+    functionalTests/collectionutilstest.h \
+    functionalTests/ziptests.h \
+    eithertest.h \
+    verifytest.h \
+    nonlearningalignertest.h \
+    numberutilstest.h \
+    safenumericoperationstest.h \
+    hardmatchesneartest.h \
+    abovebelowlinecnttest.h \
+    equalcharcounttest.h \
+    onetoonealignmenttest.h \
+    aligner/learning/mlpipelinetests.h
+
+

@@ -1,0 +1,53 @@
+#ifndef ONETOMULTIRANGEALIGNMENT_H
+#define ONETOMULTIRANGEALIGNMENT_H
+#include <memory>
+#include <QStringList>
+#include "onetoonematch.h"
+#include <unordered_set>
+class LinePair;
+class DisplayableError;
+template<typename LeftType, typename RightType>
+class Either;
+
+using std::unique_ptr;
+using std::unordered_set;
+enum class DiffSide;
+
+/**
+ * @brief one-to-multi range-to-range alignment.
+ * If an idx appears multiple times on a side that means ambiguity (either of the matches is acceptable)
+ */
+class OneToOneAlignmentWithAmbiguity
+{
+  using MatchesType = unordered_set<OneToOneMatch>;
+  const MatchesType mMatches;
+  const QString mLeftText;
+  const QString mRightText;
+  const QStringList mLeftLines;
+  const QStringList mRightLines;
+  OneToOneAlignmentWithAmbiguity(const unordered_set<OneToOneMatch>& aMatches, const QString& leftText, const QString& rightText);
+
+public:
+  OneToOneAlignmentWithAmbiguity(const OneToOneAlignmentWithAmbiguity&) = default;
+  MatchesType::const_iterator begin() const { return mMatches.begin(); }
+  MatchesType::const_iterator end() const { return mMatches.end(); }
+  MatchesType::size_type size() const { return mMatches.size(); }
+  //OneToOneAlignment added(const OneToOneMatch& newMatch) const;
+  const QString& leftText() const { return mLeftText; }
+  const QString& rightText() const { return mRightText; }
+  const QString& leftLine(int i) const;
+  const QString& rightLine(int i) const;
+  const QString& line(DiffSide side, int i) const;
+  const QStringList& lines(DiffSide side) const;
+  unordered_set<LinePair> matches() const;
+  bool operator==(const OneToOneAlignmentWithAmbiguity& right) const;
+  bool contains(const LinePair& pair) const;
+  bool containsEither(const LinePair& pair) const;
+
+  static OneToOneAlignmentWithAmbiguity fromInts(const unordered_set<LinePair>& matches, const QString& leftText, const QString& rightText);
+  static OneToOneAlignmentWithAmbiguity fromTrusted(const unordered_set<OneToOneMatch>& aMatches, const QString& leftText, const QString& rightText);
+  static Either<DisplayableError, OneToOneAlignmentWithAmbiguity> fromUntrusted(const unordered_set<OneToOneMatch>& aMatches, const QString& leftText, const QString& rightText);
+  static OneToOneAlignmentWithAmbiguity empty();
+};
+
+#endif // ONETOMULTIRANGEALIGNMENT_H

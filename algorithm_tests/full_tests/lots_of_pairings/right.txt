@@ -1,0 +1,32 @@
+#ifndef MLPIPELINE_H
+#define MLPIPELINE_H
+#include <vector>
+#include <unordered_map>
+#include "aligner/linepair.h"
+#include <QString>
+#include <unordered_map>
+#include "mix/qstringutils.h"
+
+using std::vector;
+using std::unordered_map;
+class OneToOneAlignment;
+class FeatureExtractor;
+
+class MLSample {
+public:
+  MLSample(const LinePair& match, const std::unordered_map<QString, float>& features, bool same);
+  const LinePair mMatch;
+  const std::unordered_map<QString, float> mFeatures;
+  const bool mSame;
+};
+
+QString toStr(const vector<MLSample>& samples);
+
+namespace MLPipeline
+{
+  extern const FeatureExtractor standardExtractor;
+  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);
+  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& standardExtractor, const OneToOneAlignment& reference);
+}
+
+#endif // MLPIPELINE_H

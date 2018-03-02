@@ -1,0 +1,39 @@
+#ifndef COLLECTIONUTILS_H
+#define COLLECTIONUTILS_H
+#include <vector>
+using std::vector;
+
+template<template<class, class...> class C, class T, class... Args>
+vector<T> toVector(const C<T, Args...>& c) {
+  return vector<T>(c.begin(), c.end());
+}
+/*
+template<class CDest, class CSrc>
+void pushBackAll(CDest& dest, const CSrc& src) {
+  dest.insert(dest.end(), src.begin(), src.end());
+}*/
+
+template<class CDest, class CSrc>
+void addAll(CDest& dest, const CSrc& src) {
+  dest.insert(src.begin(), src.end());
+}
+
+//push back is better than insert because it doesn't need assignment operator
+template<class CDest, class CSrc>
+void bulkPushBack(CDest& dst, const CSrc& src) {
+  dst.reserve(dst.size() + src.size());
+  for(const auto& e: src) {
+    dst.push_back(e);
+  }
+}
+
+template<class C>
+C operator+(const C& left, const C& right) {
+  C result = left;
+  bulkPushBack(result, right);
+  return result;
+}
+
+
+#endif // COLLECTIONUTILS_H
+

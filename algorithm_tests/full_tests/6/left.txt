@@ -1,0 +1,27 @@
+#ifndef SENSIDIFF_H
+#define SENSIDIFF_H
+#include <QMainWindow>
+#include "mix/logger/logger.h"
+
+class OneToOneAlignment;
+
+class SensiDiff : public QMainWindow
+{
+    Q_OBJECT
+    SensiDiff(const SensiDiff&) = delete;
+    SensiDiff& operator=(const SensiDiff&) = delete;
+    const Logger logger{"SensiDiff"};
+    void createMenus();
+    QTabWidget &tabs; //memory managed by qt
+    void addTab(const OneToOneAlignment& alignment);
+    bool reallyShouldSave(const QString& dirPath);
+private slots:
+    void saveTestCase();
+    void openTestCase();
+    void openToDiff();
+public:
+    explicit SensiDiff(QWidget *parent = nullptr);
+    ~SensiDiff(){}
+};
+
+#endif // SENSIDIFF_H

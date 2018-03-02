@@ -1,0 +1,57 @@
+#include "textblocklinkedonetoonematch.h"
+#include "mix/asserts.h"
+#include "mix/diffside.h"
+#include "gui/mix/textblockmatchdata.h"
+#include "mix/collectionutils.h"
+
+void TextBlockLinkedOneToOneMatch::removeTextBlock(const QTextBlock &blockToRemove)
+{
+  leftBlocks.erase(blockToRemove);
+  rightBlocks.erase(blockToRemove);
+
+  if (leftBlocks.empty() || rightBlocks.empty()) {
+    thisGuard.reset(); //this will kill the whole object as all the other pointers are temporary are weak
+  }
+}
+
+/**
+ * @return if the match was added or not
+ */
+bool TextBlockLinkedOneToOneMatch::addMatch(QTextBlock &leftBlock, QTextBlock &rightBlock)
+{
+  set<QTextBlock> leftBlocksTrial = leftBlocks;
+  set<QTextBlock> rightBlocksTrial = rightBlocks;
+  leftBlocksTrial.insert(leftBlock);
+  rightBlocksTrial.insert(rightBlock);
+  if(leftBlocksTrial.size() != 1 && rightBlocksTrial.size() != 1) {
+    return false;
+  } else {
+    bool leftBlockAlreadyIncluded = leftBlocks.count(leftBlock) != 0;
+    bool rightBlockAlreadyIncluded = rightBlocks.count(rightBlock) != 0;
+    leftBlocks = leftBlocksTrial;
+    rightBlocks = rightBlocksTrial;
+    if(!leftBlockAlreadyIncluded) leftBlock.setUserData(new MatchPtr(leftBlock, this->thisGuard));
+    if(!rightBlockAlreadyIncluded) rightBlock.setUserData(new MatchPtr(rightBlock, this->thisGuard));
+    return true;
+  }
+}
+
+void TextBlockLinkedOneToOneMatch::create(QTextBlock& left, QTextBlock& right)
+{
+  TextBlockLinkedOneToOneMatch* matchData = new TextBlockLinkedOneToOneMatch(left, right);
+  left.setUserData(new MatchPtr(left, matchData->thisGuard));
+  right.setUserData(new MatchPtr(right, matchData->thisGuard));
+}
+
+set<QTextBlock> TextBlockLinkedOneToOneMatch::getBlock(DiffSide side) const
+{
+  return side == DiffSide::LEFT ? leftBlocks : rightBlocks;
+}
+
+TextBlockLinkedOneToOneMatch::TextBlockLinkedOneToOneMatch(const QTextBlock &left, const QTextBlock &right)
+: leftBlocks{left}
+, rightBlocks{right}
+, thisGuard(this)
+{
+}
+

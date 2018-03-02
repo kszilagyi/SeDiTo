@@ -1,0 +1,37 @@
+#include "hardmatchesnear.h"
+#include "aligner/onetoonealignment.h"
+#include "mix/safe_numeric_operations.h"
+#include "mix/asserts.h"
+using namespace SafeNumericOperations;
+
+HardMatchesNear::HardMatchesNear(AboveBelowFeature::Dir dir, int dist)
+: AboveBelowFeature("HardMatchesNear", dir)
+, mDist(dist)
+{
+  VERIFY(mDist >=0);
+}
+
+float HardMatchesNear::compute(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const
+{
+  int diff = mDir == Dir::UP ? -mDist : mDist;
+  int one  = mDir == Dir::UP ? -1 : 1;
+  int leftStart = checked_add(leftIdx, one);
+  int rightStart = checked_add(rightIdx, one);
+  int leftEnd = checked_add(leftIdx, diff);
+  int rightEnd = checked_add(rightIdx, diff);
+  int hardMatches = 0;
+  //TODO this is slow!! O(n) for every item => O(n*n) in total
+  for(const OneToOneMatch& match: alignment) {
+    if(betweenInc(match.mLeft, leftStart, leftEnd) && betweenInc(match.mRight, rightStart, rightEnd)) {
+      ++hardMatches;
+    }
+  }
+  //TODO scaling?
+  return static_cast<float>(hardMatches);
+}
+
+QString HardMatchesNear::name() const
+{
+  return AboveBelowFeature::name() + QString::number(mDist);
+}
+

@@ -1,0 +1,199 @@
+#pragma once
+
+#include <functional>
+#include <algorithm>
+#include "make_unique.h"
+#include "template_utils.h"
+#include <map>
+#include <unordered_map>
+#include "asserts.h"
+#include "c++14type_traits.h"
+#include <QStringList>
+#include <boost/optional.hpp>
+
+using std::vector;
+using std::unique_ptr;
+using boost::optional;
+
+template<template <class...> class C, class T>
+struct VectorIfNotPushBackable {
+  typedef conditional_t<HasPushback<C<T>, void(const T&)>::value, C<T>, vector<T>> Value;
+};
+
+template<class T>
+struct VectorIfNotPushBackable<std::map, T> {
+  typedef vector<T> Value;
+};
+
+template<class T>
+struct VectorIfNotPushBackable<std::unordered_map, T> {
+  typedef vector<T> Value;
+};
+
+template <template <class...> class CDest, class OpType>
+struct FlatmapResult {
+  typedef typename FunctionTraits<OpType>::ReturnType IntermediaryResultType;
+  typedef typename IntermediaryResultType::value_type EndElemType;
+  typedef typename VectorIfNotPushBackable<CDest, EndElemType>::Value EndResultType;
+};
+
+template <template <class...> class CSrc, class OpType>
+struct MapResult {
+private:
+  typedef typename FunctionTraits<OpType>::ReturnType ElemType;
+public:
+  typedef typename VectorIfNotPushBackable<CSrc, ElemType>::Value ResultType;
+};
+
+template<class T>
+struct Reserver {
+  static void call(T& obj,typename T::size_type size) {
+    obj.reserve(size);
+  }
+};
+
+template<class C, class OpType>
+auto map(const C& src, OpType op) -> vector<typename FunctionTraits<OpType>::ReturnType>
+{
+  vector<typename FunctionTraits<OpType>::ReturnType> result;
+  auto size = src.size();
+  VERIFY(size >= 0);
+  auto unsignedSize = static_cast<make_unsigned_t<decltype(size)>>(size); //to get rid of warning
+  result.reserve(unsignedSize);
+  for(const auto& s: src) {
+    result.push_back(op(s));
+  }
+  return result;
+}
+
+template<template <class...> class C, class OpType, class... Args>
+auto map(const C<Args...>& src, OpType op) -> typename MapResult<C, OpType>::ResultType
+{
+  typename MapResult<C, OpType>::ResultType result;
+  typedef conditional_t<HasReserve<decltype(result)>::value, Reserver<decltype(result)>, NoOp<decltype(result)>> OptionalReserve;
+  OptionalReserve::call(result, src.size());
+  for(const auto& s: src) {
+    result.push_back(op(s));
+  }
+  return result;
+}
+
+//return value doesn't has args because the allocator has the wrong template argument
+template<template <class...> class CSrc, class... Args, class OpType>
+auto flatMap(const CSrc<Args...>& src, OpType op) -> typename FlatmapResult<CSrc, decltype(op)>::EndResultType
+{
+  typename FlatmapResult<CSrc, decltype(op)>::EndResultType result;
+  for(const auto& srcItem: src) {
+    const auto& tempRes = op(srcItem);
+    for(const auto& tempElem: tempRes) {
+      result.push_back(tempElem);
+    }
+  }
+  return result;
+}
+
+template<template <class...> class MapType = std::unordered_map, template <class...> class CSrc, class... Args, class Key, class Value>
+MapType<Key, Value> toMap(const CSrc<std::pair<Key, Value>, Args...>& src)
+{
+  MapType<Key, Value> result;
+  for(const std::pair<Key, Value>& srcItem: src) {
+    result.insert(srcItem);
+  }
+  return result;
+}
+
+template<class C, class T, class Enable = void>
+struct Inserter {
+  void insert(C& coll, const T& obj) {
+    coll.push_back(obj);
+  }
+};
+
+//for those who have an insert method
+template<template <class...> class C, class T, class... Args>
+struct Inserter<
+        C<Args...>,
+        T,
+        enable_if_t<HasInsert<C<Args...>>::value, void>
+       > {
+  void insert(C<Args...>& coll, const T& obj) {
+    coll.insert(obj);
+  }
+};
+
+template<class C, class OpType>
+C filter(const C& src, OpType op) {
+  C result;
+  Inserter<C, typename C::value_type> inserter;
+  for(const auto& s: src) {
+    if (op(s) == true) {
+      inserter.insert(result, s);
+    }
+  }
+  return result;
+}
+
+template<class C>
+bool isUniqueOrEmpty(const C& c) {
+  std::unordered_map<typename C::value_type, int> freq;
+  for(auto elem: c) {
+    ++freq[elem];
+    if(freq[elem] > 1) return false;
+  }
+
+  return true;
+}
+
+
+template<class C, class OpType>
+bool forall(const C& c, OpType cond) {
+  for(auto elem: c) {
+    if(cond(elem) == false) {
+      return false;
+    }
+  }
+  return true;
+}
+
+template<class T>
+optional<T> orElse(const optional<T> o1, const optional<T> o2) {
+  if(o1.is_initialized()) return o1;
+
+  return o2;
+}
+
+
+template<template <class...> class E, class T, class... Args>
+E<unique_ptr<T>> ptr_lift(const E<T, Args...> collection)
+{
+  return map(collection, [](const T& elem){ return make_unique<T>(elem); });
+}
+
+
+template<template <class...> class C, class T, class... Args>
+C<T> ptr_flatten(const C<unique_ptr<T>, Args...>& collection)
+{
+  return map(collection, [](const unique_ptr<T>& elem){ return T(*elem); });
+}
+
+
+template<template <class...> class E, class T, class... Args, class LessThanType = std::less<T>>
+E<T> ptr_sort(const E<T, Args...>& col, LessThanType lessThan = std::less<T>())
+{
+  E<unique_ptr<T>> lifted = ptr_lift(col);
+  std::sort(lifted.begin(), lifted.end(), [lessThan](const unique_ptr<T>& left, const unique_ptr<T>& right) {
+    return lessThan(*left, *right);
+  });
+  return ptr_flatten(lifted);
+}
+
+template<template <class, class...> class C, class T, class... Args>
+T sum(const C<T, Args...> c, T init = T()) {
+  return std::accumulate(c.begin(), c.end(), init);
+}
+
+template<class C, class T, class Op>
+T foldLeft(const C c, Op op, T init = T()) {
+  std::accumulate(c.begin(), c.end(), init, op);
+}
+

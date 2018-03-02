@@ -1,0 +1,172 @@
+#include <QPainter>
+#include <memory>
+
+#include "twosideddiffwidget.h"
+#include "../../aligner/onetoonematch.h"
+#include "../../mix/asserts.h"
+#include "gui/mix/textblockmatchdata.h"
+#include "mix/make_unique.h"
+#include "gui/mix/diffside.h"
+#include "textblocklinkedonetoonematch.h"
+#include "aligner/onetoonealignment.h"
+#include "mix/collectionutils.h"
+#include "mix/setoperations.h"
+#include "3rdparty/diff_match_patch/diff_match_patch.h"
+
+QColor TwoSidedDiffWidget::DELETED_COLOR = Qt::GlobalColor::red;
+QColor TwoSidedDiffWidget::NEW_COLOR = Qt::GlobalColor::green;
+QColor TwoSidedDiffWidget::MODIFIED_CHAR_COLOR = Qt::GlobalColor::darkBlue;
+QColor TwoSidedDiffWidget::MODIFIED_LINE_COLOR = Qt::GlobalColor::lightGray;
+QColor TwoSidedDiffWidget::NORMAL_LINE_COLOR = Qt::GlobalColor::white;
+
+void setBlockBackground(const QTextBlock& block, const QColor& c) {
+  QTextBlockFormat blockFormat = block.blockFormat();
+  blockFormat.setBackground(QBrush(c));
+  QTextCursor(block).setBlockFormat(blockFormat);
+}
+
+void setTextBackground(const QTextBlock& block, int offset, int len, const QColor& c) {
+  QTextCursor selection(block);
+  selection.movePosition(QTextCursor::NextCharacter, QTextCursor::MoveAnchor, offset);
+  selection.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, len);
+  QTextCharFormat format = selection.charFormat();
+  format.setBackground(QBrush(c));
+  selection.setCharFormat(format);
+}
+
+void TwoSidedDiffWidget::recalcHighlighting()
+{
+  for(QTextBlock block: visibleBlocks(DiffSide::LEFT)) {
+    if(block.userData() == nullptr) {
+      setBlockBackground(block, DELETED_COLOR);
+    }
+  }
+
+  //common
+  for(QTextBlock block: (visibleBlocks(DiffSide::LEFT) + visibleBlocks(DiffSide::RIGHT))) {
+    if(block.userData() != nullptr) {
+      MatchPtr* matchPtr = static_cast<MatchPtr*>(block.userData());
+      shared_ptr<TextBlockLinkedOneToOneMatch> match = matchPtr->lock();
+      if(match != nullptr) {
+        const QTextBlock& leftLine = match->getBlock(DiffSide::LEFT);
+        const QTextBlock& rightLine = match->getBlock(DiffSide::RIGHT);
+        if(leftLine.text() != rightLine.text()) {
+          setBlockBackground(block, MODIFIED_LINE_COLOR);
+          diff_match_patch lineDiffer;
+          QList<Diff> lineDiff = lineDiffer.diff_main(leftLine.text(), rightLine.text());
+          int leftIdx = 0, rightIdx = 0;
+          for(Diff diff: lineDiff) {
+            QString diffText = diff.text;
+            switch(diff.operation) {
+              case DELETE:
+                VERIFY_EQ(leftLine.text().mid(leftIdx, diffText.size()), diffText);
+                setTextBackground(leftLine, leftIdx, diffText.size(), DELETED_COLOR);
+                leftIdx += diffText.size();
+                break;
+              case INSERT:
+                VERIFY_EQ(rightLine.text().mid(rightIdx, diffText.size()), diffText);
+                setTextBackground(rightLine, rightIdx, diffText.size(), NEW_COLOR);
+                rightIdx += diffText.size();
+                break;
+              case EQUAL:
+                VERIFY_EQ(leftLine.text().mid(leftIdx, diffText.size()), diffText);
+                VERIFY_EQ(rightLine.text().mid(rightIdx, diffText.size()), diffText);
+                setTextBackground(leftLine, leftIdx, diffText.size(), NORMAL_LINE_COLOR);
+                setTextBackground(rightLine, rightIdx, diffText.size(), NORMAL_LINE_COLOR);
+                leftIdx += diffText.size();
+                rightIdx += diffText.size();
+                break;
+            }
+          }
+        } else {
+          setBlockBackground(block, NORMAL_LINE_COLOR);
+        }
+      }
+    }
+  }
+
+  for(QTextBlock block: visibleBlocks(DiffSide::RIGHT)) {
+    if(block.userData() == nullptr) {
+      setBlockBackground(block, NEW_COLOR);
+    }
+  }
+}
+
+TwoSidedDiffWidget::TwoSidedDiffWidget()
+{
+  //TODO this is quite dangerous and relies on the fact that the painter is in the same object
+  //so we can be sure (I hope) that there will be no call of this function when the object is destroyed
+  //TODO this doesn't show half lines
+  setDrawer([this](QPainter& painter) {
+    set<QTextBlock> leftBlocks = toSet(visibleBlocks(DiffSide::LEFT));
+    set<QTextBlock> rightBlocks = toSet(visibleBlocks(DiffSide::RIGHT));
+    for(QTextBlock block: leftBlocks + rightBlocks) {
+      if(block.userData() != nullptr) {
+        MatchPtr* matchPtr = static_cast<MatchPtr*>(block.userData());
+        shared_ptr<TextBlockLinkedOneToOneMatch> match = matchPtr->lock();
+        if(match != nullptr) {
+          const QTextBlock& leftLine = match->getBlock(DiffSide::LEFT);
+          const QTextBlock& rightLine = match->getBlock(DiffSide::RIGHT);
+          if(leftBlocks.count(leftLine) == 1 || rightBlocks.count(rightLine) == 1) {
+            //draw matching line
+            int splitterPosLC = getSplitterPosLC();
+            const int MARGIN_WIDTH = 20; //TODO make config or whatever
+            QRect leftRect = getLinePositionInLC(leftLine, DiffSide::LEFT);
+            QRect rightRect = getLinePositionInLC(rightLine, DiffSide::RIGHT);
+            int leftY = leftRect.top() + leftRect.height()/2;
+            int rightY = rightRect.top() + rightRect.height()/2;
+            painter.drawLine(QLine(splitterPosLC - MARGIN_WIDTH, leftY, splitterPosLC + MARGIN_WIDTH, rightY));
+          }
+        } else {
+          block.setUserData(nullptr); //to lessen the effect of the "memory leak" -> the weak_ptrs won't allow that memory to be freed
+        }
+      }
+    }
+  });
+
+  connect(this, &TwoSidedDiffWidget::scrollBarChanged, this, &TwoSidedDiffWidget::recalcHighlighting); //TODO having this always slows down scrolling
+  connect(this, &TwoSidedDiffWidget::textChanged, this, &TwoSidedDiffWidget::recalcHighlighting);
+
+}
+
+
+void TwoSidedDiffWidget::setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment)
+{
+  setText(DiffSide::LEFT, computedOrLoadedAlignment.leftText());
+  setText(DiffSide::RIGHT, computedOrLoadedAlignment.rightText());
+  for(const OneToOneMatch& match: computedOrLoadedAlignment.matches()) {
+    addManualAlignment(match.mLeft, match.mRight, false);
+  }
+  recalcHighlighting();
+}
+
+OneToOneAlignment TwoSidedDiffWidget::alignment() const
+{
+  vector<OneToOneMatch> matches;
+  QString leftText = getText(DiffSide::LEFT);
+  QString rightText = getText(DiffSide::RIGHT);
+
+  for(const QTextBlock& leftBlock: blocks(DiffSide::LEFT)) {
+    if(leftBlock.userData() != nullptr) {
+      shared_ptr<TextBlockLinkedOneToOneMatch> matchInfo = static_cast<MatchPtr*>(leftBlock.userData())->lock();
+      if(matchInfo) {
+        int left = matchInfo->getBlock(DiffSide::LEFT).blockNumber();
+        VERIFY(left == leftBlock.blockNumber());
+        int right = matchInfo->getBlock(DiffSide::RIGHT).blockNumber();
+        matches.push_back(OneToOneMatch(leftText, rightText, left, right));
+      }
+    }
+  }
+  return OneToOneAlignment::fromTrusted(matches, leftText, rightText);
+}
+
+void TwoSidedDiffWidget::addManualAlignment(int aLeftLine, int aRightLine, bool recalcHighlight)
+{
+  logger.info(QString().sprintf("Adding manual alignment: %d - %d", aLeftLine, aRightLine));
+  QTextBlock leftBlock = getLine(DiffSide::LEFT, aLeftLine);
+  QTextBlock rightBlock = getLine(DiffSide::RIGHT, aRightLine);
+  weak_ptr<TextBlockLinkedOneToOneMatch> match = TextBlockLinkedOneToOneMatch::create(leftBlock, rightBlock);
+  leftBlock.setUserData(new MatchPtr(leftBlock, match));
+  rightBlock.setUserData(new MatchPtr(rightBlock, match));
+  if(recalcHighlight) recalcHighlighting();
+}

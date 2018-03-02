@@ -1,0 +1,15 @@
+syntax: glob
+build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/
+build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug
+build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/
+src/ContextBasedGeneralDiffer.pro.user.55e15ad
+test/Tests.pro.user
+build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/
+test/Tests.pro.user.55e15ad
+out/
+coverage.info
+cov_output/
+src/ContextBasedGeneralDiffer.pro.user
+extractor/build-Extractor-Desktop_Qt_5_4_1_GCC_64bit-Debug
+extractor/Extractor.pro.user
+features_output/

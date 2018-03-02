@@ -1,0 +1,13 @@
+#ifndef ABOVEBELOWLINECOUNT_H
+#define ABOVEBELOWLINECOUNT_H
+#include "abovebelowsidedfeature.h"
+
+class AboveBelowLineCount: public AboveBelowSidedFeature
+{
+public:
+  AboveBelowLineCount(Dir dir, DiffSide side);
+  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;
+
+};
+
+#endif // ABOVEBELOWLINECOUNT_H

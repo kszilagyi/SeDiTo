@@ -1,0 +1,190 @@
+#include "mlpipeline.h"
+#include "mix/diffside.h"
+#include "aligner/learning/featureextractor.h"
+#include "mix/qstringutils.h"
+#include "aligner/nonlearning/nonlearningaligner.h"
+#include "featureextractor.h"
+#include "features/abovebelowlinecount.h"
+#include "features/equalcharcount.h"
+#include "features/hardmatchesnear.h"
+#include "features/trivialfeatures.h"
+#include "mix/setoperations.h"
+#include "3rdparty/libsvm/svm.h"
+#include "mix/make_unique.h"
+#include "mix/func/zipper.h"
+#include <QFile>
+#include <QTextStream>
+
+static Logger logger("MLPipeline");
+
+MLSample::MLSample(const std::unordered_map<QString, double> &features, bool same)
+: mFeatures(features)
+, mSame(same)
+{
+}
+
+vector<unique_ptr<Feature>> createFeatureVector() {
+  //we need this ultra stupid function because of the mega dumb c++ because it can't handle fucking unique_ptrs with init lists
+  vector<unique_ptr<Feature>> features;
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::UP, DiffSide::LEFT));
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::DOWN, DiffSide::LEFT));
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::UP, DiffSide::RIGHT));
+  features.emplace_back(make_unique<AboveBelowLineCount>(AboveBelowFeature::Dir::DOWN, DiffSide::RIGHT));
+  features.emplace_back(make_unique<EqualCharCount>());
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::UP, 1));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::UP, 5));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::UP, 10));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::DOWN, 1));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::DOWN, 5));
+  features.emplace_back(make_unique<HardMatchesNear>(AboveBelowFeature::Dir::DOWN, 10));
+  features.emplace_back(make_unique<LineLength>(DiffSide::LEFT));
+  features.emplace_back(make_unique<LineLength>(DiffSide::RIGHT));
+  return features;
+}
+
+const FeatureExtractor MLPipeline::standardExtractor(createFeatureVector());
+
+
+vector<MLSample> MLPipeline::extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor &extractor, const OneToOneAlignment &reference)
+{
+  OneToOneAlignment nonLearnedAlignment = NonLearningAligner::compute(left, right);
+  vector<MLSample> result;
+  for(int leftIdx = 0; leftIdx < nonLearnedAlignment.lines(DiffSide::LEFT).size(); ++leftIdx) {
+    for(int rightIdx = 0; rightIdx < nonLearnedAlignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {
+      if(nonLearnedAlignment.containsEither(LinePair(leftIdx, rightIdx)) == false) {
+        bool isSame = reference.contains(LinePair(leftIdx, rightIdx));
+        result.push_back(MLSample(extractor.computeFeatures(nonLearnedAlignment, leftIdx, rightIdx), isSame));
+      }
+    }
+  }
+  return result;
+}
+
+QString toStr(const vector<MLSample>& samples, const vector<QString>& orderedFeatureNames)
+{
+  if(samples.size() == 0) return "";
+  QString endLine = "\n";
+  //QString header = headerStrings.join(separator);
+  QString result = /*header + endLine*/ "";
+  for(const MLSample& sample: samples) {
+    result += QString::number(sample.mSame ? 1 : -1) + " ";
+    int columnIdx = 1;
+    for(const QString& column: orderedFeatureNames) {
+      double value = sample.mFeatures.at(column);
+      result += QString::number(columnIdx) + ":" + QString::number(value) + " ";
+      ++columnIdx;
+    }
+    result += endLine;
+  }
+  return result;
+}
+
+vector<LinePair> MLPipeline::withoutInconsistencies(const vector<LinePair>& learnedMatches)
+{
+  vector<LinePair> wrongs;
+  unordered_map<int, LinePair> leftUsed; //value is the original pairing
+  unordered_map<int, LinePair> rightUsed;
+  for(const LinePair& match: learnedMatches) {
+    if(leftUsed.count(match.mLeftIdx) != 0) {
+      logger.warn(QString("Already used left line: ") + QString::number(match.mLeftIdx) + ". Current match: " + toStr(leftUsed.at(match.mLeftIdx)));
+      wrongs.push_back(leftUsed.at(match.mLeftIdx));
+      wrongs.push_back(match);
+      continue;
+    }
+
+    if(rightUsed.count(match.mRightIdx) != 0) {
+      logger.warn(QString("Already used right line: ") + QString::number(match.mRightIdx) + ". Current match: " + toStr(rightUsed.at(match.mRightIdx)));
+      wrongs.push_back(rightUsed.at(match.mRightIdx));
+      wrongs.push_back(match);
+      continue;
+    }
+    leftUsed.insert(std::make_pair(match.mLeftIdx, match));
+    rightUsed.insert(std::make_pair(match.mRightIdx, match));
+  }
+
+  return learnedMatches - wrongs;
+}
+
+/*
+ * Adapted from svm_scale
+ */
+double MLPipeline::singleScale(double value, double featureMin, double featureMax)
+{
+  static const double lower = -1.0;
+  static const double upper = 1.0;
+  static const double epsilon = 0.0001;
+  /* skip single-valued attribute */
+  if(featureMax - epsilon < featureMin && featureMin < featureMax + epsilon)
+    FAIL("invalid range");
+
+  VERIFY(featureMin < featureMax);
+
+  return lower + (upper-lower) *
+    (value-featureMin)/
+    (featureMax-featureMin);
+}
+
+vector<svm_node> MLPipeline::scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& ranges) {
+  return map(zip(sample, ranges), [](const std::pair<svm_node, FeatureRange> featureWithRange) {
+    return svm_node{featureWithRange.first.index, singleScale(featureWithRange.first.value, featureWithRange.second.mLow, featureWithRange.second.mHigh)};
+  });
+}
+
+OneToOneAlignment MLPipeline::computeAlignment(const QString &leftText, const QString &rightText, const FeatureExtractor &extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges)
+{
+  OneToOneAlignment nonLearnedAlignment = NonLearningAligner::compute(leftText, rightText);
+  vector<LinePair> learnedMatches;
+  for(int leftIdx = 0; leftIdx < nonLearnedAlignment.lines(DiffSide::LEFT).size(); ++leftIdx) {
+    for(int rightIdx = 0; rightIdx < nonLearnedAlignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {
+      if(nonLearnedAlignment.containsEither(LinePair(leftIdx, rightIdx)) == false) {
+        std::unordered_map<QString, double> features = extractor.computeFeatures(nonLearnedAlignment, leftIdx, rightIdx);
+        vector<svm_node> nodes;
+        int columnIdx = 1;
+        for(const QString& column: extractor.orderedNames()) {
+          double value = features.at(column);
+          nodes.push_back(svm_node{columnIdx, value});
+          ++columnIdx;
+        }
+
+        vector<svm_node> scaledNodes = scaleNodes(nodes, ranges);
+
+        scaledNodes.push_back(svm_node{-1, -1.0});//ending node
+
+        double result = svm_predict(model.get(), &(scaledNodes.at(0)));
+        if(result > 0) { //==1
+          learnedMatches.push_back(LinePair(leftIdx, rightIdx));
+        }
+      }
+    }
+  }
+
+  return OneToOneAlignment::fromInts(withoutInconsistencies(learnedMatches) + nonLearnedAlignment.matches(), leftText, rightText);
+}
+
+
+void SVMModelDeleter::operator()(svm_model *ptr)
+{
+  svm_free_and_destroy_model(&ptr);
+}
+
+
+vector<FeatureRange> MLPipeline::loadRanges(const QString& path)
+{
+  logger.info("Trying to open: " + path);
+  //I assume the features ordered in the right way from 1..x
+  QFile file(path);
+  VERIFY(file.exists());
+  VERIFY(file.open(QIODevice::ReadOnly));
+
+  QTextStream in(&file);
+  vector<FeatureRange> ranges;
+  while(!in.atEnd()) {
+    QString line = in.readLine();
+    QStringList fields = line.split(" ");
+    if(fields.size() == 3) {
+      ranges.push_back(FeatureRange{safeToDouble(fields.at(1)), safeToDouble(fields.at(2))});
+    }
+  }
+  VERIFY(ranges.size() > 0);
+  return ranges;
+}

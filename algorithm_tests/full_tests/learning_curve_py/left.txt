@@ -1,0 +1,62 @@
+# -*- coding: utf-8 -*-
+from svm_helper import *
+import sys
+sys.path.insert(0, './../lib')
+from svmutil import *
+import pylab as pl
+import random
+from utils import *
+
+def main():
+
+    with open('cross_vaildation_result.txt', 'r') as f:
+        c_exp = int(f.readline())
+        g_exp = int(f.readline())
+        
+    print("c_exp: " + str(c_exp))
+    print("g_exp: " + str(g_exp))
+    training_file = "../../features_output/train_samples.txt"
+    test_file = "../../features_output/test_samples.txt"
+    y_train, x_train = svm_read_problem(training_file)
+    y_test, x_test = svm_read_problem(test_file)
+    
+    ranges = find_min_max(x_train)
+    x_train = scale_input(x_train, ranges)
+    x_test = scale_input(x_test, ranges)
+    
+    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))
+    x_test, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_test))
+    max_idx = max(idxs)
+    print("Number of train samples: " + str(len(y_train)))
+    print("Number of test samples: " + str(len(y_test)))
+    
+    number_of_data_points = 40
+    train_sizes = []
+    f_trains = []
+    f_tests = []
+    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):
+        y_train_reduced = y_train[:train_len]
+        x_train_reduced = x_train[:train_len]
+        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)
+        train_prediction = predict(model, x_train_reduced)
+        f_train = f_score_from_data(train_prediction, y_train_reduced)
+        test_prediction = predict(model, x_test)
+        f_test = f_score_from_data(test_prediction, y_test)
+        print("num of train: " + str(train_len))
+        print("f_train: " + str(f_train))
+        print("f_valid: " + str(f_test))
+        print("")
+        train_sizes.append(train_len)
+        f_trains.append(f_train)
+        f_tests.append(f_test)
+        
+    print("plotting")
+    pl.plot(train_sizes, f_trains, color="red")
+    pl.plot(train_sizes, f_tests, color="blue")
+    print("plotted")
+    pl.show()
+        
+
+
+main()    
+        

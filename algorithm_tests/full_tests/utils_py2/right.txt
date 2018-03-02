@@ -1,0 +1,100 @@
+# -*- coding: utf-8 -*-
+import functools
+
+def dict_map(row1, row2, fun):
+    assert row1.keys() == row2.keys()
+    res = {}
+    for idx in row1.keys():
+        res[idx] = fun(row1[idx], row2[idx])
+        
+    return res
+    
+def zip_dicts(dict1, dict2):
+    assert dict1.keys() == dict2.keys()
+    res = {}
+    for idx in dict1.keys():
+        res[idx] = (dict1[idx], dict2[idx]) 
+    return res
+        
+def find_min_max(x):
+    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)
+    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)
+    return zip_dicts(minValues, maxValues)
+    
+def save_range_file(filename, ranges):
+    with open(filename, 'w') as f:
+        f.write("x\n")
+        f.write("-1 1\n")
+        for idx in ranges.keys():
+            f.write(str(idx) + " " + str(ranges[idx][0]) + " " + str(ranges[idx][1]) + "\n")
+            
+        f.write("\n")
+
+def scaleRow(row, range_dict): 
+    assert len(row) == len(range_dict), str(len(row)) + "!=" + str(len(range_dict))
+    res = {}
+    for idx in row.keys():
+        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])
+    
+    return res
+    
+def scale_input(x, range_dict):
+    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))
+    return scaled_input
+    
+def single_scale(value, featureMin, featureMax):
+    lower = -1.0
+    upper = 1.0
+    epsilon = 0.0001
+    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:
+        assert False, "invalid range"
+    
+    assert featureMin < featureMax;
+    
+    return (lower + (upper-lower) *
+        (value-featureMin)/
+        (featureMax-featureMin))
+        
+def calc_false_pos(calc_y, ref_y):
+    assert len(calc_y) == len(ref_y)
+    calcAndRef= list(zip(calc_y, ref_y))
+    return sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in calcAndRef)
+    
+def calc_true_pos(calc_y, ref_y):
+    assert len(calc_y) == len(ref_y)
+    calcAndRef= list(zip(calc_y, ref_y))
+    return sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in calcAndRef)
+    
+def calc_actual_positives(ref_y):
+    return sum(1 if elem > 0 else 0 for elem in ref_y)
+   
+def calc_precision(false_pos, true_pos):
+    precision = float('nan')
+    if false_pos + true_pos != 0:
+        precision = true_pos/(false_pos + true_pos)
+    return precision
+    
+def precision_from_data(calc_y, ref_y):
+    false_pos = calc_false_pos(calc_y, ref_y)
+    true_pos = calc_true_pos(calc_y, ref_y)
+    return calc_precision(false_pos, true_pos)
+                
+def calc_recall(true_pos, actual_positives):
+    assert actual_positives >= true_pos
+    if actual_positives == 0: return float("NaN")
+    else: return true_pos/actual_positives
+    
+def calc_f_score(precision, recall):
+    if precision + recall == 0: return float("NaN")
+    else: return 2*precision*recall/(precision + recall)
+               
+def recall_from_data(calc_y, ref_y):
+    true_pos = calc_true_pos(calc_y, ref_y)
+    actual_pos = calc_actual_positives(ref_y)
+    return calc_recall(true_pos, actual_pos)
+    
+def f_score_from_data(calc_y, ref_y):
+    fp = calc_false_pos(calc_y, ref_y)
+    tp = calc_true_pos(calc_y, ref_y)
+    ap = calc_actual_positives(ref_y)
+    return calc_f_score(calc_precision(fp, tp), calc_recall(tp, ap))

@@ -1,0 +1,68 @@
+# -*- coding: utf-8 -*-
+from svm_helper import *
+import sys
+sys.path.insert(0, './../lib')
+from svmutil import *
+import pylab as pl
+import random
+from utils import *
+
+def main():
+
+    with open('cross_vaildation_result.txt', 'r') as f:
+        c_exp = int(f.readline())
+        g_exp = int(f.readline())
+        
+    print("c_exp: " + str(c_exp))
+    print("g_exp: " + str(g_exp))
+    training_file = "../../features_output/train_samples.txt"
+    y, x = svm_read_problem(training_file)
+    
+    ranges = find_min_max(x)
+    x = scale_input(x, ranges)
+    
+    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))
+    max_idx = max(idxs)
+    print("Number of samples: " + str(len(y)))
+    
+    yx = list(zip(y, x))
+    random.shuffle(yx)
+    validation_ratio = 0.20
+    val_len = int(len(y)*validation_ratio)
+
+    all_len = len(yx)
+    validation_yx = yx[all_len - val_len:]
+    #print("val_len" + str(len(validation_yx)))
+    y_val, x_val = zip(*validation_yx)
+    
+    number_of_data_points = 40
+    train_sizes = []
+    f_trains = []
+    f_vals = []
+    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):
+        train_yx = yx[:train_len]
+        assert len(train_yx) + len(validation_yx) <= all_len
+        y_train, x_train = zip(*train_yx)
+        model = train(y_train, x_train, c_exp, g_exp, max_idx)
+        train_prediction = predict(model, x_train)
+        f_train = f_score_from_data(train_prediction, y_train)
+        valid_prediction = predict(model, x_val)
+        f_val = f_score_from_data(valid_prediction, y_val)
+        print("num of train: " + str(train_len))
+        print("f_train: " + str(f_train))
+        print("f_valid: " + str(f_val))
+        print("")
+        train_sizes.append(train_len)
+        f_trains.append(f_train)
+        f_vals.append(f_val)
+        
+    print("plotting")
+    pl.plot(train_sizes, f_trains, color="red")
+    pl.plot(train_sizes, f_vals, color="blue")
+    print("plotted")
+    pl.show()
+        
+
+
+main()    
+        

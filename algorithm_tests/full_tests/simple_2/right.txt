@@ -1,0 +1,69 @@
+#include <QString>
+#include <QtTest>
+#include "functional/flatmaptests.h"
+#include "functional/maptests.h"
+#include "functional/sorttests.h"
+#include "functional/filtertests.h"
+#include "functional/uniqueoremptytests.h"
+#include "eithertest.h"
+#include "verifytest.h"
+#include "nonlearningalignertest.h"
+#include "numberutilstest.h"
+#include <iostream>
+#include <memory>
+#include "../src/mix/exceptionhandler.h"
+#include "../src/mix/make_unique.h"
+#include "safenumericoperationstest.h"
+#include "hardmatchesneartest.h"
+#include "abovebelowlinecnttest.h"
+#include "equalcharcounttest.h"
+#include "onetoonealignmenttest.h"
+
+class TestExecutor {
+  std::vector<std::unique_ptr<QObject>> tests;
+public:
+  void add(std::unique_ptr<QObject> test) {
+    tests.emplace_back(std::move(test));
+  }
+  void exec() {
+    for(const std::unique_ptr<QObject>& test: tests) {
+      if(QTest::qExec(test.get()) != 0) {
+        std::cout << "Test execution aborted" << std::endl;
+        return;
+      }
+    }
+  }
+};
+
+void runTests() {
+  TestExecutor executor;
+  executor.add(make_unique<FlatMapTests>());
+  executor.add(make_unique<MapTests>());
+  executor.add(make_unique<SortTests>());
+  executor.add(make_unique<FilterTests>());
+  executor.add(make_unique<FlatMapTests>());
+  executor.add(make_unique<UniqueOrEmptyTests>());
+  executor.add(make_unique<EitherTest>());
+  executor.add(make_unique<VerifyTest>());
+  executor.add(make_unique<NonLearningAlignerTest>());
+  executor.add(make_unique<NumberUtilsTest>());
+  executor.add(make_unique<SafeNumericOperationsTest>());
+  executor.add(make_unique<HardMatchesNearTest>());
+  executor.add(make_unique<AboveBelowLineCntTest>());
+  executor.add(make_unique<EqualCharCountTest>());
+  executor.add(make_unique<OneToOneAlignmentTest>());
+  executor.exec();
+}
+
+int main(int, char**) {
+  try {
+    initExceptionHandler();
+    runTests();
+    return 0;
+  } catch(std::exception& e) {
+    //TODO logging
+    std::cout << "exception happened:" << e.what() << std::endl;
+  } catch(...) {
+    std::cout << "exception happened:" << std::endl;
+  }
+}

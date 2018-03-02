@@ -1,0 +1,31 @@
+#include "textblocklinkedonetoonematch.h"
+#include "mix/asserts.h"
+#include "gui/mix/diffside.h"
+
+
+void TextBlockLinkedOneToOneMatch::removeTextBlock(const QTextBlock &blockToRemove)
+{
+  if(leftBlock == blockToRemove || rightBlock == blockToRemove) {
+    VERIFY(thisGuard.use_count() == 2, QString().sprintf("size == %ld", thisGuard.use_count()));//two because this and the weak ptr which called this function
+    thisGuard.reset();
+  }
+}
+
+weak_ptr<TextBlockLinkedOneToOneMatch> TextBlockLinkedOneToOneMatch::create(const QTextBlock& left, const QTextBlock& right)
+{
+  TextBlockLinkedOneToOneMatch* obj = new TextBlockLinkedOneToOneMatch(left, right);
+  return obj->thisGuard;
+}
+
+QTextBlock TextBlockLinkedOneToOneMatch::getBlock(DiffSide side) const
+{
+  return side == DiffSide::LEFT ? leftBlock : rightBlock;
+}
+
+TextBlockLinkedOneToOneMatch::TextBlockLinkedOneToOneMatch(const QTextBlock &left, const QTextBlock &right)
+: leftBlock{left}
+, rightBlock{right}
+, thisGuard(this)
+{
+}
+

@@ -1,0 +1,92 @@
+#!/usr/bin/env python3.4
+
+import sys
+import os
+from subprocess import *
+import svm
+from svmutil import *
+import numpy
+import functools
+
+def custom_scale(value, featureMin, featureMax):
+    lower = -1.0
+    upper = 1.0
+    epsilon = 0.0001
+    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:
+        assert false, "invalid range"
+    
+    assert featureMin < featureMax;
+    
+    return (lower + (upper-lower) *
+        (value-featureMin)/
+        (featureMax-featureMin))
+
+def scaleRow(row, mins, maxs): 
+    assert len(row) == len(mins) and len(mins) == len(maxs)
+    valMinMax = zip(row, mins, maxs)
+    return map(lambda vMM: custom_scale(vMM[0], vMM[1], vMM[2]), valMinMax)
+    
+#def read_ranges(path):
+    
+
+##def scale_input(x, mins, maxs):
+ #   return map(lambda row: scaleRow(row, mins, maxs), x)
+    
+def get_immediate_subdirectories(a_dir):
+    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]
+       
+#dirs = get_immediate_subdirectories('../features_output/')
+def test_files(file_list_file):
+    with open(file_list_file) as f:
+        dirs = f.read().strip("[]\n").split(", ")
+    n_sum = 0
+    false_neg_sum = 0
+    false_pos_sum = 0
+    all_ref_neg_sum = 0
+    all_ref_pos_sum = 0
+    true_pos_sum = 0
+    for dir in dirs:
+        print("Testing:" + dir)
+        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')
+        if len(ref_y) > 0:
+            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)
+            #testing scale method
+            #TODO this doesn't work, i acn't siwtch off auto scaling
+            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)
+           # assert scaled_predict_y == calc_y
+            #assert p_acc == scaled_p_acc
+            assert len(calc_y) == len(ref_y)
+            zipped = zip(calc_y, ref_y)
+            false_neg = sum(1 if elem[0] < 0 and elem[1] > 0 else 0 for elem in zipped)
+            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)
+            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)
+            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)
+            all_ref_pos = sum(1 if elem > 0 else 0 for elem in ref_y)
+            false_neg_sum += false_neg
+            false_pos_sum += false_pos
+            true_pos_sum += true_pos
+
+            all_ref_neg_sum += all_ref_neg
+            all_ref_pos_sum += all_ref_pos
+            n_sum += len(calc_y)
+            print("Sample count:" + str(len(calc_y)))
+            print("All ref neg: " + str(all_ref_neg))
+            print("All ref pos: " + str(all_ref_pos))
+            print("False positive rate: " + ("no negs" if all_ref_neg == 0 else str(false_pos/all_ref_neg)))
+            print("False negative rate: " + str(false_neg/all_ref_pos))
+            print("Precision: " + str(true_pos/(false_pos + true_pos)))
+
+    print("Summary: ")
+    print("Sample count:" + str(n_sum))
+    print("False positive rate: " + ("no negs" if all_ref_neg == 0 else str(false_pos_sum/all_ref_neg_sum)))
+    print("False negative rate: " + str(false_neg_sum/all_ref_pos_sum))
+
+    
+            
+model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')
+print('Running tests on test data')
+test_files('../features_output/testing_files.txt')
+print("")
+print('Running tests on training data')
+test_files('../features_output/training_files.txt')
+    

@@ -1,0 +1,16 @@
+#ifndef EQUALCHARCOUNT_H
+#define EQUALCHARCOUNT_H
+#include "aligner/learning/features/feature.h"
+
+
+class EqualCharCount: public Feature
+{
+public:
+  EqualCharCount(): Feature(){}
+  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;
+
+public:
+  virtual QString name() const override { return "EqualCharCount"; }
+};
+
+#endif

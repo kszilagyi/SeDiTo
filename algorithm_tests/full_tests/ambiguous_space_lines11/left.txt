@@ -1,0 +1,55 @@
+#ifndef SETOPERATIONS_H
+#define SETOPERATIONS_H
+#include <set>
+#include <list>
+#include <algorithm>
+#include <map>
+#include <unordered_set>
+#include "mix/functional.h"
+#include "mix/collectionutils.h"
+
+using std::set;
+using std::unordered_set;
+using std::list;
+
+template<class K, class V, class... Args>
+set<K> keySet(const std::map<K, V, Args...> m) {
+  return toSet(map(m, [](const std::pair<K, V> p) { return p.first; }));
+}
+
+template<class K, class V, class... Args>
+unordered_set<K> keyUSet(const std::map<K, V, Args...> m) {
+  return toUSet(map(m, [](const std::pair<K, V> p) { return p.first; }));
+}
+
+template<class T, class... Args>
+unordered_set<T> intersect(const set<T, Args...>& left, const set<T, Args...>& right) {
+  unordered_set<T> result;
+  std::set_intersection(left.begin(), left.end(), right.begin(), right.end(), std::inserter(result, result.begin()));
+  return result;
+}
+
+template<template<class, class...> class C, class T, class... Args>
+set<T> toSet(const C<T, Args...>& c) {
+  return set<T>(c.begin(), c.end());
+}
+
+template<template<class, class...> class C, class T, class... Args>
+unordered_set<T> toUSet(const C<T, Args...>& c) {
+  return unordered_set<T>(c.begin(), c.end());
+}
+
+template<template<class, class...> class C, class T, class... Args>
+list<T> toList(const C<T, Args...>& c) {
+  return list<T>(c.begin(), c.end());
+}
+
+template<class T>
+set<T> operator+(const set<T>& left, const set<T>& right) {
+  set<T> result = left;
+  addAll(result, right);
+  return result;
+}
+
+#endif // SETOPERATIONS_H
+

@@ -1,0 +1,19 @@
+#ifndef FEATUREEXTRACTOR_H
+#define FEATUREEXTRACTOR_H
+#include <vector>
+#include <unordered_map>
+#include <memory>
+#include "aligner/onetoonealignment.h"
+#include "aligner/learning/features/feature.h"
+
+using std::vector;
+
+class FeatureExtractor
+{
+  const vector<unique_ptr<Feature>> mFeatures;
+public:
+  FeatureExtractor(vector<unique_ptr<Feature>> features);
+  std::unordered_map<QString, float> computeFeatures(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const;
+};
+
+#endif // FEATUREEXTRACTOR_H

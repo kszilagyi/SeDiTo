@@ -1,0 +1,98 @@
+#include "mix/either.h"
+#include "mix/displayableerror.h"
+
+#include "onetoonealignment.h"
+#include "../mix/functional.h"
+#include "../mix/asserts.h"
+#include "mix/logger/logger.h"
+#include <unordered_set>
+#include "mix/setoperations.h"
+#include "mix/diffside.h"
+#include "mix/lineutils.h"
+
+using std::unordered_set;
+using std::vector;
+
+OneToOneAlignment::OneToOneAlignment(const vector<OneToOneMatch>& aMatches, const QString& aLeftText, const QString& aRightText)
+: mMatches(aMatches)
+, mLeftText(aLeftText)
+, mRightText(aRightText)
+, mLeftLines(LineUtils::toLines(aLeftText))
+, mRightLines(LineUtils::toLines(aRightText))
+{
+}
+
+const QString &OneToOneAlignment::leftLine(int i) const
+{
+  return mLeftLines.at(i);
+}
+
+const QString &OneToOneAlignment::rightLine(int i) const
+{
+  return mRightLines.at(i);
+}
+
+const QString &OneToOneAlignment::line(DiffSide side, int i) const
+{
+  return side == DiffSide::LEFT ? leftLine(i) : rightLine(i);
+}
+
+const QStringList& OneToOneAlignment::lines(DiffSide side) const
+{
+  return side == DiffSide::LEFT ? mLeftLines : mRightLines;
+}
+
+bool OneToOneAlignment::operator==(const OneToOneAlignment &other) const
+{
+  return mLeftText == other.mLeftText && mRightText == other.mRightText &&
+      toUSet(mMatches) == toUSet(other.mMatches);
+}
+
+OneToOneAlignment OneToOneAlignment::fromInts(const vector<std::pair<int, int> >& matches, const QString &leftText, const QString &rightText)
+{
+  auto boxedMatches = map(matches, [&leftText, &rightText](const std::pair<int, int>& m) { return OneToOneMatch(leftText, rightText, m.first, m.second);});
+  return fromTrusted(boxedMatches, leftText, rightText);
+}
+
+Either<DisplayableError, OneToOneAlignment> OneToOneAlignment::fromUntrusted(const vector<OneToOneMatch> &aMatches, const QString &leftText, const QString &rightText)
+{
+  vector<int> lefts = map(aMatches, [](const OneToOneMatch& match) {
+    return match.mLeft;
+  });
+  if(isUniqueOrEmpty(lefts) == false)
+    return displayableErrorLeft("left side is not unique or empty");
+
+
+  vector<int> rights = map(aMatches, [](const OneToOneMatch& match) {
+    return match.mRight;
+  });
+  if(isUniqueOrEmpty(rights) == false)
+    return displayableErrorLeft("right side is not unique or empty");
+
+  if(forall( map(aMatches, [](const OneToOneMatch& match) { return match.mLeftText; } ),
+                [leftText](const QString& leftMatchText) { return leftText == leftMatchText; }) == false)
+    return displayableErrorLeft("text on left is not not conclusive");
+
+  if(forall( map(aMatches, [](const OneToOneMatch& match) { return match.mRightText; } ),
+                [rightText](const QString& rightMatchText) { return rightText == rightMatchText; }) == false)
+    return displayableErrorLeft("text on right is not not conclusive");
+
+  return makeRight(OneToOneAlignment(aMatches, leftText, rightText));
+}
+
+OneToOneAlignment OneToOneAlignment::empty()
+{
+  return fromTrusted({}, "", "");
+}
+
+OneToOneAlignment OneToOneAlignment::fromTrusted(const vector<OneToOneMatch> &aMatches, const QString &leftText, const QString &rightText)
+{
+  Either<DisplayableError, OneToOneAlignment> checked = fromUntrusted(aMatches, leftText, rightText);
+  if (checked.isLeft()) {
+    FAIL(checked.left().mMsg);
+  } else {
+    return checked.right();
+  }
+}
+
+

@@ -1,0 +1,24 @@
+#include "onetoonematch.h"
+#include "../mix/asserts.h"
+#include "mix/lineutils.h"
+#include <QStringList>
+
+OneToOneMatch::OneToOneMatch(const QString& leftText, const QString& rightText, int left, int right)
+: mLeftText(leftText)
+, mRightText(rightText)
+, mLeft(left)
+, mRight(right)
+{
+  VERIFY(left >= 0 && left < LineUtils::toLines(leftText).size());
+  VERIFY(right >= 0 && right < LineUtils::toLines(rightText).size());
+}
+
+QString OneToOneMatch::toString() const
+{
+  return QString::number(mLeft) + ", " + QString::number(mRight);
+}
+
+bool OneToOneMatch::operator==(const OneToOneMatch &other) const
+{
+  return mLeft == other.mLeft && mRight == other.mRight && mLeftText == other.mLeftText && mRightText == other.mRightText;
+}

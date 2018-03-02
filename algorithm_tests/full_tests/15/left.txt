@@ -1,0 +1,165 @@
+#include <QScrollBar>
+#include <QPainter>
+#include <QTextBlock>
+#include <QAbstractTextDocumentLayout>
+#include <QMenu>
+#include <QAction>
+#include <utility>
+#include <boost/optional.hpp>
+
+#include "codeeditor.h"
+#include "../mix/qactionwithposition.h"
+#include "mix/functional.h"
+
+//code adapted from http://qt-project.org/doc/qt-4.8/widgets-codeeditor.html
+
+CodeEditor::CodeEditor(QWidget* aParent)
+: QTextEdit(aParent)
+, lineNumberArea(*this)
+{
+  logger.info("CodeEditor::CodeEditor");
+
+  connect(document(), SIGNAL(blockCountChanged(int)), this, SLOT(updateLineNumberAreaWidth()));
+  connect(document()->documentLayout(), SIGNAL(update(QRectF)), this, SLOT(updateLineNumberArea(QRectF)));
+  connect(verticalScrollBar(), SIGNAL(valueChanged(int)), &lineNumberArea, SLOT(update()));
+  connect(verticalScrollBar(), SIGNAL(valueChanged(int)), this, SIGNAL(scrollBarChanged()));
+  this->setWordWrapMode(QTextOption::NoWrap);
+  updateLineNumberAreaWidth();
+  setAcceptRichText(false);
+  setContextMenuPolicy(Qt::CustomContextMenu);
+  connect(this, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(rightClicked(QPoint)));
+}
+
+int CodeEditor::lineNumberAreaWidth()
+{
+  int digits = 1;
+  int max = qMax(1, document()->blockCount());
+  while (max >= 10) {
+      max /= 10;
+      ++digits;
+  }
+  int space = 3 + fontMetrics().width(QLatin1Char('9')) * digits;
+  return space;
+}
+
+boost::optional<QRect> CodeEditor::getRectForLineLC(int lineNum) const
+{
+  std::unordered_map<int, QRect> line2LC = getVisibleLines2LC(rect());
+  if (line2LC.count(lineNum) != 0) {
+    return boost::optional<QRect>(line2LC.at(lineNum));
+  } else {
+    return boost::none;
+  }
+}
+
+QTextBlock CodeEditor::getLine(int line) const
+{
+  return document()->findBlockByLineNumber(line);
+}
+
+void CodeEditor::updateLineNumberAreaWidth()
+{
+  setViewportMargins(lineNumberAreaWidth(), 0, 0, 0);
+}
+
+void CodeEditor::updateLineNumberArea(const QRectF &updateRect)
+{
+  lineNumberArea.update(0, static_cast<int>(updateRect.y()), lineNumberArea.width(), static_cast<int>(updateRect.height()));
+  //this was in the original code I have no idea why
+  // if (updateRect.contains(viewport()->rect()))
+  //    updateLineNumberAreaWidth();
+}
+
+void CodeEditor::rightClicked(const QPoint &aPos)
+{
+  QMenu *menu = createStandardContextMenu();
+  QTextCursor clickedCursor = cursorForPosition(aPos);
+  int lineNum = clickedCursor.block().blockNumber();
+  //TODO make this text depending on the state
+  QActionWithPosition* setAlignmentAction = new QActionWithPosition("Set manual alignment", this, lineNum);
+  menu->addAction(setAlignmentAction);
+
+  connect(setAlignmentAction, SIGNAL(triggered(int)), this, SIGNAL(setManualAlignmentClicked(int)));
+  menu->popup(this->viewport()->mapToGlobal(aPos));
+}
+
+/**
+ *  Warning! no check is made if the block is belonging to this editor, be extremly careful
+ */
+QRect CodeEditor::getRectForTextBlockInLC(const QTextBlock& block) const
+{
+  return document()->documentLayout()->blockBoundingRect(block).translated(0, - verticalScrollBar()->value()).toRect();
+}
+
+vector<QTextBlock> CodeEditor::blocks() const
+{
+  vector<QTextBlock> allBlocks;
+  for (QTextBlock block = document()->begin(); block.isValid(); block = block.next()) {
+    allBlocks.push_back(block);
+  }
+  return allBlocks;
+}
+
+void CodeEditor::resizeEvent(QResizeEvent *e)
+{
+  QTextEdit::resizeEvent(e);
+  QRect cr = contentsRect();
+  lineNumberArea.setGeometry(QRect(cr.left(), cr.top(), lineNumberAreaWidth(), cr.height()));
+}
+
+
+std::unordered_map<int, QRect> CodeEditor::getVisibleLines2LC(const QRect& visibleAreaLC) const
+{
+  const auto& visBlocks = visibleBlocks(visibleAreaLC);
+  std::unordered_map<int, QRect> lines2CoordsResult = toMap(flatMap(visBlocks, [this, visibleAreaLC](const QTextBlock& block) {
+    int top = getRectForTextBlockInLC(block).top();
+    int bottom = top + getRectForTextBlockInLC(block).height();
+
+    if (block.isVisible() && bottom >= visibleAreaLC.top()) {
+      return vector<std::pair<int, QRect>>{std::make_pair(block.blockNumber(), getRectForTextBlockInLC(block))};
+    } else {
+      return vector<std::pair<int, QRect>>{};
+    }
+  }));
+
+  return lines2CoordsResult;
+}
+
+vector<QTextBlock> CodeEditor::visibleBlocks(const QRect &visibleAreaLC) const
+{
+  QTextCursor cursorAtTopLeft = cursorForPosition(QPoint(0, 0));
+  QTextBlock block = cursorAtTopLeft.block();
+
+  int top = getRectForTextBlockInLC(block).top();
+
+  vector<QTextBlock> visBlocks;
+  while (block.isValid() && top <= visibleAreaLC.bottom()) {
+    visBlocks.push_back(block);
+    block = block.next();
+    top = getRectForTextBlockInLC(block).top();
+  }
+  return visBlocks;
+}
+
+vector<QTextBlock> CodeEditor::visibleBlocks() const
+{
+  return visibleBlocks(rect());
+}
+
+
+void CodeEditor::lineNumberAreaPaintEvent(QPaintEvent *theEvent)
+{
+  QPainter painter(&lineNumberArea);
+  painter.fillRect(theEvent->rect(), Qt::lightGray);
+
+  for(const std::pair<const int, QRect>& lineAndCoord: getVisibleLines2LC(theEvent->rect())) {
+    const int lineNum = lineAndCoord.first;
+    const QRect& boundingRect = lineAndCoord.second;
+    QString number = QString::number(lineNum + 1);
+    painter.setPen(Qt::black);
+    painter.drawText(0, boundingRect.top(), lineNumberArea.width(), fontMetrics().height(),
+                           Qt::AlignRight, number);
+  }
+
+}
+

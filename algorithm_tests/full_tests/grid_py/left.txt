@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+
+import sys
+sys.path.insert(0, './../lib')
+import svm
+from svmutil import *
+
+c_exp_begin, c_exp_end, c_exp_step = -5,  15,  2
+g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2
+
+training_file = "../../features_output/train_samples.txt"
+y, x = svm_read_problem(training_file)
+print("Number of samples: " + str(len(y)))
+
+
+
+for c_exp in range(c_exp_begin, c_exp_end, c_exp_step):
+    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):
+        

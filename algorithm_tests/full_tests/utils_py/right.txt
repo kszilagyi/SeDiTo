@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+import functools
+
+def dict_map(row1, row2, fun):
+    assert row1.keys() == row2.keys()
+    res = {}
+    for idx in row1.keys():
+        res[idx] = fun(row1[idx], row2[idx])
+        
+    return res
+    
+def zipDicts(dict1, dict2):
+    assert dict1.keys() == dict2.keys()
+    res = {}
+    for idx in dict1.keys():
+        res[idx] = (dict1[idx], dict2[idx]) 
+    return res
+        
+def find_min_max(x):
+    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)
+    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)
+    return zipDicts(minValues, maxValues)
+    
+def scaleRow(row, range_dict): 
+    assert len(row) == len(range_dict), str(len(row)) + "!=" + str(len(range_dict))
+    res = {}
+    for idx in row.keys():
+        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])
+    
+    return res
+    
+def scale_input(x, range_dict):
+    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))
+    return scaled_input
+    
+def single_scale(value, featureMin, featureMax):
+    lower = -1.0
+    upper = 1.0
+    epsilon = 0.0001
+    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:
+        assert False, "invalid range"
+    
+    assert featureMin < featureMax;
+    
+    return (lower + (upper-lower) *
+        (value-featureMin)/
+        (featureMax-featureMin))

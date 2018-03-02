@@ -1,0 +1,27 @@
+#include <QList>
+
+#include "equalcharcount.h"
+#include "mix/functional.h"
+#include "3rdparty/diff_match_patch/diff_match_patch.h"
+#include "aligner/onetoonealignment.h"
+
+
+double EqualCharCount::compute(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const
+{
+  QString left = alignment.leftLine(leftIdx);
+  QString right = alignment.rightLine(rightIdx);
+  diff_match_patch lineDiffer;
+  QList<Diff> lineDiff = lineDiffer.diff_main(left, right);
+  int equalChars = sum(
+        map(
+          filter(lineDiff, [](const Diff& diff) {
+            return diff.operation == EQUAL;
+          }),
+          [] (const Diff& diff) { return diff.text.size(); }
+        )
+      );
+  VERIFY(equalChars <= left.size() && equalChars <= right.size());
+  return static_cast<double>(equalChars);
+}
+
+

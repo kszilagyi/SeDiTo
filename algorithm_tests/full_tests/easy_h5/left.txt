@@ -1,0 +1,16 @@
+#ifndef FEATURE_H
+#define FEATURE_H
+#include <QString>
+
+class OneToOneAlignment;
+
+class Feature
+{
+public:
+  Feature() {}
+  virtual QString name() const =0;
+  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;
+  virtual ~Feature(){}
+};
+
+#endif // FEATURE_H

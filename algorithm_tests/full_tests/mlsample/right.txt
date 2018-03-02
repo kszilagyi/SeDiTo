@@ -1,0 +1,83 @@
+#ifndef MLPIPELINE_H
+#define MLPIPELINE_H
+#include <vector>
+#include <unordered_map>
+#include "aligner/linepair.h"
+#include <QString>
+#include <unordered_map>
+#include <memory>
+#include "mix/qstringutils.h"
+
+using std::vector;
+using std::unordered_map;
+using std::unique_ptr;
+class OneToOneAlignment;
+class FeatureExtractor;
+class svm_model;
+class svm_node;
+
+class MLSample {
+public:
+  MLSample(const std::unordered_map<QString, double>& features, bool same);
+  std::unordered_map<QString, double> mFeatures;
+  bool mSame;
+  bool operator==(const MLSample& other) const {
+    return  mFeatures == other.mFeatures && mSame == other.mSame;
+  }
+  //TODO search for same data different result (contradictions)
+};
+
+
+struct FeatureRange {
+  const double mLow;
+  const double mHigh;
+};
+
+struct SVMModelDeleter {
+  void operator()(svm_model* ptr);
+};
+
+using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;
+namespace std {
+  template <> struct hash<MLSample>
+  {
+    size_t operator()(const MLSample& /*sample*/) const
+    {
+      return std::hash<int>()(0); //TODO not optimal, but that's ok 
+    }
+  };
+}
+
+
+template<template <class, class...> class C, class... Args>
+QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)
+{
+  if(samples.size() == 0) return "";
+  QString endLine = "\n";
+  //QString header = headerStrings.join(separator);
+  QString result = /*header + endLine*/ "";
+  for(const MLSample& sample: samples) {
+    result += QString::number(sample.mSame ? 1 : -1) + " ";
+    int columnIdx = 1;
+    for(const QString& column: orderedFeatureNames) {
+      double value = sample.mFeatures.at(column);
+      result += QString::number(columnIdx) + ":" + QString::number(value) + " ";
+      ++columnIdx;
+    }
+    result += endLine;
+  }
+  return result;
+}
+
+namespace MLPipeline
+{
+  extern const FeatureExtractor standardExtractor;
+  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);
+  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);
+  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing
+  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);
+  double singleScale(double value, double featureMin, double featureMax);
+  vector<FeatureRange> loadRanges(const QString& path);
+}
+
+#endif // MLPIPELINE_H

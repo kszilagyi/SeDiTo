@@ -1,0 +1,43 @@
+#include <QtTest/QtTest>
+#include "nonlearningalignertest.h"
+#include <boost/filesystem.hpp>
+#include "../src/aligner/serialisation/onetoonealignmentio.h"
+#include "../src/aligner/nonlearning/nonlearningaligner.h"
+#include "mix/either.h"
+#include "mix/displayableerror.h"
+#include "aligner/onetoonealignment.h"
+#include "mix/qstringutils.h"
+#include <set>
+using std::set;
+
+
+const QString NonLearningAlignerTest::testCasesDir = "unique_lines_tests";
+
+bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {
+  return left.mLeft < right.mLeft;
+}
+
+void NonLearningAlignerTest::testAll()
+{
+  boost::filesystem::path dirPath = ("../" + testCasesDir).toStdString();
+  if(!boost::filesystem::exists(dirPath)) {
+    QFAIL(("Directory doesn't exist:" + QString(dirPath.string().c_str())).toStdString().c_str());
+  }
+
+  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end
+  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {
+    if (is_directory(itr->status())) {
+      logger.info(QString("Testing: ") + itr->path().c_str());
+      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());
+      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());
+      else {
+        OneToOneAlignment alignment = result.right();
+        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());
+        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());
+        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());
+        QString debugString = ("left = " + toStr(orderedMatches) + ", right" + toStr(orderedComputedMatches));
+        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());
+      }
+    }
+  }
+}

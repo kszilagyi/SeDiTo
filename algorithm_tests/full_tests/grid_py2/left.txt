@@ -1,0 +1,84 @@
+# -*- coding: utf-8 -*-
+
+import sys
+sys.path.insert(0, './../lib')
+import svm
+from svmutil import *
+import random
+from utils import *
+
+#todo consider implementing stratified cross validation - but i think it will avarage out
+def partition(y, x, k): 
+    assert len(y) == len(x)
+    assert k > 1
+    yx = list(zip(y, x))
+    random.shuffle(yx)
+    size = int(len(y)/k)
+    assert size > 1
+    train_yx = yx[:len(yx)-size]
+    validation_yx = yx[len(yx)-size:]
+    assert len(train_yx) + len(validation_yx) == len(yx)
+    return train_yx, validation_yx
+    
+def train(y, x, c_exp, g_exp): 
+    options = '-g {0} -c {1} -q'.format(str(2**c_exp), str(2**g_exp))
+    return svm_train(y, x, options)    
+    
+def predict(model, x):
+    p_labs, p_acc, p_vals = svm_predict([0]*len(x), x, model, "")
+    return p_labs
+    
+def evaluate_params(train_yx, validation_yx, c_exp, g_exp):
+    y_train, x_train = zip(*train_yx)
+    model = train(y_train, x_train, c_exp, g_exp)
+    train_prediction = predict(model, x_train)
+    y_valid, x_valid = zip(*validation_yx)
+    valid_prediction = predict(model, x_valid)
+    return f_score_from_data(train_prediction, y_train), f_score_from_data(valid_prediction, y_valid)
+        
+def main():
+    #c_exp_begin, c_exp_end, c_exp_step = -5,  15,  2
+    c_exp_begin, c_exp_end, c_exp_step = -5,  15,  10
+    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2
+    
+    training_file = "../../features_output/train_samples.txt"
+    y, x = svm_read_problem(training_file)
+    print("Number of samples: " + str(len(y)))
+    ranges = find_min_max(x)
+    save_range_file("./ranges.txt", ranges)
+    x = scale_input(x, ranges)
+    print(y)
+    
+    k = 5 #k-fold cross validation
+    best_f_sum_valid = -1
+    best_c_exp = -1
+    best_g_exp = -1
+    best_f_sum_train = -1
+    for c_exp in range(c_exp_begin, c_exp_end, c_exp_step):
+        for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):
+            f_sum_valid = 0
+            f_sum_train = 0
+            for i in range(k):
+                train_yx, validation_yx = partition(y, x, k)
+                f_train, f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp)
+                #print("f_train: " + str(f_train))
+                #print("f_valid: " + str(f_valid))
+                f_sum_valid += f_valid
+                f_sum_train += f_train
+                
+            if (f_sum_valid > best_f_sum_valid):
+                best_f_sum_valid = f_sum_valid
+                best_f_sum_train = f_sum_train
+                best_c_exp = c_exp
+                best_g_exp = g_exp
+    
+    
+    print("Best f validation score: " + str(best_f_sum_valid/k))
+    print("Best f training score: " + str(best_f_sum_train/k))
+    print("Best c: " + str(2**c_exp))
+    print("Best g: " + str(2**g_exp))
+    
+                
+            
+        
+main()
