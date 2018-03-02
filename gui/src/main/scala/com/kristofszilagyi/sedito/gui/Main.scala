@@ -3,8 +3,9 @@ package com.kristofszilagyi.sedito.gui
 
 import java.io.File
 
-import com.kristofszilagyi.sedito.common.Alignment
+import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.common.Warts._
+import com.kristofszilagyi.sedito.gui.SCodeArea.toDelegate
 import com.sun.javafx.css.CssError
 import javafx.collections.ListChangeListener
 import javafx.stage.DirectoryChooser
@@ -41,9 +42,22 @@ object Main extends JFXApp {
       //TODO error handling
       val left = Source.fromFile(new File(directory, "left.txt")).mkString
       val right = Source.fromFile(new File(directory, "right.txt")).mkString
-      val _ = Source.fromFile(new File(directory, "alignment.json")).mkString.parseJson.convertTo[Alignment]
+      val alignment = Source.fromFile(new File(directory, "alignment.json")).mkString.parseJson.convertTo[Alignment]
       codeAreaLeft.replaceText(left)
       codeAreaRight.replaceText(right)
+      val deleted = (0 until codeAreaLeft.getParagraphs.size()).map(LineIdx.apply).filterNot(l => alignment.matches.map(_.leftLineIdx).contains(l))
+      val inserted = (0 until codeAreaRight.getParagraphs.size()).map(LineIdx.apply).filterNot(l => alignment.matches.map(_.rightLineIdx).contains(l))
+      val partitioned = alignment.partition
+      val movedLeft = partitioned.moved.map(_.leftLineIdx)
+      val movedRight = partitioned.moved.map(_.rightLineIdx)
+      val notMovedLeft = partitioned.notMoved.map(_.leftLineIdx)
+      val notMovedRight = partitioned.notMoved.map(_.rightLineIdx)
+      deleted.foreach(l => codeAreaLeft.setLineType(l, Deleted))
+      inserted.foreach(l => codeAreaRight.setLineType(l, Inserted))
+      movedLeft.foreach(l => codeAreaLeft.setLineType(l, Moved))
+      movedRight.foreach(l => codeAreaRight.setLineType(l, Moved))
+      notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, Same))
+      notMovedRight.foreach(l => codeAreaRight.setLineType(l, Same))
     }
   }
 

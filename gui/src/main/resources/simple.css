@@ -1,10 +1,15 @@
-.red {
-  -fx-background-color: red;
-  -fx-padding: 100 100 100 100;
-  -fx-line-spacing: 100;
-
+.deleted {
+  -fx-background-color: pink;
 }
 
-.mystye {
-    -fx-padding: 10 0 0 0;
+.inserted {
+  -fx-background-color: lightgreen;
+}
+
+.moved {
+  -fx-background-color: lightblue;
+}
+
+.same {
+  -fx-background-color: lightgrey;
 }

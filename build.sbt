@@ -77,6 +77,7 @@ lazy val common = (project in file("common"))
     libraryDependencies += "io.spray" %%  "spray-json" % "1.3.4",
     libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.4",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4" % "test",
+    libraryDependencies += "com.beachape" %% "enumeratum" % "1.5.12",
     commonSettings
   )
 
