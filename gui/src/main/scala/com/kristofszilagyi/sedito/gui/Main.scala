@@ -48,14 +48,13 @@ object Main extends JFXApp {
       val deleted = (0 until codeAreaLeft.getParagraphs.size()).map(LineIdx.apply).filterNot(l => alignment.matches.map(_.leftLineIdx).contains(l))
       val inserted = (0 until codeAreaRight.getParagraphs.size()).map(LineIdx.apply).filterNot(l => alignment.matches.map(_.rightLineIdx).contains(l))
       val partitioned = alignment.partition
-      val movedLeft = partitioned.moved.map(_.leftLineIdx)
-      val movedRight = partitioned.moved.map(_.rightLineIdx)
+      val moved = partitioned.moved
       val notMovedLeft = partitioned.notMoved.map(_.leftLineIdx)
       val notMovedRight = partitioned.notMoved.map(_.rightLineIdx)
       deleted.foreach(l => codeAreaLeft.setLineType(l, Deleted))
       inserted.foreach(l => codeAreaRight.setLineType(l, Inserted))
-      movedLeft.foreach(l => codeAreaLeft.setLineType(l, Moved))
-      movedRight.foreach(l => codeAreaRight.setLineType(l, Moved))
+      moved.foreach(m => codeAreaLeft.setLineType(m.leftLineIdx, Moved(m.rightLineIdx)))
+      moved.foreach(m => codeAreaRight.setLineType(m.rightLineIdx, Moved(m.leftLineIdx)))
       notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, Same))
       notMovedRight.foreach(l => codeAreaRight.setLineType(l, Same))
     }

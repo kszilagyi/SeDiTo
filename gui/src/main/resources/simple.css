@@ -13,3 +13,12 @@
 .same {
   -fx-background-color: lightgrey;
 }
+
+.moved:hover {
+  -fx-background-color: yellow;
+}
+
+
+.white {
+  -fx-background-color: white;
+}
