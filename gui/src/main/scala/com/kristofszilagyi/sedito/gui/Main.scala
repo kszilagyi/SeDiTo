@@ -3,9 +3,8 @@ package com.kristofszilagyi.sedito.gui
 
 import java.io.File
 
-import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.common.Warts._
-import com.kristofszilagyi.sedito.gui.SCodeArea.toDelegate
+import com.kristofszilagyi.sedito.common._
 import com.sun.javafx.css.CssError
 import javafx.collections.ListChangeListener
 import javafx.stage.DirectoryChooser
@@ -17,7 +16,7 @@ import scalafx.scene.Scene
 import scalafx.scene.control.{Menu, MenuBar, MenuItem}
 import scalafx.scene.layout.{BorderPane, HBox, Priority}
 import spray.json.enrichString
-
+import scala.collection.JavaConverters._
 import scala.io.Source
 
 
@@ -25,12 +24,13 @@ object Main extends JFXApp {
   private val logger = getLogger
   logger.info("SeDiTo GUI started")
   val codeAreaLeft = PaddableEditor.test()
-  codeAreaLeft.setPadding(1, 1)
+  codeAreaLeft.setLinePadding(1, 1)
   val codeAreaRight = PaddableEditor.test()
   val hbox = new HBox {
-    children = Seq(codeAreaLeft, codeAreaRight)
     spacing = 10
   }
+  discard(hbox.getChildren.addAll(Seq(codeAreaLeft, codeAreaRight).asJava))
+
   HBox.setHgrow(codeAreaLeft, Priority.Always)
   HBox.setHgrow(codeAreaRight, Priority.Always)
 

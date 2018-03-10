@@ -1,22 +1,39 @@
 package com.kristofszilagyi.sedito.gui
 
-import com.kristofszilagyi.sedito.common._
-import com.kristofszilagyi.sedito.common.Warts.DefaultArguments
-import org.fxmisc.richtext.{CodeArea, LineNumberFactory}
-import scalafx.scene.Node
-import PaddableEditor._
-import org.fxmisc.richtext.model.TwoDimensional.Bias
+import java.util
+import java.util.Collections
 
-import scala.language.implicitConversions
-import scala.collection.JavaConverters._
+import com.kristofszilagyi.sedito.common.Warts.{DefaultArguments, discard}
+import com.kristofszilagyi.sedito.common._
+import com.kristofszilagyi.sedito.gui.PaddableEditor._
+import javafx.scene.text.TextFlow
+import org.fxmisc.richtext.model.TwoDimensional.Bias
+import org.fxmisc.richtext.model.{SegmentOps, SimpleEditableStyledDocument}
+import org.fxmisc.richtext.{GenericStyledArea, LineNumberFactory, StyledTextArea}
 import org.log4s.getLogger
-object SCodeArea {
-  implicit def toDelegate(sCodeArea: SCodeArea): CodeArea = sCodeArea.delegate
-}
+
+import scala.collection.JavaConverters._
+
 
 
 @SuppressWarnings(Array(DefaultArguments))
-class SCodeArea(override val delegate: CodeArea = new CodeArea) extends Node(delegate)
+class SCodeArea extends GenericStyledArea[util.Collection[String], String, util.Collection[String]](
+  Collections.emptyList[String],
+  (paragraph: TextFlow, styleClasses: util.Collection[String]) => {
+    discard(paragraph.getStyleClass.addAll(styleClasses))
+    //paragraph.setStyle("-fx-padding: 0 0 100 0;")
+  },
+  Collections.emptyList[String],
+  new SimpleEditableStyledDocument (
+    Collections.emptyList[String](), Collections.emptyList[String]()
+  ),
+  SegmentOps.styledTextOps(),
+  false,
+  seg => StyledTextArea.createStyledTextNode(seg, (text, styleClasses: util.Collection[String]) => {
+    discard(text.getStyleClass.addAll(styleClasses))
+  }),
+) {
+}
 
 
 object PaddableEditor {
@@ -43,33 +60,35 @@ final case class LineInfo(padding: Padding, editType: EditType)
 final class PaddableEditor extends SCodeArea {
   private val log = getLogger
 
-  delegate.setParagraphGraphicFactory(LineNumberFactory.get(delegate))
+  setParagraphGraphicFactory(LineNumberFactory.get(this))
+  //setParagraphGraphicFactory(PaddableLineNumberFactory.get(this))
+
+  import java.time.Duration
 
   import org.fxmisc.richtext.event.MouseOverTextEvent
-  import java.time.Duration
 
   @SuppressWarnings(Array(Warts.Var))
   private var lineInfo = Map.empty[LineIdx, LineInfo]
 
-  delegate.setMouseOverTextDelay(Duration.ofMillis(1))
-  delegate.addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_BEGIN, (e: MouseOverTextEvent) => {
+  setMouseOverTextDelay(Duration.ofMillis(1))
+  addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_BEGIN, (e: MouseOverTextEvent) => {
     log.info("in")
     val chIdx = e.getCharacterIndex
-    val _ = delegate.offsetToPosition(chIdx, Bias.Forward)
+    val _ = offsetToPosition(chIdx, Bias.Forward)
   })
 
-  delegate.addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
+  addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
 
     log.info(s"out: $e")
   })
 
-  def setPadding(line: Int, paddingSizeInNumberOfLines: Int): Unit = {
-    val height = this.delegate.getParagraphBoxHeight(line)
+  def setLinePadding(line: Int, paddingSizeInNumberOfLines: Int): Unit = {
+    val height = getParagraphBoxHeight(line)
     this.setParagraphBoxStyle(line, s"-fx-padding: ${height * paddingSizeInNumberOfLines} 0 0 0;")
   }
 
   private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[EditType]): Unit = {
-    delegate.setParagraphStyle(lineIdx.i, List(getCssClass(editType).s).asJava)
+    setParagraphStyle(lineIdx.i, List(getCssClass(editType).s).asJava)
   }
 
   def setLineType(lineIdx: LineIdx, editType: EditType): Unit = {
