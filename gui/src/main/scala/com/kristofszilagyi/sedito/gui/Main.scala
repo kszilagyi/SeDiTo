@@ -26,6 +26,8 @@ object Main extends JFXApp {
   val codeAreaLeft = PaddableEditor.test()
   codeAreaLeft.setLinePadding(1, 1)
   val codeAreaRight = PaddableEditor.test()
+  codeAreaLeft.setOther(codeAreaRight)
+  codeAreaRight.setOther(codeAreaLeft)
   val hbox = new HBox {
     spacing = 10
   }

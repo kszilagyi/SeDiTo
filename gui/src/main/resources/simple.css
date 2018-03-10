@@ -18,6 +18,10 @@
   -fx-background-color: yellow;
 }
 
+.highlighted {
+  -fx-background-color: yellow
+}
+
 
 .white {
   -fx-background-color: white;

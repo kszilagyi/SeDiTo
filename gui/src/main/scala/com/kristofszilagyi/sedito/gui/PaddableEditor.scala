@@ -63,7 +63,6 @@ final class PaddableEditor extends SCodeArea {
   private val log = getLogger
 
   setParagraphGraphicFactory(LineNumberFactory.get(this))
-  //setParagraphGraphicFactory(PaddableLineNumberFactory.get(this))
 
   import java.time.Duration
 
@@ -71,6 +70,12 @@ final class PaddableEditor extends SCodeArea {
 
   @SuppressWarnings(Array(Warts.Var))
   private var lineInfo = Map.empty[LineIdx, LineInfo]
+
+  @SuppressWarnings(Array(Warts.Var))
+  private var otherEditor: Option[PaddableEditor] = None
+
+  @SuppressWarnings(Array(Warts.Var))
+  private var highlightedLines: Traversable[LineIdx] = Traversable.empty
 
   private val popup = new Popup
   private val popupMsg = new Label
@@ -89,6 +94,7 @@ final class PaddableEditor extends SCodeArea {
           case Moved(from) =>
             popupMsg.setText(s"Moved from line ${from.i + 1}")
             popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
+            otherEditor.foreach(_.highlightLine(from))
           case Inserted | Deleted | Same=>
         }
       case None =>
@@ -98,6 +104,7 @@ final class PaddableEditor extends SCodeArea {
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
     log.info(s"out: $e")
     popup.hide()
+    otherEditor.foreach(_.resetHighlighting())
   })
 
   def setLinePadding(line: Int, paddingSizeInNumberOfLines: Int): Unit = {
@@ -115,5 +122,21 @@ final class PaddableEditor extends SCodeArea {
       case None => LineInfo(Padding(0), editType)
     })
     applyLineTypeCss(lineIdx, Some(editType))
+  }
+
+  def highlightLine(lineIdx: LineIdx): Unit = {
+    highlightedLines ++= Traversable(lineIdx)
+    setParagraphStyle(lineIdx.i, List("highlighted").asJava)
+  }
+
+  def resetHighlighting(): Unit = {
+    highlightedLines.foreach { line =>
+      applyLineTypeCss(line, lineInfo.get(line).map(_.editType))
+    }
+    highlightedLines = Traversable.empty
+  }
+
+  def setOther(other: PaddableEditor): Unit = {
+    otherEditor = Some(other)
   }
 }
