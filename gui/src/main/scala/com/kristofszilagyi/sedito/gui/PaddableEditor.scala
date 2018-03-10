@@ -6,7 +6,9 @@ import java.util.Collections
 import com.kristofszilagyi.sedito.common.Warts.{DefaultArguments, discard}
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.gui.PaddableEditor._
+import javafx.scene.control.Label
 import javafx.scene.text.TextFlow
+import javafx.stage.Popup
 import org.fxmisc.richtext.model.TwoDimensional.Bias
 import org.fxmisc.richtext.model.{SegmentOps, SimpleEditableStyledDocument}
 import org.fxmisc.richtext.{GenericStyledArea, LineNumberFactory, StyledTextArea}
@@ -70,16 +72,32 @@ final class PaddableEditor extends SCodeArea {
   @SuppressWarnings(Array(Warts.Var))
   private var lineInfo = Map.empty[LineIdx, LineInfo]
 
+  private val popup = new Popup
+  private val popupMsg = new Label
+  popupMsg.setStyle("-fx-background-color: black;" + "-fx-text-fill: white;" + "-fx-padding: 5;")
+  discard(popup.getContent.add(popupMsg))
   setMouseOverTextDelay(Duration.ofMillis(1))
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_BEGIN, (e: MouseOverTextEvent) => {
+
     log.info("in")
     val chIdx = e.getCharacterIndex
-    val _ = offsetToPosition(chIdx, Bias.Forward)
+    val posOnScreen = e.getScreenPosition
+    val posInText = offsetToPosition(chIdx, Bias.Forward)
+    lineInfo.get(LineIdx(posInText.getMajor)) match {
+      case Some(info) =>
+        info.editType match {
+          case Moved(from) =>
+            popupMsg.setText(s"Moved from line ${from.i + 1}")
+            popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
+          case Inserted | Deleted | Same=>
+        }
+      case None =>
+    }
   })
 
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
-
     log.info(s"out: $e")
+    popup.hide()
   })
 
   def setLinePadding(line: Int, paddingSizeInNumberOfLines: Int): Unit = {
