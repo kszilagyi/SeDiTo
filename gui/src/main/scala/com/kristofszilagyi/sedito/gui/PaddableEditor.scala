@@ -12,7 +12,6 @@ import javafx.stage.Popup
 import org.fxmisc.richtext.model.TwoDimensional.Bias
 import org.fxmisc.richtext.model.{SegmentOps, SimpleEditableStyledDocument}
 import org.fxmisc.richtext.{GenericStyledArea, LineNumberFactory, StyledTextArea}
-import org.log4s.getLogger
 
 import scala.collection.JavaConverters._
 
@@ -45,14 +44,22 @@ object PaddableEditor {
     editor
   }
 
-  final case class CssClass(s: String)
-  private def getCssClass(editType: Option[EditType]) = {
+  final case class LineCssClass(s: String) {
+    def toChar: CharCssClass = CharCssClass(s"${s}_char")
+  }
+  final case class CharCssClass(s: String)
+
+  private def getLineCssClass(editType: Option[EditType]) = {
     (editType map {
-      case _: Moved => CssClass("moved")
-      case Inserted => CssClass("inserted")
-      case Deleted => CssClass("deleted")
-      case Same => CssClass("same")
-    }).getOrElse(CssClass("white"))
+      case _: Moved => LineCssClass("moved")
+      case Inserted => LineCssClass("inserted")
+      case Deleted => LineCssClass("deleted")
+      case Same => LineCssClass("same")
+    }).getOrElse(LineCssClass("white"))
+  }
+
+  private def getCharCssClass(editType: Option[EditType]) = {
+    getLineCssClass(editType).toChar
   }
 }
 
@@ -60,7 +67,6 @@ final case class Padding(i: Int)
 final case class LineInfo(padding: Padding, editType: EditType)
 
 final class PaddableEditor extends SCodeArea {
-  private val log = getLogger
 
   setParagraphGraphicFactory(LineNumberFactory.get(this))
 
@@ -84,7 +90,6 @@ final class PaddableEditor extends SCodeArea {
   setMouseOverTextDelay(Duration.ofMillis(1))
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_BEGIN, (e: MouseOverTextEvent) => {
 
-    log.info("in")
     val chIdx = e.getCharacterIndex
     val posOnScreen = e.getScreenPosition
     val posInText = offsetToPosition(chIdx, Bias.Forward)
@@ -102,7 +107,6 @@ final class PaddableEditor extends SCodeArea {
   })
 
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
-    log.info(s"out: $e")
     popup.hide()
     otherEditor.foreach(_.resetHighlighting())
   })
@@ -113,7 +117,7 @@ final class PaddableEditor extends SCodeArea {
   }
 
   private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[EditType]): Unit = {
-    setParagraphStyle(lineIdx.i, List(getCssClass(editType).s).asJava)
+    setParagraphStyle(lineIdx.i, List(getLineCssClass(editType).s).asJava)
   }
 
   def setLineType(lineIdx: LineIdx, editType: EditType): Unit = {
@@ -122,6 +126,10 @@ final class PaddableEditor extends SCodeArea {
       case None => LineInfo(Padding(0), editType)
     })
     applyLineTypeCss(lineIdx, Some(editType))
+  }
+
+  def setCharCss(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: EditType): Unit = {
+    setStyle(lineIdx.i, from.i, to.i, List(getCharCssClass(Some(editType)).s).asJava)
   }
 
   def highlightLine(lineIdx: LineIdx): Unit = {

@@ -78,6 +78,7 @@ lazy val common = (project in file("common"))
     libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.4",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.4" % "test",
     libraryDependencies += "com.beachape" %% "enumeratum" % "1.5.12",
+    libraryDependencies += "org.bitbucket.cowwoc" % "diff-match-patch" % "1.1",
     commonSettings
   )
 

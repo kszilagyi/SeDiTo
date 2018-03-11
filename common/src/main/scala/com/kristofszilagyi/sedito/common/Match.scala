@@ -18,6 +18,11 @@ object LineIdx {
 
 final case class LineIdx(i: Int)
 
+
+final case class CharIdxInLine(i: Int) {
+  def +(other: Int): CharIdxInLine = CharIdxInLine(i + other)
+}
+
 object Match {
   implicit val format: JsonFormat[Match] = jsonFormat2(Match.apply)
 }

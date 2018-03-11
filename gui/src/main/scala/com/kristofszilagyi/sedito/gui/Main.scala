@@ -8,6 +8,8 @@ import com.kristofszilagyi.sedito.common._
 import com.sun.javafx.css.CssError
 import javafx.collections.ListChangeListener
 import javafx.stage.DirectoryChooser
+import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch
+import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch.Operation
 import org.log4s._
 import scalafx.Includes._
 import scalafx.application.JFXApp
@@ -16,9 +18,9 @@ import scalafx.scene.Scene
 import scalafx.scene.control.{Menu, MenuBar, MenuItem}
 import scalafx.scene.layout.{BorderPane, HBox, Priority}
 import spray.json.enrichString
+import TypeSafeEqualsOps._
 import scala.collection.JavaConverters._
 import scala.io.Source
-
 
 object Main extends JFXApp {
   private val logger = getLogger
@@ -59,6 +61,33 @@ object Main extends JFXApp {
       moved.foreach(m => codeAreaRight.setLineType(m.rightLineIdx, Moved(m.leftLineIdx)))
       notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, Same))
       notMovedRight.foreach(l => codeAreaRight.setLineType(l, Same))
+      alignment.matches.foreach { m =>
+        val leftLine = codeAreaLeft.getParagraph(m.leftLineIdx.i).getText
+        val rightLine = codeAreaRight.getParagraph(m.rightLineIdx.i).getText
+        val differ = new DiffMatchPatch()
+        val inlineDiff = differ.diffMain(leftLine, rightLine)
+        differ.diffCleanupSemantic(inlineDiff)
+
+        val leftDiffs = inlineDiff.asScala.filter(d => d.operation ==== Operation.DELETE || d.operation ==== Operation.EQUAL)
+        val rightDiffs = inlineDiff.asScala.filter(d => d.operation ==== Operation.INSERT || d.operation ==== Operation.EQUAL)
+        final case class PosDiff(from: CharIdxInLine, to: CharIdxInLine, op: Operation)
+        def toPositions(diffs: Seq[DiffMatchPatch.Diff]) = {
+          diffs.foldLeft(Seq.empty[PosDiff]) { case (result, diff) =>
+            val op = diff.operation
+            val len = diff.text.length
+            val lastPos = result.lastOption.map(_.to).getOrElse(CharIdxInLine(0))
+            val to = lastPos + len
+            result :+ PosDiff(from = lastPos, to = to, op = op)
+          }
+        }
+
+        toPositions(leftDiffs).foreach { d =>
+          codeAreaLeft.setCharCss(m.leftLineIdx, d.from, d.to, EditType.from(d.op))
+        }
+        toPositions(rightDiffs).foreach { d =>
+          codeAreaRight.setCharCss(m.rightLineIdx, d.from, d.to, EditType.from(d.op))
+        }
+      }
     }
   }
 
