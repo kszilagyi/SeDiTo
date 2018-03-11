@@ -26,7 +26,7 @@ object Main extends JFXApp {
   private val logger = getLogger
   logger.info("SeDiTo GUI started")
   val codeAreaLeft = PaddableEditor.test()
-  codeAreaLeft.setLinePadding(1, 1)
+  codeAreaLeft.setLinePadding(1, NumberOfLinesPadding(1))
   val codeAreaRight = PaddableEditor.test()
   codeAreaLeft.setOther(codeAreaRight)
   codeAreaRight.setOther(codeAreaLeft)

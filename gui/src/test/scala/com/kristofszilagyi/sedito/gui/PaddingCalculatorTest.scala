@@ -1,0 +1,59 @@
+package com.kristofszilagyi.sedito.gui
+
+import com.kristofszilagyi.sedito.common.{LineIdx, Match}
+import org.scalatest.FreeSpecLike
+import org.scalatest.Matchers._
+final class PaddingCalculatorTest extends FreeSpecLike {
+
+  "simple padding works" in {
+    /**
+      * . 0
+      * . 1
+      * 0 2
+      * . 3
+      * 1 4
+      * 2
+      * 3
+      * 4
+      * 5
+      */
+    PaddingCalculator.calc(Set(Match.create(0, 2), Match.create(1, 4)), LineIdx(5), LineIdx(4)) shouldBe
+      Seq(PaddingResult(Left, LineIdx(0), NumberOfLinesPadding(2)),
+        PaddingResult(Left, LineIdx(1), NumberOfLinesPadding(1))
+      )
+  }
+
+  /**
+    * 0 .
+    * 1 .
+    * 2
+    * . 0
+    * . 1
+    *
+    */
+  "simple misalignment padding works" in {
+    PaddingCalculator.calc(Set.empty, LineIdx(2), LineIdx(1)) shouldBe
+      Seq(PaddingResult(Right, LineIdx(0), NumberOfLinesPadding(3)))
+  }
+
+
+  "complex padding works" in {
+    /**
+      * . 0
+      * . 1
+      * 0 2
+      * . 3
+      * 1 4
+      * 2 .
+      * 3 .
+      * 4 .
+      * 5 .
+      * . 5
+      */
+    PaddingCalculator.calc(Set(Match.create(0, 2), Match.create(1, 4)), LineIdx(5), LineIdx(5)) shouldBe
+      Seq(PaddingResult(Left, LineIdx(0), NumberOfLinesPadding(2)),
+        PaddingResult(Left, LineIdx(1), NumberOfLinesPadding(1)),
+        PaddingResult(Right, LineIdx(5), NumberOfLinesPadding(4))
+      )
+  }
+}

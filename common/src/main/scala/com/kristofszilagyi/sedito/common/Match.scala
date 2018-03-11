@@ -16,7 +16,10 @@ object LineIdx {
   }
 }
 
-final case class LineIdx(i: Int)
+final case class LineIdx(i: Int) {
+  def <(other: LineIdx): Boolean = i < other.i
+  def +(other: Int): LineIdx = LineIdx(i + 1)
+}
 
 
 final case class CharIdxInLine(i: Int) {
@@ -25,6 +28,8 @@ final case class CharIdxInLine(i: Int) {
 
 object Match {
   implicit val format: JsonFormat[Match] = jsonFormat2(Match.apply)
+
+  def create(leftLineIdx: Int, rightLineIdx: Int): Match = new Match(LineIdx(leftLineIdx), LineIdx(rightLineIdx))
 }
 final case class Match(leftLineIdx: LineIdx, rightLineIdx: LineIdx)
 
