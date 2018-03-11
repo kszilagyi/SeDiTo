@@ -23,10 +23,11 @@ import scala.collection.JavaConverters._
 import scala.io.Source
 
 object Main extends JFXApp {
+
   private val logger = getLogger
   logger.info("SeDiTo GUI started")
   val codeAreaLeft = PaddableEditor.test()
-  codeAreaLeft.setLinePadding(1, NumberOfLinesPadding(1))
+  codeAreaLeft.setLinePadding(LineIdx(1), NumberOfLinesPadding(1))
   val codeAreaRight = PaddableEditor.test()
   codeAreaLeft.setOther(codeAreaRight)
   codeAreaRight.setOther(codeAreaLeft)
@@ -88,6 +89,17 @@ object Main extends JFXApp {
           codeAreaRight.setCharCss(m.rightLineIdx, d.from, d.to, EditType.from(d.op))
         }
       }
+      PaddingCalculator.calc(partitioned.notMoved,
+        LineIdx(codeAreaLeft.getParagraphs.size - 1),
+        LineIdx(codeAreaRight.getParagraphs.size - 1)
+      ).foreach { padding =>
+        val editor = padding.side match {
+          case Left => codeAreaLeft
+          case Right => codeAreaRight
+        }
+        editor.setLinePadding(padding.line, padding.amount)
+      }
+
     }
   }
 

@@ -111,9 +111,9 @@ final class PaddableEditor extends SCodeArea {
     otherEditor.foreach(_.resetHighlighting())
   })
 
-  def setLinePadding(line: Int, padding: NumberOfLinesPadding): Unit = {
-    val height = getParagraphBoxHeight(line)
-    this.setParagraphBoxStyle(line, s"-fx-padding: ${height * padding.i} 0 0 0;")
+  def setLinePadding(line: LineIdx, padding: NumberOfLinesPadding): Unit = {
+    val height = getParagraphBoxHeight(line.i)
+    this.setParagraphBoxStyle(line.i, s"-fx-padding: ${height * padding.i} 0 0 0;")
   }
 
   private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[EditType]): Unit = {
