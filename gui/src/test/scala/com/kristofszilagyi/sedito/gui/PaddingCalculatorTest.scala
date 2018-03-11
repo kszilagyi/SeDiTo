@@ -24,6 +24,16 @@ final class PaddingCalculatorTest extends FreeSpecLike {
   }
 
   /**
+    * 0 0
+    * 1 .
+    * 2 1
+    */
+  "deletion from the left works" in {
+    PaddingCalculator.calc(Set(Match.create(0, 0), Match.create(2, 1)), LineIdx(2), LineIdx(1)) shouldBe
+      Seq(PaddingResult(Right, LineIdx(1), NumberOfLinesPadding(1)))
+  }
+
+  /**
     * 0 .
     * 1 .
     * 2

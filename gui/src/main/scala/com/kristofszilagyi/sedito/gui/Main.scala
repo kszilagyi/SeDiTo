@@ -19,6 +19,8 @@ import scalafx.scene.control.{Menu, MenuBar, MenuItem}
 import scalafx.scene.layout.{BorderPane, HBox, Priority}
 import spray.json.enrichString
 import TypeSafeEqualsOps._
+import javafx.animation.{KeyFrame, Timeline}
+
 import scala.collection.JavaConverters._
 import scala.io.Source
 
@@ -27,7 +29,7 @@ object Main extends JFXApp {
   private val logger = getLogger
   logger.info("SeDiTo GUI started")
   val codeAreaLeft = PaddableEditor.test()
-  codeAreaLeft.setLinePadding(LineIdx(1), NumberOfLinesPadding(1))
+  //codeAreaLeft.setLinePadding(LineIdx(1), NumberOfLinesPadding(1))
   val codeAreaRight = PaddableEditor.test()
   codeAreaLeft.setOther(codeAreaRight)
   codeAreaRight.setOther(codeAreaLeft)
@@ -48,6 +50,9 @@ object Main extends JFXApp {
       val left = Source.fromFile(new File(directory, "left.txt")).mkString
       val right = Source.fromFile(new File(directory, "right.txt")).mkString
       val alignment = Source.fromFile(new File(directory, "alignment.json")).mkString.parseJson.convertTo[Alignment]
+      //todo probably reset should recreate everything
+      codeAreaRight.reset()
+      codeAreaLeft.reset()
       codeAreaLeft.replaceText(left)
       codeAreaRight.replaceText(right)
       val deleted = (0 until codeAreaLeft.getParagraphs.size()).map(LineIdx.apply).filterNot(l => alignment.matches.map(_.leftLineIdx).contains(l))
@@ -100,6 +105,13 @@ object Main extends JFXApp {
         editor.setLinePadding(padding.line, padding.amount)
       }
 
+      //hack to make sure padding works
+      import javafx.util.Duration
+      val timeline = new Timeline(new KeyFrame(Duration.millis(100), _ => {
+        codeAreaLeft.applyAllPadding()
+        codeAreaRight.applyAllPadding()
+      }))
+      timeline.play()
     }
   }
 

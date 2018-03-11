@@ -63,8 +63,6 @@ object PaddableEditor {
   }
 }
 
-final case class Padding(i: Int)
-final case class LineInfo(padding: Padding, editType: EditType)
 
 final class PaddableEditor extends SCodeArea {
 
@@ -75,7 +73,10 @@ final class PaddableEditor extends SCodeArea {
   import org.fxmisc.richtext.event.MouseOverTextEvent
 
   @SuppressWarnings(Array(Warts.Var))
-  private var lineInfo = Map.empty[LineIdx, LineInfo]
+  private var editTypes = Map.empty[LineIdx, EditType]
+
+  @SuppressWarnings(Array(Warts.Var))
+  private var paddings = Map.empty[LineIdx, NumberOfLinesPadding]
 
   @SuppressWarnings(Array(Warts.Var))
   private var otherEditor: Option[PaddableEditor] = None
@@ -83,6 +84,11 @@ final class PaddableEditor extends SCodeArea {
   @SuppressWarnings(Array(Warts.Var))
   private var highlightedLines: Traversable[LineIdx] = Traversable.empty
 
+  def reset(): Unit = {
+    editTypes = Map.empty
+    paddings = Map.empty
+    highlightedLines = Traversable.empty
+  }
   private val popup = new Popup
   private val popupMsg = new Label
   popupMsg.setStyle("-fx-background-color: black;" + "-fx-text-fill: white;" + "-fx-padding: 5;")
@@ -93,9 +99,9 @@ final class PaddableEditor extends SCodeArea {
     val chIdx = e.getCharacterIndex
     val posOnScreen = e.getScreenPosition
     val posInText = offsetToPosition(chIdx, Bias.Forward)
-    lineInfo.get(LineIdx(posInText.getMajor)) match {
-      case Some(info) =>
-        info.editType match {
+    editTypes.get(LineIdx(posInText.getMajor)) match {
+      case Some(edit) =>
+        edit match {
           case Moved(from) =>
             popupMsg.setText(s"Moved from line ${from.i + 1}")
             popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
@@ -106,25 +112,34 @@ final class PaddableEditor extends SCodeArea {
     }
   })
 
+  discard(plainTextChanges.subscribe(_ => applyAllPadding()))
+
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
     popup.hide()
     otherEditor.foreach(_.resetHighlighting())
   })
 
-  def setLinePadding(line: LineIdx, padding: NumberOfLinesPadding): Unit = {
-    val height = getParagraphBoxHeight(line.i)
+  private def applyPaddingCss(line: LineIdx, padding: NumberOfLinesPadding): Unit = {
+    val height = 16
     this.setParagraphBoxStyle(line.i, s"-fx-padding: ${height * padding.i} 0 0 0;")
+  }
+
+  def setLinePadding(line: LineIdx, padding: NumberOfLinesPadding): Unit = {
+    paddings += line -> padding
+    applyPaddingCss(line, padding)
+  }
+
+  def applyAllPadding(): Unit = {
+    paddings.foreach((applyPaddingCss _).tupled)
   }
 
   private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[EditType]): Unit = {
     setParagraphStyle(lineIdx.i, List(getLineCssClass(editType).s).asJava)
+    paddings.get(lineIdx).foreach(applyPaddingCss(lineIdx, _))
   }
 
   def setLineType(lineIdx: LineIdx, editType: EditType): Unit = {
-    lineInfo += lineIdx -> (lineInfo.get(lineIdx) match {
-      case Some(info) => info.copy(editType = editType)
-      case None => LineInfo(Padding(0), editType)
-    })
+    editTypes += lineIdx -> editType
     applyLineTypeCss(lineIdx, Some(editType))
   }
 
@@ -139,7 +154,7 @@ final class PaddableEditor extends SCodeArea {
 
   def resetHighlighting(): Unit = {
     highlightedLines.foreach { line =>
-      applyLineTypeCss(line, lineInfo.get(line).map(_.editType))
+      applyLineTypeCss(line, editTypes.get(line))
     }
     highlightedLines = Traversable.empty
   }
@@ -147,4 +162,5 @@ final class PaddableEditor extends SCodeArea {
   def setOther(other: PaddableEditor): Unit = {
     otherEditor = Some(other)
   }
+
 }
