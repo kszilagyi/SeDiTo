@@ -6,6 +6,8 @@ import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch
 import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch.Operation
 import scalafx.scene.layout.{HBox, Priority}
 import TypeSafeEqualsOps._
+import javafx.scene.input.ScrollEvent
+
 import scala.collection.JavaConverters._
 import scalafx.Includes._
 
@@ -19,6 +21,13 @@ final class DiffPane extends HBox {
 
   HBox.setHgrow(codeAreaLeft, Priority.Always)
   HBox.setHgrow(codeAreaRight, Priority.Always)
+  this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
+    codeAreaLeft.scrollYBy(-e.getDeltaY)
+    codeAreaRight.scrollYBy(-e.getDeltaY)
+    codeAreaLeft.applyAllPadding()
+    codeAreaRight.applyAllPadding()
+    e.consume()
+  })
 
   def openTestCase(left: String, right: String, alignment: Alignment): Unit = {
     //todo probably reset should recreate everything

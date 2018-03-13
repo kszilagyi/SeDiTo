@@ -7,7 +7,6 @@ import com.kristofszilagyi.sedito.common.Warts.{DefaultArguments, discard}
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.gui.PaddableEditor._
 import javafx.scene.control.Label
-import javafx.scene.input.ScrollEvent
 import javafx.scene.text.TextFlow
 import javafx.stage.Popup
 import org.fxmisc.richtext.model.TwoDimensional.Bias
@@ -113,12 +112,6 @@ final class PaddableEditor extends SCodeArea {
   })
 
   discard(plainTextChanges.subscribe(_ => applyAllPadding()))
-
-  //disable scroll
-  this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
-    e.consume()
-  })
-
 
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
     popup.hide()
