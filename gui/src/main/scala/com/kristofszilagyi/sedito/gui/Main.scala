@@ -8,38 +8,23 @@ import com.kristofszilagyi.sedito.common._
 import com.sun.javafx.css.CssError
 import javafx.collections.ListChangeListener
 import javafx.stage.DirectoryChooser
-import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch
-import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch.Operation
 import org.log4s._
 import scalafx.Includes._
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.Scene
 import scalafx.scene.control.{Menu, MenuBar, MenuItem}
-import scalafx.scene.layout.{BorderPane, HBox, Priority}
+import scalafx.scene.layout.BorderPane
 import spray.json.enrichString
-import TypeSafeEqualsOps._
-import javafx.animation.{KeyFrame, Timeline}
 
-import scala.collection.JavaConverters._
 import scala.io.Source
 
 object Main extends JFXApp {
 
   private val logger = getLogger
   logger.info("SeDiTo GUI started")
-  val codeAreaLeft = PaddableEditor.test()
-  //codeAreaLeft.setLinePadding(LineIdx(1), NumberOfLinesPadding(1))
-  val codeAreaRight = PaddableEditor.test()
-  codeAreaLeft.setOther(codeAreaRight)
-  codeAreaRight.setOther(codeAreaLeft)
-  val hbox = new HBox {
-    spacing = 10
-  }
-  discard(hbox.getChildren.addAll(Seq(codeAreaLeft, codeAreaRight).asJava))
 
-  HBox.setHgrow(codeAreaLeft, Priority.Always)
-  HBox.setHgrow(codeAreaRight, Priority.Always)
+  val diffPane = new DiffPane
 
   val openTestCase = new MenuItem("Open test case") {
     onAction = { _ =>
@@ -50,68 +35,7 @@ object Main extends JFXApp {
       val left = Source.fromFile(new File(directory, "left.txt")).mkString
       val right = Source.fromFile(new File(directory, "right.txt")).mkString
       val alignment = Source.fromFile(new File(directory, "alignment.json")).mkString.parseJson.convertTo[Alignment]
-      //todo probably reset should recreate everything
-      codeAreaRight.reset()
-      codeAreaLeft.reset()
-      codeAreaLeft.replaceText(left)
-      codeAreaRight.replaceText(right)
-      val deleted = (0 until codeAreaLeft.getParagraphs.size()).map(LineIdx.apply).filterNot(l => alignment.matches.map(_.leftLineIdx).contains(l))
-      val inserted = (0 until codeAreaRight.getParagraphs.size()).map(LineIdx.apply).filterNot(l => alignment.matches.map(_.rightLineIdx).contains(l))
-      val partitioned = alignment.partition
-      val moved = partitioned.moved
-      val notMovedLeft = partitioned.notMoved.map(_.leftLineIdx)
-      val notMovedRight = partitioned.notMoved.map(_.rightLineIdx)
-      deleted.foreach(l => codeAreaLeft.setLineType(l, Deleted))
-      inserted.foreach(l => codeAreaRight.setLineType(l, Inserted))
-      moved.foreach(m => codeAreaLeft.setLineType(m.leftLineIdx, Moved(m.rightLineIdx)))
-      moved.foreach(m => codeAreaRight.setLineType(m.rightLineIdx, Moved(m.leftLineIdx)))
-      notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, Same))
-      notMovedRight.foreach(l => codeAreaRight.setLineType(l, Same))
-      alignment.matches.foreach { m =>
-        val leftLine = codeAreaLeft.getParagraph(m.leftLineIdx.i).getText
-        val rightLine = codeAreaRight.getParagraph(m.rightLineIdx.i).getText
-        val differ = new DiffMatchPatch()
-        val inlineDiff = differ.diffMain(leftLine, rightLine)
-        differ.diffCleanupSemantic(inlineDiff)
-
-        val leftDiffs = inlineDiff.asScala.filter(d => d.operation ==== Operation.DELETE || d.operation ==== Operation.EQUAL)
-        val rightDiffs = inlineDiff.asScala.filter(d => d.operation ==== Operation.INSERT || d.operation ==== Operation.EQUAL)
-        final case class PosDiff(from: CharIdxInLine, to: CharIdxInLine, op: Operation)
-        def toPositions(diffs: Seq[DiffMatchPatch.Diff]) = {
-          diffs.foldLeft(Seq.empty[PosDiff]) { case (result, diff) =>
-            val op = diff.operation
-            val len = diff.text.length
-            val lastPos = result.lastOption.map(_.to).getOrElse(CharIdxInLine(0))
-            val to = lastPos + len
-            result :+ PosDiff(from = lastPos, to = to, op = op)
-          }
-        }
-
-        toPositions(leftDiffs).foreach { d =>
-          codeAreaLeft.setCharCss(m.leftLineIdx, d.from, d.to, EditType.from(d.op))
-        }
-        toPositions(rightDiffs).foreach { d =>
-          codeAreaRight.setCharCss(m.rightLineIdx, d.from, d.to, EditType.from(d.op))
-        }
-      }
-      PaddingCalculator.calc(partitioned.notMoved,
-        LineIdx(codeAreaLeft.getParagraphs.size - 1),
-        LineIdx(codeAreaRight.getParagraphs.size - 1)
-      ).foreach { padding =>
-        val editor = padding.side match {
-          case Left => codeAreaLeft
-          case Right => codeAreaRight
-        }
-        editor.setLinePadding(padding.line, padding.amount)
-      }
-
-      //hack to make sure padding works
-      import javafx.util.Duration
-      val timeline = new Timeline(new KeyFrame(Duration.millis(100), _ => {
-        codeAreaLeft.applyAllPadding()
-        codeAreaRight.applyAllPadding()
-      }))
-      timeline.play()
+      diffPane.openTestCase(left, right, alignment)
     }
   }
 
@@ -131,7 +55,7 @@ object Main extends JFXApp {
           useSystemMenuBar = true
           menus = List(fileMenu)
         }
-        center = hbox
+        center = diffPane
       }
     }
   }
