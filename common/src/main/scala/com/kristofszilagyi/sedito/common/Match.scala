@@ -2,7 +2,7 @@ package com.kristofszilagyi.sedito.common
 
 import spray.json.DefaultJsonProtocol._
 import spray.json.{JsNumber, JsValue, JsonFormat}
-
+import TypeSafeEqualsOps._
 import scala.collection.JavaConverters._
 
 object LineIdx {
@@ -40,6 +40,9 @@ object Alignment {
 
 //TODO error handling - there should be no no duplication of left or right
 final case class Alignment(matches: Set[Match]) {
+  assert(matches.map(_.leftLineIdx).size ==== matches.size, s"$matches")
+  assert(matches.map(_.rightLineIdx).size ==== matches.size, s"$matches")
+
   def partition: PartitionedAlignment = {
     val rightWithLeftOrdered = matches.toSeq.sortBy(_.leftLineIdx.i).map(_.rightLineIdx.i)
     //todo this assumes there is no duplication

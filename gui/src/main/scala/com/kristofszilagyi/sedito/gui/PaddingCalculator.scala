@@ -2,7 +2,9 @@ package com.kristofszilagyi.sedito.gui
 
 import com.kristofszilagyi.sedito.common.{LineIdx, Match}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
-final case class NumberOfLinesPadding(i: Int)
+final case class NumberOfLinesPadding(i: Int) {
+  assert(i > 0, i.toString)
+}
 
 sealed trait Side
 case object Left extends Side
