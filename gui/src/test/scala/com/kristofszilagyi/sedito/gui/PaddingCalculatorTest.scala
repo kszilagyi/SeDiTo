@@ -66,4 +66,16 @@ final class PaddingCalculatorTest extends FreeSpecLike {
         PaddingResult(Right, LineIdx(5), NumberOfLinesPadding(4))
       )
   }
+  /** 0 0
+    * 1 .
+    * . 1
+    * 2 2
+    */
+  "match-add-remove-match" in {
+    PaddingCalculator.calc(Set(Match.create(0, 0), Match.create(2, 2)),
+      LineIdx(2), LineIdx(2)) shouldBe
+      Seq(PaddingResult(Right, LineIdx(1), NumberOfLinesPadding(1)),
+        PaddingResult(Left, LineIdx(2), NumberOfLinesPadding(1)))
+  }
+
 }

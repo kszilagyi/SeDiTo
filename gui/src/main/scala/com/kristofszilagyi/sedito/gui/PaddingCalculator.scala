@@ -24,15 +24,22 @@ object PaddingCalculator {
 
     val foldRes = sortedMatches.foldLeft((List.empty[PaddingResult], LastIndex(LineIdx(-1), LineIdx(-1)))) { case ((result, LastIndex(lastLeft, lastRight)), m) =>
       val leftDiff = m.leftLineIdx.i - lastLeft.i - 1
-      val leftRes = if (leftDiff !=== 0) {
-        Some(PaddingResult(Right, m.rightLineIdx, NumberOfLinesPadding(leftDiff)))
-      } else None
+
       val rightDiff = m.rightLineIdx.i - lastRight.i - 1
-      val rightRes = if (rightDiff !=== 0) {
+      val leftPadding = if (rightDiff !=== 0) {
         Some(PaddingResult(Left, m.leftLineIdx, NumberOfLinesPadding(rightDiff)))
       } else None
 
-      (result ++ leftRes.toList ++ rightRes.toList, LastIndex(m.leftLineIdx, m.rightLineIdx))
+      val rightPadding = if (leftDiff !=== 0) {
+        //if there is unmatched text on both sides
+        val idx = if (leftPadding.isDefined) {
+          lastRight + 1
+        } else m.rightLineIdx
+        Some(PaddingResult(Right, idx, NumberOfLinesPadding(leftDiff)))
+      } else None
+
+
+      (result ++ rightPadding.toList ++ leftPadding.toList, LastIndex(m.leftLineIdx, m.rightLineIdx))
     }
 
     val lastIndex = foldRes._2
