@@ -1,8 +1,11 @@
 package com.kristofszilagyi.sedito.common
 
+import com.kristofszilagyi.sedito.common.AssertionEx.fail
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
+import info.debatty.java.stringsimilarity.NormalizedLevenshtein
 import spray.json.DefaultJsonProtocol._
 import spray.json.{JsNumber, JsValue, JsonFormat}
-import TypeSafeEqualsOps._
+
 import scala.collection.JavaConverters._
 
 object LineIdx {
@@ -33,6 +36,47 @@ object Match {
 }
 final case class Match(leftLineIdx: LineIdx, rightLineIdx: LineIdx)
 
+//I am using this instead of indexing into the whole string so that line ending types do not make a difference
+final case class Selection(lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine)
+final case class NewMatch(left: Selection, right: Selection)
+
+object NewAlignment {
+  def fromOld(left: IndexedSeq[String], right: IndexedSeq[String], alignment: Alignment): NewAlignment = {
+    val allMatches = alignment.matches.flatMap { m =>
+      val leftLine = left(m.leftLineIdx.i)
+      val rightLine = right(m.rightLineIdx.i)
+      val leftWordRanges = Wordizer.toWordIndices(leftLine)
+      val rightWordRanges = Wordizer.toWordIndices(rightLine)
+      val ldCalculator = new NormalizedLevenshtein()
+      val lds = leftWordRanges.flatMap { leftRange =>
+        rightWordRanges.map { rightRange =>
+          val leftWord = leftRange.toWord
+          val rightWord = rightRange.toWord
+          (leftRange, rightRange) -> ldCalculator.distance(leftWord, rightWord)
+        }
+      }
+
+      val leftLookup = lds.toList.groupBy(_._1._1)
+      val matches = leftWordRanges.flatMap { leftRange =>
+        val matches = leftLookup.getOrElse(leftRange, fail(s"Bug in code: $leftRange wasn't found in lookup table. " +
+          s"leftLine: $leftLine, rightLine: $rightLine"))
+        val bestMatch = matches.filter { case ((l, r), ld) =>
+          ld <= (l.toWord.length + r.toWord.length) / 2 / 3
+        }.sortBy(_._2).lastOption
+        bestMatch.map(_._1).toList
+      }
+      val newMatchesForLine = matches.map { case (l, r) =>
+        NewMatch(
+          Selection(m.leftLineIdx, CharIdxInLine(l.startIncl), CharIdxInLine(l.endExcl)),
+          Selection(m.rightLineIdx, CharIdxInLine(r.startIncl), CharIdxInLine(l.endExcl))
+        )
+      }
+      newMatchesForLine
+    }
+    NewAlignment(allMatches)
+  }
+}
+final case class NewAlignment(matches: Set[NewMatch])
 
 object Alignment {
   implicit val format: JsonFormat[Alignment] = jsonFormat1(Alignment.apply)
