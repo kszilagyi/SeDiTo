@@ -1,11 +1,9 @@
 package com.kristofszilagyi.sedito.common
 
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
-import info.debatty.java.stringsimilarity.Levenshtein
 import spray.json.DefaultJsonProtocol._
 import spray.json.{JsNumber, JsValue, JsonFormat}
 
-import scala.annotation.tailrec
 import scala.collection.JavaConverters._
 
 object LineIdx {
@@ -36,73 +34,6 @@ object Match {
 }
 final case class Match(leftLineIdx: LineIdx, rightLineIdx: LineIdx)
 
-//I am using this instead of indexing into the whole string so that line ending types do not make a difference
-final case class Selection(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine) {
-  def readable: String = s"${line.substring(from.i, toExcl.i)}"
-
-  override def toString: String = {
-    s"${lineIdx.i}: ${from.i} - ${toExcl.i} [$readable]"
-  }
-}
-final case class NewMatch(left: Selection, right: Selection) {
-  def readble: String = {
-    s"${left.readable} - ${right.readable}"
-  }
-}
-
-object NewAlignment {
-
-  private final case class Ld(left: WordIndexRange, right: WordIndexRange, dist: Double)
-
-  //done properly this would use the Hungarian algo. But that's too hard
-  @tailrec
-  private def approximateBestMatches(orderedLds: List[Ld], result: Set[Ld]): Set[Ld] = {
-    orderedLds match {
-      case first :: rest =>
-        val notConflictingRest = rest.filterNot { r =>
-          r.left ==== first.left || r.right ==== first.right
-        }
-        approximateBestMatches(notConflictingRest ,result + first)
-      case Nil => result
-    }
-  }
-  def fromOld(left: IndexedSeq[String], right: IndexedSeq[String], alignment: Alignment): NewAlignment = {
-    val allMatches = alignment.matches.flatMap { m =>
-      val leftLine = left(m.leftLineIdx.i)
-      val rightLine = right(m.rightLineIdx.i)
-      val leftWordRanges = Wordizer.toWordIndices(leftLine)
-      val rightWordRanges = Wordizer.toWordIndices(rightLine)
-      val ldCalculator = new Levenshtein()
-      val lds = leftWordRanges.flatMap { leftRange =>
-        rightWordRanges.map { rightRange =>
-          val leftWord = leftRange.toWord
-          val rightWord = rightRange.toWord
-          Ld(leftRange, rightRange, ldCalculator.distance(leftWord, rightWord))
-        }
-      }
-
-      val sortedLds = lds.filter{ ld =>
-        ld.dist <= (ld.left.toWord.length + ld.right.toWord.length) / 2 / 3
-      }.sortBy(_.dist)
-
-      val matches = approximateBestMatches(sortedLds.toList, Set.empty)
-
-      val newMatchesForLine = matches.map { ld =>
-        NewMatch(
-          Selection(leftLine, m.leftLineIdx, CharIdxInLine(ld.left.startIncl), CharIdxInLine(ld.left.endExcl)),
-          Selection(rightLine, m.rightLineIdx, CharIdxInLine(ld.right.startIncl), CharIdxInLine(ld.right.endExcl))
-        )
-      }
-      newMatchesForLine
-    }
-    NewAlignment(allMatches)
-  }
-}
-final case class NewAlignment(matches: Set[NewMatch]) {
-  def readble: String = matches.map { m =>
-    m.readble
-  }.mkString(", ")
-}
 
 object Alignment {
   implicit val format: JsonFormat[Alignment] = jsonFormat1(Alignment.apply)

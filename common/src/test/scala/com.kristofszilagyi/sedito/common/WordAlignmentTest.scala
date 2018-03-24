@@ -3,11 +3,11 @@ package com.kristofszilagyi.sedito.common
 import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 
-final class NewAlignmentTest extends FreeSpecLike{
+final class WordAlignmentTest extends FreeSpecLike{
   val alignment = Alignment(Set(Match(LineIdx(0), LineIdx(0))))
 
-  private def m(left: String, right: String, leftStart: Int, leftEnd: Int, rightStart: Int, rightEnd: Int): NewMatch = {
-    NewMatch(
+  private def m(left: String, right: String, leftStart: Int, leftEnd: Int, rightStart: Int, rightEnd: Int): WordMatch = {
+    WordMatch(
       Selection(left, LineIdx(0), from = CharIdxInLine(leftStart), toExcl = CharIdxInLine(leftEnd)),
       Selection(right, LineIdx(0), from = CharIdxInLine(rightStart), toExcl = CharIdxInLine(rightEnd))
     )
@@ -19,7 +19,7 @@ final class NewAlignmentTest extends FreeSpecLike{
     val rightLine = "Two apples is coming home tonight"
 
     //sortBy for easier comparison
-    NewAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches.toSeq.sortBy(_.left.from.i) shouldBe
+    WordAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches.toSeq.sortBy(_.left.from.i) shouldBe
       Set(
         m(leftLine, rightLine, leftStart = 4, leftEnd = 9, rightStart = 4, rightEnd = 10),
         m(leftLine, rightLine, leftStart = 10, leftEnd = 12, rightStart = 11, rightEnd = 13),
@@ -34,7 +34,7 @@ final class NewAlignmentTest extends FreeSpecLike{
     val rightLine = "going is apple one"
 
     //sortBy for easier comparison
-    NewAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches.toSeq.sortBy(_.left.from.i) shouldBe
+    WordAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches.toSeq.sortBy(_.left.from.i) shouldBe
       Set(
         m(leftLine, rightLine, leftStart = 0, leftEnd = 3, rightStart = 15, rightEnd = 18),
         m(leftLine, rightLine, leftStart = 4, leftEnd = 9, rightStart = 9, rightEnd = 14),
@@ -48,7 +48,7 @@ final class NewAlignmentTest extends FreeSpecLike{
     val leftLine  = "LongWord"
     val rightLine = "LongWord1 LongWord2"
 
-    NewAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches should (
+    WordAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches should (
       equal(Set(
          m(leftLine, rightLine, leftStart = 0, leftEnd = 8, rightStart = 0, rightEnd = 9)
       ))
@@ -64,7 +64,7 @@ final class NewAlignmentTest extends FreeSpecLike{
     val leftLine  = "LongWord1 LongWord2"
     val rightLine = "LongWord"
 
-    NewAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches should (
+    WordAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches should (
       equal(Set(
         m(leftLine, rightLine, leftStart = 0, leftEnd = 9, rightStart = 0, rightEnd = 8)
       ))
