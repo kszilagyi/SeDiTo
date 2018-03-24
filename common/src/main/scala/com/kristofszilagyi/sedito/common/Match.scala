@@ -2,7 +2,7 @@ package com.kristofszilagyi.sedito.common
 
 import com.kristofszilagyi.sedito.common.AssertionEx.fail
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
-import info.debatty.java.stringsimilarity.NormalizedLevenshtein
+import info.debatty.java.stringsimilarity.Levenshtein
 import spray.json.DefaultJsonProtocol._
 import spray.json.{JsNumber, JsValue, JsonFormat}
 
@@ -37,8 +37,18 @@ object Match {
 final case class Match(leftLineIdx: LineIdx, rightLineIdx: LineIdx)
 
 //I am using this instead of indexing into the whole string so that line ending types do not make a difference
-final case class Selection(lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine)
-final case class NewMatch(left: Selection, right: Selection)
+final case class Selection(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine) {
+  def readable: String = s"${line.substring(from.i, toExcl.i)}"
+
+  override def toString: String = {
+    s"${lineIdx.i}: ${from.i} - ${toExcl.i} [$readable]"
+  }
+}
+final case class NewMatch(left: Selection, right: Selection) {
+  def readble: String = {
+    s"${left.readable} - ${right.readable}"
+  }
+}
 
 object NewAlignment {
   def fromOld(left: IndexedSeq[String], right: IndexedSeq[String], alignment: Alignment): NewAlignment = {
@@ -47,7 +57,7 @@ object NewAlignment {
       val rightLine = right(m.rightLineIdx.i)
       val leftWordRanges = Wordizer.toWordIndices(leftLine)
       val rightWordRanges = Wordizer.toWordIndices(rightLine)
-      val ldCalculator = new NormalizedLevenshtein()
+      val ldCalculator = new Levenshtein()
       val lds = leftWordRanges.flatMap { leftRange =>
         rightWordRanges.map { rightRange =>
           val leftWord = leftRange.toWord
@@ -67,8 +77,8 @@ object NewAlignment {
       }
       val newMatchesForLine = matches.map { case (l, r) =>
         NewMatch(
-          Selection(m.leftLineIdx, CharIdxInLine(l.startIncl), CharIdxInLine(l.endExcl)),
-          Selection(m.rightLineIdx, CharIdxInLine(r.startIncl), CharIdxInLine(l.endExcl))
+          Selection(leftLine, m.leftLineIdx, CharIdxInLine(l.startIncl), CharIdxInLine(l.endExcl)),
+          Selection(rightLine, m.rightLineIdx, CharIdxInLine(r.startIncl), CharIdxInLine(r.endExcl))
         )
       }
       newMatchesForLine
@@ -76,7 +86,11 @@ object NewAlignment {
     NewAlignment(allMatches)
   }
 }
-final case class NewAlignment(matches: Set[NewMatch])
+final case class NewAlignment(matches: Set[NewMatch]) {
+  def readble: String = matches.map { m =>
+    m.readble
+  }.mkString(", ")
+}
 
 object Alignment {
   implicit val format: JsonFormat[Alignment] = jsonFormat1(Alignment.apply)

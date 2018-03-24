@@ -6,6 +6,8 @@ import cats.data.Validated.{Invalid, Valid}
 
 sealed abstract case class WordIndexRange private(startIncl: Int, endExcl: Int, s: String) {
   def toWord: String = s.substring(startIncl, endExcl)
+
+  override def toString: String = s"($startIncl, $endExcl) [$toWord]"
 }
 final case class IndexIsOutOfRange(idx: Int, s: String)
 
