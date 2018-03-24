@@ -1,11 +1,11 @@
 package com.kristofszilagyi.sedito.common
 
-import com.kristofszilagyi.sedito.common.AssertionEx.fail
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import info.debatty.java.stringsimilarity.Levenshtein
 import spray.json.DefaultJsonProtocol._
 import spray.json.{JsNumber, JsValue, JsonFormat}
 
+import scala.annotation.tailrec
 import scala.collection.JavaConverters._
 
 object LineIdx {
@@ -51,6 +51,21 @@ final case class NewMatch(left: Selection, right: Selection) {
 }
 
 object NewAlignment {
+
+  private final case class Ld(left: WordIndexRange, right: WordIndexRange, dist: Double)
+
+  //done properly this would use the Hungarian algo. But that's too hard
+  @tailrec
+  private def approximateBestMatches(orderedLds: List[Ld], result: Set[Ld]): Set[Ld] = {
+    orderedLds match {
+      case first :: rest =>
+        val notConflictingRest = rest.filterNot { r =>
+          r.left ==== first.left || r.right ==== first.right
+        }
+        approximateBestMatches(notConflictingRest ,result + first)
+      case Nil => result
+    }
+  }
   def fromOld(left: IndexedSeq[String], right: IndexedSeq[String], alignment: Alignment): NewAlignment = {
     val allMatches = alignment.matches.flatMap { m =>
       val leftLine = left(m.leftLineIdx.i)
@@ -62,23 +77,20 @@ object NewAlignment {
         rightWordRanges.map { rightRange =>
           val leftWord = leftRange.toWord
           val rightWord = rightRange.toWord
-          (leftRange, rightRange) -> ldCalculator.distance(leftWord, rightWord)
+          Ld(leftRange, rightRange, ldCalculator.distance(leftWord, rightWord))
         }
       }
 
-      val leftLookup = lds.toList.groupBy(_._1._1)
-      val matches = leftWordRanges.flatMap { leftRange =>
-        val matches = leftLookup.getOrElse(leftRange, fail(s"Bug in code: $leftRange wasn't found in lookup table. " +
-          s"leftLine: $leftLine, rightLine: $rightLine"))
-        val bestMatch = matches.filter { case ((l, r), ld) =>
-          ld <= (l.toWord.length + r.toWord.length) / 2 / 3
-        }.sortBy(_._2).lastOption
-        bestMatch.map(_._1).toList
-      }
-      val newMatchesForLine = matches.map { case (l, r) =>
+      val sortedLds = lds.filter{ ld =>
+        ld.dist <= (ld.left.toWord.length + ld.right.toWord.length) / 2 / 3
+      }.sortBy(_.dist)
+
+      val matches = approximateBestMatches(sortedLds.toList, Set.empty)
+
+      val newMatchesForLine = matches.map { ld =>
         NewMatch(
-          Selection(leftLine, m.leftLineIdx, CharIdxInLine(l.startIncl), CharIdxInLine(l.endExcl)),
-          Selection(rightLine, m.rightLineIdx, CharIdxInLine(r.startIncl), CharIdxInLine(r.endExcl))
+          Selection(leftLine, m.leftLineIdx, CharIdxInLine(ld.left.startIncl), CharIdxInLine(ld.left.endExcl)),
+          Selection(rightLine, m.rightLineIdx, CharIdxInLine(ld.right.startIncl), CharIdxInLine(ld.right.endExcl))
         )
       }
       newMatchesForLine

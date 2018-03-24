@@ -18,7 +18,6 @@ final class NewAlignmentTest extends FreeSpecLike{
     val leftLine  = "One apple is going home tonight"
     val rightLine = "Two apples is coming home tonight"
 
-    //println(NewAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment))
     //sortBy for easier comparison
     NewAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches.toSeq.sortBy(_.left.from.i) shouldBe
       Set(
@@ -27,5 +26,52 @@ final class NewAlignmentTest extends FreeSpecLike{
         m(leftLine, rightLine, leftStart = 19, leftEnd = 23, rightStart = 21, rightEnd = 25),
         m(leftLine, rightLine, leftStart = 24, leftEnd = 31, rightStart = 26, rightEnd = 33)
       ).toSeq.sortBy(_.left.from.i)
+  }
+
+  "reorder" in {
+                  // 0123456789012345678
+    val leftLine  = "One apple is going"
+    val rightLine = "going is apple one"
+
+    //sortBy for easier comparison
+    NewAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches.toSeq.sortBy(_.left.from.i) shouldBe
+      Set(
+        m(leftLine, rightLine, leftStart = 0, leftEnd = 3, rightStart = 15, rightEnd = 18),
+        m(leftLine, rightLine, leftStart = 4, leftEnd = 9, rightStart = 9, rightEnd = 14),
+        m(leftLine, rightLine, leftStart = 10, leftEnd = 12, rightStart = 6, rightEnd = 8),
+        m(leftLine, rightLine, leftStart = 13, leftEnd = 18, rightStart = 0, rightEnd = 5)
+      ).toSeq.sortBy(_.left.from.i)
+  }
+
+  "ambiguous simple" in {
+                  // 0123456789012345678
+    val leftLine  = "LongWord"
+    val rightLine = "LongWord1 LongWord2"
+
+    NewAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches should (
+      equal(Set(
+         m(leftLine, rightLine, leftStart = 0, leftEnd = 8, rightStart = 0, rightEnd = 9)
+      ))
+      or
+      equal(Set(
+        m(leftLine, rightLine, leftStart = 0, leftEnd = 8, rightStart = 10, rightEnd = 19)
+      ))
+    )
+  }
+
+  "ambiguous simple reverse" in {
+                  // 01234567890123456789
+    val leftLine  = "LongWord1 LongWord2"
+    val rightLine = "LongWord"
+
+    NewAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches should (
+      equal(Set(
+        m(leftLine, rightLine, leftStart = 0, leftEnd = 9, rightStart = 0, rightEnd = 8)
+      ))
+      or
+      equal(Set(
+        m(leftLine, rightLine, leftStart = 10, leftEnd = 19, rightStart = 0, rightEnd = 8)
+      ))
+    )
   }
 }
