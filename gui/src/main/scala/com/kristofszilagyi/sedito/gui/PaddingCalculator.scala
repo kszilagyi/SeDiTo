@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.gui
 
-import com.kristofszilagyi.sedito.common.{LineIdx, Match}
+import com.kristofszilagyi.sedito.common.{LineIdx, LineMatch}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 final case class NumberOfLinesPadding(i: Int) {
   assert(i > 0, i.toString)
@@ -21,7 +21,7 @@ object PaddingCalculator {
     *
     * @param matches should be the maximum non-crossing matches. So if sorted on one side the other side will be sorted too
     */
-  def calc(matches: Set[Match], maxLeft: LineIdx, maxRight: LineIdx): List[PaddingResult] = {
+  def calc(matches: Set[LineMatch], maxLeft: LineIdx, maxRight: LineIdx): List[PaddingResult] = {
     val sortedMatches = matches.toSeq.sortBy(_.leftLineIdx.i)
 
     val foldRes = sortedMatches.foldLeft((List.empty[PaddingResult], LastIndex(LineIdx(-1), LineIdx(-1)))) { case ((result, LastIndex(lastLeft, lastRight)), m) =>

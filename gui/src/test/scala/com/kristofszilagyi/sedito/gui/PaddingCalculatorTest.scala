@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.gui
 
-import com.kristofszilagyi.sedito.common.{LineIdx, Match}
+import com.kristofszilagyi.sedito.common.{LineIdx, LineMatch}
 import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 final class PaddingCalculatorTest extends FreeSpecLike {
@@ -17,7 +17,7 @@ final class PaddingCalculatorTest extends FreeSpecLike {
       * 4
       * 5
       */
-    PaddingCalculator.calc(Set(Match.create(0, 2), Match.create(1, 4)), LineIdx(5), LineIdx(4)) shouldBe
+    PaddingCalculator.calc(Set(LineMatch.create(0, 2), LineMatch.create(1, 4)), LineIdx(5), LineIdx(4)) shouldBe
       Seq(PaddingResult(Left, LineIdx(0), NumberOfLinesPadding(2)),
         PaddingResult(Left, LineIdx(1), NumberOfLinesPadding(1))
       )
@@ -29,7 +29,7 @@ final class PaddingCalculatorTest extends FreeSpecLike {
     * 2 1
     */
   "deletion from the left works" in {
-    PaddingCalculator.calc(Set(Match.create(0, 0), Match.create(2, 1)), LineIdx(2), LineIdx(1)) shouldBe
+    PaddingCalculator.calc(Set(LineMatch.create(0, 0), LineMatch.create(2, 1)), LineIdx(2), LineIdx(1)) shouldBe
       Seq(PaddingResult(Right, LineIdx(1), NumberOfLinesPadding(1)))
   }
 
@@ -60,7 +60,7 @@ final class PaddingCalculatorTest extends FreeSpecLike {
       * 5 .
       * . 5
       */
-    PaddingCalculator.calc(Set(Match.create(0, 2), Match.create(1, 4)), LineIdx(5), LineIdx(5)) shouldBe
+    PaddingCalculator.calc(Set(LineMatch.create(0, 2), LineMatch.create(1, 4)), LineIdx(5), LineIdx(5)) shouldBe
       Seq(PaddingResult(Left, LineIdx(0), NumberOfLinesPadding(2)),
         PaddingResult(Left, LineIdx(1), NumberOfLinesPadding(1)),
         PaddingResult(Right, LineIdx(5), NumberOfLinesPadding(4))
@@ -72,7 +72,7 @@ final class PaddingCalculatorTest extends FreeSpecLike {
     * 2 2
     */
   "match-add-remove-match" in {
-    PaddingCalculator.calc(Set(Match.create(0, 0), Match.create(2, 2)),
+    PaddingCalculator.calc(Set(LineMatch.create(0, 0), LineMatch.create(2, 2)),
       LineIdx(2), LineIdx(2)) shouldBe
       Seq(PaddingResult(Right, LineIdx(1), NumberOfLinesPadding(1)),
         PaddingResult(Left, LineIdx(2), NumberOfLinesPadding(1)))

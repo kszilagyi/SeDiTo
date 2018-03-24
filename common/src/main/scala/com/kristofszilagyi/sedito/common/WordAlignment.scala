@@ -36,7 +36,7 @@ object WordAlignment {
     }
   }
 
-  def fromOld(left: IndexedSeq[String], right: IndexedSeq[String], alignment: Alignment): WordAlignment = {
+  def fromOld(left: IndexedSeq[String], right: IndexedSeq[String], alignment: LineAlignment): WordAlignment = {
     val allMatches = alignment.matches.flatMap { m =>
       val leftLine = left(m.leftLineIdx.i)
       val rightLine = right(m.rightLineIdx.i)

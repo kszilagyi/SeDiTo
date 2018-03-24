@@ -34,7 +34,7 @@ object Main extends JFXApp {
       //TODO error handling
       val left = Source.fromFile(new File(directory, "left.txt")).mkString
       val right = Source.fromFile(new File(directory, "right.txt")).mkString
-      val alignment = Source.fromFile(new File(directory, "alignment.json")).mkString.parseJson.convertTo[Alignment]
+      val alignment = Source.fromFile(new File(directory, "alignment.json")).mkString.parseJson.convertTo[LineAlignment]
       diffPane.openTestCase(left, right, alignment)
     }
   }

@@ -27,20 +27,20 @@ final case class CharIdxInLine(i: Int) {
   def +(other: Int): CharIdxInLine = CharIdxInLine(i + other)
 }
 
-object Match {
-  implicit val format: JsonFormat[Match] = jsonFormat2(Match.apply)
+object LineMatch {
+  implicit val format: JsonFormat[LineMatch] = jsonFormat2(LineMatch.apply)
 
-  def create(leftLineIdx: Int, rightLineIdx: Int): Match = new Match(LineIdx(leftLineIdx), LineIdx(rightLineIdx))
+  def create(leftLineIdx: Int, rightLineIdx: Int): LineMatch = new LineMatch(LineIdx(leftLineIdx), LineIdx(rightLineIdx))
 }
-final case class Match(leftLineIdx: LineIdx, rightLineIdx: LineIdx)
+final case class LineMatch(leftLineIdx: LineIdx, rightLineIdx: LineIdx)
 
 
-object Alignment {
-  implicit val format: JsonFormat[Alignment] = jsonFormat1(Alignment.apply)
+object LineAlignment {
+  implicit val format: JsonFormat[LineAlignment] = jsonFormat1(LineAlignment.apply)
 }
 
 //TODO error handling - there should be no no duplication of left or right
-final case class Alignment(matches: Set[Match]) {
+final case class LineAlignment(matches: Set[LineMatch]) {
   assert(matches.map(_.leftLineIdx).size ==== matches.size, s"$matches")
   assert(matches.map(_.rightLineIdx).size ==== matches.size, s"$matches")
 
@@ -55,4 +55,4 @@ final case class Alignment(matches: Set[Match]) {
 }
 
 
-final case class PartitionedAlignment(moved: Set[Match], notMoved: Set[Match])
+final case class PartitionedAlignment(moved: Set[LineMatch], notMoved: Set[LineMatch])
