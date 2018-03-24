@@ -1,5 +1,6 @@
 package com.kristofszilagyi.sedito.common
 
+import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 
@@ -8,8 +9,8 @@ final class WordAlignmentTest extends FreeSpecLike{
 
   private def m(left: String, right: String, leftStart: Int, leftEnd: Int, rightStart: Int, rightEnd: Int): WordMatch = {
     WordMatch(
-      Selection(left, LineIdx(0), from = CharIdxInLine(leftStart), toExcl = CharIdxInLine(leftEnd)),
-      Selection(right, LineIdx(0), from = CharIdxInLine(rightStart), toExcl = CharIdxInLine(rightEnd))
+      Selection.create(left, LineIdx(0), from = CharIdxInLine(leftStart), toExcl = CharIdxInLine(leftEnd)).getAssert("test error"),
+      Selection.create(right, LineIdx(0), from = CharIdxInLine(rightStart), toExcl = CharIdxInLine(rightEnd)).getAssert("test error")
     )
   }
 

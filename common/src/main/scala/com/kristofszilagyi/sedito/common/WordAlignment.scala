@@ -1,12 +1,24 @@
 package com.kristofszilagyi.sedito.common
 
+import cats.data.Validated
+import cats.data.Validated.{Invalid, Valid}
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
+import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import info.debatty.java.stringsimilarity.Levenshtein
 
 import scala.annotation.tailrec
-import TypeSafeEqualsOps._
 
+
+object Selection {
+  def create(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine): Validated[RangeError, Selection] = {
+    if (from.i < 0 || from.i >= line.length) Invalid(IndexIsOutOfRange(from.i, line))
+    else if (toExcl.i < 0 || toExcl.i > line.length) Invalid(IndexIsOutOfRange(from.i, line))
+    else if (from.i >= toExcl.i) Invalid(RangeIsNotPositive(from.i, toExcl.i, line))
+    else Valid(new Selection(line, lineIdx, from, toExcl) {})
+  }
+}
 //I am using this instead of indexing into the whole string so that line ending types do not make a difference
-final case class Selection(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine) {
+sealed abstract case class Selection private(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine) {
   def readable: String = s"${line.substring(from.i, toExcl.i)}"
 
   override def toString: String = {
@@ -59,8 +71,8 @@ object WordAlignment {
 
       val newMatchesForLine = matches.map { ld =>
         WordMatch(
-          Selection(leftLine, m.leftLineIdx, CharIdxInLine(ld.left.startIncl), CharIdxInLine(ld.left.endExcl)),
-          Selection(rightLine, m.rightLineIdx, CharIdxInLine(ld.right.startIncl), CharIdxInLine(ld.right.endExcl))
+          Selection.create(leftLine, m.leftLineIdx, CharIdxInLine(ld.left.startIncl), CharIdxInLine(ld.left.endExcl)).getAssert("invalid range"),
+          Selection.create(rightLine, m.rightLineIdx, CharIdxInLine(ld.right.startIncl), CharIdxInLine(ld.right.endExcl)).getAssert("invalid range")
         )
       }
       newMatchesForLine

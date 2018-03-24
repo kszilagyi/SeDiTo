@@ -95,4 +95,5 @@ lazy val gui = (project in file("gui"))
 
 
 lazy val root = (project in file("."))
-  .aggregate(gui)
+  .aggregate(gui, common)
+

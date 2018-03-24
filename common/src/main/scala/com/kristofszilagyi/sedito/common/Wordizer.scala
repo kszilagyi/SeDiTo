@@ -1,7 +1,6 @@
 package com.kristofszilagyi.sedito.common
 
-import cats.data.Validated.{Invalid, Valid}
-import com.kristofszilagyi.sedito.common.AssertionEx.fail
+import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 
 object Wordizer {
 
@@ -11,10 +10,8 @@ object Wordizer {
       val separatorIndexes = raw"((?<=[^\w])|(?=[^\w]))".r.findAllMatchIn(s).toList.map(_.start)
       val unfiltered = (0 +: separatorIndexes :+ s.length).sliding(2).toList.flatMap {
         case List(a, b) =>
-          WordIndexRange.create(a, b, s) match {
-            case Valid(a) => Some(a).toList
-            case Invalid(e) => fail(s"Bug in code: invalid range: $e")
-          }
+          if (a < b) Some(WordIndexRange.create(a, b, s).getAssert("invalid range")).toList
+          else None.toList
         case _ => None.toList
       }
       unfiltered.map{ idx =>

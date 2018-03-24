@@ -1,0 +1,20 @@
+package com.kristofszilagyi.sedito.common
+
+import org.scalatest.FreeSpecLike
+import org.scalatest.Matchers._
+
+final class LineAlignerTest extends FreeSpecLike {
+  "empty" in {
+    LineAligner.align(WordAlignment(Set.empty)) shouldBe LineAlignment(Set.empty)
+  }
+
+  private def selection(line: String, lineIdx: Int, from: Int, to: Int) = {
+    Selection.create(line, LineIdx(lineIdx), CharIdxInLine(from), CharIdxInLine(to)).getOrElse(fail("wrong test data"))
+  }
+  "one" in {
+    LineAligner.align(WordAlignment(Set(WordMatch(
+      selection("line0", 0, 0, 5),
+      selection("line0", 0, 0, 5)
+    )))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+  }
+}
