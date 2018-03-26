@@ -1,0 +1,20 @@
+package com.kristofszilagyi.sedito.common
+
+
+/**
+  * The metric: len/(ld + 1) - ld/(ld+1)
+  * The way to arrive to it:
+  * when ld = len => value = 0 (all of them changed they are not similar)
+  * y = 1 when ld = 0 and length = 1
+  * and y = 1 when len = ld*2 + 1 (at least 1 more than half of them should be not edited to be considered as similar as a single letter to itself)
+  * so mathematically:
+  * a*len+b = y
+  * 1. len = 2ld + 1; ds = 1
+  * 2. ld = len; ds = 0
+  * and just solve it from here
+  *
+  * the only question how to calculate len?
+  */
+object LdLenSimilarity {
+
+}
