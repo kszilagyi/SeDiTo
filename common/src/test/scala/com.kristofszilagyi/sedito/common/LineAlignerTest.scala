@@ -17,4 +17,18 @@ final class LineAlignerTest extends FreeSpecLike {
       selection("line0", 0, 0, 5)
     )))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
+  //todo test if 2 1 character match stronger than 1 3 character match
+
+  "two on left" in {
+    LineAligner.align(WordAlignment(Set(
+      WordMatch(
+        selection("line0 {", lineIdx = 0, from = 0, to = 5),
+        selection("line0", lineIdx = 0, from = 0, to = 5)
+      ),
+      WordMatch(
+        selection("line0 {", lineIdx = 0, from = 6, to = 7),
+        selection("{", lineIdx = 1, from = 0, to = 1)
+      )
+    ))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+  }
 }
