@@ -1,5 +1,7 @@
 package com.kristofszilagyi.sedito.common
 
+import info.debatty.java.stringsimilarity.Levenshtein
+
 
 /**
   * The metric: len/(ld + 1) - ld/(ld+1)
@@ -13,8 +15,16 @@ package com.kristofszilagyi.sedito.common
   * 2. ld = len; ds = 0
   * and just solve it from here
   *
-  * the only question how to calculate len?
+  * we calculate len as the max of lens because we should imagine the shorter string to be padded to be as long
+  * as the longer one (with wrong characters)
   */
 object LdLenSimilarity {
-
+  def calc(left: String, right: String): LdLenSimilarity = {
+    val ld = new Levenshtein().distance(left, right)
+    val maxLen = math.max(left.length, right.length).toDouble
+    val value = maxLen / (ld + 1.0) - ld / (ld + 1.0)
+    LdLenSimilarity(value)
+  }
 }
+
+final case class LdLenSimilarity(d: Double)
