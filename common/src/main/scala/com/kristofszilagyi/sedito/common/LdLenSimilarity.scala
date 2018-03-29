@@ -19,12 +19,10 @@ import info.debatty.java.stringsimilarity.Levenshtein
   * as the longer one (with wrong characters)
   */
 object LdLenSimilarity {
-  def calc(left: String, right: String): LdLenSimilarity = {
+  def calc(left: String, right: String): Double = {
     val ld = new Levenshtein().distance(left, right)
     val maxLen = math.max(left.length, right.length).toDouble
-    val value = maxLen / (ld + 1.0) - ld / (ld + 1.0)
-    LdLenSimilarity(value)
+    maxLen / (ld + 1.0) - ld / (ld + 1.0)
   }
 }
 
-final case class LdLenSimilarity(d: Double)
