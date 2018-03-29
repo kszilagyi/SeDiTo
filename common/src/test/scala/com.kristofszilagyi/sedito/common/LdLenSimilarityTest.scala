@@ -48,4 +48,13 @@ final class LdLenSimilarityTest extends FreeSpecLike {
   "completely different 5 character long strings have 0 similarity" in {
     LdLenSimilarity.calc("aaaaa", "bbbbb").d shouldBe 0
   }
+
+  "comparing different lengths strings behave as expected (same subtext)" in {
+    LdLenSimilarity.calc("aaa", "aaaaa").d shouldBe 1
+  }
+
+  "comparing different lengths strings behave as expected (0 0 similarity)" in {
+    LdLenSimilarity.calc("bbb", "aaaaa").d shouldBe 0
+  }
+
 }
