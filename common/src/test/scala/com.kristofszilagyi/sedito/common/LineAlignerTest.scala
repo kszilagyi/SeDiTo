@@ -19,6 +19,10 @@ final class LineAlignerTest extends FreeSpecLike {
   }
   //todo test if 2 1 character match stronger than 1 3 character match
 
+  /**
+    * line0 { -> line0
+    *            {
+    */
   "slip line into two" in {
     LineAligner.align(WordAlignment(Set(
       WordMatch(
@@ -32,6 +36,10 @@ final class LineAlignerTest extends FreeSpecLike {
     ))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
 
+  /**
+    * line0 -> line0 {
+    * {
+    */
   "merge lines" in {
     LineAligner.align(WordAlignment(Set(
       WordMatch(
@@ -44,4 +52,23 @@ final class LineAlignerTest extends FreeSpecLike {
       )
     ))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
+
+  /**
+    * line0 line1 -> line0
+    *                line1
+    */
+  "ambigous alignment results in 1 result" in {
+    LineAligner.align(WordAlignment(Set(
+      WordMatch(
+        selection("line0", lineIdx = 0, from = 0, to = 5),
+        selection("line0 line1", lineIdx = 0, from = 0, to = 5)
+      ),
+      WordMatch(
+        selection("line1", lineIdx = 1, from = 0, to = 5),
+        selection("line0 line1", lineIdx = 0, from = 6, to = 11)
+      )
+    ))) should have size 1
+  }
+
+
 }
