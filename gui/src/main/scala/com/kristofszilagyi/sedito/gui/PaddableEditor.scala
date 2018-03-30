@@ -3,6 +3,7 @@ package com.kristofszilagyi.sedito.gui
 import java.util
 import java.util.Collections
 
+import com.kristofszilagyi.sedito.common.AssertionEx.fail
 import com.kristofszilagyi.sedito.common.Warts.{DefaultArguments, discard}
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.gui.PaddableEditor._
@@ -62,6 +63,9 @@ object PaddableEditor {
   }
 }
 
+final case class CharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: EditType)
+
+final case class LineEdits(line: EditType, charEdits: Traversable[CharEdit])
 
 final class PaddableEditor extends SCodeArea {
 
@@ -72,7 +76,7 @@ final class PaddableEditor extends SCodeArea {
   import org.fxmisc.richtext.event.MouseOverTextEvent
 
   @SuppressWarnings(Array(Warts.Var))
-  private var editTypes = Map.empty[LineIdx, EditType]
+  private var editTypes = Map.empty[LineIdx, LineEdits]
 
   @SuppressWarnings(Array(Warts.Var))
   private var paddings = Map.empty[LineIdx, NumberOfLinesPadding]
@@ -100,7 +104,7 @@ final class PaddableEditor extends SCodeArea {
     val posInText = offsetToPosition(chIdx, Bias.Forward)
     editTypes.get(LineIdx(posInText.getMajor)) match {
       case Some(edit) =>
-        edit match {
+        edit.line match {
           case Moved(from) =>
             popupMsg.setText(s"Moved from line ${from.i + 1}")
             popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
@@ -132,18 +136,38 @@ final class PaddableEditor extends SCodeArea {
     paddings.foreach((applyPaddingCss _).tupled)
   }
 
-  private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[EditType]): Unit = {
-    setParagraphStyle(lineIdx.i, List(getLineCssClass(editType).s).asJava)
+  private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {
+    //setParagraphStyle(lineIdx.i, List("same").asJava)
+    setParagraphStyle(lineIdx.i, List(getLineCssClass(editType.map(_.line)).s).asJava)
+    editType.toList.flatMap(_.charEdits).foreach{ edit =>
+      applyCharCss(lineIdx, edit.from, edit.to, edit.editType)
+    }
     paddings.get(lineIdx).foreach(applyPaddingCss(lineIdx, _))
   }
 
   def setLineType(lineIdx: LineIdx, editType: EditType): Unit = {
-    editTypes += lineIdx -> editType
-    applyLineTypeCss(lineIdx, Some(editType))
+    val current = editTypes.get(lineIdx)
+    val newEdit = current match {
+      case Some(edit) => edit.copy(line = editType)
+      case None => LineEdits(editType, Traversable.empty)
+    }
+
+    editTypes += lineIdx -> newEdit
+    applyLineTypeCss(lineIdx, Some(newEdit))
   }
 
-  def setCharCss(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: EditType): Unit = {
+  private def applyCharCss(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: EditType): Unit = {
     setStyle(lineIdx.i, from.i, to.i, List(getCharCssClass(Some(editType)).s).asJava)
+  }
+
+  def setCharEdit(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: EditType): Unit = {
+    val current = editTypes.get(lineIdx)
+    val newEdit = current match {
+      case Some(edit) => edit.copy(charEdits = edit.charEdits ++ Traversable(CharEdit(from, to, editType)))
+      case None => fail(s"Bug in code: cannot have new char edits without line edit. $lineIdx")
+    }
+    editTypes += lineIdx -> newEdit
+    applyLineTypeCss(lineIdx, Some(newEdit))
   }
 
   def highlightLine(lineIdx: LineIdx): Unit = {

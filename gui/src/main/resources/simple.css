@@ -29,13 +29,13 @@
 }
 
 .deleted_char {
-  -fx-fill: red;
+  -rtfx-background-color: pink;
 }
 
 .inserted_char {
-  -fx-fill: green;
+  -rtfx-background-color: lightgreen;
 }
 
 .same_char {
-  -fx-fill: black;
+  -rtfx-background-color: lightgrey;
 }

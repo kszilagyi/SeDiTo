@@ -76,10 +76,10 @@ final class DiffPane extends HBox {
       }
 
       toPositions(leftDiffs).foreach { d =>
-        codeAreaLeft.setCharCss(m.leftLineIdx, d.from, d.to, EditType.from(d.op))
+        codeAreaLeft.setCharEdit(m.leftLineIdx, d.from, d.to, EditType.from(d.op))
       }
       toPositions(rightDiffs).foreach { d =>
-        codeAreaRight.setCharCss(m.rightLineIdx, d.from, d.to, EditType.from(d.op))
+        codeAreaRight.setCharEdit(m.rightLineIdx, d.from, d.to, EditType.from(d.op))
       }
     }
     PaddingCalculator.calc(partitioned.notMoved,
