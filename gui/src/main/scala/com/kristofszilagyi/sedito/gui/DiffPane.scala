@@ -9,7 +9,7 @@ import TypeSafeEqualsOps._
 import javafx.scene.input.ScrollEvent
 
 import scala.collection.JavaConverters._
-import scalafx.Includes._
+import scalafx.Includes.jfxRegion2sfx
 
 final class DiffPane extends HBox {
   private val codeAreaLeft = PaddableEditor.test()
@@ -29,15 +29,23 @@ final class DiffPane extends HBox {
     e.consume()
   })
 
-  def openTestCase(left: String, right: String, alignment: LineAlignment): Unit = {
+  private def getParagraphTexts(codeArea: PaddableEditor): IndexedSeq[String] ={
+    val size = codeArea.getParagraphs.size()
+    (0 until size).map { i => codeArea.getText(i) }
+  }
+
+  def openTestCase(left: String, right: String, oldAlignment: LineAlignment): Unit = {
     //todo probably reset should recreate everything
     codeAreaRight.reset()
     codeAreaLeft.reset()
     codeAreaLeft.replaceText(left)
     codeAreaRight.replaceText(right)
-    val deleted = (0 until codeAreaLeft.getParagraphs.size()).map(LineIdx.apply).filterNot(l => alignment.matches.map(_.leftLineIdx).contains(l))
-    val inserted = (0 until codeAreaRight.getParagraphs.size()).map(LineIdx.apply).filterNot(l => alignment.matches.map(_.rightLineIdx).contains(l))
-    val partitioned = alignment.partition
+
+    val wordAlignment = WordAlignment.fromOld(getParagraphTexts(codeAreaLeft), getParagraphTexts(codeAreaRight), oldAlignment)
+    val lineAlignment = LineAligner.align(wordAlignment)
+    val deleted = (0 until codeAreaLeft.getParagraphs.size()).map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.leftLineIdx).contains(l))
+    val inserted = (0 until codeAreaRight.getParagraphs.size()).map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.rightLineIdx).contains(l))
+    val partitioned = lineAlignment.partition
     val moved = partitioned.moved
     val notMovedLeft = partitioned.notMoved.map(_.leftLineIdx)
     val notMovedRight = partitioned.notMoved.map(_.rightLineIdx)
@@ -47,7 +55,7 @@ final class DiffPane extends HBox {
     moved.foreach(m => codeAreaRight.setLineType(m.rightLineIdx, Moved(m.leftLineIdx)))
     notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, Same))
     notMovedRight.foreach(l => codeAreaRight.setLineType(l, Same))
-    alignment.matches.foreach { m =>
+    lineAlignment.matches.foreach { m =>
       val leftLine = codeAreaLeft.getParagraph(m.leftLineIdx.i).getText
       val rightLine = codeAreaRight.getParagraph(m.rightLineIdx.i).getText
       val differ = new DiffMatchPatch()
