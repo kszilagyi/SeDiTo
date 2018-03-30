@@ -17,7 +17,6 @@ final class LineAlignerTest extends FreeSpecLike {
       selection("line0", 0, 0, 5)
     )))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
-  //todo test if 2 1 character match stronger than 1 3 character match
 
   /**
     * line0 { -> line0
@@ -60,15 +59,34 @@ final class LineAlignerTest extends FreeSpecLike {
   "ambigous alignment results in 1 result" in {
     LineAligner.align(WordAlignment(Set(
       WordMatch(
-        selection("line0", lineIdx = 0, from = 0, to = 5),
-        selection("line0 line1", lineIdx = 0, from = 0, to = 5)
+        selection("line0 line1", lineIdx = 0, from = 0, to = 5),
+        selection("line0", lineIdx = 0, from = 0, to = 5)
       ),
       WordMatch(
-        selection("line1", lineIdx = 1, from = 0, to = 5),
-        selection("line0 line1", lineIdx = 0, from = 6, to = 11)
+        selection("line0 line1", lineIdx = 0, from = 6, to = 11),
+        selection("line1", lineIdx = 1, from = 0, to = 5)
       )
-    ))) should have size 1
+    ))).matches should have size 1
   }
 
-
+  /**
+    * map a b -> map
+    *            a b
+    */
+  "a 3 letter word is stronger than 2 1 letter words" in {
+    LineAligner.align(WordAlignment(Set(
+      WordMatch(
+        selection("map a b", lineIdx = 0, from = 0, to = 3),
+        selection("map", lineIdx = 0, from = 0, to = 3)
+      ),
+      WordMatch(
+        selection("map a b", lineIdx = 0, from = 4, to = 5),
+        selection("a b", lineIdx = 1, from = 0, to = 1)
+      ),
+      WordMatch(
+        selection("map a b", lineIdx = 0, from = 6, to = 7),
+        selection("a b", lineIdx = 1, from = 2, to = 3)
+      )
+    ))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+  }
 }
