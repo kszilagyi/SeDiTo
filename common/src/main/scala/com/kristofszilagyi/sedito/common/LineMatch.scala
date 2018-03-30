@@ -19,7 +19,7 @@ object LineIdx {
 
 final case class LineIdx(i: Int) {
   def <(other: LineIdx): Boolean = i < other.i
-  def +(other: Int): LineIdx = LineIdx(i + 1)
+  def +(other: Int): LineIdx = LineIdx(i + other)
 }
 
 
@@ -32,7 +32,11 @@ object LineMatch {
 
   def create(leftLineIdx: Int, rightLineIdx: Int): LineMatch = new LineMatch(LineIdx(leftLineIdx), LineIdx(rightLineIdx))
 }
-final case class LineMatch(leftLineIdx: LineIdx, rightLineIdx: LineIdx)
+final case class LineMatch(leftLineIdx: LineIdx, rightLineIdx: LineIdx) {
+  def conflict(other: LineMatch): Boolean = {
+    leftLineIdx ==== other.leftLineIdx || rightLineIdx ==== other.rightLineIdx
+  }
+}
 
 
 object LineAlignment {
@@ -51,6 +55,14 @@ final case class LineAlignment(matches: Set[LineMatch]) {
     val notMoved = matches.filter(m => longestRights.contains(m.rightLineIdx.i))
     val moved = matches -- notMoved
     PartitionedAlignment(moved, notMoved)
+  }
+
+  def withMatch(m: LineMatch): LineAlignment = {
+    LineAlignment(matches + m)
+  }
+
+  def conflict(m: LineMatch): Boolean = {
+    matches.exists(_.conflict(m))
   }
 }
 
