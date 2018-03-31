@@ -2,14 +2,9 @@ package com.kristofszilagyi.sedito.gui
 
 import com.kristofszilagyi.sedito.common._
 import javafx.animation.{KeyFrame, Timeline}
-import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch
-import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch.Operation
-import scalafx.scene.layout.{HBox, Priority}
-import TypeSafeEqualsOps._
 import javafx.scene.input.ScrollEvent
-
-import scala.collection.JavaConverters._
 import scalafx.Includes.jfxRegion2sfx
+import scalafx.scene.layout.{HBox, Priority}
 
 final class DiffPane extends HBox {
   private val codeAreaLeft = PaddableEditor.test()
@@ -60,33 +55,19 @@ final class DiffPane extends HBox {
     moved.foreach(m => codeAreaRight.setLineType(m.rightLineIdx, Moved(m.leftLineIdx)))
     notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, Same))
     notMovedRight.foreach(l => codeAreaRight.setLineType(l, Same))
-    lineAlignment.matches.foreach { m =>
-      val leftLine = codeAreaLeft.getParagraph(m.leftLineIdx.i).getText
-      val rightLine = codeAreaRight.getParagraph(m.rightLineIdx.i).getText
-      val differ = new DiffMatchPatch()
-      val inlineDiff = differ.diffMain(leftLine, rightLine)
-      differ.diffCleanupSemantic(inlineDiff)
 
-      val leftDiffs = inlineDiff.asScala.filter(d => d.operation ==== Operation.DELETE || d.operation ==== Operation.EQUAL)
-      val rightDiffs = inlineDiff.asScala.filter(d => d.operation ==== Operation.INSERT || d.operation ==== Operation.EQUAL)
-      final case class PosDiff(from: CharIdxInLine, to: CharIdxInLine, op: Operation)
-      def toPositions(diffs: Seq[DiffMatchPatch.Diff]) = {
-        diffs.foldLeft(Seq.empty[PosDiff]) { case (result, diff) =>
-          val op = diff.operation
-          val len = diff.text.length
-          val lastPos = result.lastOption.map(_.to).getOrElse(CharIdxInLine(0))
-          val to = lastPos + len
-          result :+ PosDiff(from = lastPos, to = to, op = op)
+    def applyHighlight(codeArea: SCodeArea, highlight: Map[LineIdx, Traversable[CharEdit]]): Unit = {
+      highlight.foreach { case (line, edits) =>
+        edits.foreach { edit =>
+          codeAreaLeft.setCharEdit(line, edit.from, edit.to, edit.editType)
         }
       }
-
-      toPositions(leftDiffs).foreach { d =>
-        codeAreaLeft.setCharEdit(m.leftLineIdx, d.from, d.to, EditType.from(d.op))
-      }
-      toPositions(rightDiffs).foreach { d =>
-        codeAreaRight.setCharEdit(m.rightLineIdx, d.from, d.to, EditType.from(d.op))
-      }
     }
+
+    val highlight = CharHighlightCalculator.calc(leftLines, rightLines, wordAlignment, lineAlignment)
+    applyHighlight(codeAreaLeft, highlight.left)
+    applyHighlight(codeAreaRight, highlight.right)
+
     PaddingCalculator.calc(partitioned.notMoved,
       LineIdx(codeAreaLeft.getParagraphs.size - 1),
       LineIdx(codeAreaRight.getParagraphs.size - 1)

@@ -63,8 +63,6 @@ object PaddableEditor {
   }
 }
 
-final case class CharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: EditType)
-
 final case class LineEdits(line: EditType, charEdits: Traversable[CharEdit])
 
 final class PaddableEditor extends SCodeArea {
