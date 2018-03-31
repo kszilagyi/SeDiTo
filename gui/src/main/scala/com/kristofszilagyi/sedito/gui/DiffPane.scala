@@ -29,9 +29,9 @@ final class DiffPane extends HBox {
     e.consume()
   })
 
-  private def getParagraphTexts(codeArea: PaddableEditor): IndexedSeq[String] ={
+  private def getParagraphTexts(codeArea: PaddableEditor): Lines ={
     val size = codeArea.getParagraphs.size()
-    (0 until size).map { i => codeArea.getText(i) }
+    Lines((0 until size).map(i => codeArea.getText(i)))
   }
 
   def openTestCase(left: String, right: String, oldAlignment: LineAlignment): Unit = {
@@ -41,14 +41,19 @@ final class DiffPane extends HBox {
     codeAreaLeft.replaceText(left)
     codeAreaRight.replaceText(right)
 
-    val wordAlignment = WordAlignment.fromOld(getParagraphTexts(codeAreaLeft), getParagraphTexts(codeAreaRight), oldAlignment)
-    val lineAlignment = LineAligner.align(wordAlignment)
+    val leftLines = getParagraphTexts(codeAreaLeft)
+    val rightLines = getParagraphTexts(codeAreaRight)
+
+    val wordAlignment = WordAlignment.fromOld(leftLines, rightLines, oldAlignment)
+    val lineAlignment = WhiteSpaceAligner.align(leftLines, rightLines, LineAligner.align(wordAlignment))
+
     val deleted = (0 until codeAreaLeft.getParagraphs.size()).map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.leftLineIdx).contains(l))
     val inserted = (0 until codeAreaRight.getParagraphs.size()).map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.rightLineIdx).contains(l))
     val partitioned = lineAlignment.partition
     val moved = partitioned.moved
     val notMovedLeft = partitioned.notMoved.map(_.leftLineIdx)
     val notMovedRight = partitioned.notMoved.map(_.rightLineIdx)
+
     deleted.foreach(l => codeAreaLeft.setLineType(l, Deleted))
     inserted.foreach(l => codeAreaRight.setLineType(l, Inserted))
     moved.foreach(m => codeAreaLeft.setLineType(m.leftLineIdx, Moved(m.rightLineIdx)))

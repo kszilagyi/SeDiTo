@@ -91,6 +91,7 @@ final class PaddableEditor extends SCodeArea {
     editTypes = Map.empty
     paddings = Map.empty
     highlightedLines = Traversable.empty
+    clear()
   }
   private val popup = new Popup
   private val popupMsg = new Label

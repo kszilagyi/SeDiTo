@@ -48,10 +48,10 @@ object WordAlignment {
     }
   }
 
-  def fromOld(left: IndexedSeq[String], right: IndexedSeq[String], alignment: LineAlignment): WordAlignment = {
+  def fromOld(left: Lines, right: Lines, alignment: LineAlignment): WordAlignment = {
     val allMatches = alignment.matches.flatMap { m =>
-      val leftLine = left(m.leftLineIdx.i)
-      val rightLine = right(m.rightLineIdx.i)
+      val leftLine = left.l(m.leftLineIdx.i) //replace with .get?
+      val rightLine = right.l(m.rightLineIdx.i)
       val leftWordRanges = Wordizer.toWordIndices(leftLine)
       val rightWordRanges = Wordizer.toWordIndices(rightLine)
       val ldCalculator = new Levenshtein()

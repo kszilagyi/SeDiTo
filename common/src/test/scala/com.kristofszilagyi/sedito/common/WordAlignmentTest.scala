@@ -20,7 +20,7 @@ final class WordAlignmentTest extends FreeSpecLike{
     val rightLine = "Two apples is coming home tonight"
 
     //sortBy for easier comparison
-    WordAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches.toSeq.sortBy(_.left.from.i) shouldBe
+    WordAlignment.fromOld(Lines(Vector(leftLine)), Lines(Vector(rightLine)), alignment).matches.toSeq.sortBy(_.left.from.i) shouldBe
       Set(
         m(leftLine, rightLine, leftStart = 4, leftEnd = 9, rightStart = 4, rightEnd = 10),
         m(leftLine, rightLine, leftStart = 10, leftEnd = 12, rightStart = 11, rightEnd = 13),
@@ -35,7 +35,7 @@ final class WordAlignmentTest extends FreeSpecLike{
     val rightLine = "going is apple one"
 
     //sortBy for easier comparison
-    WordAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches.toSeq.sortBy(_.left.from.i) shouldBe
+    WordAlignment.fromOld(Lines(Vector(leftLine)), Lines(Vector(rightLine)), alignment).matches.toSeq.sortBy(_.left.from.i) shouldBe
       Set(
         m(leftLine, rightLine, leftStart = 0, leftEnd = 3, rightStart = 15, rightEnd = 18),
         m(leftLine, rightLine, leftStart = 4, leftEnd = 9, rightStart = 9, rightEnd = 14),
@@ -49,7 +49,7 @@ final class WordAlignmentTest extends FreeSpecLike{
     val leftLine  = "LongWord"
     val rightLine = "LongWord1 LongWord2"
 
-    WordAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches should (
+    WordAlignment.fromOld(Lines(Vector(leftLine)), Lines(Vector(rightLine)), alignment).matches should (
       equal(Set(
          m(leftLine, rightLine, leftStart = 0, leftEnd = 8, rightStart = 0, rightEnd = 9)
       ))
@@ -65,7 +65,7 @@ final class WordAlignmentTest extends FreeSpecLike{
     val leftLine  = "LongWord1 LongWord2"
     val rightLine = "LongWord"
 
-    WordAlignment.fromOld(Vector(leftLine), Vector(rightLine), alignment).matches should (
+    WordAlignment.fromOld(Lines(Vector(leftLine)), Lines(Vector(rightLine)), alignment).matches should (
       equal(Set(
         m(leftLine, rightLine, leftStart = 0, leftEnd = 9, rightStart = 0, rightEnd = 8)
       ))
