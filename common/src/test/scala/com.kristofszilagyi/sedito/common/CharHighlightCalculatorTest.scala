@@ -88,6 +88,10 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
 
   }
 
+  def selection(s: String, lineIdx: LineIdx, from: Int, to: Int): Selection = {
+    Selection.create(s, lineIdx, CharIdxInLine(from), CharIdxInLine(to)).getAssert("wrong test data")
+  }
+
   "empty" in {
     test(List.empty, List.empty)
   }
@@ -138,6 +142,18 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
     )
     val right = List(
       Line(1, Word(1, "one", Same), Word(3, "three", Same))
+    )
+    test(left, right)
+  }
+
+  //todo test word with change (test framework is not robust enough)
+  "word moved from other line" in {
+    val left = List(
+      Line(1, Word(1, "one", Same)),
+      Line(2, Word(2, "two", CharsMoved(selection("two one", LineIdx(0), 0, 3))))
+    )
+    val right = List(
+      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3))), Word(1, "one", Same))
     )
     test(left, right)
   }

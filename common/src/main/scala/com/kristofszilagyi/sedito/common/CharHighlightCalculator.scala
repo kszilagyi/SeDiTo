@@ -32,6 +32,12 @@ object CharHighlightCalculator {
     val wordsWithMatch = wordMatchesInEitherLine.map(_.toIndexRange.getAssert(""))
     words -- wordsWithMatch
   }
+
+  private def merge(edits1: Set[(LineIdx, Set[CharEdit])], edits2: Set[(LineIdx, Set[CharEdit])]) = {
+    (edits1.toSeq ++ edits2.toSeq).groupBy(_._1).map{ case (idx, idxesAndEdits) =>
+      (idx -> idxesAndEdits.flatMap{case (_, editsOnly) => editsOnly}.toSet)
+    }
+  }
   def calc(left: Lines, right: Lines, wordAlignment: WordAlignment, lineAlignment: LineAlignment): CharHighlight = {
     val (leftHighlight, rightHighlight) = {
       lineAlignment.matches.map { m =>
@@ -77,6 +83,17 @@ object CharHighlightCalculator {
         (m.leftLineIdx -> (leftEdits.flatten ++ deletes), m.rightLineIdx -> (rightEdits.flatten ++ inserts))
       }.unzip
     }
-    CharHighlight(leftHighlight.toMap, rightHighlight.toMap)
+
+    val (leftCrossLineMoves, rightCrossLineMoves) = wordAlignment.matches.flatMap { wordMatch =>
+      val bothMatch = lineAlignment.matches.filter(l => l.leftLineIdx ==== wordMatch.left.lineIdx && (l.rightLineIdx ==== wordMatch.right.lineIdx))
+      (if (bothMatch.isEmpty) {
+        val left = wordMatch.left.lineIdx -> Set(CharEdit(wordMatch.left.from, wordMatch.left.toExcl, CharsMoved(wordMatch.right)))
+        val right = wordMatch.right.lineIdx -> Set(CharEdit(wordMatch.right.from, wordMatch.right.toExcl, CharsMoved(wordMatch.left)))
+        Some((left, right))
+      } else {
+        None
+      }).toList
+    }.unzip
+    CharHighlight(merge(leftHighlight, leftCrossLineMoves), merge(rightHighlight, rightCrossLineMoves))
   }
 }
