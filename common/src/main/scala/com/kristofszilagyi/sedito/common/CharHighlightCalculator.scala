@@ -35,8 +35,6 @@ object CharHighlightCalculator {
   def calc(left: Lines, right: Lines, wordAlignment: WordAlignment, lineAlignment: LineAlignment): CharHighlight = {
     val (leftHighlight, rightHighlight) = {
       lineAlignment.matches.map { m =>
-//        val leftLine = left.get(m.leftLineIdx).getOrElse(fail(s"Bug in code: ${m.leftLineIdx} is out of bounds"))
-        val rightLine = right.get(m.rightLineIdx).getOrElse(fail(s"Bug in code: ${m.leftLineIdx} is out of bounds"))
 
         val differ = new DiffMatchPatch()
 
@@ -71,8 +69,12 @@ object CharHighlightCalculator {
           (toPositions(wm.left, leftDiffs), toPositions(wm.right, rightDiffs))
         }.unzip
 
+        val leftLine = left.get(m.leftLineIdx).getOrElse(fail(s"Bug in code: ${m.leftLineIdx} is out of bounds"))
+        val rightLine = right.get(m.rightLineIdx).getOrElse(fail(s"Bug in code: ${m.leftLineIdx} is out of bounds"))
+
         val inserts = wordsWithMatch(rightLine, wordMatchesInEitherLine.map(_._1.right)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), Inserted))
-        (m.leftLineIdx -> leftEdits.flatten, m.rightLineIdx -> (rightEdits.flatten ++ inserts))
+        val deletes = wordsWithMatch(leftLine, wordMatchesInEitherLine.map(_._1.left)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), Deleted))
+        (m.leftLineIdx -> (leftEdits.flatten ++ deletes), m.rightLineIdx -> (rightEdits.flatten ++ inserts))
       }.unzip
     }
     CharHighlight(leftHighlight.toMap, rightHighlight.toMap)
