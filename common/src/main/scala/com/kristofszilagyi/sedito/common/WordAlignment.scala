@@ -24,6 +24,10 @@ sealed abstract case class Selection private(line: String, lineIdx: LineIdx, fro
   override def toString: String = {
     s"${lineIdx.i}: ${from.i} - ${toExcl.i} [$toText]"
   }
+
+  def toIndexRange: Validated[RangeError, WordIndexRange] = {
+    WordIndexRange.create(startIncl = from.i, endExcl = toExcl.i, s = line)
+  }
 }
 final case class WordMatch(left: Selection, right: Selection) {
   def readble: String = {

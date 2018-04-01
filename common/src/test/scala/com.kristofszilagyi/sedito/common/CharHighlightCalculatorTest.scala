@@ -111,4 +111,24 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
     )
     test(left, right)
   }
+
+  "all same - 3 words" in {
+    val left = List(
+      Line(1, Word(1, "one", Same), Word(2, "two", Same), Word(3, "three", Same))
+    )
+    val right = List(
+      Line(1, Word(1, "one", Same), Word(2, "two", Same), Word(3, "three", Same))
+    )
+    test(left, right)
+  }
+
+  "1 word inserted" in {
+    val left = List(
+      Line(1, Word(1, "one", Same), Word(3, "three", Same))
+    )
+    val right = List(
+      Line(1, Word(1, "one", Same), Word(2, "two", Inserted), Word(3, "three", Same))
+    )
+    test(left, right)
+  }
 }
