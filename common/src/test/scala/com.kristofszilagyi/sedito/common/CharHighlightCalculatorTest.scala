@@ -157,4 +157,17 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
     )
     test(left, right)
   }
+
+
+  "word moved to other line" in {
+    val left = List(
+      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3))), Word(1, "one", Same))
+    )
+    val right = List(
+      Line(1, Word(1, "one", Same)),
+      Line(2, Word(2, "two", CharsMoved(selection("two one", LineIdx(0), 0, 3))))
+    )
+
+    test(left, right)
+  }
 }
