@@ -27,7 +27,7 @@ object CharHighlightCalculator {
     }
   }
 
-  private def wordsWithMatch(line: String, wordMatchesInEitherLine: Set[Selection]) = {
+  private def wordsWithoutMatch(line: String, wordMatchesInEitherLine: Set[Selection]) = {
     val words = Wordizer.toWordIndices(line).toSet
     val wordsWithMatch = wordMatchesInEitherLine.map(_.toIndexRange.getAssert(""))
     words -- wordsWithMatch
@@ -72,8 +72,8 @@ object CharHighlightCalculator {
         val leftLine = left.get(m.leftLineIdx).getOrElse(fail(s"Bug in code: ${m.leftLineIdx} is out of bounds"))
         val rightLine = right.get(m.rightLineIdx).getOrElse(fail(s"Bug in code: ${m.leftLineIdx} is out of bounds"))
 
-        val inserts = wordsWithMatch(rightLine, wordMatchesInEitherLine.map(_._1.right)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), Inserted))
-        val deletes = wordsWithMatch(leftLine, wordMatchesInEitherLine.map(_._1.left)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), Deleted))
+        val inserts = wordsWithoutMatch(rightLine, wordMatchesInEitherLine.map(_._1.right)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), Inserted))
+        val deletes = wordsWithoutMatch(leftLine, wordMatchesInEitherLine.map(_._1.left)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), Deleted))
         (m.leftLineIdx -> (leftEdits.flatten ++ deletes), m.rightLineIdx -> (rightEdits.flatten ++ inserts))
       }.unzip
     }
