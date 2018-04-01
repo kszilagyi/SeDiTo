@@ -51,7 +51,7 @@ object PaddableEditor {
 
   private def getLineCssClass(editType: Option[EditType]) = {
     (editType map {
-      case _: Moved => LineCssClass("moved")
+      case _: LineMoved => LineCssClass("moved")
       case Inserted => LineCssClass("inserted")
       case Deleted => LineCssClass("deleted")
       case Same => LineCssClass("same")
@@ -104,7 +104,7 @@ final class PaddableEditor extends SCodeArea {
     editTypes.get(LineIdx(posInText.getMajor)) match {
       case Some(edit) =>
         edit.line match {
-          case Moved(from) =>
+          case LineMoved(from) =>
             popupMsg.setText(s"Moved from line ${from.i + 1}")
             popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
             otherEditor.foreach(_.highlightLine(from))

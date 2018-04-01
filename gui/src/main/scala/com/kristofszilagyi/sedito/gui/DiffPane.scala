@@ -51,8 +51,8 @@ final class DiffPane extends HBox {
 
     deleted.foreach(l => codeAreaLeft.setLineType(l, Deleted))
     inserted.foreach(l => codeAreaRight.setLineType(l, Inserted))
-    moved.foreach(m => codeAreaLeft.setLineType(m.leftLineIdx, Moved(m.rightLineIdx)))
-    moved.foreach(m => codeAreaRight.setLineType(m.rightLineIdx, Moved(m.leftLineIdx)))
+    moved.foreach(m => codeAreaLeft.setLineType(m.leftLineIdx, LineMoved(m.rightLineIdx)))
+    moved.foreach(m => codeAreaRight.setLineType(m.rightLineIdx, LineMoved(m.leftLineIdx)))
     notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, Same))
     notMovedRight.foreach(l => codeAreaRight.setLineType(l, Same))
 

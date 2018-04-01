@@ -15,7 +15,8 @@ object EditType {
 
 sealed trait EditType
 
-final case class Moved(from: LineIdx) extends EditType
+final case class LineMoved(fromTo: LineIdx) extends EditType
+final case class CharsMoved(fromTo: Selection) extends EditType
 case object Inserted extends EditType
 case object Deleted extends EditType
 case object Same extends EditType
