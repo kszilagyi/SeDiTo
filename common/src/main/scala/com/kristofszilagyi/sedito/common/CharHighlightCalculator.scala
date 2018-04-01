@@ -32,20 +32,19 @@ object CharHighlightCalculator {
         }.collect { case (wm, Some(side)) => (wm, side) }
         val (leftEdits, rightEdits) = wordMatchesInThisLine.map { case (wm, _) =>
           val left = wm.left.toText
-          val rigth = wm.right.toText
-          val inWordDiff = differ.diffMain(left, rigth)
+          val right = wm.right.toText
+          val inWordDiff = differ.diffMain(left, right)
           differ.diffCleanupSemantic(inWordDiff)
 
           val leftDiffs = inWordDiff.asScala.filter(d => d.operation ==== Operation.DELETE || d.operation ==== Operation.EQUAL)
           val rightDiffs = inWordDiff.asScala.filter(d => d.operation ==== Operation.INSERT || d.operation ==== Operation.EQUAL)
-
-          def toPositions(diffs: Seq[DiffMatchPatch.Diff]) = {
+          def toPositions(baseline: Selection, diffs: Seq[DiffMatchPatch.Diff]) = {
             diffs.foldLeft(Seq.empty[CharEdit]) { case (result, diff) =>
               val op = diff.operation
               val len = diff.text.length
               val lastPos = result.lastOption.map(_.to).getOrElse(CharIdxInLine(0))
               val to = lastPos + len
-              result :+ CharEdit(from = lastPos, to = to, editType = EditType.from(op))
+              result :+ CharEdit(from = baseline.from + lastPos, to = baseline.from + to, editType = EditType.from(op))
             }
           }
 
@@ -58,7 +57,7 @@ object CharHighlightCalculator {
           //        }
 
 
-          (toPositions(leftDiffs), toPositions(rightDiffs))
+          (toPositions(wm.left, leftDiffs), toPositions(wm.right, rightDiffs))
         }.unzip
         (m.leftLineIdx -> leftEdits.flatten, m.rightLineIdx -> rightEdits.flatten)
       }.unzip

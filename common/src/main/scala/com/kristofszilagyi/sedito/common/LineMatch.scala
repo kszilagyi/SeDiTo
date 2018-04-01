@@ -23,8 +23,10 @@ final case class LineIdx(i: Int) {
 }
 
 
+@SuppressWarnings(Array(Warts.Overloading))
 final case class CharIdxInLine(i: Int) {
   def +(other: Int): CharIdxInLine = CharIdxInLine(i + other)
+  def +(other: CharIdxInLine): CharIdxInLine = CharIdxInLine(i + other.i)
 }
 
 object LineMatch {
