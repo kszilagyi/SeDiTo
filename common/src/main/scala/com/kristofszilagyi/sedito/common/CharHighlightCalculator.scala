@@ -35,7 +35,7 @@ object CharHighlightCalculator {
 
   private def merge(edits1: Set[(LineIdx, Set[CharEdit])], edits2: Set[(LineIdx, Set[CharEdit])]) = {
     (edits1.toSeq ++ edits2.toSeq).groupBy(_._1).map{ case (idx, idxesAndEdits) =>
-      (idx -> idxesAndEdits.flatMap{case (_, editsOnly) => editsOnly}.toSet)
+      idx -> idxesAndEdits.flatMap { case (_, editsOnly) => editsOnly }.toSet
     }
   }
   def calc(left: Lines, right: Lines, wordAlignment: WordAlignment, lineAlignment: LineAlignment): CharHighlight = {
@@ -61,16 +61,6 @@ object CharHighlightCalculator {
 
           val leftDiffs = inWordDiff.asScala.filter(d => d.operation ==== Operation.DELETE || d.operation ==== Operation.EQUAL)
           val rightDiffs = inWordDiff.asScala.filter(d => d.operation ==== Operation.INSERT || d.operation ==== Operation.EQUAL)
-
-
-          //        def addMoves(edits: Seq[PosEdits]) = {
-          ////          matchSide match {
-          ////            case LeftMatch =>
-          ////            case RightMatch =>
-          ////            case BothMatch =>
-          ////          }
-          //        }
-
 
           (toPositions(wm.left, leftDiffs), toPositions(wm.right, rightDiffs))
         }.unzip
