@@ -77,8 +77,8 @@ object CharHighlightCalculator {
     val (leftCrossLineMoves, rightCrossLineMoves) = wordAlignment.matches.flatMap { wordMatch =>
       val bothMatch = lineAlignment.matches.filter(l => l.leftLineIdx ==== wordMatch.left.lineIdx && (l.rightLineIdx ==== wordMatch.right.lineIdx))
       (if (bothMatch.isEmpty) {
-        val left = wordMatch.left.lineIdx -> Set(CharEdit(wordMatch.left.from, wordMatch.left.toExcl, CharsMoved(wordMatch.right)))
-        val right = wordMatch.right.lineIdx -> Set(CharEdit(wordMatch.right.from, wordMatch.right.toExcl, CharsMoved(wordMatch.left)))
+        val left = wordMatch.left.lineIdx -> Set(CharEdit(wordMatch.left.from, wordMatch.left.toExcl, CharsMoved(wordMatch.right, Traversable.empty)))
+        val right = wordMatch.right.lineIdx -> Set(CharEdit(wordMatch.right.from, wordMatch.right.toExcl, CharsMoved(wordMatch.left, Traversable.empty)))
         Some((left, right))
       } else {
         None
