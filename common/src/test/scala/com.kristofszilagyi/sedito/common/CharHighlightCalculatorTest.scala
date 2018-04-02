@@ -14,8 +14,14 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
   private object Space extends Section {
     def s: String = " "
   }
-
-  private sealed case class Word(id: Int, s: String, desiredEdit: EditType) extends Section
+  @SuppressWarnings(Array(Warts.Overloading))
+  private object Word {
+    def apply(id: Int, s: String, desiredEdit: EditType): Word = new Word(id, Seq(WordPart(s, desiredEdit)))
+  }
+  private sealed case class Word(id: Int, parts: Seq[WordPart]) extends Section {
+    def s: String = parts.map(_.s).mkString
+  }
+  private sealed case class WordPart(s: String, desiredEdit: EditType)
   private sealed case class Line(id: Int, sections: Section*) {
     def prodLine: String = sections.map(_.s).mkString
     def words: Seq[Word] = sections.collect{case w: Word => w}
@@ -32,6 +38,14 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
       val start = line.indexOf(word.s)
       discard(assert(start ==== line.lastIndexOf(word.s), s"not unique: $word"))
       (CharIdxInLine(start), CharIdxInLine(start + word.s.length))
+    }
+
+    def partCharIdxes(line: String, parts: Traversable[WordPart]): Traversable[(CharIdxInLine, CharIdxInLine, EditType)] = {
+      parts.map { p =>
+        val start = line.indexOf(p.s)
+        discard(assert(start ==== line.lastIndexOf(p.s), s"not unique: $p"))
+        (CharIdxInLine(start), CharIdxInLine(start + p.s.length), p.desiredEdit)
+      }
     }
 
     val indexedLeftLines = leftLines.zipWithIndex.map{case (s, idx) => (s, LineIdx(idx))}
@@ -82,9 +96,11 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
     def toHighlight(lines: List[(Line, LineIdx)]): Map[LineIdx, Traversable[CharEdit]] = {
       lines.map { case (line, idx) =>
         val prodLine = line.prodLine
-        val charEdits = line.words.map { word =>
-          val (from, to) = charIdxes(prodLine, word)
-          CharEdit(from, to, word.desiredEdit)
+        val charEdits = line.words.flatMap { word =>
+          val ranges = partCharIdxes(prodLine, word.parts)
+          ranges.map { case (from, to, desiredEdit) =>
+            CharEdit(from, to, desiredEdit)
+          }
         }
         idx -> charEdits.toSet //only for testing equality
       }.toMap
@@ -154,7 +170,26 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
     test(left, right)
   }
 
-  //todo test word with change (test framework is not robust enough)
+  "1 word matching but changed (add)" in {
+    val left = List(
+      Line(1, Word(1, "orange", Same))
+    )
+    val right = List(
+      Line(1, Word(1, Seq(WordPart("orange", Same), WordPart("juice", Inserted))))
+    )
+    test(left, right)
+  }
+
+  "1 word matching but changed (removed)" in {
+    val left = List(
+      Line(1, Word(1, Seq(WordPart("orange", Same), WordPart("juice", Deleted))))
+    )
+    val right = List(
+      Line(1, Word(1, "orange", Same))
+    )
+    test(left, right)
+  }
+
   "word moved from other line" in {
     val left = List(
       Line(1, Word(1, "one", Same)),
