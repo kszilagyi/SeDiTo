@@ -7,7 +7,11 @@ import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import AssertionEx.fail
 import scala.collection.JavaConverters._
 
-final case class CharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: EditType)
+final case class CharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: EditType) {
+  def text(line: String): String = {
+    line.substring(from.i, to.i)
+  }
+}
 
 final case class CharHighlight(left: Map[LineIdx, Traversable[CharEdit]], right: Map[LineIdx, Traversable[CharEdit]])
 
@@ -38,6 +42,37 @@ object CharHighlightCalculator {
       idx -> idxesAndEdits.flatMap { case (_, editsOnly) => editsOnly }.toSet
     }
   }
+
+  private sealed class MoveOrSame
+  private case object M extends MoveOrSame
+  private case object S extends MoveOrSame
+  /**
+    * determines if a match is a move or not
+    */
+  private def moveOrSame(wordMatches: Set[WordMatch]): Set[(WordMatch, MoveOrSame)] = {
+    val leftOrdered = wordMatches.toSeq.sortBy(_.left.from.i)
+    val rightStarts = leftOrdered.map(_.right.from.i)
+    val lis = LongestIncreasingSubsequence.apply(rightStarts.toArray).asScala.toSet
+    val sames = wordMatches.filter(m => lis.contains(m.right.from.i))
+    val moved = wordMatches -- sames
+    sames.map((_, S)) ++ moved.map((_, M))
+  }
+
+  private def replaceSamesWithMoves(leftEdits: Seq[CharEdit], rightEdits: Seq[CharEdit], leftLine: String,
+                                    rightLine: String, leftLineIdx: LineIdx, rightLineIdx: LineIdx): (Seq[CharEdit], Seq[CharEdit]) = {
+    val leftSame = leftEdits.filter(_.editType ==== Same)
+    val rightSame = rightEdits.filter(_.editType ==== Same)
+    leftSame.zip(rightSame).map { case (left, right) =>
+      assert(left.text(leftLine) ==== right.text(rightLine))
+      val rightSelection = Selection.create(rightLine, rightLineIdx, right.from, right.to).getAssert("")
+      val replacedLeft = left.copy(editType = CharsMoved(rightSelection, leftEdits))
+
+      val leftSelection = Selection.create(leftLine, leftLineIdx, left.from, left.to).getAssert("")
+      val replacedRight = right.copy(editType = CharsMoved(leftSelection, rightEdits))
+      (replacedLeft, replacedRight)
+    }.unzip
+  }
+
   def calc(left: Lines, right: Lines, wordAlignment: WordAlignment, lineAlignment: LineAlignment): CharHighlight = {
     val (leftHighlight, rightHighlight) = {
       lineAlignment.matches.map { m =>
@@ -53,7 +88,12 @@ object CharHighlightCalculator {
           }
           (wm, matchSide)
         }.collect { case (wm, Some(side)) => (wm, side) }
-        val (leftEdits, rightEdits) = wordMatchesInEitherLine.filter(_._2 ==== BothMatch).map { case (wm, _) =>
+
+        val leftLine = left.get(m.leftLineIdx).getOrElse(fail(s"Bug in code: ${m.leftLineIdx} is out of bounds"))
+        val rightLine = right.get(m.rightLineIdx).getOrElse(fail(s"Bug in code: ${m.leftLineIdx} is out of bounds"))
+
+        val wordMatchesInBothLine = wordMatchesInEitherLine.filter(_._2 ==== BothMatch).map(_._1)
+        val (leftEdits, rightEdits) = moveOrSame(wordMatchesInBothLine).map { case (wm, moveOrSame) =>
           val left = wm.left.toText
           val right = wm.right.toText
           val inWordDiff = differ.diffMain(left, right)
@@ -61,12 +101,14 @@ object CharHighlightCalculator {
 
           val leftDiffs = inWordDiff.asScala.filter(d => d.operation ==== Operation.DELETE || d.operation ==== Operation.EQUAL)
           val rightDiffs = inWordDiff.asScala.filter(d => d.operation ==== Operation.INSERT || d.operation ==== Operation.EQUAL)
-
-          (toPositions(wm.left, leftDiffs), toPositions(wm.right, rightDiffs))
+          val leftEdits = toPositions(wm.left, leftDiffs)
+          val rightEdits = toPositions(wm.right, rightDiffs)
+          if (moveOrSame ==== M) {
+            replaceSamesWithMoves(leftEdits, rightEdits, leftLine, rightLine, m.leftLineIdx, m.rightLineIdx)
+          } else {
+            (leftEdits, rightEdits)
+          }
         }.unzip
-
-        val leftLine = left.get(m.leftLineIdx).getOrElse(fail(s"Bug in code: ${m.leftLineIdx} is out of bounds"))
-        val rightLine = right.get(m.rightLineIdx).getOrElse(fail(s"Bug in code: ${m.leftLineIdx} is out of bounds"))
 
         val inserts = wordsWithoutMatch(rightLine, wordMatchesInEitherLine.map(_._1.right)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), Inserted))
         val deletes = wordsWithoutMatch(leftLine, wordMatchesInEitherLine.map(_._1.left)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), Deleted))

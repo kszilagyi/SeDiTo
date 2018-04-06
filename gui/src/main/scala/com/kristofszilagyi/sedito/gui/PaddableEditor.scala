@@ -55,6 +55,7 @@ object PaddableEditor {
       case Inserted => LineCssClass("inserted")
       case Deleted => LineCssClass("deleted")
       case Same => LineCssClass("same")
+      case _: CharsMoved => LineCssClass("moved") //todo
     }).getOrElse(LineCssClass("white"))
   }
 

@@ -107,10 +107,20 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
     }
 
     println(s"prodLeftLines: $prodLeftLines\nprodRightLines: $prodRightLines\nwords: $wordMatches\nlines: $lineAlignment\n")
-    CharHighlightCalculator.calc(prodLeftLines, prodRightLines, WordAlignment(wordMatches.toSet), LineAlignment(lineAlignment.toSet)) shouldBe
-        CharHighlight(toHighlight(indexedLeftLines), toHighlight(indexedRightLines))
+    toSortedHightligh(CharHighlightCalculator.calc(prodLeftLines, prodRightLines, WordAlignment(wordMatches.toSet), LineAlignment(lineAlignment.toSet))) shouldBe
+      toSortedHightligh(CharHighlight(toHighlight(indexedLeftLines), toHighlight(indexedRightLines)))
 
   }
+
+  private def sortedSide(side: Map[LineIdx, scala.Traversable[CharEdit]]) = {
+    side.toList.map{ case (idx, edits) =>
+      idx -> edits.toList.sortBy(_.from.i)
+    }.sortBy{ case (lineIdx, edits) => (lineIdx.i, edits.headOption.map(_.from.i))}
+  }
+  private def toSortedHightligh(hl: CharHighlight) = {
+    (sortedSide(hl.left), sortedSide(hl.right))
+  }
+
 
   def selection(s: String, lineIdx: LineIdx, from: Int, to: Int): Selection = {
     Selection.create(s, lineIdx, CharIdxInLine(from), CharIdxInLine(to)).getAssert("wrong test data")
@@ -214,12 +224,39 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
     test(left, right)
   }
 
-  "word moved within the line" in {
+  "word moved from other line but changed" in {
     val left = List(
-      Line(1, Word(1, "one", Same), Space, Word(2, "two", Same), Space, Word(3, "thr", CharsMoved(selection("thr one two", LineIdx(0), 0, 4), Traversable.empty)))
+      Line(1, Word(1, "one", Same)),
+      Line(2, Word(2, "two", CharsMoved(selection("two one", LineIdx(0), 0, 3), Traversable.empty)))
     )
     val right = List(
-      Line(1, Word(3, "thr", CharsMoved(selection("one two thr", LineIdx(0), 8, 11), Traversable.empty)), Space, Word(1, "one", Same), Space, Word(2, "two", Same))
+      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3), Traversable.empty)), Space, Word(1, "one", Same))
+    )
+    test(left, right)
+  }
+
+
+  "word moved to other line but changed" in {
+    val left = List(
+      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3), Traversable.empty)), Space, Word(1, "one", Same))
+    )
+    val right = List(
+      Line(1, Word(1, "one", Same)),
+      Line(2, Word(2, "two", CharsMoved(selection("two one", LineIdx(0), 0, 3), Traversable.empty)))
+    )
+
+    test(left, right)
+  }
+
+  "word moved within the line" in {
+    def move(line: String, lineIdx: LineIdx, from: Int, to: Int, fromInThisLine: Int, toInThisLine: Int) = {
+      CharsMoved(selection(line, lineIdx, from, to), Traversable(CharEdit(CharIdxInLine(fromInThisLine), CharIdxInLine(toInThisLine), Same)))
+    }
+    val left = List(
+      Line(1, Word(1, "one", Same), Space, Word(2, "two", Same), Space, Word(3, "thr", move("thr one two", LineIdx(0), 0, 3, fromInThisLine = 8, toInThisLine = 11)))
+    )
+    val right = List(
+      Line(1, Word(3, "thr", move("one two thr", LineIdx(0), 8, 11, fromInThisLine = 0, toInThisLine = 3)), Space, Word(1, "one", Same), Space, Word(2, "two", Same))
     )
     test(left, right)
   }
