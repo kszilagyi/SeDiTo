@@ -3,6 +3,9 @@ package com.kristofszilagyi.sedito.common
 import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 final class LongestIncreasingSubsequenceTest extends FreeSpecLike {
+  "empty" in {
+    LongestIncreasingSubsequence.apply(Array()) should contain theSameElementsInOrderAs List()
+  }
   "trivial case works" in {
     LongestIncreasingSubsequence.apply(Array(1)) should contain theSameElementsInOrderAs List(1)
   }
