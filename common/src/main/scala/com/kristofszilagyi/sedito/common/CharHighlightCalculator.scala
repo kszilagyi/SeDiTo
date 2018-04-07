@@ -7,7 +7,7 @@ import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import AssertionEx.fail
 import scala.collection.JavaConverters._
 
-final case class CharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: EditType) {
+final case class CharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType) {
   def text(line: String): String = {
     line.substring(from.i, to.i)
   }
@@ -27,7 +27,7 @@ object CharHighlightCalculator {
       val len = diff.text.length
       val lastPos = result.lastOption.map(_.to).getOrElse(CharIdxInLine(0))
       val to = lastPos + len
-      result :+ CharEdit(from = baseline.from + lastPos, to = baseline.from + to, editType = EditType.from(op))
+      result :+ CharEdit(from = baseline.from + lastPos, to = baseline.from + to, editType = CharEditType.from(op))
     }
   }
 
@@ -60,8 +60,8 @@ object CharHighlightCalculator {
 
   private def replaceSamesWithMoves(leftEdits: Seq[CharEdit], rightEdits: Seq[CharEdit], leftLine: String,
                                     rightLine: String, leftLineIdx: LineIdx, rightLineIdx: LineIdx): (Seq[CharEdit], Seq[CharEdit]) = {
-    val leftSame = leftEdits.filter(_.editType ==== Same)
-    val rightSame = rightEdits.filter(_.editType ==== Same)
+    val leftSame = leftEdits.filter(_.editType ==== CharsSame)
+    val rightSame = rightEdits.filter(_.editType ==== CharsSame)
     leftSame.zip(rightSame).map { case (left, right) =>
       assert(left.text(leftLine) ==== right.text(rightLine))
       val rightSelection = Selection.create(rightLine, rightLineIdx, right.from, right.to).getAssert("")
@@ -110,8 +110,8 @@ object CharHighlightCalculator {
           }
         }.unzip
 
-        val inserts = wordsWithoutMatch(rightLine, wordMatchesInEitherLine.map(_._1.right)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), Inserted))
-        val deletes = wordsWithoutMatch(leftLine, wordMatchesInEitherLine.map(_._1.left)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), Deleted))
+        val inserts = wordsWithoutMatch(rightLine, wordMatchesInEitherLine.map(_._1.right)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), CharsInserted))
+        val deletes = wordsWithoutMatch(leftLine, wordMatchesInEitherLine.map(_._1.left)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), CharsDeleted))
         (m.leftLineIdx -> (leftEdits.flatten ++ deletes), m.rightLineIdx -> (rightEdits.flatten ++ inserts))
       }.unzip
     }

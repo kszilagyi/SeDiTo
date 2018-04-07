@@ -49,17 +49,17 @@ final class DiffPane extends HBox {
     val notMovedLeft = partitioned.notMoved.map(_.leftLineIdx)
     val notMovedRight = partitioned.notMoved.map(_.rightLineIdx)
 
-    deleted.foreach(l => codeAreaLeft.setLineType(l, Deleted))
-    inserted.foreach(l => codeAreaRight.setLineType(l, Inserted))
+    deleted.foreach(l => codeAreaLeft.setLineType(l, LineDeleted))
+    inserted.foreach(l => codeAreaRight.setLineType(l, LineInserted))
     moved.foreach(m => codeAreaLeft.setLineType(m.leftLineIdx, LineMoved(m.rightLineIdx)))
     moved.foreach(m => codeAreaRight.setLineType(m.rightLineIdx, LineMoved(m.leftLineIdx)))
-    notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, Same))
-    notMovedRight.foreach(l => codeAreaRight.setLineType(l, Same))
+    notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, LineSame))
+    notMovedRight.foreach(l => codeAreaRight.setLineType(l, LineSame))
 
-    def applyHighlight(codeArea: SCodeArea, highlight: Map[LineIdx, Traversable[CharEdit]]): Unit = {
+    def applyHighlight(editor: PaddableEditor, highlight: Map[LineIdx, Traversable[CharEdit]]): Unit = {
       highlight.foreach { case (line, edits) =>
         edits.foreach { edit =>
-          codeAreaLeft.setCharEdit(line, edit.from, edit.to, edit.editType)
+          editor.setCharEdit(line, edit.from, edit.to, edit.editType)
         }
       }
     }

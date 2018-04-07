@@ -16,12 +16,12 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
   }
   @SuppressWarnings(Array(Warts.Overloading))
   private object Word {
-    def apply(id: Int, s: String, desiredEdit: EditType): Word = new Word(id, Seq(WordPart(s, desiredEdit)))
+    def apply(id: Int, s: String, desiredEdit: CharEditType): Word = new Word(id, Seq(WordPart(s, desiredEdit)))
   }
   private sealed case class Word(id: Int, parts: Seq[WordPart]) extends Section {
     def s: String = parts.map(_.s).mkString
   }
-  private sealed case class WordPart(s: String, desiredEdit: EditType)
+  private sealed case class WordPart(s: String, desiredEdit: CharEditType)
   private sealed case class Line(id: Int, sections: Section*) {
     def prodLine: String = sections.map(_.s).mkString
     def words: Seq[Word] = sections.collect{case w: Word => w}
@@ -40,7 +40,7 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
       (CharIdxInLine(start), CharIdxInLine(start + word.s.length))
     }
 
-    def partCharIdxes(line: String, parts: Traversable[WordPart]): Traversable[(CharIdxInLine, CharIdxInLine, EditType)] = {
+    def partCharIdxes(line: String, parts: Traversable[WordPart]): Traversable[(CharIdxInLine, CharIdxInLine, CharEditType)] = {
       parts.map { p =>
         val start = line.indexOf(p.s)
         discard(assert(start ==== line.lastIndexOf(p.s), s"not unique: $p"))
@@ -132,81 +132,81 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
 
   "all the same - 1 words" in {
     val left = List(
-      Line(1, Word(1, "one", Same))
+      Line(1, Word(1, "one", CharsSame))
     )
     val right = List(
-      Line(1, Word(1, "one", Same))
+      Line(1, Word(1, "one", CharsSame))
     )
     test(left, right)
   }
 
   "all same - 2 words" in {
     val left = List(
-      Line(1, Word(1, "one", Same), Space, Word(2, "two", Same))
+      Line(1, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame))
     )
     val right = List(
-      Line(1, Word(1, "one", Same), Space, Word(2, "two", Same))
+      Line(1, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame))
     )
     test(left, right)
   }
 
   "all same - 3 words" in {
     val left = List(
-      Line(1, Word(1, "one", Same), Space, Word(2, "two", Same), Space, Word(3, "three", Same))
+      Line(1, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame), Space, Word(3, "three", CharsSame))
     )
     val right = List(
-      Line(1, Word(1, "one", Same), Space, Word(2, "two", Same), Space, Word(3, "three", Same))
+      Line(1, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame), Space, Word(3, "three", CharsSame))
     )
     test(left, right)
   }
 
   "1 word inserted" in {
     val left = List(
-      Line(1, Word(1, "one", Same), Space, Word(3, "three", Same))
+      Line(1, Word(1, "one", CharsSame), Space, Word(3, "three", CharsSame))
     )
     val right = List(
-      Line(1, Word(1, "one", Same), Space, Word(2, "two", Inserted), Space, Word(3, "three", Same))
+      Line(1, Word(1, "one", CharsSame), Space, Word(2, "two", CharsInserted), Space, Word(3, "three", CharsSame))
     )
     test(left, right)
   }
 
   "1 word removed" in {
     val left = List(
-      Line(1, Word(1, "one", Same), Space, Word(2, "two", Deleted), Space, Word(3, "three", Same))
+      Line(1, Word(1, "one", CharsSame), Space, Word(2, "two", CharsDeleted), Space, Word(3, "three", CharsSame))
     )
     val right = List(
-      Line(1, Word(1, "one", Same), Space, Word(3, "three", Same))
+      Line(1, Word(1, "one", CharsSame), Space, Word(3, "three", CharsSame))
     )
     test(left, right)
   }
 
   "1 word matching but changed (add)" in {
     val left = List(
-      Line(1, Word(1, "orange", Same))
+      Line(1, Word(1, "orange", CharsSame))
     )
     val right = List(
-      Line(1, Word(1, Seq(WordPart("orange", Same), WordPart("juice", Inserted))))
+      Line(1, Word(1, Seq(WordPart("orange", CharsSame), WordPart("juice", CharsInserted))))
     )
     test(left, right)
   }
 
   "1 word matching but changed (removed)" in {
     val left = List(
-      Line(1, Word(1, Seq(WordPart("orange", Same), WordPart("juice", Deleted))))
+      Line(1, Word(1, Seq(WordPart("orange", CharsSame), WordPart("juice", CharsDeleted))))
     )
     val right = List(
-      Line(1, Word(1, "orange", Same))
+      Line(1, Word(1, "orange", CharsSame))
     )
     test(left, right)
   }
 
   "word moved from other line" in {
     val left = List(
-      Line(1, Word(1, "one", Same)),
+      Line(1, Word(1, "one", CharsSame)),
       Line(2, Word(2, "two", CharsMoved(selection("two one", LineIdx(0), 0, 3), Traversable.empty)))
     )
     val right = List(
-      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3), Traversable.empty)), Space, Word(1, "one", Same))
+      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3), Traversable.empty)), Space, Word(1, "one", CharsSame))
     )
     test(left, right)
   }
@@ -214,10 +214,10 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
 
   "word moved to other line" in {
     val left = List(
-      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3), Traversable.empty)), Space, Word(1, "one", Same))
+      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3), Traversable.empty)), Space, Word(1, "one", CharsSame))
     )
     val right = List(
-      Line(1, Word(1, "one", Same)),
+      Line(1, Word(1, "one", CharsSame)),
       Line(2, Word(2, "two", CharsMoved(selection("two one", LineIdx(0), 0, 3), Traversable.empty)))
     )
 
@@ -226,11 +226,11 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
 
   "word moved from other line but changed" in {
     val left = List(
-      Line(1, Word(1, "one", Same)),
+      Line(1, Word(1, "one", CharsSame)),
       Line(2, Word(2, "two", CharsMoved(selection("two one", LineIdx(0), 0, 3), Traversable.empty)))
     )
     val right = List(
-      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3), Traversable.empty)), Space, Word(1, "one", Same))
+      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3), Traversable.empty)), Space, Word(1, "one", CharsSame))
     )
     test(left, right)
   }
@@ -238,10 +238,10 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
 
   "word moved to other line but changed" in {
     val left = List(
-      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3), Traversable.empty)), Space, Word(1, "one", Same))
+      Line(1, Word(2, "two", CharsMoved(selection("two", LineIdx(1), 0, 3), Traversable.empty)), Space, Word(1, "one", CharsSame))
     )
     val right = List(
-      Line(1, Word(1, "one", Same)),
+      Line(1, Word(1, "one", CharsSame)),
       Line(2, Word(2, "two", CharsMoved(selection("two one", LineIdx(0), 0, 3), Traversable.empty)))
     )
 
@@ -250,13 +250,13 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
 
   "word moved within the line" in {
     def move(line: String, lineIdx: LineIdx, from: Int, to: Int, fromInThisLine: Int, toInThisLine: Int) = {
-      CharsMoved(selection(line, lineIdx, from, to), Traversable(CharEdit(CharIdxInLine(fromInThisLine), CharIdxInLine(toInThisLine), Same)))
+      CharsMoved(selection(line, lineIdx, from, to), Traversable(CharEdit(CharIdxInLine(fromInThisLine), CharIdxInLine(toInThisLine), CharsSame)))
     }
     val left = List(
-      Line(1, Word(1, "one", Same), Space, Word(2, "two", Same), Space, Word(3, "thr", move("thr one two", LineIdx(0), 0, 3, fromInThisLine = 8, toInThisLine = 11)))
+      Line(1, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame), Space, Word(3, "thr", move("thr one two", LineIdx(0), 0, 3, fromInThisLine = 8, toInThisLine = 11)))
     )
     val right = List(
-      Line(1, Word(3, "thr", move("one two thr", LineIdx(0), 8, 11, fromInThisLine = 0, toInThisLine = 3)), Space, Word(1, "one", Same), Space, Word(2, "two", Same))
+      Line(1, Word(3, "thr", move("one two thr", LineIdx(0), 8, 11, fromInThisLine = 0, toInThisLine = 3)), Space, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame))
     )
     test(left, right)
   }

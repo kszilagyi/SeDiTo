@@ -49,22 +49,26 @@ object PaddableEditor {
   }
   final case class CharCssClass(s: String)
 
-  private def getLineCssClass(editType: Option[EditType]) = {
+  private def getLineCssClass(editType: Option[LineEditType]) = {
     (editType map {
       case _: LineMoved => LineCssClass("moved")
-      case Inserted => LineCssClass("inserted")
-      case Deleted => LineCssClass("deleted")
-      case Same => LineCssClass("same")
-      case _: CharsMoved => LineCssClass("moved") //todo
+      case LineInserted => LineCssClass("inserted")
+      case LineDeleted => LineCssClass("deleted")
+      case LineSame => LineCssClass("same")
     }).getOrElse(LineCssClass("white"))
   }
 
-  private def getCharCssClass(editType: Option[EditType]) = {
-    getLineCssClass(editType).toChar
+  private def getCharCssClass(editType: Option[CharEditType]) = {
+    (editType map {
+      case CharsInserted => CharCssClass("inserted")
+      case CharsDeleted => CharCssClass("deleted")
+      case CharsSame => CharCssClass("same")
+      case _: CharsMoved => CharCssClass("moved") //todo
+    }).getOrElse(CharCssClass("white"))
   }
 }
 
-final case class LineEdits(line: EditType, charEdits: Traversable[CharEdit])
+final case class LineEdits(line: LineEditType, charEdits: Traversable[CharEdit])
 
 final class PaddableEditor extends SCodeArea {
 
@@ -109,7 +113,7 @@ final class PaddableEditor extends SCodeArea {
             popupMsg.setText(s"Moved from line ${from.i + 1}")
             popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
             otherEditor.foreach(_.highlightLine(from))
-          case Inserted | Deleted | Same=>
+          case LineInserted | LineDeleted | LineSame=>
         }
       case None =>
     }
@@ -145,7 +149,7 @@ final class PaddableEditor extends SCodeArea {
     paddings.get(lineIdx).foreach(applyPaddingCss(lineIdx, _))
   }
 
-  def setLineType(lineIdx: LineIdx, editType: EditType): Unit = {
+  def setLineType(lineIdx: LineIdx, editType: LineEditType): Unit = {
     val current = editTypes.get(lineIdx)
     val newEdit = current match {
       case Some(edit) => edit.copy(line = editType)
@@ -156,11 +160,11 @@ final class PaddableEditor extends SCodeArea {
     applyLineTypeCss(lineIdx, Some(newEdit))
   }
 
-  private def applyCharCss(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: EditType): Unit = {
+  private def applyCharCss(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {
     setStyle(lineIdx.i, from.i, to.i, List(getCharCssClass(Some(editType)).s).asJava)
   }
 
-  def setCharEdit(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: EditType): Unit = {
+  def setCharEdit(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {
     val current = editTypes.get(lineIdx)
     val newEdit = current match {
       case Some(edit) => edit.copy(charEdits = edit.charEdits ++ Traversable(CharEdit(from, to, editType)))
