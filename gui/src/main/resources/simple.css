@@ -36,6 +36,14 @@
   -rtfx-background-color: lightgreen;
 }
 
+.moved_char {
+  -rtfx-background-color: lightblue;
+}
+
 .same_char {
-  -rtfx-background-color: grey;
+  -rtfx-background-color: lightgrey;
+}
+
+.white_char {
+  -rtfx-background-color: white;
 }

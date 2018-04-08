@@ -60,17 +60,18 @@ object PaddableEditor {
 
   private def getCharCssClass(editType: Option[CharEditType]) = {
     (editType map {
-      case CharsInserted => CharCssClass("inserted")
-      case CharsDeleted => CharCssClass("deleted")
-      case CharsSame => CharCssClass("same")
-      case _: CharsMoved => CharCssClass("moved") //todo
-    }).getOrElse(CharCssClass("white"))
+      case CharsInserted => CharCssClass("inserted_char")
+      case CharsDeleted => CharCssClass("deleted_char")
+      case CharsSame => CharCssClass("same_char")
+      case _: CharsMoved => CharCssClass("moved_char") //todo
+    }).getOrElse(CharCssClass("white_char"))
   }
 }
 
 final case class LineEdits(line: LineEditType, charEdits: Traversable[CharEdit])
 
 final class PaddableEditor extends SCodeArea {
+  this.setUseInitialStyleForInsertion(true)
 
   setParagraphGraphicFactory(LineNumberFactory.get(this))
 
