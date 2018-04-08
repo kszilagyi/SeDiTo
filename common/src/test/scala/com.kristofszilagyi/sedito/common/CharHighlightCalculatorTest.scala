@@ -200,6 +200,16 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
     test(left, right)
   }
 
+  "1 word matching but changed (add & removed)" in {
+    val left = List(
+      Line(1, Word(1, Seq(WordPart("orange", CharsSame), WordPart("juice", CharsDeleted))))
+    )
+    val right = List(
+      Line(1, Word(1,  Seq(WordPart("orange", CharsSame), WordPart("moot", CharsInserted))))
+    )
+    test(left, right)
+  }
+
   "word moved from other line" in {
     val left = List(
       Line(1, Word(1, "one", CharsSame)),
