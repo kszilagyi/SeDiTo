@@ -7,10 +7,21 @@ import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import AssertionEx.fail
 import scala.collection.JavaConverters._
 
+/**
+  * This one can contain moves too but DirectCharEdit can't
+  */
 final case class CharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType) {
   def text(line: String): String = {
     line.substring(from.i, to.i)
   }
+}
+
+
+final case class DirectCharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: ApplicableCharEditType) {
+  def text(line: String): String = {
+    line.substring(from.i, to.i)
+  }
+  def toCharEdit: CharEdit = CharEdit(from, to, editType)
 }
 
 final case class CharHighlight(left: Map[LineIdx, Traversable[CharEdit]], right: Map[LineIdx, Traversable[CharEdit]])
@@ -22,12 +33,12 @@ object CharHighlightCalculator {
   private case object BothMatch extends MatchSide
 
   private def toPositions(baseline: Selection, diffs: Seq[DiffMatchPatch.Diff]) = {
-    diffs.foldLeft(Seq.empty[CharEdit]) { case (result, diff) =>
+    diffs.foldLeft(Seq.empty[DirectCharEdit]) { case (result, diff) =>
       val op = diff.operation
       val len = diff.text.length
       val lastPos = result.lastOption.map(_.to).getOrElse(CharIdxInLine(0))
       val to = lastPos + len
-      result :+ CharEdit(from = baseline.from + lastPos, to = baseline.from + to, editType = CharEditType.from(op))
+      result :+ DirectCharEdit(from = baseline.from + lastPos, to = baseline.from + to, editType = CharEditType.from(op))
     }
   }
 
@@ -58,17 +69,17 @@ object CharHighlightCalculator {
     sames.map((_, S)) ++ moved.map((_, M))
   }
 
-  private def replaceSamesWithMoves(leftEdits: Seq[CharEdit], rightEdits: Seq[CharEdit], leftLine: String,
+  private def replaceSamesWithMoves(leftEdits: Seq[DirectCharEdit], rightEdits: Seq[DirectCharEdit], leftLine: String,
                                     rightLine: String, leftLineIdx: LineIdx, rightLineIdx: LineIdx): (Seq[CharEdit], Seq[CharEdit]) = {
     val leftSame = leftEdits.filter(_.editType ==== CharsSame)
     val rightSame = rightEdits.filter(_.editType ==== CharsSame)
     leftSame.zip(rightSame).map { case (left, right) =>
       assert(left.text(leftLine) ==== right.text(rightLine))
       val rightSelection = Selection.create(rightLine, rightLineIdx, right.from, right.to).getAssert("")
-      val replacedLeft = left.copy(editType = CharsMoved(rightSelection, leftEdits))
+      val replacedLeft = CharEdit(left.from, left.to, CharsMoved(rightSelection, leftEdits))
 
       val leftSelection = Selection.create(leftLine, leftLineIdx, left.from, left.to).getAssert("")
-      val replacedRight = right.copy(editType = CharsMoved(leftSelection, rightEdits))
+      val replacedRight = CharEdit(right.from, right.to, CharsMoved(leftSelection, rightEdits))
       (replacedLeft, replacedRight)
     }.unzip
   }
@@ -106,7 +117,7 @@ object CharHighlightCalculator {
           if (moveOrSame ==== M) {
             replaceSamesWithMoves(leftEdits, rightEdits, leftLine, rightLine, m.leftLineIdx, m.rightLineIdx)
           } else {
-            (leftEdits, rightEdits)
+            (leftEdits.map(_.toCharEdit), rightEdits.map(_.toCharEdit))
           }
         }.unzip
 

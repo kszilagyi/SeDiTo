@@ -260,7 +260,7 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
 
   "word moved within the line" in {
     def move(line: String, lineIdx: LineIdx, from: Int, to: Int, fromInThisLine: Int, toInThisLine: Int) = {
-      CharsMoved(selection(line, lineIdx, from, to), Traversable(CharEdit(CharIdxInLine(fromInThisLine), CharIdxInLine(toInThisLine), CharsSame)))
+      CharsMoved(selection(line, lineIdx, from, to), Traversable(DirectCharEdit(CharIdxInLine(fromInThisLine), CharIdxInLine(toInThisLine), CharsSame)))
     }
     val left = List(
       Line(1, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame), Space, Word(3, "thr", move("thr one two", LineIdx(0), 0, 3, fromInThisLine = 8, toInThisLine = 11)))

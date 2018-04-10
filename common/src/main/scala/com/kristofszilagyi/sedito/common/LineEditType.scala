@@ -12,7 +12,7 @@ case object LineSame extends LineEditType
 
 
 object CharEditType {
-  def from(op: Operation): CharEditType = {
+  def from(op: Operation): ApplicableCharEditType = {
     op match {
       case Operation.DELETE => CharsDeleted
       case Operation.INSERT => CharsInserted
@@ -23,10 +23,12 @@ object CharEditType {
 
 sealed trait CharEditType
 
+sealed trait ApplicableCharEditType extends CharEditType
+
 /**
   * @param edits extra edits above the move
   */
-final case class CharsMoved(fromTo: Selection, edits: Traversable[CharEdit]) extends CharEditType
-case object CharsInserted extends CharEditType
-case object CharsDeleted extends CharEditType
-case object CharsSame extends CharEditType
+final case class CharsMoved(fromTo: Selection, edits: Traversable[DirectCharEdit]) extends CharEditType
+case object CharsInserted extends ApplicableCharEditType
+case object CharsDeleted extends ApplicableCharEditType
+case object CharsSame extends ApplicableCharEditType

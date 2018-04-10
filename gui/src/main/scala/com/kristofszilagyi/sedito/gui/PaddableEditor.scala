@@ -58,12 +58,12 @@ object PaddableEditor {
     }).getOrElse(LineCssClass("white"))
   }
 
-  private def getCharCssClass(editType: Option[CharEditType]) = {
+  private def getCharCssClass(editType: Option[ApplicableCharEditType]) = {
     (editType map {
       case CharsInserted => CharCssClass("inserted_char")
       case CharsDeleted => CharCssClass("deleted_char")
       case CharsSame => CharCssClass("same_char")
-      case _: CharsMoved => CharCssClass("moved_char") //todo
+     // case _: CharsMoved => CharCssClass("moved_char") //todo
     }).getOrElse(CharCssClass("white_char"))
   }
 }
@@ -145,7 +145,14 @@ final class PaddableEditor extends SCodeArea {
     //setParagraphStyle(lineIdx.i, List("same").asJava)
     setParagraphStyle(lineIdx.i, List(getLineCssClass(editType.map(_.line)).s).asJava)
     editType.toList.flatMap(_.charEdits).foreach{ edit =>
-      applyCharCss(lineIdx, edit.from, edit.to, edit.editType)
+      edit.editType match {
+        case tpe: ApplicableCharEditType =>
+          applyCharCss(lineIdx, edit.from, edit.to, tpe)
+        case CharsMoved(_, edits) =>
+          edits.foreach{ editInMove =>
+            applyCharCss(lineIdx, editInMove.from, editInMove.to, editInMove.editType)
+          }
+      }
     }
     paddings.get(lineIdx).foreach(applyPaddingCss(lineIdx, _))
   }
@@ -161,7 +168,7 @@ final class PaddableEditor extends SCodeArea {
     applyLineTypeCss(lineIdx, Some(newEdit))
   }
 
-  private def applyCharCss(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {
+  private def applyCharCss(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: ApplicableCharEditType): Unit = {
     setStyle(lineIdx.i, from.i, to.i, List(getCharCssClass(Some(editType)).s).asJava)
   }
 
