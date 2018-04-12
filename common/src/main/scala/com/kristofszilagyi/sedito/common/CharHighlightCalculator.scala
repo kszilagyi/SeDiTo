@@ -24,6 +24,24 @@ final case class DirectCharEdit(from: CharIdxInLine, to: CharIdxInLine, editType
   def toCharEdit: CharEdit = CharEdit(from, to, editType)
 }
 
+object ActualCharEdit {
+  @SuppressWarnings(Array(Warts.Overloading))
+  def unapply(edit: DirectCharEdit): Option[ActualCharEdit] = {
+    edit.editType match {
+      case t: ActualCharEditType =>
+        Some(ActualCharEdit(edit.from, edit.to, t))
+      case CharsSame => None
+    }
+  }
+}
+
+final case class ActualCharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: ApplicableCharEditType) {
+  def text(line: String): String = {
+    line.substring(from.i, to.i)
+  }
+  def toCharEdit: CharEdit = CharEdit(from, to, editType)
+}
+
 final case class CharHighlight(left: Map[LineIdx, Traversable[CharEdit]], right: Map[LineIdx, Traversable[CharEdit]])
 
 object CharHighlightCalculator {
@@ -36,9 +54,9 @@ object CharHighlightCalculator {
     diffs.foldLeft(Seq.empty[DirectCharEdit]) { case (result, diff) =>
       val op = diff.operation
       val len = diff.text.length
-      val lastPos = result.lastOption.map(_.to).getOrElse(CharIdxInLine(0))
+      val lastPos = result.lastOption.map(_.to).getOrElse(baseline.from)
       val to = lastPos + len
-      result :+ DirectCharEdit(from = baseline.from + lastPos, to = baseline.from + to, editType = CharEditType.from(op))
+      result :+ DirectCharEdit(from = lastPos, to = to, editType = CharEditType.from(op))
     }
   }
 
@@ -69,17 +87,21 @@ object CharHighlightCalculator {
     sames.map((_, S)) ++ moved.map((_, M))
   }
 
-  private def replaceSamesWithMoves(leftEdits: Seq[DirectCharEdit], rightEdits: Seq[DirectCharEdit], leftLine: String,
-                                    rightLine: String, leftLineIdx: LineIdx, rightLineIdx: LineIdx): (Seq[CharEdit], Seq[CharEdit]) = {
+  private def replaceSamesWithMoves(wm: WordMatch, leftEdits: Seq[DirectCharEdit], rightEdits: Seq[DirectCharEdit], leftLine: String,
+                                    rightLine: String): (Seq[CharEdit], Seq[CharEdit]) = {
+
+    def keepActualEdits(edits: Seq[DirectCharEdit]): Seq[ActualCharEdit] = {
+      edits.collect{
+        case ActualCharEdit(a) => a
+      }
+    }
     val leftSame = leftEdits.filter(_.editType ==== CharsSame)
     val rightSame = rightEdits.filter(_.editType ==== CharsSame)
     leftSame.zip(rightSame).map { case (left, right) =>
-      assert(left.text(leftLine) ==== right.text(rightLine))
-      val rightSelection = Selection.create(rightLine, rightLineIdx, right.from, right.to).getAssert("")
-      val replacedLeft = CharEdit(left.from, left.to, CharsMoved(rightSelection, leftEdits))
+      assert(left.text(leftLine) ==== right.text(rightLine), s"${left.text(leftLine)} !=== ${right.text(rightLine)}")
+      val replacedLeft = CharEdit(wm.left.from, wm.left.toExcl, CharsMoved(wm.right, keepActualEdits(leftEdits)))
 
-      val leftSelection = Selection.create(leftLine, leftLineIdx, left.from, left.to).getAssert("")
-      val replacedRight = CharEdit(right.from, right.to, CharsMoved(leftSelection, rightEdits))
+      val replacedRight = CharEdit(wm.right.from, wm.right.toExcl, CharsMoved(wm.left, keepActualEdits(rightEdits)))
       (replacedLeft, replacedRight)
     }.unzip
   }
@@ -115,7 +137,7 @@ object CharHighlightCalculator {
           val leftEdits = toPositions(wm.left, leftDiffs)
           val rightEdits = toPositions(wm.right, rightDiffs)
           if (moveOrSame ==== M) {
-            replaceSamesWithMoves(leftEdits, rightEdits, leftLine, rightLine, m.leftLineIdx, m.rightLineIdx)
+            replaceSamesWithMoves(wm, leftEdits, rightEdits, leftLine, rightLine)
           } else {
             (leftEdits.map(_.toCharEdit), rightEdits.map(_.toCharEdit))
           }

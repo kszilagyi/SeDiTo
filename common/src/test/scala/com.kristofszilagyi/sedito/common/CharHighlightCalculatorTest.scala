@@ -259,14 +259,32 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
   }
 
   "word moved within the line" in {
-    def move(line: String, lineIdx: LineIdx, from: Int, to: Int, fromInThisLine: Int, toInThisLine: Int) = {
-      CharsMoved(selection(line, lineIdx, from, to), Traversable(DirectCharEdit(CharIdxInLine(fromInThisLine), CharIdxInLine(toInThisLine), CharsSame)))
+    def move(line: String, lineIdx: LineIdx, from: Int, to: Int) = {
+      CharsMoved(selection(line, lineIdx, from, to), Traversable.empty)
     }
     val left = List(
-      Line(1, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame), Space, Word(3, "thr", move("thr one two", LineIdx(0), 0, 3, fromInThisLine = 8, toInThisLine = 11)))
+      Line(1, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame), Space, Word(3, "thr", move("thr one two", LineIdx(0), 0, 3)))
     )
     val right = List(
-      Line(1, Word(3, "thr", move("one two thr", LineIdx(0), 8, 11, fromInThisLine = 0, toInThisLine = 3)), Space, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame))
+      Line(1, Word(3, "thr", move("one two thr", LineIdx(0), 8, 11)), Space, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame))
+    )
+    test(left, right)
+  }
+
+  "word moved and changed within line" in  {
+    def move(line: String, lineIdx: LineIdx, from: Int, to: Int, editPosition: Int, insert: Boolean) = {
+      val tpe = if (insert) CharsInserted else CharsDeleted
+      CharsMoved(selection(line, lineIdx, from, to + 1), Traversable(
+        ActualCharEdit(CharIdxInLine(editPosition), CharIdxInLine(editPosition + 1), tpe)
+      ))
+    }
+    val left = List(
+      Line(1, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame), Space,
+        Word(3, "thra", move("thrb one two", LineIdx(0), 0, 3, editPosition = 11, insert = false)))
+    )
+    val right = List(
+      Line(1, Word(3, "thrb", move("one two thra", LineIdx(0), 8, 11, editPosition = 3, insert = true)),
+        Space, Word(1, "one", CharsSame), Space, Word(2, "two", CharsSame))
     )
     test(left, right)
   }

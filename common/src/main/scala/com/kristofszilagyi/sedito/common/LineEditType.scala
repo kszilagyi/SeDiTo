@@ -22,13 +22,14 @@ object CharEditType {
 }
 
 sealed trait CharEditType
-
 sealed trait ApplicableCharEditType extends CharEditType
+sealed trait ActualCharEditType extends ApplicableCharEditType
+
 
 /**
   * @param edits extra edits above the move
   */
-final case class CharsMoved(fromTo: Selection, edits: Traversable[DirectCharEdit]) extends CharEditType
-case object CharsInserted extends ApplicableCharEditType
-case object CharsDeleted extends ApplicableCharEditType
+final case class CharsMoved(fromTo: Selection, edits: Traversable[ActualCharEdit]) extends CharEditType
+case object CharsInserted extends ActualCharEditType
+case object CharsDeleted extends ActualCharEditType
 case object CharsSame extends ApplicableCharEditType
