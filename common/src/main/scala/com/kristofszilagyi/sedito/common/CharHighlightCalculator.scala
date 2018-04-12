@@ -35,7 +35,7 @@ object ActualCharEdit {
   }
 }
 
-final case class ActualCharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: ApplicableCharEditType) {
+final case class ActualCharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: ActualCharEditType) {
   def text(line: String): String = {
     line.substring(from.i, to.i)
   }
