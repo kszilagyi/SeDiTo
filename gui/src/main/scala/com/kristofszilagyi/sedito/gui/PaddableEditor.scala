@@ -13,7 +13,6 @@ import javafx.stage.Popup
 import org.fxmisc.richtext.model.TwoDimensional.Bias
 import org.fxmisc.richtext.model.{SegmentOps, SimpleEditableStyledDocument}
 import org.fxmisc.richtext.{GenericStyledArea, LineNumberFactory, StyledTextArea}
-import TypeSafeEqualsOps._
 import scala.collection.JavaConverters._
 
 
@@ -219,14 +218,8 @@ final class PaddableEditor extends SCodeArea {
     highlightedLines = Traversable.empty
 
     highlightedChars.foreach { selection =>
-      val edit = editTypes.get(selection.lineIdx).toList.flatMap(_.charEdits).filter{ charEdit =>
-        charEdit.from ==== selection.from && charEdit.to ==== selection.toExcl
-      }
-      edit match {
-        case List(a) =>
-          applyCharCss(selection.lineIdx, selection.from, selection.toExcl, a.editType)
-        case _ => fail(s"$edit")
-      }
+      val line = selection.lineIdx
+      applyLineTypeCss(line, editTypes.get(line))
     }
     highlightedChars = Traversable.empty
   }
