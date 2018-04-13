@@ -47,3 +47,10 @@
 .white_char {
   -rtfx-background-color: white;
 }
+
+
+.highlighted_char {
+  -rtfx-background-color: yellow;
+}
+
+

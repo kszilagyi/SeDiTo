@@ -14,6 +14,10 @@ final case class CharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: Char
   def text(line: String): String = {
     line.substring(from.i, to.i)
   }
+
+  def contains(pos: CharIdxInLine): Boolean = {
+    from <= pos && pos < to
+  }
 }
 
 

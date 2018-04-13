@@ -24,9 +24,13 @@ final case class LineIdx(i: Int) {
 
 
 @SuppressWarnings(Array(Warts.Overloading))
-final case class CharIdxInLine(i: Int) {
+final case class CharIdxInLine(i: Int) extends Ordered[CharIdxInLine] {
   def +(other: Int): CharIdxInLine = CharIdxInLine(i + other)
   def +(other: CharIdxInLine): CharIdxInLine = CharIdxInLine(i + other.i)
+
+  def compare(that: CharIdxInLine): Int = {
+    i.compare(that.i)
+  }
 }
 
 object LineMatch {

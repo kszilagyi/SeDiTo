@@ -13,7 +13,7 @@ import javafx.stage.Popup
 import org.fxmisc.richtext.model.TwoDimensional.Bias
 import org.fxmisc.richtext.model.{SegmentOps, SimpleEditableStyledDocument}
 import org.fxmisc.richtext.{GenericStyledArea, LineNumberFactory, StyledTextArea}
-
+import TypeSafeEqualsOps._
 import scala.collection.JavaConverters._
 
 
@@ -91,10 +91,14 @@ final class PaddableEditor extends SCodeArea {
   @SuppressWarnings(Array(Warts.Var))
   private var highlightedLines: Traversable[LineIdx] = Traversable.empty
 
+  @SuppressWarnings(Array(Warts.Var))
+  private var highlightedChars: Traversable[Selection] = Traversable.empty
+
   def reset(): Unit = {
     editTypes = Map.empty
     paddings = Map.empty
     highlightedLines = Traversable.empty
+    highlightedChars = Traversable.empty
     clear()
   }
   private val popup = new Popup
@@ -109,13 +113,28 @@ final class PaddableEditor extends SCodeArea {
     val posInText = offsetToPosition(chIdx, Bias.Forward)
     editTypes.get(LineIdx(posInText.getMajor)) match {
       case Some(edit) =>
-        edit.line match {
-          case LineMoved(from) =>
-            popupMsg.setText(s"Moved from line ${from.i + 1}")
-            popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
-            otherEditor.foreach(_.highlightLine(from))
-          case LineInserted | LineDeleted | LineSame=>
+        val cursorPosInLine = CharIdxInLine(posInText.getMinor)
+        val moveUnderCursor = edit.charEdits.collect {
+          case charEdit @ CharEdit(_, _, CharsMoved(fromTo, _)) if charEdit.contains(cursorPosInLine) =>
+            fromTo
         }
+        assert(moveUnderCursor.size <= 1, s"$moveUnderCursor")
+        moveUnderCursor.headOption match {
+          case Some(fromTo) =>
+            popupMsg.setText(s"Moved from/to line ${fromTo.lineIdx.i + 1}")
+            popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
+            otherEditor.foreach(_.highlightChar(fromTo))
+          case None =>
+            edit.line match {
+              case LineMoved(from) =>
+                popupMsg.setText(s"Moved from/to line ${from.i + 1}")
+                popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
+                otherEditor.foreach(_.highlightLine(from))
+              case LineInserted | LineDeleted | LineSame=>
+            }
+
+        }
+
       case None =>
     }
   })
@@ -188,11 +207,28 @@ final class PaddableEditor extends SCodeArea {
     setParagraphStyle(lineIdx.i, List("highlighted").asJava)
   }
 
+  def highlightChar(selection: Selection): Unit = {
+    highlightedChars ++= Traversable(selection)
+    setStyle(selection.lineIdx.i, selection.from.i, selection.toExcl.i, List("highlighted_char").asJava)
+  }
+
   def resetHighlighting(): Unit = {
     highlightedLines.foreach { line =>
       applyLineTypeCss(line, editTypes.get(line))
     }
     highlightedLines = Traversable.empty
+
+    highlightedChars.foreach { selection =>
+      val edit = editTypes.get(selection.lineIdx).toList.flatMap(_.charEdits).filter{ charEdit =>
+        charEdit.from ==== selection.from && charEdit.to ==== selection.toExcl
+      }
+      edit match {
+        case List(a) =>
+          applyCharCss(selection.lineIdx, selection.from, selection.toExcl, a.editType)
+        case _ => fail(s"$edit")
+      }
+    }
+    highlightedChars = Traversable.empty
   }
 
   def setOther(other: PaddableEditor): Unit = {
