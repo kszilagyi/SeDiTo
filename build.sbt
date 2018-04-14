@@ -94,7 +94,12 @@ lazy val gui = (project in file("gui"))
   ).dependsOn(common % "compile->compile;test->test")
 
 
+lazy val aligner = (project in file("aligner"))
+  .settings(
+    name := "aligner",
+    commonSettings
+  ).dependsOn(common % "compile->compile;test->test")
 
 lazy val root = (project in file("."))
-  .aggregate(gui, common)
+  .aggregate(gui, common, aligner)
 
