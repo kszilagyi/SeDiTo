@@ -97,7 +97,8 @@ lazy val gui = (project in file("gui"))
 lazy val aligner = (project in file("aligner"))
   .settings(
     name := "aligner",
-    commonSettings
+    commonSettings,
+    libraryDependencies += "com.github.haifengl" %% "smile-scala" % "1.5.1"
   ).dependsOn(common % "compile->compile;test->test")
 
 lazy val root = (project in file("."))
