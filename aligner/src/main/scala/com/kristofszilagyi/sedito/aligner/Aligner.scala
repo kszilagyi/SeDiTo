@@ -1,6 +1,7 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.common.WordIndexRange
+import com.kristofszilagyi.sedito.common.{LdLenSimilarity, WordAlignment, WordIndexRange, Wordizer}
+import info.debatty.java.stringsimilarity.Levenshtein
 
 import scala.annotation.tailrec
 
@@ -24,33 +25,32 @@ object Aligner {
     extend(fromIdx + math.signum(offset), words, offset, result = "")
   }
 
-//  private val ldCalculator = new Levenshtein()
-//
-//  final case class PairwiseMetrics(ld: Double, ldLenSimilarity: Double)
-//
-//  private def calcMetrics(left: String, right: String) = {
-//    val ld = ldCalculator.distance(left, right)
-//    val ldLenSim = LdLenSimilarity.calc(left, right)
-//    PairwiseMetrics(ld, ldLenSim)
-//  }
+  private val ldCalculator = new Levenshtein()
 
+  final case class PairwiseMetrics(ld: Double, ldLenSimilarity: Double)
+  final case class Metrics(word: PairwiseMetrics, beforeContext: PairwiseMetrics, afterContext: PairwiseMetrics)
 
+  private def calcMetrics(left: String, right: String) = {
+    val ld = ldCalculator.distance(left, right)
+    val ldLenSim = LdLenSimilarity.calc(left, right)
+    PairwiseMetrics(ld, ldLenSim)
+  }
 
-//  def align(left: String, right: String): WordAlignment = {
-//    val contextSize = 100
-//    val leftWords = Wordizer.toWordIndices(left)
-//    val rightWords = Wordizer.toWordIndices(right)
-//    leftWords.zipWithIndex map { case (leftWord, leftIdx) =>
-//      rightWords.zipWithIndex map { case (rightWord, rightIdx) =>
-//        val wordMetrics = calcMetrics(leftWord.toWord, rightWord.toWord)
-//        val leftBeforeContext = context(leftIdx, leftWords, - contextSize)
-//        val leftAfterContext = context(leftIdx, leftWords, contextSize)
-//        val rightBeforeContext = context(rightIdx, rightWords, - contextSize)
-//        val rightAfterContext = context(rightIdx, rightWords, contextSize)
-//        val beforeContextMetrics = calcMetrics(leftBeforeContext, rightBeforeContext)
-//        val afterContextMetrics = calcMetrics(leftAfterContext, rightAfterContext)
-//        ???
-//      }
-//    }
-//  }
+  def calcAlignerMetrics(left: String, right: String): IndexedSeq[Metrics] = {
+    val contextSize = 100
+    val leftWords = Wordizer.toWordIndices(left)
+    val rightWords = Wordizer.toWordIndices(right)
+    leftWords.zipWithIndex flatMap { case (leftWord, leftIdx) =>
+      rightWords.zipWithIndex map { case (rightWord, rightIdx) =>
+        val wordMetrics = calcMetrics(leftWord.toWord, rightWord.toWord)
+        val leftBeforeContext = context(leftIdx, leftWords, - contextSize)
+        val leftAfterContext = context(leftIdx, leftWords, contextSize)
+        val rightBeforeContext = context(rightIdx, rightWords, - contextSize)
+        val rightAfterContext = context(rightIdx, rightWords, contextSize)
+        val beforeContextMetrics = calcMetrics(leftBeforeContext, rightBeforeContext)
+        val afterContextMetrics = calcMetrics(leftAfterContext, rightAfterContext)
+        Metrics(word = wordMetrics, beforeContext = beforeContextMetrics, afterContext = afterContextMetrics)
+      }
+    }
+  }
 }
