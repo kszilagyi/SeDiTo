@@ -4,6 +4,11 @@ import scala.annotation.tailrec
 
 object Lines {
   def empty: Lines = Lines(IndexedSeq.empty)
+
+  //todo make this handle different line endings
+  def from(s: String): Lines = {
+    Lines(s.split("\n", -1))
+  }
 }
 
 final case class Lines(l: IndexedSeq[String]) {

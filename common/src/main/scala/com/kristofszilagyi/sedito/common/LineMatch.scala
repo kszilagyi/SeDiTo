@@ -1,5 +1,7 @@
 package com.kristofszilagyi.sedito.common
 
+import cats.data.Validated.{Invalid, Valid}
+import cats.data.{NonEmptyList, ValidatedNel}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import spray.json.DefaultJsonProtocol._
 import spray.json.{JsNumber, JsValue, JsonFormat}
@@ -46,13 +48,29 @@ final case class LineMatch(leftLineIdx: LineIdx, rightLineIdx: LineIdx) {
 
 
 object LineAlignment {
-  implicit val format: JsonFormat[LineAlignment] = jsonFormat1(LineAlignment.apply)
+  implicit val format: JsonFormat[LineAlignment] = jsonFormat1(LineAlignment.unsafeCreate)
+  final case class AmbiguousMatch(duplicates: Set[LineMatch])
+
+  @SuppressWarnings(Array(Warts.Throw))
+  private def unsafeCreate(matches: Set[LineMatch]): LineAlignment = {
+    create(matches) match {
+      case Valid(a) => a
+      case Invalid(e) => throw new RuntimeException(s"$e")
+    }
+  }
+  def create(matches: Set[LineMatch]): ValidatedNel[AmbiguousMatch, LineAlignment] = {
+    val leftDuplicates = matches.groupBy(_.leftLineIdx).filter(_._2.size > 1).values
+    val rightDuplicates = matches.groupBy(_.rightLineIdx).filter(_._2.size > 1).values
+    val maybeDuplicates = (leftDuplicates ++ rightDuplicates).toList.map(AmbiguousMatch)
+    NonEmptyList.fromList(maybeDuplicates) match {
+      case Some(duplicates) => Invalid(duplicates)
+      case None => Valid(LineAlignment(matches))
+    }
+  }
 }
 
 //TODO error handling - there should be no no duplication of left or right
-final case class LineAlignment(matches: Set[LineMatch]) {
-  assert(matches.map(_.leftLineIdx).size ==== matches.size, s"$matches")
-  assert(matches.map(_.rightLineIdx).size ==== matches.size, s"$matches")
+sealed case class LineAlignment private(matches: Set[LineMatch]) {
 
   def partition: PartitionedAlignment = {
     val rightWithLeftOrdered = matches.toSeq.sortBy(_.leftLineIdx.i).map(_.rightLineIdx.i)

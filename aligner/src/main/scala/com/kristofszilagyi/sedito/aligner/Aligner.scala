@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.common.{LdLenSimilarity, WordAlignment, WordIndexRange, Wordizer}
+import com.kristofszilagyi.sedito.common.{LdLenSimilarity, WordIndexRange, Wordizer}
 import info.debatty.java.stringsimilarity.Levenshtein
 
 import scala.annotation.tailrec

@@ -29,7 +29,7 @@ final class DiffPane extends HBox {
     Lines((0 until size).map(i => codeArea.getText(i)))
   }
 
-  def openTestCase(left: String, right: String, oldAlignment: LineAlignment): Unit = {
+  def openTestCase(left: String, right: String, wordAlignment: WordAlignment): Unit = {
     //todo probably reset should recreate everything
     codeAreaRight.reset()
     codeAreaLeft.reset()
@@ -39,7 +39,6 @@ final class DiffPane extends HBox {
     val leftLines = getParagraphTexts(codeAreaLeft)
     val rightLines = getParagraphTexts(codeAreaRight)
 
-    val wordAlignment = WordAlignment.fromOld(leftLines, rightLines, oldAlignment)
     val lineAlignment = WhiteSpaceAligner.align(leftLines, rightLines, LineAligner.align(wordAlignment))
 
     val deleted = (0 until codeAreaLeft.getParagraphs.size()).map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.leftLineIdx).contains(l))

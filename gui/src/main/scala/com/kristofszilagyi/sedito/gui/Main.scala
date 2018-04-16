@@ -7,17 +7,18 @@ import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common._
 import com.sun.javafx.css.CssError
 import javafx.collections.ListChangeListener
+import javafx.scene.control.Alert
 import javafx.stage.DirectoryChooser
 import org.log4s._
 import scalafx.Includes._
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.Scene
+import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.control.{Menu, MenuBar, MenuItem}
 import scalafx.scene.layout.BorderPane
-import spray.json.enrichString
 
-import scala.io.Source
+import scala.util.{Failure, Success}
 
 object Main extends JFXApp {
 
@@ -30,12 +31,18 @@ object Main extends JFXApp {
     onAction = { _ =>
       val chooser = new DirectoryChooser()
       chooser.setTitle("Choose directory")
+      val testDir = new File("common/src/test/resources/algorithm_tests/full_tests")
+      if (testDir.isDirectory) {
+        chooser.setInitialDirectory(new File(testDir.getPath))
+      }
       val directory = chooser.showDialog(stage)
-      //TODO error handling
-      val left = Source.fromFile(new File(directory, "left.txt")).mkString
-      val right = Source.fromFile(new File(directory, "right.txt")).mkString
-      val alignment = Source.fromFile(new File(directory, "alignment.json")).mkString.parseJson.convertTo[LineAlignment]
-      diffPane.openTestCase(left, right, alignment)
+      TestCase.open(directory.toPath) match {
+        case Success(testCase) =>
+          diffPane.openTestCase(testCase.left, testCase.right, testCase.wordAlignment)
+        case Failure(e) =>
+          logger.error(e)("Failed to open test case")
+          discard(new Alert(AlertType.Error, s"Failed to open test: $e").showAndWait())
+      }
     }
   }
 
