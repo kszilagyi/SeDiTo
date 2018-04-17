@@ -30,7 +30,7 @@ sealed abstract case class Selection private(line: String, lineIdx: LineIdx, fro
   }
 }
 final case class WordMatch(left: Selection, right: Selection) {
-  def readble: String = {
+  def readable: String = {
     s"${left.toText} - ${right.toText}"
   }
 }
@@ -85,5 +85,5 @@ object WordAlignment {
   }
 }
 final case class WordAlignment(matches: Set[WordMatch]) {
-  def readable: String = matches.map(_.readble).mkString(", ")
+  def readable: String = matches.map(_.readable).mkString(", ")
 }
