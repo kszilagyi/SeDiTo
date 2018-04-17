@@ -110,7 +110,7 @@ object CharHighlightCalculator {
     }.unzip
   }
 
-  def calc(left: Lines, right: Lines, wordAlignment: WordAlignment, lineAlignment: UnambiguousLineAlignment): CharHighlight = {
+  def calc(left: Lines, right: Lines, wordAlignment: AmbiguousWordAlignment, lineAlignment: UnambiguousLineAlignment): CharHighlight = {
     val (leftHighlight, rightHighlight) = {
       lineAlignment.matches.map { m =>
 

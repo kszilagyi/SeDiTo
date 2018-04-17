@@ -35,7 +35,7 @@ final case class WordMatch(left: Selection, right: Selection) {
   }
 }
 
-object WordAlignment {
+object AmbiguousWordAlignment {
 
   private final case class Ld(left: WordIndexRange, right: WordIndexRange, dist: Double)
 
@@ -52,7 +52,7 @@ object WordAlignment {
     }
   }
 
-  def fromOld(left: Lines, right: Lines, alignment: UnambiguousLineAlignment): WordAlignment = {
+  def fromOld(left: Lines, right: Lines, alignment: UnambiguousLineAlignment): AmbiguousWordAlignment = {
     val allMatches = alignment.matches.flatMap { m =>
       val leftLine = left.l(m.leftLineIdx.i) //replace with .get?
       val rightLine = right.l(m.rightLineIdx.i)
@@ -81,9 +81,13 @@ object WordAlignment {
       }
       newMatchesForLine
     }
-    WordAlignment(allMatches)
+    AmbiguousWordAlignment(allMatches)
   }
 }
-final case class WordAlignment(matches: Set[WordMatch]) {
+
+/**
+  * For explanation see the comment on AmbiguousLineAlignment
+  */
+final case class AmbiguousWordAlignment(matches: Set[WordMatch]) {
   def readable: String = matches.map(_.readable).mkString(", ")
 }

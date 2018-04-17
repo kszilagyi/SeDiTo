@@ -22,7 +22,7 @@ object LineAligner {
         result
     }
   }
-  def align(alignment: WordAlignment): UnambiguousLineAlignment = {
+  def align(alignment: AmbiguousWordAlignment): UnambiguousLineAlignment = {
     val lineMatches = alignment.matches.toList.groupBy(m => (m.left.lineIdx, m.right.lineIdx))
     val linewiseSimilarity = lineMatches.map { case ((leftLine, rightLine), matches) =>
       val similarities = matches.map { m =>

@@ -107,7 +107,7 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
     }
 
     println(s"prodLeftLines: $prodLeftLines\nprodRightLines: $prodRightLines\nwords: $wordMatches\nlines: $lineAlignment\n")
-    toSortedHightligh(CharHighlightCalculator.calc(prodLeftLines, prodRightLines, WordAlignment(wordMatches.toSet), UnambiguousLineAlignment(lineAlignment.toSet))) shouldBe
+    toSortedHightligh(CharHighlightCalculator.calc(prodLeftLines, prodRightLines, AmbiguousWordAlignment(wordMatches.toSet), UnambiguousLineAlignment(lineAlignment.toSet))) shouldBe
       toSortedHightligh(CharHighlight(toHighlight(indexedLeftLines), toHighlight(indexedRightLines)))
 
   }
