@@ -89,5 +89,12 @@ sealed case class UnambiguousLineAlignment private(matches: Set[LineMatch]) {
   }
 }
 
+/**
+  * It's important to be able to represent this as some matches are truly ambiguous: even a human
+  * cannot say if any of them is better. Test cases can have alignments like. We must train the AI
+  * to recognise both of those matches. We cannot display anything like this so a post-processing has to be made
+  * which somehow selects one of the match. Which one to select is not important.
+  */
+final case class AmbiguousLineAlignment (matches: Set[LineMatch])
 
 final case class PartitionedAlignment(moved: Set[LineMatch], notMoved: Set[LineMatch])

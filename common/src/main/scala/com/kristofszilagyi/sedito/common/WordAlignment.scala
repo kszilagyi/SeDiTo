@@ -85,7 +85,5 @@ object WordAlignment {
   }
 }
 final case class WordAlignment(matches: Set[WordMatch]) {
-  def readble: String = matches.map { m =>
-    m.readble
-  }.mkString(", ")
+  def readable: String = matches.map(_.readble).mkString(", ")
 }
