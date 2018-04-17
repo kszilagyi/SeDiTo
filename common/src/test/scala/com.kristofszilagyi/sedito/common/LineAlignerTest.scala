@@ -5,7 +5,7 @@ import org.scalatest.Matchers._
 
 final class LineAlignerTest extends FreeSpecLike {
   "empty" in {
-    LineAligner.align(WordAlignment(Set.empty)) shouldBe LineAlignment(Set.empty)
+    LineAligner.align(WordAlignment(Set.empty)) shouldBe UnambiguousLineAlignment(Set.empty)
   }
 
   private def selection(line: String, lineIdx: Int, from: Int, to: Int) = {
@@ -15,7 +15,7 @@ final class LineAlignerTest extends FreeSpecLike {
     LineAligner.align(WordAlignment(Set(WordMatch(
       selection("line0", 0, 0, 5),
       selection("line0", 0, 0, 5)
-    )))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+    )))) shouldBe UnambiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
 
   /**
@@ -32,7 +32,7 @@ final class LineAlignerTest extends FreeSpecLike {
         selection("line0 {", lineIdx = 0, from = 6, to = 7),
         selection("{", lineIdx = 1, from = 0, to = 1)
       )
-    ))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+    ))) shouldBe UnambiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
 
   /**
@@ -49,7 +49,7 @@ final class LineAlignerTest extends FreeSpecLike {
         selection("{", lineIdx = 1, from = 0, to = 1),
         selection("line0 {", lineIdx = 0, from = 6, to = 7)
       )
-    ))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+    ))) shouldBe UnambiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
 
   /**
@@ -87,6 +87,6 @@ final class LineAlignerTest extends FreeSpecLike {
         selection("map a b", lineIdx = 0, from = 6, to = 7),
         selection("a b", lineIdx = 1, from = 2, to = 3)
       )
-    ))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+    ))) shouldBe UnambiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
 }

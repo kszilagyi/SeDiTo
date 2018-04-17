@@ -32,7 +32,7 @@ object WhiteSpaceAligner {
     * warning: alignment is both the accumulator and the thing which we can't have conflict with
     */
   @tailrec
-  private def extendMatch(up: Boolean, m: LineMatch, left: Lines, right: Lines, alignment: LineAlignment): LineAlignment = {
+  private def extendMatch(up: Boolean, m: LineMatch, left: Lines, right: Lines, alignment: UnambiguousLineAlignment): UnambiguousLineAlignment = {
     val dirInt = if (up) -1 else 1
     val next = LineMatch(m.leftLineIdx + dirInt, m.rightLineIdx + dirInt)
     (left.get(next.leftLineIdx), right.get(next.rightLineIdx)) match {
@@ -47,7 +47,7 @@ object WhiteSpaceAligner {
 
 
   }
-  def align(left: Lines, right: Lines, alignment: LineAlignment): LineAlignment = {
+  def align(left: Lines, right: Lines, alignment: UnambiguousLineAlignment): UnambiguousLineAlignment = {
     alignment.matches.foldLeft(alignment) { case (currentAlignment, m) =>
       val upExtra = extendMatch(up = true, m, left, right, currentAlignment)
       val bothExtra = extendMatch(up = false, m, left, right, upExtra)

@@ -22,7 +22,7 @@ object LineAligner {
         result
     }
   }
-  def align(alignment: WordAlignment): LineAlignment = {
+  def align(alignment: WordAlignment): UnambiguousLineAlignment = {
     val lineMatches = alignment.matches.toList.groupBy(m => (m.left.lineIdx, m.right.lineIdx))
     val linewiseSimilarity = lineMatches.map { case ((leftLine, rightLine), matches) =>
       val similarities = matches.map { m =>
@@ -34,6 +34,6 @@ object LineAligner {
     }
     //no filtering as for display it's better to display then related even if only a little bit than non-related at all
     val sortedSimilarity = linewiseSimilarity.toSeq.sortBy(- _.similarity) //the higher similarity is better so reverse sort
-    LineAlignment(approximateBestMatching(sortedSimilarity, result = Set.empty))
+    UnambiguousLineAlignment(approximateBestMatching(sortedSimilarity, result = Set.empty))
   }
 }

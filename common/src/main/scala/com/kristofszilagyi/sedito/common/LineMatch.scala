@@ -47,30 +47,29 @@ final case class LineMatch(leftLineIdx: LineIdx, rightLineIdx: LineIdx) {
 }
 
 
-object LineAlignment {
-  implicit val format: JsonFormat[LineAlignment] = jsonFormat1(LineAlignment.unsafeCreate)
+object UnambiguousLineAlignment {
+  implicit val format: JsonFormat[UnambiguousLineAlignment] = jsonFormat1(UnambiguousLineAlignment.unsafeCreate)
   final case class AmbiguousMatch(duplicates: Set[LineMatch])
 
   @SuppressWarnings(Array(Warts.Throw))
-  private def unsafeCreate(matches: Set[LineMatch]): LineAlignment = {
+  private def unsafeCreate(matches: Set[LineMatch]): UnambiguousLineAlignment = {
     create(matches) match {
       case Valid(a) => a
       case Invalid(e) => throw new RuntimeException(s"$e")
     }
   }
-  def create(matches: Set[LineMatch]): ValidatedNel[AmbiguousMatch, LineAlignment] = {
+  def create(matches: Set[LineMatch]): ValidatedNel[AmbiguousMatch, UnambiguousLineAlignment] = {
     val leftDuplicates = matches.groupBy(_.leftLineIdx).filter(_._2.size > 1).values
     val rightDuplicates = matches.groupBy(_.rightLineIdx).filter(_._2.size > 1).values
     val maybeDuplicates = (leftDuplicates ++ rightDuplicates).toList.map(AmbiguousMatch)
     NonEmptyList.fromList(maybeDuplicates) match {
       case Some(duplicates) => Invalid(duplicates)
-      case None => Valid(LineAlignment(matches))
+      case None => Valid(UnambiguousLineAlignment(matches))
     }
   }
 }
 
-//TODO error handling - there should be no no duplication of left or right
-sealed case class LineAlignment private(matches: Set[LineMatch]) {
+sealed case class UnambiguousLineAlignment private(matches: Set[LineMatch]) {
 
   def partition: PartitionedAlignment = {
     val rightWithLeftOrdered = matches.toSeq.sortBy(_.leftLineIdx.i).map(_.rightLineIdx.i)
@@ -81,8 +80,8 @@ sealed case class LineAlignment private(matches: Set[LineMatch]) {
     PartitionedAlignment(moved, notMoved)
   }
 
-  def withMatch(m: LineMatch): LineAlignment = {
-    LineAlignment(matches + m)
+  def withMatch(m: LineMatch): UnambiguousLineAlignment = {
+    UnambiguousLineAlignment(matches + m)
   }
 
   def conflict(m: LineMatch): Boolean = {

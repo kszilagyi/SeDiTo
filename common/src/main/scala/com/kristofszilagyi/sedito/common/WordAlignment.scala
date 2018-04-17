@@ -52,7 +52,7 @@ object WordAlignment {
     }
   }
 
-  def fromOld(left: Lines, right: Lines, alignment: LineAlignment): WordAlignment = {
+  def fromOld(left: Lines, right: Lines, alignment: UnambiguousLineAlignment): WordAlignment = {
     val allMatches = alignment.matches.flatMap { m =>
       val leftLine = left.l(m.leftLineIdx.i) //replace with .get?
       val rightLine = right.l(m.rightLineIdx.i)
