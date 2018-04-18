@@ -1,7 +1,5 @@
 package com.kristofszilagyi.sedito.common
 
-import cats.data.Validated.{Invalid, Valid}
-import cats.data.{NonEmptyList, ValidatedNel}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import spray.json.DefaultJsonProtocol._
 import spray.json.{JsNumber, JsValue, JsonFormat}
@@ -48,28 +46,27 @@ final case class LineMatch(leftLineIdx: LineIdx, rightLineIdx: LineIdx) {
 
 
 object UnambiguousLineAlignment {
-  implicit val format: JsonFormat[UnambiguousLineAlignment] = jsonFormat1(UnambiguousLineAlignment.unsafeCreate)
-  final case class AmbiguousMatch(duplicates: Set[LineMatch])
+//  final case class AmbiguousMatch(duplicates: Set[LineMatch])
 
-  @SuppressWarnings(Array(Warts.Throw))
-  private def unsafeCreate(matches: Set[LineMatch]): UnambiguousLineAlignment = {
-    create(matches) match {
-      case Valid(a) => a
-      case Invalid(e) => throw new RuntimeException(s"$e")
-    }
-  }
-  def create(matches: Set[LineMatch]): ValidatedNel[AmbiguousMatch, UnambiguousLineAlignment] = {
-    val leftDuplicates = matches.groupBy(_.leftLineIdx).filter(_._2.size > 1).values
-    val rightDuplicates = matches.groupBy(_.rightLineIdx).filter(_._2.size > 1).values
-    val maybeDuplicates = (leftDuplicates ++ rightDuplicates).toList.map(AmbiguousMatch)
-    NonEmptyList.fromList(maybeDuplicates) match {
-      case Some(duplicates) => Invalid(duplicates)
-      case None => Valid(UnambiguousLineAlignment(matches))
-    }
-  }
+//  @SuppressWarnings(Array(Warts.Throw))
+//  private def unsafeCreate(matches: Set[LineMatch]): UnambiguousLineAlignment = {
+//    create(matches) match {
+//      case Valid(a) => a
+//      case Invalid(e) => throw new RuntimeException(s"$e")
+//    }
+//  }
+//  def create(matches: Set[LineMatch]): ValidatedNel[AmbiguousMatch, UnambiguousLineAlignment] = {
+//    val leftDuplicates = matches.groupBy(_.leftLineIdx).filter(_._2.size > 1).values
+//    val rightDuplicates = matches.groupBy(_.rightLineIdx).filter(_._2.size > 1).values
+//    val maybeDuplicates = (leftDuplicates ++ rightDuplicates).toList.map(AmbiguousMatch)
+//    NonEmptyList.fromList(maybeDuplicates) match {
+//      case Some(duplicates) => Invalid(duplicates)
+//      case None => Valid(new UnambiguousLineAlignment(matches) {})
+//    }
+//  }
 }
 
-sealed case class UnambiguousLineAlignment private(matches: Set[LineMatch]) {
+final case class UnambiguousLineAlignment private(matches: Set[LineMatch]) {
 
   def partition: PartitionedAlignment = {
     val rightWithLeftOrdered = matches.toSeq.sortBy(_.leftLineIdx.i).map(_.rightLineIdx.i)
@@ -89,6 +86,9 @@ sealed case class UnambiguousLineAlignment private(matches: Set[LineMatch]) {
   }
 }
 
+object AmbiguousLineAlignment {
+  implicit val format: JsonFormat[AmbiguousLineAlignment] = jsonFormat1(AmbiguousLineAlignment.apply)
+}
 /**
   * It's important to be able to represent this as some matches are truly ambiguous: even a human
   * cannot say if any of them is better. Test cases can have alignments like. We must train the AI

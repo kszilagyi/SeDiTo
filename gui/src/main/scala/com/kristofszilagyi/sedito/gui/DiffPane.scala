@@ -29,7 +29,7 @@ final class DiffPane extends HBox {
     Lines((0 until size).map(i => codeArea.getText(i)))
   }
 
-  def openTestCase(left: String, right: String, wordAlignment: AmbiguousWordAlignment): Unit = {
+  def openTestCase(left: String, right: String, wordAlignment: UnambiguousWordAlignment): Unit = {
     //todo probably reset should recreate everything
     codeAreaRight.reset()
     codeAreaLeft.reset()

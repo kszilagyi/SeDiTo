@@ -14,7 +14,7 @@ object TestCase {
 
       val left = Source.fromFile(testDir.resolve("left.txt").toFile).mkString
       val right = Source.fromFile(testDir.resolve("right.txt").toFile).mkString
-      val alignment = Source.fromFile(testDir.resolve("alignment.json").toFile).mkString.parseJson.convertTo[UnambiguousLineAlignment]
+      val alignment = Source.fromFile(testDir.resolve("alignment.json").toFile).mkString.parseJson.convertTo[AmbiguousLineAlignment]
       (left, right, alignment)
     }.map{ case (left, right, alignment) =>
       TestCase(left, right, AmbiguousWordAlignment.fromOld(Lines.from(left), Lines.from(right), alignment))

@@ -5,14 +5,14 @@ import org.scalatest.Matchers._
 
 final class LineAlignerTest extends FreeSpecLike {
   "empty" in {
-    LineAligner.align(AmbiguousWordAlignment(Set.empty)) shouldBe UnambiguousLineAlignment(Set.empty)
+    LineAligner.align(UnambiguousWordAlignment(Set.empty)) shouldBe UnambiguousLineAlignment(Set.empty)
   }
 
   private def selection(line: String, lineIdx: Int, from: Int, to: Int) = {
     Selection.create(line, LineIdx(lineIdx), CharIdxInLine(from), CharIdxInLine(to)).getOrElse(fail("wrong test data"))
   }
   "one" in {
-    LineAligner.align(AmbiguousWordAlignment(Set(WordMatch(
+    LineAligner.align(UnambiguousWordAlignment(Set(WordMatch(
       selection("line0", 0, 0, 5),
       selection("line0", 0, 0, 5)
     )))) shouldBe UnambiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
@@ -23,7 +23,7 @@ final class LineAlignerTest extends FreeSpecLike {
     *            {
     */
   "slip line into two" in {
-    LineAligner.align(AmbiguousWordAlignment(Set(
+    LineAligner.align(UnambiguousWordAlignment(Set(
       WordMatch(
         selection("line0 {", lineIdx = 0, from = 0, to = 5),
         selection("line0", lineIdx = 0, from = 0, to = 5)
@@ -40,7 +40,7 @@ final class LineAlignerTest extends FreeSpecLike {
     * {
     */
   "merge lines" in {
-    LineAligner.align(AmbiguousWordAlignment(Set(
+    LineAligner.align(UnambiguousWordAlignment(Set(
       WordMatch(
         selection("line0", lineIdx = 0, from = 0, to = 5),
         selection("line0 {", lineIdx = 0, from = 0, to = 5)
@@ -57,7 +57,7 @@ final class LineAlignerTest extends FreeSpecLike {
     *                line1
     */
   "ambigous alignment results in 1 result" in {
-    LineAligner.align(AmbiguousWordAlignment(Set(
+    LineAligner.align(UnambiguousWordAlignment(Set(
       WordMatch(
         selection("line0 line1", lineIdx = 0, from = 0, to = 5),
         selection("line0", lineIdx = 0, from = 0, to = 5)
@@ -74,7 +74,7 @@ final class LineAlignerTest extends FreeSpecLike {
     *            a b
     */
   "a 3 letter word is stronger than 2 1 letter words" in {
-    LineAligner.align(AmbiguousWordAlignment(Set(
+    LineAligner.align(UnambiguousWordAlignment(Set(
       WordMatch(
         selection("map a b", lineIdx = 0, from = 0, to = 3),
         selection("map", lineIdx = 0, from = 0, to = 3)

@@ -5,7 +5,7 @@ import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 
 final class WordAlignmentTest extends FreeSpecLike{
-  val alignment = UnambiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+  val alignment = AmbiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
 
   private def m(left: String, right: String, leftStart: Int, leftEnd: Int, rightStart: Int, rightEnd: Int): WordMatch = {
     WordMatch(

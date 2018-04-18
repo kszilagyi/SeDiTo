@@ -52,8 +52,8 @@ object AmbiguousWordAlignment {
     }
   }
 
-  def fromOld(left: Lines, right: Lines, alignment: UnambiguousLineAlignment): AmbiguousWordAlignment = {
-    val allMatches = alignment.matches.flatMap { m =>
+  private def wordMatches(left: Lines, right: Lines, matches: Set[LineMatch]) = {
+    val allMatches = matches.flatMap { m =>
       val leftLine = left.l(m.leftLineIdx.i) //replace with .get?
       val rightLine = right.l(m.rightLineIdx.i)
       val leftWordRanges = Wordizer.toWordIndices(leftLine)
@@ -81,7 +81,15 @@ object AmbiguousWordAlignment {
       }
       newMatchesForLine
     }
-    AmbiguousWordAlignment(allMatches)
+    allMatches
+  }
+
+//  def fromOld(left: Lines, right: Lines, alignment: UnambiguousLineAlignment): UnambiguousWordAlignment = {
+//    UnambiguousWordAlignment(wordMatches(left, right, alignment.matches))
+//  }
+
+  def fromOld(left: Lines, right: Lines, alignment: AmbiguousLineAlignment): AmbiguousWordAlignment = {
+    AmbiguousWordAlignment(wordMatches(left, right, alignment.matches))
   }
 }
 
@@ -89,5 +97,10 @@ object AmbiguousWordAlignment {
   * For explanation see the comment on AmbiguousLineAlignment
   */
 final case class AmbiguousWordAlignment(matches: Set[WordMatch]) {
+  def readable: String = matches.map(_.readable).mkString(", ")
+}
+
+//I am undecided if this should check for conflicts or not. Same for UnambiguousLineAlignment
+final case class UnambiguousWordAlignment(matches: Set[WordMatch]) {
   def readable: String = matches.map(_.readable).mkString(", ")
 }
