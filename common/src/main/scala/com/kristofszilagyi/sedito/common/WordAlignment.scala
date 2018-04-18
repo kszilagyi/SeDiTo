@@ -84,10 +84,6 @@ object AmbiguousWordAlignment {
     allMatches
   }
 
-//  def fromOld(left: Lines, right: Lines, alignment: UnambiguousLineAlignment): UnambiguousWordAlignment = {
-//    UnambiguousWordAlignment(wordMatches(left, right, alignment.matches))
-//  }
-
   def fromOld(left: Lines, right: Lines, alignment: AmbiguousLineAlignment): AmbiguousWordAlignment = {
     AmbiguousWordAlignment(wordMatches(left, right, alignment.matches))
   }
