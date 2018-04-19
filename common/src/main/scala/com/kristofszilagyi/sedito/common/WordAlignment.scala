@@ -2,6 +2,7 @@ package com.kristofszilagyi.sedito.common
 
 import cats.data.Validated
 import cats.data.Validated.{Invalid, Valid}
+import com.kristofszilagyi.sedito.common.AmbiguousWordAlignment.resolveConflicts
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import info.debatty.java.stringsimilarity.Levenshtein
@@ -87,13 +88,32 @@ object AmbiguousWordAlignment {
   def fromOld(left: Lines, right: Lines, alignment: AmbiguousLineAlignment): AmbiguousWordAlignment = {
     AmbiguousWordAlignment(wordMatches(left, right, alignment.matches))
   }
-}
 
+  private def sortMatches(matches: Traversable[WordMatch]) = {
+    matches.toSeq.sortBy(m => (m.left.lineIdx, m.right.lineIdx, m.left.from, m.right.from)) //arbitrary but deterministic ordering
+  }
+
+  @SuppressWarnings(Array(Warts.TraversableOps))
+  private def resolveConflicts(conflictMap: Map[(LineIdx, CharIdxInLine, CharIdxInLine), Traversable[WordMatch]]) = {
+    conflictMap.map { case (_, conflictingMatches) =>
+      sortMatches(conflictingMatches).head //this is safe because groupBy will never result in an empty list
+    }
+  }
+}
 /**
   * For explanation see the comment on AmbiguousLineAlignment
   */
 final case class AmbiguousWordAlignment(matches: Set[WordMatch]) {
   def readable: String = matches.map(_.readable).mkString(", ")
+
+  def toUnambigous: UnambiguousWordAlignment = {
+    //we assume no overlap. So every conflict is caused by a word being matched with multiple other words
+    val leftMap = matches.groupBy(m => (m.left.lineIdx, m.left.from, m.left.toExcl))
+    val leftResolved = resolveConflicts(leftMap)
+    val rightMap = leftResolved.groupBy(m => (m.right.lineIdx, m.right.from, m.right.toExcl))
+    val botResolved = resolveConflicts(rightMap)
+    UnambiguousWordAlignment(botResolved.toSet)
+  }
 }
 
 //I am undecided if this should check for conflicts or not. Same for UnambiguousLineAlignment

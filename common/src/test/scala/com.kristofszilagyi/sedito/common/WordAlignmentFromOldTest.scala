@@ -4,7 +4,7 @@ import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 
-final class WordAlignmentTest extends FreeSpecLike{
+final class WordAlignmentFromOldTest extends FreeSpecLike{
   val alignment = AmbiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
 
   private def m(left: String, right: String, leftStart: Int, leftEnd: Int, rightStart: Int, rightEnd: Int): WordMatch = {
@@ -75,4 +75,5 @@ final class WordAlignmentTest extends FreeSpecLike{
       ))
     )
   }
+
 }

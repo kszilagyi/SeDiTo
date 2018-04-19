@@ -17,9 +17,10 @@ object LineIdx {
   }
 }
 
-final case class LineIdx(i: Int) {
-  def <(other: LineIdx): Boolean = i < other.i
+final case class LineIdx(i: Int) extends Ordered[LineIdx] {
   def +(other: Int): LineIdx = LineIdx(i + other)
+
+  def compare(that: LineIdx): Int = i.compareTo(that.i)
 }
 
 

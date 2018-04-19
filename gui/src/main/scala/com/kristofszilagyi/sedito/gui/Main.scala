@@ -38,7 +38,7 @@ object Main extends JFXApp {
       val directory = chooser.showDialog(stage)
       TestCase.open(directory.toPath) match {
         case Success(testCase) =>
-          diffPane.openTestCase(testCase.left, testCase.right, testCase.wordAlignment)
+          diffPane.openTestCase(testCase.left, testCase.right, testCase.wordAlignment.toUnambigous)
         case Failure(e) =>
           logger.error(e)("Failed to open test case")
           discard(new Alert(AlertType.Error, s"Failed to open test: $e").showAndWait())
