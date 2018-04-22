@@ -66,7 +66,7 @@ object CharHighlightCalculator {
 
   private def wordsWithoutMatch(line: String, wordMatchesInEitherLine: Set[Selection]) = {
     val words = Wordizer.toWordIndices(line).toSet
-    val wordsWithMatch = wordMatchesInEitherLine.map(_.toIndexRange.getAssert(""))
+    val wordsWithMatch = wordMatchesInEitherLine.map(_.toIndexRangeWithinLine.getAssert(""))
     words -- wordsWithMatch
   }
 

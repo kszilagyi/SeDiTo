@@ -11,7 +11,7 @@ import scala.annotation.tailrec
 
 
 object Selection {
-  def create(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine): Validated[RangeError, Selection] = {
+  def create(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine): Validated[WordIndexRangeError, Selection] = {
     if (from.i < 0 || from.i >= line.length) Invalid(IndexIsOutOfRange(from.i, line))
     else if (toExcl.i < 0 || toExcl.i > line.length) Invalid(IndexIsOutOfRange(from.i, line))
     else if (from.i >= toExcl.i) Invalid(RangeIsNotPositive(from.i, toExcl.i, line))
@@ -26,7 +26,7 @@ sealed abstract case class Selection private(line: String, lineIdx: LineIdx, fro
     s"${lineIdx.i}: ${from.i} - ${toExcl.i} [$toText]"
   }
 
-  def toIndexRange: Validated[RangeError, WordIndexRange] = {
+  def toIndexRangeWithinLine: Validated[WordIndexRangeError, WordIndexRange] = {
     WordIndexRange.create(startIncl = from.i, endExcl = toExcl.i, s = line)
   }
 }
