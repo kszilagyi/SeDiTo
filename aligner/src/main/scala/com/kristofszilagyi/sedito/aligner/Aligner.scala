@@ -1,11 +1,12 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.common.{LdLenSimilarity, WordIndexRange, Wordizer}
+import com.kristofszilagyi.sedito.common.{LdLenSimilarity, Selection, WordIndexRange, Wordizer}
 import info.debatty.java.stringsimilarity.Levenshtein
 
 import scala.annotation.tailrec
 
 object Aligner {
+ // private val logger = getLogger
 
   //todo test
   @tailrec
@@ -28,7 +29,10 @@ object Aligner {
   private val ldCalculator = new Levenshtein()
 
   final case class PairwiseMetrics(ld: Double, ldLenSimilarity: Double)
-  final case class Metrics(word: PairwiseMetrics, beforeContext: PairwiseMetrics, afterContext: PairwiseMetrics)
+  final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics, beforeContext: PairwiseMetrics, afterContext: PairwiseMetrics) {
+    def toDoubles: Array[Double] = Array(word.ld, word.ldLenSimilarity, beforeContext.ld, beforeContext.ldLenSimilarity,
+      afterContext.ld, afterContext.ldLenSimilarity)
+  }
 
   private def calcMetrics(left: String, right: String) = {
     val ld = ldCalculator.distance(left, right)
@@ -40,8 +44,10 @@ object Aligner {
     val contextSize = 100
     val leftWords = Wordizer.toWordIndices(left)
     val rightWords = Wordizer.toWordIndices(right)
+    //println(s"${leftWords.size} - ${rightWords.size}")
     leftWords.zipWithIndex flatMap { case (leftWord, leftIdx) =>
       rightWords.zipWithIndex map { case (rightWord, rightIdx) =>
+        //logger.info(s"$leftWord - $rightWord")
         val wordMetrics = calcMetrics(leftWord.toWord, rightWord.toWord)
         val leftBeforeContext = context(leftIdx, leftWords, - contextSize)
         val leftAfterContext = context(leftIdx, leftWords, contextSize)
@@ -49,7 +55,7 @@ object Aligner {
         val rightAfterContext = context(rightIdx, rightWords, contextSize)
         val beforeContextMetrics = calcMetrics(leftBeforeContext, rightBeforeContext)
         val afterContextMetrics = calcMetrics(leftAfterContext, rightAfterContext)
-        Metrics(word = wordMetrics, beforeContext = beforeContextMetrics, afterContext = afterContextMetrics)
+        Metrics(leftWord.toSelection, rightWord.toSelection, word = wordMetrics, beforeContext = beforeContextMetrics, afterContext = afterContextMetrics)
       }
     }
   }
