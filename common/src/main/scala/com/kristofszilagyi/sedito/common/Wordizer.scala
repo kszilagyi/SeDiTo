@@ -17,8 +17,9 @@ object Wordizer {
       val filtered = unfiltered.map{ case (start, end) =>
         (s.slice(start, end), (start, end))
       }.filterNot{ case (word, _) => word.matches(raw"\s*")}.map(_._2)
+      val fullText = FullText(s)
       filtered.map{ case (start, end) =>
-        WordIndexRange.create(startIncl = start, endExcl = end, s = s).getAssert("invalid range")
+        WordIndexRange.create(startIncl = start, endExcl = end, fullText = fullText).getAssert("invalid range")
       }
     }
   }

@@ -9,7 +9,7 @@ final class WordIndexRangeTest extends FreeSpecLike{
 
   val firstLine = "The first line"
   val secondLine = "Second line"
-  val s = s"$firstLine\n$secondLine\nThird line\nAnd forth"
+  val s = FullText(s"$firstLine\n$secondLine\nThird line\nAnd forth")
   ".toSelection - beginning of first line" in {
     WordIndexRange.create(0, 1, s).get.toSelection shouldBe
       Selection.create(firstLine, LineIdx(0), CharIdxInLine(0), CharIdxInLine(1)).get
@@ -36,11 +36,11 @@ final class WordIndexRangeTest extends FreeSpecLike{
 
   "can't create WordIndexRange with spaces" in {
     val word = " "
-    WordIndexRange.create(0, 1, word) shouldBe Invalid(NotAWord(0, 1, word))
+    WordIndexRange.create(0, 1, FullText(word)) shouldBe Invalid(NotAWord(0, 1, word))
   }
 
   "can't create WordIndexRange with \n" in {
     val word = "\n"
-    WordIndexRange.create(0, 1, word) shouldBe Invalid(NotAWord(0, 1, word))
+    WordIndexRange.create(0, 1, FullText(word)) shouldBe Invalid(NotAWord(0, 1, word))
   }
 }
