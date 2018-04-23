@@ -10,13 +10,16 @@ object Wordizer {
       val separatorIndexes = raw"((?<=[^\w])|(?=[^\w]))".r.findAllMatchIn(s).toList.map(_.start)
       val unfiltered = (0 +: separatorIndexes :+ s.length).sliding(2).toVector.flatMap {
         case List(a, b) =>
-          if (a < b) Some(WordIndexRange.create(a, b, s).getAssert("invalid range")).toList
+          if (a < b) Some((a, b)).toList
           else None.toList
         case _ => None.toList
       }
-      unfiltered.map{ idx =>
-        (s.slice(idx.startIncl, idx.endExcl), idx)
+      val filtered = unfiltered.map{ case (start, end) =>
+        (s.slice(start, end), (start, end))
       }.filterNot{ case (word, _) => word.matches(raw"\s*")}.map(_._2)
+      filtered.map{ case (start, end) =>
+        WordIndexRange.create(startIncl = start, endExcl = end, s = s).getAssert("invalid range")
+      }
     }
   }
 
