@@ -5,12 +5,14 @@ import cats.data.Validated.{Invalid, Valid}
 import TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 
+import scala.collection.immutable.SortedSet
+
 
 /**
   * the only point of this class is optimisation
   */
 final case class FullText(s: String) {
-  lazy val lineBreakIdxes: IndexedSeq[Int] = s.zipWithIndex.filter(_._1 ==== '\n').map(_._2)
+  lazy val lineBreakIdxes: SortedSet[Int] = s.zipWithIndex.filter(_._1 ==== '\n').map(_._2).to[SortedSet]
 }
 sealed abstract case class WordIndexRange private(startIncl: Int, endExcl: Int, fullText: FullText) {
   def toWord: String = fullText.s.substring(startIncl, endExcl)
@@ -22,7 +24,7 @@ sealed abstract case class WordIndexRange private(startIncl: Int, endExcl: Int, 
   def toSelection: Selection = {
     //todo line ending types
 
-    val lineBreaksBefore = fullText.lineBreakIdxes.filter(_ < startIncl)
+    val lineBreaksBefore = fullText.lineBreakIdxes.to(startIncl)
     val lineBreakAfter = fullText.lineBreakIdxes.find(_ >= endExcl).getOrElse(fullText.s.length)
     val lineIdx = LineIdx(lineBreaksBefore.size)
     val lineBreakBefore = lineBreaksBefore.lastOption.getOrElse(-1)

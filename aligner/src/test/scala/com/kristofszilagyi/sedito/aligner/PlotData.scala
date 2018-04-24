@@ -9,7 +9,6 @@ import com.kristofszilagyi.sedito.common.utils.Control._
 import com.kristofszilagyi.sedito.common.{TestCase, WordMatch}
 import org.scalatest.FreeSpecLike
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
-import smile.plot
 
 import scala.collection.JavaConverters._
 import scala.util.{Failure, Success}
@@ -20,7 +19,7 @@ final class PlotData extends FreeSpecLike {
     val parentDir = Paths.get(getClass.getClassLoader.getResource("algorithm_tests/full_tests").getPath)
     val testDirs = using(Files.newDirectoryStream(parentDir)) { stream =>
       stream.iterator().asScala.toList.filter(p => Files.isDirectory(p))
-    }.headOption.toList //todo remove, only here for speed
+    }.take(20) //todo remove, only here for speed
     val metrics = testDirs.flatMap{ testDir =>
       TestCase.open(testDir) match {
         case Failure(exception) =>
@@ -52,7 +51,7 @@ final class PlotData extends FreeSpecLike {
       }
     }
 
-    plot.plot(attributeDataset, '.').setVisible(true)
+    //plot.plot(attributeDataset, '.').setVisible(true)
   }
 
 }
