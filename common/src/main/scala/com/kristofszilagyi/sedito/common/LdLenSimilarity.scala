@@ -21,6 +21,13 @@ import info.debatty.java.stringsimilarity.Levenshtein
 object LdLenSimilarity {
   def calc(left: String, right: String): Double = {
     val ld = new Levenshtein().distance(left, right)
+    calcFast(ld, left, right)
+  }
+
+  /**
+    * Only for optimisation - doesn't need to calculate ld again
+    */
+  def calcFast(ld: Double, left: String, right: String): Double = {
     val maxLen = math.max(left.length, right.length).toDouble
     maxLen / (ld + 1.0) - ld / (ld + 1.0)
   }

@@ -36,7 +36,7 @@ object Aligner {
 
   private def calcMetrics(left: String, right: String) = {
     val ld = ldCalculator.distance(left, right)
-    val ldLenSim = LdLenSimilarity.calc(left, right)
+    val ldLenSim = LdLenSimilarity.calcFast(ld, left, right)
     PairwiseMetrics(ld, ldLenSim)
   }
 
