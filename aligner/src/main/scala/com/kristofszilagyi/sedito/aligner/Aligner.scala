@@ -29,9 +29,15 @@ object Aligner {
   private val ldCalculator = new Levenshtein()
 
   final case class PairwiseMetrics(ld: Double, ldLenSimilarity: Double)
-  final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics, beforeContext: PairwiseMetrics, afterContext: PairwiseMetrics) {
-    def toDoubles: Array[Double] = Array(word.ld, word.ldLenSimilarity, beforeContext.ld, beforeContext.ldLenSimilarity,
-      afterContext.ld, afterContext.ldLenSimilarity)
+  final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics)
+  final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics,
+                           context: Option[ContextMetrics]) {
+    def toDoubles: Option[Array[Double]] = {
+      context.map { c =>
+        Array(word.ld, word.ldLenSimilarity, c.before.ld, c.before.ldLenSimilarity,
+          c.after.ld, c.after.ldLenSimilarity)
+      }
+    }
   }
 
   private def calcMetrics(left: String, right: String) = {
@@ -49,13 +55,18 @@ object Aligner {
       rightWords.zipWithIndex map { case (rightWord, rightIdx) =>
         //logger.info(s"$leftWord - $rightWord")
         val wordMetrics = calcMetrics(leftWord.toWord, rightWord.toWord)
-        val leftBeforeContext = context(leftIdx, leftWords, - contextSize)
-        val leftAfterContext = context(leftIdx, leftWords, contextSize)
-        val rightBeforeContext = context(rightIdx, rightWords, - contextSize)
-        val rightAfterContext = context(rightIdx, rightWords, contextSize)
-        val beforeContextMetrics = calcMetrics(leftBeforeContext, rightBeforeContext)
-        val afterContextMetrics = calcMetrics(leftAfterContext, rightAfterContext)
-        Metrics(leftWord.toSelection, rightWord.toSelection, word = wordMetrics, beforeContext = beforeContextMetrics, afterContext = afterContextMetrics)
+        val contextMetrics = if(wordMetrics.ldLenSimilarity >= 0.99) {
+          val leftBeforeContext = context(leftIdx, leftWords, -contextSize)
+          val leftAfterContext = context(leftIdx, leftWords, contextSize)
+          val rightBeforeContext = context(rightIdx, rightWords, -contextSize)
+          val rightAfterContext = context(rightIdx, rightWords, contextSize)
+          val beforeContextMetrics = calcMetrics(leftBeforeContext, rightBeforeContext)
+          val afterContextMetrics = calcMetrics(leftAfterContext, rightAfterContext)
+          Some(ContextMetrics(beforeContextMetrics, afterContextMetrics))
+        } else {
+          None
+        }
+        Metrics(leftWord.toSelection, rightWord.toSelection, word = wordMetrics, contextMetrics)
       }
     }
   }

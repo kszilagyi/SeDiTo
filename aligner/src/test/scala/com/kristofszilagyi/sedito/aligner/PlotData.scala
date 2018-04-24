@@ -46,7 +46,10 @@ final class PlotData extends FreeSpecLike {
     }
     val attributeDataset = new AttributeDataset("matches", attributes.toArray, new NominalAttribute("doesMatch"))
     metrics.foreach { m =>
-      attributeDataset.add(new attributeDataset.Row(m.metrics.toDoubles, if (m.matching) 1.0 else 0.0))
+      val doubles = m.metrics.toDoubles
+      doubles.foreach { d =>
+        attributeDataset.add(new attributeDataset.Row(d, if (m.matching) 1.0 else 0.0))
+      }
     }
 
     plot.plot(attributeDataset, '.').setVisible(true)
