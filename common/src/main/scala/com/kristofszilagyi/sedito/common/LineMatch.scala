@@ -17,7 +17,7 @@ object LineIdx {
   }
 }
 
-final case class LineIdx(i: Int) extends Ordered[LineIdx] {
+final case class LineIdx(i: Int) extends AnyVal with Ordered[LineIdx]  {
   def +(other: Int): LineIdx = LineIdx(i + other)
 
   def compare(that: LineIdx): Int = i.compareTo(that.i)
@@ -25,9 +25,8 @@ final case class LineIdx(i: Int) extends Ordered[LineIdx] {
 
 
 @SuppressWarnings(Array(Warts.Overloading))
-final case class CharIdxInLine(i: Int) extends Ordered[CharIdxInLine] {
+final case class CharIdxInLine(i: Int) extends AnyVal with Ordered[CharIdxInLine] {
   def +(other: Int): CharIdxInLine = CharIdxInLine(i + other)
-  def +(other: CharIdxInLine): CharIdxInLine = CharIdxInLine(i + other.i)
 
   def compare(that: CharIdxInLine): Int = {
     i.compare(that.i)
