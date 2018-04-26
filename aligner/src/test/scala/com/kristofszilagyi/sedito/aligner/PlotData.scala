@@ -32,14 +32,9 @@ final class PlotData extends FreeSpecLike {
           val matchesSet = matches.toSet
           discard(assert(matches.size ==== matchesSet.size))
 
-          metrics flatMap { m =>
-            if (m.toDoubles.isDefined) { // to avoid keeping around unnecessary ones
-              val potentialMatch = WordMatch(m.leftWord, m.rightWord)
-              Some(MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))).toList
-            } else {
-              None.toList
-            }
-
+          metrics map { m =>
+            val potentialMatch = WordMatch(m.leftWord, m.rightWord)
+            MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))
           }
       }
     }
@@ -51,9 +46,7 @@ final class PlotData extends FreeSpecLike {
     val attributeDataset = new AttributeDataset("matches", attributes.toArray, new NominalAttribute("doesMatch"))
     metrics.foreach { m =>
       val doubles = m.metrics.toDoubles
-      doubles.foreach { d =>
-        attributeDataset.add(new attributeDataset.Row(d, if (m.matching) 1.0 else 0.0))
-      }
+      attributeDataset.add(new attributeDataset.Row(doubles, if (m.matching) 1.0 else 0.0))
     }
 
     //plot.plot(attributeDataset, '.').setVisible(true)

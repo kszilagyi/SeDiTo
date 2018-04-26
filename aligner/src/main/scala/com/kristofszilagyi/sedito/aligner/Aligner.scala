@@ -8,7 +8,6 @@ import scala.annotation.tailrec
 object Aligner {
  // private val logger = getLogger
 
-  //todo test
   @tailrec
   private def extend(currentIdx: Int, words: IndexedSeq[WordIndexRange], offset: Int, result: String): String = {
     if (currentIdx >= 0 && currentIdx < words.size && result.length < math.abs(offset)) {
@@ -31,12 +30,11 @@ object Aligner {
   final case class PairwiseMetrics(ld: Double, ldLenSimilarity: Double)
   final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics)
   final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics,
-                           context: Option[ContextMetrics]) {
-    def toDoubles: Option[Array[Double]] = {
-      context.map { c =>
-        Array(word.ld, word.ldLenSimilarity, c.before.ld, c.before.ldLenSimilarity,
-          c.after.ld, c.after.ldLenSimilarity)
-      }
+                           context: ContextMetrics) {
+    def toDoubles: Array[Double] = {
+      Array(word.ld, word.ldLenSimilarity, context.before.ld, context.before.ldLenSimilarity,
+        context.after.ld, context.after.ldLenSimilarity)
+
     }
   }
 
@@ -50,10 +48,8 @@ object Aligner {
     val contextSize = 100
     val leftWords = Wordizer.toWordIndices(left)
     val rightWords = Wordizer.toWordIndices(right)
-    //println(s"${leftWords.size} - ${rightWords.size}")
     leftWords.zipWithIndex flatMap { case (leftWord, leftIdx) =>
-      rightWords.zipWithIndex map { case (rightWord, rightIdx) =>
-        //logger.info(s"$leftWord - $rightWord")
+      rightWords.zipWithIndex flatMap { case (rightWord, rightIdx) =>
         val wordMetrics = calcMetrics(leftWord.toWord, rightWord.toWord)
         val contextMetrics = if(wordMetrics.ldLenSimilarity >= 0.99) {
           val leftBeforeContext = context(leftIdx, leftWords, -contextSize)
@@ -66,7 +62,9 @@ object Aligner {
         } else {
           None
         }
-        Metrics(leftWord.toSelection, rightWord.toSelection, word = wordMetrics, contextMetrics)
+        contextMetrics.map { c =>
+          Metrics(leftWord.toSelection, rightWord.toSelection, word = wordMetrics, c)
+        }.toList
       }
     }
   }
