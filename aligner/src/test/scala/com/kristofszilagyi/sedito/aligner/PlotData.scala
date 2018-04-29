@@ -19,7 +19,7 @@ final class PlotData extends FreeSpecLike {
     val parentDir = Paths.get(getClass.getClassLoader.getResource("algorithm_tests/full_tests").getPath)
     val testDirs = using(Files.newDirectoryStream(parentDir)) { stream =>
       stream.iterator().asScala.toList.filter(p => Files.isDirectory(p))
-    }.take(40) //todo remove, only here for speed
+    }
     val metrics = testDirs.flatMap{ testDir =>
       TestCase.open(testDir) match {
         case Failure(exception) =>
@@ -44,12 +44,13 @@ final class PlotData extends FreeSpecLike {
       new NumericAttribute(name)
     }
     val attributeDataset = new AttributeDataset("matches", attributes.toArray, new NominalAttribute("doesMatch"))
-    metrics.foreach { m =>
+    metrics.take(1000).foreach { m =>
       val doubles = m.metrics.toDoubles
       attributeDataset.add(new attributeDataset.Row(doubles, if (m.matching) 1.0 else 0.0))
     }
 
-    //plot.plot(attributeDataset, '.').setVisible(true)
+//    plot.plot(attributeDataset, '.', Array(Color.RED, Color.BLUE)).setVisible(true)
+//    Thread.sleep(10000*10000)
   }
 
 }
