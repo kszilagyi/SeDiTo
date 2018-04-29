@@ -59,7 +59,9 @@ object Aligner {
     }.toList
   }
 
-  final case class WordWithContext(beforeContext: String, afterContext: String, word: WordIndexRange)
+  final case class WordWithContext(beforeContext: String, afterContext: String, word: WordIndexRange) {
+    def positionAgnostic: (String, String, String) = (beforeContext, afterContext, word.toWord)
+  }
 
   def calcAlignerMetrics(left: String, right: String): IndexedSeq[Metrics] = {
     val contextSize = 100
