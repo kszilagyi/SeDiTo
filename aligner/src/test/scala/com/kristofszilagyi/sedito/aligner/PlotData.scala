@@ -19,7 +19,7 @@ final class PlotData extends FreeSpecLike {
     val parentDir = Paths.get(getClass.getClassLoader.getResource("algorithm_tests/full_tests").getPath)
     val testDirs = using(Files.newDirectoryStream(parentDir)) { stream =>
       stream.iterator().asScala.toList.filter(p => Files.isDirectory(p))
-    }.take(20) //todo remove, only here for speed
+    }.take(40) //todo remove, only here for speed
     val metrics = testDirs.flatMap{ testDir =>
       TestCase.open(testDir) match {
         case Failure(exception) =>

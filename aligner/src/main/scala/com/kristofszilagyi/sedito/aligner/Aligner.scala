@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.common.{LdLenSimilarity, Selection, WordIndexRange, Wordizer}
+import com.kristofszilagyi.sedito.common._
 import info.debatty.java.stringsimilarity.Levenshtein
 
 import scala.annotation.tailrec
@@ -43,28 +43,51 @@ object Aligner {
     val ldLenSim = LdLenSimilarity.calcFast(ld, left, right)
     PairwiseMetrics(ld, ldLenSim)
   }
+  //concat all words
+  //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)
+  private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext) = {
+    val wordMetrics = calcMetrics(leftWord.word.toWord, rightWord.word.toWord)
+    val contextMetrics = if(wordMetrics.ldLenSimilarity >= 0.99) {
+      val beforeContextMetrics = calcMetrics(leftWord.beforeContext, rightWord.beforeContext)
+      val afterContextMetrics = calcMetrics(leftWord.afterContext, rightWord.afterContext)
+      Some(ContextMetrics(beforeContextMetrics, afterContextMetrics))
+    } else {
+      None
+    }
+    contextMetrics.map { c =>
+      Metrics(leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics, c)
+    }.toList
+  }
+
+  final case class WordWithContext(beforeContext: String, afterContext: String, word: WordIndexRange)
 
   def calcAlignerMetrics(left: String, right: String): IndexedSeq[Metrics] = {
     val contextSize = 100
     val leftWords = Wordizer.toWordIndices(left)
     val rightWords = Wordizer.toWordIndices(right)
-    leftWords.zipWithIndex flatMap { case (leftWord, leftIdx) =>
-      rightWords.zipWithIndex flatMap { case (rightWord, rightIdx) =>
-        val wordMetrics = calcMetrics(leftWord.toWord, rightWord.toWord)
-        val contextMetrics = if(wordMetrics.ldLenSimilarity >= 0.99) {
-          val leftBeforeContext = context(leftIdx, leftWords, -contextSize)
-          val leftAfterContext = context(leftIdx, leftWords, contextSize)
-          val rightBeforeContext = context(rightIdx, rightWords, -contextSize)
-          val rightAfterContext = context(rightIdx, rightWords, contextSize)
-          val beforeContextMetrics = calcMetrics(leftBeforeContext, rightBeforeContext)
-          val afterContextMetrics = calcMetrics(leftAfterContext, rightAfterContext)
-          Some(ContextMetrics(beforeContextMetrics, afterContextMetrics))
-        } else {
-          None
-        }
-        contextMetrics.map { c =>
-          Metrics(leftWord.toSelection, rightWord.toSelection, word = wordMetrics, c)
-        }.toList
+    val leftContexts = leftWords.zipWithIndex map { case (word, leftIdx) =>
+      val leftBeforeContext = context(leftIdx, leftWords, -contextSize)
+      val leftAfterContext = context(leftIdx, leftWords, contextSize)
+      WordWithContext(leftBeforeContext, leftAfterContext, word)
+    }
+
+    val rightContexts = rightWords.zipWithIndex map { case (word, rightIdx) =>
+      val rightBeforeContext = context(rightIdx, rightWords, -contextSize)
+      val rightAfterContext = context(rightIdx, rightWords, contextSize)
+      WordWithContext(rightBeforeContext, rightAfterContext, word)
+    }
+
+    val candidateCtxFinder = new CandidateCtxFinder(rightContexts.toSet, contextSize = contextSize)
+    leftContexts.flatMap { leftWord =>
+      val candidates = if (leftWord.beforeContext.length < contextSize) {
+        rightContexts
+      } else if (leftWord.afterContext.length < contextSize) {
+        rightContexts
+      } else {
+        candidateCtxFinder.possibleMatches(leftWord)
+      }
+      candidates.flatMap { rightWord =>
+        calcAllMetrics(leftWord, rightWord)
       }
     }
   }
