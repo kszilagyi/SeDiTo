@@ -79,7 +79,7 @@ object Aligner {
       WordWithContext(rightBeforeContext, rightAfterContext, word)
     }
 
-    val candidateCtxFinder = new CandidateCtxFinder(rightContexts.toSet, contextSize = contextSize)
+    val candidateCtxFinder = new CandidateCtxFinder(rightContexts.toSet)
     leftContexts.flatMap { leftWord =>
       val candidates = if (leftWord.beforeContext.length < contextSize) {
         rightContexts
