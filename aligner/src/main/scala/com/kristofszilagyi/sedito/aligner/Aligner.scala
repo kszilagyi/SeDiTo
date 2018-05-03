@@ -31,10 +31,9 @@ object Aligner {
   final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics)
   final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics,
                            context: ContextMetrics) {
-    def toDoubles: Array[Double] = {
-      Array(word.ld, word.ldLenSimilarity, context.before.ld, context.before.ldLenSimilarity,
-        context.after.ld, context.after.ldLenSimilarity)
 
+    def toLdLenSimDouble: Array[Double]= {
+      Array(word.ldLenSimilarity, context.before.ldLenSimilarity, context.after.ldLenSimilarity)
     }
   }
 
