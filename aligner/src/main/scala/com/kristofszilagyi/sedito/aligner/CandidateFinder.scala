@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.Aligner.WordWithContext
+import com.kristofszilagyi.sedito.aligner.MetricCalculator.WordWithContext
 
 final class CandidateFinder(contexts: Set[WordWithContext]) {
   //todo mapValuesNow

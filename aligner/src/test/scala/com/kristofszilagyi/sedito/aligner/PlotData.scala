@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.aligner
 import java.awt.Color
 import java.nio.file.{Files, Paths}
 
-import com.kristofszilagyi.sedito.aligner.Aligner.Metrics
+import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.aligner.PlotData.{logger, readDataSet, toAttributeDataSet}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
@@ -34,7 +34,7 @@ object PlotData {
           println(s"$testDir -> ${exception.getMessage}")
           sys.exit(1)
         case Success(testCase) =>
-          val metrics = Aligner.calcAlignerMetrics(testCase.left, testCase.right)
+          val metrics = MetricCalculator.calcAlignerMetrics(testCase.left, testCase.right)
 
           val matches = testCase.wordAlignment.matches.toSeq
           val matchesSet = matches.toSet

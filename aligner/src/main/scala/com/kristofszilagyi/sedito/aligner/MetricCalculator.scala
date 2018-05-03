@@ -5,7 +5,7 @@ import info.debatty.java.stringsimilarity.Levenshtein
 
 import scala.annotation.tailrec
 
-object Aligner {
+object MetricCalculator {
  // private val logger = getLogger
 
   @tailrec
