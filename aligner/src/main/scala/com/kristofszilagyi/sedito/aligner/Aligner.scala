@@ -1,11 +1,10 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.Aligner.{findPotentialMatches, resolveWithMostProbable, toPartialResult}
+import com.kristofszilagyi.sedito.aligner.Aligner.{findPotentialMatches, resolveWithMostProbable}
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.{Selection, UnambiguousWordAlignment, WordMatch}
 import smile.classification.LogisticRegression
-import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
-import com.kristofszilagyi.sedito.common.utils.MapOps.RichMap
 
 final case class PartialResult(left: Selection, right: Selection, probability: Double)
 object Aligner {

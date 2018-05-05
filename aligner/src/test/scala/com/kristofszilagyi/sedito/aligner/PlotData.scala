@@ -4,7 +4,7 @@ import java.awt.Color
 import java.nio.file.{Files, Paths}
 
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
-import com.kristofszilagyi.sedito.aligner.PlotData.{logger, readDataSet, toAttributeDataSet}
+import com.kristofszilagyi.sedito.aligner.PlotData.{logger, generateClassifier, readDataSetAndMeasureMetrics, toAttributeDataSet}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
@@ -23,7 +23,7 @@ final case class MetricsWithResults(metrics: Metrics, matching: Boolean)
 object PlotData {
   private val logger = getLogger
 
-  private def readDataSet() = {
+  private def readDataSetAndMeasureMetrics() = {
     val parentDir = Paths.get(getClass.getClassLoader.getResource("algorithm_tests/full_tests").getPath)
     val testDirs = using(Files.newDirectoryStream(parentDir)) { stream =>
       stream.iterator().asScala.toList.filter(p => Files.isDirectory(p))
@@ -40,9 +40,9 @@ object PlotData {
           val matchesSet = matches.toSet
           discard(assert(matches.size ==== matchesSet.size))
 
-          metrics map { m =>
+          testDir -> metrics.map { m =>
             val potentialMatch = WordMatch(m.leftWord, m.rightWord)
-            (testDir, MetricsWithResults(m, matching = matchesSet.contains(potentialMatch)))
+            MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))
           }
       }
     }
@@ -61,19 +61,7 @@ object PlotData {
     attributeDataset
   }
 
-  def pickMostProbables(m: Map[])
-}
-final class PlotData extends FreeSpecLike {
-  "plot data" in {
-    val metrics = readDataSet()
-    plot.plot(toAttributeDataSet(metrics.flatten.map(_._2).toSet.take(10000)), '.', Array(Color.RED, Color.BLUE)).setVisible(true)
-    Thread.sleep(10000*10000)
-  }
-
-
-  "train logistic regression" in {
-    val metrics = readDataSet()
-    val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
+  private def generateClassifier(nestedTraining: List[IndexedSeq[MetricsWithResults]], nestedTest : List[IndexedSeq[MetricsWithResults]]) = {
     val training = nestedTraining.flatten
     val test = nestedTest.flatten
     logger.info(s"Training size: ${training.size}")
@@ -94,24 +82,43 @@ final class PlotData extends FreeSpecLike {
     logger.info("fallout: " + fallout(testY, pred).toString)
     logger.info("fdr: " + fdr(testY, pred).toString)
     logger.info("f1: " + f1(testY, pred).toString)
+    classifier
+  }
 
-    nestedTest.map { singleTest =>
+}
+final class PlotData extends FreeSpecLike {
+  "plot data" in {
+    val metrics = readDataSetAndMeasureMetrics()
+    plot.plot(toAttributeDataSet(metrics.flatMap(_._2).toSet.take(10000)), '.', Array(Color.RED, Color.BLUE)).setVisible(true)
+    Thread.sleep(10000*10000)
+  }
+
+
+  "train logistic regression" in {
+    val metrics = readDataSetAndMeasureMetrics()
+    val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
+    val classifier = generateClassifier(nestedTraining = nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
+
+    val f1s = nestedTest.map { case (path, singleTest) =>
       val singleDataSet = toAttributeDataSet(singleTest)
       val singleTestX = singleDataSet.x()
       val singleTestY = singleDataSet.labels()
       val singlePred = singleTestX.map(classifier.predict)
       val f1Score = f1(singleTestY, singlePred)
-      //todo filter out conflicts (by taking the most probable one)
-      val matches = singleTest.flatMap { case (_, m) =>
-        val probs = new Array[Double](2)
-        val prediction = classifier.predict(m.metrics.toLdLenSimDouble, probs)
-        if (prediction ==== 1) {
-          assert(probs(1) > 0.5)
-          Some(WordMatch(m.metrics.leftWord, m.metrics.rightWord) -> probs(1))
-        } else None
+      path -> f1Score
+    }.sortBy(_._2)
+
+    logger.info(f1s.toString)
+
+    f1s.foreach { case (path, _) =>
+      logger.info(s"Displaying $path")
+      TestCase.open(path) match {
+        case Failure(exception) =>
+          println(s"failed to open: ${exception.getMessage}")
+          sys.exit(1)
+        case Success(testCase) =>
+          val _ = new Aligner(classifier).align(testCase.left, testCase.right)
       }
-      val leftGrouped = matches.groupBy(_._1.left).map(_._2).map(_.seq.sortBy(_._2).last)
-      val rightGrouped =
     }
   }
 }

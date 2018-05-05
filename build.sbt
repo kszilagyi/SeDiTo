@@ -92,6 +92,7 @@ lazy val gui = (project in file("gui"))
     libraryDependencies += "org.fxmisc.richtext" % "richtextfx" % "1.0.0-SNAPSHOT",
     commonSettings
   ).dependsOn(common % "compile->compile;test->test")
+   .dependsOn(aligner % "compile->compile;test->test")
 
 
 lazy val aligner = (project in file("aligner"))
