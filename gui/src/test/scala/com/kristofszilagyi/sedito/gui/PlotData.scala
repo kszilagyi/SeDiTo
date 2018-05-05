@@ -1,19 +1,20 @@
-package com.kristofszilagyi.sedito.aligner
+package com.kristofszilagyi.sedito.gui
 
 import java.awt.Color
 import java.nio.file.{Files, Paths}
 
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
-import com.kristofszilagyi.sedito.aligner.PlotData.{logger, generateClassifier, readDataSetAndMeasureMetrics, toAttributeDataSet}
+import com.kristofszilagyi.sedito.aligner.{Aligner, MetricCalculator}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
 import com.kristofszilagyi.sedito.common.{TestCase, WordMatch}
+import com.kristofszilagyi.sedito.gui.PlotData.{generateClassifier, logger, readDataSetAndMeasureMetrics, toAttributeDataSet}
 import org.log4s.getLogger
 import org.scalatest.FreeSpecLike
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
-import smile.{classification, plot}
 import smile.validation._
+import smile.{classification, plot}
 
 import scala.collection.JavaConverters._
 import scala.util.{Failure, Success}
@@ -87,14 +88,14 @@ object PlotData {
 
 }
 final class PlotData extends FreeSpecLike {
-  "plot data" in {
+  "plot data" ignore {
     val metrics = readDataSetAndMeasureMetrics()
     plot.plot(toAttributeDataSet(metrics.flatMap(_._2).toSet.take(10000)), '.', Array(Color.RED, Color.BLUE)).setVisible(true)
     Thread.sleep(10000*10000)
   }
 
 
-  "train logistic regression" in {
+  "train logistic regression" ignore {
     val metrics = readDataSetAndMeasureMetrics()
     val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
     val classifier = generateClassifier(nestedTraining = nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
@@ -118,6 +119,7 @@ final class PlotData extends FreeSpecLike {
           sys.exit(1)
         case Success(testCase) =>
           val _ = new Aligner(classifier).align(testCase.left, testCase.right)
+
       }
     }
   }
