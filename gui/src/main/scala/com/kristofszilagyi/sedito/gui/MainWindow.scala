@@ -2,16 +2,16 @@ package com.kristofszilagyi.sedito.gui
 
 import java.io.File
 
-import com.kristofszilagyi.sedito.common.TestCase
+import com.kristofszilagyi.sedito.common.{TestCase, UnambiguousWordAlignment}
 import com.kristofszilagyi.sedito.common.Warts.discard
 import javafx.scene.control.Alert
 import javafx.stage.DirectoryChooser
 import org.log4s.getLogger
-import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.Scene
 import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.control.{Menu, MenuBar, MenuItem}
 import scalafx.scene.layout.BorderPane
+import scalafx.stage.Stage
 
 import scala.util.{Failure, Success}
 
@@ -44,7 +44,7 @@ final class MainWindow {
 
 
   private val url = getClass.getClassLoader.getResource("simple.css").toExternalForm
-  private val stage: PrimaryStage = new PrimaryStage {
+  private val stage: Stage = new Stage {
     maximized = true
     scene = new Scene {
 
@@ -59,4 +59,10 @@ final class MainWindow {
     }
   }
   stage.show()
+
+  def setTitle(title: String): Unit = stage.setTitle(title)
+
+  def setContent(left: String, right: String, alignment: UnambiguousWordAlignment): Unit = {
+    diffPane.openTestCase(left, right, alignment)
+  }
 }

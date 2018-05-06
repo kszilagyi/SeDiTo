@@ -10,6 +10,8 @@ import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
 import com.kristofszilagyi.sedito.common.{TestCase, WordMatch}
 import com.kristofszilagyi.sedito.gui.PlotData.{generateClassifier, logger, readDataSetAndMeasureMetrics, toAttributeDataSet}
+import javafx.application.Application
+import javafx.stage.Stage
 import org.log4s.getLogger
 import org.scalatest.FreeSpecLike
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
@@ -87,7 +89,7 @@ object PlotData {
   }
 
 }
-final class PlotData extends FreeSpecLike {
+final class PlotData extends Application with FreeSpecLike {
   "plot data" ignore {
     val metrics = readDataSetAndMeasureMetrics()
     plot.plot(toAttributeDataSet(metrics.flatMap(_._2).toSet.take(10000)), '.', Array(Color.RED, Color.BLUE)).setVisible(true)
@@ -95,7 +97,11 @@ final class PlotData extends FreeSpecLike {
   }
 
 
-  "train logistic regression" ignore {
+  "train logistic regression" in {
+    Application.launch()
+  }
+
+  def start(stage: Stage): Unit = {
     val metrics = readDataSetAndMeasureMetrics()
     val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
     val classifier = generateClassifier(nestedTraining = nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
@@ -109,17 +115,22 @@ final class PlotData extends FreeSpecLike {
       path -> f1Score
     }.sortBy(_._2)
 
-    logger.info(f1s.toString)
+    logger.info(f1s.mkString("\n"))
 
-    f1s.foreach { case (path, _) =>
+    f1s.headOption.foreach { case (path, _) =>
       logger.info(s"Displaying $path")
       TestCase.open(path) match {
         case Failure(exception) =>
           println(s"failed to open: ${exception.getMessage}")
           sys.exit(1)
         case Success(testCase) =>
-          val _ = new Aligner(classifier).align(testCase.left, testCase.right)
-
+          val calculatedAlignment = new Aligner(classifier).align(testCase.left, testCase.right)
+          val expected = new MainWindow()
+          expected.setTitle("Excpected")
+          expected.setContent(testCase.left, testCase.right, testCase.wordAlignment.toUnambigous)
+          val actual = new MainWindow()
+          actual.setTitle("Actual")
+          actual.setContent(testCase.left, testCase.right, calculatedAlignment)
       }
     }
   }
