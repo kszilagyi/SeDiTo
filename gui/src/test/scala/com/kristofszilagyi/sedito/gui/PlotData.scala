@@ -61,12 +61,14 @@ object PlotData {
   }
 
   private def toAttributeDataSet(metrics: Traversable[MetricsWithResults]) = {
-    val attributes = (0 until 13).map { name =>
+    val numOfAttributes = 21
+    val attributes = (0 until numOfAttributes).map { name =>
       new NumericAttribute(name.toString)
     }
     val attributeDataset = new AttributeDataset("matches", attributes.toArray, new NominalAttribute("doesMatch"))
     metrics.foreach { m =>
       val doubles = m.metrics.toLdLenSimDouble
+      assert(numOfAttributes ==== doubles.length, s"$numOfAttributes != ${doubles.length}")
       attributeDataset.add(new attributeDataset.Row(doubles, if (m.matching) 1.0 else 0.0))
     }
     attributeDataset
@@ -80,7 +82,7 @@ object PlotData {
     logger.info(s"1s: ${training.count(_.matching)}")
     logger.info(s"0s: ${training.count(_.matching ==== false)}")
     val trainingSet = toAttributeDataSet(training)
-    val classifier = classification.logit(trainingSet.x(), trainingSet.labels())
+    val classifier = classification.logit(trainingSet.x(), trainingSet.labels(), maxIter = 5000)
     val testSet = toAttributeDataSet(test)
     val testX = testSet.x()
     val testY = testSet.labels()

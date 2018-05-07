@@ -52,10 +52,12 @@ object MetricCalculator {
   }
 
   final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics,
-                           contextFull: ContextMetrics, contextHalf: ContextMetrics, contextQuarter: ContextMetrics) {
+                           contextFull: ContextMetrics, contextHalf: ContextMetrics, contextQuarter: ContextMetrics,
+                           context8th: ContextMetrics, context16th: ContextMetrics) {
 
     def toLdLenSimDouble: Array[Double]= {
-      (word.ldLenSim +: (contextFull.toLdLenSimDouble ++ contextHalf.toLdLenSimDouble ++ contextQuarter.toLdLenSimDouble)).toArray
+      (word.ldLenSim +: (contextFull.toLdLenSimDouble ++ contextHalf.toLdLenSimDouble ++
+        contextQuarter.toLdLenSimDouble ++ context8th.toLdLenSimDouble ++ context16th.toLdLenSimDouble)).toArray
     }
   }
 
@@ -82,14 +84,16 @@ object MetricCalculator {
       Some((
         calcContextMetrics(leftWord, rightWord, contextSize),
         calcContextMetrics(leftWord.shortedContext(contextSize / 2), rightWord.shortedContext(contextSize / 2), contextSize),
-        calcContextMetrics(leftWord.shortedContext(contextSize / 4), rightWord.shortedContext(contextSize / 4), contextSize)
+        calcContextMetrics(leftWord.shortedContext(contextSize / 4), rightWord.shortedContext(contextSize / 4), contextSize),
+        calcContextMetrics(leftWord.shortedContext(contextSize / 8), rightWord.shortedContext(contextSize / 8), contextSize),
+        calcContextMetrics(leftWord.shortedContext(contextSize / 16), rightWord.shortedContext(contextSize / 16), contextSize)
       ))
     } else {
       None
     }
-    contextMetrics.map { case (full, half, quarter) =>
+    contextMetrics.map { case (full, half, quarter, eight, sixteenth) =>
       Metrics(leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics,
-        contextFull = full, contextHalf = half, contextQuarter = quarter)
+        contextFull = full, contextHalf = half, contextQuarter = quarter, eight, sixteenth)
     }.toList
   }
 
@@ -102,7 +106,7 @@ object MetricCalculator {
 
 
   def calcAlignerMetrics(left: String, right: String): IndexedSeq[Metrics] = {
-    val contextSize = 50
+    val contextSize = 100
     val leftWords = Wordizer.toWordIndices(left)
     val rightWords = Wordizer.toWordIndices(right)
     logger.debug(s"leftWords: $leftWords")
