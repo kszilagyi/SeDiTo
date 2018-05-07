@@ -61,6 +61,11 @@ object MetricCalculator {
     def toLdLenSimDouble: Array[Double]= {
       (word.ldLenSim +: (contextFull.toLdLenSimDouble ++ context16th.toOnlyNormalized)).toArray
     }
+
+    override def toString: String = {
+      s"${leftWord.toText} - ${rightWord.toText}: word: ${word.ldLenSim}, full: ${contextFull.toLdLenSimDouble.mkString(", ")}," +
+        s" 16: ${context16th.toOnlyNormalized.mkString(", ")}"
+    }
   }
 
   private def calcMetrics(left: String, right: String) = {
