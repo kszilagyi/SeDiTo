@@ -1,29 +1,21 @@
 <smile.classification.LogisticRegression>
-  <p>21</p>
+  <p>13</p>
   <k>2</k>
-  <L>-23993.638606806355</L>
+  <L>-24116.0966189931</L>
   <w>
-    <double>0.08320995887181161</double>
-    <double>-0.04318261529423378</double>
-    <double>-0.049991918395967845</double>
-    <double>0.06931526553788918</double>
-    <double>0.04262196007854745</double>
-    <double>0.16996149390476545</double>
-    <double>0.10138796806524134</double>
-    <double>-0.059894828917232294</double>
-    <double>-0.013877993020604126</double>
-    <double>-0.17400626676088085</double>
-    <double>-0.11805517019337582</double>
-    <double>0.04208368051334547</double>
-    <double>0.03509261846731489</double>
-    <double>0.2124589555671024</double>
-    <double>0.0425044906665306</double>
-    <double>-0.02865716227662947</double>
-    <double>0.0036865301286583578</double>
-    <double>-0.6291915491686755</double>
-    <double>0.3579700726860557</double>
-    <double>0.021110125097187182</double>
-    <double>0.0033032014309483473</double>
-    <double>-6.492885209479596</double>
+    <double>0.08399861263551556</double>
+    <double>-0.00731473192028784</double>
+    <double>-0.027271178365973463</double>
+    <double>0.03196369100737597</double>
+    <double>0.018737955647399412</double>
+    <double>0.025119772842419417</double>
+    <double>0.03695199067733885</double>
+    <double>4.707138966199868E-5</double>
+    <double>0.005316485452278497</double>
+    <double>-0.003860939605170029</double>
+    <double>0.00867452531855888</double>
+    <double>-0.017402798542576856</double>
+    <double>0.02494007944833456</double>
+    <double>-6.484998512816944</double>
   </w>
 </smile.classification.LogisticRegression>

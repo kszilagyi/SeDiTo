@@ -1,591 +1,158 @@
-Testing started at 15:26 ...
-/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=16902905452465 -javaagent:/home/szkster/Programs/idea-IC-181.4203.550/lib/idea_rt.jar=39569:/home/szkster/Programs/idea-IC-181.4203.550/bin -Dfile.encoding=UTF-8 -classpath /home/szkster/.IdeaIC2018.1/config/plugins/Scala/lib/runners.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-library.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.m2/repository/org/fxmisc/richtext/richtextfx/1.0.0-SNAPSHOT/richtextfx-1.0.0-SNAPSHOT.jar:/home/szkster/.ivy2/cache/org.scalafx/scalafx_2.12/jars/scalafx_2.12-8.0.144-R12.jar:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-reflect.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-1.4.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.1.jar:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner -s com.kristofszilagyi.sedito.gui.PlotData -testName "train logistic regression" -C org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestReporter -showProgressMessages true
-15:27:28.263 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Training size: 569538
-15:27:28.266 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Test size: 506570
-15:27:28.281 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 1s: 52641
-15:27:28.295 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 0s: 516897
-15:27:31.470 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: initial function value: 3.9477e+05
-15:27:32.647 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  10 iterations: 2.0630e+05
-15:27:33.509 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  20 iterations: 1.1631e+05
-15:27:34.394 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  30 iterations: 94966
-15:27:35.208 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  40 iterations: 75169
-15:27:36.126 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  50 iterations: 45384
-15:27:36.961 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  60 iterations: 35246
-15:27:37.829 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  70 iterations: 33250
-15:27:38.689 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  80 iterations: 30876
-15:27:39.546 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  90 iterations: 29748
-15:27:40.281 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 100 iterations: 29440
-15:27:41.057 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 110 iterations: 29273
-15:27:41.873 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 120 iterations: 28865
-15:27:42.719 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 130 iterations: 28449
-15:27:43.621 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 140 iterations: 27899
-15:27:44.463 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 150 iterations: 27349
-15:27:45.221 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 160 iterations: 25957
-15:27:46.048 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 170 iterations: 25197
-15:27:46.855 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 180 iterations: 24712
-15:27:47.723 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 190 iterations: 24533
-15:27:48.474 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 200 iterations: 24404
-15:27:49.219 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 210 iterations: 24345
-15:27:50.028 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 220 iterations: 24208
-15:27:50.834 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 230 iterations: 24154
-15:27:51.617 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 240 iterations: 24132
-15:27:52.382 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 250 iterations: 24105
-15:27:53.187 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 260 iterations: 24078
-15:27:53.898 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 270 iterations: 24051
-15:27:54.679 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 280 iterations: 24032
-15:27:55.466 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 290 iterations: 24024
-15:27:56.318 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 300 iterations: 24019
-15:27:57.115 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 310 iterations: 24017
-15:27:57.909 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 320 iterations: 24012
-15:27:58.710 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 330 iterations: 24010
-15:27:59.551 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 340 iterations: 24010
-15:28:00.377 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 350 iterations: 24009
-15:28:01.132 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 360 iterations: 24009
-15:28:01.969 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 370 iterations: 24008
-15:28:02.775 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 380 iterations: 24007
-15:28:03.531 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 390 iterations: 24007
-15:28:04.369 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 400 iterations: 24006
-15:28:05.140 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 410 iterations: 24005
-15:28:05.868 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 420 iterations: 24005
-15:28:06.649 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 430 iterations: 24004
-15:28:07.426 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 440 iterations: 24004
-15:28:08.229 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 450 iterations: 24004
-15:28:09.020 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 460 iterations: 24004
-15:28:09.851 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 470 iterations: 24004
-15:28:10.618 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 480 iterations: 24003
-15:28:11.410 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 490 iterations: 24003
-15:28:12.186 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 500 iterations: 24003
-15:28:13.019 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 510 iterations: 24003
-15:28:13.783 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 520 iterations: 24003
-15:28:14.615 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 530 iterations: 24003
-15:28:15.364 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 540 iterations: 24003
-15:28:16.145 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 550 iterations: 24003
-15:28:16.928 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 560 iterations: 24003
-15:28:17.698 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 570 iterations: 24002
-15:28:18.468 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 580 iterations: 24002
-15:28:19.302 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 590 iterations: 24002
-15:28:20.085 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 600 iterations: 24002
-15:28:20.822 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 610 iterations: 24002
-15:28:21.602 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 620 iterations: 24002
-15:28:22.347 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 630 iterations: 24001
-15:28:23.121 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 640 iterations: 24001
-15:28:23.938 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 650 iterations: 24001
-15:28:24.699 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 660 iterations: 24001
-15:28:25.435 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 670 iterations: 24001
-15:28:26.220 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 680 iterations: 24001
-15:28:27.003 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 690 iterations: 24001
-15:28:27.735 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 700 iterations: 24001
-15:28:28.664 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 710 iterations: 24001
-15:28:29.417 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 720 iterations: 24001
-15:28:30.226 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 730 iterations: 24001
-15:28:30.972 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 740 iterations: 24001
-15:28:31.746 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 750 iterations: 24001
-15:28:32.483 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 760 iterations: 24001
-15:28:33.255 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 770 iterations: 24001
-15:28:34.024 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 780 iterations: 24001
-15:28:34.808 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 790 iterations: 24001
-15:28:35.529 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 800 iterations: 24001
-15:28:36.310 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 810 iterations: 24001
-15:28:37.050 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 820 iterations: 24001
-15:28:37.918 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 830 iterations: 24001
-15:28:38.696 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 840 iterations: 24000
-15:28:39.414 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 850 iterations: 24000
-15:28:40.137 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 860 iterations: 24000
-15:28:40.894 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 870 iterations: 24000
-15:28:41.706 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 880 iterations: 24000
-15:28:42.433 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 890 iterations: 24000
-15:28:43.216 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 900 iterations: 24000
-15:28:43.991 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 910 iterations: 24000
-15:28:44.753 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 920 iterations: 24000
-15:28:45.529 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 930 iterations: 24000
-15:28:46.286 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 940 iterations: 24000
-15:28:47.045 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 950 iterations: 24000
-15:28:47.841 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 960 iterations: 24000
-15:28:48.596 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 970 iterations: 24000
-15:28:49.344 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 980 iterations: 24000
-15:28:50.121 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 990 iterations: 23999
-15:28:50.880 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1000 iterations: 23999
-15:28:51.675 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1010 iterations: 23999
-15:28:52.440 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1020 iterations: 23999
-15:28:53.205 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1030 iterations: 23999
-15:28:54.015 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1040 iterations: 23999
-15:28:54.770 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1050 iterations: 23999
-15:28:55.598 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1060 iterations: 23999
-15:28:56.368 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1070 iterations: 23999
-15:28:57.164 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1080 iterations: 23999
-15:28:57.935 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1090 iterations: 23999
-15:28:58.699 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1100 iterations: 23999
-15:28:59.513 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1110 iterations: 23999
-15:29:00.331 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1120 iterations: 23999
-15:29:01.102 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1130 iterations: 23999
-15:29:01.870 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1140 iterations: 23999
-15:29:02.675 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1150 iterations: 23999
-15:29:03.432 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1160 iterations: 23998
-15:29:04.255 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1170 iterations: 23998
-15:29:04.992 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1180 iterations: 23998
-15:29:05.763 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1190 iterations: 23998
-15:29:06.524 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1200 iterations: 23998
-15:29:07.290 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1210 iterations: 23998
-15:29:08.049 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1220 iterations: 23998
-15:29:08.827 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1230 iterations: 23998
-15:29:09.594 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1240 iterations: 23998
-15:29:10.369 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1250 iterations: 23998
-15:29:11.140 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1260 iterations: 23998
-15:29:11.927 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1270 iterations: 23998
-15:29:12.728 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1280 iterations: 23998
-15:29:13.512 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1290 iterations: 23998
-15:29:14.280 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1300 iterations: 23998
-15:29:15.060 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1310 iterations: 23998
-15:29:15.885 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1320 iterations: 23998
-15:29:16.637 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1330 iterations: 23998
-15:29:17.361 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1340 iterations: 23998
-15:29:18.135 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1350 iterations: 23998
-15:29:18.939 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1360 iterations: 23998
-15:29:19.673 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1370 iterations: 23998
-15:29:20.443 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1380 iterations: 23998
-15:29:21.211 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1390 iterations: 23998
-15:29:21.927 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1400 iterations: 23998
-15:29:22.695 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1410 iterations: 23998
-15:29:23.466 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1420 iterations: 23998
-15:29:24.192 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1430 iterations: 23997
-15:29:24.918 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1440 iterations: 23997
-15:29:25.696 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1450 iterations: 23997
-15:29:26.471 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1460 iterations: 23997
-15:29:27.229 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1470 iterations: 23997
-15:29:28.003 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1480 iterations: 23997
-15:29:28.745 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1490 iterations: 23997
-15:29:29.474 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1500 iterations: 23996
-15:29:30.391 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1510 iterations: 23996
-15:29:31.207 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1520 iterations: 23996
-15:29:31.983 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1530 iterations: 23996
-15:29:32.800 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1540 iterations: 23996
-15:29:33.610 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1550 iterations: 23996
-15:29:34.404 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1560 iterations: 23996
-15:29:35.148 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1570 iterations: 23996
-15:29:35.903 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1580 iterations: 23996
-15:29:36.641 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1590 iterations: 23996
-15:29:37.477 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1600 iterations: 23996
-15:29:38.278 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1610 iterations: 23996
-15:29:39.057 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1620 iterations: 23996
-15:29:39.901 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1630 iterations: 23996
-15:29:40.699 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1640 iterations: 23996
-15:29:41.508 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1650 iterations: 23996
-15:29:42.248 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1660 iterations: 23996
-15:29:43.200 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1670 iterations: 23996
-15:29:43.950 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1680 iterations: 23996
-15:29:44.747 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1690 iterations: 23996
-15:29:45.549 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1700 iterations: 23996
-15:29:46.306 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1710 iterations: 23996
-15:29:47.044 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1720 iterations: 23996
-15:29:47.813 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1730 iterations: 23996
-15:29:48.589 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1740 iterations: 23996
-15:29:49.429 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1750 iterations: 23996
-15:29:50.254 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1760 iterations: 23996
-15:29:51.005 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1770 iterations: 23996
-15:29:51.757 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1780 iterations: 23996
-15:29:52.485 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1790 iterations: 23996
-15:29:53.259 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1800 iterations: 23996
-15:29:54.028 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1810 iterations: 23996
-15:29:54.831 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1820 iterations: 23996
-15:29:55.619 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1830 iterations: 23996
-15:29:56.425 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1840 iterations: 23996
-15:29:57.225 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1850 iterations: 23996
-15:29:58.042 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1860 iterations: 23996
-15:29:58.808 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1870 iterations: 23996
-15:29:59.537 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1880 iterations: 23996
-15:30:00.307 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1890 iterations: 23996
-15:30:01.105 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1900 iterations: 23996
-15:30:01.826 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1910 iterations: 23996
-15:30:02.630 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1920 iterations: 23995
-15:30:03.408 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1930 iterations: 23995
-15:30:04.244 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1940 iterations: 23995
-15:30:05.016 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1950 iterations: 23995
-15:30:05.804 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1960 iterations: 23995
-15:30:06.563 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1970 iterations: 23995
-15:30:07.373 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1980 iterations: 23995
-15:30:08.168 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 1990 iterations: 23995
-15:30:08.921 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2000 iterations: 23995
-15:30:09.728 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2010 iterations: 23995
-15:30:10.494 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2020 iterations: 23995
-15:30:11.292 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2030 iterations: 23995
-15:30:12.054 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2040 iterations: 23995
-15:30:12.808 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2050 iterations: 23995
-15:30:13.554 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2060 iterations: 23995
-15:30:14.324 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2070 iterations: 23995
-15:30:15.086 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2080 iterations: 23995
-15:30:15.850 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2090 iterations: 23995
-15:30:16.638 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2100 iterations: 23995
-15:30:17.388 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2110 iterations: 23995
-15:30:18.212 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2120 iterations: 23995
-15:30:18.982 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2130 iterations: 23995
-15:30:19.753 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2140 iterations: 23995
-15:30:20.521 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2150 iterations: 23995
-15:30:21.322 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2160 iterations: 23995
-15:30:22.084 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2170 iterations: 23995
-15:30:22.863 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2180 iterations: 23995
-15:30:23.678 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2190 iterations: 23995
-15:30:24.472 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2200 iterations: 23995
-15:30:25.240 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2210 iterations: 23995
-15:30:26.017 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2220 iterations: 23995
-15:30:26.758 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2230 iterations: 23995
-15:30:27.552 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2240 iterations: 23995
-15:30:28.333 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2250 iterations: 23995
-15:30:29.088 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2260 iterations: 23995
-15:30:29.827 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2270 iterations: 23995
-15:30:30.622 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2280 iterations: 23995
-15:30:31.369 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2290 iterations: 23995
-15:30:32.121 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2300 iterations: 23995
-15:30:32.917 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2310 iterations: 23995
-15:30:33.663 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2320 iterations: 23995
-15:30:34.457 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2330 iterations: 23995
-15:30:35.223 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2340 iterations: 23995
-15:30:36.002 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2350 iterations: 23995
-15:30:36.777 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2360 iterations: 23995
-15:30:37.529 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2370 iterations: 23995
-15:30:38.317 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2380 iterations: 23995
-15:30:39.120 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2390 iterations: 23995
-15:30:39.866 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2400 iterations: 23995
-15:30:40.609 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2410 iterations: 23995
-15:30:41.395 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2420 iterations: 23995
-15:30:42.178 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2430 iterations: 23995
-15:30:42.899 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2440 iterations: 23995
-15:30:43.705 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2450 iterations: 23995
-15:30:44.499 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2460 iterations: 23995
-15:30:45.297 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2470 iterations: 23995
-15:30:46.048 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2480 iterations: 23995
-15:30:46.805 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2490 iterations: 23995
-15:30:47.630 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2500 iterations: 23995
-15:30:48.431 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2510 iterations: 23995
-15:30:49.245 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2520 iterations: 23995
-15:30:49.986 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2530 iterations: 23995
-15:30:50.767 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2540 iterations: 23995
-15:30:51.525 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2550 iterations: 23995
-15:30:52.272 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2560 iterations: 23995
-15:30:53.018 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2570 iterations: 23995
-15:30:53.805 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2580 iterations: 23995
-15:30:54.611 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2590 iterations: 23995
-15:30:55.367 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2600 iterations: 23995
-15:30:56.132 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2610 iterations: 23995
-15:30:56.945 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2620 iterations: 23995
-15:30:57.695 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2630 iterations: 23995
-15:30:58.446 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2640 iterations: 23995
-15:30:59.201 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2650 iterations: 23995
-15:30:59.957 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2660 iterations: 23995
-15:31:00.711 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2670 iterations: 23995
-15:31:01.500 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2680 iterations: 23995
-15:31:02.308 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2690 iterations: 23995
-15:31:03.078 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2700 iterations: 23995
-15:31:03.871 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2710 iterations: 23995
-15:31:04.608 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2720 iterations: 23995
-15:31:05.391 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2730 iterations: 23995
-15:31:06.172 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2740 iterations: 23995
-15:31:06.919 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2750 iterations: 23995
-15:31:07.696 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2760 iterations: 23995
-15:31:08.451 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2770 iterations: 23995
-15:31:09.255 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2780 iterations: 23995
-15:31:10.053 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2790 iterations: 23995
-15:31:10.897 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2800 iterations: 23995
-15:31:11.680 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2810 iterations: 23995
-15:31:12.469 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2820 iterations: 23995
-15:31:13.262 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2830 iterations: 23995
-15:31:14.019 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2840 iterations: 23995
-15:31:14.790 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2850 iterations: 23995
-15:31:15.585 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2860 iterations: 23995
-15:31:16.383 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2870 iterations: 23995
-15:31:17.181 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2880 iterations: 23995
-15:31:18.041 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2890 iterations: 23995
-15:31:18.793 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2900 iterations: 23995
-15:31:19.558 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2910 iterations: 23995
-15:31:20.274 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2920 iterations: 23995
-15:31:21.072 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2930 iterations: 23995
-15:31:21.826 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2940 iterations: 23995
-15:31:22.621 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2950 iterations: 23995
-15:31:23.378 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2960 iterations: 23995
-15:31:24.142 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2970 iterations: 23994
-15:31:24.892 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2980 iterations: 23994
-15:31:25.620 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 2990 iterations: 23994
-15:31:26.430 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3000 iterations: 23994
-15:31:27.196 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3010 iterations: 23994
-15:31:27.983 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3020 iterations: 23994
-15:31:28.745 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3030 iterations: 23994
-15:31:29.477 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3040 iterations: 23994
-15:31:30.242 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3050 iterations: 23994
-15:31:31.024 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3060 iterations: 23994
-15:31:31.744 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3070 iterations: 23994
-15:31:32.484 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3080 iterations: 23994
-15:31:33.250 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3090 iterations: 23994
-15:31:34.144 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3100 iterations: 23994
-15:31:34.951 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3110 iterations: 23994
-15:31:35.674 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3120 iterations: 23994
-15:31:36.437 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3130 iterations: 23994
-15:31:37.475 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3140 iterations: 23994
-15:31:38.721 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3150 iterations: 23994
-15:31:39.753 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3160 iterations: 23994
-15:31:40.894 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3170 iterations: 23994
-15:31:41.810 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3180 iterations: 23994
-15:31:42.638 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3190 iterations: 23994
-15:31:43.634 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3200 iterations: 23994
-15:31:44.544 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3210 iterations: 23994
-15:31:45.381 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3220 iterations: 23994
-15:31:46.244 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3230 iterations: 23994
-15:31:47.153 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3240 iterations: 23994
-15:31:48.071 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3250 iterations: 23994
-15:31:48.930 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3260 iterations: 23994
-15:31:49.746 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3270 iterations: 23994
-15:31:50.499 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3280 iterations: 23994
-15:31:51.401 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3290 iterations: 23994
-15:31:52.124 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3300 iterations: 23994
-15:31:52.889 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3310 iterations: 23994
-15:31:53.685 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3320 iterations: 23994
-15:31:54.432 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3330 iterations: 23994
-15:31:55.192 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3340 iterations: 23994
-15:31:55.984 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3350 iterations: 23994
-15:31:56.737 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3360 iterations: 23994
-15:31:57.495 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3370 iterations: 23994
-15:31:58.269 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3380 iterations: 23994
-15:31:59.038 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3390 iterations: 23994
-15:31:59.791 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3400 iterations: 23994
-15:32:00.538 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3410 iterations: 23994
-15:32:01.323 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3420 iterations: 23994
-15:32:02.146 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3430 iterations: 23994
-15:32:02.927 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3440 iterations: 23994
-15:32:03.741 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3450 iterations: 23994
-15:32:04.552 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3460 iterations: 23994
-15:32:05.291 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3470 iterations: 23994
-15:32:06.111 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3480 iterations: 23994
-15:32:06.830 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3490 iterations: 23994
-15:32:07.574 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3500 iterations: 23994
-15:32:08.316 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3510 iterations: 23994
-15:32:09.083 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3520 iterations: 23994
-15:32:09.835 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3530 iterations: 23994
-15:32:10.587 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3540 iterations: 23994
-15:32:11.391 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3550 iterations: 23994
-15:32:12.157 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3560 iterations: 23994
-15:32:12.922 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3570 iterations: 23994
-15:32:13.699 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3580 iterations: 23994
-15:32:14.449 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3590 iterations: 23994
-15:32:15.235 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3600 iterations: 23994
-15:32:16.073 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3610 iterations: 23994
-15:32:16.804 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3620 iterations: 23994
-15:32:17.608 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3630 iterations: 23994
-15:32:18.358 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3640 iterations: 23994
-15:32:19.150 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3650 iterations: 23994
-15:32:19.903 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3660 iterations: 23994
-15:32:20.636 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3670 iterations: 23994
-15:32:21.526 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3680 iterations: 23994
-15:32:22.477 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3690 iterations: 23994
-15:32:23.245 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3700 iterations: 23994
-15:32:24.028 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3710 iterations: 23994
-15:32:24.799 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3720 iterations: 23994
-15:32:25.556 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3730 iterations: 23994
-15:32:26.303 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3740 iterations: 23994
-15:32:27.070 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3750 iterations: 23994
-15:32:27.837 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3760 iterations: 23994
-15:32:28.632 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3770 iterations: 23994
-15:32:29.407 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3780 iterations: 23994
-15:32:30.299 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3790 iterations: 23994
-15:32:31.090 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3800 iterations: 23994
-15:32:31.838 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3810 iterations: 23994
-15:32:32.908 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3820 iterations: 23994
-15:32:33.707 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3830 iterations: 23994
-15:32:34.485 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3840 iterations: 23994
-15:32:35.306 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3850 iterations: 23994
-15:32:36.056 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3860 iterations: 23994
-15:32:36.804 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3870 iterations: 23994
-15:32:37.573 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3880 iterations: 23994
-15:32:38.392 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3890 iterations: 23994
-15:32:39.197 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3900 iterations: 23994
-15:32:39.999 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3910 iterations: 23994
-15:32:40.759 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3920 iterations: 23994
-15:32:41.660 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3930 iterations: 23994
-15:32:43.056 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3940 iterations: 23994
-15:32:44.104 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3950 iterations: 23994
-15:32:44.864 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3960 iterations: 23994
-15:32:45.636 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3970 iterations: 23994
-15:32:46.428 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3980 iterations: 23994
-15:32:47.203 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 3990 iterations: 23994
-15:32:47.958 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4000 iterations: 23994
-15:32:48.761 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4010 iterations: 23994
-15:32:49.524 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4020 iterations: 23994
-15:32:50.293 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4030 iterations: 23994
-15:32:51.041 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4040 iterations: 23994
-15:32:51.859 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4050 iterations: 23994
-15:32:52.689 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4060 iterations: 23994
-15:32:53.504 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4070 iterations: 23994
-15:32:54.241 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4080 iterations: 23994
-15:32:55.023 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4090 iterations: 23994
-15:32:55.808 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4100 iterations: 23994
-15:32:56.610 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4110 iterations: 23994
-15:32:57.376 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4120 iterations: 23994
-15:32:58.157 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4130 iterations: 23994
-15:32:58.957 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4140 iterations: 23994
-15:32:59.733 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4150 iterations: 23994
-15:33:00.501 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4160 iterations: 23994
-15:33:01.294 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4170 iterations: 23994
-15:33:02.061 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4180 iterations: 23994
-15:33:02.799 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4190 iterations: 23994
-15:33:03.546 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4200 iterations: 23994
-15:33:04.486 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4210 iterations: 23994
-15:33:05.263 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4220 iterations: 23994
-15:33:06.039 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4230 iterations: 23994
-15:33:06.817 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4240 iterations: 23994
-15:33:07.567 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4250 iterations: 23994
-15:33:08.320 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4260 iterations: 23994
-15:33:09.059 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4270 iterations: 23994
-15:33:09.816 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4280 iterations: 23994
-15:33:10.568 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4290 iterations: 23994
-15:33:11.375 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4300 iterations: 23994
-15:33:12.160 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4310 iterations: 23994
-15:33:12.896 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4320 iterations: 23994
-15:33:13.627 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4330 iterations: 23994
-15:33:14.389 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4340 iterations: 23994
-15:33:15.212 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4350 iterations: 23994
-15:33:16.027 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4360 iterations: 23994
-15:33:16.777 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4370 iterations: 23994
-15:33:17.560 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4380 iterations: 23994
-15:33:18.302 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4390 iterations: 23994
-15:33:19.027 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4400 iterations: 23994
-15:33:19.760 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4410 iterations: 23994
-15:33:20.502 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4420 iterations: 23994
-15:33:21.297 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4430 iterations: 23994
-15:33:22.022 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4440 iterations: 23994
-15:33:22.780 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4450 iterations: 23994
-15:33:23.522 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4460 iterations: 23994
-15:33:24.309 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4470 iterations: 23994
-15:33:25.040 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4480 iterations: 23994
-15:33:25.864 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4490 iterations: 23994
-15:33:26.722 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4500 iterations: 23994
-15:33:27.497 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4510 iterations: 23994
-15:33:28.260 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4520 iterations: 23994
-15:33:29.007 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4530 iterations: 23994
-15:33:29.733 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4540 iterations: 23994
-15:33:30.480 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4550 iterations: 23994
-15:33:31.232 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4560 iterations: 23994
-15:33:31.986 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4570 iterations: 23994
-15:33:32.833 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4580 iterations: 23994
-15:33:33.599 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4590 iterations: 23994
-15:33:34.403 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4600 iterations: 23994
-15:33:35.160 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4610 iterations: 23994
-15:33:35.988 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4620 iterations: 23994
-15:33:36.746 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4630 iterations: 23994
-15:33:37.485 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4640 iterations: 23994
-15:33:38.260 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4650 iterations: 23994
-15:33:39.025 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4660 iterations: 23994
-15:33:39.773 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4670 iterations: 23994
-15:33:40.546 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4680 iterations: 23994
-15:33:41.411 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4690 iterations: 23994
-15:33:42.149 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4700 iterations: 23994
-15:33:42.926 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4710 iterations: 23994
-15:33:43.718 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4720 iterations: 23994
-15:33:44.503 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4730 iterations: 23994
-15:33:45.285 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4740 iterations: 23994
-15:33:46.050 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4750 iterations: 23994
-15:33:46.816 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4760 iterations: 23994
-15:33:47.605 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4770 iterations: 23994
-15:33:48.369 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4780 iterations: 23994
-15:33:49.167 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4790 iterations: 23994
-15:33:49.926 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4800 iterations: 23994
-15:33:50.690 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4810 iterations: 23994
-15:33:51.437 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4820 iterations: 23994
-15:33:52.187 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4830 iterations: 23994
-15:33:52.954 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4840 iterations: 23994
-15:33:53.709 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4850 iterations: 23994
-15:33:54.497 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4860 iterations: 23994
-15:33:55.304 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4870 iterations: 23994
-15:33:56.062 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4880 iterations: 23994
-15:33:56.840 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4890 iterations: 23994
-15:33:57.605 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4900 iterations: 23994
-15:33:58.374 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4910 iterations: 23994
-15:33:59.140 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4920 iterations: 23994
-15:33:59.956 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4930 iterations: 23994
-15:34:00.703 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4940 iterations: 23994
-15:34:01.508 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4950 iterations: 23994
-15:34:02.236 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4960 iterations: 23994
-15:34:03.017 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4970 iterations: 23994
-15:34:03.751 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4980 iterations: 23994
-15:34:04.502 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 4990 iterations: 23994
-15:34:05.257 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 5000 iterations: 23994
-15:34:05.314 [JavaFX Application Thread] INFO  smile.math.Math - BFGS: initial function value: 23994
-15:34:07.865 [JavaFX Application Thread] INFO  smile.math.Math - BFGS: the function value after  10 iterations: 23994
-15:34:09.758 [JavaFX Application Thread] INFO  smile.math.Math - BFGS: the function value after  20 iterations: 23994
-15:34:10.235 [JavaFX Application Thread] INFO  smile.math.Math - BFGS: the function value after  24 iterations: 23994
-15:34:10.236 [JavaFX Application Thread] INFO  smile.util.package$ - runtime: 398863.593714 ms
-15:34:11.707 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - accuracy: 0.9847444578241902
-15:34:11.712 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - recall: 0.9529775848359159
-15:34:11.718 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - sensitivity: 0.9529775848359159
-15:34:11.724 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - specificity: 0.9879575427300729
-15:34:11.730 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - fallout: 0.012042457269927143
-15:34:11.736 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - fdr: 0.11105988011947958
-15:34:11.742 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - f1: 0.9198456655672413
-15:34:13.058 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp,0.5595854922279793)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py,0.6533864541832669)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems,0.7250755287009064)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare,0.7669565217391304)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/8,0.7852545348156816)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_user_file,0.7852545348156816)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py,0.7876106194690266)
+Testing started at 15:41 ...
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=17748925408848 -javaagent:/home/szkster/Programs/idea-IC-181.4203.550/lib/idea_rt.jar=35643:/home/szkster/Programs/idea-IC-181.4203.550/bin -Dfile.encoding=UTF-8 -classpath /home/szkster/.IdeaIC2018.1/config/plugins/Scala/lib/runners.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-library.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.m2/repository/org/fxmisc/richtext/richtextfx/1.0.0-SNAPSHOT/richtextfx-1.0.0-SNAPSHOT.jar:/home/szkster/.ivy2/cache/org.scalafx/scalafx_2.12/jars/scalafx_2.12-8.0.144-R12.jar:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-reflect.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-1.4.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.1.jar:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner -s com.kristofszilagyi.sedito.gui.PlotData -testName "train logistic regression" -C org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestReporter -showProgressMessages true
+15:41:39.509 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Training size: 569538
+15:41:39.512 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Test size: 506570
+15:41:39.525 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 1s: 52641
+15:41:39.539 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 0s: 516897
+15:41:41.050 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: initial function value: 3.9477e+05
+15:41:42.146 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  10 iterations: 2.1640e+05
+15:41:42.913 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  20 iterations: 1.1826e+05
+15:41:43.654 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  30 iterations: 97485
+15:41:44.331 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  40 iterations: 80543
+15:41:45.046 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  50 iterations: 64924
+15:41:45.745 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  60 iterations: 41895
+15:41:46.488 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  70 iterations: 38041
+15:41:47.186 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  80 iterations: 35171
+15:41:47.855 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  90 iterations: 31038
+15:41:48.572 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 100 iterations: 26562
+15:41:49.235 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 110 iterations: 26244
+15:41:49.928 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 120 iterations: 25671
+15:41:50.599 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 130 iterations: 25387
+15:41:51.281 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 140 iterations: 25229
+15:41:51.970 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 150 iterations: 25025
+15:41:52.659 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 160 iterations: 24813
+15:41:53.351 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 170 iterations: 24748
+15:41:54.019 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 180 iterations: 24601
+15:41:54.751 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 190 iterations: 24560
+15:41:55.388 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 200 iterations: 24526
+15:41:56.032 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 210 iterations: 24454
+15:41:56.770 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 220 iterations: 24388
+15:41:57.470 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 230 iterations: 24243
+15:41:58.166 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 240 iterations: 24185
+15:41:58.793 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 250 iterations: 24159
+15:41:59.450 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 260 iterations: 24138
+15:42:00.165 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 270 iterations: 24131
+15:42:00.886 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 280 iterations: 24126
+15:42:01.601 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 290 iterations: 24121
+15:42:02.319 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 300 iterations: 24120
+15:42:03.005 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 310 iterations: 24118
+15:42:03.671 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 320 iterations: 24118
+15:42:04.352 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 330 iterations: 24117
+15:42:05.032 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 340 iterations: 24117
+15:42:05.692 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 350 iterations: 24117
+15:42:06.391 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 360 iterations: 24117
+15:42:07.052 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 370 iterations: 24117
+15:42:07.727 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 380 iterations: 24117
+15:42:08.399 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 390 iterations: 24117
+15:42:09.070 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 400 iterations: 24117
+15:42:09.715 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 410 iterations: 24117
+15:42:10.418 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 420 iterations: 24117
+15:42:11.125 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 430 iterations: 24117
+15:42:11.832 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 440 iterations: 24117
+15:42:12.494 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 450 iterations: 24117
+15:42:13.155 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 460 iterations: 24116
+15:42:13.855 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 470 iterations: 24116
+15:42:14.519 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 480 iterations: 24116
+15:42:15.198 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 490 iterations: 24116
+15:42:15.877 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 500 iterations: 24116
+15:42:16.553 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 510 iterations: 24116
+15:42:17.217 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 520 iterations: 24116
+15:42:17.860 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 530 iterations: 24116
+15:42:18.540 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 540 iterations: 24116
+15:42:19.233 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 550 iterations: 24116
+15:42:19.932 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 560 iterations: 24116
+15:42:20.628 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 570 iterations: 24116
+15:42:21.300 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 580 iterations: 24116
+15:42:22.003 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 590 iterations: 24116
+15:42:22.717 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 600 iterations: 24116
+15:42:23.403 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 610 iterations: 24116
+15:42:24.105 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 620 iterations: 24116
+15:42:24.794 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 630 iterations: 24116
+15:42:25.456 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 640 iterations: 24116
+15:42:26.197 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 650 iterations: 24116
+15:42:26.905 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 660 iterations: 24116
+15:42:27.595 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 670 iterations: 24116
+15:42:28.260 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 680 iterations: 24116
+15:42:28.960 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 690 iterations: 24116
+15:42:29.606 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 700 iterations: 24116
+15:42:29.804 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 703 iterations: 24116
+15:42:29.805 [JavaFX Application Thread] INFO  smile.util.package$ - runtime: 48825.380432 ms
+15:42:32.716 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - accuracy: 0.9847464318850307
+15:42:32.721 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - recall: 0.9529346027379596
+15:42:32.727 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - sensitivity: 0.9529346027379596
+15:42:32.733 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - specificity: 0.9879640639163202
+15:42:32.739 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - fallout: 0.01203593608367981
+15:42:32.744 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - fdr: 0.11101086651429488
+15:42:32.751 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - f1: 0.9198518810484497
+15:42:34.031 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp,0.5520833333333334)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py,0.6587301587301587)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems,0.7225609756097561)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare,0.7680278019113814)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py,0.7713004484304933)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/8,0.7848482314574797)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_user_file,0.7849498327759198)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes2,0.8018433179723502)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_pair_h,0.8571428571428571)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py,0.8613569321533924)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_problems,0.8703703703703703)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py,0.851190476190476)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_pair_h,0.8648648648648648)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/6,0.8724279835390947)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines14,0.8816568047337279)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_problems,0.8807339449541284)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_cpp,0.8833333333333333)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong2,0.8890420399724328)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines14,0.8882352941176471)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong2,0.8913342503438789)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h4,0.9090909090909091)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h2,0.91)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/25,0.9124668435013262)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py4,0.9154362416107382)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py2,0.918918918918919)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py4,0.9148222669349431)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy4,0.9194029850746269)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utilstest_py,0.9207920792079207)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/really_changed,0.9221052631578947)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py2,0.9208006962576154)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/really_changed,0.9209694415173867)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy3,0.9376854599406528)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines16,0.9384010484927916)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h4,0.9411764705882353)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy4,0.9415204678362573)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_cpp,0.9428571428571428)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/11,0.9457364341085271)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/19,0.9476082004555809)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/9,0.9527272727272726)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/feature_extractor_cpp,0.9596412556053812)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/19,0.9403669724770642)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/11,0.9436893203883494)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_cpp,0.9478672985781992)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/9,0.9572773352643013)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h5,0.9600000000000001)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/feature_extractor_cpp,0.9642857142857143)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertions,0.9655937846836848)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlsample,0.9671132764920829)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13_tough,0.9673995451099319)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insert,0.96875)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlsample,0.9658536585365854)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13_tough,0.9681818181818181)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h2,0.9695945945945945)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple,0.9713541666666666)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line,0.9716312056737588)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/5,0.9721588315837517)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/5,0.9702789208962048)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file2,0.9726027397260273)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple_2,0.9742612011439467)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple,0.9726918075422627)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple_2,0.9732824427480917)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/learning_curve_py,0.974304068522484)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line,0.9752650176678446)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/18,0.9758064516129032)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines9,0.9773700305810398)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp5,0.978248425872925)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare2,0.9784688995215312)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines9,0.9761175750153093)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insert,0.9767441860465117)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp5,0.9779685264663807)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines5,0.9798657718120806)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare2,0.9802985074626867)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_h,0.9803921568627451)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp4,0.9820723184442418)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_change,0.9826194909993793)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines12,0.9840746842394289)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_h,0.984076433121019)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_pro_changes,0.9843575418994412)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_h,0.9853658536585366)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file3,0.9841269841269841)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_pro_changes,0.9854910714285715)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/22,0.9855670103092784)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines5,0.9866666666666666)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines12,0.9868852459016393)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_5,0.9885931558935362)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file3,0.9894736842105264)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_7,0.9908045977011495)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/7,0.9909980430528376)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_2,0.9915754001684921)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_8,0.9917043740573153)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_6,0.992059290629963)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_line_problems,0.9925796595373199)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lot_of_empty_lines,0.9928195308760173)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file10,0.9942975635044063)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_cpp,0.9954988747186797)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/7,0.9913928012519562)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_2,0.9924242424242424)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_8,0.9924642049736248)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_7,0.993119266055046)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file10,0.9937759336099584)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lot_of_empty_lines,0.9937828790052606)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_line_problems,0.9938971229293809)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_6,0.9941891178024301)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_cpp,0.9962518740629686)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py2,0.9988179669030733)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences2,0.9989035087719299)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_deleted,1.0)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_lines,NaN)
-15:34:13.138 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Displaying /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp
+15:42:34.107 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Displaying /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp
 
 Process finished with exit code 0

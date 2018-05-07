@@ -49,6 +49,10 @@ object MetricCalculator {
     def toLdLenSimDouble: List[Double] = {
       List(before.ldLenSim, after.ldLenSim, normalizedLenLenSims.before, normalizedLenLenSims.after)
     }
+
+    def toOnlyNormalized: List[Double] = {
+      List(normalizedLenLenSims.before, normalizedLenLenSims.after)
+    }
   }
 
   final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics,
@@ -56,8 +60,8 @@ object MetricCalculator {
                            context8th: ContextMetrics, context16th: ContextMetrics) {
 
     def toLdLenSimDouble: Array[Double]= {
-      (word.ldLenSim +: (contextFull.toLdLenSimDouble ++ contextHalf.toLdLenSimDouble ++
-        contextQuarter.toLdLenSimDouble ++ context8th.toLdLenSimDouble ++ context16th.toLdLenSimDouble)).toArray
+      (word.ldLenSim +: (contextFull.toLdLenSimDouble ++ contextHalf.toOnlyNormalized ++
+        contextQuarter.toOnlyNormalized ++ context8th.toOnlyNormalized ++ context16th.toOnlyNormalized)).toArray
     }
   }
 
