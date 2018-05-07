@@ -4,11 +4,13 @@ import com.kristofszilagyi.sedito.aligner.Aligner.{findPotentialMatches, resolve
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.{Selection, UnambiguousWordAlignment, WordMatch}
+import org.log4s.getLogger
 import smile.classification.LogisticRegression
 
 final case class PartialResult(left: Selection, right: Selection, probability: Double)
 object Aligner {
-  //todo test ?
+  private val logger = getLogger
+
   private def resolveWithMostProbable(results: Map[Selection, Traversable[PartialResult]]): Traversable[PartialResult] = {
     val mostProbables = results.map { case (_, conflictings) =>
       val best = conflictings.toSeq.maxBy(_.probability) //This should never fail because the map should never have empty list on the left side
@@ -23,6 +25,7 @@ object Aligner {
 
   private def findPotentialMatches(logit: LogisticRegression, left: String, right: String): Traversable[PartialResult] = {
     val metrics = MetricCalculator.calcAlignerMetrics(left, right)
+    logger.debug("Debug metrics: \n" + metrics.mkString("\n"))
     val xs = metrics.map(m => m -> m.toLdLenSimDouble).toArray
 
     val probabilitiesWithMetrics = xs.flatMap { case (m, x) =>

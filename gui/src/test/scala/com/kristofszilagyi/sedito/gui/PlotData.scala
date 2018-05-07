@@ -1,22 +1,23 @@
 package com.kristofszilagyi.sedito.gui
 
 import java.awt.Color
-import java.nio.file.{Files, Paths}
+import java.nio.file.{Files, Path, Paths}
 
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.aligner.{Aligner, MetricCalculator}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
-import com.kristofszilagyi.sedito.common.{TestCase, WordMatch}
-import com.kristofszilagyi.sedito.gui.PlotData.{generateClassifier, logger, readDataSetAndMeasureMetrics, toAttributeDataSet}
+import com.kristofszilagyi.sedito.common.{TestCase, Warts, WordMatch}
+import com.kristofszilagyi.sedito.gui.PlotData._
 import javafx.application.Application
 import javafx.stage.Stage
 import org.log4s.getLogger
 import org.scalatest.FreeSpecLike
+import smile.classification.LogisticRegression
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
 import smile.validation._
-import smile.{classification, plot}
+import smile.{classification, plot, read, write}
 
 import scala.collection.JavaConverters._
 import scala.util.{Failure, Success}
@@ -26,33 +27,40 @@ final case class MetricsWithResults(metrics: Metrics, matching: Boolean)
 object PlotData {
   private val logger = getLogger
 
+  private def readTestCase(testDir: Path): TestCase = {
+    TestCase.open(testDir) match {
+      case Failure(exception) =>
+        println(s"$testDir -> ${exception.getMessage}")
+        sys.exit(1)
+      case Success(testCase) => testCase
+    }
+  }
+  private def readSingleDataSetAndMeasureMetrics(testDir: Path) = {
+    val testCase = readTestCase(testDir)
+    val metrics = MetricCalculator.calcAlignerMetrics(testCase.left, testCase.right)
+
+    val matches = testCase.wordAlignment.matches.toSeq
+    val matchesSet = matches.toSet
+    discard(assert(matches.size ==== matchesSet.size))
+
+    metrics.map { m =>
+      val potentialMatch = WordMatch(m.leftWord, m.rightWord)
+      MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))
+    }
+  }
+
   private def readDataSetAndMeasureMetrics() = {
     val parentDir = Paths.get(getClass.getClassLoader.getResource("algorithm_tests/full_tests").getPath)
     val testDirs = using(Files.newDirectoryStream(parentDir)) { stream =>
       stream.iterator().asScala.toList.filter(p => Files.isDirectory(p))
     }
-    val metrics = testDirs.map{ testDir =>
-      TestCase.open(testDir) match {
-        case Failure(exception) =>
-          println(s"$testDir -> ${exception.getMessage}")
-          sys.exit(1)
-        case Success(testCase) =>
-          val metrics = MetricCalculator.calcAlignerMetrics(testCase.left, testCase.right)
-
-          val matches = testCase.wordAlignment.matches.toSeq
-          val matchesSet = matches.toSet
-          discard(assert(matches.size ==== matchesSet.size))
-
-          testDir -> metrics.map { m =>
-            val potentialMatch = WordMatch(m.leftWord, m.rightWord)
-            MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))
-          }
-      }
+    val metrics = testDirs.par.map{ testDir =>
+      testDir -> readSingleDataSetAndMeasureMetrics(testDir)
     }
-    metrics
+    metrics.seq.toList
   }
 
-  def toAttributeDataSet(metrics: Traversable[MetricsWithResults]) = {
+  private def toAttributeDataSet(metrics: Traversable[MetricsWithResults]) = {
     val attributes = List("ldLenSim", "ldLenSimBefore", "ldLenSimAfter").map { name =>
       new NumericAttribute(name)
     }
@@ -88,8 +96,54 @@ object PlotData {
     classifier
   }
 
+  private def displayTestCase(testCase: TestCase, classifier: LogisticRegression) = {
+    val calculatedAlignment = new Aligner(classifier).align(testCase.left, testCase.right)
+    val expected = new MainWindow()
+    expected.setTitle("Excpected")
+    expected.setContent(testCase.left, testCase.right, testCase.wordAlignment.toUnambigous)
+    val actual = new MainWindow()
+    actual.setTitle("Actual")
+    actual.setContent(testCase.left, testCase.right, calculatedAlignment)
+  }
+
+  final class TrainLR extends Application {
+    def start(stage: Stage): Unit = {
+      val metrics = readDataSetAndMeasureMetrics()
+      val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
+      val classifier = generateClassifier(nestedTraining = nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
+
+      val f1s = nestedTest.map { case (path, singleTest) =>
+        val singleDataSet = toAttributeDataSet(singleTest)
+        val singleTestX = singleDataSet.x()
+        val singleTestY = singleDataSet.labels()
+        val singlePred = singleTestX.map(classifier.predict)
+        val f1Score = f1(singleTestY, singlePred)
+        path -> f1Score
+      }.sortBy(_._2)
+
+      logger.info(f1s.mkString("\n"))
+      write.xstream(classifier, "linear_regression.model")
+      f1s.headOption.foreach { case (path, _) =>
+        logger.info(s"Displaying $path")
+        val testCase = readTestCase(path)
+        displayTestCase(testCase, classifier)
+      }
+    }
+  }
+
+  @SuppressWarnings(Array(Warts.AsInstanceOf))
+  final class ShowOne extends Application {
+    def start(stage: Stage): Unit = {
+
+      val classifier = read.xstream("linear_regression.model").asInstanceOf[LogisticRegression]
+      val testCase = readTestCase(Paths.get("/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_problems"))
+      displayTestCase(testCase, classifier)
+    }
+  }
 }
-final class PlotData extends Application with FreeSpecLike {
+
+
+final class PlotData extends FreeSpecLike {
   "plot data" ignore {
     val metrics = readDataSetAndMeasureMetrics()
     plot.plot(toAttributeDataSet(metrics.flatMap(_._2).toSet.take(10000)), '.', Array(Color.RED, Color.BLUE)).setVisible(true)
@@ -98,40 +152,11 @@ final class PlotData extends Application with FreeSpecLike {
 
 
   "train logistic regression" in {
-    Application.launch()
+    Application.launch(classOf[TrainLR])
   }
 
-  def start(stage: Stage): Unit = {
-    val metrics = readDataSetAndMeasureMetrics()
-    val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
-    val classifier = generateClassifier(nestedTraining = nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
-
-    val f1s = nestedTest.map { case (path, singleTest) =>
-      val singleDataSet = toAttributeDataSet(singleTest)
-      val singleTestX = singleDataSet.x()
-      val singleTestY = singleDataSet.labels()
-      val singlePred = singleTestX.map(classifier.predict)
-      val f1Score = f1(singleTestY, singlePred)
-      path -> f1Score
-    }.sortBy(_._2)
-
-    logger.info(f1s.mkString("\n"))
-
-    f1s.headOption.foreach { case (path, _) =>
-      logger.info(s"Displaying $path")
-      TestCase.open(path) match {
-        case Failure(exception) =>
-          println(s"failed to open: ${exception.getMessage}")
-          sys.exit(1)
-        case Success(testCase) =>
-          val calculatedAlignment = new Aligner(classifier).align(testCase.left, testCase.right)
-          val expected = new MainWindow()
-          expected.setTitle("Excpected")
-          expected.setContent(testCase.left, testCase.right, testCase.wordAlignment.toUnambigous)
-          val actual = new MainWindow()
-          actual.setTitle("Actual")
-          actual.setContent(testCase.left, testCase.right, calculatedAlignment)
-      }
-    }
+  "show difference" in {
+    Application.launch(classOf[ShowOne])
   }
+
 }

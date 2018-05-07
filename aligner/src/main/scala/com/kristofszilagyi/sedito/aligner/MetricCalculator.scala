@@ -2,11 +2,12 @@ package com.kristofszilagyi.sedito.aligner
 
 import com.kristofszilagyi.sedito.common._
 import info.debatty.java.stringsimilarity.Levenshtein
+import org.log4s.getLogger
 
 import scala.annotation.tailrec
 
 object MetricCalculator {
- // private val logger = getLogger
+  private val logger = getLogger
 
   @tailrec
   private def extend(currentIdx: Int, words: IndexedSeq[WordIndexRange], offset: Int, result: String): String = {
@@ -66,6 +67,8 @@ object MetricCalculator {
     val contextSize = 100
     val leftWords = Wordizer.toWordIndices(left)
     val rightWords = Wordizer.toWordIndices(right)
+    logger.debug(s"leftWords: $leftWords")
+    logger.debug(s"rightWords: $rightWords")
     val leftContexts = leftWords.zipWithIndex map { case (word, leftIdx) =>
       val leftBeforeContext = context(leftIdx, leftWords, -contextSize)
       val leftAfterContext = context(leftIdx, leftWords, contextSize)
