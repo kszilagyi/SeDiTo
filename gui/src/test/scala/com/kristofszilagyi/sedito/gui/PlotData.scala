@@ -61,8 +61,8 @@ object PlotData {
   }
 
   private def toAttributeDataSet(metrics: Traversable[MetricsWithResults]) = {
-    val attributes = List("ldLenSim", "ldLenSimBefore", "ldLenSimAfter", "normalizedLdLenSimBefore", "normalizedLdLenSimAfter").map { name =>
-      new NumericAttribute(name)
+    val attributes = (0 until 13).map { name =>
+      new NumericAttribute(name.toString)
     }
     val attributeDataset = new AttributeDataset("matches", attributes.toArray, new NominalAttribute("doesMatch"))
     metrics.foreach { m =>
@@ -136,7 +136,7 @@ object PlotData {
     def start(stage: Stage): Unit = {
 
       val classifier = read.xstream("linear_regression.model").asInstanceOf[LogisticRegression]
-      val testCase = readTestCase(Paths.get("/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_problems"))
+      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp"))
       displayTestCase(testCase, classifier)
     }
   }

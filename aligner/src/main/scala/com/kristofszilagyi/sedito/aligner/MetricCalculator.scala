@@ -45,14 +45,17 @@ object MetricCalculator {
   final case class NormalizedLenLenSims(before: Double, after: Double)
 
   final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics,
-                                  normalizedLenLenSims: NormalizedLenLenSims)
+                                  normalizedLenLenSims: NormalizedLenLenSims) {
+    def toLdLenSimDouble: List[Double] = {
+      List(before.ldLenSim, after.ldLenSim, normalizedLenLenSims.before, normalizedLenLenSims.after)
+    }
+  }
 
   final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics,
-                           context: ContextMetrics) {
+                           contextFull: ContextMetrics, contextHalf: ContextMetrics, contextQuarter: ContextMetrics) {
 
     def toLdLenSimDouble: Array[Double]= {
-      Array(word.ldLenSim, context.before.ldLenSim, context.after.ldLenSim,
-        context.normalizedLenLenSims.before, context.normalizedLenLenSims.after)
+      (word.ldLenSim +: (contextFull.toLdLenSimDouble ++ contextHalf.toLdLenSimDouble ++ contextQuarter.toLdLenSimDouble)).toArray
     }
   }
 
@@ -61,32 +64,45 @@ object MetricCalculator {
     val ldLenSim = LdLenSimilarity.calcFast(ld, left, right)
     PairwiseMetrics(ld, ldLenSim)
   }
+
+  private def calcContextMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
+    val beforeContextMetrics = calcMetrics(leftWord.beforeContext, rightWord.beforeContext)
+    val afterContextMetrics = calcMetrics(leftWord.afterContext, rightWord.afterContext)
+    val normalizedLenLenSimBefore = NormalizedLenLenSims.calcOne(
+      maxLen = math.max(leftWord.beforeContext.length, rightWord.beforeContext.length), contextSize = contextSize, ldLenSim = beforeContextMetrics.ldLenSim)
+    val normalizedLenLenSimAfter = NormalizedLenLenSims.calcOne(
+      maxLen = math.max(leftWord.afterContext.length, rightWord.afterContext.length), contextSize = contextSize, ldLenSim = afterContextMetrics.ldLenSim)
+    ContextMetrics(beforeContextMetrics, afterContextMetrics, NormalizedLenLenSims(normalizedLenLenSimBefore, normalizedLenLenSimAfter) )
+  }
   //concat all words
   //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)
   private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
     val wordMetrics = calcMetrics(leftWord.word.toWord, rightWord.word.toWord)
     val contextMetrics = if(wordMetrics.ldLenSim >= 0.99) {
-      val beforeContextMetrics = calcMetrics(leftWord.beforeContext, rightWord.beforeContext)
-      val afterContextMetrics = calcMetrics(leftWord.afterContext, rightWord.afterContext)
-      val normalizedLenLenSimBefore = NormalizedLenLenSims.calcOne(
-        maxLen = math.max(leftWord.beforeContext.length, rightWord.beforeContext.length), contextSize = contextSize, ldLenSim = beforeContextMetrics.ldLenSim)
-      val normalizedLenLenSimAfter = NormalizedLenLenSims.calcOne(
-        maxLen = math.max(leftWord.afterContext.length, rightWord.afterContext.length), contextSize = contextSize, ldLenSim = afterContextMetrics.ldLenSim)
-      Some(ContextMetrics(beforeContextMetrics, afterContextMetrics, NormalizedLenLenSims(normalizedLenLenSimBefore, normalizedLenLenSimAfter) ))
+      Some((
+        calcContextMetrics(leftWord, rightWord, contextSize),
+        calcContextMetrics(leftWord.shortedContext(contextSize / 2), rightWord.shortedContext(contextSize / 2), contextSize),
+        calcContextMetrics(leftWord.shortedContext(contextSize / 4), rightWord.shortedContext(contextSize / 4), contextSize)
+      ))
     } else {
       None
     }
-    contextMetrics.map { c =>
-      Metrics(leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics, c)
+    contextMetrics.map { case (full, half, quarter) =>
+      Metrics(leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics,
+        contextFull = full, contextHalf = half, contextQuarter = quarter)
     }.toList
   }
 
   final case class WordWithContext(beforeContext: String, afterContext: String, word: WordIndexRange) {
     def positionAgnostic: (String, String, String) = (beforeContext, afterContext, word.toWord)
+    def shortedContext(len: Int): WordWithContext = {
+      WordWithContext(beforeContext.take(len), afterContext.take(len), word)
+    }
   }
 
+
   def calcAlignerMetrics(left: String, right: String): IndexedSeq[Metrics] = {
-    val contextSize = 100
+    val contextSize = 50
     val leftWords = Wordizer.toWordIndices(left)
     val rightWords = Wordizer.toWordIndices(right)
     logger.debug(s"leftWords: $leftWords")
