@@ -33,7 +33,7 @@ object Aligner {
       val prediction = logit.predict(x, probs)
       if(prediction ==== 1) {
         val p = probs(1)
-        assert(p >= 0.5)
+        assert(p >= 0.5, s"p = $p")
         Some(m -> p).toList
       } else None.toList
 

@@ -61,7 +61,7 @@ object PlotData {
   }
 
   private def toAttributeDataSet(metrics: Traversable[MetricsWithResults]) = {
-    val attributes = List("ldLenSim", "ldLenSimBefore", "ldLenSimAfter").map { name =>
+    val attributes = List("ldLenSim", "ldLenSimBefore", "ldLenSimAfter", "normalizedLdLenSimBefore", "normalizedLdLenSimAfter").map { name =>
       new NumericAttribute(name)
     }
     val attributeDataset = new AttributeDataset("matches", attributes.toArray, new NominalAttribute("doesMatch"))

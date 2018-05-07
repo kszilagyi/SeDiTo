@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.aligner
 import com.kristofszilagyi.sedito.common._
 import info.debatty.java.stringsimilarity.Levenshtein
 import org.log4s.getLogger
-
+import TypeSafeEqualsOps._
 import scala.annotation.tailrec
 
 object MetricCalculator {
@@ -33,7 +33,11 @@ object MetricCalculator {
   }
 
   object NormalizedLenLenSims {
-    def calcOne(maxLen: Int, contextSize: Int, ldLenSim: Double): Double = ldLenSim / maxLen * contextSize
+    def calcOne(maxLen: Int, contextSize: Int, ldLenSim: Double): Double = {
+      if (maxLen !=== 0) {
+        ldLenSim / maxLen * contextSize
+      } else contextSize.toDouble /* if they are both on edge their corresponding context is 100% similar */
+    }
   }
   /**
     *  this two corrects for the effects of the edges (the context is less than 100 chars)
@@ -47,7 +51,8 @@ object MetricCalculator {
                            context: ContextMetrics) {
 
     def toLdLenSimDouble: Array[Double]= {
-      Array(word.ldLenSim, context.before.ldLenSim, context.after.ldLenSim)
+      Array(word.ldLenSim, context.before.ldLenSim, context.after.ldLenSim,
+        context.normalizedLenLenSims.before, context.normalizedLenLenSims.after)
     }
   }
 
