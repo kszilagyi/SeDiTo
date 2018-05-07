@@ -16,6 +16,7 @@ import org.log4s.getLogger
 import org.scalatest.FreeSpecLike
 import smile.classification.LogisticRegression
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
+import smile.feature.Scaler
 import smile.validation._
 import smile.{classification, plot, read, write}
 
@@ -82,9 +83,12 @@ object PlotData {
     logger.info(s"1s: ${training.count(_.matching)}")
     logger.info(s"0s: ${training.count(_.matching ==== false)}")
     val trainingSet = toAttributeDataSet(training)
-    val classifier = classification.logit(trainingSet.x(), trainingSet.labels(), maxIter = 5000)
+    val scaler = new Scaler(false)
+    scaler.learn(trainingSet.attributes(), trainingSet.x())
+    val transformedTrainingSet = scaler.transform(trainingSet.x())
+    val classifier = classification.logit(transformedTrainingSet, trainingSet.labels(), maxIter = 5000)
     val testSet = toAttributeDataSet(test)
-    val testX = testSet.x()
+    val testX = scaler.transform(testSet.x())
     val testY = testSet.labels()
     val pred = testX.map(classifier.predict)
 
@@ -95,11 +99,11 @@ object PlotData {
     logger.info("fallout: " + fallout(testY, pred).toString)
     logger.info("fdr: " + fdr(testY, pred).toString)
     logger.info("f1: " + f1(testY, pred).toString)
-    classifier
+    (classifier, scaler)
   }
 
-  private def displayTestCase(testCase: TestCase, classifier: LogisticRegression) = {
-    val calculatedAlignment = new Aligner(classifier).align(testCase.left, testCase.right)
+  private def displayTestCase(testCase: TestCase, classifier: LogisticRegression, scaler: Scaler) = {
+    val calculatedAlignment = new Aligner(classifier, scaler).align(testCase.left, testCase.right)
     val expected = new MainWindow()
     expected.setTitle("Excpected")
     expected.setContent(testCase.left, testCase.right, testCase.wordAlignment.toUnambigous)
@@ -112,11 +116,11 @@ object PlotData {
     def start(stage: Stage): Unit = {
       val metrics = readDataSetAndMeasureMetrics()
       val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
-      val classifier = generateClassifier(nestedTraining = nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
+      val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
 
       val f1s = nestedTest.map { case (path, singleTest) =>
         val singleDataSet = toAttributeDataSet(singleTest)
-        val singleTestX = singleDataSet.x()
+        val singleTestX = scaler.transform(singleDataSet.x())
         val singleTestY = singleDataSet.labels()
         val singlePred = singleTestX.map(classifier.predict)
         val f1Score = f1(singleTestY, singlePred)
@@ -125,10 +129,11 @@ object PlotData {
 
       logger.info(f1s.mkString("\n"))
       write.xstream(classifier, "linear_regression.model")
+      write.xstream(scaler, "linear_regression.scaler")
       f1s.headOption.foreach { case (path, _) =>
         logger.info(s"Displaying $path")
         val testCase = readTestCase(path)
-        displayTestCase(testCase, classifier)
+        displayTestCase(testCase, classifier, scaler)
       }
     }
   }
@@ -138,8 +143,9 @@ object PlotData {
     def start(stage: Stage): Unit = {
 
       val classifier = read.xstream("linear_regression.model").asInstanceOf[LogisticRegression]
+      val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
       val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp"))
-      displayTestCase(testCase, classifier)
+      displayTestCase(testCase, classifier, scaler)
     }
   }
 }
@@ -160,5 +166,4 @@ final class PlotData extends FreeSpecLike {
   "show difference" in {
     Application.launch(classOf[ShowOne])
   }
-
 }
