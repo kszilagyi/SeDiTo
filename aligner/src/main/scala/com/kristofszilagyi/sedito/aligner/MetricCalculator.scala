@@ -29,9 +29,20 @@ object MetricCalculator {
   private val ldCalculator = new Levenshtein()
 
   final case class PairwiseMetrics(ld: Double, ldLenSim: Double) {
-    override def toString: String = s"ld = $ld, ldLenSim = $ldLenSim, "
+    override def toString: String = s"ld = $ld, ldLenSim = $ldLenSim"
   }
-  final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics)
+
+  object NormalizedLenLenSims {
+    def calcOne(maxLen: Int, contextSize: Int, ldLenSim: Double): Double = ldLenSim / maxLen * contextSize
+  }
+  /**
+    *  this two corrects for the effects of the edges (the context is less than 100 chars)
+    */
+  final case class NormalizedLenLenSims(before: Double, after: Double)
+
+  final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics,
+                                  normalizedLenLenSims: NormalizedLenLenSims)
+
   final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics,
                            context: ContextMetrics) {
 
@@ -47,12 +58,16 @@ object MetricCalculator {
   }
   //concat all words
   //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)
-  private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext) = {
+  private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
     val wordMetrics = calcMetrics(leftWord.word.toWord, rightWord.word.toWord)
     val contextMetrics = if(wordMetrics.ldLenSim >= 0.99) {
       val beforeContextMetrics = calcMetrics(leftWord.beforeContext, rightWord.beforeContext)
       val afterContextMetrics = calcMetrics(leftWord.afterContext, rightWord.afterContext)
-      Some(ContextMetrics(beforeContextMetrics, afterContextMetrics))
+      val normalizedLenLenSimBefore = NormalizedLenLenSims.calcOne(
+        maxLen = math.max(leftWord.beforeContext.length, rightWord.beforeContext.length), contextSize = contextSize, ldLenSim = beforeContextMetrics.ldLenSim)
+      val normalizedLenLenSimAfter = NormalizedLenLenSims.calcOne(
+        maxLen = math.max(leftWord.afterContext.length, rightWord.afterContext.length), contextSize = contextSize, ldLenSim = afterContextMetrics.ldLenSim)
+      Some(ContextMetrics(beforeContextMetrics, afterContextMetrics, NormalizedLenLenSims(normalizedLenLenSimBefore, normalizedLenLenSimAfter) ))
     } else {
       None
     }
@@ -93,7 +108,7 @@ object MetricCalculator {
         candidateCtxFinder.possibleMatches(leftWord)
       }
       candidates.flatMap { rightWord =>
-        calcAllMetrics(leftWord, rightWord)
+        calcAllMetrics(leftWord, rightWord, contextSize)
       }
     }
   }
