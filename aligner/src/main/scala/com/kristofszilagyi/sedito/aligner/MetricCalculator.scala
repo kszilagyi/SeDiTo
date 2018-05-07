@@ -56,12 +56,10 @@ object MetricCalculator {
   }
 
   final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics,
-                           contextFull: ContextMetrics, contextHalf: ContextMetrics, contextQuarter: ContextMetrics,
-                           context8th: ContextMetrics, context16th: ContextMetrics) {
+                           contextFull: ContextMetrics, context16th: ContextMetrics) {
 
     def toLdLenSimDouble: Array[Double]= {
-      (word.ldLenSim +: (contextFull.toLdLenSimDouble ++ contextHalf.toOnlyNormalized ++
-        contextQuarter.toOnlyNormalized ++ context8th.toOnlyNormalized ++ context16th.toOnlyNormalized)).toArray
+      (word.ldLenSim +: (contextFull.toLdLenSimDouble ++ context16th.toOnlyNormalized)).toArray
     }
   }
 
@@ -87,17 +85,14 @@ object MetricCalculator {
     val contextMetrics = if(wordMetrics.ldLenSim >= 0.99) {
       Some((
         calcContextMetrics(leftWord, rightWord, contextSize),
-        calcContextMetrics(leftWord.shortedContext(contextSize / 2), rightWord.shortedContext(contextSize / 2), contextSize),
-        calcContextMetrics(leftWord.shortedContext(contextSize / 4), rightWord.shortedContext(contextSize / 4), contextSize),
-        calcContextMetrics(leftWord.shortedContext(contextSize / 8), rightWord.shortedContext(contextSize / 8), contextSize),
         calcContextMetrics(leftWord.shortedContext(contextSize / 16), rightWord.shortedContext(contextSize / 16), contextSize)
       ))
     } else {
       None
     }
-    contextMetrics.map { case (full, half, quarter, eight, sixteenth) =>
+    contextMetrics.map { case (full, sixteenth) =>
       Metrics(leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics,
-        contextFull = full, contextHalf = half, contextQuarter = quarter, eight, sixteenth)
+        contextFull = full, sixteenth)
     }.toList
   }
 

@@ -61,7 +61,7 @@ object PlotData {
   }
 
   private def toAttributeDataSet(metrics: Traversable[MetricsWithResults]) = {
-    val numOfAttributes = 13
+    val numOfAttributes = 7
     val attributes = (0 until numOfAttributes).map { name =>
       new NumericAttribute(name.toString)
     }

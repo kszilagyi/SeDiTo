@@ -1,158 +1,107 @@
-Testing started at 15:41 ...
-/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=17748925408848 -javaagent:/home/szkster/Programs/idea-IC-181.4203.550/lib/idea_rt.jar=35643:/home/szkster/Programs/idea-IC-181.4203.550/bin -Dfile.encoding=UTF-8 -classpath /home/szkster/.IdeaIC2018.1/config/plugins/Scala/lib/runners.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-library.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.m2/repository/org/fxmisc/richtext/richtextfx/1.0.0-SNAPSHOT/richtextfx-1.0.0-SNAPSHOT.jar:/home/szkster/.ivy2/cache/org.scalafx/scalafx_2.12/jars/scalafx_2.12-8.0.144-R12.jar:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-reflect.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-1.4.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.1.jar:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner -s com.kristofszilagyi.sedito.gui.PlotData -testName "train logistic regression" -C org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestReporter -showProgressMessages true
-15:41:39.509 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Training size: 569538
-15:41:39.512 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Test size: 506570
-15:41:39.525 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 1s: 52641
-15:41:39.539 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 0s: 516897
-15:41:41.050 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: initial function value: 3.9477e+05
-15:41:42.146 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  10 iterations: 2.1640e+05
-15:41:42.913 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  20 iterations: 1.1826e+05
-15:41:43.654 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  30 iterations: 97485
-15:41:44.331 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  40 iterations: 80543
-15:41:45.046 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  50 iterations: 64924
-15:41:45.745 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  60 iterations: 41895
-15:41:46.488 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  70 iterations: 38041
-15:41:47.186 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  80 iterations: 35171
-15:41:47.855 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  90 iterations: 31038
-15:41:48.572 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 100 iterations: 26562
-15:41:49.235 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 110 iterations: 26244
-15:41:49.928 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 120 iterations: 25671
-15:41:50.599 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 130 iterations: 25387
-15:41:51.281 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 140 iterations: 25229
-15:41:51.970 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 150 iterations: 25025
-15:41:52.659 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 160 iterations: 24813
-15:41:53.351 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 170 iterations: 24748
-15:41:54.019 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 180 iterations: 24601
-15:41:54.751 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 190 iterations: 24560
-15:41:55.388 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 200 iterations: 24526
-15:41:56.032 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 210 iterations: 24454
-15:41:56.770 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 220 iterations: 24388
-15:41:57.470 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 230 iterations: 24243
-15:41:58.166 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 240 iterations: 24185
-15:41:58.793 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 250 iterations: 24159
-15:41:59.450 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 260 iterations: 24138
-15:42:00.165 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 270 iterations: 24131
-15:42:00.886 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 280 iterations: 24126
-15:42:01.601 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 290 iterations: 24121
-15:42:02.319 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 300 iterations: 24120
-15:42:03.005 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 310 iterations: 24118
-15:42:03.671 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 320 iterations: 24118
-15:42:04.352 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 330 iterations: 24117
-15:42:05.032 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 340 iterations: 24117
-15:42:05.692 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 350 iterations: 24117
-15:42:06.391 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 360 iterations: 24117
-15:42:07.052 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 370 iterations: 24117
-15:42:07.727 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 380 iterations: 24117
-15:42:08.399 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 390 iterations: 24117
-15:42:09.070 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 400 iterations: 24117
-15:42:09.715 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 410 iterations: 24117
-15:42:10.418 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 420 iterations: 24117
-15:42:11.125 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 430 iterations: 24117
-15:42:11.832 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 440 iterations: 24117
-15:42:12.494 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 450 iterations: 24117
-15:42:13.155 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 460 iterations: 24116
-15:42:13.855 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 470 iterations: 24116
-15:42:14.519 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 480 iterations: 24116
-15:42:15.198 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 490 iterations: 24116
-15:42:15.877 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 500 iterations: 24116
-15:42:16.553 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 510 iterations: 24116
-15:42:17.217 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 520 iterations: 24116
-15:42:17.860 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 530 iterations: 24116
-15:42:18.540 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 540 iterations: 24116
-15:42:19.233 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 550 iterations: 24116
-15:42:19.932 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 560 iterations: 24116
-15:42:20.628 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 570 iterations: 24116
-15:42:21.300 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 580 iterations: 24116
-15:42:22.003 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 590 iterations: 24116
-15:42:22.717 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 600 iterations: 24116
-15:42:23.403 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 610 iterations: 24116
-15:42:24.105 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 620 iterations: 24116
-15:42:24.794 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 630 iterations: 24116
-15:42:25.456 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 640 iterations: 24116
-15:42:26.197 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 650 iterations: 24116
-15:42:26.905 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 660 iterations: 24116
-15:42:27.595 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 670 iterations: 24116
-15:42:28.260 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 680 iterations: 24116
-15:42:28.960 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 690 iterations: 24116
-15:42:29.606 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 700 iterations: 24116
-15:42:29.804 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 703 iterations: 24116
-15:42:29.805 [JavaFX Application Thread] INFO  smile.util.package$ - runtime: 48825.380432 ms
-15:42:32.716 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - accuracy: 0.9847464318850307
-15:42:32.721 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - recall: 0.9529346027379596
-15:42:32.727 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - sensitivity: 0.9529346027379596
-15:42:32.733 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - specificity: 0.9879640639163202
-15:42:32.739 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - fallout: 0.01203593608367981
-15:42:32.744 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - fdr: 0.11101086651429488
-15:42:32.751 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - f1: 0.9198518810484497
-15:42:34.031 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp,0.5520833333333334)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py,0.6587301587301587)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems,0.7225609756097561)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare,0.7680278019113814)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py,0.7713004484304933)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/8,0.7848482314574797)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_user_file,0.7849498327759198)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes2,0.8018433179723502)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py,0.851190476190476)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_pair_h,0.8648648648648648)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/6,0.8724279835390947)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_problems,0.8807339449541284)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_cpp,0.8833333333333333)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines14,0.8882352941176471)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong2,0.8913342503438789)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h4,0.9090909090909091)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h2,0.91)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/25,0.9124668435013262)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py4,0.9148222669349431)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy4,0.9194029850746269)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utilstest_py,0.9207920792079207)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py2,0.9208006962576154)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/really_changed,0.9209694415173867)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy3,0.9376854599406528)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines16,0.9384010484927916)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/19,0.9403669724770642)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/11,0.9436893203883494)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_cpp,0.9478672985781992)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/9,0.9572773352643013)
+Testing started at 15:46 ...
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=18061967896529 -javaagent:/home/szkster/Programs/idea-IC-181.4203.550/lib/idea_rt.jar=46123:/home/szkster/Programs/idea-IC-181.4203.550/bin -Dfile.encoding=UTF-8 -classpath /home/szkster/.IdeaIC2018.1/config/plugins/Scala/lib/runners.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-library.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.m2/repository/org/fxmisc/richtext/richtextfx/1.0.0-SNAPSHOT/richtextfx-1.0.0-SNAPSHOT.jar:/home/szkster/.ivy2/cache/org.scalafx/scalafx_2.12/jars/scalafx_2.12-8.0.144-R12.jar:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-reflect.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-1.4.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.1.jar:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner -s com.kristofszilagyi.sedito.gui.PlotData -testName "train logistic regression" -C org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestReporter -showProgressMessages true
+15:46:46.558 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Training size: 569538
+15:46:46.561 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Test size: 506570
+15:46:46.579 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 1s: 52641
+15:46:46.592 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 0s: 516897
+15:46:47.296 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: initial function value: 3.9477e+05
+15:46:48.124 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  10 iterations: 1.7915e+05
+15:46:48.660 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  20 iterations: 1.2148e+05
+15:46:49.218 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  30 iterations: 1.0197e+05
+15:46:49.731 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  40 iterations: 51503
+15:46:50.272 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  50 iterations: 27075
+15:46:50.782 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  60 iterations: 26498
+15:46:51.333 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  70 iterations: 26390
+15:46:51.845 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  80 iterations: 26309
+15:46:52.360 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after  90 iterations: 26241
+15:46:52.891 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 100 iterations: 26235
+15:46:53.432 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 110 iterations: 26234
+15:46:54.022 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 120 iterations: 26234
+15:46:54.530 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 130 iterations: 26234
+15:46:55.087 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 140 iterations: 26234
+15:46:55.604 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 150 iterations: 26234
+15:46:56.120 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 160 iterations: 26234
+15:46:56.658 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 170 iterations: 26234
+15:46:57.178 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 180 iterations: 26234
+15:46:57.699 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 190 iterations: 26234
+15:46:57.964 [JavaFX Application Thread] INFO  smile.math.Math - L-BFGS: the function value after 195 iterations: 26234
+15:46:57.965 [JavaFX Application Thread] INFO  smile.util.package$ - runtime: 10739.892756 ms
+15:46:58.362 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - accuracy: 0.9840002368873009
+15:46:58.367 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - recall: 0.9402763748898584
+15:46:58.373 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - sensitivity: 0.9402763748898584
+15:46:58.379 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - specificity: 0.9884227206823769
+15:46:58.385 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - fallout: 0.01157727931762309
+15:46:58.390 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - fdr: 0.10852112963038428
+15:46:58.397 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - f1: 0.9152276459329143
+15:46:58.819 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp,0.4861878453038674)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py,0.5263157894736843)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems,0.6055045871559633)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py,0.6568627450980392)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes2,0.686868686868687)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare,0.7044609665427509)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py,0.7751196172248803)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/8,0.7835258663987945)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_user_file,0.7836276889595715)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_problems,0.8598130841121495)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong2,0.8601997146932954)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py4,0.8662420382165604)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines14,0.8776119402985074)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_pair_h,0.88)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy4,0.8827160493827161)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h4,0.8837209302325582)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py2,0.8856885688568857)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/6,0.8861788617886179)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h2,0.8934010152284264)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_cpp,0.9016393442622951)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/19,0.9078014184397162)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/really_changed,0.9092849519743863)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/25,0.9193548387096774)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/11,0.9309664694280079)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines16,0.9338677354709417)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utilstest_py,0.941747572815534)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy3,0.9532163742690057)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/9,0.9587628865979381)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines5,0.958904109589041)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/feature_extractor_cpp,0.9596412556053812)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h5,0.9600000000000001)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/feature_extractor_cpp,0.9642857142857143)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertions,0.9655937846836848)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlsample,0.9658536585365854)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13_tough,0.9681818181818181)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h2,0.9695945945945945)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/5,0.9702789208962048)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file2,0.9726027397260273)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple,0.9726918075422627)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple_2,0.9732824427480917)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/5,0.9644997694790226)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple,0.9692923898531375)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13_tough,0.9701606732976281)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines9,0.9702970297029704)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare2,0.9704284852142426)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlsample,0.9707317073170733)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/18,0.9714285714285714)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertions,0.9720670391061453)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/learning_curve_py,0.974304068522484)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line,0.9752650176678446)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/18,0.9758064516129032)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines9,0.9761175750153093)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h2,0.9759450171821306)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insert,0.9767441860465117)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp5,0.9779685264663807)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines5,0.9798657718120806)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare2,0.9802985074626867)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_h,0.9803921568627451)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp4,0.9820723184442418)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_change,0.9826194909993793)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines12,0.9840746842394289)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_h,0.984076433121019)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file3,0.9841269841269841)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_pro_changes,0.9854910714285715)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/22,0.9855670103092784)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_5,0.9885931558935362)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/7,0.9913928012519562)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_2,0.9924242424242424)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_8,0.9924642049736248)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_7,0.993119266055046)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file10,0.9937759336099584)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lot_of_empty_lines,0.9937828790052606)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_line_problems,0.9938971229293809)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_6,0.9941891178024301)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_cpp,0.9962518740629686)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py2,0.9988179669030733)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences2,0.9989035087719299)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_cpp,0.9769585253456222)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple_2,0.977055449330784)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line,0.9786856127886324)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file2,0.9795918367346939)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp5,0.9801781097385809)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_change,0.9813548788067122)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp4,0.9820286323484617)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_pro_changes,0.9843225083986562)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_h,0.9853658536585366)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_2,0.9881154499151104)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_8,0.989010989010989)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_7,0.9892307692307692)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/22,0.9897330595482546)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_h,0.990506329113924)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_line_problems,0.9916921731526017)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_5,0.9918345127925967)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lot_of_empty_lines,0.9918465227817745)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/7,0.992156862745098)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines12,0.9934569247546348)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file3,0.9947643979057591)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_cpp,0.9966279505432746)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file10,0.9968814968814969)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_6,0.9973586899101953)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py2,0.9994093325457768)
+(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences2,1.0)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_deleted,1.0)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_lines,NaN)
-15:42:34.107 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Displaying /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp
+15:46:58.895 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Displaying /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp
 
-Process finished with exit code 0
+Process finished with exit code 137 (interrupted by signal 9: SIGKILL)
