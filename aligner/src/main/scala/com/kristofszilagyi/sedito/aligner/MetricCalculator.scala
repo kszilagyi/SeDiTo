@@ -28,13 +28,15 @@ object MetricCalculator {
 
   private val ldCalculator = new Levenshtein()
 
-  final case class PairwiseMetrics(ld: Double, ldLenSimilarity: Double)
+  final case class PairwiseMetrics(ld: Double, ldLenSim: Double) {
+    override def toString: String = s"ld = $ld, ldLenSim = $ldLenSim, "
+  }
   final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics)
   final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics,
                            context: ContextMetrics) {
 
     def toLdLenSimDouble: Array[Double]= {
-      Array(word.ldLenSimilarity, context.before.ldLenSimilarity, context.after.ldLenSimilarity)
+      Array(word.ldLenSim, context.before.ldLenSim, context.after.ldLenSim)
     }
   }
 
@@ -47,7 +49,7 @@ object MetricCalculator {
   //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)
   private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext) = {
     val wordMetrics = calcMetrics(leftWord.word.toWord, rightWord.word.toWord)
-    val contextMetrics = if(wordMetrics.ldLenSimilarity >= 0.99) {
+    val contextMetrics = if(wordMetrics.ldLenSim >= 0.99) {
       val beforeContextMetrics = calcMetrics(leftWord.beforeContext, rightWord.beforeContext)
       val afterContextMetrics = calcMetrics(leftWord.afterContext, rightWord.afterContext)
       Some(ContextMetrics(beforeContextMetrics, afterContextMetrics))
