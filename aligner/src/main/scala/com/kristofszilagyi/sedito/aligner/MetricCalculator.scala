@@ -97,14 +97,14 @@ object MetricCalculator {
     }
     contextMetrics.map { case (full, sixteenth) =>
       Metrics(leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics,
-        contextFull = full, sixteenth)
+        contextFull = full, context16th = sixteenth)
     }.toList
   }
 
   final case class WordWithContext(beforeContext: String, afterContext: String, word: WordIndexRange) {
     def positionAgnostic: (String, String, String) = (beforeContext, afterContext, word.toWord)
     def shortedContext(len: Int): WordWithContext = {
-      WordWithContext(beforeContext.take(len), afterContext.take(len), word)
+      WordWithContext(beforeContext.takeRight(len), afterContext.take(len), word)
     }
   }
 

@@ -31,7 +31,9 @@ object Aligner {
 
     val probabilitiesWithMetrics = xs.flatMap { case (m, x) =>
       val probs = new Array[Double](2)
-      val prediction = logit.predict(scaler.transform(x), probs)
+      val scaledX = scaler.transform(x)
+      val prediction = logit.predict(scaledX, probs)
+      logger.debug(s"${m.leftWord.toText} - ${m.rightWord.toText}, x: ${x.mkString(", ")}, p(1): ${probs(1)}")
       if(prediction ==== 1) {
         val p = probs(1)
         assert(p >= 0.5, s"p = $p")
