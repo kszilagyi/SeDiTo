@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.aligner
 import com.kristofszilagyi.sedito.common._
 import info.debatty.java.stringsimilarity.Levenshtein
 import org.log4s.getLogger
-import TypeSafeEqualsOps._
+
 import scala.annotation.tailrec
 
 object MetricCalculator {
@@ -33,16 +33,9 @@ object MetricCalculator {
     * @param ldLenSim
     */
   final case class PairwiseMetrics(normalizedLdLenSim: Double, ldLenSim: Double) {
-    override def toString: String = s"normalizedLdLenSin = $normalizedLdLenSim, ldLenSim = $ldLenSim"
+    override def toString: String = s"normalizedLdLenSim = $normalizedLdLenSim, ldLenSim = $ldLenSim"
   }
 
-  object NormalizedLenLenSims {
-    def calcOne(maxLen: Int, contextSize: Int, ldLenSim: Double): Double = {
-      if (maxLen !=== 0) {
-        ldLenSim / maxLen * contextSize
-      } else contextSize.toDouble /* if they are both on edge their corresponding context is 100% similar */
-    }
-  }
   /**
     *  this two corrects for the effects of the edges (the context is less than 100 chars)
     */
@@ -67,7 +60,8 @@ object MetricCalculator {
     }
 
     override def toString: String = {
-      s"${leftWord.toText} - ${rightWord.toText}: word: ${word.ldLenSim}, ${word.normalizedLdLenSim}, full: ${contextFull.toLdLenSimDouble.mkString(", ")}," +
+      s"${leftWord} - ${rightWord}: word: ${word.ldLenSim}, ${word.normalizedLdLenSim}, " +
+        s"full: ${contextFull.toLdLenSimDouble.mkString(", ")}," +
         s" 16: ${context16th.toOnlyNormalized.mkString(", ")}"
     }
   }
