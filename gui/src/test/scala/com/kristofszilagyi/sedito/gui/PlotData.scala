@@ -14,7 +14,8 @@ import javafx.application.Application
 import javafx.stage.Stage
 import org.log4s.getLogger
 import org.scalatest.FreeSpecLike
-import smile.classification.{LogisticRegression, SoftClassifier}
+import smile.classification.NeuralNetwork.{ActivationFunction, ErrorFunction}
+import smile.classification.{NeuralNetwork, SoftClassifier}
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
 import smile.feature.Scaler
 import smile.validation._
@@ -61,8 +62,10 @@ object PlotData {
     metrics.seq.toList
   }
 
+  private val numOfAttributes = 7
+
+
   private def toAttributeDataSet(metrics: Traversable[MetricsWithResults]) = {
-    val numOfAttributes = 7
     val attributes = (0 until numOfAttributes).map { name =>
       new NumericAttribute(name.toString)
     }
@@ -87,7 +90,7 @@ object PlotData {
     scaler.learn(trainingSet.attributes(), trainingSet.x())
     val transformedTrainingSet = scaler.transform(trainingSet.x())
     val trainingY = trainingSet.labels()
-    val classifier = classification.logit(transformedTrainingSet, trainingY, maxIter = 5000)
+    val classifier = classification.mlp(transformedTrainingSet, trainingY, Array(numOfAttributes, 5, 1), ErrorFunction.CROSS_ENTROPY, ActivationFunction.LOGISTIC_SIGMOID)
     val testSet = toAttributeDataSet(test)
     val testX = scaler.transform(testSet.x())
     val testY = testSet.labels()
@@ -153,7 +156,7 @@ object PlotData {
   final class ShowOne extends Application {
     def start(stage: Stage): Unit = {
 
-      val classifier = read.xstream("linear_regression.model").asInstanceOf[LogisticRegression]
+      val classifier = read.xstream("linear_regression.model").asInstanceOf[NeuralNetwork]
       val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
       val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp"))
       displayTestCase(testCase, classifier, scaler)
