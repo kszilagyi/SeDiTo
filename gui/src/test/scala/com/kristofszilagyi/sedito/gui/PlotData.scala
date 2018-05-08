@@ -62,7 +62,7 @@ object PlotData {
     metrics.seq.toList
   }
 
-  private val numOfAttributes = 7
+  private val numOfAttributes = 12
 
 
   private def toAttributeDataSet(metrics: Traversable[MetricsWithResults]) = {
@@ -90,7 +90,10 @@ object PlotData {
     scaler.learn(trainingSet.attributes(), trainingSet.x())
     val transformedTrainingSet = scaler.transform(trainingSet.x())
     val trainingY = trainingSet.labels()
+    logger.info("Starting training")
     val classifier = classification.mlp(transformedTrainingSet, trainingY, Array(numOfAttributes, 5, 1), ErrorFunction.CROSS_ENTROPY, ActivationFunction.LOGISTIC_SIGMOID)
+    logger.info("Training finished")
+
     val testSet = toAttributeDataSet(test)
     val testX = scaler.transform(testSet.x())
     val testY = testSet.labels()
@@ -141,7 +144,7 @@ object PlotData {
         path -> f1Score
       }.sortBy(_._2)
 
-      logger.info(f1s.mkString("\n"))
+      logger.info("\n" + f1s.mkString("\n"))
       write.xstream(classifier, "linear_regression.model")
       write.xstream(scaler, "linear_regression.scaler")
       f1s.headOption.foreach { case (path, _) =>

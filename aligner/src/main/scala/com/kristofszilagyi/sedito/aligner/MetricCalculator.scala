@@ -28,8 +28,12 @@ object MetricCalculator {
 
   private val ldCalculator = new Levenshtein()
 
-  final case class PairwiseMetrics(ld: Double, ldLenSim: Double) {
-    override def toString: String = s"ld = $ld, ldLenSim = $ldLenSim"
+  /**
+    * @param normalizedLdLenSim 1 if they are the same.
+    * @param ldLenSim
+    */
+  final case class PairwiseMetrics(normalizedLdLenSim: Double, ldLenSim: Double) {
+    override def toString: String = s"normalizedLdLenSin = $normalizedLdLenSim, ldLenSim = $ldLenSim"
   }
 
   object NormalizedLenLenSims {
@@ -44,26 +48,26 @@ object MetricCalculator {
     */
   final case class NormalizedLenLenSims(before: Double, after: Double)
 
-  final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics,
-                                  normalizedLenLenSims: NormalizedLenLenSims) {
+  final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics) {
     def toLdLenSimDouble: List[Double] = {
-      List(before.ldLenSim, after.ldLenSim, normalizedLenLenSims.before, normalizedLenLenSims.after)
+      List(before.ldLenSim, after.ldLenSim, before.normalizedLdLenSim, after.normalizedLdLenSim)
     }
 
     def toOnlyNormalized: List[Double] = {
-      List(normalizedLenLenSims.before, normalizedLenLenSims.after)
+      List(before.normalizedLdLenSim, after.normalizedLdLenSim)
     }
   }
 
   final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics,
-                           contextFull: ContextMetrics, context16th: ContextMetrics) {
+                           contextFull: ContextMetrics, context4th: ContextMetrics, context8th: ContextMetrics, context16th: ContextMetrics) {
 
     def toLdLenSimDouble: Array[Double]= {
-      (word.ldLenSim +: (contextFull.toLdLenSimDouble ++ context16th.toOnlyNormalized)).toArray
+      (word.ldLenSim +: word.normalizedLdLenSim +: (contextFull.toLdLenSimDouble ++ context4th.toOnlyNormalized ++
+        context8th.toOnlyNormalized ++context16th.toOnlyNormalized)).toArray
     }
 
     override def toString: String = {
-      s"${leftWord.toText} - ${rightWord.toText}: word: ${word.ldLenSim}, full: ${contextFull.toLdLenSimDouble.mkString(", ")}," +
+      s"${leftWord.toText} - ${rightWord.toText}: word: ${word.ldLenSim}, ${word.normalizedLdLenSim}, full: ${contextFull.toLdLenSimDouble.mkString(", ")}," +
         s" 16: ${context16th.toOnlyNormalized.mkString(", ")}"
     }
   }
@@ -71,17 +75,19 @@ object MetricCalculator {
   private def calcMetrics(left: String, right: String) = {
     val ld = ldCalculator.distance(left, right)
     val ldLenSim = LdLenSimilarity.calcFast(ld, left, right)
-    PairwiseMetrics(ld, ldLenSim)
+    val maxLen = math.max(left.length, right.length)
+    val normalizedSim = if (maxLen > 0) {
+       ldLenSim / maxLen
+    } else {
+      1.0
+    }
+    PairwiseMetrics(normalizedSim, ldLenSim)
   }
 
-  private def calcContextMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
+  private def calcContextMetrics(leftWord: WordWithContext, rightWord: WordWithContext) = {
     val beforeContextMetrics = calcMetrics(leftWord.beforeContext, rightWord.beforeContext)
     val afterContextMetrics = calcMetrics(leftWord.afterContext, rightWord.afterContext)
-    val normalizedLenLenSimBefore = NormalizedLenLenSims.calcOne(
-      maxLen = math.max(leftWord.beforeContext.length, rightWord.beforeContext.length), contextSize = contextSize, ldLenSim = beforeContextMetrics.ldLenSim)
-    val normalizedLenLenSimAfter = NormalizedLenLenSims.calcOne(
-      maxLen = math.max(leftWord.afterContext.length, rightWord.afterContext.length), contextSize = contextSize, ldLenSim = afterContextMetrics.ldLenSim)
-    ContextMetrics(beforeContextMetrics, afterContextMetrics, NormalizedLenLenSims(normalizedLenLenSimBefore, normalizedLenLenSimAfter) )
+    ContextMetrics(beforeContextMetrics, afterContextMetrics)
   }
   //concat all words
   //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)
@@ -89,15 +95,17 @@ object MetricCalculator {
     val wordMetrics = calcMetrics(leftWord.word.toWord, rightWord.word.toWord)
     val contextMetrics = if(wordMetrics.ldLenSim >= 0.99) {
       Some((
-        calcContextMetrics(leftWord, rightWord, contextSize),
-        calcContextMetrics(leftWord.shortedContext(contextSize / 16), rightWord.shortedContext(contextSize / 16), contextSize)
+        calcContextMetrics(leftWord, rightWord),
+        calcContextMetrics(leftWord.shortedContext(contextSize / 4), rightWord.shortedContext(contextSize / 4)),
+        calcContextMetrics(leftWord.shortedContext(contextSize / 8), rightWord.shortedContext(contextSize / 8)),
+        calcContextMetrics(leftWord.shortedContext(contextSize / 16), rightWord.shortedContext(contextSize / 16))
       ))
     } else {
       None
     }
-    contextMetrics.map { case (full, sixteenth) =>
+    contextMetrics.map { case (full, forth, eight, sixteenth) =>
       Metrics(leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics,
-        contextFull = full, context16th = sixteenth)
+        contextFull = full, context4th = forth, context8th = eight,  context16th = sixteenth)
     }.toList
   }
 
