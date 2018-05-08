@@ -83,7 +83,7 @@ object PlotData {
     logger.info(s"1s: ${training.count(_.matching)}")
     logger.info(s"0s: ${training.count(_.matching ==== false)}")
     val trainingSet = toAttributeDataSet(training)
-    val scaler = new Scaler(false)
+    val scaler = new Scaler(true)
     scaler.learn(trainingSet.attributes(), trainingSet.x())
     val transformedTrainingSet = scaler.transform(trainingSet.x())
     val classifier = classification.logit(transformedTrainingSet, trainingSet.labels(), maxIter = 5000)
