@@ -14,7 +14,7 @@ import javafx.application.Application
 import javafx.stage.Stage
 import org.log4s.getLogger
 import org.scalatest.FreeSpecLike
-import smile.classification.LogisticRegression
+import smile.classification.{LogisticRegression, SoftClassifier}
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
 import smile.feature.Scaler
 import smile.validation._
@@ -113,7 +113,7 @@ object PlotData {
     (classifier, scaler)
   }
 
-  private def displayTestCase(testCase: TestCase, classifier: LogisticRegression, scaler: Scaler) = {
+  private def displayTestCase(testCase: TestCase, classifier: SoftClassifier[Array[Double]], scaler: Scaler) = {
     val calculatedAlignment = new Aligner(classifier, scaler).align(testCase.left, testCase.right)
     val expected = new MainWindow()
     expected.setTitle("Excpected")

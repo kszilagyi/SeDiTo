@@ -5,7 +5,7 @@ import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.{Selection, UnambiguousWordAlignment, WordMatch}
 import org.log4s.getLogger
-import smile.classification.LogisticRegression
+import smile.classification.SoftClassifier
 import smile.feature.Scaler
 
 final case class PartialResult(left: Selection, right: Selection, probability: Double)
@@ -24,7 +24,7 @@ object Aligner {
     PartialResult(metricsAndProb._1.leftWord, metricsAndProb._1.rightWord, metricsAndProb._2)
   }
 
-  private def findPotentialMatches(logit: LogisticRegression, scaler: Scaler, left: String, right: String): Traversable[PartialResult] = {
+  private def findPotentialMatches(classifier: SoftClassifier[Array[Double]], scaler: Scaler, left: String, right: String): Traversable[PartialResult] = {
     val metrics = MetricCalculator.calcAlignerMetrics(left, right)
     logger.debug("Debug metrics: \n" + metrics.mkString("\n"))
     val xs = metrics.map(m => m -> m.toLdLenSimDouble).toArray
@@ -32,7 +32,7 @@ object Aligner {
     val probabilitiesWithMetrics = xs.flatMap { case (m, x) =>
       val probs = new Array[Double](2)
       val scaledX = scaler.transform(x)
-      val prediction = logit.predict(scaledX, probs)
+      val prediction = classifier.predict(scaledX, probs)
       logger.debug(s"${m.leftWord.toText} - ${m.rightWord.toText}, x: ${x.mkString(", ")}, p(1): ${probs(1)}")
       if(prediction ==== 1) {
         val p = probs(1)
@@ -45,9 +45,9 @@ object Aligner {
   }
 }
 
-final class Aligner(logit: LogisticRegression, scaler: Scaler) {
+final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
   def align(left: String, right: String): UnambiguousWordAlignment = {
-    val potentialMatches = findPotentialMatches(logit, scaler, left, right)
+    val potentialMatches = findPotentialMatches(classifier, scaler, left, right)
     val leftResolved = resolveWithMostProbable(potentialMatches.groupBy(_.left))
     val bothResolved = resolveWithMostProbable(leftResolved.groupBy(_.right))
     UnambiguousWordAlignment(bothResolved.map(p => WordMatch(p.left, p.right)).toSet)
