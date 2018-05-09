@@ -34,6 +34,8 @@ object MetricCalculator {
     */
   final case class PairwiseMetrics(normalizedLdLenSim: Double, ldLenSim: Double) {
     override def toString: String = s"normalizedLdLenSim = $normalizedLdLenSim, ldLenSim = $ldLenSim"
+
+    def toDoubles: List[Double] = List(normalizedLdLenSim, ldLenSim)
   }
 
   /**
@@ -51,12 +53,12 @@ object MetricCalculator {
     }
   }
 
-  final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics,
+  final case class Metrics(leftWord: Selection, rightWord: Selection, word: PairwiseMetrics, line: PairwiseMetrics,
                            contextFull: ContextMetrics, context4th: ContextMetrics, context8th: ContextMetrics, context16th: ContextMetrics) {
 
     def toLdLenSimDouble: Array[Double]= {
-      (word.ldLenSim +: word.normalizedLdLenSim +: (contextFull.toLdLenSimDouble ++ context4th.toOnlyNormalized ++
-        context8th.toOnlyNormalized ++context16th.toOnlyNormalized)).toArray
+      (word.toDoubles ++ line.toDoubles ++ contextFull.toLdLenSimDouble ++ context4th.toOnlyNormalized ++
+        context8th.toOnlyNormalized ++context16th.toOnlyNormalized).toArray
     }
 
     override def toString: String = {
@@ -87,6 +89,7 @@ object MetricCalculator {
   //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)
   private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
     val wordMetrics = calcMetrics(leftWord.word.toWord, rightWord.word.toWord)
+    val lineMetrics = calcMetrics(leftWord.word.toSelection.line, rightWord.word.toSelection.line)//todo this could be cached/sped up
     val contextMetrics = if(wordMetrics.ldLenSim >= 0.99) {
       Some((
         calcContextMetrics(leftWord, rightWord),
@@ -98,7 +101,7 @@ object MetricCalculator {
       None
     }
     contextMetrics.map { case (full, forth, eight, sixteenth) =>
-      Metrics(leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics,
+      Metrics(leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics, line = lineMetrics,
         contextFull = full, context4th = forth, context8th = eight,  context16th = sixteenth)
     }.toList
   }
