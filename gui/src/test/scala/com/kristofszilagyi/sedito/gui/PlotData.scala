@@ -62,7 +62,7 @@ object PlotData {
     metrics.seq.toList
   }
 
-  private val numOfAttributes = 14
+  private val numOfAttributes = 15
 
 
   private def toAttributeDataSet(metrics: Traversable[MetricsWithResults]) = {
