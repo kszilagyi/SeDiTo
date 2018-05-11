@@ -1,27 +1,26 @@
-Testing started at 21:59 ...
-/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=6631043613713 -javaagent:/home/szkster/Programs/idea-IC-181.4203.550/lib/idea_rt.jar=35281:/home/szkster/Programs/idea-IC-181.4203.550/bin -Dfile.encoding=UTF-8 -classpath /home/szkster/.IdeaIC2018.1/config/plugins/Scala/lib/runners.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-library.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.1.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-1.4.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-reflect.jar:/home/szkster/.ivy2/cache/org.scalafx/scalafx_2.12/jars/scalafx_2.12-8.0.144-R12.jar:/home/szkster/.m2/repository/org/fxmisc/richtext/richtextfx/1.0.0-SNAPSHOT/richtextfx-1.0.0-SNAPSHOT.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestRunner -s com.kristofszilagyi.sedito.gui.PlotData -testName "train logistic regression" -C org.jetbrains.plugins.scala.testingSupport.scalaTest.ScalaTestReporter -showProgressMessages true
-22:00:47.775 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Training size: 569538
-22:00:47.778 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Test size: 506570
-22:00:47.790 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 1s: 52641
-22:00:47.803 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 0s: 516897
-22:00:49.368 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Starting training
-22:01:04.232 [JavaFX Application Thread] INFO  smile.util.package$ - runtime: 14858.369197 ms
-22:01:04.233 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Training finished
-22:01:06.009 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training accuracy: 0.9926765202673044
-22:01:06.015 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training recall: 0.977204080469596
-22:01:06.022 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training sensitivity: 0.977204080469596
-22:01:06.029 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training specificity: 0.9942522398079308
-22:01:06.036 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training fallout: 0.00574776019206924
-22:01:06.043 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training fdr: 0.05460192604572521
-22:01:06.055 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training f1: 0.9610379905280562
-22:01:06.059 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test accuracy: 0.9867224667864264
-22:01:06.060 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test recall: 0.9729212782875932
-22:01:06.065 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test sensitivity: 0.9729212782875932
-22:01:06.071 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test specificity: 0.9881183986575052
-22:01:06.076 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test fallout: 0.01188160134249483
-22:01:06.081 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test fdr: 0.10773202987957506
-22:01:06.087 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test f1: 0.9308508450877986
-22:01:07.657 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData -
+20:12:15.985 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Start
+20:13:59.261 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Training size: 569538
+20:13:59.263 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Test size: 506570
+20:13:59.274 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 1s: 52641
+20:13:59.286 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - 0s: 516897
+20:14:00.840 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Starting training
+20:14:15.123 [JavaFX Application Thread] INFO  smile.util.package$ - runtime: 14277.066675 ms
+20:14:15.124 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Training finished
+20:14:19.168 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training accuracy: 0.9926765202673044
+20:14:19.175 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training recall: 0.977204080469596
+20:14:19.181 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training sensitivity: 0.977204080469596
+20:14:19.187 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training specificity: 0.9942522398079308
+20:14:19.193 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training fallout: 0.00574776019206924
+20:14:19.199 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training fdr: 0.05460192604572521
+20:14:19.208 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - training f1: 0.9610379905280562
+20:14:19.209 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test accuracy: 0.9867224667864264
+20:14:19.212 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test recall: 0.9729212782875932
+20:14:19.213 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test sensitivity: 0.9729212782875932
+20:14:19.214 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test specificity: 0.9881183986575052
+20:14:19.215 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test fallout: 0.01188160134249483
+20:14:19.216 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test fdr: 0.10773202987957506
+20:14:19.217 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - test f1: 0.9308508450877986
+20:14:21.137 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData -
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp,0.7511312217194569)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems,0.7577235772357723)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/8,0.7863404859313684)
@@ -91,6 +90,5 @@ Testing started at 21:59 ...
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines5,1.0)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insert,1.0)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_lines,NaN)
-22:01:07.756 [JavaFX Application Thread] INFO  c.k.sedito.gui.PlotData - Displaying /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp
 
 Process finished with exit code 0

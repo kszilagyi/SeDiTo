@@ -131,6 +131,7 @@ object PlotData {
 
   final class TrainLR extends Application {
     def start(stage: Stage): Unit = {
+      logger.info("Start")
       val metrics = readDataSetAndMeasureMetrics()
       val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
       val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
@@ -147,11 +148,7 @@ object PlotData {
       logger.info("\n" + f1s.mkString("\n"))
       write.xstream(classifier, "linear_regression.model")
       write.xstream(scaler, "linear_regression.scaler")
-      f1s.headOption.foreach { case (path, _) =>
-        logger.info(s"Displaying $path")
-        val testCase = readTestCase(path)
-        displayTestCase(testCase, classifier, scaler)
-      }
+      sys.exit(0)
     }
   }
 
@@ -161,7 +158,7 @@ object PlotData {
 
       val classifier = read.xstream("linear_regression.model").asInstanceOf[NeuralNetwork]
       val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
-      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp"))
+      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems"))
       displayTestCase(testCase, classifier, scaler)
     }
   }
