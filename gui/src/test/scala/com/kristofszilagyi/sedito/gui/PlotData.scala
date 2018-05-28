@@ -180,6 +180,4 @@ final class PlotData extends FreeSpecLike {
   "show difference" in {
     Application.launch(classOf[ShowOne])
   }
-  //todo add learning curve (more data helps or not?)
-  //todo line similarity?, also if in line similarity is it in the right position
 }
