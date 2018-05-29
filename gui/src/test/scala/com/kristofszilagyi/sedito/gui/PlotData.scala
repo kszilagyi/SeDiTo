@@ -22,7 +22,7 @@ import smile.validation._
 import smile.{classification, plot, read, write}
 
 import scala.collection.JavaConverters._
-import scala.util.{Failure, Success}
+import scala.util.{Failure, Random, Success}
 
 final case class MetricsWithResults(metrics: Metrics, matching: Boolean)
 
@@ -170,7 +170,15 @@ object PlotData {
 final class PlotData extends FreeSpecLike {
   "plot data" ignore {
     val metrics = readDataSetAndMeasureMetrics()
-    plot.plot(toAttributeDataSet(metrics.flatMap(_._2).toSet.take(10000)), '.', Array(Color.RED, Color.BLUE)).setVisible(true)
+    @SuppressWarnings(Array(Warts.AsInstanceOf))
+    val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
+    val dataSet = toAttributeDataSet(Random.shuffle(metrics.flatMap(_._2)).toSet.take(1000))
+    val scaledDataSet = new AttributeDataset("something", dataSet.attributes(), new NominalAttribute("doesMatch"))
+    dataSet.asScala.foreach { row =>
+      scaledDataSet.add(scaler.transform(row.x), row.y)
+    }
+    plot.plot(scaledDataSet, '.', Array(Color.RED, Color.BLUE)).setVisible(true)
+
     Thread.sleep(10000*10000)
   }
 
