@@ -83,8 +83,10 @@ object PlotData {
     val test = nestedTest.flatten
     logger.info(s"Training size: ${training.size}")
     logger.info(s"Test size: ${test.size}")
-    logger.info(s"1s: ${training.count(_.matching)}")
-    logger.info(s"0s: ${training.count(_.matching ==== false)}")
+    logger.info(s"1s in training: ${training.count(_.matching)}")
+    logger.info(s"0s in training: ${training.count(_.matching ==== false)}")
+    logger.info(s"1s in test: ${test.count(_.matching)}")
+    logger.info(s"0s in test: ${test.count(_.matching ==== false)}")
     val trainingSet = toAttributeDataSet(training)
     val scaler = new Scaler(true)
     scaler.learn(trainingSet.attributes(), trainingSet.x())
