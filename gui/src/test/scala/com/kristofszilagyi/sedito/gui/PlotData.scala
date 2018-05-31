@@ -132,13 +132,9 @@ object PlotData {
   }
 
   final class TrainLR extends Application {
-    def start(stage: Stage): Unit = {
-      logger.info("Start")
-      val metrics = readDataSetAndMeasureMetrics()
-      val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
-      val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
 
-      val f1s = nestedTest.map { case (path, singleTest) =>
+    private def f1s(files:  List[(Path, IndexedSeq[MetricsWithResults])], scaler: Scaler, classifier: NeuralNetwork) = {
+      files.map { case (path, singleTest) =>
         val singleDataSet = toAttributeDataSet(singleTest)
         val singleTestX = scaler.transform(singleDataSet.x())
         val singleTestY = singleDataSet.labels()
@@ -146,8 +142,20 @@ object PlotData {
         val f1Score = f1(singleTestY, singlePred)
         path -> f1Score
       }.sortBy(_._2)
+    }
+    def start(stage: Stage): Unit = {
+      logger.info("Start")
+      val metrics = readDataSetAndMeasureMetrics()
+      val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
+      val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
 
-      logger.info("\n" + f1s.mkString("\n"))
+      val trainingF1s = f1s(nestedTraining, scaler, classifier)
+
+      logger.info("Training f1s: \n" + trainingF1s.mkString("\n"))
+
+      val testf1s = f1s(nestedTest, scaler, classifier)
+
+      logger.info("Test f1s: \n" + testf1s.mkString("\n"))
       write.xstream(classifier, "linear_regression.model")
       write.xstream(scaler, "linear_regression.scaler")
       sys.exit(0)
@@ -160,7 +168,7 @@ object PlotData {
 
       val classifier = read.xstream("linear_regression.model").asInstanceOf[NeuralNetwork]
       val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
-      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems"))
+      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp"))
       displayTestCase(testCase, classifier, scaler)
     }
   }
