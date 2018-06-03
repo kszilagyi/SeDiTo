@@ -2,13 +2,18 @@ package com.kristofszilagyi.sedito.common
 
 import java.nio.file.Path
 
+import org.log4s.getLogger
 import spray.json.enrichString
 
 import scala.io.Source
 import scala.util.Try
 
 object TestCase {
+  private val logger = getLogger
+
   def open(testDir: Path): Try[TestCase] = {
+    logger.info(s"Opening test case: $testDir")
+
     //todo handle line endings properly
     Try {
 
@@ -17,8 +22,11 @@ object TestCase {
       val alignment = Source.fromFile(testDir.resolve("alignment.json").toFile).mkString.parseJson.convertTo[AmbiguousLineAlignment]
       (left, right, alignment)
     }.map{ case (left, right, alignment) =>
-      TestCase(left, right, AmbiguousWordAlignment.fromOld(Lines.from(left), Lines.from(right), alignment))
+      val testCase = TestCase(left, right, AmbiguousWordAlignment.fromOld(Lines.from(left), Lines.from(right), alignment))
+      logger.info(s"TestCase opening successfully finished for $testDir")
+      testCase
     }
+
   }
 }
 
