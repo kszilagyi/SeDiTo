@@ -49,12 +49,12 @@ object AmbiguousWordAlignment {
         }
         val conflictWithSameLd = conflicts.filter(_.dist ==== first.dist)
         val potentials = conflictWithSameLd :+ first
-        val possibleResults = potentials.map { pot =>
+        val possibleResults = potentials.flatMap { pot =>
           val withoutConflict = orderedLds.filterNot { r =>
             r.left ==== pot.left || r.right ==== pot.right
           }
           approximatePossibleBestMatches(withoutConflict, result + pot)
-        }.flatten
+        }
         possibleResults.toSet
       case Nil => Set(PossibleResult(result))
     }
