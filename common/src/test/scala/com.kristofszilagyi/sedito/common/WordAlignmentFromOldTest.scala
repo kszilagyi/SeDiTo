@@ -76,4 +76,29 @@ final class WordAlignmentFromOldTest extends FreeSpecLike{
     )
   }
 
+  //the reason for this test case: a naive algorithm wouldn't prioritize non-moves over moves
+  "commenting out line which also has /" in {
+                //012345678901234567890123456789012345678901
+    val left = """//#include "aligner/learning/mlpipeline.h""""
+    val right = """#include "aligner/learning/mlpipeline.h""""
+    def mShifted(leftStart: Int, leftEnd: Int) = {
+      m(left, right, leftStart, leftEnd, rightStart = leftStart - 2, rightEnd = leftEnd - 2)
+    }
+    AmbiguousWordAlignment.fromOld(Lines(Vector(left)), Lines(Vector(right)), alignment).matches.toSeq.sortBy(_.left.from.i) shouldBe
+      Set(
+        mShifted(leftStart = 2, leftEnd = 3),
+        mShifted(leftStart = 3, leftEnd = 10),
+        mShifted(leftStart = 11, leftEnd = 12),
+        mShifted(leftStart = 12, leftEnd = 19),
+        mShifted(leftStart = 19, leftEnd = 20),
+        mShifted(leftStart = 20, leftEnd = 28),
+        mShifted(leftStart = 28, leftEnd = 29),
+        mShifted(leftStart = 29, leftEnd = 39),
+        mShifted(leftStart = 39, leftEnd = 40),
+        mShifted(leftStart = 40, leftEnd = 41),
+        mShifted(leftStart = 41, leftEnd = 42)
+      ).toSeq.sortBy(_.left.from.i)
+  }
+
+
 }

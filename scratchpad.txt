@@ -1,0 +1,49 @@
+problems:
+- when things exactly the same, in right position, but context before or after different, it just can't cope with it
+- rename OneToOneAlignment -> OneToOneAlignmentWithAmbiguity: clearly the same but Ld is too high (though this is not too big of a problem)
+- can't deal with lot of small changes ( the context is "much" different)
+- when there are small changes it cannot even cope with getBlock -> getBlocks
+- individual diffing can be quite slow
+- editor is also slow
+- scrollbar is missing
+- in case of identical big blobs (>200 chars) it gets really confused(will do different decision for each word)
+- breakdown is especially apparent for short words (. for example)
+- line before and after is quite different but humans still know it's the same because wider context is the same and structurally the lines nearby is also the same and the lines itself are the same
+- 100 character easily be just one line and if the line above changed the algorithm will suffer
+
+! If I decide to gather more data I should decide what to do next based on the results !
+ideas:
+- add learning curve (more data helps or not?)
+- extend trivial matches from the ones the net found: if it found something which is the same, everything which is around it and the same is the same
+  |->this could be generalized with similar items with a learning system
+- if something has full context same on both sides and same in the middle then don't feed into learning: faster and more meaningful results -
+  this doesn't work propely in case of multiple same texts but the whole thing doesn't work in that case anyway.
+  But it would help with the data imbalance problem -> well except it will remove the positive ones so it will make it worse.
+- do extra calculations: measure e2e results not just network results
+- My metrics can't see words, only characters. if there is a lot of changes in one long word it will see it as a big problem while it might be not - do word based LD too
+- Maybe low information stuff shouldn't take part in this phase - they need the extra information of what happened around ->
+  this might be a general principle - deal with the easy/long first, and do smaller and smaller as more information is available
+  - Extension on this: Start with very long (1000-2000) context with extreme compression (10-20x).
+    Only compare those who have some similarity in there -> not good on line borders though
+- should I really use LD? What about LCS? What about Ld without changes?
+- can I train a learning system to emit LD? Or token based approaches? https://medium.com/@javiergb_com/string-matching-and-database-merging-9ef9b4f7fea4
+- find very similar data and maybe deduplicate? Find contradictory data (very similar/same but different results)
+  - original idea was to find things which have similar parameters but different results - but due to unknown unlineratiy in input that might not work
+  - it would work though for the "same line - same work metric"
+  - could find all the low confidence matches with the probability
+- cross validation
+- keep statistics and use https://en.wikipedia.org/wiki/Tf%E2%80%93idf
+- can't ignore the bigger context if we want to cope with duplicate text. But we can do compression on bigger context to speed up computation.
+  Maybe first it worth to try by just adding more context and see if it works
+- maybe I could analyse somehow if there is enough training data for each case
+- I guess the problem in case of "whole line being the same and it still doesn't work" is that the context sometimes is
+  necessary to decide if this is good or not and sometimes it's not. I have to figure out when is it important and when is it not.
+- try to figure out which features are used and which ones are not (http://haifengl.github.io/smile/feature.html)
+- if I extract longest common subsequence: can i do that for a long one?
+  and just concatanate the result 10 times, so I have 10 different features with no extra cost? and then I could also count words!
+- how would it know if it needs to care about close differences or distant differences? Sometimes this matters, sometimes that. How do we know?
+- I should be able to handle the situation when loads of text is inserted and/or deleted.
+  It completely confuses the algo while for humans it's really clear what happens -> it could go through some comparision with,
+  get clear difference blocks removed and then see the rest (example: textblocklinked1to1_cpp)
+- generally check the excepted ones!
+

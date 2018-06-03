@@ -7,13 +7,11 @@ import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import info.debatty.java.stringsimilarity.Levenshtein
 
-import scala.annotation.tailrec
-
 
 object Selection {
   def create(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine): Validated[WordIndexRangeError, Selection] = {
     if (from.i < 0 || from.i >= line.length) Invalid(IndexIsOutOfRange(from.i, line))
-    else if (toExcl.i < 0 || toExcl.i > line.length) Invalid(IndexIsOutOfRange(from.i, line))
+    else if (toExcl.i < 0 || toExcl.i > line.length) Invalid(IndexIsOutOfRange(toExcl.i, line))
     else if (from.i >= toExcl.i) Invalid(RangeIsNotPositive(from.i, toExcl.i, line))
     else Valid(new Selection(line, lineIdx, from, toExcl) {})
   }
@@ -39,18 +37,35 @@ final case class WordMatch(left: Selection, right: Selection) {
 object AmbiguousWordAlignment {
 
   private final case class Ld(left: WordIndexRange, right: WordIndexRange, dist: Double)
+  private final case class PossibleResult(result: Set[Ld])
 
-  //done properly this would use the Hungarian algo. But that's too hard
-  @tailrec
-  private def approximateBestMatches(orderedLds: List[Ld], result: Set[Ld]): Set[Ld] = {
+  //TODO this now can fail on very long lines (though I think these are only called when reading test case?)
+  @SuppressWarnings(Array(Warts.Recursion))
+  private def approximateBestMatches(orderedLds: List[Ld], result: Set[Ld]): Set[PossibleResult] = {
     orderedLds match {
       case first :: rest =>
-        val notConflictingRest = rest.filterNot { r =>
+        val conflicts = rest.filter { r =>
           r.left ==== first.left || r.right ==== first.right
         }
-        approximateBestMatches(notConflictingRest ,result + first)
-      case Nil => result
+        val conflictWithSameLd = conflicts.filter(_.dist ==== first.dist)
+        val potentials = conflictWithSameLd :+ first
+        val possibleResults = potentials.map { pot =>
+          val withoutConflict = orderedLds.filterNot { r =>
+            r.left ==== pot.left || r.right ==== pot.right
+          }
+          approximateBestMatches(withoutConflict, result + pot)
+        }.flatten
+        possibleResults.toSet
+      case Nil => Set(PossibleResult(result))
     }
+  }
+
+  private def findResultWithLeastMoves(results: Set[PossibleResult]) = {
+    results.map { r =>
+      val leftSorted = r.result.toSeq.sortBy(_.left.startIncl)
+      val rightOrder = leftSorted.map(_.right.startIncl)
+      r -> LongestIncreasingSubsequence.apply(rightOrder.toArray).size
+    }.toSeq.sortBy(_._2).map(_._1).lastOption
   }
 
   private def wordMatches(left: Lines, right: Lines, matches: Set[LineMatch]) = {
@@ -72,9 +87,10 @@ object AmbiguousWordAlignment {
         ld.dist <= (ld.left.toWord.length + ld.right.toWord.length) / 2 / 3
       }.sortBy(_.dist)
 
-      val matches = approximateBestMatches(sortedLds.toList, Set.empty)
+      val possibleResults = approximateBestMatches(sortedLds.toList, Set.empty)
+      val bestLdSet = findResultWithLeastMoves(possibleResults).map(_.result).getOrElse(Set.empty)
 
-      val newMatchesForLine = matches.map { ld =>
+      val newMatchesForLine = bestLdSet.map { ld =>
         WordMatch(
           Selection.create(leftLine, m.leftLineIdx, CharIdxInLine(ld.left.startIncl), CharIdxInLine(ld.left.endExcl)).getAssert("invalid range"),
           Selection.create(rightLine, m.rightLineIdx, CharIdxInLine(ld.right.startIncl), CharIdxInLine(ld.right.endExcl)).getAssert("invalid range")
