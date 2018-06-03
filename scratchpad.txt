@@ -46,4 +46,5 @@ ideas:
   It completely confuses the algo while for humans it's really clear what happens -> it could go through some comparision with,
   get clear difference blocks removed and then see the rest (example: textblocklinked1to1_cpp)
 - generally check the excepted ones!
+- given testcase conversion takes significant time now probably it's time to save it into the proper format
 
