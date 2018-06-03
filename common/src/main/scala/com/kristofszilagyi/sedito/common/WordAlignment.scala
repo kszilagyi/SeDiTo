@@ -41,7 +41,7 @@ object AmbiguousWordAlignment {
 
   //TODO this now can fail on very long lines (though I think these are only called when reading test case?)
   @SuppressWarnings(Array(Warts.Recursion))
-  private def approximateBestMatches(orderedLds: List[Ld], result: Set[Ld]): Set[PossibleResult] = {
+  private def approximatePossibleBestMatches(orderedLds: List[Ld], result: Set[Ld]): Set[PossibleResult] = {
     orderedLds match {
       case first :: rest =>
         val conflicts = rest.filter { r =>
@@ -53,7 +53,7 @@ object AmbiguousWordAlignment {
           val withoutConflict = orderedLds.filterNot { r =>
             r.left ==== pot.left || r.right ==== pot.right
           }
-          approximateBestMatches(withoutConflict, result + pot)
+          approximatePossibleBestMatches(withoutConflict, result + pot)
         }.flatten
         possibleResults.toSet
       case Nil => Set(PossibleResult(result))
@@ -87,7 +87,7 @@ object AmbiguousWordAlignment {
         ld.dist <= (ld.left.toWord.length + ld.right.toWord.length) / 2 / 3
       }.sortBy(_.dist)
 
-      val possibleResults = approximateBestMatches(sortedLds.toList, Set.empty)
+      val possibleResults = approximatePossibleBestMatches(sortedLds.toList, Set.empty)
       val bestLdSet = findResultWithLeastMoves(possibleResults).map(_.result).getOrElse(Set.empty)
 
       val newMatchesForLine = bestLdSet.map { ld =>
