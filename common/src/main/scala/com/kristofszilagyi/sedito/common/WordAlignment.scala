@@ -41,19 +41,20 @@ object AmbiguousWordAlignment {
 
   //TODO this now can fail on very long lines (though I think these are only called when reading test case?)
   @SuppressWarnings(Array(Warts.Recursion))
-  private def approximatePossibleBestMatches(orderedLds: List[Ld], result: Set[Ld]): Set[PossibleResult] = {
+  private def approximatePossibleBestMatches(orderedLds: List[Ld], result: Set[Ld], branchingSoFar: Int): Set[PossibleResult] = {
     orderedLds match {
       case first :: rest =>
         val conflicts = rest.filter { r =>
           r.left ==== first.left || r.right ==== first.right
         }
         val conflictWithSameLd = conflicts.filter(_.dist ==== first.dist)
-        val potentials = conflictWithSameLd :+ first
+        val branchingNow = if (branchingSoFar < 1000) 4 else 1
+        val potentials = (first +: conflictWithSameLd).take(branchingNow) // take - to limit processing time
         val possibleResults = potentials.flatMap { pot =>
           val withoutConflict = orderedLds.filterNot { r =>
             r.left ==== pot.left || r.right ==== pot.right
           }
-          approximatePossibleBestMatches(withoutConflict, result + pot)
+          approximatePossibleBestMatches(withoutConflict, result + pot, branchingSoFar * potentials.size)
         }
         possibleResults.toSet
       case Nil => Set(PossibleResult(result))
@@ -87,7 +88,7 @@ object AmbiguousWordAlignment {
         ld.dist <= (ld.left.toWord.length + ld.right.toWord.length) / 2 / 3
       }.sortBy(_.dist)
 
-      val possibleResults = approximatePossibleBestMatches(sortedLds.toList, Set.empty)
+      val possibleResults = approximatePossibleBestMatches(sortedLds.toList, Set.empty, 1)
       val bestLdSet = findResultWithLeastMoves(possibleResults).map(_.result).getOrElse(Set.empty)
 
       val newMatchesForLine = bestLdSet.map { ld =>
