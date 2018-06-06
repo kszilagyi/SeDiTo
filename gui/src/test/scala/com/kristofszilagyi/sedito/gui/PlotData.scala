@@ -10,6 +10,8 @@ import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
 import com.kristofszilagyi.sedito.common.{TestCase, Warts, WordMatch}
 import com.kristofszilagyi.sedito.gui.PlotData._
+import info.debatty.java.stringsimilarity.{Levenshtein, LongestCommonSubsequence}
+import info.debatty.java.stringsimilarity.interfaces.StringDistance
 import javafx.application.Application
 import javafx.stage.Stage
 import org.log4s.getLogger
@@ -168,7 +170,9 @@ object PlotData {
 
       val classifier = read.xstream("linear_regression.model").asInstanceOf[NeuralNetwork]
       val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
-      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp"))
+      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
+        "scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp" +
+        ""))
       displayTestCase(testCase, classifier, scaler)
     }
   }
@@ -197,5 +201,28 @@ final class PlotData extends FreeSpecLike {
 
   "show difference" in {
     Application.launch(classOf[ShowOne])
+  }
+
+  def measureSpeed(d: StringDistance) = {
+    val r = new Random(0)
+    val s: Traversable[String] = (100 to 400) map { len =>
+      ((1 to len) map { _ => r.nextPrintableChar() }).mkString
+    }
+    println(s"amount of string: ${s.size}")
+    s foreach { s1 =>
+      s foreach { s2 =>
+        discard(d.distance(s1, s2))
+      }
+    }
+  }
+
+  "lcs speed" in {
+    val lcs = new LongestCommonSubsequence()
+    measureSpeed(lcs)
+  }
+
+  "lev speed" in {
+    val lev = new Levenshtein()
+    measureSpeed(lev)
   }
 }
