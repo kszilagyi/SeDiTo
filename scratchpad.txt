@@ -47,4 +47,7 @@ ideas:
   get clear difference blocks removed and then see the rest (example: textblocklinked1to1_cpp)
 - generally check the excepted ones!
 - given testcase conversion takes significant time now probably it's time to save it into the proper format
+- currently there is so many different kind of test case.
+  Maybe first I should pick one kind. Say I don't support duplications in a big blob as it's not a common thing
+  -> ok will do this: we are not supporting anything that needs unreasonable amount of context.
 
