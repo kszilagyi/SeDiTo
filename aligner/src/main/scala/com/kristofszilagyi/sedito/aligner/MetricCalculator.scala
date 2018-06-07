@@ -44,13 +44,18 @@ object MetricCalculator {
     */
   final case class NormalizedLenLenSims(before: Double, after: Double)
 
-  final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics) {
+  final case class WordMetrics(sameWords: Int, sameWordsNormalized: Double) {
+    def normalizedDoubles: List[Double] = List(sameWordsNormalized)
+    def doubles: List[Double] = List(sameWords.toDouble) ++ normalizedDoubles
+  }
+
+  final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics, beforeWords: WordMetrics, afterWords: WordMetrics) {
     def toLdLenSimDouble: List[Double] = {
-      List(before.ldLenSim, after.ldLenSim, before.normalizedLdLenSim, after.normalizedLdLenSim)
+      before.toDoubles ++ after.toDoubles ++ beforeWords.doubles ++ afterWords.doubles
     }
 
     def toOnlyNormalized: List[Double] = {
-      List(before.normalizedLdLenSim, after.normalizedLdLenSim)
+      List(before.normalizedLdLenSim, after.normalizedLdLenSim) ++ beforeWords.normalizedDoubles ++ afterWords.normalizedDoubles
     }
   }
 
@@ -81,10 +86,20 @@ object MetricCalculator {
     PairwiseMetrics(normalizedSim, ldLenSim)
   }
 
+  private def calcWordMetrics(left: String, right: String) = {
+    val leftWords = Wordizer.toWords(left)
+    val rightWords = Wordizer.toWords(right)
+    val wordCount = math.max(leftWords.size, rightWords.size)
+    val commonWordsCount = leftWords.toSet.intersect(rightWords.toSet).size
+    WordMetrics(commonWordsCount, if (wordCount !=== 0) commonWordsCount.toDouble / wordCount.toDouble else 1)
+  }
+
   private def calcContextMetrics(leftWord: WordWithContext, rightWord: WordWithContext) = {
     val beforeContextMetrics = calcMetrics(leftWord.beforeContext, rightWord.beforeContext)
     val afterContextMetrics = calcMetrics(leftWord.afterContext, rightWord.afterContext)
-    ContextMetrics(beforeContextMetrics, afterContextMetrics)
+    val beforeWordContextMetrics = calcWordMetrics(leftWord.beforeContext, rightWord.beforeContext)
+    val afterWordContextMetrics = calcWordMetrics(leftWord.afterContext, rightWord.afterContext)
+    ContextMetrics(beforeContextMetrics, afterContextMetrics, beforeWordContextMetrics, afterWordContextMetrics)
   }
   //concat all words
   //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)

@@ -62,10 +62,11 @@ object PlotData {
     metrics.seq.toList
   }
 
-  private val numOfAttributes = 15
 
 
   private def toAttributeDataSet(metrics: Traversable[MetricsWithResults]) = {
+    @SuppressWarnings(Array(Warts.TraversableOps))
+    val numOfAttributes = metrics.head.metrics.toLdLenSimDouble.length
     val attributes = (0 until numOfAttributes).map { name =>
       new NumericAttribute(name.toString)
     }
@@ -93,6 +94,7 @@ object PlotData {
     val transformedTrainingSet = scaler.transform(trainingSet.x())
     val trainingY = trainingSet.labels()
     logger.info("Starting training")
+    val numOfAttributes = trainingSet.attributes().length
     val classifier = classification.mlp(transformedTrainingSet, trainingY, Array(numOfAttributes, 5, 1), ErrorFunction.CROSS_ENTROPY, ActivationFunction.LOGISTIC_SIGMOID)
     logger.info("Training finished")
 
@@ -169,7 +171,7 @@ object PlotData {
       val classifier = read.xstream("linear_regression.model").asInstanceOf[NeuralNetwork]
       val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
       val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/full_tests/this_needs_rename_info_to_work" +
+        "scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp" +
         ""))
       displayTestCase(testCase, classifier, scaler)
     }
