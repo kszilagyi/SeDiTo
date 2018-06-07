@@ -40,14 +40,23 @@ ideas:
   necessary to decide if this is good or not and sometimes it's not. I have to figure out when is it important and when is it not.
 - try to figure out which features are used and which ones are not (http://haifengl.github.io/smile/feature.html)
 - if I extract longest common subsequence: can i do that for a long one?
-  and just concatanate the result 10 times, so I have 10 different features with no extra cost? and then I could also count words!
+  and just truncate the result 10 times, so I have 10 different features with no extra cost? and then I could also count words!
+  - so in practice this is probably less good then it sounds. LCS is ~ 2x as slow. + if you want to be able to track it back to the original
+    and you something like diff match patch that's even slower. And it's not clear what kind of magic features I could get free that really worth it.
 - how would it know if it needs to care about close differences or distant differences? Sometimes this matters, sometimes that. How do we know?
 - I should be able to handle the situation when loads of text is inserted and/or deleted.
   It completely confuses the algo while for humans it's really clear what happens -> it could go through some comparision with,
   get clear difference blocks removed and then see the rest (example: textblocklinked1to1_cpp)
 - generally check the excepted ones!
 - given testcase conversion takes significant time now probably it's time to save it into the proper format
-- currently there is so many different kind of test case.
-  Maybe first I should pick one kind. Say I don't support duplications in a big blob as it's not a common thing
-  -> ok will do this: we are not supporting anything that needs unreasonable amount of context.
+- remove test case which fail due to unsupported issue
+- calculate number of words same / amount of words
+- calculate number of words same wieghted -> longer words count more
+- calculate all metrics with additions/removals deleted, so only changes remain
+NEXT STEPs:
+- cross validation
+- learning curve
+- ROC curve
+- calculate word metrics (let's try to solve the issue with all commented out)
+- gather more ideas
 
