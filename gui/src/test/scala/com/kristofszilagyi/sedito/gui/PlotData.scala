@@ -64,9 +64,7 @@ object PlotData {
 
 
 
-  private def toAttributeDataSet(metrics: Traversable[MetricsWithResults]) = {
-    @SuppressWarnings(Array(Warts.TraversableOps))
-    val numOfAttributes = metrics.head.metrics.toLdLenSimDouble.length
+  private def toAttributeDataSet(metrics: Traversable[MetricsWithResults], numOfAttributes: Int) = {
     val attributes = (0 until numOfAttributes).map { name =>
       new NumericAttribute(name.toString)
     }
@@ -79,7 +77,8 @@ object PlotData {
     attributeDataset
   }
 
-  private def generateClassifier(nestedTraining: List[IndexedSeq[MetricsWithResults]], nestedTest : List[IndexedSeq[MetricsWithResults]]) = {
+  private def generateClassifier(nestedTraining: List[IndexedSeq[MetricsWithResults]],
+                                 nestedTest : List[IndexedSeq[MetricsWithResults]], numOfAttributes: Int) = {
     val training = nestedTraining.flatten
     val test = nestedTest.flatten
     logger.info(s"Training size: ${training.size}")
@@ -88,17 +87,17 @@ object PlotData {
     logger.info(s"0s in training: ${training.count(_.matching ==== false)}")
     logger.info(s"1s in test: ${test.count(_.matching)}")
     logger.info(s"0s in test: ${test.count(_.matching ==== false)}")
-    val trainingSet = toAttributeDataSet(training)
+
+    val trainingSet = toAttributeDataSet(training, numOfAttributes)
     val scaler = new Scaler(true)
     scaler.learn(trainingSet.attributes(), trainingSet.x())
     val transformedTrainingSet = scaler.transform(trainingSet.x())
     val trainingY = trainingSet.labels()
     logger.info("Starting training")
-    val numOfAttributes = trainingSet.attributes().length
     val classifier = classification.mlp(transformedTrainingSet, trainingY, Array(numOfAttributes, 5, 1), ErrorFunction.CROSS_ENTROPY, ActivationFunction.LOGISTIC_SIGMOID)
     logger.info("Training finished")
 
-    val testSet = toAttributeDataSet(test)
+    val testSet = toAttributeDataSet(test, numOfAttributes)
     val testX = scaler.transform(testSet.x())
     val testY = testSet.labels()
     val trainingPred = transformedTrainingSet.map(classifier.predict)
@@ -133,11 +132,19 @@ object PlotData {
     actual.setContent(testCase.left, testCase.right, calculatedAlignment)
   }
 
+  private def calcNumOfAttributes(metrics: List[(Path, IndexedSeq[MetricsWithResults])]) = {
+    @SuppressWarnings(Array(Warts.OptionPartial))
+    val nonEmpty = metrics.find(_._2.nonEmpty).get
+    @SuppressWarnings(Array(Warts.TraversableOps))
+    val num = nonEmpty._2.head.metrics.toLdLenSimDouble.length
+    num
+  }
   final class TrainLR extends Application {
 
-    private def f1s(files:  List[(Path, IndexedSeq[MetricsWithResults])], scaler: Scaler, classifier: NeuralNetwork) = {
+    private def f1s(files:  List[(Path, IndexedSeq[MetricsWithResults])], scaler: Scaler,
+                    classifier: NeuralNetwork, numOfAttributes: Int) = {
       files.map { case (path, singleTest) =>
-        val singleDataSet = toAttributeDataSet(singleTest)
+        val singleDataSet = toAttributeDataSet(singleTest, numOfAttributes)
         val singleTestX = scaler.transform(singleDataSet.x())
         val singleTestY = singleDataSet.labels()
         val singlePred = singleTestX.map(classifier.predict)
@@ -148,14 +155,16 @@ object PlotData {
     def start(stage: Stage): Unit = {
       logger.info("Start")
       val metrics = readDataSetAndMeasureMetrics()
+      val numOfAttributes = calcNumOfAttributes(metrics)
       val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
-      val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
+      val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
+        nestedTest = nestedTest.map(_._2), numOfAttributes)
 
-      val trainingF1s = f1s(nestedTraining, scaler, classifier)
+      val trainingF1s = f1s(nestedTraining, scaler, classifier, numOfAttributes)
 
       logger.info("Training f1s: \n" + trainingF1s.mkString("\n"))
 
-      val testf1s = f1s(nestedTest, scaler, classifier)
+      val testf1s = f1s(nestedTest, scaler, classifier, numOfAttributes)
 
       logger.info("Test f1s: \n" + testf1s.mkString("\n"))
       write.xstream(classifier, "linear_regression.model")
@@ -184,7 +193,9 @@ final class PlotData extends FreeSpecLike {
     val metrics = readDataSetAndMeasureMetrics()
     @SuppressWarnings(Array(Warts.AsInstanceOf))
     val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
-    val dataSet = toAttributeDataSet(Random.shuffle(metrics.flatMap(_._2)).toSet.take(1000))
+    @SuppressWarnings(Array(Warts.TraversableOps))
+    val numOfAttributes = calcNumOfAttributes(metrics) //this might fail, todo map flatten set
+    val dataSet = toAttributeDataSet(Random.shuffle(metrics.flatMap(_._2)).toSet.take(1000), numOfAttributes)
     val scaledDataSet = new AttributeDataset("something", dataSet.attributes(), new NominalAttribute("doesMatch"))
     dataSet.asScala.foreach { row =>
       scaledDataSet.add(scaler.transform(row.x), row.y)
