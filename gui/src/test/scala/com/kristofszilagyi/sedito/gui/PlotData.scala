@@ -139,39 +139,7 @@ object PlotData {
     val num = nonEmpty._2.head.metrics.toLdLenSimDouble.length
     num
   }
-  final class TrainLR extends Application {
 
-    private def f1s(files:  List[(Path, IndexedSeq[MetricsWithResults])], scaler: Scaler,
-                    classifier: NeuralNetwork, numOfAttributes: Int) = {
-      files.map { case (path, singleTest) =>
-        val singleDataSet = toAttributeDataSet(singleTest, numOfAttributes)
-        val singleTestX = scaler.transform(singleDataSet.x())
-        val singleTestY = singleDataSet.labels()
-        val singlePred = singleTestX.map(classifier.predict)
-        val f1Score = f1(singleTestY, singlePred)
-        path -> f1Score
-      }.sortBy(_._2)
-    }
-    def start(stage: Stage): Unit = {
-      logger.info("Start")
-      val metrics = readDataSetAndMeasureMetrics()
-      val numOfAttributes = calcNumOfAttributes(metrics)
-      val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
-      val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
-        nestedTest = nestedTest.map(_._2), numOfAttributes)
-
-      val trainingF1s = f1s(nestedTraining, scaler, classifier, numOfAttributes)
-
-      logger.info("Training f1s: \n" + trainingF1s.mkString("\n"))
-
-      val testf1s = f1s(nestedTest, scaler, classifier, numOfAttributes)
-
-      logger.info("Test f1s: \n" + testf1s.mkString("\n"))
-      write.xstream(classifier, "linear_regression.model")
-      write.xstream(scaler, "linear_regression.scaler")
-      sys.exit(0)
-    }
-  }
 
   @SuppressWarnings(Array(Warts.AsInstanceOf))
   final class ShowOne extends Application {
@@ -205,9 +173,35 @@ final class PlotData extends FreeSpecLike {
     Thread.sleep(10000*10000)
   }
 
+  private def f1s(files:  List[(Path, IndexedSeq[MetricsWithResults])], scaler: Scaler,
+                  classifier: NeuralNetwork, numOfAttributes: Int) = {
+    files.map { case (path, singleTest) =>
+      val singleDataSet = toAttributeDataSet(singleTest, numOfAttributes)
+      val singleTestX = scaler.transform(singleDataSet.x())
+      val singleTestY = singleDataSet.labels()
+      val singlePred = singleTestX.map(classifier.predict)
+      val f1Score = f1(singleTestY, singlePred)
+      path -> f1Score
+    }.sortBy(_._2)
+  }
 
   "train logistic regression" in {
-    Application.launch(classOf[TrainLR])
+    logger.info("Start")
+    val metrics = readDataSetAndMeasureMetrics()
+    val numOfAttributes = calcNumOfAttributes(metrics)
+    val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
+    val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
+      nestedTest = nestedTest.map(_._2), numOfAttributes)
+
+    val trainingF1s = f1s(nestedTraining, scaler, classifier, numOfAttributes)
+
+    logger.info("Training f1s: \n" + trainingF1s.mkString("\n"))
+
+    val testf1s = f1s(nestedTest, scaler, classifier, numOfAttributes)
+
+    logger.info("Test f1s: \n" + testf1s.mkString("\n"))
+    write.xstream(classifier, "linear_regression.model")
+    write.xstream(scaler, "linear_regression.scaler")
   }
 
   "show difference" in {

@@ -11,20 +11,21 @@ object MetricCalculator {
   private val logger = getLogger
 
   @tailrec
-  private def extend(currentIdx: Int, words: IndexedSeq[WordIndexRange], offset: Int, result: String): String = {
-    if (currentIdx >= 0 && currentIdx < words.size && result.length < math.abs(offset)) {
+  private def extend(currentIdx: Int, words: IndexedSeq[WordIndexRange], offset: Int, result: List[String], resultLength: Int): String = {
+    if (currentIdx >= 0 && currentIdx < words.size && resultLength < math.abs(offset)) {
       val direction = math.signum(offset)
       val word = words(currentIdx).toWord //if this fails that's a bug
-      val newResult = if (direction > 0) result + word else word + result
-      extend(currentIdx + direction, words, offset, newResult)
+      val newResult = word +: result
+      extend(currentIdx + direction, words, offset, newResult, resultLength + word.length)
     } else {
-      result
+      if (offset < 0) result.mkString
+      else result.reverse.mkString
     }
   }
 
   //this would be private but I wanted to test it
   private[aligner] def context(fromIdx: Int, words: IndexedSeq[WordIndexRange], offset: Int): String = {
-    extend(fromIdx + math.signum(offset), words, offset, result = "")
+    extend(fromIdx + math.signum(offset), words, offset, result = List.empty, resultLength = 0)
   }
 
   private val ldCalculator = new Levenshtein()
