@@ -6,7 +6,8 @@ import com.kristofszilagyi.sedito.common.AmbiguousWordAlignment.resolveConflicts
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import info.debatty.java.stringsimilarity.Levenshtein
-
+import spray.json.{DefaultJsonProtocol, RootJsonFormat}
+import DefaultJsonProtocol._
 
 object Selection {
   def create(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine): Validated[WordIndexRangeError, Selection] = {
@@ -15,6 +16,10 @@ object Selection {
     else if (from.i >= toExcl.i) Invalid(RangeIsNotPositive(from.i, toExcl.i, line))
     else Valid(new Selection(line, lineIdx, from, toExcl) {})
   }
+  //we are writing the line here, this is quite horrible...
+  implicit val format: RootJsonFormat[Selection] =
+    jsonFormat[String, LineIdx, CharIdxInLine, CharIdxInLine, Selection](new Selection(_, _, _, _){}, "line", "lineIdx", "from", "to")
+
 }
 //I am using this instead of indexing into the whole string so that line ending types do not make a difference
 sealed abstract case class Selection private(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine) {
@@ -27,6 +32,11 @@ sealed abstract case class Selection private(line: String, lineIdx: LineIdx, fro
   def toIndexRangeWithinLine: Validated[WordIndexRangeError, WordIndexRange] = {
     WordIndexRange.create(startIncl = from.i, endExcl = toExcl.i, fullText = FullText(line))
   }
+}
+
+object WordMatch {
+  implicit val jsonFormat: RootJsonFormat[WordMatch] = jsonFormat2(WordMatch.apply)
+
 }
 final case class WordMatch(left: Selection, right: Selection) {
   def readable: String = {
@@ -116,6 +126,8 @@ object AmbiguousWordAlignment {
       sortMatches(conflictingMatches).head //this is safe because groupBy will never result in an empty list
     }
   }
+
+  implicit val jsonFormat: RootJsonFormat[AmbiguousWordAlignment] = DefaultJsonProtocol.jsonFormat1(AmbiguousWordAlignment.apply)
 }
 /**
   * For explanation see the comment on AmbiguousLineAlignment

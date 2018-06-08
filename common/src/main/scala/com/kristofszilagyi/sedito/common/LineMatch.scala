@@ -1,6 +1,7 @@
 package com.kristofszilagyi.sedito.common
 
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
+import com.kristofszilagyi.sedito.common.utils.JsonUtils._
 import spray.json.DefaultJsonProtocol._
 import spray.json.{JsNumber, JsValue, JsonFormat}
 
@@ -23,7 +24,9 @@ final case class LineIdx(i: Int) extends AnyVal with Ordered[LineIdx]  {
   def compare(that: LineIdx): Int = i.compareTo(that.i)
 }
 
-
+object CharIdxInLine {
+  implicit val format: JsonFormat[CharIdxInLine] = wrappedInt(CharIdxInLine.apply)(_.i)
+}
 @SuppressWarnings(Array(Warts.Overloading))
 final case class CharIdxInLine(i: Int) extends AnyVal with Ordered[CharIdxInLine] {
   def +(other: Int): CharIdxInLine = CharIdxInLine(i + other)
