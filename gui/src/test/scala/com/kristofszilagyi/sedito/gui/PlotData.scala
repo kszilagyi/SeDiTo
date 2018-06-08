@@ -149,7 +149,7 @@ object PlotData {
       val classifier = read.xstream("linear_regression.model").asInstanceOf[NeuralNetwork]
       val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
       val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp" +
+        "scala-2.12/test-classes/algorithm_tests/full_tests/everything_commented" +
         ""))
       displayTestCase(testCase, classifier, scaler)
     }
@@ -205,7 +205,7 @@ final class PlotData extends FreeSpecLike {
     write.xstream(classifier, "linear_regression.model")
     write.xstream(scaler, "linear_regression.scaler")
     val duration = Duration.between(start, Instant.now())
-    logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis/1000} seconds")
+    logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis/1000 - duration.toMinutes * 60} seconds")
   }
 
   "show difference" in {
