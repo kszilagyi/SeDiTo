@@ -1,124 +1,1641 @@
 {
-    "matches": [
-        {
-            "leftLineIdx": 0,
-            "rightLineIdx": 0
-        },
-        {
-            "leftLineIdx": 1,
-            "rightLineIdx": 1
-        },
-        {
-            "leftLineIdx": 2,
-            "rightLineIdx": 2
-        },
-        {
-            "leftLineIdx": 3,
-            "rightLineIdx": 3
-        },
-        {
-            "leftLineIdx": 4,
-            "rightLineIdx": 4
-        },
-        {
-            "leftLineIdx": 5,
-            "rightLineIdx": 5
-        },
-        {
-            "leftLineIdx": 6,
-            "rightLineIdx": 6
-        },
-        {
-            "leftLineIdx": 7,
-            "rightLineIdx": 7
-        },
-        {
-            "leftLineIdx": 8,
-            "rightLineIdx": 8
-        },
-        {
-            "leftLineIdx": 9,
-            "rightLineIdx": 9
-        },
-        {
-            "leftLineIdx": 10,
-            "rightLineIdx": 10
-        },
-        {
-            "leftLineIdx": 11,
-            "rightLineIdx": 11
-        },
-        {
-            "leftLineIdx": 12,
-            "rightLineIdx": 12
-        },
-        {
-            "leftLineIdx": 13,
-            "rightLineIdx": 13
-        },
-        {
-            "leftLineIdx": 14,
-            "rightLineIdx": 14
-        },
-        {
-            "leftLineIdx": 15,
-            "rightLineIdx": 15
-        },
-        {
-            "leftLineIdx": 16,
-            "rightLineIdx": 16
-        },
-        {
-            "leftLineIdx": 17,
-            "rightLineIdx": 17
-        },
-        {
-            "leftLineIdx": 18,
-            "rightLineIdx": 18
-        },
-        {
-            "leftLineIdx": 19,
-            "rightLineIdx": 19
-        },
-        {
-            "leftLineIdx": 20,
-            "rightLineIdx": 20
-        },
-        {
-            "leftLineIdx": 22,
-            "rightLineIdx": 24
-        },
-        {
-            "leftLineIdx": 23,
-            "rightLineIdx": 25
-        },
-        {
-            "leftLineIdx": 24,
-            "rightLineIdx": 26
-        },
-        {
-            "leftLineIdx": 25,
-            "rightLineIdx": 27
-        },
-        {
-            "leftLineIdx": 26,
-            "rightLineIdx": 28
-        },
-        {
-            "leftLineIdx": 27,
-            "rightLineIdx": 29
-        },
-        {
-            "leftLineIdx": 28,
-            "rightLineIdx": 30
-        },
-        {
-            "leftLineIdx": 29,
-            "rightLineIdx": 31
-        },
-        {
-            "leftLineIdx": 30,
-            "rightLineIdx": 32
-        }
-    ]
+  "matches": [{
+    "left": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine);",
+      "lineIdx": 26,
+      "from": 56,
+      "to": 57
+    },
+    "right": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine, bool recalcHighlight = true);",
+      "lineIdx": 28,
+      "from": 85,
+      "to": 86
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 24,
+      "from": 87,
+      "to": 88
+    },
+    "right": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 26,
+      "from": 87,
+      "to": 88
+    }
+  }, {
+    "left": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "#include <memory>",
+      "lineIdx": 3,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include <memory>",
+      "lineIdx": 3,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine);",
+      "lineIdx": 26,
+      "from": 30,
+      "to": 39
+    },
+    "right": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine, bool recalcHighlight = true);",
+      "lineIdx": 28,
+      "from": 30,
+      "to": 39
+    }
+  }, {
+    "left": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine);",
+      "lineIdx": 26,
+      "from": 2,
+      "to": 6
+    },
+    "right": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine, bool recalcHighlight = true);",
+      "lineIdx": 28,
+      "from": 2,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "#ifndef TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 0,
+      "from": 8,
+      "to": 28
+    },
+    "right": {
+      "line": "#ifndef TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 0,
+      "from": 8,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "  static QColor DELETED_COLOR ;",
+      "lineIdx": 17,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  static QColor DELETED_COLOR ;",
+      "lineIdx": 17,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "#include <memory>",
+      "lineIdx": 3,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include <memory>",
+      "lineIdx": 3,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "#endif // TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 29,
+      "from": 1,
+      "to": 6
+    },
+    "right": {
+      "line": "#endif // TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 31,
+      "from": 1,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "  static QColor MODIFIED_LINE_COLOR;",
+      "lineIdx": 20,
+      "from": 9,
+      "to": 15
+    },
+    "right": {
+      "line": "  static QColor MODIFIED_LINE_COLOR;",
+      "lineIdx": 20,
+      "from": 9,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "  static QColor MODIFIED_LINE_COLOR;",
+      "lineIdx": 20,
+      "from": 16,
+      "to": 35
+    },
+    "right": {
+      "line": "  static QColor MODIFIED_LINE_COLOR;",
+      "lineIdx": 20,
+      "from": 16,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "#ifndef TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 7
+    },
+    "right": {
+      "line": "#ifndef TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine);",
+      "lineIdx": 26,
+      "from": 45,
+      "to": 55
+    },
+    "right": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine, bool recalcHighlight = true);",
+      "lineIdx": 28,
+      "from": 45,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "  static QColor MODIFIED_LINE_COLOR;",
+      "lineIdx": 20,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  static QColor MODIFIED_LINE_COLOR;",
+      "lineIdx": 20,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "#include <QColor>",
+      "lineIdx": 4,
+      "from": 10,
+      "to": 16
+    },
+    "right": {
+      "line": "#include <QColor>",
+      "lineIdx": 4,
+      "from": 10,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 9,
+      "to": 15
+    },
+    "right": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 9,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 24,
+      "from": 36,
+      "to": 41
+    },
+    "right": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 26,
+      "from": 36,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 21,
+      "to": 27
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 21,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 25,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 27,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "class TextBlockLinkedOneToOneMatch;",
+      "lineIdx": 9,
+      "from": 6,
+      "to": 34
+    },
+    "right": {
+      "line": "class TextBlockLinkedOneToOneMatch;",
+      "lineIdx": 9,
+      "from": 6,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 24,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 26,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "};",
+      "lineIdx": 27,
+      "from": 1,
+      "to": 2
+    },
+    "right": {
+      "line": "};",
+      "lineIdx": 29,
+      "from": 1,
+      "to": 2
+    }
+  }, {
+    "left": {
+      "line": "  static QColor NEW_COLOR;",
+      "lineIdx": 18,
+      "from": 9,
+      "to": 15
+    },
+    "right": {
+      "line": "  static QColor NEW_COLOR;",
+      "lineIdx": 18,
+      "from": 9,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "#include <QColor>",
+      "lineIdx": 4,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "#include <QColor>",
+      "lineIdx": 4,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "  static QColor MODIFIED_CHAR_COLOR;",
+      "lineIdx": 19,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  static QColor MODIFIED_CHAR_COLOR;",
+      "lineIdx": 19,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "#include <memory>",
+      "lineIdx": 3,
+      "from": 10,
+      "to": 16
+    },
+    "right": {
+      "line": "#include <memory>",
+      "lineIdx": 3,
+      "from": 10,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 8,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 8,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "  TwoSidedDiffWidget();",
+      "lineIdx": 23,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "  TwoSidedDiffWidget();",
+      "lineIdx": 25,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 0,
+      "to": 5
+    },
+    "right": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 0,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 0,
+      "to": 5
+    },
+    "right": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 0,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 25,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 27,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 11,
+      "to": 21
+    },
+    "right": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 11,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 25,
+      "from": 20,
+      "to": 29
+    },
+    "right": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 27,
+      "from": 20,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 10,
+      "to": 13
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 10,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "  static QColor NEW_COLOR;",
+      "lineIdx": 18,
+      "from": 16,
+      "to": 25
+    },
+    "right": {
+      "line": "  static QColor NEW_COLOR;",
+      "lineIdx": 18,
+      "from": 16,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "class TwoSidedDiffWidget : public CanvasedDoubleTextEditor",
+      "lineIdx": 14,
+      "from": 27,
+      "to": 33
+    },
+    "right": {
+      "line": "class TwoSidedDiffWidget : public CanvasedDoubleTextEditor",
+      "lineIdx": 14,
+      "from": 27,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "  static QColor MODIFIED_CHAR_COLOR;",
+      "lineIdx": 19,
+      "from": 16,
+      "to": 35
+    },
+    "right": {
+      "line": "  static QColor MODIFIED_CHAR_COLOR;",
+      "lineIdx": 19,
+      "from": 16,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "#ifndef TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#ifndef TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  static QColor MODIFIED_LINE_COLOR;",
+      "lineIdx": 20,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "  static QColor MODIFIED_LINE_COLOR;",
+      "lineIdx": 20,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "#endif // TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 29,
+      "from": 7,
+      "to": 8
+    },
+    "right": {
+      "line": "#endif // TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 31,
+      "from": 7,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine);",
+      "lineIdx": 26,
+      "from": 55,
+      "to": 56
+    },
+    "right": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine, bool recalcHighlight = true);",
+      "lineIdx": 28,
+      "from": 84,
+      "to": 85
+    }
+  }, {
+    "left": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "  TwoSidedDiffWidget();",
+      "lineIdx": 23,
+      "from": 2,
+      "to": 20
+    },
+    "right": {
+      "line": "  TwoSidedDiffWidget();",
+      "lineIdx": 25,
+      "from": 2,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 24,
+      "from": 2,
+      "to": 6
+    },
+    "right": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 26,
+      "from": 2,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 11,
+      "to": 19
+    },
+    "right": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 11,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 14,
+      "to": 20
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 14,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 8,
+      "from": 0,
+      "to": 5
+    },
+    "right": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 8,
+      "from": 0,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "#define TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 1,
+      "from": 8,
+      "to": 28
+    },
+    "right": {
+      "line": "#define TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 1,
+      "from": 8,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 8,
+      "from": 6,
+      "to": 23
+    },
+    "right": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 8,
+      "from": 6,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "  TwoSidedDiffWidget();",
+      "lineIdx": 23,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "  TwoSidedDiffWidget();",
+      "lineIdx": 25,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "#endif // TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 29,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#endif // TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 31,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "class TwoSidedDiffWidget : public CanvasedDoubleTextEditor",
+      "lineIdx": 14,
+      "from": 34,
+      "to": 58
+    },
+    "right": {
+      "line": "class TwoSidedDiffWidget : public CanvasedDoubleTextEditor",
+      "lineIdx": 14,
+      "from": 34,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "#include <QColor>",
+      "lineIdx": 4,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include <QColor>",
+      "lineIdx": 4,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 24,
+      "from": 42,
+      "to": 59
+    },
+    "right": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 26,
+      "from": 42,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "class TwoSidedDiffWidget : public CanvasedDoubleTextEditor",
+      "lineIdx": 14,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "class TwoSidedDiffWidget : public CanvasedDoubleTextEditor",
+      "lineIdx": 14,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "#define TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#define TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  static QColor NEW_COLOR;",
+      "lineIdx": 18,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "  static QColor NEW_COLOR;",
+      "lineIdx": 18,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "#include <QColor>",
+      "lineIdx": 4,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include <QColor>",
+      "lineIdx": 4,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "public:",
+      "lineIdx": 22,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "public:",
+      "lineIdx": 24,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 25,
+      "from": 2,
+      "to": 19
+    },
+    "right": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 27,
+      "from": 2,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 24,
+      "from": 7,
+      "to": 35
+    },
+    "right": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 26,
+      "from": 7,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine);",
+      "lineIdx": 26,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine, bool recalcHighlight = true);",
+      "lineIdx": 28,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine);",
+      "lineIdx": 26,
+      "from": 39,
+      "to": 40
+    },
+    "right": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine, bool recalcHighlight = true);",
+      "lineIdx": 28,
+      "from": 39,
+      "to": 40
+    }
+  }, {
+    "left": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 24,
+      "from": 86,
+      "to": 87
+    },
+    "right": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 26,
+      "from": 86,
+      "to": 87
+    }
+  }, {
+    "left": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 0,
+      "to": 5
+    },
+    "right": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 0,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "class TextBlockLinkedOneToOneMatch;",
+      "lineIdx": 9,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "class TextBlockLinkedOneToOneMatch;",
+      "lineIdx": 9,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "#include <memory>",
+      "lineIdx": 3,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "#include <memory>",
+      "lineIdx": 3,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "};",
+      "lineIdx": 27,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "};",
+      "lineIdx": 29,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "#define TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 7
+    },
+    "right": {
+      "line": "#define TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine);",
+      "lineIdx": 26,
+      "from": 7,
+      "to": 25
+    },
+    "right": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine, bool recalcHighlight = true);",
+      "lineIdx": 28,
+      "from": 7,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "class TwoSidedDiffWidget : public CanvasedDoubleTextEditor",
+      "lineIdx": 14,
+      "from": 0,
+      "to": 5
+    },
+    "right": {
+      "line": "class TwoSidedDiffWidget : public CanvasedDoubleTextEditor",
+      "lineIdx": 14,
+      "from": 0,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 6,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 11,
+      "to": 17
+    },
+    "right": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 11,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "  static QColor NEW_COLOR;",
+      "lineIdx": 18,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  static QColor NEW_COLOR;",
+      "lineIdx": 18,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 6,
+      "to": 9
+    },
+    "right": {
+      "line": "using std::vector;",
+      "lineIdx": 10,
+      "from": 6,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "{",
+      "lineIdx": 15,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "{",
+      "lineIdx": 15,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "class TwoSidedDiffWidget : public CanvasedDoubleTextEditor",
+      "lineIdx": 14,
+      "from": 6,
+      "to": 24
+    },
+    "right": {
+      "line": "class TwoSidedDiffWidget : public CanvasedDoubleTextEditor",
+      "lineIdx": 14,
+      "from": 6,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 24,
+      "from": 61,
+      "to": 86
+    },
+    "right": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 26,
+      "from": 61,
+      "to": 86
+    }
+  }, {
+    "left": {
+      "line": "  static QColor DELETED_COLOR ;",
+      "lineIdx": 17,
+      "from": 16,
+      "to": 29
+    },
+    "right": {
+      "line": "  static QColor DELETED_COLOR ;",
+      "lineIdx": 17,
+      "from": 16,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "  static QColor DELETED_COLOR ;",
+      "lineIdx": 17,
+      "from": 9,
+      "to": 15
+    },
+    "right": {
+      "line": "  static QColor DELETED_COLOR ;",
+      "lineIdx": 17,
+      "from": 9,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "  static QColor DELETED_COLOR ;",
+      "lineIdx": 17,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "  static QColor DELETED_COLOR ;",
+      "lineIdx": 17,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "public:",
+      "lineIdx": 22,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "public:",
+      "lineIdx": 24,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "#endif // TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 29,
+      "from": 8,
+      "to": 9
+    },
+    "right": {
+      "line": "#endif // TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 31,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "#include <QColor>",
+      "lineIdx": 4,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include <QColor>",
+      "lineIdx": 4,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "class TextBlockLinkedOneToOneMatch;",
+      "lineIdx": 9,
+      "from": 0,
+      "to": 5
+    },
+    "right": {
+      "line": "class TextBlockLinkedOneToOneMatch;",
+      "lineIdx": 9,
+      "from": 0,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 25,
+      "from": 32,
+      "to": 37
+    },
+    "right": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 27,
+      "from": 32,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "  static QColor MODIFIED_CHAR_COLOR;",
+      "lineIdx": 19,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "  static QColor MODIFIED_CHAR_COLOR;",
+      "lineIdx": 19,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "#include <memory>",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include <memory>",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 6,
+      "to": 9
+    },
+    "right": {
+      "line": "using std::unique_ptr;",
+      "lineIdx": 12,
+      "from": 6,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 17,
+      "to": 35
+    },
+    "right": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 17,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine);",
+      "lineIdx": 26,
+      "from": 41,
+      "to": 44
+    },
+    "right": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine, bool recalcHighlight = true);",
+      "lineIdx": 28,
+      "from": 41,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 24,
+      "from": 59,
+      "to": 60
+    },
+    "right": {
+      "line": "  void setComputedOrLoadedAlignment(const OneToOneAlignment& computedOrLoadedAlignment);",
+      "lineIdx": 26,
+      "from": 59,
+      "to": 60
+    }
+  }, {
+    "left": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 25,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "  OneToOneAlignment alignment() const;",
+      "lineIdx": 27,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 10,
+      "to": 34
+    },
+    "right": {
+      "line": "#include \"canvaseddoubletexteditor.h\"",
+      "lineIdx": 5,
+      "from": 10,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "  Logger logger{\"TwoSidedDiffWidget\"};",
+      "lineIdx": 16,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 6,
+      "to": 9
+    },
+    "right": {
+      "line": "using std::weak_ptr;",
+      "lineIdx": 11,
+      "from": 6,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "#endif // TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 29,
+      "from": 10,
+      "to": 30
+    },
+    "right": {
+      "line": "#endif // TWOSIDEDDIFFWIDGET_H",
+      "lineIdx": 31,
+      "from": 10,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "  static QColor MODIFIED_CHAR_COLOR;",
+      "lineIdx": 19,
+      "from": 9,
+      "to": 15
+    },
+    "right": {
+      "line": "  static QColor MODIFIED_CHAR_COLOR;",
+      "lineIdx": 19,
+      "from": 9,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "  TwoSidedDiffWidget();",
+      "lineIdx": 23,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "  TwoSidedDiffWidget();",
+      "lineIdx": 25,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine);",
+      "lineIdx": 26,
+      "from": 26,
+      "to": 29
+    },
+    "right": {
+      "line": "  void addManualAlignment(int aLeftLine, int aRightLine, bool recalcHighlight = true);",
+      "lineIdx": 28,
+      "from": 26,
+      "to": 29
+    }
+  }]
 }

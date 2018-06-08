@@ -19,10 +19,10 @@ object TestCase {
 
       val left = Source.fromFile(testDir.resolve("left.txt").toFile).mkString
       val right = Source.fromFile(testDir.resolve("right.txt").toFile).mkString
-      val alignment = Source.fromFile(testDir.resolve("alignment.json").toFile).mkString.parseJson.convertTo[AmbiguousLineAlignment]
+      val alignment = Source.fromFile(testDir.resolve("alignment.json").toFile).mkString.parseJson.convertTo[AmbiguousWordAlignment]
       (left, right, alignment)
     }.map{ case (left, right, alignment) =>
-      val testCase = TestCase(left, right, AmbiguousWordAlignment.fromOld(Lines.from(left), Lines.from(right), alignment))
+      val testCase = TestCase(left, right, alignment)
       logger.info(s"TestCase opening successfully finished for $testDir")
       testCase
     }

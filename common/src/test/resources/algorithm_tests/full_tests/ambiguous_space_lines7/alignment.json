@@ -1,80 +1,2616 @@
 {
-    "matches": [
-        {
-            "leftLineIdx": 18,
-            "rightLineIdx": 96
-        },
-        {
-            "leftLineIdx": 18,
-            "rightLineIdx": 25
-        },
-        {
-            "leftLineIdx": 17,
-            "rightLineIdx": 24
-        },
-        {
-            "leftLineIdx": 16,
-            "rightLineIdx": 23
-        },
-        {
-            "leftLineIdx": 15,
-            "rightLineIdx": 22
-        },
-        {
-            "leftLineIdx": 14,
-            "rightLineIdx": 21
-        },
-        {
-            "leftLineIdx": 13,
-            "rightLineIdx": 20
-        },
-        {
-            "leftLineIdx": 12,
-            "rightLineIdx": 19
-        },
-        {
-            "leftLineIdx": 11,
-            "rightLineIdx": 18
-        },
-        {
-            "leftLineIdx": 0,
-            "rightLineIdx": 0
-        },
-        {
-            "leftLineIdx": 2,
-            "rightLineIdx": 1
-        },
-        {
-            "leftLineIdx": 3,
-            "rightLineIdx": 2
-        },
-        {
-            "leftLineIdx": 4,
-            "rightLineIdx": 3
-        },
-        {
-            "leftLineIdx": 5,
-            "rightLineIdx": 11
-        },
-        {
-            "leftLineIdx": 6,
-            "rightLineIdx": 13
-        },
-        {
-            "leftLineIdx": 7,
-            "rightLineIdx": 14
-        },
-        {
-            "leftLineIdx": 8,
-            "rightLineIdx": 15
-        },
-        {
-            "leftLineIdx": 9,
-            "rightLineIdx": 16
-        },
-        {
-            "leftLineIdx": 10,
-            "rightLineIdx": 17
-        }
-    ]
+  "matches": [{
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 5,
+      "to": 6
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 5,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 42,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 37,
+      "to": 44
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 37,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 4,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 102,
+      "to": 109
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 102,
+      "to": 109
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 79,
+      "to": 80
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 79,
+      "to": 80
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 61,
+      "to": 62
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 61,
+      "to": 62
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 1,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 171,
+      "to": 172
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 171,
+      "to": 172
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 11,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 52,
+      "to": 53
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 52,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 52,
+      "to": 53
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 52,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 4,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 3,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 119,
+      "to": 120
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 119,
+      "to": 120
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 10,
+      "to": 20
+    },
+    "right": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 10,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 75,
+      "to": 76
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 75,
+      "to": 76
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 120,
+      "to": 121
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 120,
+      "to": 121
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 6,
+      "to": 9
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 6,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 64,
+      "to": 65
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 4,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 3,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 46,
+      "to": 54
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 46,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "  return result;",
+      "lineIdx": 16,
+      "from": 9,
+      "to": 15
+    },
+    "right": {
+      "line": "  return result;",
+      "lineIdx": 23,
+      "from": 9,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 9,
+      "to": 18
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 9,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 3,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 2,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 3,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 2,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 62,
+      "to": 63
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 62,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 53,
+      "to": 61
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 53,
+      "to": 61
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 63,
+      "to": 64
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 63,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 74,
+      "to": 75
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 74,
+      "to": 75
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 4,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 3,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 26,
+      "to": 34
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 26,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 49,
+      "to": 56
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 49,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 91,
+      "to": 100
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 91,
+      "to": 100
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 80,
+      "to": 88
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 80,
+      "to": 88
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 136,
+      "to": 137
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 136,
+      "to": 137
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 65,
+      "to": 66
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 65,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 54,
+      "to": 62
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 54,
+      "to": 62
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 48,
+      "to": 49
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 48,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 4,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 3,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 67,
+      "to": 68
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 67,
+      "to": 68
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 60,
+      "to": 65
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 60,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 137,
+      "to": 146
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 137,
+      "to": 146
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 55,
+      "to": 56
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 55,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 3,
+      "from": 27,
+      "to": 43
+    },
+    "right": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 2,
+      "from": 27,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 112,
+      "to": 117
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 112,
+      "to": 117
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 100,
+      "to": 101
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 100,
+      "to": 101
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 54,
+      "to": 55
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 54,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 111,
+      "to": 119
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 111,
+      "to": 119
+    }
+  }, {
+    "left": {
+      "line": "    }",
+      "lineIdx": 14,
+      "from": 4,
+      "to": 5
+    },
+    "right": {
+      "line": "    }",
+      "lineIdx": 21,
+      "from": 4,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 1,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 1,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 57,
+      "to": 58
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 57,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 148,
+      "to": 153
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 148,
+      "to": 153
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 3,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 3,
+      "from": 18,
+      "to": 26
+    },
+    "right": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 2,
+      "from": 18,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 12,
+      "to": 20
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 12,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 63,
+      "to": 64
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 63,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 88,
+      "to": 89
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 88,
+      "to": 89
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 154,
+      "to": 170
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 154,
+      "to": 170
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 15,
+      "to": 24
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 15,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 33,
+      "to": 42
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 33,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 8,
+      "to": 11
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 8,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 14,
+      "to": 22
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 1,
+      "from": 14,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "}",
+      "lineIdx": 17,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "}*/",
+      "lineIdx": 24,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 109,
+      "to": 110
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 109,
+      "to": 110
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 78,
+      "to": 79
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 78,
+      "to": 79
+    }
+  }, {
+    "left": {
+      "line": "  }",
+      "lineIdx": 15,
+      "from": 2,
+      "to": 3
+    },
+    "right": {
+      "line": "  }",
+      "lineIdx": 22,
+      "from": 2,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 172,
+      "to": 181
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 172,
+      "to": 181
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 69,
+      "to": 70
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 69,
+      "to": 70
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 4,
+      "from": 10,
+      "to": 13
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 3,
+      "from": 10,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 74,
+      "to": 75
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 74,
+      "to": 75
+    }
+  }, {
+    "left": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 68,
+      "to": 69
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 68,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 58,
+      "to": 59
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 58,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 78,
+      "to": 79
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 78,
+      "to": 79
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 46,
+      "to": 47
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 46,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 56,
+      "to": 57
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 56,
+      "to": 57
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 25,
+      "to": 35
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 25,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 4,
+      "to": 7
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 4,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 8,
+      "to": 14
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 8,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 121,
+      "to": 122
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 121,
+      "to": 122
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 63,
+      "to": 64
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 63,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 3,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 2,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 146,
+      "to": 147
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 146,
+      "to": 147
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 67,
+      "to": 68
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 67,
+      "to": 68
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 7,
+      "to": 10
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 7,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 1,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 58,
+      "to": 59
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 58,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 3,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 2,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 3,
+      "from": 10,
+      "to": 17
+    },
+    "right": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 14,
+      "to": 19
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 14,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 10,
+      "to": 17
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 10,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 43,
+      "to": 48
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 43,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 111,
+      "to": 112
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 111,
+      "to": 112
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 4,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 3,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 7,
+      "to": 8
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 7,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 36,
+      "to": 44
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 36,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 59,
+      "to": 63
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 59,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 84,
+      "to": 85
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 84,
+      "to": 85
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 118,
+      "to": 135
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 118,
+      "to": 135
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 63,
+      "to": 64
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 63,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 71,
+      "to": 72
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 71,
+      "to": 72
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 75,
+      "to": 90
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 75,
+      "to": 90
+    }
+  }, {
+    "left": {
+      "line": "      }",
+      "lineIdx": 13,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "      }",
+      "lineIdx": 20,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 3,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 2,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 70,
+      "to": 74
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 70,
+      "to": 74
+    }
+  }, {
+    "left": {
+      "line": "{",
+      "lineIdx": 7,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "{",
+      "lineIdx": 14,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 75,
+      "to": 82
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 75,
+      "to": 82
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 62,
+      "to": 63
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 62,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 69,
+      "to": 70
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 69,
+      "to": 70
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 6,
+      "to": 8
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 6,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 90,
+      "to": 91
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 90,
+      "to": 91
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 70,
+      "to": 71
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 70,
+      "to": 71
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 46,
+      "to": 47
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 46,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 61,
+      "to": 62
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 61,
+      "to": 62
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 4,
+      "from": 14,
+      "to": 26
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 3,
+      "from": 14,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 12,
+      "to": 17
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 12,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 75,
+      "to": 76
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 75,
+      "to": 76
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  return result;",
+      "lineIdx": 16,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "  return result;",
+      "lineIdx": 23,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 1,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 33,
+      "to": 46
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 33,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 28,
+      "to": 31
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 28,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 47,
+      "to": 54
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 47,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 20,
+      "to": 28
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 20,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 74,
+      "to": 75
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 74,
+      "to": 75
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 28,
+      "to": 36
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 28,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 58,
+      "to": 63
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 58,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 65,
+      "to": 74
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 65,
+      "to": 74
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 35,
+      "to": 48
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 35,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 3,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"aligner/learning/featureextractor.h\"",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 9,
+      "to": 12
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 9,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 30,
+      "to": 33
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 30,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 122,
+      "to": 123
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 122,
+      "to": 123
+    }
+  }, {
+    "left": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 57,
+      "to": 58
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 57,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 82,
+      "to": 83
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 82,
+      "to": 83
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 54,
+      "to": 55
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 54,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 63,
+      "to": 68
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 63,
+      "to": 68
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 37,
+      "to": 46
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 37,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 76,
+      "to": 77
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 76,
+      "to": 77
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 49,
+      "to": 57
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 49,
+      "to": 57
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "  return result;",
+      "lineIdx": 16,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  return result;",
+      "lineIdx": 23,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 23,
+      "to": 30
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 23,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 67,
+      "to": 77
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 67,
+      "to": 77
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 18,
+      "to": 26
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 18,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 47,
+      "to": 52
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 47,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 65,
+      "to": 66
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 65,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 65,
+      "to": 66
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 65,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 10,
+      "from": 90,
+      "to": 91
+    },
+    "right": {
+      "line": "    for(int rightIdx = 0; rightIdx < alignment.lines(DiffSide::RIGHT).size(); ++rightIdx) {",
+      "lineIdx": 17,
+      "from": 90,
+      "to": 91
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 77,
+      "to": 78
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 77,
+      "to": 78
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 48,
+      "to": 49
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 48,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 8,
+      "to": 9
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 13
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 1,
+      "from": 10,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 65,
+      "to": 69
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 65,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 181,
+      "to": 182
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 181,
+      "to": 182
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 8,
+      "to": 9
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 11,
+      "from": 19,
+      "to": 27
+    },
+    "right": {
+      "line": "      if(alignment.contains(LinePair(leftIdx, rightIdx)) == false) {",
+      "lineIdx": 18,
+      "from": 19,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "#include \"mlpipeline.h\"",
+      "lineIdx": 0,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 79,
+      "to": 111
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 79,
+      "to": 111
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 69,
+      "to": 75
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 69,
+      "to": 75
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 4,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 3,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 8,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float> > > result;",
+      "lineIdx": 15,
+      "from": 33,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 2,
+      "to": 5
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 2,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 56,
+      "to": 61
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 56,
+      "to": 61
+    }
+  }, {
+    "left": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 12,
+      "from": 45,
+      "to": 52
+    },
+    "right": {
+      "line": "        result.push_back(make_tuple(LinePair(leftIdx, rightIdx), extractor.computeFeatures(alignment, leftIdx, rightIdx)));",
+      "lineIdx": 19,
+      "from": 45,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 6,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "vector<std::tuple<LinePair, std::unordered_map<QString, float> > > MLPipeline::extractAllFeatureForAllNonPaired(const OneToOneAlignment &alignment, const FeatureExtractor &extractor)",
+      "lineIdx": 13,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 9,
+      "from": 73,
+      "to": 74
+    },
+    "right": {
+      "line": "  for(int leftIdx = 0; leftIdx < alignment.lines(DiffSide::LEFT).size(); ++leftIdx) {",
+      "lineIdx": 16,
+      "from": 73,
+      "to": 74
+    }
+  }]
 }

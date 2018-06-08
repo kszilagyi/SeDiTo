@@ -1,72 +1,939 @@
 {
-    "matches": [
-        {
-            "leftLineIdx": 0,
-            "rightLineIdx": 0
-        },
-        {
-            "leftLineIdx": 1,
-            "rightLineIdx": 1
-        },
-        {
-            "leftLineIdx": 2,
-            "rightLineIdx": 2
-        },
-        {
-            "leftLineIdx": 3,
-            "rightLineIdx": 3
-        },
-        {
-            "leftLineIdx": 4,
-            "rightLineIdx": 4
-        },
-        {
-            "leftLineIdx": 5,
-            "rightLineIdx": 5
-        },
-        {
-            "leftLineIdx": 6,
-            "rightLineIdx": 6
-        },
-        {
-            "leftLineIdx": 7,
-            "rightLineIdx": 7
-        },
-        {
-            "leftLineIdx": 8,
-            "rightLineIdx": 8
-        },
-        {
-            "leftLineIdx": 9,
-            "rightLineIdx": 9
-        },
-        {
-            "leftLineIdx": 10,
-            "rightLineIdx": 10
-        },
-        {
-            "leftLineIdx": 11,
-            "rightLineIdx": 11
-        },
-        {
-            "leftLineIdx": 12,
-            "rightLineIdx": 12
-        },
-        {
-            "leftLineIdx": 13,
-            "rightLineIdx": 13
-        },
-        {
-            "leftLineIdx": 14,
-            "rightLineIdx": 14
-        },
-        {
-            "leftLineIdx": 15,
-            "rightLineIdx": 15
-        },
-        {
-            "leftLineIdx": 16,
-            "rightLineIdx": 16
-        }
-    ]
+  "matches": [{
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 40,
+      "to": 41
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 40,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 49,
+      "to": 50
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 49,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 77,
+      "to": 78
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 78,
+      "to": 79
+    }
+  }, {
+    "left": {
+      "line": "{",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "{",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 2,
+      "to": 9
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 2,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 39,
+      "to": 40
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 40,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 41,
+      "to": 50
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 42,
+      "to": 51
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 65,
+      "to": 68
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 66,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "};",
+      "lineIdx": 13,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "};",
+      "lineIdx": 13,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 85,
+      "to": 93
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 86,
+      "to": 94
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 50,
+      "to": 51
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 51,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 50,
+      "to": 64
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 50,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 25,
+      "to": 30
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 25,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 16,
+      "to": 21
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 17,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "#endif",
+      "lineIdx": 15,
+      "from": 1,
+      "to": 6
+    },
+    "right": {
+      "line": "#endif",
+      "lineIdx": 15,
+      "from": 1,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 2,
+      "to": 16
+    },
+    "right": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 2,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "class EqualCharCount: public Feature",
+      "lineIdx": 5,
+      "from": 6,
+      "to": 20
+    },
+    "right": {
+      "line": "class EqualCharCount: public Feature",
+      "lineIdx": 5,
+      "from": 6,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 65,
+      "to": 66
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 65,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "#ifndef EQUALCHARCOUNT_H",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 7
+    },
+    "right": {
+      "line": "#ifndef EQUALCHARCOUNT_H",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "};",
+      "lineIdx": 13,
+      "from": 1,
+      "to": 2
+    },
+    "right": {
+      "line": "};",
+      "lineIdx": 13,
+      "from": 1,
+      "to": 2
+    }
+  }, {
+    "left": {
+      "line": "#ifndef EQUALCHARCOUNT_H",
+      "lineIdx": 0,
+      "from": 8,
+      "to": 24
+    },
+    "right": {
+      "line": "#ifndef EQUALCHARCOUNT_H",
+      "lineIdx": 0,
+      "from": 8,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 52,
+      "to": 55
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 53,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 20,
+      "to": 27
+    },
+    "right": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 20,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "#endif",
+      "lineIdx": 15,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#endif",
+      "lineIdx": 15,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 27,
+      "to": 35
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 27,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 17
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "public:",
+      "lineIdx": 11,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "public:",
+      "lineIdx": 11,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 93,
+      "to": 94
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 94,
+      "to": 95
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 79,
+      "to": 84
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 80,
+      "to": 85
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 56,
+      "to": 63
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 57,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 64,
+      "to": 65
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "public:",
+      "lineIdx": 7,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "public:",
+      "lineIdx": 7,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "#ifndef EQUALCHARCOUNT_H",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#ifndef EQUALCHARCOUNT_H",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 63,
+      "to": 64
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "#define EQUALCHARCOUNT_H",
+      "lineIdx": 1,
+      "from": 8,
+      "to": 24
+    },
+    "right": {
+      "line": "#define EQUALCHARCOUNT_H",
+      "lineIdx": 1,
+      "from": 8,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "class EqualCharCount: public Feature",
+      "lineIdx": 5,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "class EqualCharCount: public Feature",
+      "lineIdx": 5,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 10,
+      "to": 17
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 10,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "class EqualCharCount: public Feature",
+      "lineIdx": 5,
+      "from": 22,
+      "to": 28
+    },
+    "right": {
+      "line": "class EqualCharCount: public Feature",
+      "lineIdx": 5,
+      "from": 22,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 42,
+      "to": 48
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 42,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 31,
+      "to": 39
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 31,
+      "to": 39
+    }
+  }, {
+    "left": {
+      "line": "#define EQUALCHARCOUNT_H",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#define EQUALCHARCOUNT_H",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "#define EQUALCHARCOUNT_H",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 7
+    },
+    "right": {
+      "line": "#define EQUALCHARCOUNT_H",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 22,
+      "to": 39
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 23,
+      "to": 40
+    }
+  }, {
+    "left": {
+      "line": "class EqualCharCount: public Feature",
+      "lineIdx": 5,
+      "from": 29,
+      "to": 36
+    },
+    "right": {
+      "line": "class EqualCharCount: public Feature",
+      "lineIdx": 5,
+      "from": 29,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "class EqualCharCount: public Feature",
+      "lineIdx": 5,
+      "from": 0,
+      "to": 5
+    },
+    "right": {
+      "line": "class EqualCharCount: public Feature",
+      "lineIdx": 5,
+      "from": 0,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "  EqualCharCount(): Feature(){}",
+      "lineIdx": 8,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 8,
+      "to": 15
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 9,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "public:",
+      "lineIdx": 7,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "public:",
+      "lineIdx": 7,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "public:",
+      "lineIdx": 11,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "public:",
+      "lineIdx": 11,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 36,
+      "to": 43
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 36,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 67,
+      "to": 68
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 67,
+      "to": 68
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 18,
+      "to": 26
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 18,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "  float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 69,
+      "to": 77
+    },
+    "right": {
+      "line": "  double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override;",
+      "lineIdx": 9,
+      "from": 70,
+      "to": 78
+    }
+  }, {
+    "left": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "#include \"aligner/learning/features/feature.h\"",
+      "lineIdx": 2,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 18,
+      "to": 22
+    },
+    "right": {
+      "line": "  virtual QString name() const override { return \"EqualCharCount\"; }",
+      "lineIdx": 12,
+      "from": 18,
+      "to": 22
+    }
+  }]
 }

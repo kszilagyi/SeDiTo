@@ -1,84 +1,1355 @@
 {
-    "matches": [
-        {
-            "leftLineIdx": 19,
-            "rightLineIdx": 19
-        },
-        {
-            "leftLineIdx": 18,
-            "rightLineIdx": 18
-        },
-        {
-            "leftLineIdx": 17,
-            "rightLineIdx": 17
-        },
-        {
-            "leftLineIdx": 16,
-            "rightLineIdx": 16
-        },
-        {
-            "leftLineIdx": 15,
-            "rightLineIdx": 15
-        },
-        {
-            "leftLineIdx": 14,
-            "rightLineIdx": 14
-        },
-        {
-            "leftLineIdx": 13,
-            "rightLineIdx": 13
-        },
-        {
-            "leftLineIdx": 12,
-            "rightLineIdx": 12
-        },
-        {
-            "leftLineIdx": 11,
-            "rightLineIdx": 11
-        },
-        {
-            "leftLineIdx": 10,
-            "rightLineIdx": 10
-        },
-        {
-            "leftLineIdx": 0,
-            "rightLineIdx": 0
-        },
-        {
-            "leftLineIdx": 1,
-            "rightLineIdx": 1
-        },
-        {
-            "leftLineIdx": 2,
-            "rightLineIdx": 2
-        },
-        {
-            "leftLineIdx": 3,
-            "rightLineIdx": 3
-        },
-        {
-            "leftLineIdx": 4,
-            "rightLineIdx": 4
-        },
-        {
-            "leftLineIdx": 5,
-            "rightLineIdx": 5
-        },
-        {
-            "leftLineIdx": 6,
-            "rightLineIdx": 6
-        },
-        {
-            "leftLineIdx": 7,
-            "rightLineIdx": 7
-        },
-        {
-            "leftLineIdx": 8,
-            "rightLineIdx": 8
-        },
-        {
-            "leftLineIdx": 9,
-            "rightLineIdx": 9
-        }
-    ]
+  "matches": [{
+    "left": {
+      "line": "#ifndef SIDEDFEATURE_H",
+      "lineIdx": 0,
+      "from": 8,
+      "to": 22
+    },
+    "right": {
+      "line": "#ifndef SIDEDFEATURE_H",
+      "lineIdx": 0,
+      "from": 8,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 35,
+      "to": 42
+    },
+    "right": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 35,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 2,
+      "to": 9
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 2,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 64,
+      "to": 65
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "#ifndef SIDEDFEATURE_H",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 7
+    },
+    "right": {
+      "line": "#ifndef SIDEDFEATURE_H",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 82,
+      "to": 83
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 93,
+      "to": 94
+    }
+  }, {
+    "left": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 78,
+      "to": 86
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 78,
+      "to": 86
+    }
+  }, {
+    "left": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 55,
+      "to": 64
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 55,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "#endif // SIDEDFEATURE_H",
+      "lineIdx": 18,
+      "from": 7,
+      "to": 8
+    },
+    "right": {
+      "line": "#endif // SIDEDFEATURE_H",
+      "lineIdx": 18,
+      "from": 7,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "{",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "{",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 23,
+      "to": 31
+    },
+    "right": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 23,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 108,
+      "to": 109
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 108,
+      "to": 109
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 53,
+      "to": 54
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 53,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "#define SIDEDFEATURE_H",
+      "lineIdx": 1,
+      "from": 8,
+      "to": 22
+    },
+    "right": {
+      "line": "#define SIDEDFEATURE_H",
+      "lineIdx": 1,
+      "from": 8,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 31,
+      "to": 48
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 31,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 10,
+      "to": 16
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 10,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 45,
+      "to": 49
+    },
+    "right": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 45,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 103,
+      "to": 108
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 103,
+      "to": 108
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 59,
+      "to": 60
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 59,
+      "to": 60
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 74,
+      "to": 77
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 74,
+      "to": 77
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 66,
+      "to": 69
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 66,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "  const QString mName;",
+      "lineIdx": 7,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "  const QString mName;",
+      "lineIdx": 7,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "  const DiffSide mSide;",
+      "lineIdx": 9,
+      "from": 8,
+      "to": 16
+    },
+    "right": {
+      "line": "  const DiffSide mSide;",
+      "lineIdx": 9,
+      "from": 8,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 83,
+      "to": 84
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 94,
+      "to": 95
+    }
+  }, {
+    "left": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 2,
+      "to": 9
+    },
+    "right": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 2,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 2,
+      "to": 14
+    },
+    "right": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 2,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "  const QString mName;",
+      "lineIdx": 7,
+      "from": 2,
+      "to": 7
+    },
+    "right": {
+      "line": "  const QString mName;",
+      "lineIdx": 7,
+      "from": 2,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 25,
+      "to": 30
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 25,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 13
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "  const DiffSide mSide;",
+      "lineIdx": 9,
+      "from": 17,
+      "to": 22
+    },
+    "right": {
+      "line": "  const DiffSide mSide;",
+      "lineIdx": 9,
+      "from": 17,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "  const QString mName;",
+      "lineIdx": 7,
+      "from": 8,
+      "to": 15
+    },
+    "right": {
+      "line": "  const QString mName;",
+      "lineIdx": 7,
+      "from": 8,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 17,
+      "to": 22
+    },
+    "right": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 17,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 73,
+      "to": 74
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 84,
+      "to": 85
+    }
+  }, {
+    "left": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 21,
+      "to": 28
+    },
+    "right": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 21,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 15,
+      "to": 20
+    },
+    "right": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 15,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 10,
+      "to": 14
+    },
+    "right": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 10,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 30,
+      "to": 35
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 30,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 10,
+      "to": 16
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 10,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "#endif // SIDEDFEATURE_H",
+      "lineIdx": 18,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#endif // SIDEDFEATURE_H",
+      "lineIdx": 18,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "};",
+      "lineIdx": 16,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "};",
+      "lineIdx": 16,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "public:",
+      "lineIdx": 8,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "public:",
+      "lineIdx": 8,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 61,
+      "to": 64
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 61,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 81,
+      "to": 82
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 92,
+      "to": 93
+    }
+  }, {
+    "left": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 27,
+      "to": 34
+    },
+    "right": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 27,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "#endif // SIDEDFEATURE_H",
+      "lineIdx": 18,
+      "from": 10,
+      "to": 24
+    },
+    "right": {
+      "line": "#endif // SIDEDFEATURE_H",
+      "lineIdx": 18,
+      "from": 10,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 30,
+      "to": 34
+    },
+    "right": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 30,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "#endif // SIDEDFEATURE_H",
+      "lineIdx": 18,
+      "from": 1,
+      "to": 6
+    },
+    "right": {
+      "line": "#endif // SIDEDFEATURE_H",
+      "lineIdx": 18,
+      "from": 1,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "public:",
+      "lineIdx": 8,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "public:",
+      "lineIdx": 8,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 24,
+      "to": 29
+    },
+    "right": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 24,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 50,
+      "to": 59
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 50,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 2,
+      "to": 9
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 2,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 36,
+      "to": 53
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 36,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 50,
+      "to": 51
+    },
+    "right": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 50,
+      "to": 51
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 72,
+      "to": 73
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 72,
+      "to": 73
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 17,
+      "to": 24
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 17,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 65,
+      "to": 72
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 65,
+      "to": 72
+    }
+  }, {
+    "left": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "  const DiffSide mSide;",
+      "lineIdx": 9,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "  const DiffSide mSide;",
+      "lineIdx": 9,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "#define SIDEDFEATURE_H",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#define SIDEDFEATURE_H",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  const QString mName;",
+      "lineIdx": 7,
+      "from": 16,
+      "to": 21
+    },
+    "right": {
+      "line": "  const QString mName;",
+      "lineIdx": 7,
+      "from": 16,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "#define SIDEDFEATURE_H",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 7
+    },
+    "right": {
+      "line": "#define SIDEDFEATURE_H",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  const DiffSide mSide;",
+      "lineIdx": 9,
+      "from": 2,
+      "to": 7
+    },
+    "right": {
+      "line": "  const DiffSide mSide;",
+      "lineIdx": 9,
+      "from": 2,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 10,
+      "to": 17
+    },
+    "right": {
+      "line": "#include \"feature.h\"",
+      "lineIdx": 3,
+      "from": 10,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 20,
+      "to": 26
+    },
+    "right": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 20,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "};",
+      "lineIdx": 16,
+      "from": 1,
+      "to": 2
+    },
+    "right": {
+      "line": "};",
+      "lineIdx": 16,
+      "from": 1,
+      "to": 2
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 0,
+      "to": 5
+    },
+    "right": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 0,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "#endif // SIDEDFEATURE_H",
+      "lineIdx": 18,
+      "from": 8,
+      "to": 9
+    },
+    "right": {
+      "line": "#endif // SIDEDFEATURE_H",
+      "lineIdx": 18,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 17,
+      "to": 29
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 17,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 6,
+      "to": 18
+    },
+    "right": {
+      "line": "class SidedFeature: public virtual Feature",
+      "lineIdx": 5,
+      "from": 6,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 86,
+      "to": 87
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 86,
+      "to": 87
+    }
+  }, {
+    "left": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 10,
+      "to": 21
+    },
+    "right": {
+      "line": "  QString namePostFix() const;",
+      "lineIdx": 11,
+      "from": 10,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 2,
+      "to": 9
+    },
+    "right": {
+      "line": "  QString name() const override;",
+      "lineIdx": 12,
+      "from": 2,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 36,
+      "to": 44
+    },
+    "right": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 36,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 48,
+      "to": 49
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 48,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 94,
+      "to": 102
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 94,
+      "to": 102
+    }
+  }, {
+    "left": {
+      "line": "#ifndef SIDEDFEATURE_H",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#ifndef SIDEDFEATURE_H",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 14,
+      "to": 22
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 14,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 49,
+      "to": 50
+    },
+    "right": {
+      "line": "  SidedFeature(const QString& name, DiffSide side);",
+      "lineIdx": 10,
+      "from": 49,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int idx) const =0;",
+      "lineIdx": 14,
+      "from": 75,
+      "to": 80
+    },
+    "right": {
+      "line": "  virtual double sidedCompute(const OneToOneAlignment& alignment, int currentLineIdx) const =0;",
+      "lineIdx": 14,
+      "from": 86,
+      "to": 91
+    }
+  }, {
+    "left": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 88,
+      "to": 93
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
+      "lineIdx": 13,
+      "from": 88,
+      "to": 93
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "#include \"mix/diffside.h\"",
+      "lineIdx": 2,
+      "from": 24,
+      "to": 25
+    }
+  }]
 }

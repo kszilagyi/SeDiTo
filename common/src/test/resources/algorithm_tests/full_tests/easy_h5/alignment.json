@@ -1,72 +1,848 @@
 {
-    "matches": [
-        {
-            "leftLineIdx": 0,
-            "rightLineIdx": 0
-        },
-        {
-            "leftLineIdx": 1,
-            "rightLineIdx": 1
-        },
-        {
-            "leftLineIdx": 2,
-            "rightLineIdx": 2
-        },
-        {
-            "leftLineIdx": 3,
-            "rightLineIdx": 3
-        },
-        {
-            "leftLineIdx": 4,
-            "rightLineIdx": 4
-        },
-        {
-            "leftLineIdx": 5,
-            "rightLineIdx": 5
-        },
-        {
-            "leftLineIdx": 6,
-            "rightLineIdx": 6
-        },
-        {
-            "leftLineIdx": 7,
-            "rightLineIdx": 7
-        },
-        {
-            "leftLineIdx": 8,
-            "rightLineIdx": 8
-        },
-        {
-            "leftLineIdx": 9,
-            "rightLineIdx": 9
-        },
-        {
-            "leftLineIdx": 10,
-            "rightLineIdx": 10
-        },
-        {
-            "leftLineIdx": 11,
-            "rightLineIdx": 11
-        },
-        {
-            "leftLineIdx": 12,
-            "rightLineIdx": 12
-        },
-        {
-            "leftLineIdx": 13,
-            "rightLineIdx": 13
-        },
-        {
-            "leftLineIdx": 14,
-            "rightLineIdx": 14
-        },
-        {
-            "leftLineIdx": 15,
-            "rightLineIdx": 15
-        },
-        {
-            "leftLineIdx": 16,
-            "rightLineIdx": 16
-        }
-    ]
+  "matches": [{
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 60,
+      "to": 63
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 61,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "};",
+      "lineIdx": 13,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "};",
+      "lineIdx": 13,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "#ifndef FEATURE_H",
+      "lineIdx": 0,
+      "from": 8,
+      "to": 17
+    },
+    "right": {
+      "line": "#ifndef FEATURE_H",
+      "lineIdx": 0,
+      "from": 8,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 47,
+      "to": 48
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 48,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 24,
+      "to": 29
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 25,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 4,
+      "from": 0,
+      "to": 5
+    },
+    "right": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 4,
+      "from": 0,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 4,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 4,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 87,
+      "to": 92
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 88,
+      "to": 93
+    }
+  }, {
+    "left": {
+      "line": "#ifndef FEATURE_H",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#ifndef FEATURE_H",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 58,
+      "to": 59
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 59,
+      "to": 60
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "  Feature() {}",
+      "lineIdx": 9,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "  Feature() {}",
+      "lineIdx": 9,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "#include <QString>",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 17
+    },
+    "right": {
+      "line": "#include <QString>",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "#define FEATURE_H",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#define FEATURE_H",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "#include <QString>",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include <QString>",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "class Feature",
+      "lineIdx": 6,
+      "from": 6,
+      "to": 13
+    },
+    "right": {
+      "line": "class Feature",
+      "lineIdx": 6,
+      "from": 6,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 94,
+      "to": 95
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 95,
+      "to": 96
+    }
+  }, {
+    "left": {
+      "line": "};",
+      "lineIdx": 13,
+      "from": 1,
+      "to": 2
+    },
+    "right": {
+      "line": "};",
+      "lineIdx": 13,
+      "from": 1,
+      "to": 2
+    }
+  }, {
+    "left": {
+      "line": "public:",
+      "lineIdx": 8,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "public:",
+      "lineIdx": 8,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 85,
+      "to": 86
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 86,
+      "to": 87
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 77,
+      "to": 85
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 78,
+      "to": 86
+    }
+  }, {
+    "left": {
+      "line": "#define FEATURE_H",
+      "lineIdx": 1,
+      "from": 8,
+      "to": 17
+    },
+    "right": {
+      "line": "#define FEATURE_H",
+      "lineIdx": 1,
+      "from": 8,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 2,
+      "to": 9
+    },
+    "right": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 2,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 18,
+      "to": 22
+    },
+    "right": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 18,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 25,
+      "to": 30
+    },
+    "right": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 25,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 33,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "public:",
+      "lineIdx": 8,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "public:",
+      "lineIdx": 8,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 73,
+      "to": 76
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 74,
+      "to": 77
+    }
+  }, {
+    "left": {
+      "line": "class Feature",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 5
+    },
+    "right": {
+      "line": "class Feature",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 71,
+      "to": 72
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 72,
+      "to": 73
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 10,
+      "to": 17
+    },
+    "right": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 10,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "#endif // FEATURE_H",
+      "lineIdx": 15,
+      "from": 10,
+      "to": 19
+    },
+    "right": {
+      "line": "#endif // FEATURE_H",
+      "lineIdx": 15,
+      "from": 10,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 2,
+      "to": 9
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 2,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 95,
+      "to": 96
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 96,
+      "to": 97
+    }
+  }, {
+    "left": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 2,
+      "to": 9
+    },
+    "right": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 2,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  Feature() {}",
+      "lineIdx": 9,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "  Feature() {}",
+      "lineIdx": 9,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "#ifndef FEATURE_H",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 7
+    },
+    "right": {
+      "line": "#ifndef FEATURE_H",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 16,
+      "to": 23
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 17,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "#include <QString>",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include <QString>",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 93,
+      "to": 94
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 94,
+      "to": 95
+    }
+  }, {
+    "left": {
+      "line": "#endif // FEATURE_H",
+      "lineIdx": 15,
+      "from": 7,
+      "to": 8
+    },
+    "right": {
+      "line": "#endif // FEATURE_H",
+      "lineIdx": 15,
+      "from": 7,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "  Feature() {}",
+      "lineIdx": 9,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "  Feature() {}",
+      "lineIdx": 9,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 4,
+      "from": 6,
+      "to": 23
+    },
+    "right": {
+      "line": "class OneToOneAlignment;",
+      "lineIdx": 4,
+      "from": 6,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "#include <QString>",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include <QString>",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "  Feature() {}",
+      "lineIdx": 9,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "  Feature() {}",
+      "lineIdx": 9,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "#define FEATURE_H",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 7
+    },
+    "right": {
+      "line": "#define FEATURE_H",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 11,
+      "to": 18
+    },
+    "right": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 11,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 64,
+      "to": 71
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 65,
+      "to": 72
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 49,
+      "to": 58
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 50,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "  virtual ~Feature(){}",
+      "lineIdx": 12,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "  Feature() {}",
+      "lineIdx": 9,
+      "from": 2,
+      "to": 9
+    },
+    "right": {
+      "line": "  Feature() {}",
+      "lineIdx": 9,
+      "from": 2,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "#include <QString>",
+      "lineIdx": 2,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "#include <QString>",
+      "lineIdx": 2,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "{",
+      "lineIdx": 7,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "{",
+      "lineIdx": 7,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "  virtual QString name() const =0;",
+      "lineIdx": 10,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "#endif // FEATURE_H",
+      "lineIdx": 15,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#endif // FEATURE_H",
+      "lineIdx": 15,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "#endif // FEATURE_H",
+      "lineIdx": 15,
+      "from": 8,
+      "to": 9
+    },
+    "right": {
+      "line": "#endif // FEATURE_H",
+      "lineIdx": 15,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 30,
+      "to": 47
+    },
+    "right": {
+      "line": "  virtual double compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const =0;",
+      "lineIdx": 11,
+      "from": 31,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "#endif // FEATURE_H",
+      "lineIdx": 15,
+      "from": 1,
+      "to": 6
+    },
+    "right": {
+      "line": "#endif // FEATURE_H",
+      "lineIdx": 15,
+      "from": 1,
+      "to": 6
+    }
+  }]
 }

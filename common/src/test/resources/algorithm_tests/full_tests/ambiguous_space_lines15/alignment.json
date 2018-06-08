@@ -1,92 +1,2356 @@
 {
-    "matches": [
-        {
-            "leftLineIdx": 20,
-            "rightLineIdx": 25
-        },
-        {
-            "leftLineIdx": 19,
-            "rightLineIdx": 24
-        },
-        {
-            "leftLineIdx": 19,
-            "rightLineIdx": 19
-        },
-        {
-            "leftLineIdx": 18,
-            "rightLineIdx": 18
-        },
-        {
-            "leftLineIdx": 17,
-            "rightLineIdx": 17
-        },
-        {
-            "leftLineIdx": 16,
-            "rightLineIdx": 16
-        },
-        {
-            "leftLineIdx": 15,
-            "rightLineIdx": 15
-        },
-        {
-            "leftLineIdx": 14,
-            "rightLineIdx": 14
-        },
-        {
-            "leftLineIdx": 13,
-            "rightLineIdx": 13
-        },
-        {
-            "leftLineIdx": 12,
-            "rightLineIdx": 12
-        },
-        {
-            "leftLineIdx": 11,
-            "rightLineIdx": 11
-        },
-        {
-            "leftLineIdx": 10,
-            "rightLineIdx": 10
-        },
-        {
-            "leftLineIdx": 0,
-            "rightLineIdx": 0
-        },
-        {
-            "leftLineIdx": 1,
-            "rightLineIdx": 1
-        },
-        {
-            "leftLineIdx": 2,
-            "rightLineIdx": 2
-        },
-        {
-            "leftLineIdx": 3,
-            "rightLineIdx": 3
-        },
-        {
-            "leftLineIdx": 4,
-            "rightLineIdx": 4
-        },
-        {
-            "leftLineIdx": 5,
-            "rightLineIdx": 5
-        },
-        {
-            "leftLineIdx": 6,
-            "rightLineIdx": 6
-        },
-        {
-            "leftLineIdx": 7,
-            "rightLineIdx": 7
-        },
-        {
-            "leftLineIdx": 8,
-            "rightLineIdx": 8
-        },
-        {
-            "leftLineIdx": 9,
-            "rightLineIdx": 9
-        }
-    ]
+  "matches": [{
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 53,
+      "to": 60
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 53,
+      "to": 60
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 68,
+      "to": 69
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 69,
+      "to": 70
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 75,
+      "to": 92
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 76,
+      "to": 93
+    }
+  }, {
+    "left": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 16,
+      "to": 25
+    },
+    "right": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 16,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 59,
+      "to": 60
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 59,
+      "to": 60
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 71,
+      "to": 72
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 71,
+      "to": 72
+    }
+  }, {
+    "left": {
+      "line": "  });",
+      "lineIdx": 16,
+      "from": 3,
+      "to": 4
+    },
+    "right": {
+      "line": "  });",
+      "lineIdx": 16,
+      "from": 3,
+      "to": 4
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 53,
+      "to": 68
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 54,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 75,
+      "to": 81
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 75,
+      "to": 81
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 95,
+      "to": 96
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 95,
+      "to": 96
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 51,
+      "to": 52
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 52,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 67,
+      "to": 68
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 67,
+      "to": 68
+    }
+  }, {
+    "left": {
+      "line": "{",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "{",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 19,
+      "to": 23
+    },
+    "right": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 19,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 14,
+      "to": 26
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 14,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 60,
+      "to": 67
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 60,
+      "to": 67
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 61,
+      "to": 69
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 61,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 53,
+      "to": 54
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 54,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 96,
+      "to": 97
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 96,
+      "to": 97
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 41,
+      "to": 42
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 41,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 12,
+      "to": 16
+    },
+    "right": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 12,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 90,
+      "to": 91
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 90,
+      "to": 91
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 60,
+      "to": 61
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 60,
+      "to": 61
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 130,
+      "to": 131
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 131,
+      "to": 132
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 91,
+      "to": 92
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 91,
+      "to": 92
+    }
+  }, {
+    "left": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 24,
+      "to": 32
+    },
+    "right": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 24,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 84,
+      "to": 85
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 84,
+      "to": 85
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "}",
+      "lineIdx": 18,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "}",
+      "lineIdx": 18,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 35,
+      "to": 51
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 36,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 97,
+      "to": 98
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 97,
+      "to": 98
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 93,
+      "to": 94
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 93,
+      "to": 94
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 46,
+      "to": 53
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 47,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 41,
+      "to": 50
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 41,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 52,
+      "to": 53
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 52,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 11,
+      "to": 14
+    },
+    "right": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 11,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 10,
+      "to": 26
+    },
+    "right": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 10,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 107,
+      "to": 108
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 107,
+      "to": 108
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 5,
+      "to": 18
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 5,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 42,
+      "to": 52
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 42,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 42,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 10,
+      "to": 13
+    },
+    "right": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 10,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 15,
+      "to": 29
+    },
+    "right": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 15,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 14,
+      "to": 24
+    },
+    "right": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 14,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 41,
+      "to": 42
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 41,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 70,
+      "to": 71
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 70,
+      "to": 71
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 7,
+      "to": 21
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 7,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 59,
+      "to": 60
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 59,
+      "to": 60
+    }
+  }, {
+    "left": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 2,
+      "to": 6
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 2,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 4,
+      "to": 5
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 4,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 93,
+      "to": 94
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 94,
+      "to": 95
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 52,
+      "to": 59
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 52,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 52,
+      "to": 53
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 53,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 68,
+      "to": 69
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 68,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 28,
+      "to": 32
+    },
+    "right": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 28,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "  });",
+      "lineIdx": 16,
+      "from": 2,
+      "to": 3
+    },
+    "right": {
+      "line": "  });",
+      "lineIdx": 16,
+      "from": 2,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 43,
+      "to": 48
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 43,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 4,
+      "to": 11
+    },
+    "right": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 4,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "  });",
+      "lineIdx": 16,
+      "from": 4,
+      "to": 5
+    },
+    "right": {
+      "line": "  });",
+      "lineIdx": 16,
+      "from": 4,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 24,
+      "to": 27
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 24,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 82,
+      "to": 83
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 82,
+      "to": 83
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 35,
+      "to": 41
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 35,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 89,
+      "to": 90
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 89,
+      "to": 90
+    }
+  }, {
+    "left": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 63,
+      "to": 71
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 63,
+      "to": 71
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 10,
+      "to": 15
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 11,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 77,
+      "to": 87
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 77,
+      "to": 87
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 18,
+      "to": 25
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 19,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 13
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 71,
+      "to": 76
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 71,
+      "to": 76
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 109,
+      "to": 116
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 110,
+      "to": 117
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 105,
+      "to": 106
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 105,
+      "to": 106
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 122,
+      "to": 130
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 123,
+      "to": 131
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 3,
+      "to": 4
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 3,
+      "to": 4
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 73,
+      "to": 74
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 73,
+      "to": 74
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 26,
+      "to": 30
+    },
+    "right": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 26,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 33,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "}",
+      "lineIdx": 8,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "}",
+      "lineIdx": 8,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 19,
+      "to": 26
+    },
+    "right": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 19,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 69,
+      "to": 70
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 69,
+      "to": 70
+    }
+  }, {
+    "left": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 14,
+      "to": 17
+    },
+    "right": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 14,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 32,
+      "to": 37
+    },
+    "right": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 32,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 49,
+      "to": 59
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 49,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 40,
+      "to": 41
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 40,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 18,
+      "to": 34
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 18,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 118,
+      "to": 121
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 119,
+      "to": 122
+    }
+  }, {
+    "left": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 9,
+      "to": 14
+    },
+    "right": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 9,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 96,
+      "to": 97
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 96,
+      "to": 97
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 98,
+      "to": 99
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 98,
+      "to": 99
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 61,
+      "to": 62
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 61,
+      "to": 62
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 29,
+      "to": 38
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 29,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 2,
+      "to": 3
+    },
+    "right": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 2,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 39,
+      "to": 40
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 39,
+      "to": 40
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 50,
+      "to": 51
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 50,
+      "to": 51
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 8,
+      "to": 9
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 19,
+      "to": 26
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 19,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 35,
+      "to": 44
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 36,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 103,
+      "to": 104
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 104,
+      "to": 105
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 95,
+      "to": 96
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 95,
+      "to": 96
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 98,
+      "to": 105
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 98,
+      "to": 105
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 88,
+      "to": 95
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 88,
+      "to": 95
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 69,
+      "to": 74
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 70,
+      "to": 75
+    }
+  }, {
+    "left": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 83,
+      "to": 84
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 83,
+      "to": 84
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 85,
+      "to": 89
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 85,
+      "to": 89
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 25,
+      "to": 28
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 25,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 28,
+      "to": 37
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 28,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 87,
+      "to": 88
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 87,
+      "to": 88
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 63,
+      "to": 64
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 0,
+      "to": 16
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 0,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 116,
+      "to": 117
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 117,
+      "to": 118
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 71,
+      "to": 72
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 71,
+      "to": 72
+    }
+  }, {
+    "left": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 9,
+      "to": 24
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 9,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 64,
+      "to": 65
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 65,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 94,
+      "to": 103
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 95,
+      "to": 104
+    }
+  }, {
+    "left": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  return toMap(nameValuePairs);",
+      "lineIdx": 17,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 0,
+      "to": 3
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 0,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 38,
+      "to": 39
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 38,
+      "to": 39
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 132,
+      "to": 137
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 133,
+      "to": 138
+    }
+  }, {
+    "left": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 40,
+      "to": 41
+    },
+    "right": {
+      "line": "  auto nameValuePairs = map(mFeatures, [&alignment, leftIdx, rightIdx](const unique_ptr<Feature>& feature) {",
+      "lineIdx": 12,
+      "from": 40,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 55,
+      "to": 63
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 56,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "std::unordered_map<QString, float> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 105,
+      "to": 108
+    },
+    "right": {
+      "line": "std::unordered_map<QString, double> FeatureExtractor::computeFeatures(const OneToOneAlignment &alignment, int leftIdx, int rightIdx) const",
+      "lineIdx": 10,
+      "from": 106,
+      "to": 109
+    }
+  }, {
+    "left": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 70,
+      "to": 71
+    },
+    "right": {
+      "line": "  VERIFY(isUniqueOrEmpty(map(mFeatures, [](const unique_ptr<Feature>& f) { return f->name(); } )));",
+      "lineIdx": 7,
+      "from": 70,
+      "to": 71
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"mix/functional.h\"",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "FeatureExtractor::FeatureExtractor(vector<unique_ptr<Feature>> features)",
+      "lineIdx": 4,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "#include \"featureextractor.h\"",
+      "lineIdx": 0,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 38,
+      "to": 39
+    },
+    "right": {
+      "line": "    return std::make_pair(name, value);",
+      "lineIdx": 15,
+      "from": 38,
+      "to": 39
+    }
+  }, {
+    "left": {
+      "line": "{",
+      "lineIdx": 11,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "{",
+      "lineIdx": 11,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "    QString name = feature->name();",
+      "lineIdx": 14,
+      "from": 33,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "#include \"mix/qstringutils.h\"",
+      "lineIdx": 2,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 4,
+      "to": 13
+    },
+    "right": {
+      "line": "  : mFeatures(std::move(features))",
+      "lineIdx": 5,
+      "from": 4,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    float value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 27,
+      "to": 34
+    },
+    "right": {
+      "line": "    double value = feature->compute(alignment, leftIdx, rightIdx);",
+      "lineIdx": 13,
+      "from": 28,
+      "to": 35
+    }
+  }]
 }

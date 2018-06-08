@@ -1,112 +1,2850 @@
 {
-    "matches": [
-        {
-            "leftLineIdx": 26,
-            "rightLineIdx": 31
-        },
-        {
-            "leftLineIdx": 25,
-            "rightLineIdx": 30
-        },
-        {
-            "leftLineIdx": 24,
-            "rightLineIdx": 29
-        },
-        {
-            "leftLineIdx": 23,
-            "rightLineIdx": 28
-        },
-        {
-            "leftLineIdx": 22,
-            "rightLineIdx": 27
-        },
-        {
-            "leftLineIdx": 9,
-            "rightLineIdx": 9
-        },
-        {
-            "leftLineIdx": 8,
-            "rightLineIdx": 8
-        },
-        {
-            "leftLineIdx": 7,
-            "rightLineIdx": 7
-        },
-        {
-            "leftLineIdx": 6,
-            "rightLineIdx": 6
-        },
-        {
-            "leftLineIdx": 5,
-            "rightLineIdx": 5
-        },
-        {
-            "leftLineIdx": 4,
-            "rightLineIdx": 4
-        },
-        {
-            "leftLineIdx": 3,
-            "rightLineIdx": 3
-        },
-        {
-            "leftLineIdx": 2,
-            "rightLineIdx": 2
-        },
-        {
-            "leftLineIdx": 1,
-            "rightLineIdx": 1
-        },
-        {
-            "leftLineIdx": 0,
-            "rightLineIdx": 0
-        },
-        {
-            "leftLineIdx": 10,
-            "rightLineIdx": 10
-        },
-        {
-            "leftLineIdx": 11,
-            "rightLineIdx": 14
-        },
-        {
-            "leftLineIdx": 12,
-            "rightLineIdx": 15
-        },
-        {
-            "leftLineIdx": 13,
-            "rightLineIdx": 16
-        },
-        {
-            "leftLineIdx": 14,
-            "rightLineIdx": 17
-        },
-        {
-            "leftLineIdx": 15,
-            "rightLineIdx": 18
-        },
-        {
-            "leftLineIdx": 16,
-            "rightLineIdx": 19
-        },
-        {
-            "leftLineIdx": 17,
-            "rightLineIdx": 26
-        },
-        {
-            "leftLineIdx": 18,
-            "rightLineIdx": 21
-        },
-        {
-            "leftLineIdx": 19,
-            "rightLineIdx": 22
-        },
-        {
-            "leftLineIdx": 20,
-            "rightLineIdx": 23
-        },
-        {
-            "leftLineIdx": 21,
-            "rightLineIdx": 25
-        }
-    ]
+  "matches": [{
+    "left": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 16,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 19,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 50,
+      "to": 51
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 65,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 75,
+      "to": 76
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 75,
+      "to": 76
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 47,
+      "to": 51
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 47,
+      "to": 51
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 2,
+      "to": 9
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 2,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 40,
+      "to": 41
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 40,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 35,
+      "to": 37
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 35,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 8,
+      "to": 12
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 8,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 28,
+      "to": 37
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 28,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 16,
+      "from": 4,
+      "to": 6
+    },
+    "right": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 19,
+      "from": 4,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 14,
+      "to": 18
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 14,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 80,
+      "to": 81
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 80,
+      "to": 81
+    }
+  }, {
+    "left": {
+      "line": "{",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "{",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 12,
+      "to": 21
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 12,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 9,
+      "to": 12
+    },
+    "right": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 9,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "  int start = 0;",
+      "lineIdx": 12,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "  int start = 0;",
+      "lineIdx": 15,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "  int start = 0;",
+      "lineIdx": 12,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "  int start = 0;",
+      "lineIdx": 15,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 16,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 19,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 20,
+      "to": 27
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 20,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "      ++start;",
+      "lineIdx": 20,
+      "from": 7,
+      "to": 8
+    },
+    "right": {
+      "line": "      ++start;",
+      "lineIdx": 23,
+      "from": 7,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "  return results;",
+      "lineIdx": 24,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "  return results;",
+      "lineIdx": 29,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "  while(true) {",
+      "lineIdx": 14,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "  while(true) {",
+      "lineIdx": 17,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "      ++start;",
+      "lineIdx": 20,
+      "from": 8,
+      "to": 13
+    },
+    "right": {
+      "line": "      ++start;",
+      "lineIdx": 23,
+      "from": 8,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 20,
+      "to": 24
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 20,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 55,
+      "to": 56
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 55,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 4,
+      "to": 7
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 4,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 2,
+      "to": 3
+    },
+    "right": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 2,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 4,
+      "to": 8
+    },
+    "right": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 4,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "#include <QStringList>",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include <QStringList>",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 48,
+      "to": 49
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 63,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 31,
+      "to": 36
+    },
+    "right": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 31,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 50,
+      "to": 51
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 50,
+      "to": 51
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 5,
+      "to": 12
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 5,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 46,
+      "to": 47
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 46,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 3,
+      "to": 4
+    },
+    "right": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 3,
+      "to": 4
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 46,
+      "to": 47
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 46,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 39,
+      "to": 50
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 39,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 82,
+      "to": 83
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 82,
+      "to": 83
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 42,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "#include <QStringList>",
+      "lineIdx": 1,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include <QStringList>",
+      "lineIdx": 1,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "  while(true) {",
+      "lineIdx": 14,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "  while(true) {",
+      "lineIdx": 17,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 22,
+      "to": 25
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 22,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 4,
+      "to": 11
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 4,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 49,
+      "to": 50
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 49,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "}",
+      "lineIdx": 9,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "}",
+      "lineIdx": 9,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 7,
+      "to": 10
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 7,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 46,
+      "to": 50
+    },
+    "right": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 46,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 9,
+      "to": 12
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 9,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 54,
+      "to": 55
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 54,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 53,
+      "to": 54
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 53,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "#include <QStringList>",
+      "lineIdx": 1,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "#include <QStringList>",
+      "lineIdx": 1,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "  while(true) {",
+      "lineIdx": 14,
+      "from": 8,
+      "to": 12
+    },
+    "right": {
+      "line": "  while(true) {",
+      "lineIdx": 17,
+      "from": 8,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 65,
+      "to": 67
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 65,
+      "to": 67
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 16,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 19,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 53,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 37,
+      "to": 42
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 37,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 11,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 22,
+      "to": 25
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 22,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "      ++start;",
+      "lineIdx": 20,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "      ++start;",
+      "lineIdx": 23,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  return results;",
+      "lineIdx": 24,
+      "from": 9,
+      "to": 16
+    },
+    "right": {
+      "line": "  return results;",
+      "lineIdx": 29,
+      "from": 9,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 78,
+      "to": 79
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 78,
+      "to": 79
+    }
+  }, {
+    "left": {
+      "line": "    start = next + 1;",
+      "lineIdx": 18,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    start = next + 1;",
+      "lineIdx": 21,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 38,
+      "to": 39
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 38,
+      "to": 39
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 58,
+      "to": 59
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 58,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 51,
+      "to": 52
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 51,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 16,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 19,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 35,
+      "to": 40
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 35,
+      "to": 40
+    }
+  }, {
+    "left": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 12,
+      "to": 21
+    },
+    "right": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 12,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 49,
+      "to": 50
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 33,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "  int start = 0;",
+      "lineIdx": 12,
+      "from": 2,
+      "to": 5
+    },
+    "right": {
+      "line": "  int start = 0;",
+      "lineIdx": 15,
+      "from": 2,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "#include <QStringList>",
+      "lineIdx": 1,
+      "from": 10,
+      "to": 21
+    },
+    "right": {
+      "line": "#include <QStringList>",
+      "lineIdx": 1,
+      "from": 10,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 11,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 52,
+      "to": 53
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 52,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 52,
+      "to": 53
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 52,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 54,
+      "to": 55
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 54,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 17,
+      "to": 20
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 17,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 84,
+      "to": 85
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 84,
+      "to": 85
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 66,
+      "to": 70
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 66,
+      "to": 70
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "  int start = 0;",
+      "lineIdx": 12,
+      "from": 6,
+      "to": 11
+    },
+    "right": {
+      "line": "  int start = 0;",
+      "lineIdx": 15,
+      "from": 6,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "      ++start;",
+      "lineIdx": 20,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "      ++start;",
+      "lineIdx": 23,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 38,
+      "to": 43
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 38,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 15,
+      "to": 19
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 15,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 9,
+      "to": 13
+    },
+    "right": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 9,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 27,
+      "to": 36
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 27,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 4
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 4
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 47,
+      "to": 48
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 47,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 67,
+      "to": 68
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 67,
+      "to": 68
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 57,
+      "to": 64
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 57,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "  int start = 0;",
+      "lineIdx": 12,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "  int start = 0;",
+      "lineIdx": 15,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 16,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 19,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 12,
+      "to": 16
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 12,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 60,
+      "to": 64
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 60,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 30,
+      "to": 34
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 30,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 68,
+      "to": 73
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 68,
+      "to": 73
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 64,
+      "to": 65
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 7,
+      "to": 12
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 7,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 16,
+      "from": 19,
+      "to": 24
+    },
+    "right": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 19,
+      "from": 19,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 81,
+      "to": 82
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 81,
+      "to": 82
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 72,
+      "to": 73
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 72,
+      "to": 73
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 51,
+      "to": 56
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 51,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 16,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 19,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 25,
+      "to": 34
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 25,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 57,
+      "to": 58
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 57,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 50,
+      "to": 51
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 50,
+      "to": 51
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 30,
+      "to": 37
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 30,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 76,
+      "to": 77
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 76,
+      "to": 77
+    }
+  }, {
+    "left": {
+      "line": "    results.push_back(std::make_pair(start, next));",
+      "lineIdx": 17,
+      "from": 44,
+      "to": 48
+    },
+    "right": {
+      "line": "    results.push_back(std::make_pair(currentLineStart, next + 1));",
+      "lineIdx": 26,
+      "from": 55,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  while(true) {",
+      "lineIdx": 14,
+      "from": 2,
+      "to": 7
+    },
+    "right": {
+      "line": "  while(true) {",
+      "lineIdx": 17,
+      "from": 2,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "  while(true) {",
+      "lineIdx": 14,
+      "from": 7,
+      "to": 8
+    },
+    "right": {
+      "line": "  while(true) {",
+      "lineIdx": 17,
+      "from": 7,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 13,
+      "to": 19
+    },
+    "right": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 13,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 16,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 19,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 37,
+      "to": 44
+    },
+    "right": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 37,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 15,
+      "to": 22
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 15,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    start = next + 1;",
+      "lineIdx": 18,
+      "from": 12,
+      "to": 16
+    },
+    "right": {
+      "line": "    start = next + 1;",
+      "lineIdx": 21,
+      "from": 12,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 10,
+      "to": 19
+    },
+    "right": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 10,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "#include <QStringList>",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include <QStringList>",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"lineutils.h\"",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 55,
+      "to": 56
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 55,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "    start = next + 1;",
+      "lineIdx": 18,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "    start = next + 1;",
+      "lineIdx": 21,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 19,
+      "to": 22
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 19,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 15,
+      "to": 19
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 15,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 50,
+      "to": 51
+    },
+    "right": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 50,
+      "to": 51
+    }
+  }, {
+    "left": {
+      "line": "    start = next + 1;",
+      "lineIdx": 18,
+      "from": 4,
+      "to": 9
+    },
+    "right": {
+      "line": "    start = next + 1;",
+      "lineIdx": 21,
+      "from": 4,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 24,
+      "to": 27
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 24,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 70,
+      "to": 71
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 70,
+      "to": 71
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "    start = next + 1;",
+      "lineIdx": 18,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "    start = next + 1;",
+      "lineIdx": 21,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  return results;",
+      "lineIdx": 24,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  return results;",
+      "lineIdx": 29,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 26,
+      "to": 32
+    },
+    "right": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 26,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 28,
+      "to": 35
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 28,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 16,
+      "from": 7,
+      "to": 11
+    },
+    "right": {
+      "line": "    if(next == -1) break;",
+      "lineIdx": 19,
+      "from": 7,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "}",
+      "lineIdx": 25,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "}",
+      "lineIdx": 30,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 4,
+      "to": 6
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 4,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "    start = next + 1;",
+      "lineIdx": 18,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "    start = next + 1;",
+      "lineIdx": 21,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 15,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "    int next = text.indexOf(pattern, start);",
+      "lineIdx": 18,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 42,
+      "to": 46
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 42,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 20,
+      "to": 23
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 20,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 14,
+      "to": 19
+    },
+    "right": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 14,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "auto pattern = QRegExp(\"\\n|\\r\\n|\\r\");",
+      "lineIdx": 3,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 53,
+      "to": 54
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 53,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 73,
+      "to": 74
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 73,
+      "to": 74
+    }
+  }, {
+    "left": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 13,
+      "from": 8,
+      "to": 9
+    },
+    "right": {
+      "line": "  vector<std::pair<int, int>> results;",
+      "lineIdx": 16,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 19,
+      "from": 79,
+      "to": 80
+    },
+    "right": {
+      "line": "    if(start < text.size() && text.at(start - 1) == '\\r' && text.at(start) == '\\n') {",
+      "lineIdx": 22,
+      "from": 79,
+      "to": 80
+    }
+  }, {
+    "left": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 20,
+      "to": 27
+    },
+    "right": {
+      "line": "  return text.split(pattern);",
+      "lineIdx": 8,
+      "from": 20,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 23,
+      "from": 10,
+      "to": 19
+    },
+    "right": {
+      "line": "  results.push_back(std::make_pair(start, text.size()));",
+      "lineIdx": 28,
+      "from": 10,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 11,
+      "from": 64,
+      "to": 65
+    },
+    "right": {
+      "line": "vector<std::pair<int, int>> LineUtils::toLineIdxes(const QString& text) {",
+      "lineIdx": 14,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 21,
+      "to": 25
+    },
+    "right": {
+      "line": "  //TODO not tested, best effort",
+      "lineIdx": 7,
+      "from": 21,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    }",
+      "lineIdx": 21,
+      "from": 4,
+      "to": 5
+    },
+    "right": {
+      "line": "    }",
+      "lineIdx": 25,
+      "from": 4,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 23,
+      "to": 30
+    },
+    "right": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 23,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "  }",
+      "lineIdx": 22,
+      "from": 2,
+      "to": 3
+    },
+    "right": {
+      "line": "  }",
+      "lineIdx": 27,
+      "from": 2,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 0,
+      "to": 11
+    },
+    "right": {
+      "line": "QStringList LineUtils::toLines(const QString &text)",
+      "lineIdx": 5,
+      "from": 0,
+      "to": 11
+    }
+  }]
 }

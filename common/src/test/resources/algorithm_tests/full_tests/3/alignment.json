@@ -1,220 +1,5528 @@
 {
-    "matches": [
-        {
-            "leftLineIdx": 52,
-            "rightLineIdx": 63
-        },
-        {
-            "leftLineIdx": 51,
-            "rightLineIdx": 62
-        },
-        {
-            "leftLineIdx": 50,
-            "rightLineIdx": 61
-        },
-        {
-            "leftLineIdx": 49,
-            "rightLineIdx": 60
-        },
-        {
-            "leftLineIdx": 48,
-            "rightLineIdx": 59
-        },
-        {
-            "leftLineIdx": 47,
-            "rightLineIdx": 58
-        },
-        {
-            "leftLineIdx": 46,
-            "rightLineIdx": 57
-        },
-        {
-            "leftLineIdx": 45,
-            "rightLineIdx": 56
-        },
-        {
-            "leftLineIdx": 20,
-            "rightLineIdx": 22
-        },
-        {
-            "leftLineIdx": 19,
-            "rightLineIdx": 21
-        },
-        {
-            "leftLineIdx": 18,
-            "rightLineIdx": 20
-        },
-        {
-            "leftLineIdx": 17,
-            "rightLineIdx": 19
-        },
-        {
-            "leftLineIdx": 16,
-            "rightLineIdx": 18
-        },
-        {
-            "leftLineIdx": 15,
-            "rightLineIdx": 17
-        },
-        {
-            "leftLineIdx": 14,
-            "rightLineIdx": 16
-        },
-        {
-            "leftLineIdx": 13,
-            "rightLineIdx": 15
-        },
-        {
-            "leftLineIdx": 12,
-            "rightLineIdx": 14
-        },
-        {
-            "leftLineIdx": 11,
-            "rightLineIdx": 13
-        },
-        {
-            "leftLineIdx": 10,
-            "rightLineIdx": 12
-        },
-        {
-            "leftLineIdx": 9,
-            "rightLineIdx": 11
-        },
-        {
-            "leftLineIdx": 0,
-            "rightLineIdx": 0
-        },
-        {
-            "leftLineIdx": 1,
-            "rightLineIdx": 1
-        },
-        {
-            "leftLineIdx": 2,
-            "rightLineIdx": 2
-        },
-        {
-            "leftLineIdx": 3,
-            "rightLineIdx": 3
-        },
-        {
-            "leftLineIdx": 4,
-            "rightLineIdx": 4
-        },
-        {
-            "leftLineIdx": 5,
-            "rightLineIdx": 5
-        },
-        {
-            "leftLineIdx": 5,
-            "rightLineIdx": 7
-        },
-        {
-            "leftLineIdx": 6,
-            "rightLineIdx": 8
-        },
-        {
-            "leftLineIdx": 7,
-            "rightLineIdx": 9
-        },
-        {
-            "leftLineIdx": 8,
-            "rightLineIdx": 10
-        },
-        {
-            "leftLineIdx": 21,
-            "rightLineIdx": 23
-        },
-        {
-            "leftLineIdx": 22,
-            "rightLineIdx": 24
-        },
-        {
-            "leftLineIdx": 23,
-            "rightLineIdx": 25
-        },
-        {
-            "leftLineIdx": 24,
-            "rightLineIdx": 26
-        },
-        {
-            "leftLineIdx": 25,
-            "rightLineIdx": 27
-        },
-        {
-            "leftLineIdx": 26,
-            "rightLineIdx": 28
-        },
-        {
-            "leftLineIdx": 27,
-            "rightLineIdx": 29
-        },
-        {
-            "leftLineIdx": 28,
-            "rightLineIdx": 30
-        },
-        {
-            "leftLineIdx": 29,
-            "rightLineIdx": 31
-        },
-        {
-            "leftLineIdx": 30,
-            "rightLineIdx": 32
-        },
-        {
-            "leftLineIdx": 31,
-            "rightLineIdx": 33
-        },
-        {
-            "leftLineIdx": 32,
-            "rightLineIdx": 34
-        },
-        {
-            "leftLineIdx": 33,
-            "rightLineIdx": 35
-        },
-        {
-            "leftLineIdx": 34,
-            "rightLineIdx": 36
-        },
-        {
-            "leftLineIdx": 35,
-            "rightLineIdx": 37
-        },
-        {
-            "leftLineIdx": 36,
-            "rightLineIdx": 38
-        },
-        {
-            "leftLineIdx": 37,
-            "rightLineIdx": 39
-        },
-        {
-            "leftLineIdx": 38,
-            "rightLineIdx": 40
-        },
-        {
-            "leftLineIdx": 39,
-            "rightLineIdx": 41
-        },
-        {
-            "leftLineIdx": 40,
-            "rightLineIdx": 42
-        },
-        {
-            "leftLineIdx": 41,
-            "rightLineIdx": 52
-        },
-        {
-            "leftLineIdx": 42,
-            "rightLineIdx": 53
-        },
-        {
-            "leftLineIdx": 43,
-            "rightLineIdx": 54
-        },
-        {
-            "leftLineIdx": 44,
-            "rightLineIdx": 55
-        }
-    ]
+  "matches": [{
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 29,
+      "to": 33
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 29,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 40,
+      "from": 21,
+      "to": 25
+    },
+    "right": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 42,
+      "from": 21,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 63,
+      "to": 69
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 63,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 38,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 40,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "            VERIFY(false);",
+      "lineIdx": 28,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "            VERIFY(false);",
+      "lineIdx": 30,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 33,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 70,
+      "to": 74
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 70,
+      "to": 74
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 8,
+      "to": 9
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    w.show();",
+      "lineIdx": 42,
+      "from": 5,
+      "to": 6
+    },
+    "right": {
+      "line": "    w.showMaximized();",
+      "lineIdx": 53,
+      "from": 5,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "    w.show();",
+      "lineIdx": 42,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "    w.showMaximized();",
+      "lineIdx": 53,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "            VERIFY(false);",
+      "lineIdx": 28,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "            VERIFY(false);",
+      "lineIdx": 30,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "        case QtWarningMsg:",
+      "lineIdx": 22,
+      "from": 13,
+      "to": 25
+    },
+    "right": {
+      "line": "        case QtWarningMsg:",
+      "lineIdx": 24,
+      "from": 13,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "}",
+      "lineIdx": 30,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "}",
+      "lineIdx": 32,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 73,
+      "to": 74
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 73,
+      "to": 74
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 24,
+      "to": 31
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 24,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 11,
+      "to": 15
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 11,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 47,
+      "to": 48
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 47,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "    }",
+      "lineIdx": 29,
+      "from": 4,
+      "to": 5
+    },
+    "right": {
+      "line": "    }",
+      "lineIdx": 31,
+      "from": 4,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "#include <QApplication>",
+      "lineIdx": 1,
+      "from": 10,
+      "to": 22
+    },
+    "right": {
+      "line": "#include <QApplication>",
+      "lineIdx": 1,
+      "from": 10,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 38,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 40,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 83,
+      "to": 90
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 83,
+      "to": 90
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 78,
+      "to": 81
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 78,
+      "to": 81
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 44,
+      "to": 62
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 44,
+      "to": 62
+    }
+  }, {
+    "left": {
+      "line": "    w.show();",
+      "lineIdx": 42,
+      "from": 4,
+      "to": 5
+    },
+    "right": {
+      "line": "    w.showMaximized();",
+      "lineIdx": 53,
+      "from": 4,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 7,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 9,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 58,
+      "to": 59
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 58,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 17,
+      "to": 23
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 17,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 73,
+      "to": 77
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 73,
+      "to": 77
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 22,
+      "to": 31
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 22,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 46,
+      "to": 47
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 46,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "  initExceptionHandler();",
+      "lineIdx": 35,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "  initExceptionHandler();",
+      "lineIdx": 37,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 61,
+      "to": 62
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 61,
+      "to": 62
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 53,
+      "to": 54
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 53,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 10,
+      "to": 13
+    },
+    "right": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 10,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "        case QtWarningMsg:",
+      "lineIdx": 22,
+      "from": 8,
+      "to": 12
+    },
+    "right": {
+      "line": "        case QtWarningMsg:",
+      "lineIdx": 24,
+      "from": 8,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "void printSizes() {",
+      "lineIdx": 6,
+      "from": 5,
+      "to": 15
+    },
+    "right": {
+      "line": "void printSizes() {",
+      "lineIdx": 8,
+      "from": 5,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    return app.exec();",
+      "lineIdx": 44,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    return app.exec();",
+      "lineIdx": 55,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "        case QtDebugMsg:",
+      "lineIdx": 19,
+      "from": 8,
+      "to": 12
+    },
+    "right": {
+      "line": "        case QtDebugMsg:",
+      "lineIdx": 21,
+      "from": 8,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 72,
+      "to": 73
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 72,
+      "to": 73
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 44,
+      "to": 50
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 44,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 34,
+      "to": 38
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 34,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 82,
+      "to": 83
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 82,
+      "to": 83
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 40,
+      "to": 41
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 40,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 21,
+      "to": 27
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 21,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 51,
+      "to": 57
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 51,
+      "to": 57
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 71,
+      "to": 72
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 71,
+      "to": 72
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 4,
+      "to": 8
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 4,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 11,
+      "to": 16
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 11,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "  qInstallMessageHandler( qtMessageHandler );",
+      "lineIdx": 37,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "  qInstallMessageHandler( qtMessageHandler );",
+      "lineIdx": 39,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "{",
+      "lineIdx": 33,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "{",
+      "lineIdx": 35,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 61,
+      "to": 67
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 61,
+      "to": 67
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 49,
+      "to": 55
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 49,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 17,
+      "to": 23
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 17,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "        case QtFatalMsg:",
+      "lineIdx": 26,
+      "from": 8,
+      "to": 12
+    },
+    "right": {
+      "line": "        case QtFatalMsg:",
+      "lineIdx": 28,
+      "from": 8,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 73,
+      "to": 74
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 73,
+      "to": 74
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 33,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 14,
+      "to": 21
+    },
+    "right": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 14,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 31,
+      "to": 40
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 31,
+      "to": 40
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 59,
+      "to": 60
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 59,
+      "to": 60
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 81,
+      "to": 82
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 81,
+      "to": 82
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 52,
+      "to": 53
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 52,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "            break;",
+      "lineIdx": 21,
+      "from": 12,
+      "to": 17
+    },
+    "right": {
+      "line": "            break;",
+      "lineIdx": 23,
+      "from": 12,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 60,
+      "to": 65
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 60,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 92,
+      "to": 95
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 92,
+      "to": 95
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 39,
+      "to": 42
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 39,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 11,
+      "to": 15
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 11,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "            break;",
+      "lineIdx": 21,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "            break;",
+      "lineIdx": 23,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "#include <QApplication>",
+      "lineIdx": 1,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include <QApplication>",
+      "lineIdx": 1,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 90,
+      "to": 91
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 90,
+      "to": 91
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 14,
+      "to": 30
+    },
+    "right": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 14,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "    w.show();",
+      "lineIdx": 42,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "    w.showMaximized();",
+      "lineIdx": 53,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 25,
+      "to": 32
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 25,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 19,
+      "to": 23
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 19,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 25,
+      "to": 29
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 25,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 48,
+      "to": 49
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 48,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 17,
+      "to": 23
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 17,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 7,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 9,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 18,
+      "to": 24
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 18,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 67,
+      "to": 68
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 67,
+      "to": 68
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 47,
+      "to": 48
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 47,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 73,
+      "to": 74
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 73,
+      "to": 74
+    }
+  }, {
+    "left": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 40,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 42,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 38,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 40,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 68,
+      "to": 69
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 68,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 38,
+      "from": 2,
+      "to": 8
+    },
+    "right": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 40,
+      "from": 2,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 42,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 66,
+      "to": 70
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 66,
+      "to": 70
+    }
+  }, {
+    "left": {
+      "line": "  } catch (...) {",
+      "lineIdx": 48,
+      "from": 4,
+      "to": 9
+    },
+    "right": {
+      "line": "  } catch (...) {",
+      "lineIdx": 59,
+      "from": 4,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 24,
+      "to": 28
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 24,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "        case QtDebugMsg:",
+      "lineIdx": 19,
+      "from": 13,
+      "to": 23
+    },
+    "right": {
+      "line": "        case QtDebugMsg:",
+      "lineIdx": 21,
+      "from": 13,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "            break;",
+      "lineIdx": 24,
+      "from": 12,
+      "to": 17
+    },
+    "right": {
+      "line": "            break;",
+      "lineIdx": 26,
+      "from": 12,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    switch ( type ) {",
+      "lineIdx": 18,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "    switch ( type ) {",
+      "lineIdx": 20,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 54,
+      "to": 55
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 54,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 19,
+      "to": 24
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 19,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 22,
+      "to": 31
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 22,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 64,
+      "to": 65
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "  } catch (...) {",
+      "lineIdx": 48,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "  } catch (...) {",
+      "lineIdx": 59,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 40,
+      "to": 47
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 40,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "    SensiDiff w;",
+      "lineIdx": 41,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    SensiDiff w(args);",
+      "lineIdx": 52,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "  printSizes();",
+      "lineIdx": 36,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "  printSizes();",
+      "lineIdx": 38,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 56,
+      "to": 62
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 56,
+      "to": 62
+    }
+  }, {
+    "left": {
+      "line": "    return app.exec();",
+      "lineIdx": 44,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "    return app.exec();",
+      "lineIdx": 55,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  qInstallMessageHandler( qtMessageHandler );",
+      "lineIdx": 37,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "  qInstallMessageHandler( qtMessageHandler );",
+      "lineIdx": 39,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 51,
+      "to": 52
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 51,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 0,
+      "to": 3
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 0,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 65,
+      "to": 66
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 65,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 12,
+      "to": 18
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 12,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 74,
+      "to": 75
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 74,
+      "to": 75
+    }
+  }, {
+    "left": {
+      "line": "  initExceptionHandler();",
+      "lineIdx": 35,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "  initExceptionHandler();",
+      "lineIdx": 37,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 40,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 42,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 17,
+      "to": 20
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 17,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 10,
+      "to": 13
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 10,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 64,
+      "to": 65
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "    throw;",
+      "lineIdx": 47,
+      "from": 4,
+      "to": 9
+    },
+    "right": {
+      "line": "    throw;",
+      "lineIdx": 58,
+      "from": 4,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "        case QtCriticalMsg:",
+      "lineIdx": 25,
+      "from": 8,
+      "to": 12
+    },
+    "right": {
+      "line": "        case QtCriticalMsg:",
+      "lineIdx": 27,
+      "from": 8,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 40,
+      "from": 4,
+      "to": 16
+    },
+    "right": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 42,
+      "from": 4,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "}",
+      "lineIdx": 13,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "}",
+      "lineIdx": 15,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 63,
+      "to": 67
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 63,
+      "to": 67
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 33,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 33,
+      "to": 42
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 33,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 34,
+      "to": 41
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 34,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 63,
+      "to": 64
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 63,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 66,
+      "to": 73
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 66,
+      "to": 73
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "  printSizes();",
+      "lineIdx": 36,
+      "from": 2,
+      "to": 12
+    },
+    "right": {
+      "line": "  printSizes();",
+      "lineIdx": 38,
+      "from": 2,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 26,
+      "to": 28
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 26,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 57,
+      "to": 58
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 57,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 12,
+      "to": 18
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 12,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  } catch (...) {",
+      "lineIdx": 48,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "  } catch (...) {",
+      "lineIdx": 59,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 39,
+      "to": 40
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 39,
+      "to": 40
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 42,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  } catch (...) {",
+      "lineIdx": 48,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "  } catch (...) {",
+      "lineIdx": 59,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 59,
+      "to": 60
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 59,
+      "to": 60
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 66,
+      "to": 67
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 66,
+      "to": 67
+    }
+  }, {
+    "left": {
+      "line": "  }",
+      "lineIdx": 50,
+      "from": 2,
+      "to": 3
+    },
+    "right": {
+      "line": "  }",
+      "lineIdx": 61,
+      "from": 2,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 2,
+      "to": 3
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 2,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "        case QtWarningMsg:",
+      "lineIdx": 22,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "        case QtWarningMsg:",
+      "lineIdx": 24,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 68,
+      "to": 72
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 68,
+      "to": 72
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 11,
+      "to": 16
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 11,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 17,
+      "to": 24
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 17,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 62,
+      "to": 63
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 62,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 40,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 42,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 7,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 9,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 54,
+      "to": 60
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 54,
+      "to": 60
+    }
+  }, {
+    "left": {
+      "line": "  } catch (...) {",
+      "lineIdx": 48,
+      "from": 2,
+      "to": 3
+    },
+    "right": {
+      "line": "  } catch (...) {",
+      "lineIdx": 59,
+      "from": 2,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 54,
+      "to": 55
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 54,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "  try {",
+      "lineIdx": 39,
+      "from": 2,
+      "to": 5
+    },
+    "right": {
+      "line": "  try {",
+      "lineIdx": 41,
+      "from": 2,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "        case QtDebugMsg:",
+      "lineIdx": 19,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "        case QtDebugMsg:",
+      "lineIdx": 21,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "  qInstallMessageHandler( qtMessageHandler );",
+      "lineIdx": 37,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "  qInstallMessageHandler( qtMessageHandler );",
+      "lineIdx": 39,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    switch ( type ) {",
+      "lineIdx": 18,
+      "from": 13,
+      "to": 17
+    },
+    "right": {
+      "line": "    switch ( type ) {",
+      "lineIdx": 20,
+      "from": 13,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 40,
+      "from": 27,
+      "to": 31
+    },
+    "right": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 42,
+      "from": 27,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 65,
+      "to": 66
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 65,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 52,
+      "to": 53
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 52,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 62,
+      "to": 63
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 62,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 75,
+      "to": 76
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 75,
+      "to": 76
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 63,
+      "to": 64
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 63,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "void printSizes() {",
+      "lineIdx": 6,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "void printSizes() {",
+      "lineIdx": 8,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 7,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 9,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 38,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 40,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 19,
+      "to": 23
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 19,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 11,
+      "to": 15
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 11,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 53,
+      "to": 59
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 53,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "    return app.exec();",
+      "lineIdx": 44,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    return app.exec();",
+      "lineIdx": 55,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 62,
+      "to": 63
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 62,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 45,
+      "to": 52
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 45,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 11,
+      "to": 17
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 11,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 56,
+      "to": 58
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 56,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 55,
+      "to": 56
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 55,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "            VERIFY(false);",
+      "lineIdx": 28,
+      "from": 19,
+      "to": 24
+    },
+    "right": {
+      "line": "            VERIFY(false);",
+      "lineIdx": 30,
+      "from": 19,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 24,
+      "to": 29
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 24,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 25,
+      "to": 34
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 25,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 49,
+      "to": 57
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 49,
+      "to": 57
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 60,
+      "to": 61
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 60,
+      "to": 61
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 29,
+      "to": 32
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 29,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 77,
+      "to": 82
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 77,
+      "to": 82
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 46,
+      "to": 47
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 46,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 47,
+      "to": 48
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 47,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "  } catch (...) {",
+      "lineIdx": 48,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "  } catch (...) {",
+      "lineIdx": 59,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    switch ( type ) {",
+      "lineIdx": 18,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "    switch ( type ) {",
+      "lineIdx": 20,
+      "from": 11,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 71,
+      "to": 72
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 71,
+      "to": 72
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 70,
+      "to": 71
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 70,
+      "to": 71
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 48,
+      "to": 49
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 48,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 40,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 42,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 59,
+      "to": 63
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 59,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "            break;",
+      "lineIdx": 24,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "            break;",
+      "lineIdx": 26,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "  try {",
+      "lineIdx": 39,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "  try {",
+      "lineIdx": 41,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 38,
+      "from": 17,
+      "to": 27
+    },
+    "right": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 40,
+      "from": 17,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 14,
+      "to": 20
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 14,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 38,
+      "from": 9,
+      "to": 15
+    },
+    "right": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 40,
+      "from": 9,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 35,
+      "to": 42
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 35,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 68,
+      "to": 71
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 68,
+      "to": 71
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 51,
+      "to": 54
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 51,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 7,
+      "from": 19,
+      "to": 29
+    },
+    "right": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 9,
+      "from": 19,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "void printSizes() {",
+      "lineIdx": 6,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "void printSizes() {",
+      "lineIdx": 8,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 5,
+      "to": 21
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 5,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 17,
+      "to": 23
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 17,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "        case QtCriticalMsg:",
+      "lineIdx": 25,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "        case QtCriticalMsg:",
+      "lineIdx": 27,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 9,
+      "to": 12
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 9,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 42,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 59,
+      "to": 62
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 59,
+      "to": 62
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 45,
+      "to": 51
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 45,
+      "to": 51
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 52,
+      "to": 53
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 52,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 48,
+      "to": 54
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 48,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "  qInstallMessageHandler( qtMessageHandler );",
+      "lineIdx": 37,
+      "from": 26,
+      "to": 42
+    },
+    "right": {
+      "line": "  qInstallMessageHandler( qtMessageHandler );",
+      "lineIdx": 39,
+      "from": 26,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 7,
+      "from": 11,
+      "to": 17
+    },
+    "right": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 9,
+      "from": 11,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 24,
+      "to": 28
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 24,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 62,
+      "to": 63
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 62,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 83,
+      "to": 84
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 83,
+      "to": 84
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "  } catch (...) {",
+      "lineIdx": 48,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "  } catch (...) {",
+      "lineIdx": 59,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 57,
+      "to": 58
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 57,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 63,
+      "to": 64
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 63,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "void printSizes() {",
+      "lineIdx": 6,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "void printSizes() {",
+      "lineIdx": 8,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 50,
+      "to": 53
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 50,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 41,
+      "to": 42
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 41,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 34,
+      "to": 37
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 34,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 47,
+      "to": 48
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 47,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "    switch ( type ) {",
+      "lineIdx": 18,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    switch ( type ) {",
+      "lineIdx": 20,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 18,
+      "to": 24
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 18,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "#include <QApplication>",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include <QApplication>",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "    throw;",
+      "lineIdx": 47,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "    throw;",
+      "lineIdx": 58,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "        case QtFatalMsg:",
+      "lineIdx": 26,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "        case QtFatalMsg:",
+      "lineIdx": 28,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 64,
+      "to": 65
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 49,
+      "to": 52
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 49,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 60,
+      "to": 61
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 60,
+      "to": 61
+    }
+  }, {
+    "left": {
+      "line": "    return app.exec();",
+      "lineIdx": 44,
+      "from": 15,
+      "to": 19
+    },
+    "right": {
+      "line": "    return app.exec();",
+      "lineIdx": 55,
+      "from": 15,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 53,
+      "to": 54
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 53,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 13,
+      "to": 17
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 13,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 12,
+      "to": 18
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 12,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 11,
+      "to": 16
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 11,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 24,
+      "to": 27
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 24,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 19,
+      "to": 23
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 19,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 41,
+      "to": 42
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 41,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 24,
+      "to": 28
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 24,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 37,
+      "to": 44
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 37,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "        case QtCriticalMsg:",
+      "lineIdx": 25,
+      "from": 13,
+      "to": 26
+    },
+    "right": {
+      "line": "        case QtCriticalMsg:",
+      "lineIdx": 27,
+      "from": 13,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 11,
+      "to": 15
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 11,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 7,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 9,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    w.show();",
+      "lineIdx": 42,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    w.showMaximized();",
+      "lineIdx": 53,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 66,
+      "to": 67
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 66,
+      "to": 67
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 55,
+      "to": 56
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 55,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 11,
+      "to": 15
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 11,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 52,
+      "to": 58
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 52,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "    SensiDiff w;",
+      "lineIdx": 41,
+      "from": 4,
+      "to": 13
+    },
+    "right": {
+      "line": "    SensiDiff w(args);",
+      "lineIdx": 52,
+      "from": 4,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 24,
+      "to": 31
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 24,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "{",
+      "lineIdx": 16,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "{",
+      "lineIdx": 18,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "void printSizes() {",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 4
+    },
+    "right": {
+      "line": "void printSizes() {",
+      "lineIdx": 8,
+      "from": 0,
+      "to": 4
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    return app.exec();",
+      "lineIdx": 44,
+      "from": 11,
+      "to": 14
+    },
+    "right": {
+      "line": "    return app.exec();",
+      "lineIdx": 55,
+      "from": 11,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "#include <QApplication>",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include <QApplication>",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 47,
+      "to": 48
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 47,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "    SensiDiff w;",
+      "lineIdx": 41,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "    SensiDiff w(args);",
+      "lineIdx": 52,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 33,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "#include <QApplication>",
+      "lineIdx": 1,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "#include <QApplication>",
+      "lineIdx": 1,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    return app.exec();",
+      "lineIdx": 44,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "    return app.exec();",
+      "lineIdx": 55,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 38,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "  Logger logger(\"MainLogger\");",
+      "lineIdx": 40,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "  } catch (...) {",
+      "lineIdx": 48,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "  } catch (...) {",
+      "lineIdx": 59,
+      "from": 11,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "            VERIFY(false);",
+      "lineIdx": 28,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "            VERIFY(false);",
+      "lineIdx": 30,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 45,
+      "to": 47
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 45,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 75,
+      "to": 78
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 75,
+      "to": 78
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"mix/logger/logger.h\"",
+      "lineIdx": 4,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 7,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "    Logger logger(\"SizeLogger\");",
+      "lineIdx": 9,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "  initExceptionHandler();",
+      "lineIdx": 35,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "  initExceptionHandler();",
+      "lineIdx": 37,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "        case QtFatalMsg:",
+      "lineIdx": 26,
+      "from": 13,
+      "to": 23
+    },
+    "right": {
+      "line": "        case QtFatalMsg:",
+      "lineIdx": 28,
+      "from": 13,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 38,
+      "to": 43
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 38,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 10,
+      "to": 19
+    },
+    "right": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 10,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 58,
+      "to": 61
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 58,
+      "to": 61
+    }
+  }, {
+    "left": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 32,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "int main(int argc, char *argv[])",
+      "lineIdx": 34,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 84,
+      "to": 85
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 84,
+      "to": 85
+    }
+  }, {
+    "left": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 40,
+      "from": 17,
+      "to": 20
+    },
+    "right": {
+      "line": "    QApplication app(argc, argv);",
+      "lineIdx": 42,
+      "from": 17,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 17,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "    static Logger logger(\"Qt\"); //name won't be logged, it was easier this way",
+      "lineIdx": 19,
+      "from": 33,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 41,
+      "to": 47
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 41,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    },
+    "right": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 46,
+      "to": 52
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 46,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 65,
+      "to": 66
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 65,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#include \"sensidiff.h\"",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "}",
+      "lineIdx": 51,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "}",
+      "lineIdx": 62,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "            VERIFY(false);",
+      "lineIdx": 28,
+      "from": 12,
+      "to": 18
+    },
+    "right": {
+      "line": "            VERIFY(false);",
+      "lineIdx": 30,
+      "from": 12,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 72,
+      "to": 73
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 72,
+      "to": 73
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 74,
+      "to": 75
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 74,
+      "to": 75
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 53,
+      "to": 54
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 53,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 20,
+      "from": 33,
+      "to": 40
+    },
+    "right": {
+      "line": "            logger.info(QString(\"QtDebug: \\n\") + msg);",
+      "lineIdx": 22,
+      "from": 33,
+      "to": 40
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 49,
+      "from": 36,
+      "to": 44
+    },
+    "right": {
+      "line": "    logger.error(\"Unknow exception, aborting.\");",
+      "lineIdx": 60,
+      "from": 36,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "  printSizes();",
+      "lineIdx": 36,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "  printSizes();",
+      "lineIdx": 38,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 8,
+      "from": 36,
+      "to": 43
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(char) = \" + QString::number(sizeof(char)));",
+      "lineIdx": 10,
+      "from": 36,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 64,
+      "to": 65
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 64,
+      "to": 65
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 54,
+      "to": 55
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 54,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 67,
+      "to": 68
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 67,
+      "to": 68
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 38,
+      "to": 39
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 38,
+      "to": 39
+    }
+  }, {
+    "left": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 45,
+      "from": 4,
+      "to": 9
+    },
+    "right": {
+      "line": "  } catch (const std::exception& e) {",
+      "lineIdx": 56,
+      "from": 4,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 26,
+      "to": 29
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 26,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 27,
+      "from": 46,
+      "to": 47
+    },
+    "right": {
+      "line": "            logger.error(QString(\"QtFatal: \\n\") + msg);",
+      "lineIdx": 29,
+      "from": 46,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "  initExceptionHandler();",
+      "lineIdx": 35,
+      "from": 2,
+      "to": 22
+    },
+    "right": {
+      "line": "  initExceptionHandler();",
+      "lineIdx": 37,
+      "from": 2,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 23,
+      "from": 49,
+      "to": 50
+    },
+    "right": {
+      "line": "            logger.warn(QString(\"QtWarning: \\n\") + msg);",
+      "lineIdx": 25,
+      "from": 49,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 32,
+      "to": 36
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 32,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "  qInstallMessageHandler( qtMessageHandler );",
+      "lineIdx": 37,
+      "from": 2,
+      "to": 24
+    },
+    "right": {
+      "line": "  qInstallMessageHandler( qtMessageHandler );",
+      "lineIdx": 39,
+      "from": 2,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 50,
+      "to": 51
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 50,
+      "to": 51
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 95,
+      "to": 96
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 95,
+      "to": 96
+    }
+  }, {
+    "left": {
+      "line": "  printSizes();",
+      "lineIdx": 36,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "  printSizes();",
+      "lineIdx": 38,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 11,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long int) = \" + QString::number(sizeof(long int)));",
+      "lineIdx": 13,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 17,
+      "to": 23
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 17,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 13
+    },
+    "right": {
+      "line": "#include \"mix/asserts.h\"",
+      "lineIdx": 2,
+      "from": 10,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 46,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "    logger.error(QString(\"std::exception caught, aborting: \") + e.what());",
+      "lineIdx": 57,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 12,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(long long int) = \" + QString::number(sizeof(long long int)));",
+      "lineIdx": 14,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 9,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(short) = \" + QString::number(sizeof(short)));",
+      "lineIdx": 11,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 15,
+      "from": 0,
+      "to": 4
+    },
+    "right": {
+      "line": "void qtMessageHandler(QtMsgType type, const QMessageLogContext&/* context*/, const QString& msg)",
+      "lineIdx": 17,
+      "from": 0,
+      "to": 4
+    }
+  }, {
+    "left": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 10,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "    logger.info(\"sizeof(int) = \" + QString::number(sizeof(int)));",
+      "lineIdx": 12,
+      "from": 42,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "    return app.exec();",
+      "lineIdx": 44,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "    return app.exec();",
+      "lineIdx": 55,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    switch ( type ) {",
+      "lineIdx": 18,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "    switch ( type ) {",
+      "lineIdx": 20,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "#include \"mix/exceptionhandler.h\"",
+      "lineIdx": 3,
+      "from": 30,
+      "to": 31
+    }
+  }]
 }

@@ -1,252 +1,6633 @@
 {
-    "matches": [
-        {
-            "leftLineIdx": 92,
-            "rightLineIdx": 101
-        },
-        {
-            "leftLineIdx": 70,
-            "rightLineIdx": 81
-        },
-        {
-            "leftLineIdx": 69,
-            "rightLineIdx": 80
-        },
-        {
-            "leftLineIdx": 68,
-            "rightLineIdx": 79
-        },
-        {
-            "leftLineIdx": 65,
-            "rightLineIdx": 73
-        },
-        {
-            "leftLineIdx": 64,
-            "rightLineIdx": 72
-        },
-        {
-            "leftLineIdx": 63,
-            "rightLineIdx": 71
-        },
-        {
-            "leftLineIdx": 62,
-            "rightLineIdx": 70
-        },
-        {
-            "leftLineIdx": 60,
-            "rightLineIdx": 58
-        },
-        {
-            "leftLineIdx": 55,
-            "rightLineIdx": 77
-        },
-        {
-            "leftLineIdx": 54,
-            "rightLineIdx": 54
-        },
-        {
-            "leftLineIdx": 53,
-            "rightLineIdx": 53
-        },
-        {
-            "leftLineIdx": 52,
-            "rightLineIdx": 52
-        },
-        {
-            "leftLineIdx": 51,
-            "rightLineIdx": 51
-        },
-        {
-            "leftLineIdx": 50,
-            "rightLineIdx": 50
-        },
-        {
-            "leftLineIdx": 49,
-            "rightLineIdx": 49
-        },
-        {
-            "leftLineIdx": 22,
-            "rightLineIdx": 22
-        },
-        {
-            "leftLineIdx": 21,
-            "rightLineIdx": 21
-        },
-        {
-            "leftLineIdx": 20,
-            "rightLineIdx": 20
-        },
-        {
-            "leftLineIdx": 19,
-            "rightLineIdx": 19
-        },
-        {
-            "leftLineIdx": 18,
-            "rightLineIdx": 18
-        },
-        {
-            "leftLineIdx": 17,
-            "rightLineIdx": 17
-        },
-        {
-            "leftLineIdx": 16,
-            "rightLineIdx": 16
-        },
-        {
-            "leftLineIdx": 14,
-            "rightLineIdx": 12
-        },
-        {
-            "leftLineIdx": 13,
-            "rightLineIdx": 11
-        },
-        {
-            "leftLineIdx": 12,
-            "rightLineIdx": 10
-        },
-        {
-            "leftLineIdx": 23,
-            "rightLineIdx": 23
-        },
-        {
-            "leftLineIdx": 0,
-            "rightLineIdx": 0
-        },
-        {
-            "leftLineIdx": 47,
-            "rightLineIdx": 47
-        },
-        {
-            "leftLineIdx": 11,
-            "rightLineIdx": 9
-        },
-        {
-            "leftLineIdx": 24,
-            "rightLineIdx": 24
-        },
-        {
-            "leftLineIdx": 1,
-            "rightLineIdx": 1
-        },
-        {
-            "leftLineIdx": 48,
-            "rightLineIdx": 48
-        },
-        {
-            "leftLineIdx": 2,
-            "rightLineIdx": 2
-        },
-        {
-            "leftLineIdx": 3,
-            "rightLineIdx": 3
-        },
-        {
-            "leftLineIdx": 4,
-            "rightLineIdx": 4
-        },
-        {
-            "leftLineIdx": 5,
-            "rightLineIdx": 5
-        },
-        {
-            "leftLineIdx": 6,
-            "rightLineIdx": 6
-        },
-        {
-            "leftLineIdx": 7,
-            "rightLineIdx": 7
-        },
-        {
-            "leftLineIdx": 8,
-            "rightLineIdx": 8
-        },
-        {
-            "leftLineIdx": 25,
-            "rightLineIdx": 25
-        },
-        {
-            "leftLineIdx": 26,
-            "rightLineIdx": 26
-        },
-        {
-            "leftLineIdx": 27,
-            "rightLineIdx": 27
-        },
-        {
-            "leftLineIdx": 28,
-            "rightLineIdx": 28
-        },
-        {
-            "leftLineIdx": 29,
-            "rightLineIdx": 29
-        },
-        {
-            "leftLineIdx": 30,
-            "rightLineIdx": 30
-        },
-        {
-            "leftLineIdx": 31,
-            "rightLineIdx": 31
-        },
-        {
-            "leftLineIdx": 32,
-            "rightLineIdx": 32
-        },
-        {
-            "leftLineIdx": 33,
-            "rightLineIdx": 33
-        },
-        {
-            "leftLineIdx": 34,
-            "rightLineIdx": 34
-        },
-        {
-            "leftLineIdx": 35,
-            "rightLineIdx": 35
-        },
-        {
-            "leftLineIdx": 36,
-            "rightLineIdx": 36
-        },
-        {
-            "leftLineIdx": 37,
-            "rightLineIdx": 37
-        },
-        {
-            "leftLineIdx": 38,
-            "rightLineIdx": 38
-        },
-        {
-            "leftLineIdx": 39,
-            "rightLineIdx": 39
-        },
-        {
-            "leftLineIdx": 40,
-            "rightLineIdx": 40
-        },
-        {
-            "leftLineIdx": 41,
-            "rightLineIdx": 41
-        },
-        {
-            "leftLineIdx": 42,
-            "rightLineIdx": 42
-        },
-        {
-            "leftLineIdx": 43,
-            "rightLineIdx": 43
-        },
-        {
-            "leftLineIdx": 44,
-            "rightLineIdx": 44
-        },
-        {
-            "leftLineIdx": 45,
-            "rightLineIdx": 45
-        },
-        {
-            "leftLineIdx": 46,
-            "rightLineIdx": 46
-        }
-    ]
+  "matches": [{
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 50,
+      "to": 60
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 50,
+      "to": 60
+    }
+  }, {
+    "left": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 51,
+      "to": 53
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 51,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "    training_file = \"../../features_output/train_samples.txt\"",
+      "lineIdx": 60,
+      "from": 4,
+      "to": 17
+    },
+    "right": {
+      "line": "    training_file_path = \"./train_samples\" + str(random.randint(0, 10000000)) + \".txt\"",
+      "lineIdx": 58,
+      "from": 4,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 68,
+      "to": 78
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 68,
+      "to": 78
+    }
+  }, {
+    "left": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 19,
+      "to": 21
+    },
+    "right": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 19,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 28,
+      "to": 38
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 28,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 29,
+      "to": 45
+    },
+    "right": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 29,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 72,
+      "to": 73
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 72,
+      "to": 73
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 41,
+      "to": 42
+    },
+    "right": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 41,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 24,
+      "to": 27
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 24,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 30,
+      "to": 43
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 30,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 55,
+      "to": 56
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 55,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "import os",
+      "lineIdx": 11,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "import os",
+      "lineIdx": 9,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 42,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "from svm_helper import *",
+      "lineIdx": 13,
+      "from": 0,
+      "to": 4
+    },
+    "right": {
+      "line": "from svm_helper import *",
+      "lineIdx": 11,
+      "from": 0,
+      "to": 4
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 62,
+      "to": 63
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 62,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 65,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 73,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "    assert size > 1",
+      "lineIdx": 24,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    assert size > 1",
+      "lineIdx": 24,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 63,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 71,
+      "from": 11,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 36,
+      "to": 45
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 36,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 41,
+      "to": 42
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 41,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 39,
+      "to": 48
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 39,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 5,
+      "to": 20
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 5,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 54,
+      "to": 58
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 54,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 68,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 79,
+      "from": 11,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "        f_sum_valid = 0",
+      "lineIdx": 41,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "        f_sum_valid = 0",
+      "lineIdx": 41,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    assert size > 1",
+      "lineIdx": 24,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "    assert size > 1",
+      "lineIdx": 24,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "import time",
+      "lineIdx": 14,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "import time",
+      "lineIdx": 12,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 91,
+      "to": 92
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 91,
+      "to": 92
+    }
+  }, {
+    "left": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 47,
+      "to": 48
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 47,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "def main():",
+      "lineIdx": 55,
+      "from": 0,
+      "to": 3
+    },
+    "right": {
+      "line": "def main():",
+      "lineIdx": 77,
+      "from": 0,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 68,
+      "from": 13,
+      "to": 17
+    },
+    "right": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 79,
+      "from": 13,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 11,
+      "to": 14
+    },
+    "right": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 11,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 34,
+      "to": 37
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 34,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 47,
+      "to": 57
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 47,
+      "to": 57
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 39,
+      "to": 40
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 39,
+      "to": 40
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 58,
+      "to": 61
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 58,
+      "to": 61
+    }
+  }, {
+    "left": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 12
+    },
+    "right": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 1,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 49,
+      "to": 50
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 49,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 64,
+      "to": 66
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 64,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 52,
+      "to": 53
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 52,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "import time",
+      "lineIdx": 14,
+      "from": 7,
+      "to": 11
+    },
+    "right": {
+      "line": "import time",
+      "lineIdx": 12,
+      "from": 7,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 45,
+      "to": 50
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 45,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 60,
+      "to": 61
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 60,
+      "to": 61
+    }
+  }, {
+    "left": {
+      "line": "    assert size > 1",
+      "lineIdx": 24,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "    assert size > 1",
+      "lineIdx": 24,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 54,
+      "to": 55
+    },
+    "right": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 54,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 22,
+      "to": 35
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 22,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 4,
+      "to": 7
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 4,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 63,
+      "to": 68
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 63,
+      "to": 68
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 36,
+      "to": 38
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 36,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 33,
+      "to": 34
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 33,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    return train_yx, validation_yx",
+      "lineIdx": 28,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    return train_yx, validation_yx",
+      "lineIdx": 28,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "        f_sum_valid = 0",
+      "lineIdx": 41,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "        f_sum_valid = 0",
+      "lineIdx": 41,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 11,
+      "to": 17
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 11,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 11,
+      "to": 14
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 11,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 9,
+      "to": 13
+    },
+    "right": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 9,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 42,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    return train_yx, validation_yx",
+      "lineIdx": 28,
+      "from": 11,
+      "to": 19
+    },
+    "right": {
+      "line": "    return train_yx, validation_yx",
+      "lineIdx": 28,
+      "from": 11,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "    assert k > 1",
+      "lineIdx": 20,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    assert k > 1",
+      "lineIdx": 20,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 13,
+      "to": 17
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 13,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 22,
+      "to": 27
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 22,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 68,
+      "to": 69
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 68,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "main()",
+      "lineIdx": 92,
+      "from": 0,
+      "to": 4
+    },
+    "right": {
+      "line": "    main()",
+      "lineIdx": 101,
+      "from": 4,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 66,
+      "to": 67
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 66,
+      "to": 67
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 27,
+      "to": 31
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 27,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 27,
+      "to": 30
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 27,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 80,
+      "to": 81
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 80,
+      "to": 81
+    }
+  }, {
+    "left": {
+      "line": "    training_file = \"../../features_output/train_samples.txt\"",
+      "lineIdx": 60,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "    training_file_path = \"./train_samples\" + str(random.randint(0, 10000000)) + \".txt\"",
+      "lineIdx": 58,
+      "from": 55,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 23,
+      "to": 26
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 23,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 12,
+      "to": 19
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 12,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 22,
+      "to": 37
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 22,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 81,
+      "to": 82
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 81,
+      "to": 82
+    }
+  }, {
+    "left": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 68,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 79,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    training_file = \"../../features_output/train_samples.txt\"",
+      "lineIdx": 60,
+      "from": 60,
+      "to": 61
+    },
+    "right": {
+      "line": "    training_file_path = \"./train_samples\" + str(random.randint(0, 10000000)) + \".txt\"",
+      "lineIdx": 58,
+      "from": 85,
+      "to": 86
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 63,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 71,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 1,
+      "to": 5
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 1,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 36,
+      "to": 40
+    },
+    "right": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 36,
+      "to": 40
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 3,
+      "to": 4
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 3,
+      "to": 4
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 73,
+      "to": 77
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 73,
+      "to": 77
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 5,
+      "to": 6
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 5,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 23,
+      "to": 30
+    },
+    "right": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 23,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 38,
+      "to": 45
+    },
+    "right": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 38,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 0,
+      "to": 3
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 0,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "from svm_helper import *",
+      "lineIdx": 13,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "from svm_helper import *",
+      "lineIdx": 11,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "from utils import *",
+      "lineIdx": 8,
+      "from": 0,
+      "to": 4
+    },
+    "right": {
+      "line": "from utils import *",
+      "lineIdx": 8,
+      "from": 0,
+      "to": 4
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "import random",
+      "lineIdx": 7,
+      "from": 7,
+      "to": 13
+    },
+    "right": {
+      "line": "import random",
+      "lineIdx": 7,
+      "from": 7,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 4,
+      "to": 6
+    },
+    "right": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 4,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 8,
+      "to": 9
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "from svmutil import *",
+      "lineIdx": 6,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "from svmutil import *",
+      "lineIdx": 6,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 18,
+      "to": 20
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 18,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 78,
+      "to": 79
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 78,
+      "to": 79
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 16,
+      "to": 24
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 16,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    training_file = \"../../features_output/train_samples.txt\"",
+      "lineIdx": 60,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "    training_file_path = \"./train_samples\" + str(random.randint(0, 10000000)) + \".txt\"",
+      "lineIdx": 58,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "            f_sum_valid += f_valid",
+      "lineIdx": 45,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "            f_sum_valid += f_valid",
+      "lineIdx": 45,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 67,
+      "to": 68
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 67,
+      "to": 68
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 4,
+      "to": 12
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 4,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 16,
+      "to": 19
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 16,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 68,
+      "to": 69
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 68,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 6,
+      "to": 12
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 6,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 14,
+      "to": 17
+    },
+    "right": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 14,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 65,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 73,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 63,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 71,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    assert size > 1",
+      "lineIdx": 24,
+      "from": 11,
+      "to": 15
+    },
+    "right": {
+      "line": "    assert size > 1",
+      "lineIdx": 24,
+      "from": 11,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    assert k > 1",
+      "lineIdx": 20,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "    assert k > 1",
+      "lineIdx": 20,
+      "from": 11,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 4,
+      "to": 17
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 4,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 42,
+      "to": 50
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 42,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 62,
+      "to": 63
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 62,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 17,
+      "to": 22
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 17,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 68,
+      "from": 8,
+      "to": 9
+    },
+    "right": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 79,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 4,
+      "to": 15
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 4,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 14,
+      "to": 17
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 14,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 70,
+      "to": 71
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 70,
+      "to": 71
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 45,
+      "to": 55
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 45,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 4,
+      "to": 5
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 4,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 63,
+      "from": 13,
+      "to": 25
+    },
+    "right": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 71,
+      "from": 13,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 40,
+      "to": 57
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 40,
+      "to": 57
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 58,
+      "to": 59
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 58,
+      "to": 59
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 48,
+      "to": 49
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 48,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 73,
+      "to": 74
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 73,
+      "to": 74
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 28,
+      "to": 33
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 28,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 23,
+      "to": 26
+    },
+    "right": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 23,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 46,
+      "to": 47
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 46,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 14,
+      "to": 16
+    },
+    "right": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 14,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 23,
+      "to": 25
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 23,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 31,
+      "to": 32
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 31,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 4,
+      "to": 5
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 4,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 4,
+      "to": 8
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 4,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 4,
+      "to": 16
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 4,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 63,
+      "to": 64
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 63,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 48,
+      "to": 49
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 48,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 65,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 73,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "import svm",
+      "lineIdx": 5,
+      "from": 7,
+      "to": 10
+    },
+    "right": {
+      "line": "import svm",
+      "lineIdx": 5,
+      "from": 7,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "from utils import *",
+      "lineIdx": 8,
+      "from": 11,
+      "to": 17
+    },
+    "right": {
+      "line": "from utils import *",
+      "lineIdx": 8,
+      "from": 11,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 38,
+      "to": 46
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 38,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "import math",
+      "lineIdx": 12,
+      "from": 7,
+      "to": 11
+    },
+    "right": {
+      "line": "import math",
+      "lineIdx": 10,
+      "from": 7,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 43,
+      "to": 48
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 43,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 51,
+      "to": 52
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 51,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 77,
+      "to": 84
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 77,
+      "to": 84
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 0,
+      "to": 3
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 0,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 12,
+      "to": 20
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 12,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 50,
+      "to": 51
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 50,
+      "to": 51
+    }
+  }, {
+    "left": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 4,
+      "to": 13
+    },
+    "right": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 4,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "from svm_helper import *",
+      "lineIdx": 13,
+      "from": 5,
+      "to": 15
+    },
+    "right": {
+      "line": "from svm_helper import *",
+      "lineIdx": 11,
+      "from": 5,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "from svmutil import *",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 4
+    },
+    "right": {
+      "line": "from svmutil import *",
+      "lineIdx": 6,
+      "from": 0,
+      "to": 4
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 20,
+      "to": 23
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 20,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 81,
+      "to": 82
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 81,
+      "to": 82
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 90,
+      "to": 91
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 90,
+      "to": 91
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 28,
+      "to": 38
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 28,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 52,
+      "to": 53
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 52,
+      "to": 53
+    }
+  }, {
+    "left": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 47,
+      "to": 48
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 47,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 11,
+      "to": 28
+    },
+    "right": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 11,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 84,
+      "to": 85
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 84,
+      "to": 85
+    }
+  }, {
+    "left": {
+      "line": "from utils import *",
+      "lineIdx": 8,
+      "from": 5,
+      "to": 10
+    },
+    "right": {
+      "line": "from utils import *",
+      "lineIdx": 8,
+      "from": 5,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 4,
+      "to": 9
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 4,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 62,
+      "to": 70
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 62,
+      "to": 70
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 60,
+      "to": 61
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 60,
+      "to": 61
+    }
+  }, {
+    "left": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 2,
+      "to": 3
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 2,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 59,
+      "to": 63
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 59,
+      "to": 63
+    }
+  }, {
+    "left": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 15,
+      "to": 18
+    },
+    "right": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 15,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 11,
+      "to": 15
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 11,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 4,
+      "to": 11
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 4,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 69,
+      "to": 72
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 69,
+      "to": 72
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 14,
+      "to": 16
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 14,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 15,
+      "to": 23
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 15,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 59,
+      "to": 66
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 59,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 44,
+      "to": 55
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 44,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    assert k > 1",
+      "lineIdx": 20,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "    assert k > 1",
+      "lineIdx": 20,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 28,
+      "to": 29
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 28,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 7,
+      "to": 8
+    },
+    "right": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 7,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 28,
+      "to": 35
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 28,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 8,
+      "to": 13
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 8,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 46,
+      "to": 50
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 46,
+      "to": 50
+    }
+  }, {
+    "left": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 28,
+      "to": 41
+    },
+    "right": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 28,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 29,
+      "to": 35
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 29,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 18,
+      "to": 22
+    },
+    "right": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 18,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 25,
+      "to": 28
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 25,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 19,
+      "to": 21
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 19,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 25,
+      "to": 28
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 25,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 37,
+      "to": 43
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 37,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 29,
+      "to": 40
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 29,
+      "to": 40
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 11,
+      "to": 14
+    },
+    "right": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 11,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 53,
+      "to": 55
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 53,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 57,
+      "to": 58
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 57,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "def main():",
+      "lineIdx": 55,
+      "from": 8,
+      "to": 9
+    },
+    "right": {
+      "line": "def main():",
+      "lineIdx": 77,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 80,
+      "to": 81
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 80,
+      "to": 81
+    }
+  }, {
+    "left": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 70,
+      "to": 71
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 70,
+      "to": 71
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 27,
+      "to": 34
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 27,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 52,
+      "to": 57
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 52,
+      "to": 57
+    }
+  }, {
+    "left": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 8,
+      "to": 13
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 8,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 65,
+      "to": 72
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 65,
+      "to": 72
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 75,
+      "to": 76
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 75,
+      "to": 76
+    }
+  }, {
+    "left": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 24,
+      "to": 30
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 24,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "from svmutil import *",
+      "lineIdx": 6,
+      "from": 13,
+      "to": 19
+    },
+    "right": {
+      "line": "from svmutil import *",
+      "lineIdx": 6,
+      "from": 13,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 11,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "        f_sum_valid = 0",
+      "lineIdx": 41,
+      "from": 8,
+      "to": 19
+    },
+    "right": {
+      "line": "        f_sum_valid = 0",
+      "lineIdx": 41,
+      "from": 8,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "import math",
+      "lineIdx": 12,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "import math",
+      "lineIdx": 10,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 49,
+      "to": 52
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 49,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 68,
+      "from": 4,
+      "to": 5
+    },
+    "right": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 79,
+      "from": 4,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "import os",
+      "lineIdx": 11,
+      "from": 7,
+      "to": 9
+    },
+    "right": {
+      "line": "import os",
+      "lineIdx": 9,
+      "from": 7,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    training_file = \"../../features_output/train_samples.txt\"",
+      "lineIdx": 60,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    training_file_path = \"./train_samples\" + str(random.randint(0, 10000000)) + \".txt\"",
+      "lineIdx": 58,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 79,
+      "to": 80
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 79,
+      "to": 80
+    }
+  }, {
+    "left": {
+      "line": "def main():",
+      "lineIdx": 55,
+      "from": 4,
+      "to": 8
+    },
+    "right": {
+      "line": "def main():",
+      "lineIdx": 77,
+      "from": 4,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 0,
+      "to": 3
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 0,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 38,
+      "to": 47
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 38,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 72,
+      "to": 77
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 72,
+      "to": 77
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 37,
+      "to": 42
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 37,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 4,
+      "to": 8
+    },
+    "right": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 4,
+      "to": 8
+    }
+  }, {
+    "left": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 18,
+      "to": 26
+    },
+    "right": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 18,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 68,
+      "from": 6,
+      "to": 7
+    },
+    "right": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 79,
+      "from": 6,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 48,
+      "to": 49
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 48,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 23,
+      "to": 26
+    },
+    "right": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 23,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 15,
+      "to": 20
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 15,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 31,
+      "to": 36
+    },
+    "right": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 31,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "from utils import *",
+      "lineIdx": 8,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "from utils import *",
+      "lineIdx": 8,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "import svm",
+      "lineIdx": 5,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "import svm",
+      "lineIdx": 5,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 74,
+      "to": 80
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 74,
+      "to": 80
+    }
+  }, {
+    "left": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 14,
+      "to": 17
+    },
+    "right": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 14,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 38,
+      "to": 41
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 38,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 9,
+      "to": 15
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 9,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 31,
+      "to": 44
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 31,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 78,
+      "to": 85
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 78,
+      "to": 85
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    training_file = \"../../features_output/train_samples.txt\"",
+      "lineIdx": 60,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "    training_file_path = \"./train_samples\" + str(random.randint(0, 10000000)) + \".txt\"",
+      "lineIdx": 58,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 70,
+      "to": 75
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 70,
+      "to": 75
+    }
+  }, {
+    "left": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 20,
+      "to": 28
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 20,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "def main():",
+      "lineIdx": 55,
+      "from": 9,
+      "to": 10
+    },
+    "right": {
+      "line": "def main():",
+      "lineIdx": 77,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "main()",
+      "lineIdx": 92,
+      "from": 4,
+      "to": 5
+    },
+    "right": {
+      "line": "    main()",
+      "lineIdx": 101,
+      "from": 8,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 13,
+      "to": 20
+    },
+    "right": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 13,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "main()",
+      "lineIdx": 92,
+      "from": 5,
+      "to": 6
+    },
+    "right": {
+      "line": "    main()",
+      "lineIdx": 101,
+      "from": 9,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 21,
+      "to": 24
+    },
+    "right": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 21,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 57,
+      "to": 66
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 57,
+      "to": 66
+    }
+  }, {
+    "left": {
+      "line": "    training_file = \"../../features_output/train_samples.txt\"",
+      "lineIdx": 60,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    training_file_path = \"./train_samples\" + str(random.randint(0, 10000000)) + \".txt\"",
+      "lineIdx": 58,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 12,
+      "to": 17
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 12,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 31,
+      "to": 35
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 31,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 57,
+      "to": 58
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 57,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 63,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 71,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 4,
+      "to": 11
+    },
+    "right": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 4,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 26,
+      "to": 37
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 26,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 58,
+      "to": 60
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 58,
+      "to": 60
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 41,
+      "to": 42
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 41,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 27,
+      "to": 29
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 27,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "    return train_yx, validation_yx",
+      "lineIdx": 28,
+      "from": 21,
+      "to": 34
+    },
+    "right": {
+      "line": "    return train_yx, validation_yx",
+      "lineIdx": 28,
+      "from": 21,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 77,
+      "to": 78
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 77,
+      "to": 78
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 36,
+      "to": 37
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 36,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "def main():",
+      "lineIdx": 55,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "def main():",
+      "lineIdx": 77,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 57,
+      "to": 58
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 57,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 41,
+      "to": 42
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 41,
+      "to": 42
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 38,
+      "to": 39
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 38,
+      "to": 39
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 19,
+      "to": 24
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 19,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 86,
+      "to": 89
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 86,
+      "to": 89
+    }
+  }, {
+    "left": {
+      "line": "import random",
+      "lineIdx": 7,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "import random",
+      "lineIdx": 7,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 4,
+      "to": 20
+    },
+    "right": {
+      "line": "    valid_prediction = predict(model, x_valid)",
+      "lineIdx": 35,
+      "from": 4,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 37,
+      "to": 38
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 37,
+      "to": 38
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 4,
+      "to": 11
+    },
+    "right": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 4,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 0,
+      "to": 3
+    },
+    "right": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 0,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 3,
+      "to": 4
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 3,
+      "to": 4
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 27,
+      "to": 34
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 27,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    return train_yx, validation_yx",
+      "lineIdx": 28,
+      "from": 19,
+      "to": 20
+    },
+    "right": {
+      "line": "    return train_yx, validation_yx",
+      "lineIdx": 28,
+      "from": 19,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 51,
+      "to": 52
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 51,
+      "to": 52
+    }
+  }, {
+    "left": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 17,
+      "to": 22
+    },
+    "right": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 17,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 20,
+      "to": 22
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 20,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 14,
+      "to": 18
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 14,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 76,
+      "to": 77
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 76,
+      "to": 77
+    }
+  }, {
+    "left": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 28,
+      "to": 36
+    },
+    "right": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 28,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "    assert len(train_yx) + len(validation_yx) == len(yx)",
+      "lineIdx": 27,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 4,
+      "to": 9
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 4,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 26,
+      "to": 27
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 26,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "    training_file = \"../../features_output/train_samples.txt\"",
+      "lineIdx": 60,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "    training_file_path = \"./train_samples\" + str(random.randint(0, 10000000)) + \".txt\"",
+      "lineIdx": 58,
+      "from": 81,
+      "to": 82
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    training_file = \"../../features_output/train_samples.txt\"",
+      "lineIdx": 60,
+      "from": 43,
+      "to": 56
+    },
+    "right": {
+      "line": "    training_file_path = \"./train_samples\" + str(random.randint(0, 10000000)) + \".txt\"",
+      "lineIdx": 58,
+      "from": 28,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 5
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 1,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 15,
+      "to": 27
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 15,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 51,
+      "to": 58
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 51,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 33,
+      "to": 35
+    },
+    "right": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 33,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 46,
+      "to": 47
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 46,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 64,
+      "from": 31,
+      "to": 34
+    },
+    "right": {
+      "line": "    #save_range_file(\"./ranges.txt\", ranges)",
+      "lineIdx": 72,
+      "from": 31,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 44,
+      "to": 45
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 44,
+      "to": 45
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 0,
+      "to": 3
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 0,
+      "to": 3
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 8,
+      "to": 11
+    },
+    "right": {
+      "line": "        for i in range(k):",
+      "lineIdx": 42,
+      "from": 8,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    training_file = \"../../features_output/train_samples.txt\"",
+      "lineIdx": 60,
+      "from": 57,
+      "to": 60
+    },
+    "right": {
+      "line": "    training_file_path = \"./train_samples\" + str(random.randint(0, 10000000)) + \".txt\"",
+      "lineIdx": 58,
+      "from": 82,
+      "to": 85
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 71,
+      "to": 76
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 71,
+      "to": 76
+    }
+  }, {
+    "left": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 27,
+      "to": 32
+    },
+    "right": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 27,
+      "to": 32
+    }
+  }, {
+    "left": {
+      "line": "import sys",
+      "lineIdx": 3,
+      "from": 7,
+      "to": 10
+    },
+    "right": {
+      "line": "import sys",
+      "lineIdx": 3,
+      "from": 7,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "            f_sum_valid += f_valid",
+      "lineIdx": 45,
+      "from": 12,
+      "to": 23
+    },
+    "right": {
+      "line": "            f_sum_valid += f_valid",
+      "lineIdx": 45,
+      "from": 12,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 27,
+      "to": 28
+    },
+    "right": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 27,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 18,
+      "to": 25
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 18,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 11,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 6,
+      "to": 14
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 6,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 59,
+      "to": 68
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 59,
+      "to": 68
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 36,
+      "to": 41
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 36,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 55,
+      "to": 56
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 55,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 57,
+      "to": 58
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 57,
+      "to": 58
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 21,
+      "to": 28
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 21,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 63,
+      "to": 64
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 63,
+      "to": 64
+    }
+  }, {
+    "left": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 65,
+      "from": 20,
+      "to": 21
+    },
+    "right": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 73,
+      "from": 20,
+      "to": 21
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 65,
+      "from": 23,
+      "to": 29
+    },
+    "right": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 73,
+      "from": 23,
+      "to": 29
+    }
+  }, {
+    "left": {
+      "line": "            f_sum_valid += f_valid",
+      "lineIdx": 45,
+      "from": 27,
+      "to": 34
+    },
+    "right": {
+      "line": "            f_sum_valid += f_valid",
+      "lineIdx": 45,
+      "from": 27,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 43,
+      "to": 44
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 43,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 70,
+      "to": 72
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 70,
+      "to": 72
+    }
+  }, {
+    "left": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 11,
+      "to": 12
+    },
+    "right": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 11,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 55,
+      "to": 56
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 55,
+      "to": 56
+    }
+  }, {
+    "left": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 23,
+      "to": 24
+    },
+    "right": {
+      "line": "sys.path.insert(0, './../lib')",
+      "lineIdx": 4,
+      "from": 23,
+      "to": 24
+    }
+  }, {
+    "left": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 65,
+      "from": 29,
+      "to": 30
+    },
+    "right": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 73,
+      "from": 29,
+      "to": 30
+    }
+  }, {
+    "left": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 50,
+      "to": 57
+    },
+    "right": {
+      "line": "    model = train(y_train, x_train, c_exp, g_exp, max_idx)",
+      "lineIdx": 33,
+      "from": 50,
+      "to": 57
+    }
+  }, {
+    "left": {
+      "line": "from svmutil import *",
+      "lineIdx": 6,
+      "from": 5,
+      "to": 12
+    },
+    "right": {
+      "line": "from svmutil import *",
+      "lineIdx": 6,
+      "from": 5,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 39,
+      "to": 41
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 39,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 65,
+      "from": 4,
+      "to": 5
+    },
+    "right": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 73,
+      "from": 4,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 15,
+      "to": 17
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 15,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 50,
+      "to": 51
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 50,
+      "to": 51
+    }
+  }, {
+    "left": {
+      "line": "import sys",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 6
+    },
+    "right": {
+      "line": "import sys",
+      "lineIdx": 3,
+      "from": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 68,
+      "from": 18,
+      "to": 23
+    },
+    "right": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 79,
+      "from": 18,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 22,
+      "to": 26
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 22,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 0,
+      "to": 1
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 0,
+      "to": 1
+    }
+  }, {
+    "left": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 12,
+      "to": 13
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 12,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 22,
+      "to": 23
+    },
+    "right": {
+      "line": "    yx = list(zip(y, x))",
+      "lineIdx": 21,
+      "from": 22,
+      "to": 23
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 42,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 24,
+      "to": 25
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 24,
+      "to": 25
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 7,
+      "to": 13
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 7,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 46,
+      "to": 48
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 46,
+      "to": 48
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 64,
+      "to": 69
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 64,
+      "to": 69
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 39,
+      "to": 44
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 39,
+      "to": 44
+    }
+  }, {
+    "left": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 41,
+      "to": 47
+    },
+    "right": {
+      "line": "#interesting: the learning curve is much faster",
+      "lineIdx": 2,
+      "from": 41,
+      "to": 47
+    }
+  }, {
+    "left": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 56,
+      "to": 57
+    },
+    "right": {
+      "line": "#todo consider implementing stratified cross validation - but i think it will avarage out",
+      "lineIdx": 17,
+      "from": 56,
+      "to": 57
+    }
+  }, {
+    "left": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 54,
+      "to": 55
+    },
+    "right": {
+      "line": "            train_yx, validation_yx = partition(y, x, k)",
+      "lineIdx": 43,
+      "from": 54,
+      "to": 55
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 48,
+      "to": 61
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 48,
+      "to": 61
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 4,
+      "to": 19
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 4,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 17,
+      "to": 26
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 17,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 34,
+      "to": 35
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 34,
+      "to": 35
+    }
+  }, {
+    "left": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "def partition(y, x, k): ",
+      "lineIdx": 18,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 4,
+      "to": 12
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 4,
+      "to": 12
+    }
+  }, {
+    "left": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 11,
+      "to": 18
+    },
+    "right": {
+      "line": "    random.shuffle(yx)",
+      "lineIdx": 22,
+      "from": 11,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 45,
+      "to": 46
+    },
+    "right": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 45,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 32,
+      "to": 33
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 32,
+      "to": 33
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 19,
+      "to": 22
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 19,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 11,
+      "to": 15
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 11,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "            f_sum_valid += f_valid",
+      "lineIdx": 45,
+      "from": 25,
+      "to": 26
+    },
+    "right": {
+      "line": "            f_sum_valid += f_valid",
+      "lineIdx": 45,
+      "from": 25,
+      "to": 26
+    }
+  }, {
+    "left": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 47,
+      "to": 54
+    },
+    "right": {
+      "line": "    return f_score_from_data(valid_prediction, y_valid)",
+      "lineIdx": 36,
+      "from": 47,
+      "to": 54
+    }
+  }, {
+    "left": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 14,
+      "to": 15
+    },
+    "right": {
+      "line": "    size = int(len(y)/k)",
+      "lineIdx": 23,
+      "from": 14,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 40,
+      "to": 41
+    },
+    "right": {
+      "line": "        yield (c_exp, g_exp, f_sum_valid/k) ##todo collect precision and  recall",
+      "lineIdx": 47,
+      "from": 40,
+      "to": 41
+    }
+  }, {
+    "left": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 21,
+      "to": 22
+    },
+    "right": {
+      "line": "# -*- coding: utf-8 -*-",
+      "lineIdx": 0,
+      "from": 21,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 4,
+      "to": 11
+    },
+    "right": {
+      "line": "    y_train, x_train = zip(*train_yx)",
+      "lineIdx": 32,
+      "from": 4,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "#todo: either make it fast through C++ or optimize or user easy.py  + f score",
+      "lineIdx": 1,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "    assert len(y) == len(x)",
+      "lineIdx": 19,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 66,
+      "to": 67
+    },
+    "right": {
+      "line": "def evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx):",
+      "lineIdx": 31,
+      "from": 66,
+      "to": 67
+    }
+  }, {
+    "left": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 13,
+      "to": 20
+    },
+    "right": {
+      "line": "    y_valid, x_valid = zip(*validation_yx)",
+      "lineIdx": 34,
+      "from": 13,
+      "to": 20
+    }
+  }, {
+    "left": {
+      "line": "from svm_helper import *",
+      "lineIdx": 13,
+      "from": 16,
+      "to": 22
+    },
+    "right": {
+      "line": "from svm_helper import *",
+      "lineIdx": 11,
+      "from": 16,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 83,
+      "to": 90
+    },
+    "right": {
+      "line": "    return list(evalForC(y, x_nodes, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx))",
+      "lineIdx": 53,
+      "from": 83,
+      "to": 90
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 35,
+      "to": 36
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 35,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 61,
+      "to": 62
+    },
+    "right": {
+      "line": "            f_valid = evaluate_params(train_yx, validation_yx, c_exp, g_exp, max_idx)",
+      "lineIdx": 44,
+      "from": 61,
+      "to": 62
+    }
+  }, {
+    "left": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 65,
+      "from": 8,
+      "to": 19
+    },
+    "right": {
+      "line": "    x = scale_input(x, ranges)",
+      "lineIdx": 73,
+      "from": 8,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "    validation_yx = yx[len(yx)-size:]",
+      "lineIdx": 26,
+      "from": 18,
+      "to": 19
+    }
+  }, {
+    "left": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 17,
+      "to": 18
+    },
+    "right": {
+      "line": "def evalForC(y, x, c_exp, g_exp_begin, g_exp_end, g_exp_step, k, max_idx):",
+      "lineIdx": 38,
+      "from": 17,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 16,
+      "to": 17
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 16,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 68,
+      "from": 24,
+      "to": 34
+    },
+    "right": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 79,
+      "from": 24,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 63,
+      "from": 4,
+      "to": 10
+    },
+    "right": {
+      "line": "    ranges = find_min_max(x)",
+      "lineIdx": 71,
+      "from": 4,
+      "to": 10
+    }
+  }, {
+    "left": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 13,
+      "to": 14
+    },
+    "right": {
+      "line": "    train_yx = yx[:len(yx)-size]",
+      "lineIdx": 25,
+      "from": 13,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 14,
+      "to": 17
+    },
+    "right": {
+      "line": "    max_idx = max(idxs)",
+      "lineIdx": 51,
+      "from": 14,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 68,
+      "from": 10,
+      "to": 11
+    },
+    "right": {
+      "line": "    k = 5 #k-fold cross validation",
+      "lineIdx": 79,
+      "from": 10,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 4,
+      "to": 9
+    },
+    "right": {
+      "line": "    print(\"eval for \" + str(c_exp))",
+      "lineIdx": 39,
+      "from": 4,
+      "to": 9
+    }
+  }, {
+    "left": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 48,
+      "to": 49
+    },
+    "right": {
+      "line": "    g_exp_begin, g_exp_end, g_exp_step =  3, -15, -2",
+      "lineIdx": 52,
+      "from": 48,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "line": "    assert k > 1",
+      "lineIdx": 20,
+      "from": 15,
+      "to": 16
+    },
+    "right": {
+      "line": "    assert k > 1",
+      "lineIdx": 20,
+      "from": 15,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 17,
+      "to": 22
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 17,
+      "to": 22
+    }
+  }, {
+    "left": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 30,
+      "to": 31
+    },
+    "right": {
+      "line": "def evalForCBind(c_exp, y, x, k):",
+      "lineIdx": 49,
+      "from": 30,
+      "to": 31
+    }
+  }, {
+    "left": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 23,
+      "to": 34
+    },
+    "right": {
+      "line": "    for g_exp in range(g_exp_begin, g_exp_end, g_exp_step):",
+      "lineIdx": 40,
+      "from": 23,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 62,
+      "from": 42,
+      "to": 43
+    },
+    "right": {
+      "line": "    print(\"Number of samples: \" + str(len(y)))",
+      "lineIdx": 70,
+      "from": 42,
+      "to": 43
+    }
+  }, {
+    "left": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 18,
+      "to": 19
+    },
+    "right": {
+      "line": "    x_nodes, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
+      "lineIdx": 50,
+      "from": 18,
+      "to": 19
+    }
+  }]
 }
