@@ -2,6 +2,7 @@ package com.kristofszilagyi.sedito.gui
 
 import java.awt.Color
 import java.nio.file.{Files, Path, Paths}
+import java.time.{Duration, Instant}
 
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.aligner.{Aligner, MetricCalculator}
@@ -187,6 +188,7 @@ final class PlotData extends FreeSpecLike {
 
   "train logistic regression" in {
     logger.info("Start")
+    val start = Instant.now()
     val metrics = readDataSetAndMeasureMetrics()
     val numOfAttributes = calcNumOfAttributes(metrics)
     val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
@@ -202,6 +204,8 @@ final class PlotData extends FreeSpecLike {
     logger.info("Test f1s: \n" + testf1s.mkString("\n"))
     write.xstream(classifier, "linear_regression.model")
     write.xstream(scaler, "linear_regression.scaler")
+    val duration = Duration.between(start, Instant.now())
+    logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis/1000} seconds")
   }
 
   "show difference" in {
