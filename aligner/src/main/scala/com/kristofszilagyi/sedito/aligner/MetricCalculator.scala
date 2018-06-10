@@ -34,29 +34,16 @@ object MetricCalculator {
     * @param normalizedLdLenSim 1 if they are the same.
     * @param ldLenSim
     */
-  final case class PairwiseMetrics(normalizedLdLenSim: Double, ldLenSim: Double) {
-    override def toString: String = s"normalizedLdLenSim = $normalizedLdLenSim, ldLenSim = $ldLenSim"
+  final case class PairwiseMetrics(ld: Double, normalizedLd: Double, normalizedLdLenSim: Double, ldLenSim: Double) {
+    override def toString: String = s"ld = $ld, normalizedLd = $normalizedLd, normalizedLdLenSim = $normalizedLdLenSim, ldLenSim = $ldLenSim"
 
-    def toDoubles: List[Double] = List(normalizedLdLenSim, ldLenSim)
+    def toDoubles: List[Double] = List(ld, normalizedLd, normalizedLdLenSim, ldLenSim)
   }
 
-  /**
-    *  this two corrects for the effects of the edges (the context is less than 100 chars)
-    */
-  final case class NormalizedLenLenSims(before: Double, after: Double)
-
-  final case class WordMetrics(sameWords: Int, sameWordsNormalized: Double) {
-    def normalizedDoubles: List[Double] = List(sameWordsNormalized)
-    def doubles: List[Double] = List(sameWords.toDouble) ++ normalizedDoubles
-  }
 
   final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics) {
-    def toLdLenSimDouble: List[Double] = {
+    def doubles: List[Double] = {
       before.toDoubles ++ after.toDoubles
-    }
-
-    def toOnlyNormalized: List[Double] = {
-      List(before.normalizedLdLenSim, after.normalizedLdLenSim)
     }
   }
 
@@ -64,14 +51,14 @@ object MetricCalculator {
                            contextFull: ContextMetrics, context4th: ContextMetrics, context8th: ContextMetrics, context16th: ContextMetrics) {
 
     def toLdLenSimDouble: Array[Double]= {
-      (sameLineSameWord +: (word.toDoubles ++ line.toDoubles ++ contextFull.toLdLenSimDouble ++ context4th.toOnlyNormalized ++
-        context8th.toOnlyNormalized ++context16th.toOnlyNormalized)).toArray
+      (sameLineSameWord +: (word.toDoubles ++ line.toDoubles ++ contextFull.doubles ++ context4th.doubles ++
+        context8th.doubles ++context16th.doubles)).toArray
     }
 
     override def toString: String = {
       s"${leftWord} - ${rightWord}: ss: $sameLineSameWord, word: ${word.ldLenSim}, ${word.normalizedLdLenSim}, " +
-        s"full: ${contextFull.toLdLenSimDouble.mkString(", ")}," +
-        s" 16: ${context16th.toOnlyNormalized.mkString(", ")}"
+        s"full: ${contextFull.doubles.mkString(", ")}," +
+        s" 16: ${context16th.doubles.mkString(", ")}"
     }
   }
 
@@ -84,7 +71,12 @@ object MetricCalculator {
     } else {
       1.0
     }
-    PairwiseMetrics(normalizedSim, ldLenSim)
+    val normalizedLd =  if (maxLen > 0) {
+      ld / maxLen
+    } else {
+      1.0
+    }
+    PairwiseMetrics(ld, normalizedLd, normalizedSim, ldLenSim)
   }
 
   private def calcContextMetrics(leftWord: WordWithContext, rightWord: WordWithContext) = {
