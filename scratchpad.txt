@@ -53,6 +53,7 @@ ideas:
 - calculate number of words same / amount of words
 - calculate number of words same wieghted -> longer words count more
 - calculate all metrics with additions/removals deleted, so only changes remain
+- come up with a metrics which does smoothing -> immune to small changes which are at most 2 characters long in 10 characters
 NEXT STEPs:
 - cross validation
 - learning curve

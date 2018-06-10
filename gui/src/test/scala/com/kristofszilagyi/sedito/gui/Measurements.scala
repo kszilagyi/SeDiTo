@@ -50,7 +50,7 @@ class Measurements extends FreeSpecLike {
       |, thisGuard(this)
       |{
       |}
-      |"""
+      |""".stripMargin
 
     val right =
       """
@@ -69,6 +69,33 @@ class Measurements extends FreeSpecLike {
       """.stripMargin
     val lcs = new LongestCommonSubsequence()
     println(lcs.longestCommonSubsequence(left, right))
+  }
+
+  "calc lev" in {
+    val left = """//using boost::optional;
+                 |
+                 |//class OneToOneAlignmentWithAmbiguity;
+                 |
+                 |//class SensiDiff : public QMainWindow
+                 |//{
+                 |//    Q_OBJECT
+                 |//    SensiDiff(const SensiDiff&) = delete;
+                 |//    SensiDiff& operator=(const SensiDiff&) = delete;""".stripMargin
+
+    val right = """using boost::optional;
+                 |
+                 |class OneToOneAlignmentWithAmbiguity;
+                 |
+                 |class SensiDiff : public QMainWindow
+                 |{
+                 |    Q_OBJECT
+                 |    SensiDiff(const SensiDiff&) = delete;
+                 |    SensiDiff& operator=(const SensiDiff&) = delete;""".stripMargin
+    println(left)
+    println("------------------")
+    println(right)
+    val lcs = new Levenshtein()
+    println(lcs.distance(left, right))
   }
 }
 
