@@ -62,6 +62,7 @@ ideas:
 
 - fix wrong move in trivial (in excpected)
 - additions/removal has double penalty as new string is introduced on the other side - do I need to compensate?
+- is this line the closest match? and if so: is this word the closest match within the line
 NEXT STEPs:
 - cross validation
 - learning curve
