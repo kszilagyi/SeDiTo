@@ -34,10 +34,10 @@ object MetricCalculator {
     * @param normalizedLdLenSim 1 if they are the same.
     * @param ldLenSim
     */
-  final case class PairwiseMetrics(ld: Double, normalizedLd: Double, normalizedLdLenSim: Double, ldLenSim: Double) {
-    override def toString: String = s"ld = $ld, normalizedLd = $normalizedLd, normalizedLdLenSim = $normalizedLdLenSim, ldLenSim = $ldLenSim"
+  final case class PairwiseMetrics(ldSim: Double, normalizedLd: Double, normalizedLdLenSim: Double, ldLenSim: Double) {
+    override def toString: String = s"ld = $ldSim, normalizedLd = $normalizedLd, normalizedLdLenSim = $normalizedLdLenSim, ldLenSim = $ldLenSim"
 
-    def toDoubles: List[Double] = List(ld, normalizedLd, normalizedLdLenSim, ldLenSim)
+    def toDoubles: List[Double] = List(ldSim, normalizedLd, normalizedLdLenSim, ldLenSim)
   }
 
 
@@ -76,7 +76,8 @@ object MetricCalculator {
     } else {
       1.0
     }
-    PairwiseMetrics(ld, normalizedLd, normalizedSim, ldLenSim)
+    val ldSim = maxLen - ld // in theory this is better as it has more info than ld
+    PairwiseMetrics(ldSim, normalizedLd, normalizedSim, ldLenSim)
   }
 
   private def calcContextMetrics(leftWord: WordWithContext, rightWord: WordWithContext) = {
