@@ -53,7 +53,15 @@ ideas:
 - calculate number of words same / amount of words
 - calculate number of words same wieghted -> longer words count more
 - calculate all metrics with additions/removals deleted, so only changes remain
-- come up with a metrics which does smoothing -> immune to small changes which are at most 2 characters long in 10 characters
+- come up with a metrics which does smoothing -> immune to small changes which are at most 2 characters long in 10 characters - wordmetrics might help
+- put back word metrics - I forgot to fix issues in them: does't deal with duplicate string
+- new metric: (1 - normalized ld) * len
+- look if a new round of AI would help: left word does match, right word does match, are we on line ending left, are we on line ending right, ld for current
+  - check how much percentages it would help
+  - disappointingly it wouldn't help that much as most problems are right next to the change
+
+- fix wrong move in trivial (in excpected)
+- additions/removal has double penalty as new string is introduced on the other side - do I need to compensate?
 NEXT STEPs:
 - cross validation
 - learning curve
