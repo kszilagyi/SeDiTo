@@ -9,6 +9,13 @@ import scalafx.scene.layout.{HBox, Priority}
 final class DiffPane extends HBox {
   private val codeAreaLeft = PaddableEditor.test()
   private val codeAreaRight = PaddableEditor.test()
+  @SuppressWarnings(Array(Warts.Var))
+  private var wordAlignment: UnambiguousWordAlignment = UnambiguousWordAlignment(Set.empty)
+  def testCase: TestCase = {
+    //todo this is not really correct as we loose data if the original AmbiguousWordAlignment was really ambiguous
+    TestCase(codeAreaLeft.getText, codeAreaRight.getText, AmbiguousWordAlignment(wordAlignment.matches))
+  }
+
   codeAreaLeft.setOther(codeAreaRight)
   codeAreaRight.setOther(codeAreaLeft)
   spacing = 10
@@ -29,17 +36,17 @@ final class DiffPane extends HBox {
     Lines((0 until size).map(i => codeArea.getText(i)))
   }
 
-  def openTestCase(left: String, right: String, wordAlignment: UnambiguousWordAlignment): Unit = {
+  def openTestCase(left: String, right: String, newWordAlignment: UnambiguousWordAlignment): Unit = {
     //todo probably reset should recreate everything
     codeAreaRight.reset()
     codeAreaLeft.reset()
     codeAreaLeft.replaceText(left)
     codeAreaRight.replaceText(right)
-
+    wordAlignment = newWordAlignment
     val leftLines = getParagraphTexts(codeAreaLeft)
     val rightLines = getParagraphTexts(codeAreaRight)
 
-    val lineAlignment = WhiteSpaceAligner.align(leftLines, rightLines, LineAligner.align(wordAlignment))
+    val lineAlignment = WhiteSpaceAligner.align(leftLines, rightLines, LineAligner.align(newWordAlignment))
 
     val deleted = (0 until codeAreaLeft.getParagraphs.size()).map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.leftLineIdx).contains(l))
     val inserted = (0 until codeAreaRight.getParagraphs.size()).map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.rightLineIdx).contains(l))
@@ -63,7 +70,7 @@ final class DiffPane extends HBox {
       }
     }
 
-    val highlight = CharHighlightCalculator.calc(leftLines, rightLines, wordAlignment, lineAlignment)
+    val highlight = CharHighlightCalculator.calc(leftLines, rightLines, newWordAlignment, lineAlignment)
     applyHighlight(codeAreaLeft, highlight.left)
     applyHighlight(codeAreaRight, highlight.right)
 

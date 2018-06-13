@@ -19,12 +19,12 @@ final class MainWindow {
   private val logger = getLogger
 
   private val diffPane = new DiffPane
+  private val testDir = new File("common/src/test/resources/algorithm_tests/full_tests")
 
   private val openTestCase = new MenuItem("Open test case") {
     onAction = { _ =>
       val chooser = new DirectoryChooser()
       chooser.setTitle("Choose directory")
-      val testDir = new File("common/src/test/resources/algorithm_tests/full_tests")
       if (testDir.isDirectory) {
         chooser.setInitialDirectory(new File(testDir.getPath))
       }
@@ -38,8 +38,20 @@ final class MainWindow {
       }
     }
   }
+
+  private val saveTestCase = new MenuItem("Save test case") {
+    onAction = { _ =>
+      val chooser = new DirectoryChooser()
+      chooser.setTitle("Choose directory")
+      if (testDir.isDirectory) {
+        chooser.setInitialDirectory(new File(testDir.getPath))
+      }
+      val directory: File = chooser.showDialog(stage)
+      discard(diffPane.testCase.save(directory.toPath))
+    }
+  }
   private val fileMenu = new Menu("File") {
-    items = List(openTestCase)
+    items = List(openTestCase, saveTestCase)
   }
 
 

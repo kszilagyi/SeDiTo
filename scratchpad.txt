@@ -60,7 +60,6 @@ ideas:
   - check how much percentages it would help
   - disappointingly it wouldn't help that much as most problems are right next to the change
 
-- fix wrong move in trivial (in excpected)
 - additions/removal has double penalty as new string is introduced on the other side - do I need to compensate?
 - is this line the closest match? and if so: is this word the closest match within the line
 - 17_complex test data is broken a lot -> add gui feature to add alignment
