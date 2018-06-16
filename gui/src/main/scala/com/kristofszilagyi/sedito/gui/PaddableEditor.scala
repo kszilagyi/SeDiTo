@@ -4,6 +4,7 @@ import java.util
 import java.util.Collections
 
 import com.kristofszilagyi.sedito.common.AssertionEx.fail
+import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import com.kristofszilagyi.sedito.common.Warts.{DefaultArguments, discard}
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.gui.PaddableEditor._
@@ -92,6 +93,11 @@ final class PaddableEditor extends SCodeArea {
 
   @SuppressWarnings(Array(Warts.Var))
   private var highlightedChars: Traversable[Selection] = Traversable.empty
+
+  @SuppressWarnings(Array(Warts.Var))
+  private var _selectedForMatch: Option[Selection] = None
+
+  def selectedForMatch(): Option[Selection] = _selectedForMatch
 
   def reset(): Unit = {
     editTypes = Map.empty
@@ -226,6 +232,15 @@ final class PaddableEditor extends SCodeArea {
 
   def setOther(other: PaddableEditor): Unit = {
     otherEditor = Some(other)
+  }
+
+  def grabSelectionForMatch(): Unit = {
+    val indexRange = getSelection
+    val newSelection = WordIndexRange.create(indexRange.getStart, indexRange.getEnd, FullText(getText))
+      .map(_.toSelection).getAssert
+
+    if (newSelection.empty) _selectedForMatch = None
+    else _selectedForMatch = Some(newSelection)
   }
 
 }

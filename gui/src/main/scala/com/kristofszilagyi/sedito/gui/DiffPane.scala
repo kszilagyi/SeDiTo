@@ -1,12 +1,16 @@
 package com.kristofszilagyi.sedito.gui
 
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps.AnyOps
 import com.kristofszilagyi.sedito.common._
 import javafx.animation.{KeyFrame, Timeline}
-import javafx.scene.input.ScrollEvent
+import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
+import org.log4s.getLogger
 import scalafx.Includes.jfxRegion2sfx
 import scalafx.scene.layout.{HBox, Priority}
 
 final class DiffPane extends HBox {
+  private val logger = getLogger
+
   private val codeAreaLeft = PaddableEditor.test()
   private val codeAreaRight = PaddableEditor.test()
   @SuppressWarnings(Array(Warts.Var))
@@ -35,6 +39,24 @@ final class DiffPane extends HBox {
     val size = codeArea.getParagraphs.size()
     Lines((0 until size).map(i => codeArea.getText(i)))
   }
+  this.addEventFilter(KeyEvent.KEY_PRESSED, (e: KeyEvent) =>
+    if (e.isControlDown) {
+      if (e.getCode ==== KeyCode.G) {
+        logger.info("Grabbing selection")
+        codeAreaLeft.grabSelectionForMatch()
+        codeAreaRight.grabSelectionForMatch()
+        (codeAreaLeft.selectedForMatch(), codeAreaRight.selectedForMatch()) match {
+          case (Some(leftSelection), Some(rightSelection)) =>
+            val newMatches = wordAlignment.matches.filter(m => (m.left !=== leftSelection) && (m.right !=== rightSelection)) + WordMatch(leftSelection, rightSelection)
+            val newAlignment = wordAlignment.copy(newMatches)
+            logger.info(s"Adding new match. Old size: ${wordAlignment.matches.size}, new size: ${newMatches.size}")
+            openTestCase(codeAreaLeft.getText, codeAreaRight.getText, newAlignment)
+          case other =>
+            logger.info(s"No selection: $other")
+        }
+      }
+    }
+  )
 
   def openTestCase(left: String, right: String, newWordAlignment: UnambiguousWordAlignment): Unit = {
     //todo probably reset should recreate everything

@@ -32,6 +32,10 @@ sealed abstract case class Selection private(line: String, lineIdx: LineIdx, fro
   def toIndexRangeWithinLine: Validated[WordIndexRangeError, WordIndexRange] = {
     WordIndexRange.create(startIncl = from.i, endExcl = toExcl.i, fullText = FullText(line))
   }
+
+  def length: Int = toExcl.i - from.i
+
+  def empty: Boolean = length <= 0
 }
 
 object WordMatch {
