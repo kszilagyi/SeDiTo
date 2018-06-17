@@ -39,12 +39,12 @@ final class MetricCalculatorTest extends FreeSpecLike{
     }).sorted
   }
 
-  private def testBestMatch(left: String, right: String, expectedClosestMatches: Set[(Int, Int)]) = {
+  private def testBestMatchingLine(left: String, right: String, expectedClosestMatches: Set[(Int, Int)]) = {
     val result = MetricCalculator.calcAlignerMetrics(FullText(left), FullText(right)).map(m => (m.leftLineIdx, m.rightLineIdx, m.lineIsClosestMatchInText))
     result.map{case (l, r, m) => (l.i, r.i, m)}.sorted shouldBe constructResultFromMatching(expectedClosestMatches,
       leftNumOfLines = left.count(_ ==== '\n'), rightNumOfLines = right.count(_ ==== '\n'))
   }
-  "best match test vanilla" in {
+  "best matching line test vanilla" in {
     val left =
       """alma
         |alma1
@@ -52,10 +52,10 @@ final class MetricCalculatorTest extends FreeSpecLike{
       """.stripMargin
 
     val right = left
-    testBestMatch(left, right, expectedClosestMatches = Set((0, 0), (1,1), (2, 2)))
+    testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0), (1,1), (2, 2)))
   }
 
-  "best match test with duplicates (on left)" in {
+  "best matching line test with duplicates (on left)" in {
     val left =
       """alma
         |alma1
@@ -67,10 +67,10 @@ final class MetricCalculatorTest extends FreeSpecLike{
                   |alma1
                   |alma2
                 """.stripMargin
-    testBestMatch(left, right, expectedClosestMatches = Set((0, 0), (1, 1), (2, 2), (3, 0)))
+    testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0), (1, 1), (2, 2), (3, 0)))
   }
 
-  "best match test with duplicates (on right)" in {
+  "best matching line test with duplicates (on right)" in {
     val left =
       """alma
         |alma1
@@ -82,6 +82,6 @@ final class MetricCalculatorTest extends FreeSpecLike{
                    |alma2
                    |alma
                  """.stripMargin
-    testBestMatch(left, right, expectedClosestMatches = Set((0, 0), (1, 1), (2, 2), (0, 3)))
+    testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0), (1, 1), (2, 2), (0, 3)))
   }
 }
