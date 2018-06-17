@@ -17,7 +17,7 @@ final class DiffPane extends HBox {
   private var wordAlignment: UnambiguousWordAlignment = UnambiguousWordAlignment(Set.empty)
   def testCase: TestCase = {
     //todo this is not really correct as we loose data if the original AmbiguousWordAlignment was really ambiguous
-    TestCase(codeAreaLeft.getText, codeAreaRight.getText, AmbiguousWordAlignment(wordAlignment.matches))
+    TestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), AmbiguousWordAlignment(wordAlignment.matches))
   }
 
   codeAreaLeft.setOther(codeAreaRight)
@@ -50,7 +50,7 @@ final class DiffPane extends HBox {
             val newMatches = wordAlignment.matches.filter(m => (m.left !=== leftSelection) && (m.right !=== rightSelection)) + WordMatch(leftSelection, rightSelection)
             val newAlignment = wordAlignment.copy(newMatches)
             logger.info(s"Adding new match. Old size: ${wordAlignment.matches.size}, new size: ${newMatches.size}")
-            openTestCase(codeAreaLeft.getText, codeAreaRight.getText, newAlignment)
+            openTestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), newAlignment)
           case other =>
             logger.info(s"No selection: $other")
         }
@@ -58,12 +58,12 @@ final class DiffPane extends HBox {
     }
   )
 
-  def openTestCase(left: String, right: String, newWordAlignment: UnambiguousWordAlignment): Unit = {
+  def openTestCase(left: FullText, right: FullText, newWordAlignment: UnambiguousWordAlignment): Unit = {
     //todo probably reset should recreate everything
     codeAreaRight.reset()
     codeAreaLeft.reset()
-    codeAreaLeft.replaceText(left)
-    codeAreaRight.replaceText(right)
+    codeAreaLeft.replaceText(left.s)
+    codeAreaRight.replaceText(right.s)
     wordAlignment = newWordAlignment
     val leftLines = getParagraphTexts(codeAreaLeft)
     val rightLines = getParagraphTexts(codeAreaRight)

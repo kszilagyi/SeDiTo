@@ -2,7 +2,7 @@ package com.kristofszilagyi.sedito.gui
 
 import java.io.File
 
-import com.kristofszilagyi.sedito.common.{TestCase, UnambiguousWordAlignment}
+import com.kristofszilagyi.sedito.common.{FullText, TestCase, UnambiguousWordAlignment}
 import com.kristofszilagyi.sedito.common.Warts.discard
 import javafx.scene.control.Alert
 import javafx.stage.DirectoryChooser
@@ -74,7 +74,7 @@ final class MainWindow {
 
   def setTitle(title: String): Unit = stage.setTitle(title)
 
-  def setContent(left: String, right: String, alignment: UnambiguousWordAlignment): Unit = {
+  def setContent(left: FullText, right: FullText, alignment: UnambiguousWordAlignment): Unit = {
     diffPane.openTestCase(left, right, alignment)
   }
 }

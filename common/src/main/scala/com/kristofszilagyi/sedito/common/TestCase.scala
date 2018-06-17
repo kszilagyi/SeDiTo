@@ -27,7 +27,7 @@ object TestCase {
       val alignment = Source.fromFile(testDir.resolve(alignmentFileName).toFile).mkString.parseJson.convertTo[AmbiguousWordAlignment]
       (left, right, alignment)
     }.map{ case (left, right, alignment) =>
-      val testCase = TestCase(left, right, alignment)
+      val testCase = TestCase(FullText(left), FullText(right), alignment)
       logger.info(s"TestCase opening successfully finished for $testDir")
       testCase
     }
@@ -37,11 +37,11 @@ object TestCase {
 
 }
 
-final case class TestCase(left: String, right: String, wordAlignment: AmbiguousWordAlignment) {
+final case class TestCase(left: FullText, right: FullText, wordAlignment: AmbiguousWordAlignment) {
   def save(testDir: Path): Try[Unit] = {
     Try {
-      discard(Files.write(testDir.resolve(leftFileName), left.getBytes(StandardCharsets.UTF_8)))
-      discard(Files.write(testDir.resolve(rightFileName), right.getBytes(StandardCharsets.UTF_8)))
+      discard(Files.write(testDir.resolve(leftFileName), left.s.getBytes(StandardCharsets.UTF_8)))
+      discard(Files.write(testDir.resolve(rightFileName), right.s.getBytes(StandardCharsets.UTF_8)))
       val alignmentString = wordAlignment.toJson.sortedPrint
       discard(Files.write(testDir.resolve(alignmentFileName), alignmentString.getBytes(StandardCharsets.UTF_8)))
     }

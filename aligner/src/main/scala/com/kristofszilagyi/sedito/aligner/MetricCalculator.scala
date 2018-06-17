@@ -47,16 +47,32 @@ object MetricCalculator {
     }
   }
 
-  final case class Metrics(sameLineSameWord: Double, leftWord: Selection, rightWord: Selection, word: PairwiseMetrics, line: PairwiseMetrics,
-                           contextFull: ContextMetrics, context4th: ContextMetrics, context8th: ContextMetrics, context16th: ContextMetrics) {
+  final case class Phase1Metrics(sameLineSameWord: Double, leftWord: Selection, rightWord: Selection,
+                                         word: PairwiseMetrics, line: PairwiseMetrics, contextFull: ContextMetrics,
+                                         context4th: ContextMetrics, context8th: ContextMetrics, context16th: ContextMetrics,
+                                         leftLineIdx: LineIdx, rightLineIdx: LineIdx)
+
+  final case class Metrics(phase1Metrics: Phase1Metrics,
+                           lineIsClosestMatchInText: Boolean) {
+    def sameLineSameWord: Double = phase1Metrics.sameLineSameWord
+    def word: PairwiseMetrics = phase1Metrics.word
+    def line: PairwiseMetrics = phase1Metrics.line
+    def contextFull: ContextMetrics = phase1Metrics.contextFull
+    def context4th: ContextMetrics = phase1Metrics.context4th
+    def context8th: ContextMetrics = phase1Metrics.context8th
+    def context16th: ContextMetrics = phase1Metrics.context16th
+    def leftWord: Selection = phase1Metrics.leftWord
+    def rightWord: Selection = phase1Metrics.rightWord
+    def leftLineIdx: LineIdx = phase1Metrics.leftLineIdx
+    def rightLineIdx: LineIdx = phase1Metrics.rightLineIdx
 
     def toLdLenSimDouble: Array[Double]= {
       (sameLineSameWord +: (word.toDoubles ++ line.toDoubles ++ contextFull.doubles ++ context4th.doubles ++
-        context8th.doubles ++context16th.doubles)).toArray
+        context8th.doubles ++context16th.doubles :+ (if (lineIsClosestMatchInText) 1.0 else 0.0))).toArray
     }
 
     override def toString: String = {
-      s"${leftWord} - ${rightWord}: ss: $sameLineSameWord, word: ${word.ldLenSim}, ${word.normalizedLdLenSim}, " +
+      s"$leftWord - $rightWord: ss: $sameLineSameWord, word: ${word.ldLenSim}, ${word.normalizedLdLenSim}, " +
         s"full: ${contextFull.doubles.mkString(", ")}," +
         s" 16: ${context16th.doubles.mkString(", ")}"
     }
@@ -107,8 +123,9 @@ object MetricCalculator {
       None
     }
     contextMetrics.map { case (full, forth, eight, sixteenth) =>
-      Metrics(sameLineSameWord, leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics, line = lineMetrics,
-        contextFull = full, context4th = forth, context8th = eight,  context16th = sixteenth)
+      Phase1Metrics(sameLineSameWord, leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics, line = lineMetrics,
+        contextFull = full, context4th = forth, context8th = eight,  context16th = sixteenth, leftLineIdx= leftSelection.lineIdx,
+        rightLineIdx = rightSelection.lineIdx)
     }.toList
   }
 
@@ -120,10 +137,10 @@ object MetricCalculator {
   }
 
 
-  def calcAlignerMetrics(left: String, right: String): IndexedSeq[Metrics] = {
+  def calcAlignerMetrics(left: FullText, right: FullText): IndexedSeq[Metrics] = {
     val contextSize = 100
-    val leftWords = Wordizer.toWordIndices(left)
-    val rightWords = Wordizer.toWordIndices(right)
+    val leftWords = Wordizer.toWordIndices(left.s)
+    val rightWords = Wordizer.toWordIndices(right.s)
     logger.debug(s"leftWords: $leftWords")
     logger.debug(s"rightWords: $rightWords")
     val leftContexts = leftWords.zipWithIndex map { case (word, leftIdx) =>
@@ -139,7 +156,7 @@ object MetricCalculator {
     }
 
     val candidateCtxFinder = new CandidateFinder(rightContexts.toSet)
-    leftContexts.flatMap { leftWord =>
+    val phase1Metrics = leftContexts.flatMap { leftWord =>
       val candidates = if (leftWord.beforeContext.length < contextSize) {
         rightContexts
       } else if (leftWord.afterContext.length < contextSize) {
@@ -151,5 +168,7 @@ object MetricCalculator {
         calcAllMetrics(leftWord, rightWord, contextSize)
       }
     }
+    //val leftphase1Metrics.groupBy(_.leftLine)
+    phase1Metrics.map(m => Metrics(m, lineIsClosestMatchInText = true))
   }
 }

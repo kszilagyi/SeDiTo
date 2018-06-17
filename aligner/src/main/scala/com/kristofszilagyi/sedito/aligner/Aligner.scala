@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.aligner
 import com.kristofszilagyi.sedito.aligner.Aligner.{findPotentialMatches, resolveWithMostProbable}
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
-import com.kristofszilagyi.sedito.common.{Selection, UnambiguousWordAlignment, WordMatch}
+import com.kristofszilagyi.sedito.common.{FullText, Selection, UnambiguousWordAlignment, WordMatch}
 import org.log4s.getLogger
 import smile.classification.SoftClassifier
 import smile.feature.Scaler
@@ -24,7 +24,7 @@ object Aligner {
     PartialResult(metricsAndProb._1.leftWord, metricsAndProb._1.rightWord, metricsAndProb._2)
   }
 
-  private def findPotentialMatches(classifier: SoftClassifier[Array[Double]], scaler: Scaler, left: String, right: String): Traversable[PartialResult] = {
+  private def findPotentialMatches(classifier: SoftClassifier[Array[Double]], scaler: Scaler, left: FullText, right: FullText): Traversable[PartialResult] = {
     val metrics = MetricCalculator.calcAlignerMetrics(left, right)
     logger.debug("Debug metrics: \n" + metrics.mkString("\n"))
     val xs = metrics.map(m => m -> m.toLdLenSimDouble).toArray
@@ -46,7 +46,7 @@ object Aligner {
 }
 
 final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
-  def align(left: String, right: String): UnambiguousWordAlignment = {
+  def align(left: FullText, right: FullText): UnambiguousWordAlignment = {
     val potentialMatches = findPotentialMatches(classifier, scaler, left, right)
     val leftResolved = resolveWithMostProbable(potentialMatches.groupBy(_.left))
     val bothResolved = resolveWithMostProbable(leftResolved.groupBy(_.right))
