@@ -67,7 +67,7 @@ final class MetricCalculatorTest extends FreeSpecLike{
                   |alma1
                   |alma2
                 """.stripMargin
-    testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0), (1, 1), (2, 2), (3, 0)))
+    testBestMatchingLine(left, right, expectedClosestMatches = Set((1, 1), (2, 2)))
   }
 
   "best matching line test with duplicates (on right)" in {
@@ -82,6 +82,32 @@ final class MetricCalculatorTest extends FreeSpecLike{
                    |alma2
                    |alma
                  """.stripMargin
-    testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0), (1, 1), (2, 2), (0, 3)))
+    testBestMatchingLine(left, right, expectedClosestMatches = Set((1, 1), (2, 2)))
   }
+
+  "best matching line test when it's not symmetrical (options on the left)" in {
+    val left =
+      """almamama1
+         |almamama12
+      """.stripMargin
+
+    val right = """almamama
+                """.stripMargin
+    testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0)))
+  }
+
+  "best matching line test when it's not symmetrical (options on the right)" in {
+
+    val left = """almamama
+                """.stripMargin
+
+    val right =
+      """almamama1
+        |almamama12
+      """.stripMargin
+
+    testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0)))
+  }
+
+  //todo add test to test multiword lines
 }

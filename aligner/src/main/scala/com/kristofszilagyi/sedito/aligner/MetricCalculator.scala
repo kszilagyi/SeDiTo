@@ -136,6 +136,16 @@ object MetricCalculator {
     }
   }
 
+  private def findClosestLines(potentials: Map[_, Traversable[MetricCalculator.Phase1Metrics]]) = {
+    potentials flatMap { case (_, oneGroup) =>
+      //we know this will never throw because it doesn't make sense to have empty collection on the right side of the map
+      val closest = oneGroup.minBy(_.line.normalizedLd)
+      val closestNormalizedLd = closest.line.normalizedLd
+      val ambigous = oneGroup.count(p => math.abs(p.line.normalizedLd - closestNormalizedLd) < 0.0001) > 1
+      if (ambigous) None.toList
+      else Some(closest).toList
+    }
+  }
 
   def calcAlignerMetrics(left: FullText, right: FullText): IndexedSeq[Metrics] = {
     val contextSize = 100
@@ -168,7 +178,24 @@ object MetricCalculator {
         calcAllMetrics(leftWord, rightWord, contextSize)
       }
     }
-    //val leftphase1Metrics.groupBy(_.leftLine)
-    phase1Metrics.map(m => Metrics(m, lineIsClosestMatchInText = true))
+    val leftWordPotentials = phase1Metrics.groupBy(_.leftWord)
+    val rightWordPotentials = phase1Metrics.groupBy(_.rightWord)
+    val closestFromLeft = findClosestLines(leftWordPotentials)
+    val closestFromRight = findClosestLines(rightWordPotentials)
+
+    val unresolvedClosests = (closestFromLeft ++ closestFromRight).toSet
+    val leftLineConflicts = unresolvedClosests.groupBy(_.leftLineIdx)
+    val rightLineConflicts = unresolvedClosests.groupBy(_.rightLineIdx)
+    val resolvedFromLeft = findClosestLines(leftLineConflicts)
+    val resolvedFromRight = findClosestLines(rightLineConflicts)
+
+    val conflictingOnesOnLeft = unresolvedClosests -- resolvedFromLeft
+    val conflictingOnesOnRight = unresolvedClosests -- resolvedFromRight
+
+    val closestMatches = unresolvedClosests -- conflictingOnesOnLeft -- conflictingOnesOnRight
+    phase1Metrics.map{m =>
+      val closest = closestMatches.contains(m)
+      Metrics(m, lineIsClosestMatchInText = closest)
+    }
   }
 }
