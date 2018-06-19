@@ -176,7 +176,8 @@ final class MetricCalculatorTest extends FreeSpecLike{
 
     val right = left
     findClosestMatches(left, right) shouldBe
-      Vector((0,0,true), (0,0,true), (0,1,false), (0,2,false), (1,0,false), (1,1,true), (1,1,true),
-        (1,2,false), (2,0,false), (2,1,false), (2,2,true), (2,2,true))
+      Vector((0,0,true), (0,0,true), (0,0,true), (0,0,true), (0,1,false),(0,1,false), (0,2,false), (0,2,false),
+        (1,0,false), (1,0,false), (1,1,true), (1,1,true),
+        (1,2,false), (2,0,false), (2,0,false), (2,1,false), (2,2,true), (2,2,true))
   }
 }
