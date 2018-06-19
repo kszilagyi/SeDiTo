@@ -142,8 +142,8 @@ object MetricCalculator {
       val closest = oneGroup.minBy(_.line.normalizedLd)
       val closestNormalizedLd = closest.line.normalizedLd
       val allClosest = oneGroup.filter(p => math.abs(p.line.normalizedLd - closestNormalizedLd) < 0.0001)
-      val ambigous = allClosest.map(m => (m.leftLineIdx, m.rightLineIdx)).toSet.size > 1
-      if (ambigous) Traversable.empty
+      val ambiguous = allClosest.map(m => (m.leftLineIdx, m.rightLineIdx)).toSet.size > 1
+      if (ambiguous) Traversable.empty
       else allClosest
     }
   }
