@@ -34,10 +34,11 @@ object MetricCalculator {
     * @param normalizedLdLenSim 1 if they are the same.
     * @param ldLenSim
     */
-  final case class PairwiseMetrics(ldSim: Double, normalizedLd: Double, normalizedLdLenSim: Double, ldLenSim: Double) {
-    override def toString: String = s"ld = $ldSim, normalizedLd = $normalizedLd, normalizedLdLenSim = $normalizedLdLenSim, ldLenSim = $ldLenSim"
+  final case class PairwiseMetrics(ldSim: Double, ldSimEdgeAdjusted: Double, normalizedLd: Double, normalizedLdLenSim: Double, ldLenSim: Double) {
+    override def toString: String = s"ldSim = $ldSim, ldSimEdgeAdjusted = $ldSimEdgeAdjusted, " +
+      s"normalizedLd = $normalizedLd, normalizedLdLenSim = $normalizedLdLenSim, ldLenSim = $ldLenSim"
 
-    def toDoubles: List[Double] = List(ldSim, normalizedLd, normalizedLdLenSim, ldLenSim)
+    def toDoubles: List[Double] = List(ldSim, ldSimEdgeAdjusted, normalizedLd, normalizedLdLenSim, ldLenSim)
   }
 
 
@@ -45,6 +46,8 @@ object MetricCalculator {
     def doubles: List[Double] = {
       before.toDoubles ++ after.toDoubles
     }
+
+    override def toString: String = s"(b: $before,a: $after)"
   }
 
   final case class Phase1Metrics(sameLineSameWord: Double, leftWord: Selection, rightWord: Selection,
@@ -72,13 +75,12 @@ object MetricCalculator {
     }
 
     override def toString: String = {
-      s"$leftWord - $rightWord: ss: $sameLineSameWord, word: ${word.ldLenSim}, ${word.normalizedLdLenSim}, " +
-        s"full: ${contextFull.doubles.mkString(", ")}," +
-        s" 16: ${context16th.doubles.mkString(", ")}"
+      s"$leftWord - $rightWord: ss: $sameLineSameWord, word: $word, full: $contextFull," +
+        s" 16: $context16th, lineIsClosest: $lineIsClosestMatchInText"
     }
   }
 
-  private def calcMetrics(left: String, right: String) = {
+  private def calcMetrics(left: String, right: String, maxPossibleLength: Int) = {
     val ld = ldCalculator.distance(left, right)
     val ldLenSim = LdLenSimilarity.calcFast(ld, left, right)
     val maxLen = math.max(left.length, right.length)
@@ -93,31 +95,34 @@ object MetricCalculator {
       1.0
     }
     val ldSim = maxLen - ld // in theory this is better as it has more info than ld
-    PairwiseMetrics(ldSim, normalizedLd, normalizedSim, ldLenSim)
+    val ldSimEdgeAdjusted = maxPossibleLength - ld // the logic being that where there was no string they are the same
+    PairwiseMetrics(ldSim, ldSimEdgeAdjusted, normalizedLd, normalizedSim, ldLenSim)
   }
 
-  private def calcContextMetrics(leftWord: WordWithContext, rightWord: WordWithContext) = {
-    val beforeContextMetrics = calcMetrics(leftWord.beforeContext, rightWord.beforeContext)
-    val afterContextMetrics = calcMetrics(leftWord.afterContext, rightWord.afterContext)
+  private def calcContextMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
+    val beforeContextMetrics = calcMetrics(leftWord.beforeContext, rightWord.beforeContext, contextSize)
+    val afterContextMetrics = calcMetrics(leftWord.afterContext, rightWord.afterContext, contextSize)
     ContextMetrics(beforeContextMetrics, afterContextMetrics)
   }
   //concat all words
   //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)
   private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
-    val wordMetrics = calcMetrics(leftWord.word.toWord, rightWord.word.toWord)
+    val leftWordString = leftWord.word.toWord
+    val rightWordString = rightWord.word.toWord
+    val wordMetrics = calcMetrics(leftWordString, rightWordString, math.max(leftWordString.length, rightWordString.length))
     val leftSelection = leftWord.word.toSelection
     val leftLine = leftSelection.line
     val rightSelection = rightWord.word.toSelection
     val rightLine = rightSelection.line
-    val lineMetrics = calcMetrics(leftLine, rightLine)//todo this could be cached/sped up
+    val lineMetrics = calcMetrics(leftLine, rightLine, math.max(leftLine.length, rightLine.length))//todo this could be cached/sped up
     val sameLineSameWord = if (leftLine ==== rightLine && leftSelection.from ==== rightSelection.from) 1.0
                         else 0.0
     val contextMetrics = if(wordMetrics.ldLenSim >= 0.99) {
       Some((
-        calcContextMetrics(leftWord, rightWord),
-        calcContextMetrics(leftWord.shortedContext(contextSize / 4), rightWord.shortedContext(contextSize / 4)),
-        calcContextMetrics(leftWord.shortedContext(contextSize / 8), rightWord.shortedContext(contextSize / 8)),
-        calcContextMetrics(leftWord.shortedContext(contextSize / 16), rightWord.shortedContext(contextSize / 16))
+        calcContextMetrics(leftWord, rightWord, contextSize),
+        calcContextMetrics(leftWord.shortedContext(contextSize / 4), rightWord.shortedContext(contextSize / 4), contextSize / 4),
+        calcContextMetrics(leftWord.shortedContext(contextSize / 8), rightWord.shortedContext(contextSize / 8), contextSize / 8),
+        calcContextMetrics(leftWord.shortedContext(contextSize / 16), rightWord.shortedContext(contextSize / 16), contextSize / 16)
       ))
     } else {
       None
