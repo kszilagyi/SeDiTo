@@ -22,23 +22,23 @@ class Measurements extends FreeSpecLike {
     }
   }
 
-  "lcs speed" in {
+  "lcs speed" ignore {
     val lcs = new LongestCommonSubsequence()
     measureSpeed(lcs.longestCommonSubsequence)
   }
 
-  "lev speed" in {
+  "lev speed" ignore {
     val lev = new Levenshtein()
     measureSpeed(lev.distance)
   }
 
-  "diff match patch" in {
+  "diff match patch" ignore {
     val lev = new DiffMatchPatch()
     measureSpeed(lev.diffMain)
   }
 
 
-  "calc lcs" in {
+  "calc lcs" ignore {
     val left = """
       |QTextBlock TextBlockLinkedOneToOneMatch::getBlock(DiffSide side) const
       |{
@@ -71,7 +71,7 @@ class Measurements extends FreeSpecLike {
     println(lcs.longestCommonSubsequence(left, right))
   }
 
-  "calc lev" in {
+  "calc lev" ignore {
     val left = """//using boost::optional;
                  |
                  |//class OneToOneAlignmentWithAmbiguity;

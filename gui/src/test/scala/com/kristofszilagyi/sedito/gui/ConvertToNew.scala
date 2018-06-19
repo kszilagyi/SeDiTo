@@ -22,7 +22,7 @@ class ConvertToNew extends FreeSpecLike{
       case Success(testCase) => testCase
     }
   }
-  "convert" in {
+  "convert" ignore {
     val parentDir = Paths.get("common/src/test/resources/algorithm_tests/full_tests")
     println(parentDir)
     val testDirs = using(Files.newDirectoryStream(parentDir)) { stream =>
