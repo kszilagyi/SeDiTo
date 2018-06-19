@@ -141,9 +141,10 @@ object MetricCalculator {
       //we know this will never throw because it doesn't make sense to have empty collection on the right side of the map
       val closest = oneGroup.minBy(_.line.normalizedLd)
       val closestNormalizedLd = closest.line.normalizedLd
-      val ambigous = oneGroup.count(p => math.abs(p.line.normalizedLd - closestNormalizedLd) < 0.0001) > 1
-      if (ambigous) None.toList
-      else Some(closest).toList
+      val allClosest = oneGroup.filter(p => math.abs(p.line.normalizedLd - closestNormalizedLd) < 0.0001)
+      val ambigous = allClosest.map(m => (m.leftLineIdx, m.rightLineIdx)).toSet.size > 1
+      if (ambigous) Traversable.empty
+      else allClosest
     }
   }
 

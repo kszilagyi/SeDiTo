@@ -4,11 +4,10 @@ import com.kristofszilagyi.sedito.common.{FullText, Wordizer}
 import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
-final class MetricCalculatorTest extends FreeSpecLike{
 
+final class MetricCalculatorTest extends FreeSpecLike{
   private val line = "How do you do, my darling? Have you had breakfast yet?"
   private val words = Wordizer.toWordIndices(line)
-
 
   "empty context" in {
     MetricCalculator.context(7, words, 0) shouldBe ""
@@ -39,9 +38,12 @@ final class MetricCalculatorTest extends FreeSpecLike{
     }).sorted
   }
 
-  private def testBestMatchingLine(left: String, right: String, expectedClosestMatches: Set[(Int, Int)]) = {
+  private def findClosestMatches(left: String, right: String) = {
     val result = MetricCalculator.calcAlignerMetrics(FullText(left), FullText(right)).map(m => (m.leftLineIdx, m.rightLineIdx, m.lineIsClosestMatchInText))
-    result.map{case (l, r, m) => (l.i, r.i, m)}.sorted shouldBe constructResultFromMatching(expectedClosestMatches,
+    result.map{case (l, r, m) => (l.i, r.i, m)}.sorted
+  }
+  private def testBestMatchingLine(left: String, right: String, expectedClosestMatches: Set[(Int, Int)]) = {
+    findClosestMatches(left, right) shouldBe constructResultFromMatching(expectedClosestMatches,
       leftNumOfLines = left.count(_ ==== '\n'), rightNumOfLines = right.count(_ ==== '\n'))
   }
   "best matching line test vanilla" in {
@@ -54,6 +56,22 @@ final class MetricCalculatorTest extends FreeSpecLike{
     val right = left
     testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0), (1,1), (2, 2)))
   }
+
+  "best matching line test approximation" in {
+    val left =
+      """almaalmaalmaalma
+        |almaalmaalma
+        |almaalma
+      """.stripMargin
+
+    val right =  """almaalmaalmaalma1
+                   |almaalmaalma1
+                   |almaalma1
+                 """.stripMargin
+
+    testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0), (1,1), (2, 2)))
+  }
+
 
   "best matching line test with duplicates (on left)" in {
     val left =
@@ -109,5 +127,56 @@ final class MetricCalculatorTest extends FreeSpecLike{
     testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0)))
   }
 
-  //todo add test to test multiword lines
+  "best matching line test two words (other words all different)" in {
+    val left =
+      """alma aaa
+        |alma1 bbb
+        |alma2 ccc
+      """.stripMargin
+
+    val right =  """alma ddd
+                   |alma1 eee
+                   |alma2 fff
+                 """.stripMargin
+    testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0), (1,1), (2, 2)))
+  }
+
+  "best matching line test two words (other words same)" in {
+    val left =
+      """alma aaa
+        |alma1 bbb
+        |alma2 ccc
+      """.stripMargin
+
+    val right = left
+    findClosestMatches(left, right) shouldBe
+      Vector((0,0,true), (0,0,true), (0,1,false), (0,2,false), (1,0,false), (1,1,true), (1,1,true),
+        (1,2,false), (2,0,false), (2,1,false), (2,2,true), (2,2,true))
+  }
+
+  "best matching line test 3 words (other words same)" in {
+    val left =
+      """alma aaa ddd
+        |alma1 bbb eee
+        |alma2 ccc fff
+      """.stripMargin
+
+    val right = left
+    findClosestMatches(left, right) shouldBe
+      Vector((0,0,true), (0,0,true), (0,1,false), (0,2,false), (1,0,false), (1,1,true), (1,1,true),
+        (1,2,false), (2,0,false), (2,1,false), (2,2,true), (2,2,true))
+  }
+
+  "same word in line twice" in {
+    val left =
+      """alma alma
+        |alma1 bbb
+        |alma2 ccc
+      """.stripMargin
+
+    val right = left
+    findClosestMatches(left, right) shouldBe
+      Vector((0,0,true), (0,0,true), (0,1,false), (0,2,false), (1,0,false), (1,1,true), (1,1,true),
+        (1,2,false), (2,0,false), (2,1,false), (2,2,true), (2,2,true))
+  }
 }
