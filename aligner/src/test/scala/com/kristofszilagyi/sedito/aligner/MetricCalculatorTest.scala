@@ -69,7 +69,7 @@ final class MetricCalculatorTest extends FreeSpecLike{
                    |almaalma1
                  """.stripMargin
 
-    testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0), (1,1), (2, 2)))
+    findClosestMatches(left, right) shouldBe Vector((0,0,true), (0,1,false), (1,0,false), (1,1,true), (1,2,false), (2,1,false), (2,2,true))
   }
 
 
