@@ -85,7 +85,7 @@ object MetricCalculator {
     }
   }
 
-  private def calcMetrics(left: String, right: String, maxPossibleLength: Int) = {
+  private def calcMetrics(left: String, right: String, supposedMaxLength: Int) = {
     val ld = ldCalculator.distance(left, right)
     val ldLenSim = LdLenSimilarity.calcFast(ld, left, right)
     val maxLen = math.max(left.length, right.length)
@@ -100,6 +100,7 @@ object MetricCalculator {
       1.0
     }
     val ldSim = maxLen - ld // in theory this is better as it has more info than ld
+    val maxPossibleLength = math.max(supposedMaxLength, maxLen)
     val ldSimEdgeAdjusted = maxPossibleLength - ld // the logic being that where there was no string they are the same
     PairwiseMetrics(ldSim, ldSimEdgeAdjusted, normalizedLd, normalizedSim, ldLenSim)
   }
