@@ -2,7 +2,6 @@ problems:
 - when things exactly the same, in right position, but context before or after different, it just can't cope with it
 - rename OneToOneAlignment -> OneToOneAlignmentWithAmbiguity: clearly the same but Ld is too high (though this is not too big of a problem)
 - can't deal with lot of small changes ( the context is "much" different)
-- when there are small changes it cannot even cope with getBlock -> getBlocks
 - individual diffing can be quite slow
 - editor is also slow
 - scrollbar is missing
@@ -10,8 +9,22 @@ problems:
 - breakdown is especially apparent for short words (. for example)
 - line before and after is quite different but humans still know it's the same because wider context is the same and structurally the lines nearby is also the same and the lines itself are the same
 - 100 character easily be just one line and if the line above changed the algorithm will suffer
+- current statistics:
+   this_needs_rename_info_to_work: A lot of line is duplicated and modified. I am not even sure what should we display...
+     But there are also some trivial stuff which do not work due to a lot of change nearby. Ultimately this is a hard one. Rename info would help.
+     Also problem with matching things with big LD (y - y_test)
+   move_within_line: can't match the moved fourb to foura, probably because of the different context
+   test_model_py2:
+     - custom_scale vs single_scale
+     - lot of small change
+   everything_commented:
+     - just randomly not working when the line is short
+   textblocklinked1to1_cpp:
+     - confusion because line is actually not the closest in levenstein terms
 
-! If I decide to gather more data I should decide what to do next based on the results !
+   grid_py:
+     - confused by small changes nearby
+
 ideas:
 - add learning curve (more data helps or not?)
 - extend trivial matches from the ones the net found: if it found something which is the same, everything which is around it and the same is the same
@@ -60,12 +73,10 @@ ideas:
   - check how much percentages it would help
   - disappointingly it wouldn't help that much as most problems are right next to the change
 
-- additions/removal has double penalty as new string is introduced on the other side - do I need to compensate?
-- is this line the closest match? and if so: is this word the closest match within the line
-NEXT STEPs:
-- cross validation
-- learning curve
-- ROC curve
-- calculate word metrics (let's try to solve the issue with all commented out)
-- gather more ideas
+- additions/removal has double penalty as new string is introduced on the other side - do I need to compensate? (could just adjust the cost)
+- is this word the closest match within the line
+- do the is this the closest thing with context too
+- could do filtering: only keep alphanumeric and calculate metrics for those. - or use Weighted Levenshtein. I could even create a
+  learning algo to optimize the weights.
+
 

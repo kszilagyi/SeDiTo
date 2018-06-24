@@ -127,7 +127,10 @@ object PlotData {
     val calculatedAlignment = new Aligner(classifier, scaler).align(testCase.left, testCase.right)
     val expected = new MainWindow()
     expected.setTitle("Excpected")
-    expected.setContent(testCase.left, testCase.right, testCase.wordAlignment.toUnambigous)
+    val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
+    logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
+
+    expected.setContent(testCase.left, testCase.right, unambiguousWordAlignment)
     val actual = new MainWindow()
     actual.setTitle("Actual")
     actual.setContent(testCase.left, testCase.right, calculatedAlignment)

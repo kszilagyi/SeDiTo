@@ -35,6 +35,11 @@ object MetricCalculator {
     * @param ldLenSim
     */
   final case class PairwiseMetrics(ldSim: Double, ldSimEdgeAdjusted: Double, normalizedLd: Double, normalizedLdLenSim: Double, ldLenSim: Double) {
+    assert(ldSim >= 0)
+    assert(ldSimEdgeAdjusted >= 0)
+    assert(normalizedLd >= 0 && normalizedLd <= 1)
+    assert(normalizedLdLenSim >= 0)
+    assert(ldLenSim >= 0)
     override def toString: String = s"ldSim = $ldSim, ldSimEdgeAdjusted = $ldSimEdgeAdjusted, " +
       s"normalizedLd = $normalizedLd, normalizedLdLenSim = $normalizedLdLenSim, ldLenSim = $ldLenSim"
 
@@ -76,7 +81,7 @@ object MetricCalculator {
 
     override def toString: String = {
       s"$leftWord - $rightWord: ss: $sameLineSameWord, word: $word, full: $contextFull," +
-        s" 16: $context16th, lineIsClosest: $lineIsClosestMatchInText"
+        s" 4: $context4th, 16: $context16th, lineIsClosest: $lineIsClosestMatchInText"
     }
   }
 

@@ -31,7 +31,9 @@ final class MainWindow {
       val directory: File = chooser.showDialog(stage)
       TestCase.open(directory.toPath) match {
         case Success(testCase) =>
-          diffPane.openTestCase(testCase.left, testCase.right, testCase.wordAlignment.toUnambigous)
+          val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
+          logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
+          diffPane.openTestCase(testCase.left, testCase.right, unambiguousWordAlignment)
         case Failure(e) =>
           logger.error(e)("Failed to open test case")
           discard(new Alert(AlertType.Error, s"Failed to open test: $e").showAndWait())
