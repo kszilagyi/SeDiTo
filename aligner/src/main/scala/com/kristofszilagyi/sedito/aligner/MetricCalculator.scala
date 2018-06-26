@@ -110,6 +110,11 @@ object MetricCalculator {
     val afterContextMetrics = calcMetrics(leftWord.afterContext, rightWord.afterContext, contextSize)
     ContextMetrics(beforeContextMetrics, afterContextMetrics)
   }
+
+  private def calcShortenedContextMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
+    calcContextMetrics(leftWord.shortedContext(contextSize), rightWord.shortedContext(contextSize), contextSize)
+  }
+
   //concat all words
   //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)
   private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
@@ -126,9 +131,9 @@ object MetricCalculator {
     val contextMetrics = if(wordMetrics.ldLenSim >= 0.99) {
       Some((
         calcContextMetrics(leftWord, rightWord, contextSize),
-        calcContextMetrics(leftWord.shortedContext(contextSize / 4), rightWord.shortedContext(contextSize / 4), contextSize / 4),
-        calcContextMetrics(leftWord.shortedContext(contextSize / 8), rightWord.shortedContext(contextSize / 8), contextSize / 8),
-        calcContextMetrics(leftWord.shortedContext(contextSize / 16), rightWord.shortedContext(contextSize / 16), contextSize / 16)
+        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 4),
+        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 8),
+        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 16)
       ))
     } else {
       None
