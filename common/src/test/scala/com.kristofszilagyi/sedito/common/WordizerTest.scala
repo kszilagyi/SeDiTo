@@ -31,4 +31,8 @@ final class WordizerTest extends FreeSpecLike {
   "complicated scenario" in {
     Wordizer.toWords(", ?apple; ,   cheese_to ad ; baba") shouldBe Seq(",", "?", "apple", ";", ",", "cheese_to", "ad", ";", "baba")
   }
+
+  "splits on dash" in {
+    Wordizer.toWords("apple-cheese") shouldBe Seq("apple", "-", "cheese")
+  }
 }
