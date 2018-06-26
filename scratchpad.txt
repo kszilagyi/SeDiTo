@@ -18,12 +18,14 @@ problems:
      - custom_scale vs single_scale
      - lot of small change
    everything_commented:
-     - just randomly not working when the line is short
+     - just randomly not working when the line is short (confused by small changes)
    textblocklinked1to1_cpp:
      - confusion because line is actually not the closest in levenstein terms
 
    grid_py:
      - confused by small changes nearby
+
+   space_problems
 
 ideas:
 - add learning curve (more data helps or not?)
@@ -73,10 +75,14 @@ ideas:
   - check how much percentages it would help
   - disappointingly it wouldn't help that much as most problems are right next to the change
 
+
 - additions/removal has double penalty as new string is introduced on the other side - do I need to compensate? (could just adjust the cost)
+    - check if most problematic parts are additions/removal
 - is this word the closest match within the line
 - do the is this the closest thing with context too
 - could do filtering: only keep alphanumeric and calculate metrics for those. - or use Weighted Levenshtein. I could even create a
   learning algo to optimize the weights.
-
+- duplicate data by doing everything both ways -> actually that shouldn't make a difference, the metrics should be simmetric
+- add some non-linear metrics which absorbds small changes
+- small change sensitivity might be casued by lack of enough context
 
