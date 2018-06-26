@@ -84,5 +84,6 @@ ideas:
   learning algo to optimize the weights.
 - duplicate data by doing everything both ways -> actually that shouldn't make a difference, the metrics should be simmetric
 - add some non-linear metrics which absorbds small changes
-- small change sensitivity might be casued by lack of enough context
+- small change sensitivity might be casued by lack of enough context -> tried with 4 times more context, took 13 minutes and only a slightly better
+
 
