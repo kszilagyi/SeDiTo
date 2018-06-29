@@ -29,6 +29,8 @@ problems:
      - ec2-user@ec2-52-26-21-157 vs ec2-54-191-134-227
        - first it doesn't understand where the ec2 belongs to, that's not too bad and would need syntax parsing ability
        - the bigger problem is that the dashes are not recognized (it's not too bad either)
+       - to be fair this is hard: how is it supposed to know which dash belong to which one?
+       - closest context would probably help here
 
 ideas:
 - add learning curve (more data helps or not?)
@@ -86,7 +88,13 @@ ideas:
 - could do filtering: only keep alphanumeric and calculate metrics for those. - or use Weighted Levenshtein. I could even create a
   learning algo to optimize the weights.
 - duplicate data by doing everything both ways -> actually that shouldn't make a difference, the metrics should be simmetric
-- add some non-linear metrics which absorbds small changes
+- add some non-linear metrics which absorbs small changes
 - small change sensitivity might be casued by lack of enough context -> tried with 4 times more context, took 13 minutes and only a slightly better
+- I could create a graph from all potential matches: within each group I could do maximum which has the least crossing (maximum subsequence?)
+  those who are in this result has a plus one. This would favour minimum crossings.
+- should try to raise a threshold so there is no false negatives and have a conflict resolution net - I could generalize this idea so that I never
+  feed singles but always pairs. Thought that's not good telling if one match is there at all or not.
+- word metrics which filters out alfanumeric
 
 
+TODO: probably I should do closest contexts

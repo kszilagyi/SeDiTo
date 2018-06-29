@@ -60,8 +60,11 @@ object MetricCalculator {
                                          context4th: ContextMetrics, context8th: ContextMetrics, context16th: ContextMetrics,
                                          leftLineIdx: LineIdx, rightLineIdx: LineIdx)
 
+
+  final case class ContextIsClosest(before: Boolean, after: Boolean)
   final case class Metrics(phase1Metrics: Phase1Metrics,
-                           lineIsClosestMatchInText: Boolean) {
+                           lineIsClosestMatchInText: Boolean,
+                           fullClosest: ContextIsClosest) {
     def sameLineSameWord: Double = phase1Metrics.sameLineSameWord
     def word: PairwiseMetrics = phase1Metrics.word
     def line: PairwiseMetrics = phase1Metrics.line
@@ -212,7 +215,7 @@ object MetricCalculator {
     val closestMatches = unresolvedClosests -- conflictingOnesOnLeft -- conflictingOnesOnRight
     phase1Metrics.map{m =>
       val closest = closestMatches.contains(m)
-      Metrics(m, lineIsClosestMatchInText = closest)
+      Metrics(m, lineIsClosestMatchInText = closest, fullClosest = ContextIsClosest(before = true, after = true))
     }
   }
 }
