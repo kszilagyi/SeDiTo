@@ -167,6 +167,25 @@ object MetricCalculator {
     }
   }
 
+  private def calcClosestLineMatches(phase1Metrics: IndexedSeq[MetricCalculator.Phase1Metrics]) = {
+    val leftWordPotentials = phase1Metrics.groupBy(_.leftWord)
+    val rightWordPotentials = phase1Metrics.groupBy(_.rightWord)
+    val closestFromLeft = findClosestLines(leftWordPotentials)
+    val closestFromRight = findClosestLines(rightWordPotentials)
+
+    val unresolvedClosests = (closestFromLeft ++ closestFromRight).toSet
+    val leftLineConflicts = unresolvedClosests.groupBy(_.leftLineIdx)
+    val rightLineConflicts = unresolvedClosests.groupBy(_.rightLineIdx)
+    val resolvedFromLeft = findClosestLines(leftLineConflicts)
+    val resolvedFromRight = findClosestLines(rightLineConflicts)
+
+    val conflictingOnesOnLeft = unresolvedClosests -- resolvedFromLeft
+    val conflictingOnesOnRight = unresolvedClosests -- resolvedFromRight
+
+    unresolvedClosests -- conflictingOnesOnLeft -- conflictingOnesOnRight
+
+  }
+
   def calcAlignerMetrics(left: FullText, right: FullText): IndexedSeq[Metrics] = {
     val contextSize = 100
     val leftWords = Wordizer.toWordIndices(left.s)
@@ -198,23 +217,9 @@ object MetricCalculator {
         calcAllMetrics(leftWord, rightWord, contextSize)
       }
     }
-    val leftWordPotentials = phase1Metrics.groupBy(_.leftWord)
-    val rightWordPotentials = phase1Metrics.groupBy(_.rightWord)
-    val closestFromLeft = findClosestLines(leftWordPotentials)
-    val closestFromRight = findClosestLines(rightWordPotentials)
-
-    val unresolvedClosests = (closestFromLeft ++ closestFromRight).toSet
-    val leftLineConflicts = unresolvedClosests.groupBy(_.leftLineIdx)
-    val rightLineConflicts = unresolvedClosests.groupBy(_.rightLineIdx)
-    val resolvedFromLeft = findClosestLines(leftLineConflicts)
-    val resolvedFromRight = findClosestLines(rightLineConflicts)
-
-    val conflictingOnesOnLeft = unresolvedClosests -- resolvedFromLeft
-    val conflictingOnesOnRight = unresolvedClosests -- resolvedFromRight
-
-    val closestMatches = unresolvedClosests -- conflictingOnesOnLeft -- conflictingOnesOnRight
+    val closestLineMatches = calcClosestLineMatches(phase1Metrics)
     phase1Metrics.map{m =>
-      val closest = closestMatches.contains(m)
+      val closest = closestLineMatches.contains(m)
       Metrics(m, lineIsClosestMatchInText = closest, fullClosest = ContextIsClosest(before = true, after = true))
     }
   }
