@@ -8,6 +8,8 @@ import org.log4s.getLogger
 import scala.annotation.tailrec
 
 object MetricCalculator {
+  import com.kristofszilagyi.sedito.aligner.MetricCalculator.ClosestContext._
+
   private val logger = getLogger
 
   @tailrec
@@ -61,7 +63,9 @@ object MetricCalculator {
                                          leftLineIdx: LineIdx, rightLineIdx: LineIdx)
 
 
-  final case class ContextIsClosest(before: Boolean, after: Boolean)
+  final case class ContextIsClosest(beforeFromLeft: Boolean, beforeFromRight: Boolean, afterFromLeft: Boolean, afterFromRight: Boolean) {
+    override def toString: String = s"CIC(bL: $beforeFromLeft, bR: $beforeFromRight, aL: $afterFromLeft, aR: $afterFromRight)"
+  }
   final case class Metrics(phase1Metrics: Phase1Metrics,
                            lineIsClosestMatchInText: Boolean,
                            fullClosest: ContextIsClosest) {
@@ -155,7 +159,7 @@ object MetricCalculator {
     }
   }
 
-  private def findClosestLines(potentials: Map[_, Traversable[MetricCalculator.Phase1Metrics]]) = {
+  private def findClosestLines(potentials: Map[_, Traversable[Phase1Metrics]]) = {
     potentials flatMap { case (_, oneGroup) =>
       //we know this will never throw because it doesn't make sense to have empty collection on the right side of the map
       val closest = oneGroup.minBy(_.line.normalizedLd)
@@ -167,7 +171,7 @@ object MetricCalculator {
     }
   }
 
-  private def calcClosestLineMatches(phase1Metrics: IndexedSeq[MetricCalculator.Phase1Metrics]) = {
+  private def calcClosestLineMatches(phase1Metrics: IndexedSeq[Phase1Metrics]) = {
     val leftWordPotentials = phase1Metrics.groupBy(_.leftWord)
     val rightWordPotentials = phase1Metrics.groupBy(_.rightWord)
     val closestFromLeft = findClosestLines(leftWordPotentials)
@@ -183,6 +187,48 @@ object MetricCalculator {
     val conflictingOnesOnRight = unresolvedClosests -- resolvedFromRight
 
     unresolvedClosests -- conflictingOnesOnLeft -- conflictingOnesOnRight
+
+  }
+
+
+
+  private object ClosestContext {
+    final case class ClosestContextMatches(beforeLeft: Set[Phase1Metrics], beforeRight: Set[Phase1Metrics],
+                                           afterLeft: Set[Phase1Metrics], afterRight: Set[Phase1Metrics]) {
+      def in(phase1Metrics: Phase1Metrics): ContextIsClosest = {
+        ContextIsClosest(beforeFromLeft = beforeLeft.contains(phase1Metrics), beforeFromRight = beforeRight.contains(phase1Metrics),
+        afterFromLeft = afterLeft.contains(phase1Metrics), afterFromRight = afterRight.contains(phase1Metrics))
+      }
+    }
+    private def findClosestContext(potentials: Map[_, Traversable[Phase1Metrics]], contextSelector: Phase1Metrics => Double) = {
+      potentials flatMap { case (_, oneGroup) =>
+        //we know this will never throw because it doesn't make sense to have empty collection on the right side of the map
+        val closest = oneGroup.minBy(contextSelector)
+        val closestNormalizedLd = contextSelector(closest)
+        val allClosest = oneGroup.filter(p => math.abs(contextSelector(p) - closestNormalizedLd) < 0.0001)
+        val ambiguous = allClosest.toSet.size > 1
+        if (ambiguous) Traversable.empty
+        else allClosest
+      }
+    }
+
+    private def findClosestForSide(leftPotentials: Map[_, Traversable[Phase1Metrics]], rightPotentials: Map[_, Traversable[Phase1Metrics]],
+                                   contextSelector: Phase1Metrics => PairwiseMetrics) = {
+      val closestFromLeft = findClosestContext(leftPotentials, p => contextSelector(p).normalizedLd)
+      val closestFromRight = findClosestContext(rightPotentials, p => contextSelector(p).normalizedLd)
+      (closestFromLeft, closestFromRight)
+    }
+
+    def calcClosestContextMatches(phase1Metrics: IndexedSeq[Phase1Metrics]): ClosestContextMatches = {
+      val leftWordPotentials = phase1Metrics.groupBy(_.leftWord)
+      val rightWordPotentials = phase1Metrics.groupBy(_.rightWord)
+      val (beforeLeft, beforeRight) = findClosestForSide(leftWordPotentials, rightWordPotentials, _.contextFull.before)
+      val (afterLeft, afterRight) = findClosestForSide(leftWordPotentials, rightWordPotentials, _.contextFull.after)
+      ClosestContextMatches(
+        beforeLeft = beforeLeft.toSet, beforeRight = beforeRight.toSet,
+        afterLeft = afterLeft.toSet, afterRight = afterRight.toSet
+      )
+    }
 
   }
 
@@ -218,9 +264,11 @@ object MetricCalculator {
       }
     }
     val closestLineMatches = calcClosestLineMatches(phase1Metrics)
+    val closestContextMatches = calcClosestContextMatches(phase1Metrics)
     phase1Metrics.map{m =>
       val closest = closestLineMatches.contains(m)
-      Metrics(m, lineIsClosestMatchInText = closest, fullClosest = ContextIsClosest(before = true, after = true))
+
+      Metrics(m, lineIsClosestMatchInText = closest, fullClosest = closestContextMatches.in(m))
     }
   }
 }

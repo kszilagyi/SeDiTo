@@ -6,13 +6,14 @@ import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 
 final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
-  private def constructResultFromMatching(expectedClosestMatchesBefore: Set[(Int, Int)],
+  private def constructResultFromMatchingSymmetric(expectedClosestMatchesBefore: Set[(Int, Int)],
                                           expectedClosestMatchesAfter: Set[(Int, Int)],
                                           leftWords: IndexedSeq[WordIndexRange], rightWords: IndexedSeq[WordIndexRange]) = {
     (leftWords.zipWithIndex flatMap { case (l, li) =>
       rightWords.zipWithIndex map { case (r, ri) =>
         val (before, after) = (expectedClosestMatchesBefore.contains((li, ri)), expectedClosestMatchesAfter.contains((li, ri)))
-        (l.toSelection.from.i, r.toSelection.from.i, ContextIsClosest(before, after))
+        (l.toSelection.from.i, r.toSelection.from.i,
+          ContextIsClosest(beforeFromLeft = before, beforeFromRight = before, afterFromLeft = after, afterFromRight = after))
       }
     }).sortBy(r => (r._1, r._2))
   }
@@ -23,7 +24,7 @@ final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
   }
   private def testBestMatchingLine(left: String, right: String, expectedClosestMatchesBefore: Set[(Int, Int)],
                                    expectedClosestMatchesAfter: Set[(Int, Int)]) = {
-    findClosestMatches(left, right) shouldBe constructResultFromMatching(expectedClosestMatchesBefore, expectedClosestMatchesAfter,
+    findClosestMatches(left, right) shouldBe constructResultFromMatchingSymmetric(expectedClosestMatchesBefore, expectedClosestMatchesAfter,
       leftWords = Wordizer.toWordIndices(left), rightWords = Wordizer.toWordIndices(right))
   }
   "best matching before-context test vanilla" in {
