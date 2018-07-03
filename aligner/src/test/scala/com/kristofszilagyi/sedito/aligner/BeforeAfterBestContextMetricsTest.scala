@@ -27,9 +27,17 @@ final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
     findClosestMatches(left, right) shouldBe constructResultFromMatchingSymmetric(expectedClosestMatchesBefore, expectedClosestMatchesAfter,
       leftWords = Wordizer.toWordIndices(left), rightWords = Wordizer.toWordIndices(right))
   }
-  "best matching before-context test vanilla" in {
+  "best matching context test vanilla" in {
                 //0123456789023456
     val left = """alma alma1 alma2""".stripMargin
+
+    val right = left
+    testBestMatchingLine(left, right, expectedClosestMatchesBefore = Set((0, 0), (1,1), (2, 2)), expectedClosestMatchesAfter = Set((0, 0), (1,1), (2, 2)))
+  }
+
+  "best matching context test order changed" in {
+    //0123456789023456
+    val left = """alma1 alma alma2""".stripMargin
 
     val right = left
     testBestMatchingLine(left, right, expectedClosestMatchesBefore = Set((0, 0), (1,1), (2, 2)), expectedClosestMatchesAfter = Set((0, 0), (1,1), (2, 2)))

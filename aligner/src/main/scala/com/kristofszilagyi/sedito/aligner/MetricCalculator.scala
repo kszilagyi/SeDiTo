@@ -220,6 +220,8 @@ object MetricCalculator {
     }
 
     def calcClosestContextMatches(phase1Metrics: IndexedSeq[Phase1Metrics]): ClosestContextMatches = {
+      //So I found it too hard to do something I have done for line (resolving conflicts)
+      //so I realised I could just not do that and do a feature based on both sides. It's simpler and potentially more info (or less, not sure)
       val leftWordPotentials = phase1Metrics.groupBy(_.leftWord)
       val rightWordPotentials = phase1Metrics.groupBy(_.rightWord)
       val (beforeLeft, beforeRight) = findClosestForSide(leftWordPotentials, rightWordPotentials, _.contextFull.before)
