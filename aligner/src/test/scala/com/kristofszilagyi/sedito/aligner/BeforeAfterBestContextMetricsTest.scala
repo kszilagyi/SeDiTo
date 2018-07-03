@@ -28,7 +28,6 @@ final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
       leftWords = Wordizer.toWordIndices(left), rightWords = Wordizer.toWordIndices(right))
   }
   "best matching context test vanilla" in {
-                //0123456789023456
     val left = """alma alma1 alma2""".stripMargin
 
     val right = left
@@ -36,7 +35,6 @@ final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
   }
 
   "best matching context test order changed" in {
-    //0123456789023456
     val left = """alma1 alma alma2""".stripMargin
 
     val right = left
