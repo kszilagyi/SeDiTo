@@ -203,9 +203,9 @@ object MetricCalculator {
     private def findClosestContext(potentials: Map[_, Traversable[Phase1Metrics]], contextSelector: Phase1Metrics => Double) = {
       potentials flatMap { case (_, oneGroup) =>
         //we know this will never throw because it doesn't make sense to have empty collection on the right side of the map
-        val closest = oneGroup.minBy(contextSelector)
-        val closestNormalizedLd = contextSelector(closest)
-        val allClosest = oneGroup.filter(p => math.abs(contextSelector(p) - closestNormalizedLd) < 0.0001)
+        val closest = oneGroup.maxBy(contextSelector)
+        val closestValue = contextSelector(closest)
+        val allClosest = oneGroup.filter(p => math.abs(contextSelector(p) - closestValue) < 0.0001)
         val ambiguous = allClosest.toSet.size > 1
         if (ambiguous) Traversable.empty
         else allClosest
@@ -214,8 +214,8 @@ object MetricCalculator {
 
     private def findClosestForSide(leftPotentials: Map[_, Traversable[Phase1Metrics]], rightPotentials: Map[_, Traversable[Phase1Metrics]],
                                    contextSelector: Phase1Metrics => PairwiseMetrics) = {
-      val closestFromLeft = findClosestContext(leftPotentials, p => contextSelector(p).normalizedLd)
-      val closestFromRight = findClosestContext(rightPotentials, p => contextSelector(p).normalizedLd)
+      val closestFromLeft = findClosestContext(leftPotentials, p => contextSelector(p).ldSimEdgeAdjusted)
+      val closestFromRight = findClosestContext(rightPotentials, p => contextSelector(p).ldSimEdgeAdjusted)
       (closestFromLeft, closestFromRight)
     }
 
