@@ -65,6 +65,8 @@ object MetricCalculator {
 
   final case class ContextIsClosest(beforeFromLeft: Boolean, beforeFromRight: Boolean, afterFromLeft: Boolean, afterFromRight: Boolean) {
     override def toString: String = s"CIC(bL: $beforeFromLeft, bR: $beforeFromRight, aL: $afterFromLeft, aR: $afterFromRight)"
+
+    def doubles: Seq[Double] = Seq(beforeFromLeft, beforeFromRight, afterFromLeft, afterFromRight).map(if (_) 1.0 else 0.0)
   }
   final case class Metrics(phase1Metrics: Phase1Metrics,
                            lineIsClosestMatchInText: Boolean,
@@ -83,7 +85,7 @@ object MetricCalculator {
 
     def toLdLenSimDouble: Array[Double]= {
       (sameLineSameWord +: (word.toDoubles ++ line.toDoubles ++ contextFull.doubles ++ context4th.doubles ++
-        context8th.doubles ++context16th.doubles :+ (if (lineIsClosestMatchInText) 1.0 else 0.0))).toArray
+        context8th.doubles ++ context16th.doubles ++ fullClosest.doubles :+ (if (lineIsClosestMatchInText) 1.0 else 0.0))).toArray
     }
 
     override def toString: String = {
