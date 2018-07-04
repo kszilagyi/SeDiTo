@@ -190,8 +190,6 @@ object MetricCalculator {
 
   }
 
-
-
   private object ClosestContext {
     final case class ClosestContextMatches(beforeLeft: Set[Phase1Metrics], beforeRight: Set[Phase1Metrics],
                                            afterLeft: Set[Phase1Metrics], afterRight: Set[Phase1Metrics]) {
@@ -265,6 +263,7 @@ object MetricCalculator {
         calcAllMetrics(leftWord, rightWord, contextSize)
       }
     }
+    logger.debug(s"Metrics: ${phase1Metrics.mkString("\n")}")
     val closestLineMatches = calcClosestLineMatches(phase1Metrics)
     val closestContextMatches = calcClosestContextMatches(phase1Metrics)
     phase1Metrics.map{m =>
