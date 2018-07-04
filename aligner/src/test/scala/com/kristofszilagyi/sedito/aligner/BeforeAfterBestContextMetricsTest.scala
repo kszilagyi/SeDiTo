@@ -6,15 +6,21 @@ import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 
 final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
-  private def constructResultFromMatchingSymmetric(expectedClosestMatchesBefore: Set[(Int, Int)],
-                                          expectedClosestMatchesAfter: Set[(Int, Int)],
+  private def constructResultFromMatchingSymmetric(
+                                          expectedClosestMatchesBeforeFromLeft: Set[(Int, Int)],
+                                          expectedClosestMatchesBeforeFromRight: Set[(Int, Int)],
+                                          expectedClosestMatchesAfterFromLeft: Set[(Int, Int)],
+                                          expectedClosestMatchesAfterFromRight: Set[(Int, Int)],
                                           leftWords: IndexedSeq[WordIndexRange], rightWords: IndexedSeq[WordIndexRange],
                                           differentLeftWords: Set[Int], differentRightWords: Set[Int]) = {
     (leftWords.zipWithIndex.filterNot{case (_, i) => differentLeftWords.contains(i)} flatMap { case (l, li) =>
       rightWords.zipWithIndex.filterNot{case (_, i) => differentRightWords.contains(i)} map { case (r, ri) =>
-        val (before, after) = (expectedClosestMatchesBefore.contains((li, ri)), expectedClosestMatchesAfter.contains((li, ri)))
+        val beforeFromLeft = expectedClosestMatchesBeforeFromLeft.contains((li, ri))
+        val afterFromLeft = expectedClosestMatchesAfterFromLeft.contains((li, ri))
+        val beforeFromRight = expectedClosestMatchesBeforeFromRight.contains((li, ri))
+        val afterFromRight = expectedClosestMatchesAfterFromRight.contains((li, ri))
         (l.toSelection.from.i, r.toSelection.from.i,
-          ContextIsClosest(beforeFromLeft = before, beforeFromRight = before, afterFromLeft = after, afterFromRight = after))
+          ContextIsClosest(beforeFromLeft = beforeFromLeft, beforeFromRight = beforeFromRight, afterFromLeft = afterFromLeft, afterFromRight = afterFromRight))
       }
     }).sortBy(r => (r._1, r._2))
   }
@@ -27,9 +33,29 @@ final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
   private def testBestMatchingLine(left: String, right: String, expectedClosestMatchesBefore: Set[(Int, Int)],
                                    expectedClosestMatchesAfter: Set[(Int, Int)], differentLeftWords: Set[Int] = Set.empty,
                                    differentRightWords: Set[Int] = Set.empty) = {
-    findClosestMatches(left, right) shouldBe constructResultFromMatchingSymmetric(expectedClosestMatchesBefore, expectedClosestMatchesAfter,
-      leftWords = Wordizer.toWordIndices(left), rightWords = Wordizer.toWordIndices(right), differentLeftWords, differentRightWords)
+    findClosestMatches(left, right) shouldBe constructResultFromMatchingSymmetric(
+      expectedClosestMatchesBeforeFromLeft = expectedClosestMatchesBefore, expectedClosestMatchesBeforeFromRight = expectedClosestMatchesBefore,
+      expectedClosestMatchesAfterFromLeft = expectedClosestMatchesAfter, expectedClosestMatchesAfterFromRight = expectedClosestMatchesAfter,
+      leftWords = Wordizer.toWordIndices(left), rightWords = Wordizer.toWordIndices(right),
+      differentLeftWords = differentLeftWords, differentRightWords = differentRightWords)
   }
+
+  @SuppressWarnings(Array(Warts.DefaultArguments))
+  private def testBestMatchingLineAsym(left: String, right: String,
+                                   expectedClosestMatchesBeforeFromLeft: Set[(Int, Int)],
+                                   expectedClosestMatchesBeforeFromRight: Set[(Int, Int)],
+                                   expectedClosestMatchesAfterFromLeft: Set[(Int, Int)],
+                                   expectedClosestMatchesAfterFromRight: Set[(Int, Int)],
+                                   differentLeftWords: Set[Int] = Set.empty,
+                                   differentRightWords: Set[Int] = Set.empty) = {
+    findClosestMatches(left, right) shouldBe constructResultFromMatchingSymmetric(
+      expectedClosestMatchesBeforeFromLeft = expectedClosestMatchesBeforeFromLeft,
+      expectedClosestMatchesBeforeFromRight = expectedClosestMatchesBeforeFromRight,
+      expectedClosestMatchesAfterFromLeft = expectedClosestMatchesAfterFromLeft,
+      expectedClosestMatchesAfterFromRight = expectedClosestMatchesAfterFromRight,
+      leftWords = Wordizer.toWordIndices(left), rightWords = Wordizer.toWordIndices(right), differentLeftWords = differentLeftWords, differentRightWords = differentRightWords)
+  }
+
   "vanilla" in {
     val left = """alma alma1 alma2""".stripMargin
 
@@ -44,12 +70,23 @@ final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
     testBestMatchingLine(left, right, expectedClosestMatchesBefore = Set((0, 0), (1,1), (2, 2)), expectedClosestMatchesAfter = Set((0, 0), (1,1), (2, 2)))
   }
 
-  "first word deleted" in {
+  "first word deleted - alien word" in {
     val left = """kot alma alma1 alma2""".stripMargin
 
     val right =  """alma alma1 alma2""".stripMargin
     testBestMatchingLine(left, right, expectedClosestMatchesBefore = Set((1, 0), (2,1), (3, 2)), expectedClosestMatchesAfter = Set((1, 0), (2, 1), (3, 2)),
       differentLeftWords = Set(0))
+  }
+
+  "first word deleted - similar word" in {
+    val left = """alma3 alma alma1 alma2""".stripMargin
+
+    val right =  """alma alma1 alma2""".stripMargin
+    testBestMatchingLineAsym(left, right,
+      expectedClosestMatchesBeforeFromLeft = Set((0, 0), (1, 1), (2, 2), (3, 2)),
+      expectedClosestMatchesBeforeFromRight = Set((0, 0), (1, 1), (2, 2)),
+      expectedClosestMatchesAfterFromLeft = Set((0, 0), (1, 0), (2, 1), (3, 2)),
+      expectedClosestMatchesAfterFromRight = Set((1, 0), (2, 1), (3, 2)))
   }
 
   "last word deleted" in {
@@ -75,4 +112,6 @@ final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
     testBestMatchingLine(left, right, expectedClosestMatchesBefore = Set((0, 0), (1, 1), (2, 2)), expectedClosestMatchesAfter = Set((0, 0), (1, 1), (2, 2)),
       differentRightWords = Set(3))
   }
+
+
 }
