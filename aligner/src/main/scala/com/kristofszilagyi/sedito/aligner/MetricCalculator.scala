@@ -270,7 +270,6 @@ object MetricCalculator {
     val closestContextMatches = calcClosestContextMatches(phase1Metrics)
     phase1Metrics.map{m =>
       val closest = closestLineMatches.contains(m)
-
       Metrics(m, lineIsClosestMatchInText = closest, fullClosest = closestContextMatches.in(m))
     }
   }
