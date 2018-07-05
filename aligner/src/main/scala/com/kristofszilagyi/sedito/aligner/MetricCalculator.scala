@@ -70,7 +70,11 @@ object MetricCalculator {
   }
   final case class Metrics(phase1Metrics: Phase1Metrics,
                            lineIsClosestMatchInText: Boolean,
-                           fullClosest: ContextIsClosest) {
+                           closestFull: ContextIsClosest,
+                           closest4th: ContextIsClosest,
+                           closest8th: ContextIsClosest,
+                           closest16th: ContextIsClosest) {
+
     def sameLineSameWord: Double = phase1Metrics.sameLineSameWord
     def word: PairwiseMetrics = phase1Metrics.word
     def line: PairwiseMetrics = phase1Metrics.line
@@ -85,7 +89,8 @@ object MetricCalculator {
 
     def toLdLenSimDouble: Array[Double]= {
       (sameLineSameWord +: (word.toDoubles ++ line.toDoubles ++ contextFull.doubles ++ context4th.doubles ++
-        context8th.doubles ++ context16th.doubles ++ fullClosest.doubles :+ (if (lineIsClosestMatchInText) 1.0 else 0.0))).toArray
+        context8th.doubles ++ context16th.doubles ++ closestFull.doubles ++ closest4th.doubles
+        ++ closest8th.doubles ++ closest16th.doubles :+ (if (lineIsClosestMatchInText) 1.0 else 0.0))).toArray
     }
 
     override def toString: String = {
@@ -219,13 +224,13 @@ object MetricCalculator {
       (closestFromLeft, closestFromRight)
     }
 
-    def calcClosestContextMatches(phase1Metrics: IndexedSeq[Phase1Metrics]): ClosestContextMatches = {
+    def calcClosestContextMatches(phase1Metrics: IndexedSeq[Phase1Metrics], contextSelector: Phase1Metrics => ContextMetrics): ClosestContextMatches = {
       //So I found it too hard to do something I have done for line (resolving conflicts)
       //so I realised I could just not do that and do a feature based on both sides. It's simpler and potentially more info (or less, not sure)
       val leftWordPotentials = phase1Metrics.groupBy(_.leftWord)
       val rightWordPotentials = phase1Metrics.groupBy(_.rightWord)
-      val (beforeLeft, beforeRight) = findClosestForSide(leftWordPotentials, rightWordPotentials, _.contextFull.before)
-      val (afterLeft, afterRight) = findClosestForSide(leftWordPotentials, rightWordPotentials, _.contextFull.after)
+      val (beforeLeft, beforeRight) = findClosestForSide(leftWordPotentials, rightWordPotentials, m => contextSelector(m).before)
+      val (afterLeft, afterRight) = findClosestForSide(leftWordPotentials, rightWordPotentials, m => contextSelector(m).after)
       ClosestContextMatches(
         beforeLeft = beforeLeft.toSet, beforeRight = beforeRight.toSet,
         afterLeft = afterLeft.toSet, afterRight = afterRight.toSet
@@ -267,10 +272,14 @@ object MetricCalculator {
     }
     logger.debug(s"Metrics: ${phase1Metrics.mkString("\n")}")
     val closestLineMatches = calcClosestLineMatches(phase1Metrics)
-    val closestContextMatches = calcClosestContextMatches(phase1Metrics)
+    val closestContextFull = calcClosestContextMatches(phase1Metrics, _.contextFull)
+    val closestContext4th = calcClosestContextMatches(phase1Metrics, _.context4th)
+    val closestContext8th = calcClosestContextMatches(phase1Metrics, _.context8th)
+    val closestContext16th = calcClosestContextMatches(phase1Metrics, _.context16th)
     phase1Metrics.map{m =>
       val closest = closestLineMatches.contains(m)
-      Metrics(m, lineIsClosestMatchInText = closest, fullClosest = closestContextMatches.in(m))
+      Metrics(m, lineIsClosestMatchInText = closest, closestFull = closestContextFull.in(m), closest4th = closestContext4th.in(m),
+        closest8th = closestContext8th.in(m), closest16th = closestContext16th.in(m))
     }
   }
 }
