@@ -1,0 +1,27 @@
+package com.kristofszilagyi.sedito.gui
+
+import scalafx.application.JFXApp
+import scalafx.Includes._
+import org.log4s._
+import javafx.collections.ListChangeListener
+import com.sun.javafx.css.CssError
+import com.kristofszilagyi.sedito.common.Warts
+
+@SuppressWarnings(Array(Warts.Null))
+object Main extends JFXApp {
+
+  private val logger = getLogger
+  logger.info("SeDiTo GUI started")
+  new MainWindow()
+
+
+
+
+  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {
+    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {
+      change.getList.foreach{ error =>
+        logger.info(s"Css error: $error")
+      }
+    }
+  })
+}
