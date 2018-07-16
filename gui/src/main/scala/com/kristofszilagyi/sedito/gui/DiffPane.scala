@@ -3,6 +3,7 @@ package com.kristofszilagyi.sedito.gui
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps.AnyOps
 import com.kristofszilagyi.sedito.common._
 import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
+import org.fxmisc.flowless.VirtualizedScrollPane
 import org.log4s.getLogger
 import scalafx.Includes.jfxRegion2sfx
 import scalafx.scene.layout.{HBox, Priority}
@@ -10,8 +11,8 @@ import scalafx.scene.layout.{HBox, Priority}
 final class DiffPane extends HBox {
   private val logger = getLogger
 
-  private val codeAreaLeft = Editor.test()
-  private val codeAreaRight = Editor.test()
+  private val codeAreaLeft = new Editor()
+  private val codeAreaRight = new Editor()
   @SuppressWarnings(Array(Warts.Var))
   private var wordAlignment: UnambiguousWordAlignment = UnambiguousWordAlignment(Set.empty)
   def testCase: TestCase = {
@@ -22,7 +23,13 @@ final class DiffPane extends HBox {
   codeAreaLeft.setOther(codeAreaRight)
   codeAreaRight.setOther(codeAreaLeft)
   spacing = 10
-  children = Seq(jfxRegion2sfx(codeAreaLeft), jfxRegion2sfx(codeAreaRight))
+  children = {
+    val left = new VirtualizedScrollPane(codeAreaLeft)
+    val right = new VirtualizedScrollPane(codeAreaRight)
+    HBox.setHgrow(left, Priority.Always)
+    HBox.setHgrow(right, Priority.Always)
+    Seq(left, right).map(jfxRegion2sfx)
+  }
 
   HBox.setHgrow(codeAreaLeft, Priority.Always)
   HBox.setHgrow(codeAreaRight, Priority.Always)

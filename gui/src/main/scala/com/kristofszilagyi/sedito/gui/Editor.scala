@@ -14,11 +14,6 @@ import scala.collection.JavaConverters._
 
 
 object Editor {
-  def test(): Editor = {
-    val editor = new Editor
-    editor.appendText("that's a lot\n of text\n so many\ntext")
-    editor
-  }
 
   final case class LineCssClass(s: String) {
     def toChar: CharCssClass = CharCssClass(s"${s}_char")
