@@ -90,7 +90,7 @@ lazy val gui = (project in file("gui"))
   .settings(
     name := "gui",
     libraryDependencies += "org.scalafx" %% "scalafx" % "8.0.144-R12",
-    libraryDependencies += "org.fxmisc.richtext" % "richtextfx" % "1.0.0-SNAPSHOT",
+    libraryDependencies += "org.fxmisc.richtext" % "richtextfx" % "0.9.1",
     commonSettings
   ).dependsOn(common % "compile->compile;test->test")
    .dependsOn(aligner % "compile->compile;test->test")

@@ -2,7 +2,6 @@ package com.kristofszilagyi.sedito.gui
 
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps.AnyOps
 import com.kristofszilagyi.sedito.common._
-import javafx.animation.{KeyFrame, Timeline}
 import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
 import org.log4s.getLogger
 import scalafx.Includes.jfxRegion2sfx
@@ -30,8 +29,6 @@ final class DiffPane extends HBox {
   this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
     codeAreaLeft.scrollYBy(-e.getDeltaY)
     codeAreaRight.scrollYBy(-e.getDeltaY)
-    codeAreaLeft.applyAllPadding()
-    codeAreaRight.applyAllPadding()
     e.consume()
   })
 
@@ -96,23 +93,6 @@ final class DiffPane extends HBox {
     applyHighlight(codeAreaLeft, highlight.left)
     applyHighlight(codeAreaRight, highlight.right)
 
-    PaddingCalculator.calc(partitioned.notMoved,
-      LineIdx(codeAreaLeft.getParagraphs.size - 1),
-      LineIdx(codeAreaRight.getParagraphs.size - 1)
-    ).foreach { padding =>
-      val editor = padding.side match {
-        case Left => codeAreaLeft
-        case Right => codeAreaRight
-      }
-      editor.setLinePadding(padding.line, padding.amount)
-    }
 
-    //hack to make sure padding works
-    import javafx.util.Duration
-    val timeline = new Timeline(new KeyFrame(Duration.millis(100), _ => {
-      codeAreaLeft.applyAllPadding()
-      codeAreaRight.applyAllPadding()
-    }))
-    timeline.play()
   }
 }
