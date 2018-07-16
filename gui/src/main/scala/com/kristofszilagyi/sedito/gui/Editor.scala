@@ -1,45 +1,21 @@
 package com.kristofszilagyi.sedito.gui
 
-import java.util
-import java.util.Collections
-
 import com.kristofszilagyi.sedito.common.AssertionEx.fail
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
-import com.kristofszilagyi.sedito.common.Warts.{DefaultArguments, discard}
+import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
-import com.kristofszilagyi.sedito.gui.PaddableEditor._
+import com.kristofszilagyi.sedito.gui.Editor._
 import javafx.scene.control.Label
-import javafx.scene.text.TextFlow
 import javafx.stage.Popup
 import org.fxmisc.richtext.model.TwoDimensional.Bias
-import org.fxmisc.richtext.model.{SegmentOps, SimpleEditableStyledDocument}
-import org.fxmisc.richtext.{GenericStyledArea, LineNumberFactory, StyledTextArea}
+import org.fxmisc.richtext.{CodeArea, LineNumberFactory}
+
 import scala.collection.JavaConverters._
 
 
-@SuppressWarnings(Array(DefaultArguments))
-class SCodeArea extends GenericStyledArea[util.Collection[String], String, util.Collection[String]](
-  Collections.emptyList[String],
-  (paragraph: TextFlow, styleClasses: util.Collection[String]) => {
-    discard(paragraph.getStyleClass.addAll(styleClasses))
-    //paragraph.setStyle("-fx-padding: 0 0 100 0;")
-  },
-  Collections.emptyList[String],
-  new SimpleEditableStyledDocument (
-    Collections.emptyList[String](), Collections.emptyList[String]()
-  ),
-  SegmentOps.styledTextOps(),
-  false,
-  seg => StyledTextArea.createStyledTextNode(seg, (text, styleClasses: util.Collection[String]) => {
-    discard(text.getStyleClass.addAll(styleClasses))
-  }),
-) {
-}
-
-
-object PaddableEditor {
-  def test(): PaddableEditor = {
-    val editor = new PaddableEditor
+object Editor {
+  def test(): Editor = {
+    val editor = new Editor
     editor.appendText("that's a lot\n of text\n so many\ntext")
     editor
   }
@@ -70,7 +46,7 @@ object PaddableEditor {
 
 final case class LineEdits(line: LineEditType, charEdits: Traversable[CharEdit])
 
-final class PaddableEditor extends SCodeArea {
+final class Editor extends CodeArea {
   this.setUseInitialStyleForInsertion(true)
 
   setParagraphGraphicFactory(LineNumberFactory.get(this))
@@ -83,7 +59,7 @@ final class PaddableEditor extends SCodeArea {
   private var editTypes = Map.empty[LineIdx, LineEdits]
 
   @SuppressWarnings(Array(Warts.Var))
-  private var otherEditor: Option[PaddableEditor] = None
+  private var otherEditor: Option[Editor] = None
 
   @SuppressWarnings(Array(Warts.Var))
   private var highlightedLines: Traversable[LineIdx] = Traversable.empty
@@ -209,7 +185,7 @@ final class PaddableEditor extends SCodeArea {
     highlightedChars = Traversable.empty
   }
 
-  def setOther(other: PaddableEditor): Unit = {
+  def setOther(other: Editor): Unit = {
     otherEditor = Some(other)
   }
 

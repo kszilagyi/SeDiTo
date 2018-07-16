@@ -10,8 +10,8 @@ import scalafx.scene.layout.{HBox, Priority}
 final class DiffPane extends HBox {
   private val logger = getLogger
 
-  private val codeAreaLeft = PaddableEditor.test()
-  private val codeAreaRight = PaddableEditor.test()
+  private val codeAreaLeft = Editor.test()
+  private val codeAreaRight = Editor.test()
   @SuppressWarnings(Array(Warts.Var))
   private var wordAlignment: UnambiguousWordAlignment = UnambiguousWordAlignment(Set.empty)
   def testCase: TestCase = {
@@ -32,7 +32,7 @@ final class DiffPane extends HBox {
     e.consume()
   })
 
-  private def getParagraphTexts(codeArea: PaddableEditor): Lines ={
+  private def getParagraphTexts(codeArea: Editor): Lines ={
     val size = codeArea.getParagraphs.size()
     Lines((0 until size).map(i => codeArea.getText(i)))
   }
@@ -81,7 +81,7 @@ final class DiffPane extends HBox {
     notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, LineSame))
     notMovedRight.foreach(l => codeAreaRight.setLineType(l, LineSame))
 
-    def applyHighlight(editor: PaddableEditor, highlight: Map[LineIdx, Traversable[CharEdit]]): Unit = {
+    def applyHighlight(editor: Editor, highlight: Map[LineIdx, Traversable[CharEdit]]): Unit = {
       highlight.foreach { case (line, edits) =>
         edits.foreach { edit =>
           editor.setCharEdit(line, edit.from, edit.to, edit.editType)
