@@ -37,6 +37,10 @@
 }
 
 .moved_char {
+  -rtfx-background-color: purple;
+}
+
+.same_char_in_moved_line {
   -rtfx-background-color: lightblue;
 }
 

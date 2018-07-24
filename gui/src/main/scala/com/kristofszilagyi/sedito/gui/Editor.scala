@@ -29,13 +29,19 @@ object Editor {
     }).getOrElse(LineCssClass("white"))
   }
 
-  private def getCharCssClass(editType: Option[CharEditType]) = {
-    (editType map {
+  private def getCharCssClass(editType: CharEditType, lineEditType: LineEditType) = {
+    editType match {
       case CharsInserted => CharCssClass("inserted_char")
       case CharsDeleted => CharCssClass("deleted_char")
-      case CharsSame => CharCssClass("same_char")
+      case CharsSame =>
+        lineEditType match {
+          case LineMoved(_) => CharCssClass("same_char_in_moved_line")
+          case LineInserted => fail("Char is same but line is inserted")
+          case LineDeleted => fail("Char is same but line is deleted")
+          case LineSame => CharCssClass("same_char")
+        }
       case _: CharsMoved => CharCssClass("moved_char")
-    }).getOrElse(CharCssClass("white_char"))
+    }
   }
 }
 
@@ -144,7 +150,13 @@ final class Editor extends CodeArea {
   }
 
   private def applyCharCss(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {
-    setStyle(lineIdx.i, from.i, to.i, List(getCharCssClass(Some(editType)).s).asJava)
+    setStyle(lineIdx.i, from.i, to.i,
+      List(
+        getCharCssClass(
+          editType,
+          editTypes.getOrElse(lineIdx, fail(s"Missing line edit type for $lineIdx")).line
+        ).s).asJava
+    )
   }
 
   def setCharEdit(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {

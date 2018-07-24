@@ -152,7 +152,7 @@ object PlotData {
       val classifier = read.xstream("linear_regression.model").asInstanceOf[NeuralNetwork]
       val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
       val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/full_tests/everything_commented" +
+        "scala-2.12/test-classes/algorithm_tests/full_tests/5" +
         ""))
 
       displayTestCase(testCase, classifier, scaler)
