@@ -89,7 +89,6 @@ lazy val common = (project in file("common"))
 lazy val gui = (project in file("gui"))
   .settings(
     name := "gui",
-    libraryDependencies += "org.scalafx" %% "scalafx" % "8.0.144-R12",
     libraryDependencies += "org.fxmisc.richtext" % "richtextfx" % "0.9.1",
     commonSettings
   ).dependsOn(common % "compile->compile;test->test")

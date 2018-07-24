@@ -2,17 +2,17 @@ package com.kristofszilagyi.sedito.gui
 
 import java.io.File
 
-import com.kristofszilagyi.sedito.common.{FullText, TestCase, UnambiguousWordAlignment}
 import com.kristofszilagyi.sedito.common.Warts.discard
-import javafx.scene.control.Alert
-import javafx.stage.DirectoryChooser
+import com.kristofszilagyi.sedito.common.{FullText, TestCase, UnambiguousWordAlignment}
+import com.kristofszilagyi.sedito.gui.JavaFxOps.menuItem
+import javafx.scene.Scene
+import javafx.scene.control.Alert.AlertType
+import javafx.scene.control.{Alert, Menu, MenuBar}
+import javafx.scene.layout.BorderPane
+import javafx.stage.{DirectoryChooser, Stage}
 import org.log4s.getLogger
-import scalafx.scene.Scene
-import scalafx.scene.control.Alert.AlertType
-import scalafx.scene.control.{Menu, MenuBar, MenuItem}
-import scalafx.scene.layout.BorderPane
-import scalafx.stage.Stage
 
+import scala.collection.JavaConverters._
 import scala.util.{Failure, Success}
 
 final class MainWindow {
@@ -21,8 +21,8 @@ final class MainWindow {
   private val diffPane = new DiffPane
   private val testDir = new File("common/src/test/resources/algorithm_tests/full_tests")
 
-  private val openTestCase = new MenuItem("Open test case") {
-    onAction = { _ =>
+  private val openTestCase = menuItem("Open test case",
+    { _ =>
       val chooser = new DirectoryChooser()
       chooser.setTitle("Choose directory")
       if (testDir.isDirectory) {
@@ -36,13 +36,13 @@ final class MainWindow {
           diffPane.openTestCase(testCase.left, testCase.right, unambiguousWordAlignment)
         case Failure(e) =>
           logger.error(e)("Failed to open test case")
-          discard(new Alert(AlertType.Error, s"Failed to open test: $e").showAndWait())
+          discard(new Alert(AlertType.ERROR, s"Failed to open test: $e").showAndWait())
       }
     }
-  }
+  )
 
-  private val saveTestCase = new MenuItem("Save test case") {
-    onAction = { _ =>
+  private val saveTestCase = menuItem("Save test case",
+    { _ =>
       val chooser = new DirectoryChooser()
       chooser.setTitle("Choose directory")
       if (testDir.isDirectory) {
@@ -51,26 +51,32 @@ final class MainWindow {
       val directory: File = chooser.showDialog(stage)
       discard(diffPane.testCase.save(directory.toPath))
     }
-  }
-  private val fileMenu = new Menu("File") {
-    items = List(openTestCase, saveTestCase)
+  )
+  private val fileMenu = {
+  val m = new Menu("File")
+    discard(m.getItems.addAll(List(openTestCase, saveTestCase).asJava))
+    m
   }
 
 
   private val url = getClass.getClassLoader.getResource("simple.css").toExternalForm
-  private val stage: Stage = new Stage {
-    maximized = true
-    scene = new Scene {
+  private val stage: Stage = new Stage
+  stage.setMaximized(true)
+  stage.setScene{
+    val menuBar = new MenuBar(fileMenu)
 
-      discard(stylesheets.add(url))
-      root = new BorderPane {
-        top = new MenuBar {
-          useSystemMenuBar = true
-          menus = List(fileMenu)
-        }
-        center = diffPane
-      }
-    }
+    menuBar.setUseSystemMenuBar(true)
+
+    val borderPane = new BorderPane
+
+    borderPane.setTop(menuBar)
+    borderPane.setCenter(diffPane)
+
+    val scene = new Scene(borderPane)
+
+    //noinspection JavaAccessorMethodCalledAsEmptyParen
+    discard(scene.getStylesheets().add(url))
+    scene
   }
   stage.show()
 

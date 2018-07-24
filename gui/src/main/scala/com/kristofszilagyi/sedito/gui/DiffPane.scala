@@ -3,10 +3,11 @@ package com.kristofszilagyi.sedito.gui
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps.AnyOps
 import com.kristofszilagyi.sedito.common._
 import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
+import javafx.scene.layout.{HBox, Priority}
 import org.fxmisc.flowless.VirtualizedScrollPane
 import org.log4s.getLogger
-import scalafx.Includes.jfxRegion2sfx
-import scalafx.scene.layout.{HBox, Priority}
+import Warts.discard
+import scala.collection.JavaConverters._
 
 final class DiffPane extends HBox {
   private val logger = getLogger
@@ -22,17 +23,17 @@ final class DiffPane extends HBox {
 
   codeAreaLeft.setOther(codeAreaRight)
   codeAreaRight.setOther(codeAreaLeft)
-  spacing = 10
-  children = {
+  setSpacing(10)
+  discard(getChildren.addAll({
     val left = new VirtualizedScrollPane(codeAreaLeft)
     val right = new VirtualizedScrollPane(codeAreaRight)
-    HBox.setHgrow(left, Priority.Always)
-    HBox.setHgrow(right, Priority.Always)
-    Seq(left, right).map(jfxRegion2sfx)
-  }
+    HBox.setHgrow(left, Priority.ALWAYS)
+    HBox.setHgrow(right, Priority.ALWAYS)
+    Seq(left, right).asJava
+  }))
 
-  HBox.setHgrow(codeAreaLeft, Priority.Always)
-  HBox.setHgrow(codeAreaRight, Priority.Always)
+  HBox.setHgrow(codeAreaLeft, Priority.ALWAYS)
+  HBox.setHgrow(codeAreaRight, Priority.ALWAYS)
   this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
     codeAreaLeft.scrollYBy(-e.getDeltaY)
     codeAreaRight.scrollYBy(-e.getDeltaY)
