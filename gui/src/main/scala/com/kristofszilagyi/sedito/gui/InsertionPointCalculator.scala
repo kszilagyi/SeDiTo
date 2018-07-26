@@ -5,6 +5,10 @@ import com.kristofszilagyi.sedito.common.{LineIdx, LineMatch}
 
 final case class LineRange(from: LineIdx, to: LineIdx) {
   def positive: Boolean = to.i - from.i > 0
+  def without(line: LineIdx): Seq[LineRange] = {
+    if (line < from || line >= to) Seq(this)
+    else Seq(LineRange(from, line), LineRange(line + 1, to)).filter(_.positive)
+  }
 }
 object EquivalencePoint {
   def from(left: (Int, Int), right: (Int, Int)) =
@@ -18,6 +22,9 @@ object EquivalencePoint {
   */
 final case class EquivalencePoint(left: LineRange, right: LineRange) {
   def positive: Boolean = left.positive || right.positive
+  def withoutRight(line: LineIdx): Seq[EquivalencePoint] = {
+    right.without(line).map(EquivalencePoint(left, _))
+  }
 }
 
 
