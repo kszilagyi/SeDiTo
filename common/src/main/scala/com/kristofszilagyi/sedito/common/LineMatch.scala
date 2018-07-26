@@ -22,6 +22,13 @@ final case class LineIdx(i: Int) extends AnyVal with Ordered[LineIdx]  {
   def +(other: Int): LineIdx = LineIdx(i + other)
 
   def compare(that: LineIdx): Int = i.compareTo(that.i)
+
+  private def wrapped(other: LineIdx, fun: (Int, Int) => Int): LineIdx = {
+    LineIdx(fun(i, other.i))
+  }
+
+  def max(other: LineIdx): LineIdx = wrapped(other, math.max)
+  def min(other: LineIdx): LineIdx = wrapped(other, math.min)
 }
 
 object CharIdxInLine {
