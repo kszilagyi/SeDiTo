@@ -25,4 +25,8 @@ final class InsertionPointCalculatorTest extends FreeSpecLike {
   "simple delete" in {
     InsertionPointCalculator.calc(notMoved = pairs(Map(0 -> 0, 3 -> 1))) shouldBe Traversable(EquivalencePoint.from((1, 3), (1, 1)))
   }
+
+  "insert + delete" in {
+    InsertionPointCalculator.calc(notMoved = pairs(Map(0 -> 0, 3 -> 3))) shouldBe Traversable(EquivalencePoint.from((1, 3), (1, 3)))
+  }
 }
