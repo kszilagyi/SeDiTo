@@ -38,5 +38,4 @@ final class InsertionPointCalculatorTest extends FreeSpecLike {
   "remove + move" in {
     calc(notMoved = pairs(Map(0 -> 0, 3 -> 1)), moved = pairs(Map(2 -> 20))) shouldBe Traversable(EquivalencePoint.from((1, 2), (1, 1)))
   }
-  //test move splits
 }
