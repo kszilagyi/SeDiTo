@@ -25,6 +25,9 @@ final case class EquivalencePoint(left: LineRange, right: LineRange) {
   def withoutRight(line: LineIdx): Seq[EquivalencePoint] = {
     right.without(line).map(EquivalencePoint(left, _))
   }
+  def withoutLeft(line: LineIdx): Seq[EquivalencePoint] = {
+    left.without(line).map(EquivalencePoint(_, right))
+  }
 }
 
 
@@ -44,9 +47,8 @@ object InsertionPointCalculator {
       last = current
     }
     val eqWoMoves = builder.result()
-    val movedLinesRight = moved.map(_.rightLineIdx)
-    movedLinesRight.foldLeft(eqWoMoves) { case (eqs, movedLine) =>
-      eqs.flatMap(_.withoutRight(movedLine))
+    moved.foldLeft(eqWoMoves) { case (eqs, movedLine) =>
+      eqs.flatMap(_.withoutRight(movedLine.rightLineIdx).flatMap(_.withoutLeft(movedLine.leftLineIdx)))
     }
 
 
