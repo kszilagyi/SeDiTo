@@ -7,7 +7,6 @@ import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 
 object InsertionPointCalculatorTest {
-  //private def lines(seq: Seq[Int]) = seq.map(LineIdx.apply).toIndexedSeq
   private def pairs(matches: Map[Int, Int]) = matches.map(m => LineMatch(LineIdx(m._1), LineIdx(m._2)))
 }
 final class InsertionPointCalculatorTest extends FreeSpecLike {
