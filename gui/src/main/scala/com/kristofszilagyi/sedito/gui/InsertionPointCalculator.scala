@@ -9,6 +9,11 @@ final case class LineRange(from: LineIdx, to: LineIdx) {
     if (line < from || line >= to) Seq(this)
     else Seq(LineRange(from, line), LineRange(line + 1, to)).filter(_.positive)
   }
+
+  def overlap(other: LineRange): Boolean = {
+    (from < other.from && to > other.from) ||
+      (from < other.to && to > other.from)
+  }
 }
 object EquivalencePoint {
   def from(left: (Int, Int), right: (Int, Int)) =
