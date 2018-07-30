@@ -5,12 +5,14 @@ import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.gui.Editor._
+import javafx.geometry.Bounds
 import javafx.scene.control.Label
 import javafx.stage.Popup
 import org.fxmisc.richtext.model.TwoDimensional.Bias
 import org.fxmisc.richtext.{CodeArea, LineNumberFactory}
 
 import scala.collection.JavaConverters._
+import scala.compat.java8.OptionConverters.RichOptionalGeneric
 
 
 object Editor {
@@ -203,6 +205,15 @@ final class Editor extends CodeArea {
 
     if (newSelection.empty) _selectedForMatch = None
     else _selectedForMatch = Some(newSelection)
+  }
+
+  def lineIndicesOnScreen(): LineRange = {
+    LineRange(LineIdx(firstVisibleParToAllParIndex()), LineIdx(lastVisibleParToAllParIndex()))
+  }
+
+  def boundsInLocal(line: LineIdx, convertToLocal: Bounds => Bounds): Option[Bounds] = {
+    val onScreen = allParToVisibleParIndex(line.i).map[Bounds](i => getVisibleParagraphBoundsOnScreen(i)).asScala
+    onScreen.map(convertToLocal)
   }
 
 }

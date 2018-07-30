@@ -20,7 +20,7 @@ final class DiffPane extends StackPane {
   @SuppressWarnings(Array(Warts.Var))
   private var wordAlignment: UnambiguousWordAlignment = UnambiguousWordAlignment(Set.empty)
   @SuppressWarnings(Array(Warts.Var))
-  //private var eqPoints: Traversable[EquivalencePoint] = Traversable.empty
+  private var eqPoints: Traversable[EquivalencePoint] = Traversable.empty
   def testCase: TestCase = {
     //todo this is not really correct as we loose data if the original AmbiguousWordAlignment was really ambiguous
     TestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), AmbiguousWordAlignment(wordAlignment.matches))
@@ -28,12 +28,15 @@ final class DiffPane extends StackPane {
 
   codeAreaLeft.setOther(codeAreaRight)
   codeAreaRight.setOther(codeAreaLeft)
-  private val canvas = new Canvas(100, 100)
-  heightProperty().addChangeListener(h => canvas.setHeight(h.doubleValue()))
-  widthProperty().addChangeListener(w => canvas.setWidth(w.doubleValue()))
+  private val canvas = {
+    val c = new Canvas(100, 100)
+    heightProperty().addChangeListener(h => c.setHeight(h.doubleValue()))
+    widthProperty().addChangeListener(w => c.setWidth(w.doubleValue()))
+    c.setMouseTransparent(true)
+    c
+  }
+  private val gc = canvas.getGraphicsContext2D
 
-  canvas.getGraphicsContext2D.fillOval(10, 10, 10, 20)
-  canvas.setMouseTransparent(true)
   discard(getChildren.addAll({
     val left = new VirtualizedScrollPane(codeAreaLeft)
     val right = new VirtualizedScrollPane(codeAreaRight)
@@ -50,7 +53,24 @@ final class DiffPane extends StackPane {
   this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
     codeAreaLeft.scrollYBy(-e.getDeltaY)
     codeAreaRight.scrollYBy(-e.getDeltaY)
-    //codeAreaLeft
+    val leftLinesOnScreen = codeAreaLeft.lineIndicesOnScreen()
+    val rightLinesOnScreen = codeAreaRight.lineIndicesOnScreen()
+    val eqPointsOnScreen = eqPoints.filter(e => e.left.overlap(leftLinesOnScreen) || e.right.overlap(rightLinesOnScreen))
+    gc.clearRect(0, 0, getWidth(), getHeight())
+    eqPointsOnScreen.foreach{ eqPoint =>
+      val leftFrom = codeAreaLeft.boundsInLocal(eqPoint.left.from, screenToLocal)
+      val leftTo = codeAreaLeft.boundsInLocal(eqPoint.left.to, screenToLocal)
+      val rightFrom = codeAreaRight.boundsInLocal(eqPoint.right.from, screenToLocal)
+      val rightTo = codeAreaRight.boundsInLocal(eqPoint.right.to, screenToLocal)
+      (leftFrom, leftTo, rightFrom, rightTo) match {
+        case (Some(lf), Some(lt), Some(rf), Some(rt)) =>
+          val xs = Array(lf.getMaxX, lt.getMaxX, rt.getMinX, rf.getMinX)
+          val ys = Array(lf.getMinY, lt.getMaxY, rt.getMaxY, rf.getMinY)
+          gc.fillPolygon(xs, ys, 4)
+        case _ => //todo
+      }
+    }
+
     e.consume()
   })
 
@@ -110,7 +130,7 @@ final class DiffPane extends StackPane {
         }
       }
     }
-    //eqPoints = InsertionPointCalculator.calc(partitioned.notMoved, moved)
+    eqPoints = InsertionPointCalculator.calc(partitioned.notMoved, moved)
     val highlight = CharHighlightCalculator.calc(leftLines, rightLines, newWordAlignment, lineAlignment)
     applyHighlight(codeAreaLeft, highlight.left)
     applyHighlight(codeAreaRight, highlight.right)
