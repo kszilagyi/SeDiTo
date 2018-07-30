@@ -212,8 +212,11 @@ final class Editor extends CodeArea {
   }
 
   def boundsInLocal(line: LineIdx, convertToLocal: Bounds => Bounds): Option[Bounds] = {
-    val onScreen = allParToVisibleParIndex(line.i).map[Bounds](i => getVisibleParagraphBoundsOnScreen(i)).asScala
-    onScreen.map(convertToLocal)
+    def calcOnScreenBounds() = allParToVisibleParIndex(line.i).map[Bounds]{i => getVisibleParagraphBoundsOnScreen(i)}.asScala
+    val potentiallyBadResult = calcOnScreenBounds()
+    discard(potentiallyBadResult) // bug in the framework?
+    val onScreenBounds = calcOnScreenBounds()
+    onScreenBounds.map(convertToLocal)
   }
 
 }
