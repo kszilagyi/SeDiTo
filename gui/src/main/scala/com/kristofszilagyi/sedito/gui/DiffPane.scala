@@ -57,6 +57,7 @@ final class DiffPane extends StackPane {
     val rightLinesOnScreen = codeAreaRight.lineIndicesOnScreen()
     val eqPointsOnScreen = eqPoints.filter(e => e.left.overlap(leftLinesOnScreen) || e.right.overlap(rightLinesOnScreen))
     gc.clearRect(0, 0, getWidth(), getHeight())
+
     eqPointsOnScreen.foreach{ eqPoint =>
       val leftFrom = codeAreaLeft.boundsInLocal(eqPoint.left.from, screenToLocal)
       val leftTo = codeAreaLeft.boundsInLocal(eqPoint.left.to, screenToLocal)
@@ -64,8 +65,9 @@ final class DiffPane extends StackPane {
       val rightTo = codeAreaRight.boundsInLocal(eqPoint.right.to, screenToLocal)
       (leftFrom, leftTo, rightFrom, rightTo) match {
         case (Some(lf), Some(lt), Some(rf), Some(rt)) =>
-          val xs = Array(lf.getMaxX, lt.getMaxX, rt.getMinX, rf.getMinX)
-          val ys = Array(lf.getMinY, lt.getMaxY, rt.getMaxY, rf.getMinY)
+          val rightOffset = 35
+          val xs = Array(lf.getMaxX, lt.getMaxX, rt.getMinX + rightOffset, rf.getMinX + rightOffset)
+          val ys = Array(lf.getMinY, lt.getMinY, rt.getMinY, rf.getMinY)
           gc.fillPolygon(xs, ys, 4)
         case _ => //todo
       }
