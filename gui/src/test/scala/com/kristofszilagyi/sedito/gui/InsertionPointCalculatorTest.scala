@@ -48,4 +48,11 @@ final class InsertionPointCalculatorTest extends FreeSpecLike {
       leftLineCount = 12, rightLineCount = 12) shouldBe Traversable(EquivalencePoint.from((11, 12), (11, 12)))
 
   }
+
+  "remove + insert in the beginning" in {
+    calc(notMoved = pairs((1 to 10).map(i => i -> i).toMap), moved = Seq.empty,
+      leftLineCount = 11, rightLineCount = 11) shouldBe Traversable(EquivalencePoint.from((0, 1), (0, 1)))
+
+  }
+
 }
