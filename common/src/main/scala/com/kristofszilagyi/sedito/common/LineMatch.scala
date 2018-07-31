@@ -20,6 +20,7 @@ object LineIdx {
 
 final case class LineIdx(i: Int) extends AnyVal with Ordered[LineIdx]  {
   def +(other: Int): LineIdx = LineIdx(i + other)
+  def -(other: Int): LineIdx = LineIdx(i - other)
 
   def compare(that: LineIdx): Int = i.compareTo(that.i)
 

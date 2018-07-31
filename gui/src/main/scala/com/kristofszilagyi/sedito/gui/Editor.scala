@@ -5,11 +5,12 @@ import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.gui.Editor._
-import javafx.geometry.Bounds
+import javafx.geometry.{BoundingBox, Bounds}
 import javafx.scene.control.Label
 import javafx.stage.Popup
 import org.fxmisc.richtext.model.TwoDimensional.Bias
 import org.fxmisc.richtext.{CodeArea, LineNumberFactory}
+import TypeSafeEqualsOps._
 
 import scala.collection.JavaConverters._
 import scala.compat.java8.OptionConverters.RichOptionalGeneric
@@ -212,7 +213,16 @@ final class Editor extends CodeArea {
   }
 
   def boundsInLocal(line: LineIdx, convertToLocal: Bounds => Bounds): Option[Bounds] = {
-    def calcOnScreenBounds() = allParToVisibleParIndex(line.i).map[Bounds]{i => getVisibleParagraphBoundsOnScreen(i)}.asScala
+    def calcOnScreenBounds() = {
+      if(getParagraphs.size() !=== line.i) {
+        allParToVisibleParIndex(line.i).map[Bounds] { i => getVisibleParagraphBoundsOnScreen(i) }.asScala
+      } else {
+        val bounds = allParToVisibleParIndex(line.i - 1).map[Bounds] { i => getVisibleParagraphBoundsOnScreen(i) }.asScala
+        bounds.map{ b =>
+          new BoundingBox(b.getMinX, b.getMaxY, b.getWidth, 0)
+        }
+      }
+    }
     val potentiallyBadResult = calcOnScreenBounds()
     discard(potentiallyBadResult) // bug in the framework?
     val onScreenBounds = calcOnScreenBounds()
