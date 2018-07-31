@@ -40,7 +40,7 @@ object InsertionPointCalculator {
 
   def calc(notMoved: Traversable[LineMatch], moved: Traversable[LineMatch], leftLineCount: Int, rightLineCount: Int): Traversable[EquivalencePoint] = {
     // sorting by left imply sorting by right
-    val notMovedSorted = notMoved.toList.sortBy(_.leftLineIdx)
+    val notMovedSorted = notMoved.toList.sortBy(_.leftLineIdx) :+ LineMatch.create(leftLineCount, rightLineCount)
     @SuppressWarnings(Array(Var))
     var last = LineMatch.create(-1, -1)
     val builder = Seq.newBuilder[EquivalencePoint]
@@ -51,7 +51,6 @@ object InsertionPointCalculator {
         discard(builder += eq)
       last = current
     }
-    discard((leftLineCount, rightLineCount))
     val eqWoMoves = builder.result()
     moved.foldLeft(eqWoMoves) { case (eqs, movedLine) =>
       eqs.flatMap(_.withoutRight(movedLine.rightLineIdx).flatMap(_.withoutLeft(movedLine.leftLineIdx)))
