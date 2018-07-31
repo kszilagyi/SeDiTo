@@ -132,7 +132,8 @@ final class DiffPane extends StackPane {
         }
       }
     }
-    eqPoints = InsertionPointCalculator.calc(partitioned.notMoved, moved)
+    eqPoints = InsertionPointCalculator.calc(partitioned.notMoved, moved, leftLineCount = leftLines.l.size,
+      rightLineCount = rightLines.l.size)
     val highlight = CharHighlightCalculator.calc(leftLines, rightLines, newWordAlignment, lineAlignment)
     applyHighlight(codeAreaLeft, highlight.left)
     applyHighlight(codeAreaRight, highlight.right)
