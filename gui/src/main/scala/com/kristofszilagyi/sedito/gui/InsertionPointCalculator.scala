@@ -59,6 +59,6 @@ object InsertionPointCalculator {
     val eqWoMoves = builder.result()
     moved.foldLeft(eqWoMoves) { case (eqs, movedLine) =>
       eqs.flatMap(_.withoutRight(movedLine.rightLineIdx).flatMap(_.withoutLeft(movedLine.leftLineIdx)))
-    }
+    }.filter(_.positive)
   }
 }
