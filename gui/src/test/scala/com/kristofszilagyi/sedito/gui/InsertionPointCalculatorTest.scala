@@ -60,4 +60,9 @@ final class InsertionPointCalculatorTest extends FreeSpecLike {
       leftLineCount = 3, rightLineCount = 4) shouldBe Traversable(EquivalencePoint.from((1, 1), (2, 3)))
   }
 
+  "eq point is split by move" in {
+    calc(notMoved = pairs(Map(0 -> 0, 4 -> 4)), moved = pairs(Map(5 -> 2)),
+      leftLineCount = 6, rightLineCount = 5) shouldBe Traversable(EquivalencePoint.from((1, 4), (1, 2)), EquivalencePoint.from((1, 4), (3, 4)))
+  }
+
 }
