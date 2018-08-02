@@ -55,4 +55,9 @@ final class InsertionPointCalculatorTest extends FreeSpecLike {
 
   }
 
+  "move + insert near each other" in {
+    calc(notMoved = pairs(Map(0 -> 1, 2 -> 3)), moved = pairs(Map(1 -> 0)),
+      leftLineCount = 3, rightLineCount = 4) shouldBe Traversable(EquivalencePoint.from((1, 1), (2, 3)))
+  }
+
 }
