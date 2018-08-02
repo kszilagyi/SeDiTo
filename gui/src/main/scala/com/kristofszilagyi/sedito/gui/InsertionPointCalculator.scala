@@ -7,7 +7,12 @@ final case class LineRange(from: LineIdx, to: LineIdx) {
   def positive: Boolean = to.i - from.i > 0
   def without(line: LineIdx): Seq[LineRange] = {
     if (line < from || line >= to) Seq(this)
-    else Seq(LineRange(from, line), LineRange(line + 1, to)).filter(_.positive)
+    else {
+      val left = LineRange(from, line)
+      val right = LineRange(line + 1, to)
+      if (!left.positive && !right.positive) Seq(left)
+      else Seq(left, right).filter(_.positive)
+    }
   }
 
   def overlap(other: LineRange): Boolean = {
