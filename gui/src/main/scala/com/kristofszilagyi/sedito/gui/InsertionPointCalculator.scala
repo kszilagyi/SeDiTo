@@ -49,18 +49,6 @@ object InsertionPointCalculator {
 
   private def handleRemains(leftUnmatched: Traversable[LineRange], rightUnmatched: Traversable[LineRange],
                             allMatches: Traversable[LineMatch]): Traversable[EquivalencePoint] = {
-//    val leftAll = LineRange(LineIdx(0), LineIdx(leftLineCount))
-//    val rightAll = LineRange(LineIdx(0), LineIdx(rightLineCount))
-//    val allMatches = notMoved ++ moved
-//    val leftMatched = allMatches.map(_.leftLineIdx)
-//    val rightMatched = allMatches.map(_.rightLineIdx)
-//
-//    val leftUnmatched = leftMatched.foldLeft(Traversable(leftAll)) { (acc, leftLine) =>
-//      acc.flatMap(_.without(leftLine))
-//    }.filter(_.positive)
-//    val rightUnmatched = rightMatched.foldLeft(Traversable(rightAll)) { (acc, rightLine) =>
-//      acc.flatMap(_.without(rightLine))
-//    }.filter(_.positive)
 
     val allSortedLeft = allMatches.toSeq.sortBy(_.leftLineIdx)
     val allSortedRight = allMatches.toSeq.sortBy(_.rightLineIdx)
@@ -117,9 +105,5 @@ object InsertionPointCalculator {
       acc.flatMap(_.without(rightLine))
     }.filter(_.positive)
     (handleRemains(leftUnmatched, rightUnmatched, notMoved ++ moved) ++ eqWoMoves).toSeq.distinct
-//    val selfMap = eqWoMoves.zip(Seq(eqWoMoves)).toMap
-//    val originalWithReduced = moved.foldLeft(selfMap) { case (eqs, movedLine) =>
-//      eqs.mapValuesNow(_.flatMap(_.withoutRight(movedLine.rightLineIdx).flatMap(_.withoutLeft(movedLine.leftLineIdx))))
-//    }
   }
 }
