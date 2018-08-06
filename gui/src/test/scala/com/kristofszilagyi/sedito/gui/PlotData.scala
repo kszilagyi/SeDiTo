@@ -14,7 +14,7 @@ import com.kristofszilagyi.sedito.gui.PlotData._
 import javafx.application.Application
 import javafx.stage.Stage
 import org.log4s.getLogger
-import org.scalatest.FreeSpecLike
+import org.scalatest.{FreeSpecLike, Tag}
 import smile.classification.NeuralNetwork.{ActivationFunction, ErrorFunction}
 import smile.classification.{NeuralNetwork, SoftClassifier}
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
@@ -26,6 +26,8 @@ import scala.collection.JavaConverters._
 import scala.util.{Failure, Random, Success}
 
 final case class MetricsWithResults(metrics: Metrics, matching: Boolean)
+// tun tests without this:  testOnly * -- -l "com.kristofszilagyi.sedito.gui.PlotTag"
+object PlotTag extends Tag("com.kristofszilagyi.sedito.gui.PlotTag")
 
 object PlotData {
   private val logger = getLogger
@@ -190,7 +192,7 @@ final class PlotData extends FreeSpecLike {
     }.sortBy(_._2)
   }
 
-  "train logistic regression" in {
+  "train logistic regression" taggedAs(PlotTag) in {
     logger.info("Start")
     val start = Instant.now()
     val metrics = readDataSetAndMeasureMetrics()
@@ -212,7 +214,7 @@ final class PlotData extends FreeSpecLike {
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis/1000 - duration.toMinutes * 60} seconds")
   }
 
-  "show difference" in {
+  "show difference" taggedAs(PlotTag) in {
     Application.launch(classOf[ShowOne])
   }
 
