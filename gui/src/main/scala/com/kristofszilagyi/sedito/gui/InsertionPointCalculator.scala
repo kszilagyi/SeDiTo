@@ -7,12 +7,7 @@ final case class LineRange(from: LineIdx, to: LineIdx) {
   def positive: Boolean = to.i - from.i > 0
   def without(line: LineIdx): Seq[LineRange] = {
     if (line < from || line >= to) Seq(this)
-    else {
-      val left = LineRange(from, line)
-      val right = LineRange(line + 1, to)
-      if (!left.positive && !right.positive) Seq(left)
-      else Seq(left, right).filter(_.positive)
-    }
+    else Seq(LineRange(from, line), LineRange(line + 1, to)).filter(_.positive)
   }
 
   def overlap(other: LineRange): Boolean = {
@@ -91,19 +86,32 @@ object InsertionPointCalculator {
         discard(builder += eq)
       last = current
     }
-    val eqWoMoves = builder.result()
+
+    val resultWithMovedFilteredOut = {
+      val resultMovedNotFilteredOut = builder.result()
+
+      moved.foldLeft(resultMovedNotFilteredOut) { case (eqs, movedLine) =>
+        eqs.flatMap(_.withoutRight(movedLine.rightLineIdx).flatMap(_.withoutLeft(movedLine.leftLineIdx)))
+      }
+    }
+
     val leftAll = LineRange(LineIdx(0), LineIdx(leftLineCount))
     val rightAll = LineRange(LineIdx(0), LineIdx(rightLineCount))
     val matched = notMoved ++ moved
-    val leftProcessed = matched.map(_.leftLineIdx) ++ eqWoMoves.flatMap(_.left.toLines)
-    val leftUnmatched = leftProcessed.foldLeft(Traversable(leftAll)) { (acc, leftLine) =>
-      acc.flatMap(_.without(leftLine))
-    }.filter(_.positive)
+    val leftUnmatched = {
+      val leftProcessed = matched.map(_.leftLineIdx) ++ resultWithMovedFilteredOut.flatMap(_.left.toLines)
 
-    val rightProcessed = matched.map(_.rightLineIdx) ++ eqWoMoves.flatMap(_.right.toLines)
-    val rightUnmatched = rightProcessed.foldLeft(Traversable(rightAll)) { (acc, rightLine) =>
-      acc.flatMap(_.without(rightLine))
-    }.filter(_.positive)
-    (handleRemains(leftUnmatched, rightUnmatched, notMoved ++ moved) ++ eqWoMoves).toSeq.distinct
+      leftProcessed.foldLeft(Traversable(leftAll)) { (acc, leftLine) =>
+        acc.flatMap(_.without(leftLine))
+      }.filter(_.positive)
+    }
+
+    val rightUnmatched = {
+      val rightProcessed = matched.map(_.rightLineIdx) ++ resultWithMovedFilteredOut.flatMap(_.right.toLines)
+      rightProcessed.foldLeft(Traversable(rightAll)) { (acc, rightLine) =>
+        acc.flatMap(_.without(rightLine))
+      }.filter(_.positive)
+    }
+    (handleRemains(leftUnmatched, rightUnmatched, notMoved ++ moved) ++ resultWithMovedFilteredOut).toSeq.distinct
   }
 }
