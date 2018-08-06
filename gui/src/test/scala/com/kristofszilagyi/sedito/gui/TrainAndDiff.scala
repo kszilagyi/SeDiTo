@@ -1,6 +1,5 @@
 package com.kristofszilagyi.sedito.gui
 
-import java.awt.Color
 import java.nio.file.{Files, Path, Paths}
 import java.time.{Duration, Instant}
 
@@ -10,26 +9,23 @@ import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
 import com.kristofszilagyi.sedito.common.{TestCase, Warts, WordMatch}
-import com.kristofszilagyi.sedito.gui.PlotData._
+import com.kristofszilagyi.sedito.gui.TrainAndDiff._
 import javafx.application.Application
 import javafx.stage.Stage
 import org.log4s.getLogger
-import org.scalatest.{FreeSpecLike, Tag}
 import smile.classification.NeuralNetwork.{ActivationFunction, ErrorFunction}
 import smile.classification.{NeuralNetwork, SoftClassifier}
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
 import smile.feature.Scaler
 import smile.validation._
-import smile.{classification, plot, read, write}
+import smile.{classification, read, write}
 
 import scala.collection.JavaConverters._
-import scala.util.{Failure, Random, Success}
+import scala.util.{Failure, Success}
 
 final case class MetricsWithResults(metrics: Metrics, matching: Boolean)
-// tun tests without this:  testOnly * -- -l "com.kristofszilagyi.sedito.gui.PlotTag"
-object PlotTag extends Tag("com.kristofszilagyi.sedito.gui.PlotTag")
 
-object PlotData {
+object TrainAndDiff {
   private val logger = getLogger
 
   private def readTestCase(testDir: Path): TestCase = {
@@ -40,6 +36,7 @@ object PlotData {
       case Success(testCase) => testCase
     }
   }
+
   private def readSingleDataSetAndMeasureMetrics(testDir: Path) = {
     val testCase = readTestCase(testDir)
     val metrics = MetricCalculator.calcAlignerMetrics(testCase.left, testCase.right)
@@ -54,17 +51,16 @@ object PlotData {
     }
   }
 
-  private def readDataSetAndMeasureMetrics() = {
+  def readDataSetAndMeasureMetrics() = {
     val parentDir = Paths.get(getClass.getClassLoader.getResource("algorithm_tests/full_tests").getPath)
     val testDirs = using(Files.newDirectoryStream(parentDir)) { stream =>
       stream.iterator().asScala.toList.filter(p => Files.isDirectory(p))
     }
-    val metrics = testDirs.par.map{ testDir =>
+    val metrics = testDirs.par.map { testDir =>
       testDir -> readSingleDataSetAndMeasureMetrics(testDir)
     }
     metrics.seq.toList
   }
-
 
 
   private def toAttributeDataSet(metrics: Traversable[MetricsWithResults], numOfAttributes: Int) = {
@@ -80,8 +76,8 @@ object PlotData {
     attributeDataset
   }
 
-  private def generateClassifier(nestedTraining: List[IndexedSeq[MetricsWithResults]],
-                                 nestedTest : List[IndexedSeq[MetricsWithResults]], numOfAttributes: Int) = {
+  def generateClassifier(nestedTraining: List[IndexedSeq[MetricsWithResults]],
+                                 nestedTest: List[IndexedSeq[MetricsWithResults]], numOfAttributes: Int) = {
     val training = nestedTraining.flatten
     val test = nestedTest.flatten
     logger.info(s"Training size: ${training.size}")
@@ -138,7 +134,7 @@ object PlotData {
     actual.setContent(testCase.left, testCase.right, calculatedAlignment)
   }
 
-  private def calcNumOfAttributes(metrics: List[(Path, IndexedSeq[MetricsWithResults])]) = {
+  def calcNumOfAttributes(metrics: List[(Path, IndexedSeq[MetricsWithResults])]) = {
     @SuppressWarnings(Array(Warts.OptionPartial))
     val nonEmpty = metrics.find(_._2.nonEmpty).get
     @SuppressWarnings(Array(Warts.TraversableOps))
@@ -160,27 +156,8 @@ object PlotData {
       displayTestCase(testCase, classifier, scaler)
     }
   }
-}
 
-
-final class PlotData extends FreeSpecLike {
-  "plot data" ignore {
-    val metrics = readDataSetAndMeasureMetrics()
-    @SuppressWarnings(Array(Warts.AsInstanceOf))
-    val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
-    @SuppressWarnings(Array(Warts.TraversableOps))
-    val numOfAttributes = calcNumOfAttributes(metrics) //this might fail, todo map flatten set
-    val dataSet = toAttributeDataSet(Random.shuffle(metrics.flatMap(_._2)).toSet.take(1000), numOfAttributes)
-    val scaledDataSet = new AttributeDataset("something", dataSet.attributes(), new NominalAttribute("doesMatch"))
-    dataSet.asScala.foreach { row =>
-      scaledDataSet.add(scaler.transform(row.x), row.y)
-    }
-    plot.plot(scaledDataSet, '.', Array(Color.RED, Color.BLUE)).setVisible(true)
-
-    Thread.sleep(10000*10000)
-  }
-
-  private def f1s(files:  List[(Path, IndexedSeq[MetricsWithResults])], scaler: Scaler,
+  def f1s(files: List[(Path, IndexedSeq[MetricsWithResults])], scaler: Scaler,
                   classifier: NeuralNetwork, numOfAttributes: Int) = {
     files.map { case (path, singleTest) =>
       val singleDataSet = toAttributeDataSet(singleTest, numOfAttributes)
@@ -192,31 +169,33 @@ final class PlotData extends FreeSpecLike {
     }.sortBy(_._2)
   }
 
-  "train logistic regression" taggedAs(PlotTag) in {
-    logger.info("Start")
-    val start = Instant.now()
-    val metrics = readDataSetAndMeasureMetrics()
-    val numOfAttributes = calcNumOfAttributes(metrics)
-    val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
-    val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
-      nestedTest = nestedTest.map(_._2), numOfAttributes)
+}
+object Train extends App {
+  private val logger = getLogger
 
-    val trainingF1s = f1s(nestedTraining, scaler, classifier, numOfAttributes)
+  logger.info("Start")
+  val start = Instant.now()
+  val metrics = readDataSetAndMeasureMetrics()
+  val numOfAttributes = calcNumOfAttributes(metrics)
+  val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
+  val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
+    nestedTest = nestedTest.map(_._2), numOfAttributes)
 
-    logger.info("Training f1s: \n" + trainingF1s.mkString("\n"))
+  val trainingF1s = f1s(nestedTraining, scaler, classifier, numOfAttributes)
 
-    val testf1s = f1s(nestedTest, scaler, classifier, numOfAttributes)
+  logger.info("Training f1s: \n" + trainingF1s.mkString("\n"))
 
-    logger.info("Test f1s: \n" + testf1s.mkString("\n"))
-    write.xstream(classifier, "linear_regression.model")
-    write.xstream(scaler, "linear_regression.scaler")
-    val duration = Duration.between(start, Instant.now())
-    logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis/1000 - duration.toMinutes * 60} seconds")
-  }
+  val testf1s = f1s(nestedTest, scaler, classifier, numOfAttributes)
 
-  "show difference" taggedAs(PlotTag) in {
-    Application.launch(classOf[ShowOne])
-  }
+  logger.info("Test f1s: \n" + testf1s.mkString("\n"))
+  write.xstream(classifier, "linear_regression.model")
+  write.xstream(scaler, "linear_regression.scaler")
+  val duration = Duration.between(start, Instant.now())
+  logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis/1000 - duration.toMinutes * 60} seconds")
+}
 
 
+
+object Diff extends App {
+  Application.launch(classOf[ShowOne])
 }
