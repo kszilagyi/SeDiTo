@@ -26,8 +26,8 @@ final class LineRangeTest extends FreeSpecLike {
     range.without(LineIdx(3)) shouldBe Seq(LineRange(LineIdx(2), LineIdx(3)), LineRange(LineIdx(4), LineIdx(5)))
   }
 
-  "without can result in an empty range" in {
-    LineRange(LineIdx(2), LineIdx(3)).without(LineIdx(2)) shouldBe Seq(LineRange(LineIdx(2), LineIdx(2)))
+  "without can not result in an empty range" in {
+    LineRange(LineIdx(2), LineIdx(3)).without(LineIdx(2)) shouldBe Seq()
   }
 
   "overlap with itself" in {
