@@ -3,8 +3,6 @@ package com.kristofszilagyi.sedito.gui
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps.AnyOps
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
-import com.kristofszilagyi.sedito.gui.ObservableOps.RichObservable
-import javafx.scene.canvas.Canvas
 import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
 import javafx.scene.layout.{HBox, Priority, StackPane}
 import org.fxmisc.flowless.VirtualizedScrollPane
@@ -29,9 +27,7 @@ final class DiffPane extends StackPane {
   codeAreaLeft.setOther(codeAreaRight)
   codeAreaRight.setOther(codeAreaLeft)
   private val canvas = {
-    val c = new Canvas(100, 100)
-    heightProperty().addChangeListener(h => c.setHeight(h.doubleValue()))
-    widthProperty().addChangeListener(w => c.setWidth(w.doubleValue()))
+    val c = new ResizableCanvas()
     c.setMouseTransparent(true)
     c
   }
@@ -48,8 +44,6 @@ final class DiffPane extends StackPane {
     Seq(hBox, canvas).asJava
   }))
 
-  HBox.setHgrow(codeAreaLeft, Priority.ALWAYS)
-  HBox.setHgrow(codeAreaRight, Priority.ALWAYS)
   this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
     codeAreaLeft.scrollYBy(-e.getDeltaY)
     codeAreaRight.scrollYBy(-e.getDeltaY)
