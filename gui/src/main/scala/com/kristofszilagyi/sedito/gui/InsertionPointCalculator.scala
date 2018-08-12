@@ -15,6 +15,11 @@ final case class LineRange(from: LineIdx, to: LineIdx) {
       (from < other.to && to > other.from)
   }
 
+  def intersect(other: LineRange): Option[LineRange] = {
+    if(overlap(other)) Some(LineRange(from.max(other.from), to.min(other.to)))
+    else None
+  }
+
   def toLines: Seq[LineIdx] = {
     (from.i until to.i).map(LineIdx.apply)
   }
