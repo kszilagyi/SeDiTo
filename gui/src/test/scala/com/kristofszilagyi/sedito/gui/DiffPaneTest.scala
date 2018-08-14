@@ -13,6 +13,10 @@ final class DiffPaneTest extends FreeSpecLike {
     DiffPane.offScreenY(on = LineIdx(2), off = LineIdx(1), height = 25, onY = 125) shouldBe 100
   }
 
+  "on is bigger - 2" in {
+    DiffPane.offScreenY(on = LineIdx(3), off = LineIdx(1), height = 25, onY = 125) shouldBe 75
+  }
+
   "off is bigger" in {
     DiffPane.offScreenY(on = LineIdx(1), off = LineIdx(2), height = 25, onY = 125) shouldBe 150
   }
