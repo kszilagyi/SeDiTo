@@ -1,5 +1,6 @@
 package com.kristofszilagyi.sedito.gui
 
+import com.kristofszilagyi.sedito.common.AssertionEx._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps.AnyOps
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
@@ -44,29 +45,36 @@ final class DiffPane extends StackPane {
     Seq(hBox, canvas).asJava
   }))
 
+  private def drawEqPoints(): Unit = {
+    val leftLinesOnScreen = codeAreaLeft.lineIndicesOnScreen()
+    val rightLinesOnScreen = codeAreaRight.lineIndicesOnScreen()
+    val eqPointsOnScreen = eqPoints.map(e => (e.intersect(leftLinesOnScreen, rightLinesOnScreen), e))
+    gc.clearRect(0, 0, getWidth(), getHeight())
+
+    eqPointsOnScreen.foreach{ case (visible, _) =>
+      visible match {
+        case Some(v) =>
+          val leftFrom = codeAreaLeft.boundsInLocal(v.left.from, screenToLocal)
+          val leftTo = codeAreaLeft.boundsInLocal(v.left.to - 1, screenToLocal)
+          val rightFrom = codeAreaRight.boundsInLocal(v.right.from, screenToLocal)
+          val rightTo = codeAreaRight.boundsInLocal(v.right.to - 1 , screenToLocal)
+          (leftFrom, leftTo, rightFrom, rightTo) match {
+            case (Some(lf), Some(lt), Some(rf), Some(rt)) =>
+              val rightOffset = 35
+              val xs = Array(lf.getMaxX, lt.getMaxX, rt.getMinX + rightOffset, rf.getMinX + rightOffset)
+              val ys = Array(lf.getMinY, lt.getMaxY, rt.getMaxY, rf.getMinY)
+              gc.fillPolygon(xs, ys, 4)
+            case other => fail(s"Should not happen: $other")
+          }
+        case None => //not visible
+          //todo figure out if some part is visible or not
+      }
+    }
+  }
   this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
     codeAreaLeft.scrollYBy(-e.getDeltaY)
     codeAreaRight.scrollYBy(-e.getDeltaY)
-    val leftLinesOnScreen = codeAreaLeft.lineIndicesOnScreen()
-    val rightLinesOnScreen = codeAreaRight.lineIndicesOnScreen()
-    val eqPointsOnScreen = eqPoints.filter(e => e.left.overlap(leftLinesOnScreen) || e.right.overlap(rightLinesOnScreen))
-    gc.clearRect(0, 0, getWidth(), getHeight())
-
-    eqPointsOnScreen.foreach{ eqPoint =>
-      val leftFrom = codeAreaLeft.boundsInLocal(eqPoint.left.from, screenToLocal)
-      val leftTo = codeAreaLeft.boundsInLocal(eqPoint.left.to, screenToLocal)
-      val rightFrom = codeAreaRight.boundsInLocal(eqPoint.right.from, screenToLocal)
-      val rightTo = codeAreaRight.boundsInLocal(eqPoint.right.to, screenToLocal)
-      (leftFrom, leftTo, rightFrom, rightTo) match {
-        case (Some(lf), Some(lt), Some(rf), Some(rt)) =>
-          val rightOffset = 35
-          val xs = Array(lf.getMaxX, lt.getMaxX, rt.getMinX + rightOffset, rf.getMinX + rightOffset)
-          val ys = Array(lf.getMinY, lt.getMinY, rt.getMinY, rf.getMinY)
-          gc.fillPolygon(xs, ys, 4)
-        case _ => //todo
-      }
-    }
-
+    drawEqPoints()
     e.consume()
   })
 
@@ -131,6 +139,7 @@ final class DiffPane extends StackPane {
     val highlight = CharHighlightCalculator.calc(leftLines, rightLines, newWordAlignment, lineAlignment)
     applyHighlight(codeAreaLeft, highlight.left)
     applyHighlight(codeAreaRight, highlight.right)
+    // drawEqPoints() -> crashes :(
 
 
   }

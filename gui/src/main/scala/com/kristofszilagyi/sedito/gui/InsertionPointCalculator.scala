@@ -42,6 +42,12 @@ final case class EquivalencePoint(left: LineRange, right: LineRange) {
   def withoutLeft(line: LineIdx): Seq[EquivalencePoint] = {
     left.without(line).map(EquivalencePoint(_, right))
   }
+  def intersect(oLeft: LineRange, oRight: LineRange): Option[EquivalencePoint] = {
+    (left.intersect(oLeft), right.intersect(oRight)) match {
+      case (Some(l), Some(r)) => Some(EquivalencePoint(l, r))
+      case _ => None
+    }
+  }
 }
 
 

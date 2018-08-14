@@ -209,7 +209,12 @@ final class Editor extends CodeArea {
   }
 
   def lineIndicesOnScreen(): LineRange = {
-    LineRange(LineIdx(firstVisibleParToAllParIndex()), LineIdx(lastVisibleParToAllParIndex()))
+    // this 2 lines trigger recalculation so from the next call the results are constant in this tick
+    // (bug in the framework)
+    allParToVisibleParIndex(firstVisibleParToAllParIndex()).asScala.foreach(getVisibleParagraphBoundsOnScreen(_))
+    allParToVisibleParIndex(lastVisibleParToAllParIndex()).asScala.foreach(getVisibleParagraphBoundsOnScreen(_))
+
+    LineRange(LineIdx(firstVisibleParToAllParIndex()), LineIdx(lastVisibleParToAllParIndex()) + 1)
   }
 
   def boundsInLocal(line: LineIdx, convertToLocal: Bounds => Bounds): Option[Bounds] = {
