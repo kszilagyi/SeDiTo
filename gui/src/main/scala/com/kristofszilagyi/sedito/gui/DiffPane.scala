@@ -10,6 +10,14 @@ import org.fxmisc.flowless.VirtualizedScrollPane
 import org.log4s.getLogger
 
 import scala.collection.JavaConverters._
+import DiffPane._
+
+object DiffPane {
+  def offScreenY(on: LineIdx, off: LineIdx, height: Double, onY: Double): Double = {
+    val diff = off.i - on.i
+    onY + diff * height
+  }
+}
 
 final class DiffPane extends StackPane {
   private val logger = getLogger
@@ -51,18 +59,33 @@ final class DiffPane extends StackPane {
     val eqPointsOnScreen = eqPoints.map(e => (e.intersect(leftLinesOnScreen, rightLinesOnScreen), e))
     gc.clearRect(0, 0, getWidth(), getHeight())
 
-    eqPointsOnScreen.foreach{ case (visible, _) =>
+    eqPointsOnScreen.foreach{ case (visible, original) =>
       visible match {
-        case Some(v) =>
-          val leftFrom = codeAreaLeft.boundsInLocal(v.left.from, screenToLocal)
-          val leftTo = codeAreaLeft.boundsInLocal(v.left.to - 1, screenToLocal)
-          val rightFrom = codeAreaRight.boundsInLocal(v.right.from, screenToLocal)
-          val rightTo = codeAreaRight.boundsInLocal(v.right.to - 1 , screenToLocal)
-          (leftFrom, leftTo, rightFrom, rightTo) match {
-            case (Some(lf), Some(lt), Some(rf), Some(rt)) =>
+        case Some(vis) =>
+          val maybeLeftFromOnScreen = codeAreaLeft.boundsInLocal(vis.left.from, screenToLocal)
+          val maybeLeftToOnScreen = codeAreaLeft.boundsInLocal(vis.left.to - 1, screenToLocal)
+
+          val maybeRightFromOnScreen = codeAreaRight.boundsInLocal(vis.right.from, screenToLocal)
+          val maybeRightToOnScreen = codeAreaRight.boundsInLocal(vis.right.to - 1, screenToLocal)
+
+          (maybeLeftFromOnScreen, maybeLeftToOnScreen, maybeRightFromOnScreen, maybeRightToOnScreen) match {
+            case (Some(leftFromOnScreen), Some(leftToOnScreen), Some(rightFromOnScreen), Some(rightToOnScreen)) =>
               val rightOffset = 35
-              val xs = Array(lf.getMaxX, lt.getMaxX, rt.getMinX + rightOffset, rf.getMinX + rightOffset)
-              val ys = Array(lf.getMinY, lt.getMaxY, rt.getMaxY, rf.getMinY)
+              val leftX = leftFromOnScreen.getMaxX
+              val rightX = rightFromOnScreen.getMinX + rightOffset
+              val xs = Array(leftX, leftX, rightX, rightX)
+
+              val ys = {
+                val heightPerLine = if (vis.left.size > 0) (leftToOnScreen.getMinY - leftFromOnScreen.getMinY) / vis.left.size
+                  else if(vis.right.size > 0) (rightToOnScreen.getMinY - rightFromOnScreen.getMinY) / vis.right.size
+                  else fail(s"both side is zero, doesn't make sense: $vis")
+
+                val y1 = offScreenY(vis.left.from, original.left.from, heightPerLine, leftFromOnScreen.getMinY)
+                val y2 = offScreenY(vis.left.to, original.left.to, heightPerLine, leftToOnScreen.getMaxY)
+                val y3 = offScreenY(vis.right.to, original.right.to, heightPerLine, rightToOnScreen.getMaxY)
+                val y4 = offScreenY(vis.right.from, original.right.from, heightPerLine, rightFromOnScreen.getMinY)
+                Array(y1, y2, y3, y4)
+              }
               gc.fillPolygon(xs, ys, 4)
             case other => fail(s"Should not happen: $other")
           }

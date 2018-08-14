@@ -23,6 +23,8 @@ final case class LineRange(from: LineIdx, to: LineIdx) {
   def toLines: Seq[LineIdx] = {
     (from.i until to.i).map(LineIdx.apply)
   }
+
+  def size: Int = to.i - from.i
 }
 object EquivalencePoint {
   def from(left: (Int, Int), right: (Int, Int)) =
