@@ -1,16 +1,18 @@
 package com.kristofszilagyi.sedito.gui
 
 import com.kristofszilagyi.sedito.common.AssertionEx.fail
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.gui.Editor._
 import javafx.geometry.{BoundingBox, Bounds}
+import javafx.scene.Node
 import javafx.scene.control.Label
 import javafx.stage.Popup
+import org.fxmisc.flowless.{Cell, VirtualFlow}
 import org.fxmisc.richtext.model.TwoDimensional.Bias
-import org.fxmisc.richtext.{CodeArea, LineNumberFactory}
-import TypeSafeEqualsOps._
+import org.fxmisc.richtext.{CodeArea, GenericStyledArea, LineNumberFactory}
 
 import scala.collection.JavaConverters._
 import scala.compat.java8.OptionConverters.RichOptionalGeneric
@@ -218,20 +220,30 @@ final class Editor extends CodeArea {
   }
 
   def boundsInLocal(line: LineIdx, convertToLocal: Bounds => Bounds): Option[Bounds] = {
-    def calcOnScreenBounds() = {
-      if(getParagraphs.size() !=== line.i) {
-        allParToVisibleParIndex(line.i).map[Bounds] { i => getVisibleParagraphBoundsOnScreen(i) }.asScala
-      } else {
-        val bounds = allParToVisibleParIndex(line.i - 1).map[Bounds] { i => getVisibleParagraphBoundsOnScreen(i) }.asScala
-        bounds.map{ b =>
-          new BoundingBox(b.getMinX, b.getMaxY, b.getWidth, 0)
+      def calcOnScreenBounds() = {
+        // the reflective call is necessary because the stock method(getVisibleParagraphBoundsOnScreen)
+        // is cropping the original rectangle to the edges of the screen.
+        val f = classOf[GenericStyledArea[_, _, _]].getDeclaredField("virtualFlow")
+        f.setAccessible(true)
+        @SuppressWarnings(Array(Warts.AsInstanceOf))
+        val virtualFlow = f.get(this).asInstanceOf[VirtualFlow[_, Cell[_, Node]]]
+        if(getParagraphs.size() !=== line.i) allParToVisibleParIndex(line.i).map[Bounds] { i =>
+          val node = virtualFlow.visibleCells.get(i).getNode
+          node.localToScreen(node.getBoundsInLocal)
+        }.asScala else {
+          val bounds = allParToVisibleParIndex(line.i - 1).map[Bounds] { i =>
+            val node = virtualFlow.visibleCells.get(i).getNode
+            node.localToScreen(node.getBoundsInLocal)
+          }.asScala
+          bounds.map{ b =>
+            new BoundingBox(b.getMinX, b.getMaxY, b.getWidth, 0)
+          }
         }
       }
-    }
-    val potentiallyBadResult = calcOnScreenBounds()
-    discard(potentiallyBadResult) // bug in the framework?
-    val onScreenBounds = calcOnScreenBounds()
-    onScreenBounds.map(convertToLocal)
+      val potentiallyBadResult = calcOnScreenBounds()
+      discard(potentiallyBadResult) // bug in the framework
+      val onScreenBounds = calcOnScreenBounds()
+      onScreenBounds.map(convertToLocal)
   }
 
 }

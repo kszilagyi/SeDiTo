@@ -58,7 +58,6 @@ final class DiffPane extends StackPane {
     val rightLinesOnScreen = codeAreaRight.lineIndicesOnScreen()
     val eqPointsOnScreen = eqPoints.map(e => (e.intersect(leftLinesOnScreen, rightLinesOnScreen), e))
     gc.clearRect(0, 0, getWidth(), getHeight())
-
     eqPointsOnScreen.foreach{ case (visible, original) =>
       visible match {
         case Some(vis) =>
@@ -76,10 +75,7 @@ final class DiffPane extends StackPane {
               val xs = Array(leftX, leftX, rightX, rightX)
 
               val ys = {
-                val heightPerLine = if (vis.left.size > 0) (leftToOnScreen.getMinY - leftFromOnScreen.getMinY) / vis.left.size
-                  else if(vis.right.size > 0) (rightToOnScreen.getMinY - rightFromOnScreen.getMinY) / vis.right.size
-                  else fail(s"both side is zero, doesn't make sense: $vis")
-
+                val heightPerLine = 12.0 // todo calculate dynamically - do we need that?
                 val y1 = offScreenY(vis.left.from, original.left.from, heightPerLine, leftFromOnScreen.getMinY)
                 val y2 = offScreenY(vis.left.to, original.left.to, heightPerLine, leftToOnScreen.getMaxY)
                 val y3 = offScreenY(vis.right.to, original.right.to, heightPerLine, rightToOnScreen.getMaxY)
