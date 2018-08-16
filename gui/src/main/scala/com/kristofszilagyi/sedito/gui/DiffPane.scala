@@ -57,15 +57,16 @@ final class DiffPane extends StackPane {
     val leftLinesOnScreen = codeAreaLeft.lineIndicesOnScreen()
     val rightLinesOnScreen = codeAreaRight.lineIndicesOnScreen()
     val eqPointsOnScreen = eqPoints.map(e => (e.intersect(leftLinesOnScreen, rightLinesOnScreen), e))
-    gc.clearRect(0, 0, getWidth(), getHeight())
-    eqPointsOnScreen.foreach{ case (visible, original) =>
-      visible match {
-        case Some(vis) =>
-          val maybeLeftFromOnScreen = codeAreaLeft.boundsInLocal(vis.left.from, screenToLocal)
-          val maybeLeftToOnScreen = codeAreaLeft.boundsInLocal(vis.left.to - 1, screenToLocal)
 
-          val maybeRightFromOnScreen = codeAreaRight.boundsInLocal(vis.right.from, screenToLocal)
-          val maybeRightToOnScreen = codeAreaRight.boundsInLocal(vis.right.to - 1, screenToLocal)
+    gc.clearRect(0, 0, getWidth(), getHeight())
+    eqPointsOnScreen.foreach{ case (maybeVisible, original) =>
+      maybeVisible match {
+        case Some(visible) =>
+          val maybeLeftFromOnScreen = codeAreaLeft.boundsInLocal(visible.left.from, screenToLocal)
+          val maybeLeftToOnScreen = codeAreaLeft.boundsInLocal(visible.left.to - 1, screenToLocal)
+
+          val maybeRightFromOnScreen = codeAreaRight.boundsInLocal(visible.right.from, screenToLocal)
+          val maybeRightToOnScreen = codeAreaRight.boundsInLocal(visible.right.to - 1, screenToLocal)
 
           (maybeLeftFromOnScreen, maybeLeftToOnScreen, maybeRightFromOnScreen, maybeRightToOnScreen) match {
             case (Some(leftFromOnScreen), Some(leftToOnScreen), Some(rightFromOnScreen), Some(rightToOnScreen)) =>
@@ -76,10 +77,10 @@ final class DiffPane extends StackPane {
 
               val ys = {
                 val heightPerLine = 12.0 // todo calculate dynamically - do we need that?
-                val y1 = offScreenY(vis.left.from, original.left.from, heightPerLine, leftFromOnScreen.getMinY)
-                val y2 = offScreenY(vis.left.to, original.left.to, heightPerLine, leftToOnScreen.getMaxY)
-                val y3 = offScreenY(vis.right.to, original.right.to, heightPerLine, rightToOnScreen.getMaxY)
-                val y4 = offScreenY(vis.right.from, original.right.from, heightPerLine, rightFromOnScreen.getMinY)
+                val y1 = offScreenY(visible.left.from, original.left.from, heightPerLine, leftFromOnScreen.getMinY)
+                val y2 = offScreenY(visible.left.to, original.left.to, heightPerLine, leftToOnScreen.getMaxY)
+                val y3 = offScreenY(visible.right.to, original.right.to, heightPerLine, rightToOnScreen.getMaxY)
+                val y4 = offScreenY(visible.right.from, original.right.from, heightPerLine, rightFromOnScreen.getMinY)
                 Array(y1, y2, y3, y4)
               }
               gc.fillPolygon(xs, ys, 4)
