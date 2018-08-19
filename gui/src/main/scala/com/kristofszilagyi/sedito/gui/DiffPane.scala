@@ -4,19 +4,28 @@ import com.kristofszilagyi.sedito.common.AssertionEx._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps.AnyOps
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
+import com.kristofszilagyi.sedito.common.utils.TupleOps.RichTuple
+import com.kristofszilagyi.sedito.gui.DiffPane._
 import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
 import javafx.scene.layout.{HBox, Priority, StackPane}
+import javafx.scene.paint.Color
+import javafx.scene.shape.StrokeLineCap
 import org.fxmisc.flowless.VirtualizedScrollPane
 import org.log4s.getLogger
 
 import scala.collection.JavaConverters._
-import DiffPane._
-import com.kristofszilagyi.sedito.common.utils.TupleOps.RichTuple
 
 object DiffPane {
   def offScreenY(on: LineIdx, off: LineIdx, height: Double, onY: Double): Double = {
     val diff = off.i - on.i
     onY + diff * height
+  }
+  private val emptyLineWidth = 3.0
+  private def widen(y1: Double, y2: Double): (Double, Double) = {
+    assert(y2 >= y1)
+    if (y2 - y1 < 0.1) {
+      (y1 - emptyLineWidth / 2, y2 + emptyLineWidth / 2)
+    } else (y1, y2)
   }
 }
 
@@ -64,7 +73,7 @@ final class DiffPane extends StackPane {
     val maybeFirstLeft = leftLinesOnScreen.toLines.headOption
     val maybeFirstRight = rightLinesOnScreen.toLines.headOption
     (maybeFirstLeft, maybeFirstRight).sequence.foreach { case (firstLeft, firstRight) =>
-    eqPointsOnScreen.foreach{ eqPointOnScreen =>
+    eqPointsOnScreen.foreach{ eqPoint =>
         //todo fix this for text wrapping
         val maybeFirstLeftBounds = codeAreaLeft.boundsInLocal(firstLeft, screenToLocal)
         val maybeFirstRightBounds = codeAreaRight.boundsInLocal(firstRight, screenToLocal)
@@ -75,15 +84,25 @@ final class DiffPane extends StackPane {
             val rightX = firstRightBounds.getMinX + rightOffset
             val xs = Array(leftX, leftX, rightX, rightX)
 
-            val ys = {
-              val heightPerLine = 16.0 // todo calculate dynamically - do we need that?
-              val y1 = offScreenY(firstLeft, eqPointOnScreen.left.from, heightPerLine, firstLeftBounds.getMinY)
-              val y2 = offScreenY(firstLeft, eqPointOnScreen.left.to, heightPerLine, firstLeftBounds.getMinY)
-              val y3 = offScreenY(firstRight, eqPointOnScreen.right.to, heightPerLine, firstRightBounds.getMinY)
-              val y4 = offScreenY(firstRight, eqPointOnScreen.right.from, heightPerLine, firstRightBounds.getMinY)
-              Array(y1, y2, y3, y4)
+            val heightPerLine = 16.0 // todo calculate dynamically - do we need that?
+            val y1 = offScreenY(firstLeft, eqPoint.left.from, heightPerLine, firstLeftBounds.getMinY)
+            val y2 = offScreenY(firstLeft, eqPoint.left.to, heightPerLine, firstLeftBounds.getMinY)
+            val y3 = offScreenY(firstRight, eqPoint.right.to, heightPerLine, firstRightBounds.getMinY)
+            val y4 = offScreenY(firstRight, eqPoint.right.from, heightPerLine, firstRightBounds.getMinY)
+            gc.setFill(Color.LIGHTGRAY)
+            if (eqPoint.left.size ==== 0) {
+              gc.setFill(Color.LIGHTGREEN)
+              gc.setStroke(Color.LIGHTGREEN)
+              gc.setLineWidth(emptyLineWidth)
+              gc.setLineCap(StrokeLineCap.BUTT)
+              gc.strokeLine(firstLeftBounds.getMinX, y1, firstLeftBounds.getMaxX, y1)
             }
+
+            val (y1W, y2W) = widen(y1, y2)
+            val (y4W, y3W) = widen(y4, y3)
+            val ys = Array(y1W, y2W, y3W, y4W)
             gc.fillPolygon(xs, ys, 4)
+
           case other => fail(s"Should not happen: $other")
         }
       }
