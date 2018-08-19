@@ -96,13 +96,19 @@ final class DiffPane extends StackPane {
               gc.setLineWidth(emptyLineWidth)
               gc.setLineCap(StrokeLineCap.BUTT)
               gc.strokeLine(firstLeftBounds.getMinX, y1, firstLeftBounds.getMaxX, y1)
+            } else if (eqPoint.right.size ==== 0) {
+              gc.setFill(Color.PINK)
+              gc.setStroke(Color.PINK)
+              gc.setLineWidth(emptyLineWidth)
+              gc.setLineCap(StrokeLineCap.BUTT)
+              gc.strokeLine(firstRightBounds.getMinX + rightOffset, y3, firstRightBounds.getMaxX, y3)
             }
-
             val (y1W, y2W) = widen(y1, y2)
             val (y4W, y3W) = widen(y4, y3)
             val ys = Array(y1W, y2W, y3W, y4W)
             gc.fillPolygon(xs, ys, 4)
-
+            gc.setFill(Color.BLACK)
+            //gc.fillRect(firstLeftBounds.getMinX, firstLeftBounds.getMinY, firstLeftBounds.getWidth, firstLeftBounds.getHeight)
           case other => fail(s"Should not happen: $other")
         }
       }

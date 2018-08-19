@@ -219,22 +219,27 @@ final class Editor extends CodeArea {
     LineRange(LineIdx(firstVisibleParToAllParIndex()), LineIdx(lastVisibleParToAllParIndex()) + 1)
   }
 
+  private def getBounds(line: LineIdx) = {
+    val f = classOf[GenericStyledArea[_, _, _]].getDeclaredField("virtualFlow")
+    f.setAccessible(true)
+    @SuppressWarnings(Array(Warts.AsInstanceOf))
+    val virtualFlow = f.get(this).asInstanceOf[VirtualFlow[_, Cell[_, Node]]]
+
+    allParToVisibleParIndex(line.i).asScala.map { i =>
+      val node = virtualFlow.visibleCells.get(i).getNode
+      val uncropped = node.localToScreen(node.getBoundsInLocal)
+      val cropped = getVisibleParagraphBoundsOnScreen(i)
+      new BoundingBox(cropped.getMinX, uncropped.getMinY, cropped.getWidth, uncropped.getHeight)
+    }
+  }
   def boundsInLocal(line: LineIdx, convertToLocal: Bounds => Bounds): Option[Bounds] = {
       def calcOnScreenBounds() = {
         // the reflective call is necessary because the stock method(getVisibleParagraphBoundsOnScreen)
         // is cropping the original rectangle to the edges of the screen.
-        val f = classOf[GenericStyledArea[_, _, _]].getDeclaredField("virtualFlow")
-        f.setAccessible(true)
-        @SuppressWarnings(Array(Warts.AsInstanceOf))
-        val virtualFlow = f.get(this).asInstanceOf[VirtualFlow[_, Cell[_, Node]]]
-        if(getParagraphs.size() !=== line.i) allParToVisibleParIndex(line.i).map[Bounds] { i =>
-          val node = virtualFlow.visibleCells.get(i).getNode
-          node.localToScreen(node.getBoundsInLocal)
-        }.asScala else {
-          val bounds = allParToVisibleParIndex(line.i - 1).map[Bounds] { i =>
-            val node = virtualFlow.visibleCells.get(i).getNode
-            node.localToScreen(node.getBoundsInLocal)
-          }.asScala
+
+        if(getParagraphs.size() !=== line.i) getBounds(line)
+        else {
+          val bounds = getBounds(line - 1)
           bounds.map{ b =>
             new BoundingBox(b.getMinX, b.getMaxY, b.getWidth, 0)
           }
