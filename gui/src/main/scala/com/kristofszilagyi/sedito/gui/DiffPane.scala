@@ -11,6 +11,7 @@ import org.log4s.getLogger
 
 import scala.collection.JavaConverters._
 import DiffPane._
+import com.kristofszilagyi.sedito.common.utils.TupleOps.RichTuple
 
 object DiffPane {
   def offScreenY(on: LineIdx, off: LineIdx, height: Double, onY: Double): Double = {
@@ -54,40 +55,37 @@ final class DiffPane extends StackPane {
   }))
 
   private def drawEqPoints(): Unit = {
+    gc.clearRect(0, 0, getWidth(), getHeight())
+
     val leftLinesOnScreen = codeAreaLeft.lineIndicesOnScreen()
     val rightLinesOnScreen = codeAreaRight.lineIndicesOnScreen()
-    val eqPointsOnScreen = eqPoints.map(e => (e.intersect(leftLinesOnScreen, rightLinesOnScreen), e))
+    val eqPointsOnScreen = eqPoints.filter(_.overlap(leftLinesOnScreen, rightLinesOnScreen))
 
-    gc.clearRect(0, 0, getWidth(), getHeight())
-    eqPointsOnScreen.foreach{ case (maybeVisible, original) =>
-      maybeVisible match {
-        case Some(visible) =>
-          val maybeLeftFromOnScreen = codeAreaLeft.boundsInLocal(visible.left.from, screenToLocal)
-          val maybeLeftToOnScreen = codeAreaLeft.boundsInLocal(visible.left.to - 1, screenToLocal)
+    val maybeFirstLeft = leftLinesOnScreen.toLines.headOption
+    val maybeFirstRight = rightLinesOnScreen.toLines.headOption
+    (maybeFirstLeft, maybeFirstRight).sequence.foreach { case (firstLeft, firstRight) =>
+    eqPointsOnScreen.foreach{ eqPointOnScreen =>
+        //todo fix this for text wrapping
+        val maybeFirstLeftBounds = codeAreaLeft.boundsInLocal(firstLeft, screenToLocal)
+        val maybeFirstRightBounds = codeAreaRight.boundsInLocal(firstRight, screenToLocal)
+        (maybeFirstLeftBounds, maybeFirstRightBounds) match {
+          case (Some(firstLeftBounds), Some(firstRightBounds)) =>
+            val rightOffset = 35
+            val leftX = firstLeftBounds.getMaxX
+            val rightX = firstRightBounds.getMinX + rightOffset
+            val xs = Array(leftX, leftX, rightX, rightX)
 
-          val maybeRightFromOnScreen = codeAreaRight.boundsInLocal(visible.right.from, screenToLocal)
-          val maybeRightToOnScreen = codeAreaRight.boundsInLocal(visible.right.to - 1, screenToLocal)
-
-          (maybeLeftFromOnScreen, maybeLeftToOnScreen, maybeRightFromOnScreen, maybeRightToOnScreen) match {
-            case (Some(leftFromOnScreen), Some(leftToOnScreen), Some(rightFromOnScreen), Some(rightToOnScreen)) =>
-              val rightOffset = 35
-              val leftX = leftFromOnScreen.getMaxX
-              val rightX = rightFromOnScreen.getMinX + rightOffset
-              val xs = Array(leftX, leftX, rightX, rightX)
-
-              val ys = {
-                val heightPerLine = 12.0 // todo calculate dynamically - do we need that?
-                val y1 = offScreenY(visible.left.from, original.left.from, heightPerLine, leftFromOnScreen.getMinY)
-                val y2 = offScreenY(visible.left.to, original.left.to, heightPerLine, leftToOnScreen.getMaxY)
-                val y3 = offScreenY(visible.right.to, original.right.to, heightPerLine, rightToOnScreen.getMaxY)
-                val y4 = offScreenY(visible.right.from, original.right.from, heightPerLine, rightFromOnScreen.getMinY)
-                Array(y1, y2, y3, y4)
-              }
-              gc.fillPolygon(xs, ys, 4)
-            case other => fail(s"Should not happen: $other")
-          }
-        case None => //not visible
-          //todo figure out if some part is visible or not
+            val ys = {
+              val heightPerLine = 16.0 // todo calculate dynamically - do we need that?
+              val y1 = offScreenY(firstLeft, eqPointOnScreen.left.from, heightPerLine, firstLeftBounds.getMinY)
+              val y2 = offScreenY(firstLeft, eqPointOnScreen.left.to, heightPerLine, firstLeftBounds.getMinY)
+              val y3 = offScreenY(firstRight, eqPointOnScreen.right.to, heightPerLine, firstRightBounds.getMinY)
+              val y4 = offScreenY(firstRight, eqPointOnScreen.right.from, heightPerLine, firstRightBounds.getMinY)
+              Array(y1, y2, y3, y4)
+            }
+            gc.fillPolygon(xs, ys, 4)
+          case other => fail(s"Should not happen: $other")
+        }
       }
     }
   }

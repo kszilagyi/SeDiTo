@@ -50,6 +50,10 @@ final case class EquivalencePoint(left: LineRange, right: LineRange) {
       case _ => None
     }
   }
+  def overlap(oLeft: LineRange, oRight: LineRange): Boolean = {
+    oLeft.overlap(left) || oRight.overlap(right)
+  }
+
 }
 
 
