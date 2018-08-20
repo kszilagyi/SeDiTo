@@ -8,7 +8,7 @@ import com.kristofszilagyi.sedito.common.utils.TupleOps.RichTuple
 import com.kristofszilagyi.sedito.gui.DiffPane._
 import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
 import javafx.scene.layout.{HBox, Priority, StackPane}
-import javafx.scene.paint.Color
+import javafx.scene.paint.{Color, CycleMethod, LinearGradient, Stop}
 import javafx.scene.shape.StrokeLineCap
 import org.fxmisc.flowless.VirtualizedScrollPane
 import org.log4s.getLogger
@@ -89,16 +89,19 @@ final class DiffPane extends StackPane {
             val y2 = offScreenY(firstLeft, eqPoint.left.to, heightPerLine, firstLeftBounds.getMinY)
             val y3 = offScreenY(firstRight, eqPoint.right.to, heightPerLine, firstRightBounds.getMinY)
             val y4 = offScreenY(firstRight, eqPoint.right.from, heightPerLine, firstRightBounds.getMinY)
-            gc.setFill(Color.LIGHTGRAY)
+            val insertColor = Color.LIGHTGREEN
+            val deleteColor = Color.PINK
+            gc.setFill(new LinearGradient(0.0, 0.5, 1.0, 0.5, true,
+              CycleMethod.NO_CYCLE, new Stop(0.0, deleteColor), new Stop(1.0, insertColor)))
             if (eqPoint.left.size ==== 0) {
-              gc.setFill(Color.LIGHTGREEN)
-              gc.setStroke(Color.LIGHTGREEN)
+              gc.setFill(insertColor)
+              gc.setStroke(insertColor)
               gc.setLineWidth(emptyLineWidth)
               gc.setLineCap(StrokeLineCap.BUTT)
               gc.strokeLine(firstLeftBounds.getMinX, y1, firstLeftBounds.getMaxX, y1)
             } else if (eqPoint.right.size ==== 0) {
-              gc.setFill(Color.PINK)
-              gc.setStroke(Color.PINK)
+              gc.setFill(deleteColor)
+              gc.setStroke(deleteColor)
               gc.setLineWidth(emptyLineWidth)
               gc.setLineCap(StrokeLineCap.BUTT)
               gc.strokeLine(firstRightBounds.getMinX + rightOffset, y3, firstRightBounds.getMaxX, y3)
