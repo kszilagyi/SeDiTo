@@ -153,6 +153,11 @@ final class DiffPane extends StackPane {
     codeAreaLeft.reset()
     codeAreaLeft.replaceText(left.s)
     codeAreaRight.replaceText(right.s)
+
+    codeAreaLeft.moveTo(0)
+    codeAreaLeft.requestFollowCaret()
+    codeAreaRight.moveTo(0)
+    codeAreaRight.requestFollowCaret()
     wordAlignment = newWordAlignment
     val leftLines = getParagraphTexts(codeAreaLeft)
     val rightLines = getParagraphTexts(codeAreaRight)
