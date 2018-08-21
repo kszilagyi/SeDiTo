@@ -6,7 +6,6 @@ import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.common.utils.TupleOps.RichTuple
 import com.kristofszilagyi.sedito.gui.DiffPane._
-import javafx.event.Event
 import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
 import javafx.scene.layout.{HBox, Priority, StackPane}
 import javafx.scene.paint.{Color, CycleMethod, LinearGradient, Stop}
