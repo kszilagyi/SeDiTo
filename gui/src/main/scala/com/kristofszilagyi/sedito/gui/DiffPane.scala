@@ -34,6 +34,7 @@ object DiffPane {
 }
 
 final class DiffPane extends StackPane {
+  //fields
   private val logger = getLogger
 
   private val codeAreaLeft = new Editor()
@@ -48,13 +49,6 @@ final class DiffPane extends StackPane {
 
   private def requestDraw(): Unit = needToDraw = true
 
-  def testCase: TestCase = {
-    //todo this is not really correct as we loose data if the original AmbiguousWordAlignment was really ambiguous
-    TestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), AmbiguousWordAlignment(wordAlignment.matches))
-  }
-
-  codeAreaLeft.setOther(codeAreaRight)
-  codeAreaRight.setOther(codeAreaLeft)
   private val canvas = {
     val c = new ResizableCanvas()
     c.setMouseTransparent(true)
@@ -62,16 +56,64 @@ final class DiffPane extends StackPane {
   }
   private val gc = canvas.getGraphicsContext2D
 
-  discard(getChildren.addAll({
-    val left = new VirtualizedScrollPane(codeAreaLeft)
-    val right = new VirtualizedScrollPane(codeAreaRight)
-    HBox.setHgrow(left, Priority.ALWAYS)
-    HBox.setHgrow(right, Priority.ALWAYS)
-    val hBox = new HBox()
-    hBox.setSpacing(10)
-    discard(hBox.getChildren.addAll(Seq(left, right).asJava))
-    Seq(hBox, canvas).asJava
-  }))
+  //constructor
+  {
+    codeAreaLeft.setOther(codeAreaRight)
+    codeAreaRight.setOther(codeAreaLeft)
+
+    discard(getChildren.addAll({
+      val left = new VirtualizedScrollPane(codeAreaLeft)
+      val right = new VirtualizedScrollPane(codeAreaRight)
+      HBox.setHgrow(left, Priority.ALWAYS)
+      HBox.setHgrow(right, Priority.ALWAYS)
+      val hBox = new HBox()
+      hBox.setSpacing(10)
+      discard(hBox.getChildren.addAll(Seq(left, right).asJava))
+      Seq(hBox, canvas).asJava
+    }))
+
+    val refreshLoop = new Timeline(new KeyFrame(Duration.millis(10), (_: ActionEvent) => {
+      drawEqPoints()
+    }))
+    refreshLoop.setCycleCount(Animation.INDEFINITE)
+    refreshLoop.play()
+
+    this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
+      codeAreaLeft.scrollYBy(-e.getDeltaY)
+      codeAreaRight.scrollYBy(-e.getDeltaY)
+      requestDraw()
+      e.consume()
+    })
+
+    codeAreaLeft.estimatedScrollYProperty.addChangeListener{ _ => requestDraw() }
+    codeAreaRight.estimatedScrollYProperty.addChangeListener{ _ => requestDraw() }
+
+    this.addEventFilter(KeyEvent.KEY_PRESSED, (e: KeyEvent) =>
+      if (e.isControlDown) {
+        if (e.getCode ==== KeyCode.G) {
+          logger.info("Grabbing selection")
+          codeAreaLeft.grabSelectionForMatch()
+          codeAreaRight.grabSelectionForMatch()
+          (codeAreaLeft.selectedForMatch(), codeAreaRight.selectedForMatch()) match {
+            case (Some(leftSelection), Some(rightSelection)) =>
+              val newMatches = wordAlignment.matches.filter(m => (m.left !=== leftSelection) && (m.right !=== rightSelection)) + WordMatch(leftSelection, rightSelection)
+              val newAlignment = wordAlignment.copy(newMatches)
+              logger.info(s"Adding new match. Old size: ${wordAlignment.matches.size}, new size: ${newMatches.size}")
+              openTestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), newAlignment)
+            case other =>
+              logger.info(s"No selection: $other")
+          }
+        }
+      }
+    )
+  }
+
+  //methods
+
+  def testCase: TestCase = {
+    //todo this is not really correct as we loose data if the original AmbiguousWordAlignment was really ambiguous
+    TestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), AmbiguousWordAlignment(wordAlignment.matches))
+  }
 
   private def drawEqPoints(): Unit = {
     if (needToDraw) {
@@ -131,44 +173,10 @@ final class DiffPane extends StackPane {
     }
   }
 
-  val refreshLoop = new Timeline(new KeyFrame(Duration.millis(10), (_: ActionEvent) => {
-    drawEqPoints()
-  }))
-  refreshLoop.setCycleCount(Animation.INDEFINITE)
-  refreshLoop.play()
-
-  this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
-    codeAreaLeft.scrollYBy(-e.getDeltaY)
-    codeAreaRight.scrollYBy(-e.getDeltaY)
-    requestDraw()
-    e.consume()
-  })
-
-  codeAreaLeft.estimatedScrollYProperty.addChangeListener{ _ => requestDraw() }
-  codeAreaRight.estimatedScrollYProperty.addChangeListener{ _ => requestDraw() }
-
   private def getParagraphTexts(codeArea: Editor): Lines ={
     val size = codeArea.getParagraphs.size()
     Lines((0 until size).map(i => codeArea.getText(i)))
   }
-  this.addEventFilter(KeyEvent.KEY_PRESSED, (e: KeyEvent) =>
-    if (e.isControlDown) {
-      if (e.getCode ==== KeyCode.G) {
-        logger.info("Grabbing selection")
-        codeAreaLeft.grabSelectionForMatch()
-        codeAreaRight.grabSelectionForMatch()
-        (codeAreaLeft.selectedForMatch(), codeAreaRight.selectedForMatch()) match {
-          case (Some(leftSelection), Some(rightSelection)) =>
-            val newMatches = wordAlignment.matches.filter(m => (m.left !=== leftSelection) && (m.right !=== rightSelection)) + WordMatch(leftSelection, rightSelection)
-            val newAlignment = wordAlignment.copy(newMatches)
-            logger.info(s"Adding new match. Old size: ${wordAlignment.matches.size}, new size: ${newMatches.size}")
-            openTestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), newAlignment)
-          case other =>
-            logger.info(s"No selection: $other")
-        }
-      }
-    }
-  )
 
   def openTestCase(left: FullText, right: FullText, newWordAlignment: UnambiguousWordAlignment): Unit = {
     needToDraw = false
