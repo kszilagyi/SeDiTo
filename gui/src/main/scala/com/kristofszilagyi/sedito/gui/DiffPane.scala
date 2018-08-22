@@ -47,7 +47,7 @@ final class DiffPane extends StackPane {
   @SuppressWarnings(Array(Warts.Var))
   private var needToDraw: Boolean = false
 
-  private def requestDraw(): Unit = needToDraw = true
+  private def requestRedraw(): Unit = needToDraw = true
 
   private val canvas = {
     val c = new ResizableCanvas()
@@ -81,12 +81,12 @@ final class DiffPane extends StackPane {
     this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
       codeAreaLeft.scrollYBy(-e.getDeltaY)
       codeAreaRight.scrollYBy(-e.getDeltaY)
-      requestDraw()
+      requestRedraw()
       e.consume()
     })
 
-    codeAreaLeft.estimatedScrollYProperty.addChangeListener{ _ => requestDraw() }
-    codeAreaRight.estimatedScrollYProperty.addChangeListener{ _ => requestDraw() }
+    codeAreaLeft.estimatedScrollYProperty.addChangeListener{ _ => requestRedraw() }
+    codeAreaRight.estimatedScrollYProperty.addChangeListener{ _ => requestRedraw() }
 
     this.addEventFilter(KeyEvent.KEY_PRESSED, (e: KeyEvent) =>
       if (e.isControlDown) {
@@ -223,6 +223,6 @@ final class DiffPane extends StackPane {
     applyHighlight(codeAreaLeft, highlight.left)
     applyHighlight(codeAreaRight, highlight.right)
     layout()
-    requestDraw()
+    requestRedraw()
   }
 }
