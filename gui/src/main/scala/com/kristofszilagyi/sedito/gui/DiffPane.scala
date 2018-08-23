@@ -7,6 +7,7 @@ import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.common.utils.TupleOps.RichTuple
 import com.kristofszilagyi.sedito.gui.DiffPane._
 import com.kristofszilagyi.sedito.gui.ObservableOps.RichObservable
+import com.kristofszilagyi.sedito.gui.Scroller.{Aligned, LeftIsLower, NothingOnScreen, RightIsLower}
 import javafx.animation.{Animation, KeyFrame, Timeline}
 import javafx.event.ActionEvent
 import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
@@ -18,6 +19,7 @@ import org.fxmisc.flowless.VirtualizedScrollPane
 import org.log4s.getLogger
 
 import scala.collection.JavaConverters._
+import scala.collection.immutable.TreeMap
 
 object DiffPane {
   def offScreenY(on: LineIdx, off: LineIdx, height: Double, onY: Double): Double = {
@@ -46,6 +48,9 @@ final class DiffPane extends StackPane {
 
   @SuppressWarnings(Array(Warts.Var))
   private var needToDraw: Boolean = false
+
+  @SuppressWarnings(Array(Warts.Var))
+  private var notMovedLines: TreeMap[LineIdx, LineIdx] = TreeMap.empty
 
   private def requestRedraw(): Unit = needToDraw = true
 
@@ -79,8 +84,22 @@ final class DiffPane extends StackPane {
     refreshLoop.play()
 
     this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
-      codeAreaLeft.scrollYBy(-e.getDeltaY)
-      codeAreaRight.scrollYBy(-e.getDeltaY)
+      val scrollAlignment = Scroller.calc(codeAreaLeft.lineIndicesOnScreen(),
+        codeAreaRight.lineIndicesOnScreen(), notMovedLines)
+
+      val down = e.getDeltaY > 0
+      val delta = -e.getDeltaY
+      val (leftScroll, rightScroll) = scrollAlignment match {
+        case Aligned | NothingOnScreen => (delta, delta)
+        case LeftIsLower =>
+          if (down) (0.0, delta)
+          else (delta, 0.0)
+        case RightIsLower =>
+          if (!down) (0.0, delta)
+          else (delta, 0.0)
+      }
+      codeAreaLeft.scrollYBy(leftScroll)
+      codeAreaRight.scrollYBy(rightScroll)
       requestRedraw()
       e.consume()
     })
@@ -200,6 +219,7 @@ final class DiffPane extends StackPane {
     val inserted = (0 until codeAreaRight.getParagraphs.size()).map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.rightLineIdx).contains(l))
     val partitioned = lineAlignment.partition
     val moved = partitioned.moved
+    notMovedLines = TreeMap(partitioned.notMoved.flatMap(LineMatch.unapply).toSeq: _*)
     val notMovedLeft = partitioned.notMoved.map(_.leftLineIdx)
     val notMovedRight = partitioned.notMoved.map(_.rightLineIdx)
 
