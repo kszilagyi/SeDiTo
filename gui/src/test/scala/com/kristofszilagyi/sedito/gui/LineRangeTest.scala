@@ -88,4 +88,16 @@ final class LineRangeTest extends FreeSpecLike {
   "intersect with itself" in {
     range.intersect(range) shouldBe Some(range)
   }
+
+  "middleLine - empty" in {
+    LineRange(LineIdx(0), LineIdx(0)).middleLine shouldBe None
+  }
+
+  "middleLine - odd" in {
+    LineRange(LineIdx(0), LineIdx(3)).middleLine shouldBe Some(LineIdx(1))
+  }
+
+  "middleLine - even" in {
+    LineRange(LineIdx(0), LineIdx(4)).middleLine shouldBe Some(LineIdx(2))
+  }
 }
