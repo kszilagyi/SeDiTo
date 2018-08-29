@@ -100,4 +100,8 @@ final class LineRangeTest extends FreeSpecLike {
   "middleLine - even" in {
     LineRange(LineIdx(0), LineIdx(4)).middleLine shouldBe Some(LineIdx(2))
   }
+
+  "middleLine - big start" in {
+    LineRange(LineIdx(100), LineIdx(110)).middleLine shouldBe Some(LineIdx(105))
+  }
 }

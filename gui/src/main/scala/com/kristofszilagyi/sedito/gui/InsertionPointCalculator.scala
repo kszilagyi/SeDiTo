@@ -26,7 +26,7 @@ final case class LineRange(from: LineIdx, to: LineIdx) {
 
   def middleLine: Option[LineIdx] = {
     if (from ==== to) None
-    else Some(LineIdx(from.i + to.i / 2))
+    else Some(LineIdx((from.i + to.i) / 2))
   }
 
   def size: Int = to.i - from.i
