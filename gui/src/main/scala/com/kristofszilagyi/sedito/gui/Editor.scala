@@ -1,5 +1,7 @@
 package com.kristofszilagyi.sedito.gui
 
+import java.time.Duration
+
 import com.kristofszilagyi.sedito.common.AssertionEx.fail
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
@@ -11,8 +13,9 @@ import javafx.scene.Node
 import javafx.scene.control.Label
 import javafx.stage.Popup
 import org.fxmisc.flowless.{Cell, VirtualFlow}
+import org.fxmisc.richtext.event.MouseOverTextEvent
 import org.fxmisc.richtext.model.TwoDimensional.Bias
-import org.fxmisc.richtext.{CodeArea, GenericStyledArea, LineNumberFactory}
+import org.fxmisc.richtext.{CodeArea, GenericStyledArea}
 
 import scala.collection.JavaConverters._
 import scala.compat.java8.OptionConverters.RichOptionalGeneric
@@ -55,11 +58,8 @@ final case class LineEdits(line: LineEditType, charEdits: Traversable[CharEdit])
 final class Editor extends CodeArea {
   this.setUseInitialStyleForInsertion(true)
 
-  setParagraphGraphicFactory(LineNumberFactory.get(this))
-
-  import java.time.Duration
-
-  import org.fxmisc.richtext.event.MouseOverTextEvent
+  private val lineNumberFactory = new CacheLineNumberFactory(this)
+  setParagraphGraphicFactory(lineNumberFactory)
 
   @SuppressWarnings(Array(Warts.Var))
   private var editTypes = Map.empty[LineIdx, LineEdits]
@@ -82,6 +82,7 @@ final class Editor extends CodeArea {
     editTypes = Map.empty
     highlightedLines = Traversable.empty
     highlightedChars = Traversable.empty
+    lineNumberFactory.reset()
     clear()
   }
   private val popup = new Popup
@@ -128,8 +129,14 @@ final class Editor extends CodeArea {
   })
 
   private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {
-    //setParagraphStyle(lineIdx.i, List("same").asJava)
-    setParagraphStyle(lineIdx.i, List(getLineCssClass(editType.map(_.line)).s).asJava)
+    val lineCssClass = getLineCssClass(editType.map(_.line)).s
+    setParagraphStyle(lineIdx.i, List(lineCssClass).asJava)
+
+    {
+      val lineNoStyle = lineNumberFactory.apply(lineIdx.i).getStyleClass
+      lineNoStyle.clear()
+      discard(lineNoStyle.add(lineCssClass))
+    }
     editType.toList.flatMap(_.charEdits).foreach{ edit =>
       edit.editType match {
         case tpe: ApplicableCharEditType =>
