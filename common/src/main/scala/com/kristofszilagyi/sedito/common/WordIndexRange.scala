@@ -2,17 +2,15 @@ package com.kristofszilagyi.sedito.common
 
 import cats.data.Validated
 import cats.data.Validated.{Invalid, Valid}
-import TypeSafeEqualsOps._
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
-
-import scala.collection.immutable.SortedSet
-
+import scala.collection.Searching._
 
 /**
   * the only point of this class is optimisation
   */
 final case class FullText(s: String) {
-  lazy val lineBreakIdxes: SortedSet[Int] = s.zipWithIndex.filter(_._1 ==== '\n').map(_._2).to[SortedSet]
+  lazy val lineBreakIdxes: Array[Int] = s.zipWithIndex.filter(_._1 ==== '\n').map(_._2).toArray.sorted
 }
 sealed abstract case class WordIndexRange private(startIncl: Int, endExcl: Int, fullText: FullText) {
   def toWord: String = fullText.s.substring(startIncl, endExcl)
@@ -24,13 +22,18 @@ sealed abstract case class WordIndexRange private(startIncl: Int, endExcl: Int, 
   def toSelection: Selection = {
     //todo line ending types
 
-    val lineBreaksBefore = fullText.lineBreakIdxes.to(startIncl)
-    val lineBreakAfter = fullText.lineBreakIdxes.find(_ >= endExcl).getOrElse(fullText.s.length)
-    val lineIdx = LineIdx(lineBreaksBefore.size)
-    val lineBreakBefore = lineBreaksBefore.lastOption.getOrElse(-1)
-    val line = fullText.s.substring(lineBreakBefore + 1, lineBreakAfter)
-    val from = CharIdxInLine(startIncl - (lineBreakBefore + 1))
-    val to = CharIdxInLine(endExcl - (lineBreakBefore + 1))
+    val lineBreakBeforeInArray = math.abs(fullText.lineBreakIdxes.search(startIncl).insertionPoint) - 1
+    val lineBreakAfterInArray = lineBreakBeforeInArray + 1
+    val lineBreakAfterInText =
+      if (lineBreakAfterInArray < fullText.lineBreakIdxes.length) fullText.lineBreakIdxes(lineBreakAfterInArray)
+      else fullText.s.length
+    val lineIdx = LineIdx(lineBreakBeforeInArray + 1)
+    val lineBreakBeforeInText =
+      if (lineBreakBeforeInArray >= 0) fullText.lineBreakIdxes(lineBreakBeforeInArray)
+      else -1
+    val line = fullText.s.substring(lineBreakBeforeInText + 1, lineBreakAfterInText)
+    val from = CharIdxInLine(startIncl - (lineBreakBeforeInText + 1))
+    val to = CharIdxInLine(endExcl - (lineBreakBeforeInText + 1))
     Selection.create(line, lineIdx, from, to).getAssert
   }
 }

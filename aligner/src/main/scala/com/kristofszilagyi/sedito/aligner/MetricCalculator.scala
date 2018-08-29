@@ -153,7 +153,7 @@ object MetricCalculator {
       None
     }
     contextMetrics.map { case (full, forth, eight, sixteenth) =>
-      Phase1Metrics(sameLineSameWord, leftWord.word.toSelection, rightWord.word.toSelection, word = wordMetrics, line = lineMetrics,
+      Phase1Metrics(sameLineSameWord, leftSelection, rightSelection, word = wordMetrics, line = lineMetrics,
         contextFull = full, context4th = forth, context8th = eight,  context16th = sixteenth, leftLineIdx= leftSelection.lineIdx,
         rightLineIdx = rightSelection.lineIdx)
     }.toList
