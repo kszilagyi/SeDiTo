@@ -19,7 +19,6 @@ final class ScrollerTest extends FreeSpecLike {
       TreeMap.empty) shouldBe NothingOnScreen
   }
 
-
   "no alignment" in {
     Scroller.calc(LineRange(LineIdx(0), LineIdx(10)), LineRange(LineIdx(0), LineIdx(20)),
       TreeMap.empty) shouldBe Aligned
