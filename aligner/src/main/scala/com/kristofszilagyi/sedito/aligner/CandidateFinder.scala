@@ -1,12 +1,10 @@
 package com.kristofszilagyi.sedito.aligner
 
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.WordWithContext
+import com.kristofszilagyi.sedito.common.utils.MapOps.RichMap
 
 final class CandidateFinder(contexts: Set[WordWithContext]) {
-  //todo mapValuesNow
-  private val positionAgnosticWordWithContexts = contexts.map(c => c.positionAgnostic -> c).groupBy(_._1).map {
-    case (k, v) => k -> v.map(_._2)
-  }
+  private val positionAgnosticWordWithContexts = contexts.map(c => c.positionAgnostic -> c).groupBy(_._1).mapValuesNow(_.map(_._2))
 
   def possibleMatches(s: WordWithContext): Set[WordWithContext] = {
     val exactMatches = positionAgnosticWordWithContexts.getOrElse(s.positionAgnostic, Set.empty)
