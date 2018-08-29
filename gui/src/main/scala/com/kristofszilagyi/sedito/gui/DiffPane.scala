@@ -84,22 +84,25 @@ final class DiffPane extends StackPane {
     refreshLoop.play()
 
     this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
-      val scrollAlignment = Scroller.calc(codeAreaLeft.lineIndicesOnScreen(),
-        codeAreaRight.lineIndicesOnScreen(), notMovedLines)
+      val passes = 10
+      (1 to passes).foreach { _ =>
+        val scrollAlignment = Scroller.calc(codeAreaLeft.lineIndicesOnScreen(),
+          codeAreaRight.lineIndicesOnScreen(), notMovedLines)
 
-      val down = e.getDeltaY > 0
-      val delta = -e.getDeltaY
-      val (leftScroll, rightScroll) = scrollAlignment match {
-        case Aligned | NothingOnScreen => (delta, delta)
-        case LeftIsLower =>
-          if (down) (0.0, delta)
-          else (delta, 0.0)
-        case RightIsLower =>
-          if (!down) (0.0, delta)
-          else (delta, 0.0)
+        val down = e.getDeltaY > 0
+        val delta = -e.getDeltaY / passes
+        val (leftScroll, rightScroll) = scrollAlignment match {
+          case Aligned | NothingOnScreen => (delta, delta)
+          case LeftIsLower =>
+            if (down) (0.0, delta)
+            else (delta, 0.0)
+          case RightIsLower =>
+            if (!down) (0.0, delta)
+            else (delta, 0.0)
+        }
+        codeAreaLeft.scrollYBy(leftScroll)
+        codeAreaRight.scrollYBy(rightScroll)
       }
-      codeAreaLeft.scrollYBy(leftScroll)
-      codeAreaRight.scrollYBy(rightScroll)
       requestRedraw()
       e.consume()
     })
