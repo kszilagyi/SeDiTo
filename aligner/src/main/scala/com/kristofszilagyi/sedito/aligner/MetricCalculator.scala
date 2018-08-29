@@ -159,8 +159,12 @@ object MetricCalculator {
     }.toList
   }
 
+  /**
+    * Position agnostic - as opposed to WordIndexRange which has position in it
+    */
+  final case class WordWithContextPositionAgnostic(before: String, after: String, word: String)
   final case class WordWithContext(beforeContext: String, afterContext: String, word: WordIndexRange) {
-    def positionAgnostic: (String, String, String) = (beforeContext, afterContext, word.toWord)
+    def positionAgnostic: WordWithContextPositionAgnostic = WordWithContextPositionAgnostic(beforeContext, afterContext, word.toWord)
     def shortedContext(len: Int): WordWithContext = {
       WordWithContext(beforeContext.takeRight(len), afterContext.take(len), word)
     }
