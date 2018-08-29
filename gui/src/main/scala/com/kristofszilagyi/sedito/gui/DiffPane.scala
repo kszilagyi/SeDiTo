@@ -10,8 +10,9 @@ import com.kristofszilagyi.sedito.gui.ObservableOps.RichObservable
 import com.kristofszilagyi.sedito.gui.Scroller.{Aligned, LeftIsLower, NothingOnScreen, RightIsLower}
 import javafx.animation.{Animation, KeyFrame, Timeline}
 import javafx.event.ActionEvent
+import javafx.geometry.Insets
 import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
-import javafx.scene.layout.{HBox, Priority, StackPane}
+import javafx.scene.layout._
 import javafx.scene.paint.{Color, CycleMethod, LinearGradient, Stop}
 import javafx.scene.shape.StrokeLineCap
 import javafx.util.Duration
@@ -72,7 +73,8 @@ final class DiffPane extends StackPane {
       HBox.setHgrow(left, Priority.ALWAYS)
       HBox.setHgrow(right, Priority.ALWAYS)
       val hBox = new HBox()
-      hBox.setSpacing(10)
+      hBox.setSpacing(30)
+      hBox.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)))
       discard(hBox.getChildren.addAll(Seq(left, right).asJava))
       Seq(hBox, canvas).asJava
     }))
@@ -163,7 +165,7 @@ final class DiffPane extends StackPane {
           val maybeFirstRightBounds = codeAreaRight.boundsInLocal(firstRight, screenToLocal)
           (maybeFirstLeftBounds, maybeFirstRightBounds) match {
             case (Some(firstLeftBounds), Some(firstRightBounds)) =>
-              val rightOffset = 35
+              val rightOffset = 0 //todo remove?
               val leftX = firstLeftBounds.getMaxX
               val rightX = firstRightBounds.getMinX + rightOffset
               val xs = Array(leftX, leftX, rightX, rightX)
