@@ -210,8 +210,7 @@ final class Editor extends CodeArea {
 
   def grabSelectionForMatch(): Unit = {
     val indexRange = getSelection
-    val newSelection = WordIndexRange.create(indexRange.getStart, indexRange.getEnd, FullText(getText))
-      .map(_.toSelection).getAssert
+    val newSelection = Selection.fromAbsolute(indexRange.getStart, indexRange.getEnd, FullText(getText)).getAssert
 
     if (newSelection.empty) _selectedForMatch = None
     else _selectedForMatch = Some(newSelection)

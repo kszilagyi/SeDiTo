@@ -4,33 +4,54 @@ import cats.data.Validated
 import cats.data.Validated.{Invalid, Valid}
 import com.kristofszilagyi.sedito.common.AmbiguousWordAlignment.resolveConflicts
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
-import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
-import info.debatty.java.stringsimilarity.Levenshtein
+import spray.json.DefaultJsonProtocol._
 import spray.json.{DefaultJsonProtocol, RootJsonFormat}
-import DefaultJsonProtocol._
+
+import scala.collection.Searching._
 
 object Selection {
-  def create(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine): Validated[WordIndexRangeError, Selection] = {
+  /**
+    * @param from         from within the line
+    * @param absoluteFrom from within the whole string
+    */
+  def create(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine, absoluteFrom: Int): Validated[WordIndexRangeError, Selection] = {
     if (from.i < 0 || from.i >= line.length) Invalid(IndexIsOutOfRange(from.i, line))
     else if (toExcl.i < 0 || toExcl.i > line.length) Invalid(IndexIsOutOfRange(toExcl.i, line))
     else if (from.i >= toExcl.i) Invalid(RangeIsNotPositive(from.i, toExcl.i, line))
-    else Valid(new Selection(line, lineIdx, from, toExcl) {})
+    else Valid(new Selection(line, lineIdx, from, toExcl, absoluteFrom) {})
   }
+
   //we are writing the line here, this is quite horrible...
   implicit val format: RootJsonFormat[Selection] =
-    jsonFormat[String, LineIdx, CharIdxInLine, CharIdxInLine, Selection](new Selection(_, _, _, _){}, "line", "lineIdx", "from", "to")
+    jsonFormat[String, LineIdx, CharIdxInLine, CharIdxInLine, Int, Selection](new Selection(_, _, _, _, _) {}, "line", "lineIdx", "from", "to", "absoluteFrom")
 
+  implicit val ordering: Ordering[Selection] = Ordering.by[Selection, (LineIdx, CharIdxInLine)](s => (s.lineIdx, s.from))
+
+  //this implementation is weird as it was only kept due to backward compatibility and was copied WordIndexRange
+  def fromAbsolute(start: Int, end: Int, fullText: FullText): Validated[WordIndexRangeError, Selection] = {
+    //todo line ending types
+    val lineBreakIdxes = fullText.s.zipWithIndex.filter(_._1 ==== '\n').map(_._2).toArray.sorted
+    val lineBreakBeforeInArray = math.abs(lineBreakIdxes.search(start).insertionPoint) - 1
+    val lineBreakAfterInArray = lineBreakBeforeInArray + 1
+    val lineBreakAfterInText =
+      if (lineBreakAfterInArray < lineBreakIdxes.length) lineBreakIdxes(lineBreakAfterInArray)
+      else fullText.s.length
+    val lineIdx = LineIdx(lineBreakBeforeInArray + 1)
+    val lineBreakBeforeInText =
+      if (lineBreakBeforeInArray >= 0) lineBreakIdxes(lineBreakBeforeInArray)
+      else -1
+    val line = fullText.s.substring(lineBreakBeforeInText + 1, lineBreakAfterInText)
+    val from = CharIdxInLine(start - (lineBreakBeforeInText + 1))
+    val to = CharIdxInLine(end - (lineBreakBeforeInText + 1))
+    Selection.create(line, lineIdx, from, to, start)
+  }
 }
 //I am using this instead of indexing into the whole string so that line ending types do not make a difference
-sealed abstract case class Selection private(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine) {
+sealed abstract case class Selection private(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine, absoluteFrom: Int) {
   def toText: String = s"${line.substring(from.i, toExcl.i)}"
 
   override def toString: String = {
-    s"${lineIdx.i}: ${from.i} - ${toExcl.i} [$toText]"
-  }
-
-  def toIndexRangeWithinLine: Validated[WordIndexRangeError, WordIndexRange] = {
-    WordIndexRange.create(startIncl = from.i, endExcl = toExcl.i, fullText = FullText(line))
+    s"${lineIdx.i}: ${from.i} - ${toExcl.i} [$toText]($absoluteFrom)"
   }
 
   def length: Int = toExcl.i - from.i
@@ -50,7 +71,7 @@ final case class WordMatch(left: Selection, right: Selection) {
 
 object AmbiguousWordAlignment {
 
-  private final case class Ld(left: WordIndexRange, right: WordIndexRange, dist: Double)
+  private final case class Ld(left: Selection, right: Selection, dist: Double)
   private final case class PossibleResult(result: Set[Ld])
 
   //TODO this now can fail on very long lines (though I think these are only called when reading test case?)
@@ -75,53 +96,11 @@ object AmbiguousWordAlignment {
     }
   }
 
-  private def findResultWithLeastMoves(results: Set[PossibleResult]) = {
-    results.map { r =>
-      val leftSorted = r.result.toSeq.sortBy(_.left.startIncl)
-      val rightOrder = leftSorted.map(_.right.startIncl)
-      r -> LongestIncreasingSubsequence.apply(rightOrder.toArray).size
-    }.toSeq.sortBy(_._2).map(_._1).lastOption
-  }
-
-  private def wordMatches(left: Lines, right: Lines, matches: Set[LineMatch]) = {
-    val allMatches = matches.flatMap { m =>
-      val leftLine = left.l(m.leftLineIdx.i) //replace with .get?
-      val rightLine = right.l(m.rightLineIdx.i)
-      val leftWordRanges = Wordizer.toWordIndices(leftLine)
-      val rightWordRanges = Wordizer.toWordIndices(rightLine)
-      val ldCalculator = new Levenshtein()
-      val lds = leftWordRanges.flatMap { leftRange =>
-        rightWordRanges.map { rightRange =>
-          val leftWord = leftRange.toWord
-          val rightWord = rightRange.toWord
-          Ld(leftRange, rightRange, ldCalculator.distance(leftWord, rightWord))
-        }
-      }
-
-      val sortedLds = lds.filter{ ld =>
-        ld.dist <= (ld.left.toWord.length + ld.right.toWord.length) / 2 / 3
-      }.sortBy(_.dist)
-
-      val possibleResults = approximatePossibleBestMatches(sortedLds.toList, Set.empty, 1)
-      val bestLdSet = findResultWithLeastMoves(possibleResults).map(_.result).getOrElse(Set.empty)
-
-      val newMatchesForLine = bestLdSet.map { ld =>
-        WordMatch(
-          Selection.create(leftLine, m.leftLineIdx, CharIdxInLine(ld.left.startIncl), CharIdxInLine(ld.left.endExcl)).getAssert("invalid range"),
-          Selection.create(rightLine, m.rightLineIdx, CharIdxInLine(ld.right.startIncl), CharIdxInLine(ld.right.endExcl)).getAssert("invalid range")
-        )
-      }
-      newMatchesForLine
-    }
-    allMatches
-  }
-
-  def fromOld(left: Lines, right: Lines, alignment: AmbiguousLineAlignment): AmbiguousWordAlignment = {
-    AmbiguousWordAlignment(wordMatches(left, right, alignment.matches))
-  }
-
   private def sortMatches(matches: Traversable[WordMatch]) = {
-    matches.toSeq.sortBy(m => (m.left.lineIdx, m.right.lineIdx, m.left.from, m.right.from)) //arbitrary but deterministic ordering
+    val lineIdxOrdering = implicitly[Ordering[LineIdx]]
+    val charOrdering = implicitly[Ordering[CharIdxInLine]]
+    val ordering = Ordering.Tuple4(lineIdxOrdering, lineIdxOrdering, charOrdering, charOrdering)
+    matches.toSeq.sortBy(m => (m.left.lineIdx, m.right.lineIdx, m.left.from, m.right.from))(ordering) //arbitrary but deterministic ordering
   }
 
   @SuppressWarnings(Array(Warts.TraversableOps))

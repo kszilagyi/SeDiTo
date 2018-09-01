@@ -13,10 +13,10 @@ object MetricCalculator {
   private val logger = getLogger
 
   @tailrec
-  private def extend(currentIdx: Int, words: IndexedSeq[WordIndexRange], offset: Int, result: List[String], resultLength: Int): String = {
+  private def extend(currentIdx: Int, words: IndexedSeq[Selection], offset: Int, result: List[String], resultLength: Int): String = {
     if (currentIdx >= 0 && currentIdx < words.size && resultLength < math.abs(offset)) {
       val direction = math.signum(offset)
-      val word = words(currentIdx).toWord //if this fails that's a bug
+      val word = words(currentIdx).toText //if this fails that's a bug
       val newResult = word +: result
       extend(currentIdx + direction, words, offset, newResult, resultLength + word.length)
     } else {
@@ -26,7 +26,7 @@ object MetricCalculator {
   }
 
   //this would be private but I wanted to test it
-  private[aligner] def context(fromIdx: Int, words: IndexedSeq[WordIndexRange], offset: Int): String = {
+  private[aligner] def context(fromIdx: Int, words: IndexedSeq[Selection], offset: Int): String = {
     extend(fromIdx + math.signum(offset), words, offset, result = List.empty, resultLength = 0)
   }
 
@@ -132,12 +132,12 @@ object MetricCalculator {
   //concat all words
   //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)
   private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
-    val leftWordString = leftWord.word.toWord
-    val rightWordString = rightWord.word.toWord
+    val leftWordString = leftWord.word.toText
+    val rightWordString = rightWord.word.toText
     val wordMetrics = calcMetrics(leftWordString, rightWordString, math.max(leftWordString.length, rightWordString.length))
-    val leftSelection = leftWord.word.toSelection
+    val leftSelection = leftWord.word
     val leftLine = leftSelection.line
-    val rightSelection = rightWord.word.toSelection
+    val rightSelection = rightWord.word
     val rightLine = rightSelection.line
     val lineMetrics = calcMetrics(leftLine, rightLine, math.max(leftLine.length, rightLine.length))//todo this could be cached/sped up
     val sameLineSameWord = if (leftLine ==== rightLine && leftSelection.from ==== rightSelection.from) 1.0
@@ -163,8 +163,8 @@ object MetricCalculator {
     * Position agnostic - as opposed to WordIndexRange which has position in it
     */
   final case class WordWithContextPositionAgnostic(before: String, after: String, word: String)
-  final case class WordWithContext(beforeContext: String, afterContext: String, word: WordIndexRange) {
-    def positionAgnostic: WordWithContextPositionAgnostic = WordWithContextPositionAgnostic(beforeContext, afterContext, word.toWord)
+  final case class WordWithContext(beforeContext: String, afterContext: String, word: Selection) {
+    def positionAgnostic: WordWithContextPositionAgnostic = WordWithContextPositionAgnostic(beforeContext, afterContext, word.toText)
     def shortedContext(len: Int): WordWithContext = {
       WordWithContext(beforeContext.takeRight(len), afterContext.take(len), word)
     }

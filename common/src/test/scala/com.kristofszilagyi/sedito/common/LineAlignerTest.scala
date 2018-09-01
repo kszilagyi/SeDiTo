@@ -9,7 +9,7 @@ final class LineAlignerTest extends FreeSpecLike {
   }
 
   private def selection(line: String, lineIdx: Int, from: Int, to: Int) = {
-    Selection.create(line, LineIdx(lineIdx), CharIdxInLine(from), CharIdxInLine(to)).getOrElse(fail("wrong test data"))
+    Selection.create(line, LineIdx(lineIdx), CharIdxInLine(from), CharIdxInLine(to), -1).getOrElse(fail("wrong test data"))
   }
   "one" in {
     LineAligner.align(UnambiguousWordAlignment(Set(WordMatch(

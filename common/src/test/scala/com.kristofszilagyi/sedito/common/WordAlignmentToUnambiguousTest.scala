@@ -7,7 +7,7 @@ import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 
 object WordAlignmentToUnambiguousTest {
   private def selection(s: String, idx: Int) = {
-    Selection.create(s, LineIdx(idx), CharIdxInLine(0), CharIdxInLine(s.length)).getAssert("")
+    Selection.create(s, LineIdx(idx), CharIdxInLine(0), CharIdxInLine(s.length), -1).getAssert("")
   }
   private val l0 = selection("left zero", 0)
   private val l1 = selection("left one", 1)

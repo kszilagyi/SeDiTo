@@ -11,6 +11,7 @@ import scala.util.Try
 import TestCase._
 import com.kristofszilagyi.sedito.common.Warts.discard
 
+final case class FullText(s: String)
 object TestCase {
   private val logger = getLogger
   private val leftFileName = "left.txt"

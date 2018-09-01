@@ -1,25 +1,25 @@
 package com.kristofszilagyi.sedito.aligner
 
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.ContextIsClosest
-import com.kristofszilagyi.sedito.common.{FullText, Warts, WordIndexRange, Wordizer}
+import com.kristofszilagyi.sedito.common.{FullText, Selection, Warts, Wordizer}
 import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 
 final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
   private def constructResultFromMatchingSymmetric(
-                                          expectedClosestMatchesBeforeFromLeft: Set[(Int, Int)],
-                                          expectedClosestMatchesBeforeFromRight: Set[(Int, Int)],
-                                          expectedClosestMatchesAfterFromLeft: Set[(Int, Int)],
-                                          expectedClosestMatchesAfterFromRight: Set[(Int, Int)],
-                                          leftWords: IndexedSeq[WordIndexRange], rightWords: IndexedSeq[WordIndexRange],
-                                          differentLeftWords: Set[Int], differentRightWords: Set[Int]) = {
+                                                    expectedClosestMatchesBeforeFromLeft: Set[(Int, Int)],
+                                                    expectedClosestMatchesBeforeFromRight: Set[(Int, Int)],
+                                                    expectedClosestMatchesAfterFromLeft: Set[(Int, Int)],
+                                                    expectedClosestMatchesAfterFromRight: Set[(Int, Int)],
+                                                    leftWords: IndexedSeq[Selection], rightWords: IndexedSeq[Selection],
+                                                    differentLeftWords: Set[Int], differentRightWords: Set[Int]) = {
     (leftWords.zipWithIndex.filterNot{case (_, i) => differentLeftWords.contains(i)} flatMap { case (l, li) =>
       rightWords.zipWithIndex.filterNot{case (_, i) => differentRightWords.contains(i)} map { case (r, ri) =>
         val beforeFromLeft = expectedClosestMatchesBeforeFromLeft.contains((li, ri))
         val afterFromLeft = expectedClosestMatchesAfterFromLeft.contains((li, ri))
         val beforeFromRight = expectedClosestMatchesBeforeFromRight.contains((li, ri))
         val afterFromRight = expectedClosestMatchesAfterFromRight.contains((li, ri))
-        (l.toSelection.from.i, r.toSelection.from.i,
+        (l.from.i, r.from.i,
           ContextIsClosest(beforeFromLeft = beforeFromLeft, beforeFromRight = beforeFromRight, afterFromLeft = afterFromLeft, afterFromRight = afterFromRight))
       }
     }).sortBy(r => (r._1, r._2))

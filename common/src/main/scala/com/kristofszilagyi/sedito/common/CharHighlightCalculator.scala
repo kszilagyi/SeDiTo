@@ -1,10 +1,10 @@
 package com.kristofszilagyi.sedito.common
 
+import com.kristofszilagyi.sedito.common.AssertionEx.fail
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch
 import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch.Operation
-import TypeSafeEqualsOps._
-import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
-import AssertionEx.fail
+
 import scala.collection.JavaConverters._
 
 /**
@@ -66,8 +66,7 @@ object CharHighlightCalculator {
 
   private def wordsWithoutMatch(line: String, wordMatchesInEitherLine: Set[Selection]) = {
     val words = Wordizer.toWordIndices(line).toSet
-    val wordsWithMatch = wordMatchesInEitherLine.map(_.toIndexRangeWithinLine.getAssert(""))
-    words -- wordsWithMatch
+    words -- wordMatchesInEitherLine
   }
 
   private def merge(edits1: Set[(LineIdx, Set[CharEdit])], edits2: Set[(LineIdx, Set[CharEdit])]) = {
@@ -147,8 +146,8 @@ object CharHighlightCalculator {
           }
         }.unzip
 
-        val inserts = wordsWithoutMatch(rightLine, wordMatchesInEitherLine.map(_._1.right)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), CharsInserted))
-        val deletes = wordsWithoutMatch(leftLine, wordMatchesInEitherLine.map(_._1.left)).map(range => CharEdit(CharIdxInLine(range.startIncl), CharIdxInLine(range.endExcl), CharsDeleted))
+        val inserts = wordsWithoutMatch(rightLine, wordMatchesInEitherLine.map(_._1.right)).map(range => CharEdit(range.from, range.toExcl, CharsInserted))
+        val deletes = wordsWithoutMatch(leftLine, wordMatchesInEitherLine.map(_._1.left)).map(range => CharEdit(range.from, range.toExcl, CharsDeleted))
         (m.leftLineIdx -> (leftEdits.flatten ++ deletes), m.rightLineIdx -> (rightEdits.flatten ++ inserts))
       }.unzip
     }
