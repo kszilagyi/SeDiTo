@@ -3,17 +3,20 @@ package com.kristofszilagyi.sedito.common
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 
 object Wordizer {
+  final case class LineAndPos(line: String, pos: Int)
 
+  def calculateLines(s: String): IndexedSeq[LineAndPos] = {
+    val lines = s.linesWithSeparators.toIndexedSeq
+    @SuppressWarnings(Array(Warts.TraversableOps))
+    val linePositions = lines.foldLeft(IndexedSeq(0)) { case (acc, line) =>
+      acc :+ (acc.last + line.length)
+    }
+    lines.zip(linePositions).map((LineAndPos.apply _).tupled)
+  }
   def toWordIndices(s: String): IndexedSeq[Selection] = {
     if (s.isEmpty) IndexedSeq.empty
     else {
-      val lines = s.linesWithSeparators.toIndexedSeq
-      @SuppressWarnings(Array(Warts.TraversableOps))
-      val linePositions = lines.foldLeft(IndexedSeq(0)) { case (acc, line) =>
-        acc :+ (acc.last + line.length)
-      }
-
-      lines.zip(linePositions).zipWithIndex.flatMap { case ((line, linePos), lineIdx) =>
+      calculateLines(s).zipWithIndex.flatMap { case (LineAndPos(line, linePos), lineIdx) =>
         val separatorIndexes = raw"((?<=[^\w])|(?=[^\w]))".r.findAllMatchIn(line).toList.map(_.start)
         val unfiltered = (0 +: separatorIndexes :+ line.length).sliding(2).toVector.flatMap {
           case List(a, b) =>

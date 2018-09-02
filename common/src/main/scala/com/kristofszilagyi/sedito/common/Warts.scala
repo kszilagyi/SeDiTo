@@ -17,6 +17,7 @@ object Warts {
   final val Recursion = "org.wartremover.warts.Recursion"
   final val TraversableOps = "org.wartremover.warts.TraversableOps"
   final val Overloading = "org.wartremover.warts.Overloading"
+  final val NonUnitStatement = "org.wartremover.warts.NonUnitStatements"
   final val DefaultArguments = "org.wartremover.warts.DefaultArguments"
   final val StringPlusAny = "org.wartremover.warts.StringPlusAny"
   final val OptionPartial = "org.wartremover.warts.OptionPartial"

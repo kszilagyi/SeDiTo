@@ -4,8 +4,10 @@ import cats.data.Validated
 import cats.data.Validated.{Invalid, Valid}
 import com.kristofszilagyi.sedito.common.AmbiguousWordAlignment.resolveConflicts
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
-import spray.json.DefaultJsonProtocol._
-import spray.json.{DefaultJsonProtocol, RootJsonFormat}
+import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
+import com.kristofszilagyi.sedito.common.Wordizer.LineAndPos
+import com.kristofszilagyi.sedito.common.utils.ExtraFormats._
+import spray.json._
 
 import scala.collection.Searching._
 
@@ -21,9 +23,20 @@ object Selection {
     else Valid(new Selection(line, lineIdx, from, toExcl, absoluteFrom) {})
   }
 
-  //we are writing the line here, this is quite horrible...
-  implicit val format: RootJsonFormat[Selection] =
-    jsonFormat[String, LineIdx, CharIdxInLine, CharIdxInLine, Int, Selection](new Selection(_, _, _, _, _) {}, "line", "lineIdx", "from", "to", "absoluteFrom")
+  private object MinimalSelection {
+    implicit val jsonFormat: RootJsonFormat[MinimalSelection] = jsonFormat3(MinimalSelection.apply)
+  }
+  private final case class MinimalSelection(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine)
+  implicit val writer: RootJsonWriter[Selection] = new RootJsonWriter[Selection] {
+    def write(selection: Selection): JsValue = MinimalSelection(selection.lineIdx, selection.from, selection.toExcl).toJson
+  }
+  def reader(lines: IndexedSeq[LineAndPos]): JsonReader[Selection] = new JsonReader[Selection] {
+    def read(json: JsValue): Selection = {
+      val minimal = implicitly[JsonFormat[MinimalSelection]].read(json)
+      val lineAndPos = lines(minimal.lineIdx.i)
+      Selection.create(lineAndPos.line, minimal.lineIdx, minimal.from, minimal.to, lineAndPos.pos).getAssert("Input data is probably wrong")
+    }
+  }
 
   implicit val ordering: Ordering[Selection] = Ordering.by[Selection, (LineIdx, CharIdxInLine)](s => (s.lineIdx, s.from))
 
@@ -60,7 +73,26 @@ sealed abstract case class Selection private(line: String, lineIdx: LineIdx, fro
 }
 
 object WordMatch {
-  implicit val jsonFormat: RootJsonFormat[WordMatch] = jsonFormat2(WordMatch.apply)
+  def reader(leftLines: IndexedSeq[LineAndPos], rightLines: IndexedSeq[LineAndPos]): RootJsonReader[WordMatch] = new RootJsonReader[WordMatch] {
+    def read(json: JsValue): WordMatch = {
+
+      json match {
+        case JsObject(fields) =>
+          (fields.get("left"), fields.get("right")) match {
+            case (Some(left), Some(right)) =>
+              val leftReader = Selection.reader(leftLines)
+              val rightReader = Selection.reader(rightLines)
+              val leftSelection = leftReader.read(left)
+              val rightSelection = rightReader.read(right)
+              WordMatch(leftSelection, rightSelection)
+            case _ => deserializationError(s"Couldn't fine either left or right fields. The fields: ${fields.keys}")
+          }
+        case other => deserializationError(s"Expected object got $other")
+      }
+    }
+  }
+  implicit val writer: RootJsonWriter[WordMatch] = jsonWriter2[Selection, Selection, WordMatch]
+
 
 }
 final case class WordMatch(left: Selection, right: Selection) {
@@ -110,7 +142,20 @@ object AmbiguousWordAlignment {
     }
   }
 
-  implicit val jsonFormat: RootJsonFormat[AmbiguousWordAlignment] = DefaultJsonProtocol.jsonFormat1(AmbiguousWordAlignment.apply)
+  implicit val writer: RootJsonWriter[AmbiguousWordAlignment] = {
+    //need to lift here because there is no default writer for set just default format :(
+    implicit val format: RootJsonFormat[WordMatch] = lift(WordMatch.writer)
+    jsonWriter1[Set[WordMatch], AmbiguousWordAlignment]
+  }
+  def reader(leftLines: IndexedSeq[LineAndPos], rightLines: IndexedSeq[LineAndPos]) = {
+    new JsonReader[AmbiguousWordAlignment] {
+      def read(json: JsValue): AmbiguousWordAlignment = {
+        //need to lift here because there is no default reader for set just default format :(
+        implicit val wordMatchReader: RootJsonFormat[WordMatch]  = lift(WordMatch.reader(leftLines, rightLines))
+        jsonReader1(AmbiguousWordAlignment.apply).read(json)
+      }
+    }
+  }
 }
 /**
   * For explanation see the comment on AmbiguousLineAlignment

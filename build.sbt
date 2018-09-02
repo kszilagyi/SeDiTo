@@ -70,6 +70,8 @@ def commonSettings = Seq(
 
 )
 
+val silencerVersion = "1.2"
+
 lazy val common = (project in file("common"))
   .settings(
     name := "common",
@@ -84,6 +86,10 @@ lazy val common = (project in file("common"))
     libraryDependencies += "org.typelevel" %% "cats-core" % "1.0.1",
     libraryDependencies += "org.apache.commons" % "commons-text" % "1.3",
     libraryDependencies += "org.scala-lang.modules" % "scala-java8-compat_2.12" % "0.9.0",
+    libraryDependencies ++= Seq(
+      compilerPlugin("com.github.ghik" %% "silencer-plugin" % silencerVersion),
+      "com.github.ghik" %% "silencer-lib" % silencerVersion % Provided
+    ),
     commonSettings
   )
 
