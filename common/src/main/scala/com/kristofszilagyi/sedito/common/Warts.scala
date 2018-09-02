@@ -21,6 +21,7 @@ object Warts {
   final val DefaultArguments = "org.wartremover.warts.DefaultArguments"
   final val StringPlusAny = "org.wartremover.warts.StringPlusAny"
   final val OptionPartial = "org.wartremover.warts.OptionPartial"
+  final val TryPartial = "org.wartremover.warts.TryPartial"
 
   def discard(a: Any): Unit = {
     val _ = a
