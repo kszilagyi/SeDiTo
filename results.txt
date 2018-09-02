@@ -281,20 +281,24 @@
 12:43:09.880 [main] INFO  c.k.sedito.gui.TrainAndDiff - Starting training
 12:43:39.098 [main] INFO  smile.util.package$ - runtime: 29209.298299 ms
 12:43:39.100 [main] INFO  c.k.sedito.gui.TrainAndDiff - Training finished
-12:43:51.958 [main] INFO  c.k.sedito.gui.TrainAndDiff - training accuracy: 0.9989890277566376
-12:43:51.964 [main] INFO  c.k.sedito.gui.TrainAndDiff - training recall: 0.9947818132679155
-12:43:51.971 [main] INFO  c.k.sedito.gui.TrainAndDiff - training sensitivity: 0.9947818132679155
-12:43:51.979 [main] INFO  c.k.sedito.gui.TrainAndDiff - training specificity: 0.9994070982936
-12:43:51.985 [main] INFO  c.k.sedito.gui.TrainAndDiff - training fallout: 5.929017064000286E-4
-12:43:51.991 [main] INFO  c.k.sedito.gui.TrainAndDiff - training fdr: 0.005962149697737707
-12:43:51.998 [main] INFO  c.k.sedito.gui.TrainAndDiff - training f1: 0.9944096926370042
-12:43:51.998 [main] INFO  c.k.sedito.gui.TrainAndDiff - test accuracy: 0.998608846572775
-12:43:51.999 [main] INFO  c.k.sedito.gui.TrainAndDiff - test recall: 0.9930893790641336
-12:43:52.000 [main] INFO  c.k.sedito.gui.TrainAndDiff - test sensitivity: 0.9930893790641336
-12:43:52.001 [main] INFO  c.k.sedito.gui.TrainAndDiff - test specificity: 0.9991394865357837
-12:43:52.004 [main] INFO  c.k.sedito.gui.TrainAndDiff - test fallout: 8.605134642163392E-4
-12:43:52.005 [main] INFO  c.k.sedito.gui.TrainAndDiff - test fdr: 0.008932434151927727
-12:43:52.009 [main] INFO  c.k.sedito.gui.TrainAndDiff - test f1: 0.9920774423640302
+13:13:10.197 [main] INFO  c.k.sedito.gui.TrainAndDiff - training accuracy: 0.9989890277566376
+13:13:10.202 [main] INFO  c.k.sedito.gui.TrainAndDiff - training recall: 0.9947818132679155
+13:13:10.208 [main] INFO  c.k.sedito.gui.TrainAndDiff - training sensitivity(TP / (TP + FN)): 0.9947818132679155
+13:13:10.214 [main] INFO  c.k.sedito.gui.TrainAndDiff - training specificity(TN / (FP + TN)): 0.9994070982936
+13:13:10.221 [main] INFO  c.k.sedito.gui.TrainAndDiff - training fallout(FP / (FP + TN)): 5.929017064000286E-4
+13:13:10.226 [main] INFO  c.k.sedito.gui.TrainAndDiff - training fdr(FP / (TP + FP)): 0.005962149697737707
+13:13:10.261 [main] INFO  c.k.sedito.gui.TrainAndDiff - training FP count: 287
+13:13:10.287 [main] INFO  c.k.sedito.gui.TrainAndDiff - training FN count: 251
+13:13:10.294 [main] INFO  c.k.sedito.gui.TrainAndDiff - training f1: 0.9944096926370042
+13:13:10.294 [main] INFO  c.k.sedito.gui.TrainAndDiff - test accuracy: 0.998608846572775
+13:13:10.297 [main] INFO  c.k.sedito.gui.TrainAndDiff - test recall: 0.9930893790641336
+13:13:10.298 [main] INFO  c.k.sedito.gui.TrainAndDiff - test sensitivity(TP / (TP + FN)): 0.9930893790641336
+13:13:10.299 [main] INFO  c.k.sedito.gui.TrainAndDiff - test specificity(TN / (FP + TN)): 0.9991394865357837
+13:13:10.300 [main] INFO  c.k.sedito.gui.TrainAndDiff - test fallout(FP / (FP + TN)): 8.605134642163392E-4
+13:13:10.301 [main] INFO  c.k.sedito.gui.TrainAndDiff - test fdr(FP / (TP + FP)): 0.008932434151927727
+13:13:10.314 [main] INFO  c.k.sedito.gui.TrainAndDiff - test FP count: 351
+13:13:10.329 [main] INFO  c.k.sedito.gui.TrainAndDiff - test FN count: 271
+13:13:10.331 [main] INFO  c.k.sedito.gui.TrainAndDiff - test f1: 0.9920774423640302
 12:44:04.493 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Training f1s:
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/move_within_line,0.8571428571428571)
 (/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/this_needs_rename_info_to_work,0.9317269076305221)
