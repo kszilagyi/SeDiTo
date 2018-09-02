@@ -61,7 +61,7 @@ object Selection {
 }
 //I am using this instead of indexing into the whole string so that line ending types do not make a difference
 sealed abstract case class Selection private(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine, absoluteFrom: Int) {
-  def toText: String = s"${line.substring(from.i, toExcl.i)}"
+  def toText: String = line.substring(from.i, toExcl.i)
 
   override def toString: String = {
     s"${lineIdx.i}: ${from.i} - ${toExcl.i} [$toText]($absoluteFrom)"
