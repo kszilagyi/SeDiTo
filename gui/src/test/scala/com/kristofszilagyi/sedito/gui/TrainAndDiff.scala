@@ -76,6 +76,14 @@ object TrainAndDiff {
     attributeDataset
   }
 
+  private def countFP(truth: Array[Int], prediction: Array[Int]): Int = {
+    truth.zip(prediction).count{ case (t, p) => t ==== 0 && p ==== 1 }
+  }
+
+  private def countFN(truth: Array[Int], prediction: Array[Int]): Int = {
+    truth.zip(prediction).count{ case (t, p) => t ==== 1 && p ==== 0 }
+  }
+
   def generateClassifier(nestedTraining: List[IndexedSeq[MetricsWithResults]],
                                  nestedTest: List[IndexedSeq[MetricsWithResults]], numOfAttributes: Int) = {
     val training = nestedTraining.flatten
@@ -105,18 +113,22 @@ object TrainAndDiff {
 
     logger.info("training accuracy: " + accuracy(trainingY, trainingPred).toString)
     logger.info("training recall: " + recall(trainingY, trainingPred).toString)
-    logger.info("training sensitivity: " + sensitivity(trainingY, trainingPred).toString)
-    logger.info("training specificity: " + specificity(trainingY, trainingPred).toString)
-    logger.info("training fallout: " + fallout(trainingY, trainingPred).toString)
-    logger.info("training fdr: " + fdr(trainingY, trainingPred).toString)
+    logger.info("training sensitivity(TP / (TP + FN)): " + sensitivity(trainingY, trainingPred).toString)
+    logger.info("training specificity(TN / (FP + TN)): " + specificity(trainingY, trainingPred).toString)
+    logger.info("training fallout(FP / (FP + TN)): " + fallout(trainingY, trainingPred).toString)
+    logger.info("training fdr(FP / (TP + FP)): " + fdr(trainingY, trainingPred).toString)
+    logger.info(s"training FP count: ${countFP(trainingY, trainingPred)}")
+    logger.info(s"training FN count: ${countFN(trainingY, trainingPred)}")
     logger.info("training f1: " + f1(trainingY, trainingPred).toString)
 
     logger.info("test accuracy: " + accuracy(testY, testPred).toString)
     logger.info("test recall: " + recall(testY, testPred).toString)
-    logger.info("test sensitivity: " + sensitivity(testY, testPred).toString)
-    logger.info("test specificity: " + specificity(testY, testPred).toString)
-    logger.info("test fallout: " + fallout(testY, testPred).toString)
-    logger.info("test fdr: " + fdr(testY, testPred).toString)
+    logger.info("test sensitivity(TP / (TP + FN)): " + sensitivity(testY, testPred).toString)
+    logger.info("test specificity(TN / (FP + TN)): " + specificity(testY, testPred).toString)
+    logger.info("test fallout(FP / (FP + TN)): " + fallout(testY, testPred).toString)
+    logger.info("test fdr(FP / (TP + FP)): " + fdr(testY, testPred).toString)
+    logger.info(s"test FP count: ${countFP(testY, testPred)}")
+    logger.info(s"test FN count: ${countFN(testY, testPred)}")
     logger.info("test f1: " + f1(testY, testPred).toString)
     (classifier, scaler)
   }
