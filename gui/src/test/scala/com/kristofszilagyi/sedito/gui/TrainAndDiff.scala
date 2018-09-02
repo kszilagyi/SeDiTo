@@ -47,6 +47,13 @@ object TrainAndDiff {
 
     metrics.map { m =>
       val potentialMatch = WordMatch(m.leftWord, m.rightWord)
+//      val strange = matchesSet.find(m1 =>
+//        m1.left.from ==== potentialMatch.left.from && m1.right.from ==== potentialMatch.right.from &&
+//          m1.left.line ==== potentialMatch.left.line && (m1.left.absoluteFrom !=== potentialMatch.left.absoluteFrom)
+//      )
+//      if (strange.nonEmpty)
+//        println("strange")
+
       MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))
     }
   }

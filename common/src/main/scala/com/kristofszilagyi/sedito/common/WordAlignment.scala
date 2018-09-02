@@ -34,7 +34,7 @@ object Selection {
     def read(json: JsValue): Selection = {
       val minimal = implicitly[JsonFormat[MinimalSelection]].read(json)
       val lineAndPos = lines(minimal.lineIdx.i)
-      Selection.create(lineAndPos.line, minimal.lineIdx, minimal.from, minimal.to, lineAndPos.pos).getAssert("Input data is probably wrong")
+      Selection.create(lineAndPos.line, minimal.lineIdx, minimal.from, minimal.to, lineAndPos.pos + minimal.from.i).getAssert("Input data is probably wrong")
     }
   }
 
