@@ -51,7 +51,7 @@ object TrainAndDiff {
     }
   }
 
-  def readDataSetAndMeasureMetrics() = {
+  def readDataSetAndMeasureMetrics(): Seq[(Path, IndexedSeq[MetricsWithResults])] = {
     val parentDir = Paths.get(getClass.getClassLoader.getResource("algorithm_tests/full_tests").getPath)
     val testDirs = using(Files.newDirectoryStream(parentDir)) { stream =>
       stream.iterator().asScala.toList.filter(p => Files.isDirectory(p))
