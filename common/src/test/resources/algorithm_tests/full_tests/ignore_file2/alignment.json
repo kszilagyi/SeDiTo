@@ -1,975 +1,825 @@
 {
   "matches": [{
     "left": {
-      "line": "cov_output/",
       "lineIdx": 10,
       "from": 0,
       "to": 10
     },
     "right": {
-      "line": "cov_output/",
       "lineIdx": 10,
       "from": 0,
       "to": 10
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 3,
       "to": 4
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 3,
       "to": 4
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 34,
       "to": 38
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 34,
       "to": 38
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 6,
       "to": 11
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 6,
       "to": 11
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 59,
       "to": 64
     },
     "right": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 59,
       "to": 64
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 44,
       "to": 45
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 44,
       "to": 45
     }
   }, {
     "left": {
-      "line": "coverage.info",
       "lineIdx": 9,
       "from": 9,
       "to": 13
     },
     "right": {
-      "line": "coverage.info",
       "lineIdx": 9,
       "from": 9,
       "to": 13
     }
   }, {
     "left": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 32,
       "to": 58
     },
     "right": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 32,
       "to": 58
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 0,
       "to": 4
     },
     "right": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 0,
       "to": 4
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 12,
       "to": 40
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 12,
       "to": 40
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 0,
       "to": 4
     },
     "right": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 0,
       "to": 4
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "coverage.info",
       "lineIdx": 9,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "coverage.info",
       "lineIdx": 9,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "cov_output/",
       "lineIdx": 10,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "cov_output/",
       "lineIdx": 10,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "coverage.info",
       "lineIdx": 9,
       "from": 0,
       "to": 8
     },
     "right": {
-      "line": "coverage.info",
       "lineIdx": 9,
       "from": 0,
       "to": 8
     }
   }, {
     "left": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 6,
       "to": 11
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 6,
       "to": 11
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "out/",
       "lineIdx": 8,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "out/",
       "lineIdx": 8,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 39,
       "to": 46
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 39,
       "to": 46
     }
   }, {
     "left": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 6,
       "to": 31
     },
     "right": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 6,
       "to": 31
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 5,
       "to": 6
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 5,
       "to": 6
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 41,
       "to": 46
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 41,
       "to": 46
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "syntax: glob",
       "lineIdx": 0,
       "from": 0,
       "to": 6
     },
     "right": {
-      "line": "syntax: glob",
       "lineIdx": 0,
       "from": 0,
       "to": 6
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 15,
       "to": 19
     },
     "right": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 15,
       "to": 19
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 39,
       "to": 44
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 39,
       "to": 44
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 30,
       "to": 33
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 30,
       "to": 33
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 12,
       "to": 38
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 12,
       "to": 38
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 11,
       "to": 14
     },
     "right": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 11,
       "to": 14
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 4,
       "to": 29
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 4,
       "to": 29
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 11,
       "to": 14
     },
     "right": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 11,
       "to": 14
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 41,
       "to": 46
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 41,
       "to": 46
     }
   }, {
     "left": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 47,
       "to": 52
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 47,
       "to": 52
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 20,
       "to": 27
     },
     "right": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 20,
       "to": 27
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 30,
       "to": 33
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 30,
       "to": 33
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 5,
       "to": 10
     },
     "right": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 5,
       "to": 10
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 6,
       "to": 11
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 6,
       "to": 11
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "syntax: glob",
       "lineIdx": 0,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "syntax: glob",
       "lineIdx": 0,
       "from": 6,
       "to": 7
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "syntax: glob",
       "lineIdx": 0,
       "from": 8,
       "to": 12
     },
     "right": {
-      "line": "syntax: glob",
       "lineIdx": 0,
       "from": 8,
       "to": 12
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 34,
       "to": 38
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 34,
       "to": 38
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 5,
       "to": 6
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 5,
       "to": 6
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 5,
       "to": 6
     },
     "right": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 5,
       "to": 6
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 12,
       "to": 40
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/",
       "lineIdx": 3,
       "from": 12,
       "to": 40
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug",
       "lineIdx": 2,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 4,
       "to": 29
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 4,
       "to": 29
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 3,
       "to": 4
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user.55e15ad",
       "lineIdx": 4,
       "from": 3,
       "to": 4
     }
   }, {
     "left": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "src/ContextBasedGeneralDiffer.pro.user",
       "lineIdx": 11,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 5,
       "to": 10
     },
     "right": {
-      "line": "test/Tests.pro.user.55e15ad",
       "lineIdx": 7,
       "from": 5,
       "to": 10
     }
   }, {
     "left": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 15,
       "to": 19
     },
     "right": {
-      "line": "test/Tests.pro.user",
       "lineIdx": 5,
       "from": 15,
       "to": 19
     }
   }, {
     "left": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 1,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "out/",
       "lineIdx": 8,
       "from": 3,
       "to": 4
     },
     "right": {
-      "line": "out/",
       "lineIdx": 8,
       "from": 3,
       "to": 4
     }
   }, {
     "left": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 5,
       "to": 6
     },
     "right": {
-      "line": "build-Tests-Desktop_Qt_5_4_1_GCC_64bit-Debug/",
       "lineIdx": 6,
       "from": 5,
       "to": 6

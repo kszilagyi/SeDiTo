@@ -1,52 +1,44 @@
 {
   "matches": [{
     "left": {
-      "line": "one two three fourb",
       "lineIdx": 0,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "foura one two three",
       "lineIdx": 0,
       "from": 6,
       "to": 9
     }
   }, {
     "left": {
-      "line": "one two three fourb",
       "lineIdx": 0,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "foura one two three",
       "lineIdx": 0,
       "from": 10,
       "to": 13
     }
   }, {
     "left": {
-      "line": "one two three fourb",
       "lineIdx": 0,
       "from": 8,
       "to": 13
     },
     "right": {
-      "line": "foura one two three",
       "lineIdx": 0,
       "from": 14,
       "to": 19
     }
   }, {
     "left": {
-      "line": "one two three fourb",
       "lineIdx": 0,
       "from": 14,
       "to": 19
     },
     "right": {
-      "line": "foura one two three",
       "lineIdx": 0,
       "from": 0,
       "to": 5

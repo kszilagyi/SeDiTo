@@ -2,2002 +2,1694 @@
   "matches": [{
     "left": {
       "from": 10,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 4,
       "to": 11
     },
     "right": {
       "from": 10,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 6,
       "to": 11
     }
   }, {
     "left": {
       "from": 21,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 4,
       "to": 22
     },
     "right": {
       "from": 21,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 6,
       "to": 22
     }
   }, {
     "left": {
       "from": 20,
-      "line": "object Main extends JFXApp {",
       "lineIdx": 11,
       "to": 26
     },
     "right": {
       "from": 20,
-      "line": "object Main extends JFXApp {",
       "lineIdx": 10,
       "to": 26
     }
   }, {
     "left": {
       "from": 0,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 8,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 2,
       "to": 6
     }
   }, {
     "left": {
       "from": 21,
-      "line": "  private val logger = getLogger",
       "lineIdx": 13,
       "to": 22
     },
     "right": {
       "from": 21,
-      "line": "  private val logger = getLogger",
       "lineIdx": 12,
       "to": 22
     }
   }, {
     "left": {
       "from": 44,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 45
     },
     "right": {
       "from": 44,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 45
     }
   }, {
     "left": {
       "from": 18,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 24
     },
     "right": {
       "from": 18,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 24
     }
   }, {
     "left": {
       "from": 49,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 50
     },
     "right": {
       "from": 49,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 50
     }
   }, {
     "left": {
       "from": 0,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 6
     }
   }, {
     "left": {
       "from": 33,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 34
     },
     "right": {
       "from": 33,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 34
     }
   }, {
     "left": {
       "from": 28,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 22,
       "to": 29
     },
     "right": {
       "from": 28,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 21,
       "to": 29
     }
   }, {
     "left": {
       "from": 18,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 10,
       "to": 23
     },
     "right": {
       "from": 18,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 9,
       "to": 23
     }
   }, {
     "left": {
       "from": 26,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 44
     },
     "right": {
       "from": 26,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 44
     }
   }, {
     "left": {
       "from": 20,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 22,
       "to": 21
     },
     "right": {
       "from": 20,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 21,
       "to": 21
     }
   }, {
     "left": {
       "from": 62,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 63
     },
     "right": {
       "from": 62,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 63
     }
   }, {
     "left": {
       "from": 94,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 95
     },
     "right": {
       "from": 94,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 95
     }
   }, {
     "left": {
       "from": 15,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 4,
       "to": 21
     },
     "right": {
       "from": 15,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 6,
       "to": 21
     }
   }, {
     "left": {
       "from": 29,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 10,
       "to": 30
     },
     "right": {
       "from": 29,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 9,
       "to": 30
     }
   }, {
     "left": {
       "from": 7,
-      "line": "import org.log4s._",
       "lineIdx": 6,
       "to": 10
     },
     "right": {
       "from": 7,
-      "line": "import org.log4s._",
       "lineIdx": 4,
       "to": 10
     }
   }, {
     "left": {
       "from": 2,
-      "line": "  private val logger = getLogger",
       "lineIdx": 13,
       "to": 9
     },
     "right": {
       "from": 2,
-      "line": "  private val logger = getLogger",
       "lineIdx": 12,
       "to": 9
     }
   }, {
     "left": {
       "from": 33,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 3,
       "to": 34
     },
     "right": {
       "from": 33,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 7,
       "to": 34
     }
   }, {
     "left": {
       "from": 6,
-      "line": "      }",
       "lineIdx": 24,
       "to": 7
     },
     "right": {
       "from": 6,
-      "line": "      }",
       "lineIdx": 23,
       "to": 7
     }
   }, {
     "left": {
       "from": 21,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 22,
       "to": 28
     },
     "right": {
       "from": 21,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 21,
       "to": 28
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 7
     },
     "right": {
       "from": 4,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 7
     }
   }, {
     "left": {
       "from": 10,
-      "line": "  private val logger = getLogger",
       "lineIdx": 13,
       "to": 13
     },
     "right": {
       "from": 10,
-      "line": "  private val logger = getLogger",
       "lineIdx": 12,
       "to": 13
     }
   }, {
     "left": {
       "from": 69,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 73
     },
     "right": {
       "from": 69,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 73
     }
   }, {
     "left": {
       "from": 26,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 31
     },
     "right": {
       "from": 26,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 31
     }
   }, {
     "left": {
       "from": 40,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 41
     },
     "right": {
       "from": 40,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 41
     }
   }, {
     "left": {
       "from": 14,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 4,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 6,
       "to": 15
     }
   }, {
     "left": {
       "from": 2,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 5
     },
     "right": {
       "from": 2,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 5
     }
   }, {
     "left": {
       "from": 36,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 22,
       "to": 37
     },
     "right": {
       "from": 36,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 21,
       "to": 37
     }
   }, {
     "left": {
       "from": 34,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 35
     },
     "right": {
       "from": 34,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 35
     }
   }, {
     "left": {
       "from": 33,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 14,
       "to": 34
     },
     "right": {
       "from": 33,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 13,
       "to": 34
     }
   }, {
     "left": {
       "from": 35,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 38
     },
     "right": {
       "from": 35,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 38
     }
   }, {
     "left": {
       "from": 24,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 10,
       "to": 29
     },
     "right": {
       "from": 24,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 9,
       "to": 29
     }
   }, {
     "left": {
       "from": 26,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 8,
       "to": 27
     },
     "right": {
       "from": 26,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 2,
       "to": 27
     }
   }, {
     "left": {
       "from": 24,
-      "line": "import scalafx.Includes._",
       "lineIdx": 7,
       "to": 25
     },
     "right": {
       "from": 24,
-      "line": "import scalafx.Includes._",
       "lineIdx": 3,
       "to": 25
     }
   }, {
     "left": {
       "from": 5,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 6
     },
     "right": {
       "from": 5,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 6
     }
   }, {
     "left": {
       "from": 22,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 14,
       "to": 25
     },
     "right": {
       "from": 22,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 13,
       "to": 25
     }
   }, {
     "left": {
       "from": 0,
-      "line": "object Main extends JFXApp {",
       "lineIdx": 11,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "object Main extends JFXApp {",
       "lineIdx": 10,
       "to": 6
     }
   }, {
     "left": {
       "from": 33,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 34
     },
     "right": {
       "from": 33,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 34
     }
   }, {
     "left": {
       "from": 1,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 10,
       "to": 17
     },
     "right": {
       "from": 1,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 9,
       "to": 17
     }
   }, {
     "left": {
       "from": 15,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 14,
       "to": 21
     },
     "right": {
       "from": 15,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 13,
       "to": 21
     }
   }, {
     "left": {
       "from": 57,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 65
     },
     "right": {
       "from": 57,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 65
     }
   }, {
     "left": {
       "from": 21,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 33
     },
     "right": {
       "from": 21,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 33
     }
   }, {
     "left": {
       "from": 9,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 10
     },
     "right": {
       "from": 9,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 10
     }
   }, {
     "left": {
       "from": 13,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 22,
       "to": 20
     },
     "right": {
       "from": 13,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 21,
       "to": 20
     }
   }, {
     "left": {
       "from": 2,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 14,
       "to": 8
     },
     "right": {
       "from": 2,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 13,
       "to": 8
     }
   }, {
     "left": {
       "from": 11,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 3,
       "to": 26
     },
     "right": {
       "from": 11,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 7,
       "to": 26
     }
   }, {
     "left": {
       "from": 41,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 3,
       "to": 46
     },
     "right": {
       "from": 41,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 7,
       "to": 46
     }
   }, {
     "left": {
       "from": 86,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 94
     },
     "right": {
       "from": 86,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 94
     }
   }, {
     "left": {
       "from": 13,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 14,
       "to": 14
     },
     "right": {
       "from": 13,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 13,
       "to": 14
     }
   }, {
     "left": {
       "from": 8,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 14,
       "to": 9
     },
     "right": {
       "from": 8,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 13,
       "to": 9
     }
   }, {
     "left": {
       "from": 74,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 75
     },
     "right": {
       "from": 74,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 75
     }
   }, {
     "left": {
       "from": 52,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 53
     },
     "right": {
       "from": 52,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 53
     }
   }, {
     "left": {
       "from": 21,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 22
     },
     "right": {
       "from": 21,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 22
     }
   }, {
     "left": {
       "from": 50,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 51
     },
     "right": {
       "from": 50,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 51
     }
   }, {
     "left": {
       "from": 27,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 8,
       "to": 33
     },
     "right": {
       "from": 27,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 2,
       "to": 33
     }
   }, {
     "left": {
       "from": 39,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 40
     },
     "right": {
       "from": 39,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 40
     }
   }, {
     "left": {
       "from": 23,
-      "line": "import scalafx.Includes._",
       "lineIdx": 7,
       "to": 24
     },
     "right": {
       "from": 23,
-      "line": "import scalafx.Includes._",
       "lineIdx": 3,
       "to": 24
     }
   }, {
     "left": {
       "from": 23,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 10,
       "to": 24
     },
     "right": {
       "from": 23,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 9,
       "to": 24
     }
   }, {
     "left": {
       "from": 11,
-      "line": "import org.log4s._",
       "lineIdx": 6,
       "to": 16
     },
     "right": {
       "from": 11,
-      "line": "import org.log4s._",
       "lineIdx": 4,
       "to": 16
     }
   }, {
     "left": {
       "from": 6,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 22,
       "to": 12
     },
     "right": {
       "from": 6,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 21,
       "to": 12
     }
   }, {
     "left": {
       "from": 8,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 14
     },
     "right": {
       "from": 8,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 14
     }
   }, {
     "left": {
       "from": 20,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 21
     },
     "right": {
       "from": 20,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 21
     }
   }, {
     "left": {
       "from": 2,
-      "line": "  })",
       "lineIdx": 26,
       "to": 3
     },
     "right": {
       "from": 2,
-      "line": "  })",
       "lineIdx": 25,
       "to": 3
     }
   }, {
     "left": {
       "from": 15,
-      "line": "import scalafx.Includes._",
       "lineIdx": 7,
       "to": 23
     },
     "right": {
       "from": 15,
-      "line": "import scalafx.Includes._",
       "lineIdx": 3,
       "to": 23
     }
   }, {
     "left": {
       "from": 34,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 48
     },
     "right": {
       "from": 34,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 48
     }
   }, {
     "left": {
       "from": 96,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 97
     },
     "right": {
       "from": 96,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 97
     }
   }, {
     "left": {
       "from": 24,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 25
     },
     "right": {
       "from": 24,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 25
     }
   }, {
     "left": {
       "from": 8,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 11
     },
     "right": {
       "from": 8,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 11
     }
   }, {
     "left": {
       "from": 22,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 25
     },
     "right": {
       "from": 22,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 25
     }
   }, {
     "left": {
       "from": 7,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 8,
       "to": 14
     },
     "right": {
       "from": 7,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 2,
       "to": 14
     }
   }, {
     "left": {
       "from": 30,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 22,
       "to": 35
     },
     "right": {
       "from": 30,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 21,
       "to": 35
     }
   }, {
     "left": {
       "from": 0,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 10,
       "to": 1
     },
     "right": {
       "from": 0,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 9,
       "to": 1
     }
   }, {
     "left": {
       "from": 65,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 66
     },
     "right": {
       "from": 65,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 66
     }
   }, {
     "left": {
       "from": 28,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 34
     },
     "right": {
       "from": 28,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 34
     }
   }, {
     "left": {
       "from": 54,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 55
     },
     "right": {
       "from": 54,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 55
     }
   }, {
     "left": {
       "from": 10,
-      "line": "import org.log4s._",
       "lineIdx": 6,
       "to": 11
     },
     "right": {
       "from": 10,
-      "line": "import org.log4s._",
       "lineIdx": 4,
       "to": 11
     }
   }, {
     "left": {
       "from": 14,
-      "line": "  private val logger = getLogger",
       "lineIdx": 13,
       "to": 20
     },
     "right": {
       "from": 14,
-      "line": "  private val logger = getLogger",
       "lineIdx": 12,
       "to": 20
     }
   }, {
     "left": {
       "from": 7,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 13
     },
     "right": {
       "from": 7,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 13
     }
   }, {
     "left": {
       "from": 25,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 4,
       "to": 26
     },
     "right": {
       "from": 25,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 6,
       "to": 26
     }
   }, {
     "left": {
       "from": 14,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 14,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 13,
       "to": 15
     }
   }, {
     "left": {
       "from": 15,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 19
     },
     "right": {
       "from": 15,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 19
     }
   }, {
     "left": {
       "from": 34,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 39
     },
     "right": {
       "from": 34,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 39
     }
   }, {
     "left": {
       "from": 14,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 8,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 2,
       "to": 15
     }
   }, {
     "left": {
       "from": 7,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 3,
       "to": 10
     },
     "right": {
       "from": 7,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 7,
       "to": 10
     }
   }, {
     "left": {
       "from": 0,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 4,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 6,
       "to": 6
     }
   }, {
     "left": {
       "from": 13,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 14
     },
     "right": {
       "from": 13,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 14
     }
   }, {
     "left": {
       "from": 17,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 18
     },
     "right": {
       "from": 17,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 18
     }
   }, {
     "left": {
       "from": 11,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 12
     },
     "right": {
       "from": 11,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 12
     }
   }, {
     "left": {
       "from": 35,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 10,
       "to": 36
     },
     "right": {
       "from": 35,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 9,
       "to": 36
     }
   }, {
     "left": {
       "from": 10,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 3,
       "to": 11
     },
     "right": {
       "from": 10,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 7,
       "to": 11
     }
   }, {
     "left": {
       "from": 6,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 9
     },
     "right": {
       "from": 6,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 9
     }
   }, {
     "left": {
       "from": 16,
-      "line": "  new MainWindow()",
       "lineIdx": 15,
       "to": 17
     },
     "right": {
       "from": 16,
-      "line": "  new MainWindow()",
       "lineIdx": 14,
       "to": 17
     }
   }, {
     "left": {
       "from": 45,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 51
     },
     "right": {
       "from": 45,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 51
     }
   }, {
     "left": {
       "from": 17,
-      "line": "  new MainWindow()",
       "lineIdx": 15,
       "to": 18
     },
     "right": {
       "from": 17,
-      "line": "  new MainWindow()",
       "lineIdx": 14,
       "to": 18
     }
   }, {
     "left": {
       "from": 0,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 7
     },
     "right": {
       "from": 0,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 7
     }
   }, {
     "left": {
       "from": 34,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 10,
       "to": 35
     },
     "right": {
       "from": 34,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 9,
       "to": 35
     }
   }, {
     "left": {
       "from": 12,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 22,
       "to": 13
     },
     "right": {
       "from": 12,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 21,
       "to": 13
     }
   }, {
     "left": {
       "from": 27,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 28
     },
     "right": {
       "from": 27,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 28
     }
   }, {
     "left": {
       "from": 0,
-      "line": "import scalafx.Includes._",
       "lineIdx": 7,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "import scalafx.Includes._",
       "lineIdx": 3,
       "to": 6
     }
   }, {
     "left": {
       "from": 55,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 56
     },
     "right": {
       "from": 55,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 56
     }
   }, {
     "left": {
       "from": 30,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 10,
       "to": 34
     },
     "right": {
       "from": 30,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 9,
       "to": 34
     }
   }, {
     "left": {
       "from": 22,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 4,
       "to": 25
     },
     "right": {
       "from": 22,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 6,
       "to": 25
     }
   }, {
     "left": {
       "from": 26,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 44
     },
     "right": {
       "from": 26,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 44
     }
   }, {
     "left": {
       "from": 16,
-      "line": "import org.log4s._",
       "lineIdx": 6,
       "to": 17
     },
     "right": {
       "from": 16,
-      "line": "import org.log4s._",
       "lineIdx": 4,
       "to": 17
     }
   }, {
     "left": {
       "from": 16,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 17
     },
     "right": {
       "from": 16,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 17
     }
   }, {
     "left": {
       "from": 17,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 10,
       "to": 18
     },
     "right": {
       "from": 17,
-      "line": "@SuppressWarnings(Array(Warts.Null))",
       "lineIdx": 9,
       "to": 18
     }
   }, {
     "left": {
       "from": 15,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 8,
       "to": 26
     },
     "right": {
       "from": 15,
-      "line": "import scalafx.application.JFXApp",
       "lineIdx": 2,
       "to": 26
     }
   }, {
     "left": {
       "from": 76,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 77
     },
     "right": {
       "from": 76,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 77
     }
   }, {
     "left": {
       "from": 19,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 20
     },
     "right": {
       "from": 19,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 20
     }
   }, {
     "left": {
       "from": 40,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 3,
       "to": 41
     },
     "right": {
       "from": 40,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 7,
       "to": 41
     }
   }, {
     "left": {
       "from": 11,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 4,
       "to": 14
     },
     "right": {
       "from": 11,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 6,
       "to": 14
     }
   }, {
     "left": {
       "from": 51,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 52
     },
     "right": {
       "from": 51,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 52
     }
   }, {
     "left": {
       "from": 12,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 27
     },
     "right": {
       "from": 12,
-      "line": "package com.kristofszilagyi.sedito.gui",
       "lineIdx": 0,
       "to": 27
     }
   }, {
     "left": {
       "from": 31,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 32
     },
     "right": {
       "from": 31,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 32
     }
   }, {
     "left": {
       "from": 51,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 62
     },
     "right": {
       "from": 51,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 62
     }
   }, {
     "left": {
       "from": 63,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 66
     },
     "right": {
       "from": 63,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 66
     }
   }, {
     "left": {
       "from": 17,
-      "line": "import org.log4s._",
       "lineIdx": 6,
       "to": 18
     },
     "right": {
       "from": 17,
-      "line": "import org.log4s._",
       "lineIdx": 4,
       "to": 18
     }
   }, {
     "left": {
       "from": 67,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 85
     },
     "right": {
       "from": 67,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 85
     }
   }, {
     "left": {
       "from": 0,
-      "line": "import org.log4s._",
       "lineIdx": 6,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "import org.log4s._",
       "lineIdx": 4,
       "to": 6
     }
   }, {
     "left": {
       "from": 0,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 3,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 7,
       "to": 6
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    }",
       "lineIdx": 25,
       "to": 5
     },
     "right": {
       "from": 4,
-      "line": "    }",
       "lineIdx": 24,
       "to": 5
     }
   }, {
     "left": {
       "from": 26,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 14,
       "to": 33
     },
     "right": {
       "from": 26,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 13,
       "to": 33
     }
   }, {
     "left": {
       "from": 26,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 4,
       "to": 34
     },
     "right": {
       "from": 26,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 6,
       "to": 34
     }
   }, {
     "left": {
       "from": 48,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 49
     },
     "right": {
       "from": 48,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 49
     }
   }, {
     "left": {
       "from": 25,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 26
     },
     "right": {
       "from": 25,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 26
     }
   }, {
     "left": {
       "from": 12,
-      "line": "object Main extends JFXApp {",
       "lineIdx": 11,
       "to": 19
     },
     "right": {
       "from": 12,
-      "line": "object Main extends JFXApp {",
       "lineIdx": 10,
       "to": 19
     }
   }, {
     "left": {
       "from": 14,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 25
     },
     "right": {
       "from": 14,
-      "line": "import javafx.collections.ListChangeListener",
       "lineIdx": 5,
       "to": 25
     }
   }, {
     "left": {
       "from": 7,
-      "line": "object Main extends JFXApp {",
       "lineIdx": 11,
       "to": 11
     },
     "right": {
       "from": 7,
-      "line": "object Main extends JFXApp {",
       "lineIdx": 10,
       "to": 11
     }
   }, {
     "left": {
       "from": 20,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 21
     },
     "right": {
       "from": 20,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 21
     }
   }, {
     "left": {
       "from": 0,
-      "line": "}",
       "lineIdx": 27,
       "to": 1
     },
     "right": {
       "from": 0,
-      "line": "}",
       "lineIdx": 26,
       "to": 1
     }
   }, {
     "left": {
       "from": 7,
-      "line": "import scalafx.Includes._",
       "lineIdx": 7,
       "to": 14
     },
     "right": {
       "from": 7,
-      "line": "import scalafx.Includes._",
       "lineIdx": 3,
       "to": 14
     }
   }, {
     "left": {
       "from": 14,
-      "line": "import scalafx.Includes._",
       "lineIdx": 7,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "import scalafx.Includes._",
       "lineIdx": 3,
       "to": 15
     }
   }, {
     "left": {
       "from": 37,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 22,
       "to": 38
     },
     "right": {
       "from": 37,
-      "line": "      change.getList.foreach{ error =>",
       "lineIdx": 21,
       "to": 38
     }
   }, {
     "left": {
       "from": 9,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 14,
       "to": 13
     },
     "right": {
       "from": 9,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 13,
       "to": 13
     }
   }, {
     "left": {
       "from": 23,
-      "line": "  private val logger = getLogger",
       "lineIdx": 13,
       "to": 32
     },
     "right": {
       "from": 23,
-      "line": "  private val logger = getLogger",
       "lineIdx": 12,
       "to": 32
     }
   }, {
     "left": {
       "from": 14,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 23,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "        logger.info(s\"Css error: $error\")",
       "lineIdx": 22,
       "to": 15
     }
   }, {
     "left": {
       "from": 85,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 86
     },
     "right": {
       "from": 85,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 86
     }
   }, {
     "left": {
       "from": 26,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 3,
       "to": 27
     },
     "right": {
       "from": 26,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 7,
       "to": 27
     }
   }, {
     "left": {
       "from": 67,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 68
     },
     "right": {
       "from": 67,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 68
     }
   }, {
     "left": {
       "from": 3,
-      "line": "  })",
       "lineIdx": 26,
       "to": 4
     },
     "right": {
       "from": 3,
-      "line": "  })",
       "lineIdx": 25,
       "to": 4
     }
   }, {
     "left": {
       "from": 66,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 67
     },
     "right": {
       "from": 66,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 67
     }
   }, {
     "left": {
       "from": 27,
-      "line": "object Main extends JFXApp {",
       "lineIdx": 11,
       "to": 28
     },
     "right": {
       "from": 27,
-      "line": "object Main extends JFXApp {",
       "lineIdx": 10,
       "to": 28
     }
   }, {
     "left": {
       "from": 27,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 3,
       "to": 33
     },
     "right": {
       "from": 27,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 7,
       "to": 33
     }
   }, {
     "left": {
       "from": 34,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 14,
       "to": 35
     },
     "right": {
       "from": 34,
-      "line": "  logger.info(\"SeDiTo GUI started\")",
       "lineIdx": 13,
       "to": 35
     }
   }, {
     "left": {
       "from": 2,
-      "line": "  new MainWindow()",
       "lineIdx": 15,
       "to": 5
     },
     "right": {
       "from": 2,
-      "line": "  new MainWindow()",
       "lineIdx": 14,
       "to": 5
     }
   }, {
     "left": {
       "from": 17,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 20
     },
     "right": {
       "from": 17,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 20
     }
   }, {
     "left": {
       "from": 8,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 21,
       "to": 17
     },
     "right": {
       "from": 8,
-      "line": "    def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {",
       "lineIdx": 20,
       "to": 17
     }
   }, {
     "left": {
       "from": 7,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 4,
       "to": 10
     },
     "right": {
       "from": 7,
-      "line": "import com.sun.javafx.css.CssError",
       "lineIdx": 6,
       "to": 10
     }
   }, {
     "left": {
       "from": 6,
-      "line": "  new MainWindow()",
       "lineIdx": 15,
       "to": 16
     },
     "right": {
       "from": 6,
-      "line": "  new MainWindow()",
       "lineIdx": 14,
       "to": 16
     }
   }, {
     "left": {
       "from": 10,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 20,
       "to": 16
     },
     "right": {
       "from": 10,
-      "line": "  com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {",
       "lineIdx": 19,
       "to": 16
     }
   }, {
     "left": {
       "from": 34,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 3,
       "to": 40
     },
     "right": {
       "from": 34,
-      "line": "import com.kristofszilagyi.sedito.common.Warts",
       "lineIdx": 7,
       "to": 40
     }

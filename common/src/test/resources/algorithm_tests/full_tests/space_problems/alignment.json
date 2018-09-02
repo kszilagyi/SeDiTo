@@ -2,754 +2,638 @@
   "matches": [{
     "left": {
       "from": 30,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 55
     },
     "right": {
       "from": 30,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 55
     }
   }, {
     "left": {
       "from": 75,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 78
     },
     "right": {
       "from": 66,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 69
     }
   }, {
     "left": {
       "from": 95,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 99
     },
     "right": {
       "from": 88,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 92
     }
   }, {
     "left": {
       "from": 144,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 145
     },
     "right": {
       "from": 137,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 138
     }
   }, {
     "left": {
       "from": 185,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 187
     },
     "right": {
       "from": 178,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 180
     }
   }, {
     "left": {
       "from": 109,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 110
     },
     "right": {
       "from": 102,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 103
     }
   }, {
     "left": {
       "from": 12,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 13
     },
     "right": {
       "from": 12,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 13
     }
   }, {
     "left": {
       "from": 171,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 172
     },
     "right": {
       "from": 164,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 165
     }
   }, {
     "left": {
       "from": 99,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 100
     },
     "right": {
       "from": 92,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 93
     }
   }, {
     "left": {
       "from": 64,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 65
     },
     "right": {
       "from": 64,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 65
     }
   }, {
     "left": {
       "from": 19,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 29
     },
     "right": {
       "from": 19,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 29
     }
   }, {
     "left": {
       "from": 91,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 92
     },
     "right": {
       "from": 84,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 85
     }
   }, {
     "left": {
       "from": 29,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 30
     },
     "right": {
       "from": 29,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 30
     }
   }, {
     "left": {
       "from": 2,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 3
     },
     "right": {
       "from": 2,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 3
     }
   }, {
     "left": {
       "from": 168,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 169
     },
     "right": {
       "from": 161,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 162
     }
   }, {
     "left": {
       "from": 13,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 14
     },
     "right": {
       "from": 13,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 14
     }
   }, {
     "left": {
       "from": 56,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 64
     },
     "right": {
       "from": 56,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 64
     }
   }, {
     "left": {
       "from": 160,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 167
     },
     "right": {
       "from": 153,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 160
     }
   }, {
     "left": {
       "from": 172,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 184
     },
     "right": {
       "from": 165,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 177
     }
   }, {
     "left": {
       "from": 0,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 1
     },
     "right": {
       "from": 0,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 1
     }
   }, {
     "left": {
       "from": 188,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 189
     },
     "right": {
       "from": 181,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 182
     }
   }, {
     "left": {
       "from": 6,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 7
     },
     "right": {
       "from": 6,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 7
     }
   }, {
     "left": {
       "from": 184,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 185
     },
     "right": {
       "from": 177,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 178
     }
   }, {
     "left": {
       "from": 159,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 160
     },
     "right": {
       "from": 152,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 153
     }
   }, {
     "left": {
       "from": 187,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 188
     },
     "right": {
       "from": 180,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 181
     }
   }, {
     "left": {
       "from": 55,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 56
     },
     "right": {
       "from": 55,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 56
     }
   }, {
     "left": {
       "from": 94,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 95
     },
     "right": {
       "from": 87,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 88
     }
   }, {
     "left": {
       "from": 143,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 144
     },
     "right": {
       "from": 136,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 137
     }
   }, {
     "left": {
       "from": 125,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 126
     },
     "right": {
       "from": 118,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 119
     }
   }, {
     "left": {
       "from": 3,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 6
     },
     "right": {
       "from": 3,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 6
     }
   }, {
     "left": {
       "from": 123,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 124
     },
     "right": {
       "from": 116,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 117
     }
   }, {
     "left": {
       "from": 110,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 119
     },
     "right": {
       "from": 103,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 112
     }
   }, {
     "left": {
       "from": 6,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 7
     },
     "right": {
       "from": 6,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 7
     }
   }, {
     "left": {
       "from": 87,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 88
     },
     "right": {
       "from": 80,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 81
     }
   }, {
     "left": {
       "from": 169,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 171
     },
     "right": {
       "from": 162,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 164
     }
   }, {
     "left": {
       "from": 78,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 79
     },
     "right": {
       "from": 69,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 70
     }
   }, {
     "left": {
       "from": 92,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 94
     },
     "right": {
       "from": 85,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 87
     }
   }, {
     "left": {
       "from": 167,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 168
     },
     "right": {
       "from": 160,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 161
     }
   }, {
     "left": {
       "from": 148,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 159
     },
     "right": {
       "from": 141,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 152
     }
   }, {
     "left": {
       "from": 147,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 148
     },
     "right": {
       "from": 140,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 141
     }
   }, {
     "left": {
       "from": 146,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 147
     },
     "right": {
       "from": 139,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 140
     }
   }, {
     "left": {
       "from": 7,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 11
     },
     "right": {
       "from": 7,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 11
     }
   }, {
     "left": {
       "from": 7,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 11
     },
     "right": {
       "from": 7,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 11
     }
   }, {
     "left": {
       "from": 0,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 5
     },
     "right": {
       "from": 0,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 5
     }
   }, {
     "left": {
       "from": 84,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 85
     },
     "right": {
       "from": 76,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 77
     }
   }, {
     "left": {
       "from": 14,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 18
     },
     "right": {
       "from": 14,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 18
     }
   }, {
     "left": {
       "from": 120,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 123
     },
     "right": {
       "from": 113,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 116
     }
   }, {
     "left": {
       "from": 135,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 136
     },
     "right": {
       "from": 128,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 129
     }
   }, {
     "left": {
       "from": 119,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 120
     },
     "right": {
       "from": 112,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 113
     }
   }, {
     "left": {
       "from": 102,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 109
     },
     "right": {
       "from": 95,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 102
     }
   }, {
     "left": {
       "from": 1,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 2
     },
     "right": {
       "from": 1,
-      "line": "#!/bin/bash",
       "lineIdx": 0,
       "to": 2
     }
   }, {
     "left": {
       "from": 124,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 125
     },
     "right": {
       "from": 117,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 118
     }
   }, {
     "left": {
       "from": 100,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 101
     },
     "right": {
       "from": 93,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 94
     }
   }, {
     "left": {
       "from": 126,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 134
     },
     "right": {
       "from": 119,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 127
     }
   }, {
     "left": {
       "from": 81,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 82
     },
     "right": {
       "from": 72,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 73
     }
   }, {
     "left": {
       "from": 18,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 19
     },
     "right": {
       "from": 18,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 19
     }
   }, {
     "left": {
       "from": 101,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 102
     },
     "right": {
       "from": 94,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 95
     }
   }, {
     "left": {
       "from": 137,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-user@ec2-52-26-21-157.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 142
     },
     "right": {
       "from": 130,
-      "line": "rsync -avcn ~/Work/TheBigBang/ContextBasedGeneralDiffer/teaching/ ec2-54-191-134-227.us-west-2.compute.amazonaws.com:~/teaching | egrep -v \"(__pycache__|compare\\.sh|update_slave.sh)\"",
       "lineIdx": 2,
       "to": 135
     }

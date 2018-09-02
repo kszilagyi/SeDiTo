@@ -1,2171 +1,1837 @@
 {
   "matches": [{
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 73,
       "to": 76
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 73,
       "to": 76
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 36,
       "to": 39
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 36,
       "to": 39
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 13,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 35,
       "to": 43
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 40,
       "to": 48
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 3,
       "from": 11,
       "to": 14
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 11,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    upper = 1.0",
       "lineIdx": 15,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "    upper = 1.0",
       "lineIdx": 37,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 9,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 23,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 9,
       "from": 4,
       "to": 15
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 4,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 22,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 13,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 14,
       "from": 4,
       "to": 9
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 4,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 24,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 9,
       "from": 19,
       "to": 29
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 19,
       "to": 29
     }
   }, {
     "left": {
-      "line": "    return scaled_input",
       "lineIdx": 11,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    return scaled_input",
       "lineIdx": 33,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 4,
       "from": 19,
       "to": 23
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 19,
       "to": 23
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 24,
       "from": 20,
       "to": 30
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 20,
       "to": 30
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 71,
       "to": 78
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 71,
       "to": 78
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 13,
       "from": 36,
       "to": 46
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 36,
       "to": 46
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 4,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 4,
       "to": 7
     }
   }, {
     "left": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 16,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 38,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 18,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 24,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 56,
       "to": 57
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 56,
       "to": 57
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 6,
       "to": 12
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 6,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    upper = 1.0",
       "lineIdx": 15,
       "from": 4,
       "to": 9
     },
     "right": {
-      "line": "    upper = 1.0",
       "lineIdx": 37,
       "from": 4,
       "to": 9
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 13,
       "from": 24,
       "to": 34
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 24,
       "to": 34
     }
   }, {
     "left": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 20,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 42,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 3,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 14,
       "to": 17
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 14,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 16,
       "from": 16,
       "to": 20
     },
     "right": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 38,
       "from": 16,
       "to": 20
     }
   }, {
     "left": {
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 18,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 78,
       "to": 79
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 78,
       "to": 79
     }
   }, {
     "left": {
-      "line": "    upper = 1.0",
       "lineIdx": 15,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    upper = 1.0",
       "lineIdx": 37,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 49,
       "to": 59
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 54,
       "to": 64
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 20,
       "from": 24,
       "to": 34
     },
     "right": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 42,
       "from": 24,
       "to": 34
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 3,
       "from": 15,
       "to": 18
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 15,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 63,
       "to": 64
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 68,
       "to": 69
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 22,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 20,
       "from": 11,
       "to": 21
     },
     "right": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 42,
       "from": 11,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    return scaled_input",
       "lineIdx": 11,
       "from": 11,
       "to": 23
     },
     "right": {
-      "line": "    return scaled_input",
       "lineIdx": 33,
       "from": 11,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 3,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 24,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 2,
       "from": 18,
       "to": 28
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 18,
       "to": 28
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 22,
       "from": 27,
       "to": 32
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 27,
       "to": 32
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 3,
       "from": 23,
       "to": 26
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 23,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    upper = 1.0",
       "lineIdx": 15,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "    upper = 1.0",
       "lineIdx": 37,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 32,
       "to": 35
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 32,
       "to": 35
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 9,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 13,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 2,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 13,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 22,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 4,
       "from": 8,
       "to": 11
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 8,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 14,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 13,
       "from": 17,
       "to": 22
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 17,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 16,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 38,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 7,
       "to": 17
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 7,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 14,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 42,
       "to": 52
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 42,
       "to": 52
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 22,
       "from": 21,
       "to": 26
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 21,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 45,
       "to": 55
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 45,
       "to": 55
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 22,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 2,
       "from": 13,
       "to": 16
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 13,
       "to": 16
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 9,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 22,
       "from": 12,
       "to": 17
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 12,
       "to": 17
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 76,
       "to": 77
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 76,
       "to": 77
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 23,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 79,
       "to": 80
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 79,
       "to": 80
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 30,
       "to": 33
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 35,
       "to": 38
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 9,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 3,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 16,
       "from": 4,
       "to": 11
     },
     "right": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 38,
       "from": 4,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 58,
       "to": 68
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 58,
       "to": 68
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 59,
       "to": 60
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 59,
       "to": 60
     }
   }, {
     "left": {
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 18,
       "from": 8,
       "to": 14
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 8,
       "to": 14
     }
   }, {
     "left": {
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 18,
       "from": 15,
       "to": 20
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 15,
       "to": 20
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 23,
       "from": 9,
       "to": 14
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 9,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 4,
       "to": 6
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 4,
       "to": 6
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 24,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 9,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 78,
       "to": 79
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 78,
       "to": 79
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 2,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 56,
       "to": 57
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 56,
       "to": 57
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 2,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 53,
       "to": 56
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 53,
       "to": 56
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 24,
       "from": 9,
       "to": 19
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 9,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 4,
       "from": 15,
       "to": 18
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 15,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    upper = 1.0",
       "lineIdx": 15,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    upper = 1.0",
       "lineIdx": 37,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 14,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 57,
       "to": 58
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 57,
       "to": 58
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 14,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 4,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 72,
       "to": 73
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 72,
       "to": 73
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 23,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 59,
       "to": 60
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 9,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 18,
       "from": 23,
       "to": 30
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 23,
       "to": 30
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 65,
       "to": 66
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 3,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 3,
       "to": 4
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 3,
       "to": 4
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 44,
       "to": 47
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 49,
       "to": 52
     }
   }, {
     "left": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 20,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 42,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 80,
       "to": 81
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 80,
       "to": 81
     }
   }, {
     "left": {
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 18,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 62,
       "to": 63
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 67,
       "to": 68
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 2,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 4,
       "to": 16
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 4,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 41,
       "to": 44
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 41,
       "to": 44
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 30,
       "to": 40
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 30,
       "to": 40
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 4,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 13,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 23,
       "from": 15,
       "to": 25
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 15,
       "to": 25
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 3,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 19,
       "to": 31
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 19,
       "to": 31
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 3,
       "from": 27,
       "to": 37
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 27,
       "to": 37
     }
   }, {
     "left": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 20,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 42,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 4,
       "from": 12,
       "to": 14
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 12,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 20,
       "to": 27
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 20,
       "to": 27
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 2,
       "from": 4,
       "to": 12
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 4,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    return row",
       "lineIdx": 7,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    return res",
       "lineIdx": 29,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 4,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 13,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 3,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 3,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 19,
       "to": 22
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 24,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 10,
       "from": 23,
       "to": 29
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 28,
       "to": 34
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 2,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 22,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 22,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 12,
       "to": 15
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 12,
       "to": 15
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 62,
       "to": 72
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 62,
       "to": 72
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 17,
       "from": 69,
       "to": 70
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 69,
       "to": 70
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 23,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        row[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 5,
       "from": 77,
       "to": 78
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 77,
       "to": 78
     }
   }, {
     "left": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 16,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 38,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 13,
       "from": 4,
       "to": 16
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 4,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 14,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 18,
       "from": 31,
       "to": 36
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 31,
       "to": 36
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 4,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 22,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 11,
       "to": 12

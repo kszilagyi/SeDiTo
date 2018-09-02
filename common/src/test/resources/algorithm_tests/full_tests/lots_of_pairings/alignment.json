@@ -1,975 +1,825 @@
 {
   "matches": [{
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 20,
       "to": 28
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 20,
       "to": 28
     }
   }, {
     "left": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 5,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 10,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 4,
       "from": 11,
       "to": 17
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 9,
       "from": 11,
       "to": 17
     }
   }, {
     "left": {
-      "line": "class OneToOneAlignment;",
       "lineIdx": 6,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "class OneToOneAlignment;",
       "lineIdx": 11,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 67,
       "to": 99
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 67,
       "to": 99
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 16,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 31,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 35,
       "to": 48
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 35,
       "to": 48
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 63,
       "to": 64
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 63,
       "to": 64
     }
   }, {
     "left": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 8,
       "to": 20
     },
     "right": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 8,
       "to": 20
     }
   }, {
     "left": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "class OneToOneAlignment;",
       "lineIdx": 6,
       "from": 6,
       "to": 23
     },
     "right": {
-      "line": "class OneToOneAlignment;",
       "lineIdx": 11,
       "from": 6,
       "to": 23
     }
   }, {
     "left": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 16,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 31,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 7,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 12,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 48,
       "to": 49
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 142,
       "to": 158
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 142,
       "to": 158
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 49,
       "to": 56
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 49,
       "to": 56
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 100,
       "to": 105
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 100,
       "to": 105
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 125,
       "to": 134
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 125,
       "to": 134
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 134,
       "to": 135
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 134,
       "to": 135
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 158,
       "to": 159
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 158,
       "to": 159
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 58,
       "to": 63
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 58,
       "to": 63
     }
   }, {
     "left": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 1,
       "to": 7
     },
     "right": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 1,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 123,
       "to": 124
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 123,
       "to": 124
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 10,
       "to": 23
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 10,
       "to": 23
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 56,
       "to": 57
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 56,
       "to": 57
     }
   }, {
     "left": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 16,
       "from": 1,
       "to": 6
     },
     "right": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 31,
       "from": 1,
       "to": 6
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "namespace MLPipeline",
       "lineIdx": 11,
       "from": 0,
       "to": 9
     },
     "right": {
-      "line": "namespace MLPipeline",
       "lineIdx": 24,
       "from": 0,
       "to": 9
     }
   }, {
     "left": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 7,
       "from": 6,
       "to": 22
     },
     "right": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 12,
       "from": 6,
       "to": 22
     }
   }, {
     "left": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 1,
       "to": 7
     },
     "right": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 1,
       "to": 7
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 5,
       "from": 11,
       "to": 24
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 10,
       "from": 11,
       "to": 24
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 65,
       "to": 66
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 65,
       "to": 66
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 4,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 9,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "namespace MLPipeline",
       "lineIdx": 11,
       "from": 10,
       "to": 20
     },
     "right": {
-      "line": "namespace MLPipeline",
       "lineIdx": 24,
       "from": 10,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 14,
       "to": 19
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 14,
       "to": 19
     }
   }, {
     "left": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 16,
       "from": 10,
       "to": 22
     },
     "right": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 31,
       "from": 10,
       "to": 22
     }
   }, {
     "left": {
-      "line": "class OneToOneAlignment;",
       "lineIdx": 6,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "class OneToOneAlignment;",
       "lineIdx": 11,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 5,
       "from": 6,
       "to": 9
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 10,
       "from": 6,
       "to": 9
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 2,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 16,
       "from": 7,
       "to": 8
     },
     "right": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 31,
       "from": 7,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 136,
       "to": 141
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 136,
       "to": 141
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 5,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 10,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "{",
       "lineIdx": 12,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "{",
       "lineIdx": 25,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 4,
       "from": 6,
       "to": 9
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 9,
       "from": 6,
       "to": 9
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 5,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 10,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 9,
       "to": 12
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 9,
       "to": 12
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 106,
       "to": 123
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 106,
       "to": 123
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 4,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 9,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "}",
       "lineIdx": 14,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "}",
       "lineIdx": 29,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 170,
       "to": 171
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 178,
       "to": 179
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 30,
       "to": 33
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 30,
       "to": 33
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 4,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 9,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 8,
       "to": 20
     },
     "right": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 8,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 10,
       "to": 16
     },
     "right": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 10,
       "to": 16
     }
   }, {
     "left": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 7,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 12,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 4,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 9,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 99,
       "to": 100
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 99,
       "to": 100
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 5,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 10,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& extractor);",
       "lineIdx": 13,
       "from": 169,
       "to": 170
     },
     "right": {
-      "line": "  vector<std::tuple<LinePair, std::unordered_map<QString, float>>> extractAllFeatureForAllNonPaired(const OneToOneAlignment& alignment, const FeatureExtractor& standardExtractor);",
       "lineIdx": 27,
       "from": 177,
       "to": 178

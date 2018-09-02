@@ -1,780 +1,660 @@
 {
   "matches": [{
     "left": {
-      "line": "#endif // HARDMATCHESNEAR_H",
       "lineIdx": 12,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#endif // HARDMATCHESNEAR_H",
       "lineIdx": 13,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 24,
       "to": 29
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 24,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 102,
       "to": 107
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 102,
       "to": 107
     }
   }, {
     "left": {
-      "line": "#endif // HARDMATCHESNEAR_H",
       "lineIdx": 12,
       "from": 1,
       "to": 6
     },
     "right": {
-      "line": "#endif // HARDMATCHESNEAR_H",
       "lineIdx": 13,
       "from": 1,
       "to": 6
     }
   }, {
     "left": {
-      "line": "#endif // HARDMATCHESNEAR_H",
       "lineIdx": 12,
       "from": 10,
       "to": 27
     },
     "right": {
-      "line": "#endif // HARDMATCHESNEAR_H",
       "lineIdx": 13,
       "from": 10,
       "to": 27
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 87,
       "to": 92
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 87,
       "to": 92
     }
   }, {
     "left": {
-      "line": "{",
       "lineIdx": 5,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "{",
       "lineIdx": 5,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "};",
       "lineIdx": 10,
       "from": 1,
       "to": 2
     },
     "right": {
-      "line": "};",
       "lineIdx": 11,
       "from": 1,
       "to": 2
     }
   }, {
     "left": {
-      "line": "class HardMatchesNear : public AboveBelowFeature",
       "lineIdx": 4,
       "from": 24,
       "to": 30
     },
     "right": {
-      "line": "class HardMatchesNear : public AboveBelowFeature",
       "lineIdx": 4,
       "from": 24,
       "to": 30
     }
   }, {
     "left": {
-      "line": "class HardMatchesNear : public AboveBelowFeature",
       "lineIdx": 4,
       "from": 31,
       "to": 48
     },
     "right": {
-      "line": "class HardMatchesNear : public AboveBelowFeature",
       "lineIdx": 4,
       "from": 31,
       "to": 48
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 85,
       "to": 86
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 85,
       "to": 86
     }
   }, {
     "left": {
-      "line": "  const int mDist;",
       "lineIdx": 6,
       "from": 12,
       "to": 17
     },
     "right": {
-      "line": "  const int mDist;",
       "lineIdx": 6,
       "from": 12,
       "to": 17
     }
   }, {
     "left": {
-      "line": "#endif // HARDMATCHESNEAR_H",
       "lineIdx": 12,
       "from": 7,
       "to": 8
     },
     "right": {
-      "line": "#endif // HARDMATCHESNEAR_H",
       "lineIdx": 13,
       "from": 7,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 64,
       "to": 71
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 64,
       "to": 71
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 10,
       "to": 15
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 10,
       "to": 15
     }
   }, {
     "left": {
-      "line": "};",
       "lineIdx": 10,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "};",
       "lineIdx": 11,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "#define HARDMATCHESNEAR_H",
       "lineIdx": 1,
       "from": 1,
       "to": 7
     },
     "right": {
-      "line": "#define HARDMATCHESNEAR_H",
       "lineIdx": 1,
       "from": 1,
       "to": 7
     }
   }, {
     "left": {
-      "line": "#ifndef HARDMATCHESNEAR_H",
       "lineIdx": 0,
       "from": 8,
       "to": 25
     },
     "right": {
-      "line": "#ifndef HARDMATCHESNEAR_H",
       "lineIdx": 0,
       "from": 8,
       "to": 25
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 10,
       "to": 27
     },
     "right": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 10,
       "to": 27
     }
   }, {
     "left": {
-      "line": "#ifndef HARDMATCHESNEAR_H",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#ifndef HARDMATCHESNEAR_H",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#define HARDMATCHESNEAR_H",
       "lineIdx": 1,
       "from": 8,
       "to": 25
     },
     "right": {
-      "line": "#define HARDMATCHESNEAR_H",
       "lineIdx": 1,
       "from": 8,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 2,
       "to": 9
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 2,
       "to": 9
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 2,
       "to": 17
     },
     "right": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 2,
       "to": 17
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  const int mDist;",
       "lineIdx": 6,
       "from": 2,
       "to": 7
     },
     "right": {
-      "line": "  const int mDist;",
       "lineIdx": 6,
       "from": 2,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 16,
       "to": 23
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 16,
       "to": 23
     }
   }, {
     "left": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 71,
       "to": 72
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 71,
       "to": 72
     }
   }, {
     "left": {
-      "line": "#define HARDMATCHESNEAR_H",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#define HARDMATCHESNEAR_H",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 107,
       "to": 108
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 107,
       "to": 108
     }
   }, {
     "left": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 31,
       "to": 35
     },
     "right": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 31,
       "to": 35
     }
   }, {
     "left": {
-      "line": "  const int mDist;",
       "lineIdx": 6,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "  const int mDist;",
       "lineIdx": 6,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 73,
       "to": 76
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 73,
       "to": 76
     }
   }, {
     "left": {
-      "line": "public:",
       "lineIdx": 7,
       "from": 0,
       "to": 6
     },
     "right": {
-      "line": "public:",
       "lineIdx": 7,
       "from": 0,
       "to": 6
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 30,
       "to": 47
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 30,
       "to": 47
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 93,
       "to": 101
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 93,
       "to": 101
     }
   }, {
     "left": {
-      "line": "class HardMatchesNear : public AboveBelowFeature",
       "lineIdx": 4,
       "from": 6,
       "to": 21
     },
     "right": {
-      "line": "class HardMatchesNear : public AboveBelowFeature",
       "lineIdx": 4,
       "from": 6,
       "to": 21
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "  const int mDist;",
       "lineIdx": 6,
       "from": 8,
       "to": 11
     },
     "right": {
-      "line": "  const int mDist;",
       "lineIdx": 6,
       "from": 8,
       "to": 11
     }
   }, {
     "left": {
-      "line": "class HardMatchesNear : public AboveBelowFeature",
       "lineIdx": 4,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "class HardMatchesNear : public AboveBelowFeature",
       "lineIdx": 4,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "#endif // HARDMATCHESNEAR_H",
       "lineIdx": 12,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "#endif // HARDMATCHESNEAR_H",
       "lineIdx": 13,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 18,
       "to": 21
     },
     "right": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 18,
       "to": 21
     }
   }, {
     "left": {
-      "line": "#ifndef HARDMATCHESNEAR_H",
       "lineIdx": 0,
       "from": 1,
       "to": 7
     },
     "right": {
-      "line": "#ifndef HARDMATCHESNEAR_H",
       "lineIdx": 0,
       "from": 1,
       "to": 7
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 77,
       "to": 85
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 77,
       "to": 85
     }
   }, {
     "left": {
-      "line": "public:",
       "lineIdx": 7,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "public:",
       "lineIdx": 7,
       "from": 6,
       "to": 7
     }
   }, {
     "left": {
-      "line": "class HardMatchesNear : public AboveBelowFeature",
       "lineIdx": 4,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "class HardMatchesNear : public AboveBelowFeature",
       "lineIdx": 4,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 60,
       "to": 63
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 60,
       "to": 63
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 49,
       "to": 58
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 49,
       "to": 58
     }
   }, {
     "left": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 27,
       "to": 30
     },
     "right": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 27,
       "to": 30
     }
   }, {
     "left": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "  virtual float compute(const OneToOneAlignment& alignment, int leftIdx, int rightIdx) const override final;",
       "lineIdx": 9,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 22,
       "to": 25
     },
     "right": {
-      "line": "  HardMatchesNear(Dir dir, int dist);",
       "lineIdx": 8,
       "from": 22,
       "to": 25
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"abovebelowfeature.h\"",
       "lineIdx": 2,
       "from": 1,
       "to": 8

@@ -1,2353 +1,1991 @@
 {
   "matches": [{
     "left": {
-      "line": "#include <algorithm>",
       "lineIdx": 3,
       "from": 10,
       "to": 19
     },
     "right": {
-      "line": "#include <algorithm>",
       "lineIdx": 3,
       "from": 10,
       "to": 19
     }
   }, {
     "left": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 73,
       "to": 80
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 74,
       "to": 81
     }
   }, {
     "left": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 124,
       "to": 125
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 125,
       "to": 126
     }
   }, {
     "left": {
-      "line": "  } else {",
       "lineIdx": 14,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "  } else {",
       "lineIdx": 14,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 9,
       "to": 14
     },
     "right": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 9,
       "to": 14
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 64,
       "to": 67
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 65,
       "to": 68
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 68,
       "to": 72
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 69,
       "to": 73
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 27,
       "to": 39
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 28,
       "to": 40
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 83,
       "to": 84
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 84,
       "to": 85
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "  int aboveBelowlineCnt;",
       "lineIdx": 11,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "  int aboveBelowlineCnt;",
       "lineIdx": 11,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "}",
       "lineIdx": 22,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "}",
       "lineIdx": 22,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 14,
       "to": 21
     },
     "right": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 14,
       "to": 21
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 61,
       "to": 62
     }
   }, {
     "left": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 140,
       "to": 144
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 141,
       "to": 145
     }
   }, {
     "left": {
-      "line": "  } else {",
       "lineIdx": 14,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "  } else {",
       "lineIdx": 14,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 136,
       "to": 138
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 137,
       "to": 139
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 190,
       "to": 193
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 191,
       "to": 194
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 199,
       "to": 200
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 200,
       "to": 201
     }
   }, {
     "left": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 13,
       "to": 16
     },
     "right": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 13,
       "to": 16
     }
   }, {
     "left": {
-      "line": "#include <algorithm>",
       "lineIdx": 3,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include <algorithm>",
       "lineIdx": 3,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 131,
       "to": 135
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 132,
       "to": 136
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = idx;",
       "lineIdx": 13,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "    aboveBelowlineCnt = idx;",
       "lineIdx": 13,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 187,
       "to": 189
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 188,
       "to": 190
     }
   }, {
     "left": {
-      "line": "#include <algorithm>",
       "lineIdx": 3,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include <algorithm>",
       "lineIdx": 3,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 175,
       "to": 179
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 176,
       "to": 180
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 104,
       "to": 110
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 105,
       "to": 111
     }
   }, {
     "left": {
-      "line": "  } else {",
       "lineIdx": 14,
       "from": 4,
       "to": 8
     },
     "right": {
-      "line": "  } else {",
       "lineIdx": 14,
       "from": 4,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 3,
       "to": 4
     },
     "right": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 3,
       "to": 4
     }
   }, {
     "left": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 26,
       "to": 45
     },
     "right": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 26,
       "to": 45
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 111,
       "to": 117
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 112,
       "to": 118
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 29,
       "to": 34
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 29,
       "to": 34
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 4,
       "to": 8
     },
     "right": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 4,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 139,
       "to": 140
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 140,
       "to": 141
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 19,
       "to": 28
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 19,
       "to": 28
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 45,
       "to": 46
     },
     "right": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 45,
       "to": 46
     }
   }, {
     "left": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 0,
       "to": 19
     },
     "right": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 0,
       "to": 19
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 9,
       "to": 20
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 9,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 95,
       "to": 97
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 96,
       "to": 98
     }
   }, {
     "left": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 153,
       "to": 156
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 154,
       "to": 157
     }
   }, {
     "left": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 21,
       "to": 40
     },
     "right": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 21,
       "to": 40
     }
   }, {
     "left": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 53,
       "to": 58
     },
     "right": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 53,
       "to": 58
     }
   }, {
     "left": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 50,
       "to": 58
     },
     "right": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 50,
       "to": 58
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 165,
       "to": 174
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 166,
       "to": 175
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 10,
       "to": 17
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 10,
       "to": 17
     }
   }, {
     "left": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 76,
       "to": 79
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 77,
       "to": 80
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 42,
       "to": 43
     },
     "right": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 42,
       "to": 43
     }
   }, {
     "left": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 9,
       "to": 26
     },
     "right": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 9,
       "to": 26
     }
   }, {
     "left": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "{",
       "lineIdx": 10,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "{",
       "lineIdx": 10,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 35,
       "to": 39
     },
     "right": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 35,
       "to": 39
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 74,
       "to": 75
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 75,
       "to": 76
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 65,
       "to": 66
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 35,
       "to": 40
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 35,
       "to": 40
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = idx;",
       "lineIdx": 13,
       "from": 24,
       "to": 27
     },
     "right": {
-      "line": "    aboveBelowlineCnt = idx;",
       "lineIdx": 13,
       "from": 24,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 81,
       "to": 84
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 82,
       "to": 85
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 98,
       "to": 101
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 99,
       "to": 102
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 4,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 85,
       "to": 90
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 86,
       "to": 91
     }
   }, {
     "left": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 27,
       "to": 34
     },
     "right": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 27,
       "to": 34
     }
   }, {
     "left": {
-      "line": "  int aboveBelowlineCnt;",
       "lineIdx": 11,
       "from": 2,
       "to": 5
     },
     "right": {
-      "line": "  int aboveBelowlineCnt;",
       "lineIdx": 11,
       "from": 2,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 59,
       "to": 60
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 2,
       "to": 4
     },
     "right": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 2,
       "to": 4
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 18,
       "to": 23
     },
     "right": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 18,
       "to": 23
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 18,
       "to": 35
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 18,
       "to": 35
     }
   }, {
     "left": {
-      "line": "{}",
       "lineIdx": 7,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "{}",
       "lineIdx": 7,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 4,
       "to": 21
     },
     "right": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 4,
       "to": 21
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 101,
       "to": 102
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 102,
       "to": 103
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 62,
       "to": 63
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 63,
       "to": 64
     }
   }, {
     "left": {
-      "line": "#include <algorithm>",
       "lineIdx": 3,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "#include <algorithm>",
       "lineIdx": 3,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 41,
       "to": 58
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 42,
       "to": 59
     }
   }, {
     "left": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 45,
       "to": 48
     },
     "right": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 45,
       "to": 48
     }
   }, {
     "left": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 18,
       "to": 20
     },
     "right": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 18,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 24,
       "to": 26
     },
     "right": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 24,
       "to": 26
     }
   }, {
     "left": {
-      "line": "#include <algorithm>",
       "lineIdx": 3,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include <algorithm>",
       "lineIdx": 3,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 15,
       "to": 17
     },
     "right": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 15,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 102,
       "to": 103
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 103,
       "to": 104
     }
   }, {
     "left": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 194,
       "to": 199
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 195,
       "to": 200
     }
   }, {
     "left": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 2,
       "to": 8
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "{}",
       "lineIdx": 7,
       "from": 1,
       "to": 2
     },
     "right": {
-      "line": "{}",
       "lineIdx": 7,
       "from": 1,
       "to": 2
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 145,
       "to": 152
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 146,
       "to": 153
     }
   }, {
     "left": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 48,
       "to": 51
     },
     "right": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 48,
       "to": 51
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 63,
       "to": 64
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 121,
       "to": 123
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 122,
       "to": 124
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 6,
       "to": 25
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 7,
       "to": 26
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 65,
       "to": 74
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 66,
       "to": 75
     }
   }, {
     "left": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 123,
       "to": 124
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 124,
       "to": 125
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 93,
       "to": 94
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 94,
       "to": 95
     }
   }, {
     "left": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 180,
       "to": 182
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 181,
       "to": 183
     }
   }, {
     "left": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 41,
       "to": 44
     },
     "right": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 41,
       "to": 44
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 2,
       "to": 8
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 118,
       "to": 120
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 119,
       "to": 121
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 48,
       "to": 49
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 5,
       "to": 9
     },
     "right": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 5,
       "to": 9
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 46,
       "to": 63
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 47,
       "to": 64
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 59,
       "to": 64
     },
     "right": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 59,
       "to": 64
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 35,
       "to": 38
     },
     "right": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 35,
       "to": 38
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = idx;",
       "lineIdx": 13,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "    aboveBelowlineCnt = idx;",
       "lineIdx": 13,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 126,
       "to": 130
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 127,
       "to": 131
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 80,
       "to": 83
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 81,
       "to": 84
     }
   }, {
     "left": {
-      "line": "  int aboveBelowlineCnt;",
       "lineIdx": 11,
       "from": 6,
       "to": 23
     },
     "right": {
-      "line": "  int aboveBelowlineCnt;",
       "lineIdx": 11,
       "from": 6,
       "to": 23
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 85,
       "to": 93
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 86,
       "to": 94
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = idx;",
       "lineIdx": 13,
       "from": 4,
       "to": 21
     },
     "right": {
-      "line": "    aboveBelowlineCnt = idx;",
       "lineIdx": 13,
       "from": 4,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 24,
       "to": 32
     },
     "right": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 24,
       "to": 32
     }
   }, {
     "left": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "  }",
       "lineIdx": 17,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "  }",
       "lineIdx": 17,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 2,
       "to": 24
     },
     "right": {
-      "line": ": AboveBelowSidedFeature(\"AboveBelowLineCount\", dir, aSide)",
       "lineIdx": 6,
       "from": 2,
       "to": 24
     }
   }, {
     "left": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  if(mDir == Dir::UP) {",
       "lineIdx": 12,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 42,
       "to": 46
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 42,
       "to": 46
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 37,
       "to": 39
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 38,
       "to": 40
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 157,
       "to": 164
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 158,
       "to": 165
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 183,
       "to": 186
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 184,
       "to": 187
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "  VERIFY(aboveBelowlineCnt >= 0);",
       "lineIdx": 19,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 28,
       "to": 31
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 29,
       "to": 32
     }
   }, {
     "left": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 10,
       "to": 29
     },
     "right": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 10,
       "to": 29
     }
   }, {
     "left": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 48,
       "to": 49
     },
     "right": {
-      "line": "AboveBelowLineCount::AboveBelowLineCount(Dir dir, DiffSide aSide)",
       "lineIdx": 5,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"abovebelowlinecount.h\"",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 59,
       "to": 60
     }
   }, {
     "left": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 8,
       "to": 16
     },
     "right": {
-      "line": "    int allLines = alignment.lines(mSide).size();",
       "lineIdx": 15,
       "from": 8,
       "to": 16
     }
   }, {
     "left": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 10,
       "to": 13
     },
     "right": {
-      "line": "#include \"mix/asserts.h\"",
       "lineIdx": 2,
       "from": 10,
       "to": 13
     }
   }, {
     "left": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "  //TODO maybe we could do scaling here",
       "lineIdx": 20,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "  return static_cast<float>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 33,
       "to": 36
     },
     "right": {
-      "line": "  return static_cast<double>(std::min(20, aboveBelowlineCnt)); //for easy scaling and accuracy. It won't matter anyway if it's more than 20 (this feature for helping detecting when we are on the edges)",
       "lineIdx": 21,
       "from": 34,
       "to": 37
     }
   }, {
     "left": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "    aboveBelowlineCnt = allLines - idx - 1;",
       "lineIdx": 16,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "float AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 40,
       "to": 45
     },
     "right": {
-      "line": "double AboveBelowLineCount::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 9,
       "from": 41,
       "to": 46

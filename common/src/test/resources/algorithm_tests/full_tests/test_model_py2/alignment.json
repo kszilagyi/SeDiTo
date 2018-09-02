@@ -2,7410 +2,6270 @@
   "matches": [{
     "left": {
       "from": 0,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 5
     },
     "right": {
       "from": 4,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 9
     }
   }, {
     "left": {
       "from": 24,
-      "line": "print('Running tests on training data')",
       "lineIdx": 89,
       "to": 32
     },
     "right": {
       "from": 28,
-      "line": "    print('Running tests on training data')",
       "lineIdx": 109,
       "to": 36
     }
   }, {
     "left": {
       "from": 14,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 48,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 55,
       "to": 15
     }
   }, {
     "left": {
       "from": 5,
-      "line": "print('Running tests on test data')",
       "lineIdx": 86,
       "to": 6
     },
     "right": {
       "from": 9,
-      "line": "    print('Running tests on test data')",
       "lineIdx": 106,
       "to": 10
     }
   }, {
     "left": {
       "from": 36,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 37
     },
     "right": {
       "from": 36,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 37
     }
   }, {
     "left": {
       "from": 78,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 79
     },
     "right": {
       "from": 78,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 79
     }
   }, {
     "left": {
       "from": 26,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 27
     },
     "right": {
       "from": 26,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 27
     }
   }, {
     "left": {
       "from": 16,
-      "line": "#def read_ranges(path):",
       "lineIdx": 28,
       "to": 17
     },
     "right": {
       "from": 15,
-      "line": "def read_ranges(path):",
       "lineIdx": 31,
       "to": 16
     }
   }, {
     "left": {
       "from": 52,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 53
     },
     "right": {
       "from": 52,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 53
     }
   }, {
     "left": {
       "from": 6,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 7
     },
     "right": {
       "from": 10,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 11
     }
   }, {
     "left": {
       "from": 81,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 86
     },
     "right": {
       "from": 81,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 86
     }
   }, {
     "left": {
       "from": 6,
-      "line": "print('Running tests on test data')",
       "lineIdx": 86,
       "to": 7
     },
     "right": {
       "from": 10,
-      "line": "    print('Running tests on test data')",
       "lineIdx": 106,
       "to": 11
     }
   }, {
     "left": {
       "from": 9,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 78,
       "to": 10
     },
     "right": {
       "from": 9,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 90,
       "to": 10
     }
   }, {
     "left": {
       "from": 27,
-      "line": "            false_pos_sum += false_pos",
       "lineIdx": 65,
       "to": 28
     },
     "right": {
       "from": 27,
-      "line": "            false_pos_sum += false_pos",
       "lineIdx": 70,
       "to": 28
     }
   }, {
     "left": {
       "from": 34,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 57,
       "to": 37
     },
     "right": {
       "from": 34,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 64,
       "to": 37
     }
   }, {
     "left": {
       "from": 13,
-      "line": "def scaleRow(row, mins, maxs): ",
       "lineIdx": 23,
       "to": 16
     },
     "right": {
       "from": 13,
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 24,
       "to": 16
     }
   }, {
     "left": {
       "from": 31,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 45
     },
     "right": {
       "from": 54,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 68
     }
   }, {
     "left": {
       "from": 12,
-      "line": "    upper = 1.0",
       "lineIdx": 12,
       "to": 13
     },
     "right": {
       "from": 12,
-      "line": "    upper = 1.0",
       "lineIdx": 13,
       "to": 13
     }
   }, {
     "left": {
       "from": 57,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 58
     },
     "right": {
       "from": 69,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 70
     }
   }, {
     "left": {
       "from": 8,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 15,
       "to": 14
     },
     "right": {
       "from": 8,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 16,
       "to": 14
     }
   }, {
     "left": {
       "from": 38,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 57,
       "to": 43
     },
     "right": {
       "from": 38,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 64,
       "to": 43
     }
   }, {
     "left": {
       "from": 21,
-      "line": "            zipped = zip(calc_y, ref_y)",
       "lineIdx": 58,
       "to": 24
     },
     "right": {
       "from": 26,
-      "line": "            zipped = list(zip(calc_y, ref_y))",
       "lineIdx": 65,
       "to": 29
     }
   }, {
     "left": {
       "from": 12,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 15
     },
     "right": {
       "from": 19,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 22
     }
   }, {
     "left": {
       "from": 61,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 65
     },
     "right": {
       "from": 61,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 65
     }
   }, {
     "left": {
       "from": 30,
-      "line": "def test_files(file_list_file):",
       "lineIdx": 38,
       "to": 31
     },
     "right": {
       "from": 49,
-      "line": "def test_files(model, range_dict, file_list_file):",
       "lineIdx": 47,
       "to": 50
     }
   }, {
     "left": {
       "from": 18,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 19
     },
     "right": {
       "from": 18,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 19
     }
   }, {
     "left": {
       "from": 24,
-      "line": "            zipped = zip(calc_y, ref_y)",
       "lineIdx": 58,
       "to": 25
     },
     "right": {
       "from": 29,
-      "line": "            zipped = list(zip(calc_y, ref_y))",
       "lineIdx": 65,
       "to": 30
     }
   }, {
     "left": {
       "from": 10,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 11
     },
     "right": {
       "from": 10,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 11
     }
   }, {
     "left": {
       "from": 58,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 68
     },
     "right": {
       "from": 58,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 68
     }
   }, {
     "left": {
       "from": 21,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 78,
       "to": 22
     },
     "right": {
       "from": 21,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 90,
       "to": 22
     }
   }, {
     "left": {
       "from": 56,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 57
     },
     "right": {
       "from": 63,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 64
     }
   }, {
     "left": {
       "from": 27,
-      "line": "            #testing scale method",
       "lineIdx": 52,
       "to": 33
     },
     "right": {
       "from": 27,
-      "line": "            #testing scale method",
       "lineIdx": 59,
       "to": 33
     }
   }, {
     "left": {
       "from": 11,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 14
     },
     "right": {
       "from": 11,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 14
     }
   }, {
     "left": {
       "from": 39,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 40
     },
     "right": {
       "from": 39,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 40
     }
   }, {
     "left": {
       "from": 12,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 19,
       "to": 17
     },
     "right": {
       "from": 12,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 20,
       "to": 17
     }
   }, {
     "left": {
       "from": 34,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 39,
       "to": 35
     },
     "right": {
       "from": 34,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 48,
       "to": 35
     }
   }, {
     "left": {
       "from": 30,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 48,
       "to": 31
     },
     "right": {
       "from": 30,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 55,
       "to": 31
     }
   }, {
     "left": {
       "from": 31,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 15,
       "to": 36
     },
     "right": {
       "from": 31,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 16,
       "to": 36
     }
   }, {
     "left": {
       "from": 23,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 24
     },
     "right": {
       "from": 27,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 28
     }
   }, {
     "left": {
       "from": 8,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 13
     },
     "right": {
       "from": 8,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 13
     }
   }, {
     "left": {
       "from": 18,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 78,
       "to": 19
     },
     "right": {
       "from": 18,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 90,
       "to": 19
     }
   }, {
     "left": {
       "from": 9,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 10
     },
     "right": {
       "from": 9,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 10
     }
   }, {
     "left": {
       "from": 39,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 34,
       "to": 40
     },
     "right": {
       "from": 39,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 43,
       "to": 40
     }
   }, {
     "left": {
       "from": 41,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 42
     },
     "right": {
       "from": 41,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 42
     }
   }, {
     "left": {
       "from": 0,
-      "line": "def test_files(file_list_file):",
       "lineIdx": 38,
       "to": 3
     },
     "right": {
       "from": 0,
-      "line": "def test_files(model, range_dict, file_list_file):",
       "lineIdx": 47,
       "to": 3
     }
   }, {
     "left": {
       "from": 24,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 70,
       "to": 25
     },
     "right": {
       "from": 24,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 74,
       "to": 25
     }
   }, {
     "left": {
       "from": 60,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 64
     },
     "right": {
       "from": 60,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 64
     }
   }, {
     "left": {
       "from": 44,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 45
     },
     "right": {
       "from": 44,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 45
     }
   }, {
     "left": {
       "from": 22,
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 17,
       "to": 23
     },
     "right": {
       "from": 22,
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 18,
       "to": 23
     }
   }, {
     "left": {
       "from": 20,
-      "line": "    false_neg_sum = 0",
       "lineIdx": 42,
       "to": 21
     },
     "right": {
       "from": 20,
-      "line": "    false_pos_sum = 0",
       "lineIdx": 51,
       "to": 21
     }
   }, {
     "left": {
       "from": 35,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 36
     },
     "right": {
       "from": 35,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 36
     }
   }, {
     "left": {
       "from": 55,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 56
     },
     "right": {
       "from": 55,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 56
     }
   }, {
     "left": {
       "from": 86,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 87
     },
     "right": {
       "from": 86,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 87
     }
   }, {
     "left": {
       "from": 77,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 78
     },
     "right": {
       "from": 77,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 78
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 21
     },
     "right": {
       "from": 12,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 21
     }
   }, {
     "left": {
       "from": 28,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 29
     },
     "right": {
       "from": 28,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 29
     }
   }, {
     "left": {
       "from": 31,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 32
     },
     "right": {
       "from": 31,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 32
     }
   }, {
     "left": {
       "from": 20,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 55,
       "to": 36
     },
     "right": {
       "from": 20,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 62,
       "to": 36
     }
   }, {
     "left": {
       "from": 15,
-      "line": "print('Running tests on test data')",
       "lineIdx": 86,
       "to": 20
     },
     "right": {
       "from": 19,
-      "line": "    print('Running tests on test data')",
       "lineIdx": 106,
       "to": 24
     }
   }, {
     "left": {
       "from": 10,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 11
     },
     "right": {
       "from": 14,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 15
     }
   }, {
     "left": {
       "from": 17,
-      "line": "#def read_ranges(path):",
       "lineIdx": 28,
       "to": 21
     },
     "right": {
       "from": 16,
-      "line": "def read_ranges(path):",
       "lineIdx": 31,
       "to": 20
     }
   }, {
     "left": {
       "from": 32,
-      "line": "##def scale_input(x, mins, maxs):",
       "lineIdx": 31,
       "to": 33
     },
     "right": {
       "from": 30,
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 39,
       "to": 31
     }
   }, {
     "left": {
       "from": 80,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 86
     },
     "right": {
       "from": 80,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 86
     }
   }, {
     "left": {
       "from": 85,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 86
     },
     "right": {
       "from": 85,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 86
     }
   }, {
     "left": {
       "from": 7,
-      "line": "import numpy",
       "lineIdx": 7,
       "to": 12
     },
     "right": {
       "from": 7,
-      "line": "import numpy",
       "lineIdx": 7,
       "to": 12
     }
   }, {
     "left": {
       "from": 20,
-      "line": "    assert len(row) == len(mins) and len(mins) == len(maxs)",
       "lineIdx": 24,
       "to": 21
     },
     "right": {
       "from": 20,
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 25,
       "to": 21
     }
   }, {
     "left": {
       "from": 70,
-      "line": "            print(\"Precision: \" + str(true_pos/(false_pos + true_pos)))",
       "lineIdx": 76,
       "to": 71
     },
     "right": {
       "from": 48,
-      "line": "            print(\"Precision: \" + str(precision))",
       "lineIdx": 84,
       "to": 49
     }
   }, {
     "left": {
       "from": 8,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 50,
       "to": 10
     },
     "right": {
       "from": 8,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 57,
       "to": 10
     }
   }, {
     "left": {
       "from": 25,
-      "line": "            zipped = zip(calc_y, ref_y)",
       "lineIdx": 58,
       "to": 31
     },
     "right": {
       "from": 30,
-      "line": "            zipped = list(zip(calc_y, ref_y))",
       "lineIdx": 65,
       "to": 36
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 39,
       "to": 8
     },
     "right": {
       "from": 4,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 48,
       "to": 8
     }
   }, {
     "left": {
       "from": 10,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 11
     },
     "right": {
       "from": 10,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 11
     }
   }, {
     "left": {
       "from": 40,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 41
     },
     "right": {
       "from": 47,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 48
     }
   }, {
     "left": {
       "from": 7,
-      "line": "print('Running tests on training data')",
       "lineIdx": 89,
       "to": 14
     },
     "right": {
       "from": 11,
-      "line": "    print('Running tests on training data')",
       "lineIdx": 109,
       "to": 18
     }
   }, {
     "left": {
       "from": 34,
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 17,
       "to": 35
     },
     "right": {
       "from": 34,
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 18,
       "to": 35
     }
   }, {
     "left": {
       "from": 1,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 2
     },
     "right": {
       "from": 1,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 2
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    lower = -1.0",
       "lineIdx": 11,
       "to": 9
     },
     "right": {
       "from": 4,
-      "line": "    lower = -1.0",
       "lineIdx": 12,
       "to": 9
     }
   }, {
     "left": {
       "from": 34,
-      "line": "print('Running tests on test data')",
       "lineIdx": 86,
       "to": 35
     },
     "right": {
       "from": 38,
-      "line": "    print('Running tests on test data')",
       "lineIdx": 106,
       "to": 39
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    epsilon = 0.0001",
       "lineIdx": 13,
       "to": 11
     },
     "right": {
       "from": 4,
-      "line": "    epsilon = 0.0001",
       "lineIdx": 14,
       "to": 11
     }
   }, {
     "left": {
       "from": 21,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 22
     },
     "right": {
       "from": 21,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 22
     }
   }, {
     "left": {
       "from": 47,
-      "line": "def custom_scale(value, featureMin, featureMax):",
       "lineIdx": 10,
       "to": 48
     },
     "right": {
       "from": 47,
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 11,
       "to": 48
     }
   }, {
     "left": {
       "from": 36,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 39
     },
     "right": {
       "from": 36,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 39
     }
   }, {
     "left": {
       "from": 33,
-      "line": "print('Running tests on training data')",
       "lineIdx": 89,
       "to": 37
     },
     "right": {
       "from": 37,
-      "line": "    print('Running tests on training data')",
       "lineIdx": 109,
       "to": 41
     }
   }, {
     "left": {
       "from": 33,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 39,
       "to": 34
     },
     "right": {
       "from": 33,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 48,
       "to": 34
     }
   }, {
     "left": {
       "from": 0,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 1
     },
     "right": {
       "from": 0,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 1
     }
   }, {
     "left": {
       "from": 21,
-      "line": "print('Running tests on training data')",
       "lineIdx": 89,
       "to": 23
     },
     "right": {
       "from": 25,
-      "line": "    print('Running tests on training data')",
       "lineIdx": 109,
       "to": 27
     }
   }, {
     "left": {
       "from": 64,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 66
     },
     "right": {
       "from": 64,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 66
     }
   }, {
     "left": {
       "from": 30,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 31
     },
     "right": {
       "from": 53,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 54
     }
   }, {
     "left": {
       "from": 36,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 15,
       "to": 37
     },
     "right": {
       "from": 36,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 16,
       "to": 37
     }
   }, {
     "left": {
       "from": 28,
-      "line": "            true_pos_sum += true_pos",
       "lineIdx": 66,
       "to": 36
     },
     "right": {
       "from": 28,
-      "line": "            true_pos_sum += true_pos",
       "lineIdx": 71,
       "to": 36
     }
   }, {
     "left": {
       "from": 52,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 53
     },
     "right": {
       "from": 52,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 53
     }
   }, {
     "left": {
       "from": 76,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 77
     },
     "right": {
       "from": 76,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 77
     }
   }, {
     "left": {
       "from": 32,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 19,
       "to": 33
     },
     "right": {
       "from": 32,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 20,
       "to": 33
     }
   }, {
     "left": {
       "from": 28,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 29
     },
     "right": {
       "from": 28,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 29
     }
   }, {
     "left": {
       "from": 60,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 62
     },
     "right": {
       "from": 65,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 67
     }
   }, {
     "left": {
       "from": 21,
-      "line": "    assert len(row) == len(mins) and len(mins) == len(maxs)",
       "lineIdx": 24,
       "to": 22
     },
     "right": {
       "from": 21,
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 25,
       "to": 22
     }
   }, {
     "left": {
       "from": 7,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 10
     },
     "right": {
       "from": 7,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 10
     }
   }, {
     "left": {
       "from": 15,
-      "line": "print('Running tests on training data')",
       "lineIdx": 89,
       "to": 20
     },
     "right": {
       "from": 19,
-      "line": "    print('Running tests on training data')",
       "lineIdx": 109,
       "to": 24
     }
   }, {
     "left": {
       "from": 22,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 23
     },
     "right": {
       "from": 26,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 27
     }
   }, {
     "left": {
       "from": 16,
-      "line": "from subprocess import *",
       "lineIdx": 4,
       "to": 22
     },
     "right": {
       "from": 16,
-      "line": "from subprocess import *",
       "lineIdx": 4,
       "to": 22
     }
   }, {
     "left": {
       "from": 0,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 34,
       "to": 3
     },
     "right": {
       "from": 0,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 43,
       "to": 3
     }
   }, {
     "left": {
       "from": 8,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 36
     },
     "right": {
       "from": 8,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 36
     }
   }, {
     "left": {
       "from": 41,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 44
     },
     "right": {
       "from": 41,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 44
     }
   }, {
     "left": {
       "from": 48,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 49
     },
     "right": {
       "from": 48,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 49
     }
   }, {
     "left": {
       "from": 11,
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 17,
       "to": 21
     },
     "right": {
       "from": 11,
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 18,
       "to": 21
     }
   }, {
     "left": {
       "from": 8,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 12
     },
     "right": {
       "from": 8,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 12
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 17
     },
     "right": {
       "from": 12,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 17
     }
   }, {
     "left": {
       "from": 29,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 30
     },
     "right": {
       "from": 29,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 30
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 10
     },
     "right": {
       "from": 4,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 10
     }
   }, {
     "left": {
       "from": 31,
-      "line": "##def scale_input(x, mins, maxs):",
       "lineIdx": 31,
       "to": 32
     },
     "right": {
       "from": 29,
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 39,
       "to": 30
     }
   }, {
     "left": {
       "from": 91,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 92
     },
     "right": {
       "from": 95,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 96
     }
   }, {
     "left": {
       "from": 29,
-      "line": "print('Running tests on test data')",
       "lineIdx": 86,
       "to": 33
     },
     "right": {
       "from": 33,
-      "line": "    print('Running tests on test data')",
       "lineIdx": 106,
       "to": 37
     }
   }, {
     "left": {
       "from": 66,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 67
     },
     "right": {
       "from": 66,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 67
     }
   }, {
     "left": {
       "from": 31,
-      "line": "            zipped = zip(calc_y, ref_y)",
       "lineIdx": 58,
       "to": 32
     },
     "right": {
       "from": 36,
-      "line": "            zipped = list(zip(calc_y, ref_y))",
       "lineIdx": 65,
       "to": 37
     }
   }, {
     "left": {
       "from": 38,
-      "line": "print('Running tests on training data')",
       "lineIdx": 89,
       "to": 39
     },
     "right": {
       "from": 42,
-      "line": "    print('Running tests on training data')",
       "lineIdx": 109,
       "to": 43
     }
   }, {
     "left": {
       "from": 15,
-      "line": "    assert len(row) == len(mins) and len(mins) == len(maxs)",
       "lineIdx": 24,
       "to": 18
     },
     "right": {
       "from": 15,
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 25,
       "to": 18
     }
   }, {
     "left": {
       "from": 12,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 13
     },
     "right": {
       "from": 35,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 36
     }
   }, {
     "left": {
       "from": 12,
-      "line": "    epsilon = 0.0001",
       "lineIdx": 13,
       "to": 13
     },
     "right": {
       "from": 12,
-      "line": "    epsilon = 0.0001",
       "lineIdx": 14,
       "to": 13
     }
   }, {
     "left": {
       "from": 13,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 29
     },
     "right": {
       "from": 13,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 29
     }
   }, {
     "left": {
       "from": 34,
-      "line": "def custom_scale(value, featureMin, featureMax):",
       "lineIdx": 10,
       "to": 35
     },
     "right": {
       "from": 34,
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 11,
       "to": 35
     }
   }, {
     "left": {
       "from": 15,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 15,
       "to": 20
     },
     "right": {
       "from": 15,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 16,
       "to": 20
     }
   }, {
     "left": {
       "from": 20,
-      "line": "from svmutil import *",
       "lineIdx": 6,
       "to": 21
     },
     "right": {
       "from": 20,
-      "line": "from svmutil import *",
       "lineIdx": 6,
       "to": 21
     }
   }, {
     "left": {
       "from": 11,
-      "line": "    assert len(row) == len(mins) and len(mins) == len(maxs)",
       "lineIdx": 24,
       "to": 14
     },
     "right": {
       "from": 11,
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 25,
       "to": 14
     }
   }, {
     "left": {
       "from": 19,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 57,
       "to": 22
     },
     "right": {
       "from": 19,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 64,
       "to": 22
     }
   }, {
     "left": {
       "from": 68,
-      "line": "            print(\"Precision: \" + str(true_pos/(false_pos + true_pos)))",
       "lineIdx": 76,
       "to": 69
     },
     "right": {
       "from": 47,
-      "line": "            print(\"Precision: \" + str(precision))",
       "lineIdx": 84,
       "to": 48
     }
   }, {
     "left": {
       "from": 22,
-      "line": "#def read_ranges(path):",
       "lineIdx": 28,
       "to": 23
     },
     "right": {
       "from": 21,
-      "line": "def read_ranges(path):",
       "lineIdx": 31,
       "to": 22
     }
   }, {
     "left": {
       "from": 15,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 16
     },
     "right": {
       "from": 22,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 23
     }
   }, {
     "left": {
       "from": 72,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 76
     },
     "right": {
       "from": 72,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 76
     }
   }, {
     "left": {
       "from": 37,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 57,
       "to": 38
     },
     "right": {
       "from": 37,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 64,
       "to": 38
     }
   }, {
     "left": {
       "from": 15,
-      "line": "    for dir in dirs:",
       "lineIdx": 47,
       "to": 19
     },
     "right": {
       "from": 15,
-      "line": "    for dir in dirs:",
       "lineIdx": 54,
       "to": 19
     }
   }, {
     "left": {
       "from": 37,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 38
     },
     "right": {
       "from": 37,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 38
     }
   }, {
     "left": {
       "from": 14,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 15
     },
     "right": {
       "from": 37,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 38
     }
   }, {
     "left": {
       "from": 52,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 53
     },
     "right": {
       "from": 59,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 60
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 70,
       "to": 17
     },
     "right": {
       "from": 12,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 74,
       "to": 17
     }
   }, {
     "left": {
       "from": 44,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 45
     },
     "right": {
       "from": 44,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 45
     }
   }, {
     "left": {
       "from": 23,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 24
     },
     "right": {
       "from": 23,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 24
     }
   }, {
     "left": {
       "from": 54,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 55
     },
     "right": {
       "from": 54,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 55
     }
   }, {
     "left": {
       "from": 40,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 45
     },
     "right": {
       "from": 40,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 45
     }
   }, {
     "left": {
       "from": 6,
-      "line": "##def scale_input(x, mins, maxs):",
       "lineIdx": 31,
       "to": 17
     },
     "right": {
       "from": 4,
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 39,
       "to": 15
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 20
     },
     "right": {
       "from": 12,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 20
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 19,
       "to": 10
     },
     "right": {
       "from": 4,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 20,
       "to": 10
     }
   }, {
     "left": {
       "from": 81,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 82
     },
     "right": {
       "from": 81,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 82
     }
   }, {
     "left": {
       "from": 79,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 80
     },
     "right": {
       "from": 79,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 80
     }
   }, {
     "left": {
       "from": 26,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 27
     },
     "right": {
       "from": 30,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 31
     }
   }, {
     "left": {
       "from": 15,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 30
     },
     "right": {
       "from": 38,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 53
     }
   }, {
     "left": {
       "from": 55,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 56
     },
     "right": {
       "from": 55,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 56
     }
   }, {
     "left": {
       "from": 26,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 31
     },
     "right": {
       "from": 26,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 31
     }
   }, {
     "left": {
       "from": 27,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 19,
       "to": 32
     },
     "right": {
       "from": 27,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 20,
       "to": 32
     }
   }, {
     "left": {
       "from": 0,
-      "line": "import functools",
       "lineIdx": 8,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "import functools",
       "lineIdx": 8,
       "to": 6
     }
   }, {
     "left": {
       "from": 37,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 38
     },
     "right": {
       "from": 37,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 38
     }
   }, {
     "left": {
       "from": 37,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 55,
       "to": 38
     },
     "right": {
       "from": 37,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 62,
       "to": 38
     }
   }, {
     "left": {
       "from": 26,
-      "line": "        (value-featureMin)/",
       "lineIdx": 20,
       "to": 27
     },
     "right": {
       "from": 26,
-      "line": "        (value-featureMin)/",
       "lineIdx": 21,
       "to": 27
     }
   }, {
     "left": {
       "from": 0,
-      "line": "print('Running tests on training data')",
       "lineIdx": 89,
       "to": 5
     },
     "right": {
       "from": 4,
-      "line": "    print('Running tests on training data')",
       "lineIdx": 109,
       "to": 9
     }
   }, {
     "left": {
       "from": 49,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 50
     },
     "right": {
       "from": 49,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 50
     }
   }, {
     "left": {
       "from": 26,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 56,
       "to": 27
     },
     "right": {
       "from": 26,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 63,
       "to": 27
     }
   }, {
     "left": {
       "from": 5,
-      "line": "print(\"\")",
       "lineIdx": 88,
       "to": 6
     },
     "right": {
       "from": 9,
-      "line": "    print(\"\")",
       "lineIdx": 108,
       "to": 10
     }
   }, {
     "left": {
       "from": 22,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 50,
       "to": 23
     },
     "right": {
       "from": 22,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 57,
       "to": 23
     }
   }, {
     "left": {
       "from": 57,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 58
     },
     "right": {
       "from": 57,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 58
     }
   }, {
     "left": {
       "from": 0,
-      "line": "import os",
       "lineIdx": 3,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "import os",
       "lineIdx": 3,
       "to": 6
     }
   }, {
     "left": {
       "from": 13,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 17
     },
     "right": {
       "from": 13,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 17
     }
   }, {
     "left": {
       "from": 59,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 85
     },
     "right": {
       "from": 63,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 89
     }
   }, {
     "left": {
       "from": 23,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 15,
       "to": 30
     },
     "right": {
       "from": 23,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 16,
       "to": 30
     }
   }, {
     "left": {
       "from": 58,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 59
     },
     "right": {
       "from": 58,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 59
     }
   }, {
     "left": {
       "from": 57,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 58
     },
     "right": {
       "from": 57,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 58
     }
   }, {
     "left": {
       "from": 52,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 53
     },
     "right": {
       "from": 52,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 53
     }
   }, {
     "left": {
       "from": 12,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 13
     },
     "right": {
       "from": 35,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 36
     }
   }, {
     "left": {
       "from": 29,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 31
     },
     "right": {
       "from": 29,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 31
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 78,
       "to": 9
     },
     "right": {
       "from": 4,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 90,
       "to": 9
     }
   }, {
     "left": {
       "from": 58,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 63
     },
     "right": {
       "from": 58,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 63
     }
   }, {
     "left": {
       "from": 13,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 56,
       "to": 19
     },
     "right": {
       "from": 13,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 63,
       "to": 19
     }
   }, {
     "left": {
       "from": 49,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 50
     },
     "right": {
       "from": 54,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 55
     }
   }, {
     "left": {
       "from": 26,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 19,
       "to": 27
     },
     "right": {
       "from": 26,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 20,
       "to": 27
     }
   }, {
     "left": {
       "from": 30,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 40
     },
     "right": {
       "from": 30,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 40
     }
   }, {
     "left": {
       "from": 36,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 37
     },
     "right": {
       "from": 36,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 37
     }
   }, {
     "left": {
       "from": 38,
-      "line": "            zipped = zip(calc_y, ref_y)",
       "lineIdx": 58,
       "to": 39
     },
     "right": {
       "from": 44,
-      "line": "            zipped = list(zip(calc_y, ref_y))",
       "lineIdx": 65,
       "to": 45
     }
   }, {
     "left": {
       "from": 23,
-      "line": "from subprocess import *",
       "lineIdx": 4,
       "to": 24
     },
     "right": {
       "from": 23,
-      "line": "from subprocess import *",
       "lineIdx": 4,
       "to": 24
     }
   }, {
     "left": {
       "from": 68,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 69
     },
     "right": {
       "from": 73,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 74
     }
   }, {
     "left": {
       "from": 45,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 46
     },
     "right": {
       "from": 68,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 69
     }
   }, {
     "left": {
       "from": 15,
-      "line": "def test_files(file_list_file):",
       "lineIdx": 38,
       "to": 29
     },
     "right": {
       "from": 34,
-      "line": "def test_files(model, range_dict, file_list_file):",
       "lineIdx": 47,
       "to": 48
     }
   }, {
     "left": {
       "from": 24,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 25
     },
     "right": {
       "from": 29,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 30
     }
   }, {
     "left": {
       "from": 38,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 43
     },
     "right": {
       "from": 38,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 43
     }
   }, {
     "left": {
       "from": 25,
-      "line": "##def scale_input(x, mins, maxs):",
       "lineIdx": 31,
       "to": 26
     },
     "right": {
       "from": 17,
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 39,
       "to": 18
     }
   }, {
     "left": {
       "from": 15,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 16
     },
     "right": {
       "from": 15,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 16
     }
   }, {
     "left": {
       "from": 29,
-      "line": "            false_pos_sum += false_pos",
       "lineIdx": 65,
       "to": 38
     },
     "right": {
       "from": 29,
-      "line": "            false_pos_sum += false_pos",
       "lineIdx": 70,
       "to": 38
     }
   }, {
     "left": {
       "from": 50,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 51
     },
     "right": {
       "from": 50,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 51
     }
   }, {
     "left": {
       "from": 37,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 38
     },
     "right": {
       "from": 37,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 38
     }
   }, {
     "left": {
       "from": 37,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 38
     },
     "right": {
       "from": 37,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 38
     }
   }, {
     "left": {
       "from": 29,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 30
     },
     "right": {
       "from": 29,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 30
     }
   }, {
     "left": {
       "from": 30,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 21,
       "to": 31
     },
     "right": {
       "from": 30,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 22,
       "to": 31
     }
   }, {
     "left": {
       "from": 7,
-      "line": "import svm",
       "lineIdx": 5,
       "to": 10
     },
     "right": {
       "from": 7,
-      "line": "import svm",
       "lineIdx": 5,
       "to": 10
     }
   }, {
     "left": {
       "from": 45,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 46
     },
     "right": {
       "from": 45,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 46
     }
   }, {
     "left": {
       "from": 55,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 56
     },
     "right": {
       "from": 62,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 63
     }
   }, {
     "left": {
       "from": 31,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 21,
       "to": 32
     },
     "right": {
       "from": 31,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 22,
       "to": 32
     }
   }, {
     "left": {
       "from": 92,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 97
     },
     "right": {
       "from": 96,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 101
     }
   }, {
     "left": {
       "from": 42,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 43
     },
     "right": {
       "from": 42,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 43
     }
   }, {
     "left": {
       "from": 37,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 40
     },
     "right": {
       "from": 44,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 47
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 13
     },
     "right": {
       "from": 12,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 13
     }
   }, {
     "left": {
       "from": 29,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 56,
       "to": 41
     },
     "right": {
       "from": 29,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 63,
       "to": 41
     }
   }, {
     "left": {
       "from": 53,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 54
     },
     "right": {
       "from": 53,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 54
     }
   }, {
     "left": {
       "from": 8,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 21,
       "to": 9
     },
     "right": {
       "from": 8,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 22,
       "to": 9
     }
   }, {
     "left": {
       "from": 18,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 19
     },
     "right": {
       "from": 18,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 19
     }
   }, {
     "left": {
       "from": 36,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 37
     },
     "right": {
       "from": 36,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 37
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    false_neg_sum = 0",
       "lineIdx": 42,
       "to": 17
     },
     "right": {
       "from": 4,
-      "line": "    false_pos_sum = 0",
       "lineIdx": 51,
       "to": 17
     }
   }, {
     "left": {
       "from": 58,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 59
     },
     "right": {
       "from": 58,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 59
     }
   }, {
     "left": {
       "from": 18,
-      "line": "    assert len(row) == len(mins) and len(mins) == len(maxs)",
       "lineIdx": 24,
       "to": 19
     },
     "right": {
       "from": 18,
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 25,
       "to": 19
     }
   }, {
     "left": {
       "from": 0,
-      "line": "from svmutil import *",
       "lineIdx": 6,
       "to": 4
     },
     "right": {
       "from": 0,
-      "line": "from svmutil import *",
       "lineIdx": 6,
       "to": 4
     }
   }, {
     "left": {
       "from": 90,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 91
     },
     "right": {
       "from": 90,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 91
     }
   }, {
     "left": {
       "from": 84,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 88
     },
     "right": {
       "from": 84,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 88
     }
   }, {
     "left": {
       "from": 33,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 34,
       "to": 38
     },
     "right": {
       "from": 33,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 43,
       "to": 38
     }
   }, {
     "left": {
       "from": 15,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 50,
       "to": 20
     },
     "right": {
       "from": 15,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 57,
       "to": 20
     }
   }, {
     "left": {
       "from": 14,
-      "line": "    epsilon = 0.0001",
       "lineIdx": 13,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "    epsilon = 0.0001",
       "lineIdx": 14,
       "to": 15
     }
   }, {
     "left": {
       "from": 22,
-      "line": "def scaleRow(row, mins, maxs): ",
       "lineIdx": 23,
       "to": 23
     },
     "right": {
       "from": 16,
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 24,
       "to": 17
     }
   }, {
     "left": {
       "from": 71,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 78
     },
     "right": {
       "from": 71,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 78
     }
   }, {
     "left": {
       "from": 25,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 70,
       "to": 31
     },
     "right": {
       "from": 25,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 74,
       "to": 31
     }
   }, {
     "left": {
       "from": 21,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 19,
       "to": 26
     },
     "right": {
       "from": 21,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 20,
       "to": 26
     }
   }, {
     "left": {
       "from": 25,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 48,
       "to": 26
     },
     "right": {
       "from": 25,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 55,
       "to": 26
     }
   }, {
     "left": {
       "from": 8,
-      "line": "    for dir in dirs:",
       "lineIdx": 47,
       "to": 11
     },
     "right": {
       "from": 8,
-      "line": "    for dir in dirs:",
       "lineIdx": 54,
       "to": 11
     }
   }, {
     "left": {
       "from": 68,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 71
     },
     "right": {
       "from": 68,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 71
     }
   }, {
     "left": {
       "from": 9,
-      "line": "        (value-featureMin)/",
       "lineIdx": 20,
       "to": 14
     },
     "right": {
       "from": 9,
-      "line": "        (value-featureMin)/",
       "lineIdx": 21,
       "to": 14
     }
   }, {
     "left": {
       "from": 30,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 31
     },
     "right": {
       "from": 30,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 31
     }
   }, {
     "left": {
       "from": 29,
-      "line": "def test_files(file_list_file):",
       "lineIdx": 38,
       "to": 30
     },
     "right": {
       "from": 48,
-      "line": "def test_files(model, range_dict, file_list_file):",
       "lineIdx": 47,
       "to": 49
     }
   }, {
     "left": {
       "from": 38,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 39
     },
     "right": {
       "from": 38,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 39
     }
   }, {
     "left": {
       "from": 30,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 31
     },
     "right": {
       "from": 53,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 54
     }
   }, {
     "left": {
       "from": 25,
-      "line": "            true_pos_sum += true_pos",
       "lineIdx": 66,
       "to": 26
     },
     "right": {
       "from": 25,
-      "line": "            true_pos_sum += true_pos",
       "lineIdx": 71,
       "to": 26
     }
   }, {
     "left": {
       "from": 60,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 63
     },
     "right": {
       "from": 60,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 63
     }
   }, {
     "left": {
       "from": 29,
-      "line": "def scaleRow(row, mins, maxs): ",
       "lineIdx": 23,
       "to": 30
     },
     "right": {
       "from": 29,
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 24,
       "to": 30
     }
   }, {
     "left": {
       "from": 12,
-      "line": "def scaleRow(row, mins, maxs): ",
       "lineIdx": 23,
       "to": 13
     },
     "right": {
       "from": 12,
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 24,
       "to": 13
     }
   }, {
     "left": {
       "from": 79,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 85
     },
     "right": {
       "from": 79,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 85
     }
   }, {
     "left": {
       "from": 17,
-      "line": "##def scale_input(x, mins, maxs):",
       "lineIdx": 31,
       "to": 18
     },
     "right": {
       "from": 15,
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 39,
       "to": 16
     }
   }, {
     "left": {
       "from": 59,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 60
     },
     "right": {
       "from": 59,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 60
     }
   }, {
     "left": {
       "from": 31,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 32
     },
     "right": {
       "from": 31,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 32
     }
   }, {
     "left": {
       "from": 46,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 49
     },
     "right": {
       "from": 69,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 72
     }
   }, {
     "left": {
       "from": 32,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 39
     },
     "right": {
       "from": 32,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 39
     }
   }, {
     "left": {
       "from": 49,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 50
     },
     "right": {
       "from": 72,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 73
     }
   }, {
     "left": {
       "from": 76,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 77
     },
     "right": {
       "from": 76,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 77
     }
   }, {
     "left": {
       "from": 37,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 38
     },
     "right": {
       "from": 37,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 38
     }
   }, {
     "left": {
       "from": 36,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 37
     },
     "right": {
       "from": 36,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 37
     }
   }, {
     "left": {
       "from": 13,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 14
     },
     "right": {
       "from": 13,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 14
     }
   }, {
     "left": {
       "from": 47,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 48
     },
     "right": {
       "from": 47,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 48
     }
   }, {
     "left": {
       "from": 58,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 59
     },
     "right": {
       "from": 58,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 59
     }
   }, {
     "left": {
       "from": 30,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 31
     },
     "right": {
       "from": 35,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 36
     }
   }, {
     "left": {
       "from": 43,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 57,
       "to": 44
     },
     "right": {
       "from": 43,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 64,
       "to": 44
     }
   }, {
     "left": {
       "from": 55,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 56
     },
     "right": {
       "from": 55,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 56
     }
   }, {
     "left": {
       "from": 80,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 81
     },
     "right": {
       "from": 80,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 81
     }
   }, {
     "left": {
       "from": 26,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 27
     },
     "right": {
       "from": 26,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 27
     }
   }, {
     "left": {
       "from": 4,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 34,
       "to": 32
     },
     "right": {
       "from": 4,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 43,
       "to": 32
     }
   }, {
     "left": {
       "from": 13,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 39,
       "to": 14
     },
     "right": {
       "from": 13,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 48,
       "to": 14
     }
   }, {
     "left": {
       "from": 30,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 32
     },
     "right": {
       "from": 30,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 32
     }
   }, {
     "left": {
       "from": 15,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 48,
       "to": 22
     },
     "right": {
       "from": 15,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 55,
       "to": 22
     }
   }, {
     "left": {
       "from": 42,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 43
     },
     "right": {
       "from": 42,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 43
     }
   }, {
     "left": {
       "from": 11,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 78,
       "to": 18
     },
     "right": {
       "from": 11,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 90,
       "to": 18
     }
   }, {
     "left": {
       "from": 18,
-      "line": "##def scale_input(x, mins, maxs):",
       "lineIdx": 31,
       "to": 19
     },
     "right": {
       "from": 16,
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 39,
       "to": 17
     }
   }, {
     "left": {
       "from": 23,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 28
     },
     "right": {
       "from": 23,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 28
     }
   }, {
     "left": {
       "from": 54,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 55
     },
     "right": {
       "from": 54,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 55
     }
   }, {
     "left": {
       "from": 50,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 55
     },
     "right": {
       "from": 50,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 55
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    for dir in dirs:",
       "lineIdx": 47,
       "to": 7
     },
     "right": {
       "from": 4,
-      "line": "    for dir in dirs:",
       "lineIdx": 54,
       "to": 7
     }
   }, {
     "left": {
       "from": 20,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 15,
       "to": 21
     },
     "right": {
       "from": 20,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 16,
       "to": 21
     }
   }, {
     "left": {
       "from": 7,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 17
     },
     "right": {
       "from": 7,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 17
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            zipped = zip(calc_y, ref_y)",
       "lineIdx": 58,
       "to": 18
     },
     "right": {
       "from": 12,
-      "line": "            zipped = list(zip(calc_y, ref_y))",
       "lineIdx": 65,
       "to": 18
     }
   }, {
     "left": {
       "from": 4,
-      "line": "def scaleRow(row, mins, maxs): ",
       "lineIdx": 23,
       "to": 12
     },
     "right": {
       "from": 4,
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 24,
       "to": 12
     }
   }, {
     "left": {
       "from": 10,
-      "line": "    n_sum = 0",
       "lineIdx": 41,
       "to": 11
     },
     "right": {
       "from": 10,
-      "line": "    n_sum = 0",
       "lineIdx": 50,
       "to": 11
     }
   }, {
     "left": {
       "from": 9,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 39,
       "to": 13
     },
     "right": {
       "from": 9,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 48,
       "to": 13
     }
   }, {
     "left": {
       "from": 14,
-      "line": "    upper = 1.0",
       "lineIdx": 12,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "    upper = 1.0",
       "lineIdx": 13,
       "to": 15
     }
   }, {
     "left": {
       "from": 63,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 68
     },
     "right": {
       "from": 68,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 73
     }
   }, {
     "left": {
       "from": 13,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 14
     },
     "right": {
       "from": 36,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 37
     }
   }, {
     "left": {
       "from": 20,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 21,
       "to": 30
     },
     "right": {
       "from": 20,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 22,
       "to": 30
     }
   }, {
     "left": {
       "from": 17,
-      "line": "            print(\"Precision: \" + str(true_pos/(false_pos + true_pos)))",
       "lineIdx": 76,
       "to": 18
     },
     "right": {
       "from": 17,
-      "line": "            print(\"Precision: \" + str(precision))",
       "lineIdx": 84,
       "to": 18
     }
   }, {
     "left": {
       "from": 104,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 105
     },
     "right": {
       "from": 108,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 109
     }
   }, {
     "left": {
       "from": 2,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 3
     },
     "right": {
       "from": 2,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 3
     }
   }, {
     "left": {
       "from": 19,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 21,
       "to": 20
     },
     "right": {
       "from": 19,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 22,
       "to": 20
     }
   }, {
     "left": {
       "from": 8,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 48,
       "to": 13
     },
     "right": {
       "from": 8,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 55,
       "to": 13
     }
   }, {
     "left": {
       "from": 13,
-      "line": "    upper = 1.0",
       "lineIdx": 12,
       "to": 14
     },
     "right": {
       "from": 13,
-      "line": "    upper = 1.0",
       "lineIdx": 13,
       "to": 14
     }
   }, {
     "left": {
       "from": 13,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 55,
       "to": 19
     },
     "right": {
       "from": 13,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 62,
       "to": 19
     }
   }, {
     "left": {
       "from": 32,
-      "line": "            print(\"Precision: \" + str(true_pos/(false_pos + true_pos)))",
       "lineIdx": 76,
       "to": 33
     },
     "right": {
       "from": 32,
-      "line": "            print(\"Precision: \" + str(precision))",
       "lineIdx": 84,
       "to": 33
     }
   }, {
     "left": {
       "from": 39,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 40
     },
     "right": {
       "from": 39,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 40
     }
   }, {
     "left": {
       "from": 7,
-      "line": "import functools",
       "lineIdx": 8,
       "to": 16
     },
     "right": {
       "from": 7,
-      "line": "import functools",
       "lineIdx": 8,
       "to": 16
     }
   }, {
     "left": {
       "from": 4,
-      "line": "def test_files(file_list_file):",
       "lineIdx": 38,
       "to": 14
     },
     "right": {
       "from": 4,
-      "line": "def test_files(model, range_dict, file_list_file):",
       "lineIdx": 47,
       "to": 14
     }
   }, {
     "left": {
       "from": 65,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 76
     },
     "right": {
       "from": 65,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 76
     }
   }, {
     "left": {
       "from": 31,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 43
     },
     "right": {
       "from": 31,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 43
     }
   }, {
     "left": {
       "from": 65,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 66
     },
     "right": {
       "from": 65,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 66
     }
   }, {
     "left": {
       "from": 97,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 98
     },
     "right": {
       "from": 101,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 102
     }
   }, {
     "left": {
       "from": 15,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 22
     },
     "right": {
       "from": 15,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 22
     }
   }, {
     "left": {
       "from": 28,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 31
     },
     "right": {
       "from": 28,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 31
     }
   }, {
     "left": {
       "from": 8,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 22
     },
     "right": {
       "from": 12,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 26
     }
   }, {
     "left": {
       "from": 36,
-      "line": "def custom_scale(value, featureMin, featureMax):",
       "lineIdx": 10,
       "to": 46
     },
     "right": {
       "from": 36,
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 11,
       "to": 46
     }
   }, {
     "left": {
       "from": 51,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 52
     },
     "right": {
       "from": 51,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 52
     }
   }, {
     "left": {
       "from": 78,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 79
     },
     "right": {
       "from": 78,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 79
     }
   }, {
     "left": {
       "from": 17,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 18
     },
     "right": {
       "from": 17,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 18
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            print(\"Precision: \" + str(true_pos/(false_pos + true_pos)))",
       "lineIdx": 76,
       "to": 17
     },
     "right": {
       "from": 12,
-      "line": "            print(\"Precision: \" + str(precision))",
       "lineIdx": 84,
       "to": 17
     }
   }, {
     "left": {
       "from": 64,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 65
     },
     "right": {
       "from": 64,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 65
     }
   }, {
     "left": {
       "from": 38,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 55,
       "to": 39
     },
     "right": {
       "from": 38,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 62,
       "to": 39
     }
   }, {
     "left": {
       "from": 15,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 16
     },
     "right": {
       "from": 15,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 16
     }
   }, {
     "left": {
       "from": 18,
-      "line": "    false_neg_sum = 0",
       "lineIdx": 42,
       "to": 19
     },
     "right": {
       "from": 18,
-      "line": "    false_pos_sum = 0",
       "lineIdx": 51,
       "to": 19
     }
   }, {
     "left": {
       "from": 11,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 12
     },
     "right": {
       "from": 11,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 12
     }
   }, {
     "left": {
       "from": 7,
-      "line": "print(\"\")",
       "lineIdx": 88,
       "to": 8
     },
     "right": {
       "from": 11,
-      "line": "    print(\"\")",
       "lineIdx": 108,
       "to": 12
     }
   }, {
     "left": {
       "from": 45,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 55
     },
     "right": {
       "from": 45,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 55
     }
   }, {
     "left": {
       "from": 13,
-      "line": "from svmutil import *",
       "lineIdx": 6,
       "to": 19
     },
     "right": {
       "from": 13,
-      "line": "from svmutil import *",
       "lineIdx": 6,
       "to": 19
     }
   }, {
     "left": {
       "from": 24,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 50,
       "to": 25
     },
     "right": {
       "from": 24,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 57,
       "to": 25
     }
   }, {
     "left": {
       "from": 14,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 15
     },
     "right": {
       "from": 37,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 38
     }
   }, {
     "left": {
       "from": 38,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 39
     },
     "right": {
       "from": 38,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 39
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    upper = 1.0",
       "lineIdx": 12,
       "to": 9
     },
     "right": {
       "from": 4,
-      "line": "    upper = 1.0",
       "lineIdx": 13,
       "to": 9
     }
   }, {
     "left": {
       "from": 14,
-      "line": "    assert len(row) == len(mins) and len(mins) == len(maxs)",
       "lineIdx": 24,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 25,
       "to": 15
     }
   }, {
     "left": {
       "from": 67,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 70
     },
     "right": {
       "from": 67,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 70
     }
   }, {
     "left": {
       "from": 0,
-      "line": "from subprocess import *",
       "lineIdx": 4,
       "to": 4
     },
     "right": {
       "from": 0,
-      "line": "from subprocess import *",
       "lineIdx": 4,
       "to": 4
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            #testing scale method",
       "lineIdx": 52,
       "to": 13
     },
     "right": {
       "from": 12,
-      "line": "            #testing scale method",
       "lineIdx": 59,
       "to": 13
     }
   }, {
     "left": {
       "from": 50,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 51
     },
     "right": {
       "from": 73,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 74
     }
   }, {
     "left": {
       "from": 33,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 37
     },
     "right": {
       "from": 33,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 37
     }
   }, {
     "left": {
       "from": 6,
-      "line": "print('Running tests on training data')",
       "lineIdx": 89,
       "to": 7
     },
     "right": {
       "from": 10,
-      "line": "    print('Running tests on training data')",
       "lineIdx": 109,
       "to": 11
     }
   }, {
     "left": {
       "from": 58,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 63
     },
     "right": {
       "from": 58,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 63
     }
   }, {
     "left": {
       "from": 36,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 37
     },
     "right": {
       "from": 36,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 37
     }
   }, {
     "left": {
       "from": 33,
-      "line": "print('Running tests on test data')",
       "lineIdx": 86,
       "to": 34
     },
     "right": {
       "from": 37,
-      "line": "    print('Running tests on test data')",
       "lineIdx": 106,
       "to": 38
     }
   }, {
     "left": {
       "from": 27,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 28
     },
     "right": {
       "from": 27,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 28
     }
   }, {
     "left": {
       "from": 30,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 39,
       "to": 32
     },
     "right": {
       "from": 30,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 48,
       "to": 32
     }
   }, {
     "left": {
       "from": 29,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 30
     },
     "right": {
       "from": 29,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 30
     }
   }, {
     "left": {
       "from": 22,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 23
     },
     "right": {
       "from": 22,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 23
     }
   }, {
     "left": {
       "from": 7,
-      "line": "import sys",
       "lineIdx": 2,
       "to": 10
     },
     "right": {
       "from": 7,
-      "line": "import sys",
       "lineIdx": 2,
       "to": 10
     }
   }, {
     "left": {
       "from": 53,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 57
     },
     "right": {
       "from": 53,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 57
     }
   }, {
     "left": {
       "from": 86,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 91
     },
     "right": {
       "from": 90,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 95
     }
   }, {
     "left": {
       "from": 29,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 57,
       "to": 30
     },
     "right": {
       "from": 29,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 64,
       "to": 30
     }
   }, {
     "left": {
       "from": 19,
-      "line": "            zipped = zip(calc_y, ref_y)",
       "lineIdx": 58,
       "to": 20
     },
     "right": {
       "from": 19,
-      "line": "            zipped = list(zip(calc_y, ref_y))",
       "lineIdx": 65,
       "to": 20
     }
   }, {
     "left": {
       "from": 11,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 17
     },
     "right": {
       "from": 11,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 17
     }
   }, {
     "left": {
       "from": 1,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 5
     },
     "right": {
       "from": 1,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 5
     }
   }, {
     "left": {
       "from": 12,
-      "line": "    for dir in dirs:",
       "lineIdx": 47,
       "to": 14
     },
     "right": {
       "from": 12,
-      "line": "    for dir in dirs:",
       "lineIdx": 54,
       "to": 14
     }
   }, {
     "left": {
       "from": 24,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 29
     },
     "right": {
       "from": 24,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 29
     }
   }, {
     "left": {
       "from": 27,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 28
     },
     "right": {
       "from": 27,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 28
     }
   }, {
     "left": {
       "from": 13,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 14
     },
     "right": {
       "from": 36,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 37
     }
   }, {
     "left": {
       "from": 40,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 41
     },
     "right": {
       "from": 40,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 41
     }
   }, {
     "left": {
       "from": 5,
-      "line": "from subprocess import *",
       "lineIdx": 4,
       "to": 15
     },
     "right": {
       "from": 5,
-      "line": "from subprocess import *",
       "lineIdx": 4,
       "to": 15
     }
   }, {
     "left": {
       "from": 0,
-      "line": "import svm",
       "lineIdx": 5,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "import svm",
       "lineIdx": 5,
       "to": 6
     }
   }, {
     "left": {
       "from": 46,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 57
     },
     "right": {
       "from": 46,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 57
     }
   }, {
     "left": {
       "from": 2,
-      "line": "##def scale_input(x, mins, maxs):",
       "lineIdx": 31,
       "to": 5
     },
     "right": {
       "from": 0,
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 39,
       "to": 3
     }
   }, {
     "left": {
       "from": 34,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 19,
       "to": 35
     },
     "right": {
       "from": 34,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 20,
       "to": 35
     }
   }, {
     "left": {
       "from": 48,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 52
     },
     "right": {
       "from": 48,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 52
     }
   }, {
     "left": {
       "from": 45,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 48
     },
     "right": {
       "from": 45,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 48
     }
   }, {
     "left": {
       "from": 21,
-      "line": "#def read_ranges(path):",
       "lineIdx": 28,
       "to": 22
     },
     "right": {
       "from": 20,
-      "line": "def read_ranges(path):",
       "lineIdx": 31,
       "to": 21
     }
   }, {
     "left": {
       "from": 27,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 32
     },
     "right": {
       "from": 31,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 36
     }
   }, {
     "left": {
       "from": 39,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 40
     },
     "right": {
       "from": 39,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 40
     }
   }, {
     "left": {
       "from": 6,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 7
     },
     "right": {
       "from": 6,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 7
     }
   }, {
     "left": {
       "from": 26,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 27
     },
     "right": {
       "from": 33,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 34
     }
   }, {
     "left": {
       "from": 0,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 1
     },
     "right": {
       "from": 0,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 1
     }
   }, {
     "left": {
       "from": 18,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 23
     },
     "right": {
       "from": 18,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 23
     }
   }, {
     "left": {
       "from": 71,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 75
     },
     "right": {
       "from": 71,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 75
     }
   }, {
     "left": {
       "from": 52,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 55
     },
     "right": {
       "from": 52,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 55
     }
   }, {
     "left": {
       "from": 17,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 21
     },
     "right": {
       "from": 17,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 21
     }
   }, {
     "left": {
       "from": 21,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 22
     },
     "right": {
       "from": 21,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 22
     }
   }, {
     "left": {
       "from": 28,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 36
     },
     "right": {
       "from": 35,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 43
     }
   }, {
     "left": {
       "from": 71,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 72
     },
     "right": {
       "from": 71,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 72
     }
   }, {
     "left": {
       "from": 11,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 19,
       "to": 12
     },
     "right": {
       "from": 11,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 20,
       "to": 12
     }
   }, {
     "left": {
       "from": 56,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 57
     },
     "right": {
       "from": 56,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 57
     }
   }, {
     "left": {
       "from": 20,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 78,
       "to": 21
     },
     "right": {
       "from": 20,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 90,
       "to": 21
     }
   }, {
     "left": {
       "from": 27,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 35
     },
     "right": {
       "from": 27,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 35
     }
   }, {
     "left": {
       "from": 40,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 41
     },
     "right": {
       "from": 40,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 41
     }
   }, {
     "left": {
       "from": 25,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 50,
       "to": 26
     },
     "right": {
       "from": 25,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 57,
       "to": 26
     }
   }, {
     "left": {
       "from": 18,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 70,
       "to": 19
     },
     "right": {
       "from": 18,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 74,
       "to": 19
     }
   }, {
     "left": {
       "from": 39,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 42
     },
     "right": {
       "from": 39,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 42
     }
   }, {
     "left": {
       "from": 32,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 33
     },
     "right": {
       "from": 32,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 33
     }
   }, {
     "left": {
       "from": 1,
-      "line": "#def read_ranges(path):",
       "lineIdx": 28,
       "to": 4
     },
     "right": {
       "from": 0,
-      "line": "def read_ranges(path):",
       "lineIdx": 31,
       "to": 3
     }
   }, {
     "left": {
       "from": 15,
-      "line": "        (value-featureMin)/",
       "lineIdx": 20,
       "to": 25
     },
     "right": {
       "from": 15,
-      "line": "        (value-featureMin)/",
       "lineIdx": 21,
       "to": 25
     }
   }, {
     "left": {
       "from": 53,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 54
     },
     "right": {
       "from": 60,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 61
     }
   }, {
     "left": {
       "from": 46,
-      "line": "def custom_scale(value, featureMin, featureMax):",
       "lineIdx": 10,
       "to": 47
     },
     "right": {
       "from": 46,
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 11,
       "to": 47
     }
   }, {
     "left": {
       "from": 67,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 71
     },
     "right": {
       "from": 67,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 71
     }
   }, {
     "left": {
       "from": 50,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 52
     },
     "right": {
       "from": 50,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 52
     }
   }, {
     "left": {
       "from": 32,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 33
     },
     "right": {
       "from": 36,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 37
     }
   }, {
     "left": {
       "from": 9,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 21,
       "to": 19
     },
     "right": {
       "from": 9,
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 22,
       "to": 19
     }
   }, {
     "left": {
       "from": 13,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 48,
       "to": 14
     },
     "right": {
       "from": 13,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 55,
       "to": 14
     }
   }, {
     "left": {
       "from": 23,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 26
     },
     "right": {
       "from": 30,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 33
     }
   }, {
     "left": {
       "from": 13,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 14
     },
     "right": {
       "from": 13,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 14
     }
   }, {
     "left": {
       "from": 37,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 38
     },
     "right": {
       "from": 37,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 38
     }
   }, {
     "left": {
       "from": 34,
-      "line": "            print(\"Precision: \" + str(true_pos/(false_pos + true_pos)))",
       "lineIdx": 76,
       "to": 37
     },
     "right": {
       "from": 34,
-      "line": "            print(\"Precision: \" + str(precision))",
       "lineIdx": 84,
       "to": 37
     }
   }, {
     "left": {
       "from": 5,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 11
     },
     "right": {
       "from": 4,
-      "line": "    return scaled_input",
       "lineIdx": 41,
       "to": 10
     }
   }, {
     "left": {
       "from": 26,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 29
     },
     "right": {
       "from": 31,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 34
     }
   }, {
     "left": {
       "from": 28,
-      "line": "def scaleRow(row, mins, maxs): ",
       "lineIdx": 23,
       "to": 29
     },
     "right": {
       "from": 28,
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 24,
       "to": 29
     }
   }, {
     "left": {
       "from": 14,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 39,
       "to": 28
     },
     "right": {
       "from": 14,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 48,
       "to": 28
     }
   }, {
     "left": {
       "from": 6,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 7
     },
     "right": {
       "from": 6,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 7
     }
   }, {
     "left": {
       "from": 11,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 12
     },
     "right": {
       "from": 34,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 35
     }
   }, {
     "left": {
       "from": 10,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 78,
       "to": 11
     },
     "right": {
       "from": 10,
-      "line": "    print(\"Summary: \")",
       "lineIdx": 90,
       "to": 11
     }
   }, {
     "left": {
       "from": 51,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 54
     },
     "right": {
       "from": 56,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 59
     }
   }, {
     "left": {
       "from": 35,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 36
     },
     "right": {
       "from": 35,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 36
     }
   }, {
     "left": {
       "from": 89,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 90
     },
     "right": {
       "from": 89,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 90
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 56,
       "to": 13
     },
     "right": {
       "from": 12,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 63,
       "to": 13
     }
   }, {
     "left": {
       "from": 32,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 36
     },
     "right": {
       "from": 32,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 36
     }
   }, {
     "left": {
       "from": 18,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 19
     },
     "right": {
       "from": 18,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 19
     }
   }, {
     "left": {
       "from": 39,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 40
     },
     "right": {
       "from": 39,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 40
     }
   }, {
     "left": {
       "from": 13,
-      "line": "    lower = -1.0",
       "lineIdx": 11,
       "to": 14
     },
     "right": {
       "from": 13,
-      "line": "    lower = -1.0",
       "lineIdx": 12,
       "to": 14
     }
   }, {
     "left": {
       "from": 8,
-      "line": "        (value-featureMin)/",
       "lineIdx": 20,
       "to": 9
     },
     "right": {
       "from": 8,
-      "line": "        (value-featureMin)/",
       "lineIdx": 21,
       "to": 9
     }
   }, {
     "left": {
       "from": 66,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 67
     },
     "right": {
       "from": 66,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 67
     }
   }, {
     "left": {
       "from": 20,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 19,
       "to": 21
     },
     "right": {
       "from": 20,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 20,
       "to": 21
     }
   }, {
     "left": {
       "from": 17,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 20
     },
     "right": {
       "from": 17,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 20
     }
   }, {
     "left": {
       "from": 20,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 50,
       "to": 21
     },
     "right": {
       "from": 20,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 57,
       "to": 21
     }
   }, {
     "left": {
       "from": 32,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 33
     },
     "right": {
       "from": 32,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 33
     }
   }, {
     "left": {
       "from": 31,
-      "line": "    assert len(row) == len(mins) and len(mins) == len(maxs)",
       "lineIdx": 24,
       "to": 32
     },
     "right": {
       "from": 37,
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 25,
       "to": 38
     }
   }, {
     "left": {
       "from": 22,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 23
     },
     "right": {
       "from": 22,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 23
     }
   }, {
     "left": {
       "from": 38,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 34,
       "to": 39
     },
     "right": {
       "from": 38,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 43,
       "to": 39
     }
   }, {
     "left": {
       "from": 18,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 19,
       "to": 19
     },
     "right": {
       "from": 18,
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 20,
       "to": 19
     }
   }, {
     "left": {
       "from": 103,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 104
     },
     "right": {
       "from": 107,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 108
     }
   }, {
     "left": {
       "from": 21,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 70,
       "to": 24
     },
     "right": {
       "from": 21,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 74,
       "to": 24
     }
   }, {
     "left": {
       "from": 37,
-      "line": "            print(\"Precision: \" + str(true_pos/(false_pos + true_pos)))",
       "lineIdx": 76,
       "to": 38
     },
     "right": {
       "from": 37,
-      "line": "            print(\"Precision: \" + str(precision))",
       "lineIdx": 84,
       "to": 38
     }
   }, {
     "left": {
       "from": 43,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 44
     },
     "right": {
       "from": 43,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 44
     }
   }, {
     "left": {
       "from": 22,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 23
     },
     "right": {
       "from": 22,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 23
     }
   }, {
     "left": {
       "from": 18,
-      "line": "            print(\"Precision: \" + str(true_pos/(false_pos + true_pos)))",
       "lineIdx": 76,
       "to": 19
     },
     "right": {
       "from": 18,
-      "line": "            print(\"Precision: \" + str(precision))",
       "lineIdx": 84,
       "to": 19
     }
   }, {
     "left": {
       "from": 24,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 27
     },
     "right": {
       "from": 24,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 27
     }
   }, {
     "left": {
       "from": 13,
-      "line": "            #testing scale method",
       "lineIdx": 52,
       "to": 20
     },
     "right": {
       "from": 13,
-      "line": "            #testing scale method",
       "lineIdx": 59,
       "to": 20
     }
   }, {
     "left": {
       "from": 35,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 36
     },
     "right": {
       "from": 35,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 36
     }
   }, {
     "left": {
       "from": 19,
-      "line": "    true_pos_sum = 0",
       "lineIdx": 46,
       "to": 20
     },
     "right": {
       "from": 19,
-      "line": "    true_pos_sum = 0",
       "lineIdx": 53,
       "to": 20
     }
   }, {
     "left": {
       "from": 0,
-      "line": "print('Running tests on test data')",
       "lineIdx": 86,
       "to": 5
     },
     "right": {
       "from": 4,
-      "line": "    print('Running tests on test data')",
       "lineIdx": 106,
       "to": 9
     }
   }, {
     "left": {
       "from": 16,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 22
     },
     "right": {
       "from": 23,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 29
     }
   }, {
     "left": {
       "from": 26,
-      "line": "            false_pos_sum += false_pos",
       "lineIdx": 65,
       "to": 27
     },
     "right": {
       "from": 26,
-      "line": "            false_pos_sum += false_pos",
       "lineIdx": 70,
       "to": 27
     }
   }, {
     "left": {
       "from": 21,
-      "line": "print('Running tests on test data')",
       "lineIdx": 86,
       "to": 23
     },
     "right": {
       "from": 25,
-      "line": "    print('Running tests on test data')",
       "lineIdx": 106,
       "to": 27
     }
   }, {
     "left": {
       "from": 27,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 56,
       "to": 28
     },
     "right": {
       "from": 27,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 63,
       "to": 28
     }
   }, {
     "left": {
       "from": 22,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 48,
       "to": 23
     },
     "right": {
       "from": 22,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 55,
       "to": 23
     }
   }, {
     "left": {
       "from": 32,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 37
     },
     "right": {
       "from": 32,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 37
     }
   }, {
     "left": {
       "from": 31,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 35
     },
     "right": {
       "from": 31,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 35
     }
   }, {
     "left": {
       "from": 19,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 25
     },
     "right": {
       "from": 19,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 25
     }
   }, {
     "left": {
       "from": 43,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 44
     },
     "right": {
       "from": 43,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 44
     }
   }, {
     "left": {
       "from": 56,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 57
     },
     "right": {
       "from": 56,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 57
     }
   }, {
     "left": {
       "from": 29,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 30
     },
     "right": {
       "from": 34,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 35
     }
   }, {
     "left": {
       "from": 20,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 25
     },
     "right": {
       "from": 20,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 25
     }
   }, {
     "left": {
       "from": 10,
-      "line": "    lower = -1.0",
       "lineIdx": 11,
       "to": 11
     },
     "right": {
       "from": 10,
-      "line": "    lower = -1.0",
       "lineIdx": 12,
       "to": 11
     }
   }, {
     "left": {
       "from": 55,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 59
     },
     "right": {
       "from": 60,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 64
     }
   }, {
     "left": {
       "from": 0,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 10
     },
     "right": {
       "from": 4,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 14
     }
   }, {
     "left": {
       "from": 42,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 43
     },
     "right": {
       "from": 47,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 48
     }
   }, {
     "left": {
       "from": 31,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 57,
       "to": 32
     },
     "right": {
       "from": 31,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 64,
       "to": 32
     }
   }, {
     "left": {
       "from": 28,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 39,
       "to": 29
     },
     "right": {
       "from": 28,
-      "line": "    with open(file_list_file) as f:",
       "lineIdx": 48,
       "to": 29
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 18
     },
     "right": {
       "from": 12,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 18
     }
   }, {
     "left": {
       "from": 86,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 87
     },
     "right": {
       "from": 86,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 87
     }
   }, {
     "left": {
       "from": 47,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 49
     },
     "right": {
       "from": 47,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 49
     }
   }, {
     "left": {
       "from": 44,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 50
     },
     "right": {
       "from": 44,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 50
     }
   }, {
     "left": {
       "from": 82,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 83
     },
     "right": {
       "from": 82,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 83
     }
   }, {
     "left": {
       "from": 56,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 60
     },
     "right": {
       "from": 56,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 60
     }
   }, {
     "left": {
       "from": 20,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 56,
       "to": 25
     },
     "right": {
       "from": 20,
-      "line": "            #assert p_acc == scaled_p_acc",
       "lineIdx": 63,
       "to": 25
     }
   }, {
     "left": {
       "from": 77,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 80
     },
     "right": {
       "from": 77,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 80
     }
   }, {
     "left": {
       "from": 57,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 58
     },
     "right": {
       "from": 57,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 58
     }
   }, {
     "left": {
       "from": 33,
-      "line": "            zipped = zip(calc_y, ref_y)",
       "lineIdx": 58,
       "to": 38
     },
     "right": {
       "from": 38,
-      "line": "            zipped = list(zip(calc_y, ref_y))",
       "lineIdx": 65,
       "to": 43
     }
   }, {
     "left": {
       "from": 37,
-      "line": "print('Running tests on training data')",
       "lineIdx": 89,
       "to": 38
     },
     "right": {
       "from": 41,
-      "line": "    print('Running tests on training data')",
       "lineIdx": 109,
       "to": 42
     }
   }, {
     "left": {
       "from": 88,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 89
     },
     "right": {
       "from": 88,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 89
     }
   }, {
     "left": {
       "from": 27,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 48,
       "to": 30
     },
     "right": {
       "from": 27,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 55,
       "to": 30
     }
   }, {
     "left": {
       "from": 11,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 50,
       "to": 14
     },
     "right": {
       "from": 11,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 57,
       "to": 14
     }
   }, {
     "left": {
       "from": 19,
-      "line": "    for dir in dirs:",
       "lineIdx": 47,
       "to": 20
     },
     "right": {
       "from": 19,
-      "line": "    for dir in dirs:",
       "lineIdx": 54,
       "to": 20
     }
   }, {
     "left": {
       "from": 31,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 32
     },
     "right": {
       "from": 31,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 32
     }
   }, {
     "left": {
       "from": 25,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 26
     },
     "right": {
       "from": 25,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 26
     }
   }, {
     "left": {
       "from": 66,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 67
     },
     "right": {
       "from": 66,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 67
     }
   }, {
     "left": {
       "from": 98,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 103
     },
     "right": {
       "from": 102,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 107
     }
   }, {
     "left": {
       "from": 57,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 58
     },
     "right": {
       "from": 57,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 58
     }
   }, {
     "left": {
       "from": 77,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 82
     },
     "right": {
       "from": 77,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 82
     }
   }, {
     "left": {
       "from": 15,
-      "line": "    lower = -1.0",
       "lineIdx": 11,
       "to": 16
     },
     "right": {
       "from": 15,
-      "line": "    lower = -1.0",
       "lineIdx": 12,
       "to": 16
     }
   }, {
     "left": {
       "from": 10,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 11
     },
     "right": {
       "from": 14,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 15
     }
   }, {
     "left": {
       "from": 85,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 86
     },
     "right": {
       "from": 89,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 90
     }
   }, {
     "left": {
       "from": 26,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 28
     },
     "right": {
       "from": 26,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 28
     }
   }, {
     "left": {
       "from": 0,
-      "line": "def scaleRow(row, mins, maxs): ",
       "lineIdx": 23,
       "to": 3
     },
     "right": {
       "from": 0,
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 24,
       "to": 3
     }
   }, {
     "left": {
       "from": 32,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 57,
       "to": 33
     },
     "right": {
       "from": 32,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 64,
       "to": 33
     }
   }, {
     "left": {
       "from": 22,
-      "line": "def custom_scale(value, featureMin, featureMax):",
       "lineIdx": 10,
       "to": 23
     },
     "right": {
       "from": 22,
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 11,
       "to": 23
     }
   }, {
     "left": {
       "from": 36,
-      "line": " #   return map(lambda row: scaleRow(row, mins, maxs), x)",
       "lineIdx": 32,
       "to": 37
     },
     "right": {
       "from": 43,
-      "line": "    scaled_input = map(lambda row: scaleRow(row, range_dict), x)",
       "lineIdx": 40,
       "to": 44
     }
   }, {
     "left": {
       "from": 12,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 16
     },
     "right": {
       "from": 12,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 16
     }
   }, {
     "left": {
       "from": 49,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 53
     },
     "right": {
       "from": 49,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 53
     }
   }, {
     "left": {
       "from": 33,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 58
     },
     "right": {
       "from": 37,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 62
     }
   }, {
     "left": {
       "from": 20,
-      "line": "    false_pos_sum = 0",
       "lineIdx": 43,
       "to": 21
     },
     "right": {
       "from": 27,
-      "line": "    actual_positives_sum = 0",
       "lineIdx": 52,
       "to": 28
     }
   }, {
     "left": {
       "from": 39,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 40
     },
     "right": {
       "from": 39,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 40
     }
   }, {
     "left": {
       "from": 44,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 47
     },
     "right": {
       "from": 44,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 47
     }
   }, {
     "left": {
       "from": 31,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 32
     },
     "right": {
       "from": 31,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 32
     }
   }, {
     "left": {
       "from": 38,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 49
     },
     "right": {
       "from": 38,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 49
     }
   }, {
     "left": {
       "from": 15,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 30
     },
     "right": {
       "from": 38,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 53
     }
   }, {
     "left": {
       "from": 17,
-      "line": "    true_pos_sum = 0",
       "lineIdx": 46,
       "to": 18
     },
     "right": {
       "from": 17,
-      "line": "    true_pos_sum = 0",
       "lineIdx": 53,
       "to": 18
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 57,
       "to": 18
     },
     "right": {
       "from": 12,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 64,
       "to": 18
     }
   }, {
     "left": {
       "from": 31,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 44
     },
     "right": {
       "from": 54,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 67
     }
   }, {
     "left": {
       "from": 26,
-      "line": "    assert len(row) == len(mins) and len(mins) == len(maxs)",
       "lineIdx": 24,
       "to": 27
     },
     "right": {
       "from": 26,
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 25,
       "to": 27
     }
   }, {
     "left": {
       "from": 25,
-      "line": "        (value-featureMin)/",
       "lineIdx": 20,
       "to": 26
     },
     "right": {
       "from": 25,
-      "line": "        (value-featureMin)/",
       "lineIdx": 21,
       "to": 26
     }
   }, {
     "left": {
       "from": 24,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 25
     },
     "right": {
       "from": 28,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 29
     }
   }, {
     "left": {
       "from": 34,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 35
     },
     "right": {
       "from": 34,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 35
     }
   }, {
     "left": {
       "from": 24,
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 17,
       "to": 34
     },
     "right": {
       "from": 24,
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 18,
       "to": 34
     }
   }, {
     "left": {
       "from": 44,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 45
     },
     "right": {
       "from": 67,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 68
     }
   }, {
     "left": {
       "from": 19,
-      "line": "            print(\"Precision: \" + str(true_pos/(false_pos + true_pos)))",
       "lineIdx": 76,
       "to": 28
     },
     "right": {
       "from": 19,
-      "line": "            print(\"Precision: \" + str(precision))",
       "lineIdx": 84,
       "to": 28
     }
   }, {
     "left": {
       "from": 45,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 51
     },
     "right": {
       "from": 45,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 51
     }
   }, {
     "left": {
       "from": 25,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 26
     },
     "right": {
       "from": 29,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 30
     }
   }, {
     "left": {
       "from": 5,
-      "line": "print('Running tests on training data')",
       "lineIdx": 89,
       "to": 6
     },
     "right": {
       "from": 9,
-      "line": "    print('Running tests on training data')",
       "lineIdx": 109,
       "to": 10
     }
   }, {
     "left": {
       "from": 61,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 68
     },
     "right": {
       "from": 61,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 68
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 6
     },
     "right": {
       "from": 4,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 6
     }
   }, {
     "left": {
       "from": 38,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 39
     },
     "right": {
       "from": 38,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 39
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    true_pos_sum = 0",
       "lineIdx": 46,
       "to": 16
     },
     "right": {
       "from": 4,
-      "line": "    true_pos_sum = 0",
       "lineIdx": 53,
       "to": 16
     }
   }, {
     "left": {
       "from": 34,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 35
     },
     "right": {
       "from": 34,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 35
     }
   }, {
     "left": {
       "from": 26,
-      "line": "            true_pos_sum += true_pos",
       "lineIdx": 66,
       "to": 27
     },
     "right": {
       "from": 26,
-      "line": "            true_pos_sum += true_pos",
       "lineIdx": 71,
       "to": 27
     }
   }, {
     "left": {
       "from": 32,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 34,
       "to": 33
     },
     "right": {
       "from": 32,
-      "line": "def get_immediate_subdirectories(a_dir):",
       "lineIdx": 43,
       "to": 33
     }
   }, {
     "left": {
       "from": 38,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 39
     },
     "right": {
       "from": 38,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 39
     }
   }, {
     "left": {
       "from": 28,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 29
     },
     "right": {
       "from": 28,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 29
     }
   }, {
     "left": {
       "from": 58,
-      "line": "model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 85,
       "to": 59
     },
     "right": {
       "from": 62,
-      "line": "    model = svm_load_model('../build-ContextBasedGeneralDiffer-Desktop_Qt_5_4_1_GCC_64bit-Debug/align.model')",
       "lineIdx": 104,
       "to": 63
     }
   }, {
     "left": {
       "from": 16,
-      "line": "    epsilon = 0.0001",
       "lineIdx": 13,
       "to": 20
     },
     "right": {
       "from": 16,
-      "line": "    epsilon = 0.0001",
       "lineIdx": 14,
       "to": 20
     }
   }, {
     "left": {
       "from": 43,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 44
     },
     "right": {
       "from": 43,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 44
     }
   }, {
     "left": {
       "from": 14,
-      "line": "def test_files(file_list_file):",
       "lineIdx": 38,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "def test_files(model, range_dict, file_list_file):",
       "lineIdx": 47,
       "to": 15
     }
   }, {
     "left": {
       "from": 7,
-      "line": "print('Running tests on test data')",
       "lineIdx": 86,
       "to": 14
     },
     "right": {
       "from": 11,
-      "line": "    print('Running tests on test data')",
       "lineIdx": 106,
       "to": 18
     }
   }, {
     "left": {
       "from": 23,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 24
     },
     "right": {
       "from": 23,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 24
     }
   }, {
     "left": {
       "from": 16,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 17
     },
     "right": {
       "from": 16,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 17
     }
   }, {
     "left": {
       "from": 40,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 55,
       "to": 46
     },
     "right": {
       "from": 40,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 62,
       "to": 46
     }
   }, {
     "left": {
       "from": 65,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 66
     },
     "right": {
       "from": 90,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 91
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 9
     },
     "right": {
       "from": 4,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 9
     }
   }, {
     "left": {
       "from": 5,
-      "line": "from svmutil import *",
       "lineIdx": 6,
       "to": 12
     },
     "right": {
       "from": 5,
-      "line": "from svmutil import *",
       "lineIdx": 6,
       "to": 12
     }
   }, {
     "left": {
       "from": 38,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 39
     },
     "right": {
       "from": 38,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 39
     }
   }, {
     "left": {
       "from": 12,
-      "line": "    lower = -1.0",
       "lineIdx": 11,
       "to": 13
     },
     "right": {
       "from": 12,
-      "line": "    lower = -1.0",
       "lineIdx": 12,
       "to": 13
     }
   }, {
     "left": {
       "from": 17,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 18
     },
     "right": {
       "from": 17,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 18
     }
   }, {
     "left": {
       "from": 53,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 54
     },
     "right": {
       "from": 53,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 54
     }
   }, {
     "left": {
       "from": 56,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 57
     },
     "right": {
       "from": 56,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 57
     }
   }, {
     "left": {
       "from": 14,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 50,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "        if len(ref_y) > 0:",
       "lineIdx": 57,
       "to": 15
     }
   }, {
     "left": {
       "from": 77,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 79
     },
     "right": {
       "from": 77,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 79
     }
   }, {
     "left": {
       "from": 5,
-      "line": "#def read_ranges(path):",
       "lineIdx": 28,
       "to": 16
     },
     "right": {
       "from": 4,
-      "line": "def read_ranges(path):",
       "lineIdx": 31,
       "to": 15
     }
   }, {
     "left": {
       "from": 24,
-      "line": "print('Running tests on test data')",
       "lineIdx": 86,
       "to": 28
     },
     "right": {
       "from": 28,
-      "line": "    print('Running tests on test data')",
       "lineIdx": 106,
       "to": 32
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            true_pos_sum += true_pos",
       "lineIdx": 66,
       "to": 24
     },
     "right": {
       "from": 12,
-      "line": "            true_pos_sum += true_pos",
       "lineIdx": 71,
       "to": 24
     }
   }, {
     "left": {
       "from": 19,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 70,
       "to": 20
     },
     "right": {
       "from": 19,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 74,
       "to": 20
     }
   }, {
     "left": {
       "from": 23,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 57,
       "to": 29
     },
     "right": {
       "from": 23,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 64,
       "to": 29
     }
   }, {
     "left": {
       "from": 28,
-      "line": "            print(\"Precision: \" + str(true_pos/(false_pos + true_pos)))",
       "lineIdx": 76,
       "to": 29
     },
     "right": {
       "from": 28,
-      "line": "            print(\"Precision: \" + str(precision))",
       "lineIdx": 84,
       "to": 29
     }
   }, {
     "left": {
       "from": 0,
-      "line": "import numpy",
       "lineIdx": 7,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "import numpy",
       "lineIdx": 7,
       "to": 6
     }
   }, {
     "left": {
       "from": 68,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 76
     },
     "right": {
       "from": 68,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 76
     }
   }, {
     "left": {
       "from": 21,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 25
     },
     "right": {
       "from": 21,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 25
     }
   }, {
     "left": {
       "from": 76,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 78
     },
     "right": {
       "from": 76,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 78
     }
   }, {
     "left": {
       "from": 20,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 27
     },
     "right": {
       "from": 20,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 27
     }
   }, {
     "left": {
       "from": 56,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 57
     },
     "right": {
       "from": 56,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 57
     }
   }, {
     "left": {
       "from": 12,
-      "line": "    n_sum = 0",
       "lineIdx": 41,
       "to": 13
     },
     "right": {
       "from": 12,
-      "line": "    n_sum = 0",
       "lineIdx": 50,
       "to": 13
     }
   }, {
     "left": {
       "from": 0,
-      "line": "test_files('../features_output/training_files.txt')",
       "lineIdx": 90,
       "to": 10
     },
     "right": {
       "from": 4,
-      "line": "    test_files(model, range_dict, '../features_output/training_files.txt')",
       "lineIdx": 110,
       "to": 14
     }
   }, {
     "left": {
       "from": 17,
-      "line": "def custom_scale(value, featureMin, featureMax):",
       "lineIdx": 10,
       "to": 22
     },
     "right": {
       "from": 17,
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 11,
       "to": 22
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 13
     },
     "right": {
       "from": 12,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 13
     }
   }, {
     "left": {
       "from": 24,
-      "line": "def custom_scale(value, featureMin, featureMax):",
       "lineIdx": 10,
       "to": 34
     },
     "right": {
       "from": 24,
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 11,
       "to": 34
     }
   }, {
     "left": {
       "from": 12,
-      "line": "            false_pos_sum += false_pos",
       "lineIdx": 65,
       "to": 25
     },
     "right": {
       "from": 12,
-      "line": "            false_pos_sum += false_pos",
       "lineIdx": 70,
       "to": 25
     }
   }, {
     "left": {
       "from": 23,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 26
     },
     "right": {
       "from": 23,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 26
     }
   }, {
     "left": {
       "from": 15,
-      "line": "    epsilon = 0.0001",
       "lineIdx": 13,
       "to": 16
     },
     "right": {
       "from": 15,
-      "line": "    epsilon = 0.0001",
       "lineIdx": 14,
       "to": 16
     }
   }, {
     "left": {
       "from": 49,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 50
     },
     "right": {
       "from": 72,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 73
     }
   }, {
     "left": {
       "from": 76,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 77
     },
     "right": {
       "from": 76,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 77
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 17,
       "to": 10
     },
     "right": {
       "from": 4,
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 18,
       "to": 10
     }
   }, {
     "left": {
       "from": 37,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 38
     },
     "right": {
       "from": 37,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 38
     }
   }, {
     "left": {
       "from": 30,
-      "line": "            print(\"Precision: \" + str(true_pos/(false_pos + true_pos)))",
       "lineIdx": 76,
       "to": 31
     },
     "right": {
       "from": 30,
-      "line": "            print(\"Precision: \" + str(precision))",
       "lineIdx": 84,
       "to": 31
     }
   }, {
     "left": {
       "from": 19,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 35
     },
     "right": {
       "from": 19,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 35
     }
   }, {
     "left": {
       "from": 22,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 15,
       "to": 23
     },
     "right": {
       "from": 22,
-      "line": "        assert false, \"invalid range\"",
       "lineIdx": 16,
       "to": 23
     }
   }, {
     "left": {
       "from": 0,
-      "line": "import sys",
       "lineIdx": 2,
       "to": 6
     },
     "right": {
       "from": 0,
-      "line": "import sys",
       "lineIdx": 2,
       "to": 6
     }
   }, {
     "left": {
       "from": 69,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 14,
       "to": 70
     },
     "right": {
       "from": 69,
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 15,
       "to": 70
     }
   }, {
     "left": {
       "from": 32,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 34
     },
     "right": {
       "from": 37,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 39
     }
   }, {
     "left": {
       "from": 24,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 25
     },
     "right": {
       "from": 24,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 25
     }
   }, {
     "left": {
       "from": 44,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 48
     },
     "right": {
       "from": 49,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 53
     }
   }, {
     "left": {
       "from": 63,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 54,
       "to": 64
     },
     "right": {
       "from": 63,
-      "line": "            #scaled_predict_y, scaled_p_acc = svm_predict(ref_y, scale_input(x), model)",
       "lineIdx": 61,
       "to": 64
     }
   }, {
     "left": {
       "from": 8,
-      "line": "print(\"\")",
       "lineIdx": 88,
       "to": 9
     },
     "right": {
       "from": 12,
-      "line": "    print(\"\")",
       "lineIdx": 108,
       "to": 13
     }
   }, {
     "left": {
       "from": 43,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 44
     },
     "right": {
       "from": 43,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 44
     }
   }, {
     "left": {
       "from": 63,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 35,
       "to": 64
     },
     "right": {
       "from": 63,
-      "line": "    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]",
       "lineIdx": 44,
       "to": 64
     }
   }, {
     "left": {
       "from": 18,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 53,
       "to": 22
     },
     "right": {
       "from": 18,
-      "line": "            #TODO this doesn't work, i acn't siwtch off auto scaling",
       "lineIdx": 60,
       "to": 22
     }
   }, {
     "left": {
       "from": 45,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 48
     },
     "right": {
       "from": 68,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 71
     }
   }, {
     "left": {
       "from": 40,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 71,
       "to": 43
     },
     "right": {
       "from": 40,
-      "line": "            print(\"Sample count:\" + str(len(calc_y)))",
       "lineIdx": 75,
       "to": 43
     }
   }, {
     "left": {
       "from": 21,
-      "line": "            #testing scale method",
       "lineIdx": 52,
       "to": 26
     },
     "right": {
       "from": 21,
-      "line": "            #testing scale method",
       "lineIdx": 59,
       "to": 26
     }
   }, {
     "left": {
       "from": 23,
-      "line": "    assert len(row) == len(mins) and len(mins) == len(maxs)",
       "lineIdx": 24,
       "to": 26
     },
     "right": {
       "from": 23,
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 25,
       "to": 26
     }
   }, {
     "left": {
       "from": 6,
-      "line": "print(\"\")",
       "lineIdx": 88,
       "to": 7
     },
     "right": {
       "from": 10,
-      "line": "    print(\"\")",
       "lineIdx": 108,
       "to": 11
     }
   }, {
     "left": {
       "from": 22,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 57,
       "to": 23
     },
     "right": {
       "from": 22,
-      "line": "            assert len(calc_y) == len(ref_y)",
       "lineIdx": 64,
       "to": 23
     }
   }, {
     "left": {
       "from": 48,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 49
     },
     "right": {
       "from": 71,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 72
     }
   }, {
     "left": {
       "from": 60,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 65
     },
     "right": {
       "from": 85,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 90
     }
   }, {
     "left": {
       "from": 58,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, x, model)",
       "lineIdx": 51,
       "to": 59
     },
     "right": {
       "from": 83,
-      "line": "            calc_y, p_acc, whatever = svm_predict(ref_y, scale_input(x, range_dict), model)",
       "lineIdx": 58,
       "to": 84
     }
   }, {
     "left": {
       "from": 7,
-      "line": "import os",
       "lineIdx": 3,
       "to": 9
     },
     "right": {
       "from": 7,
-      "line": "import os",
       "lineIdx": 3,
       "to": 9
     }
   }, {
     "left": {
       "from": 11,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 55,
       "to": 12
     },
     "right": {
       "from": 11,
-      "line": "           # assert scaled_predict_y == calc_y",
       "lineIdx": 62,
       "to": 12
     }
   }, {
     "left": {
       "from": 72,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 60,
       "to": 76
     },
     "right": {
       "from": 72,
-      "line": "            false_pos = sum(1 if elem[0] > 0 and elem[1] < 0 else 0 for elem in zipped)",
       "lineIdx": 67,
       "to": 76
     }
   }, {
     "left": {
       "from": 31,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 70,
       "to": 32
     },
     "right": {
       "from": 31,
-      "line": "            n_sum += len(calc_y)",
       "lineIdx": 74,
       "to": 32
     }
   }, {
     "left": {
       "from": 14,
-      "line": "        (value-featureMin)/",
       "lineIdx": 20,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "        (value-featureMin)/",
       "lineIdx": 21,
       "to": 15
     }
   }, {
     "left": {
       "from": 33,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 34
     },
     "right": {
       "from": 33,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 34
     }
   }, {
     "left": {
       "from": 23,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 79,
       "to": 24
     },
     "right": {
       "from": 23,
-      "line": "    print(\"Sample count:\" + str(n_sum))",
       "lineIdx": 91,
       "to": 24
     }
   }, {
     "left": {
       "from": 40,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 55
     },
     "right": {
       "from": 40,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 55
     }
   }, {
     "left": {
       "from": 41,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 37,
       "to": 56
     },
     "right": {
       "from": 41,
-      "line": "#dirs = get_immediate_subdirectories('../features_output/')",
       "lineIdx": 46,
       "to": 56
     }
   }, {
     "left": {
       "from": 14,
-      "line": "    lower = -1.0",
       "lineIdx": 11,
       "to": 15
     },
     "right": {
       "from": 14,
-      "line": "    lower = -1.0",
       "lineIdx": 12,
       "to": 15
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    n_sum = 0",
       "lineIdx": 41,
       "to": 9
     },
     "right": {
       "from": 4,
-      "line": "    n_sum = 0",
       "lineIdx": 50,
       "to": 9
     }
   }, {
     "left": {
       "from": 35,
-      "line": "            all_ref_neg = sum(1 if elem < 0 else 0 for elem in ref_y)",
       "lineIdx": 62,
       "to": 39
     },
     "right": {
       "from": 40,
-      "line": "            actual_positives = sum(1 if elem > 0 else 0 for elem in ref_y)",
       "lineIdx": 69,
       "to": 44
     }
   }, {
     "left": {
       "from": 23,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 48,
       "to": 24
     },
     "right": {
       "from": 23,
-      "line": "        print(\"Testing:\" + dir)",
       "lineIdx": 55,
       "to": 24
     }
   }, {
     "left": {
       "from": 0,
-      "line": "def custom_scale(value, featureMin, featureMax):",
       "lineIdx": 10,
       "to": 3
     },
     "right": {
       "from": 0,
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 11,
       "to": 3
     }
   }, {
     "left": {
       "from": 3,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 6
     },
     "right": {
       "from": 3,
-      "line": "#!/usr/bin/env python3.4",
       "lineIdx": 0,
       "to": 6
     }
   }, {
     "left": {
       "from": 0,
-      "line": "print(\"\")",
       "lineIdx": 88,
       "to": 5
     },
     "right": {
       "from": 4,
-      "line": "    print(\"\")",
       "lineIdx": 108,
       "to": 9
     }
   }, {
     "left": {
       "from": 45,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 40,
       "to": 46
     },
     "right": {
       "from": 45,
-      "line": "        dirs = f.read().strip(\"[]\\n\").split(\", \")",
       "lineIdx": 49,
       "to": 46
     }
   }, {
     "left": {
       "from": 4,
-      "line": "    assert len(row) == len(mins) and len(mins) == len(maxs)",
       "lineIdx": 24,
       "to": 10
     },
     "right": {
       "from": 4,
-      "line": "    assert len(row) == len(range_dict)",
       "lineIdx": 25,
       "to": 10
     }
   }, {
     "left": {
       "from": 18,
-      "line": "    false_pos_sum = 0",
       "lineIdx": 43,
       "to": 19
     },
     "right": {
       "from": 25,
-      "line": "    actual_positives_sum = 0",
       "lineIdx": 52,
       "to": 26
     }
   }, {
     "left": {
       "from": 16,
-      "line": "def custom_scale(value, featureMin, featureMax):",
       "lineIdx": 10,
       "to": 17
     },
     "right": {
       "from": 16,
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 11,
       "to": 17
     }
   }, {
     "left": {
       "from": 10,
-      "line": "    upper = 1.0",
       "lineIdx": 12,
       "to": 11
     },
     "right": {
       "from": 10,
-      "line": "    upper = 1.0",
       "lineIdx": 13,
       "to": 11
     }
   }, {
     "left": {
       "from": 29,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 61,
       "to": 31
     },
     "right": {
       "from": 29,
-      "line": "            true_pos = sum(1 if elem[0] > 0 and elem[1] > 0 else 0 for elem in zipped)",
       "lineIdx": 68,
       "to": 31
     }
   }, {
     "left": {
       "from": 67,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 49,
       "to": 68
     },
     "right": {
       "from": 67,
-      "line": "        ref_y, x = svm_read_problem('../features_output/' + dir + '/features.txt')",
       "lineIdx": 56,
       "to": 68
     }
   }, {
     "left": {
       "from": 11,
-      "line": "test_files('../features_output/testing_files.txt')",
       "lineIdx": 87,
       "to": 12
     },
     "right": {
       "from": 34,
-      "line": "    test_files(model, range_dict, '../features_output/testing_files.txt')",
       "lineIdx": 107,
       "to": 35
     }

@@ -1,806 +1,682 @@
 {
   "matches": [{
     "left": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 10,
       "to": 25
     },
     "right": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 10,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 44,
       "to": 49
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 44,
       "to": 49
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "{",
       "lineIdx": 6,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "{",
       "lineIdx": 6,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 68,
       "to": 71
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 68,
       "to": 71
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 72,
       "to": 75
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 72,
       "to": 75
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 55,
       "to": 56
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 55,
       "to": 56
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 7,
       "to": 17
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 7,
       "to": 17
     }
   }, {
     "left": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 63,
       "to": 64
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 73,
       "to": 74
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 56,
       "to": 60
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 66,
       "to": 70
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 32,
       "to": 37
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 32,
       "to": 37
     }
   }, {
     "left": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 10,
       "to": 13
     },
     "right": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 10,
       "to": 13
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 10,
       "to": 17
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 10,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 39,
       "to": 43
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 39,
       "to": 43
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 19,
       "to": 31
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 19,
       "to": 31
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 21,
       "to": 27
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 21,
       "to": 27
     }
   }, {
     "left": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 62,
       "to": 63
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 71,
       "to": 72
     }
   }, {
     "left": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "}",
       "lineIdx": 8,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "}",
       "lineIdx": 8,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 18,
       "to": 35
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 18,
       "to": 35
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 63,
       "to": 64
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 49,
       "to": 50
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 49,
       "to": 50
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 56,
       "to": 57
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 56,
       "to": 57
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 51,
       "to": 54
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 51,
       "to": 54
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 66,
       "to": 67
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 66,
       "to": 67
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 0,
       "to": 6
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 0,
       "to": 6
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 38,
       "to": 55
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 38,
       "to": 55
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 9,
       "to": 20
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 9,
       "to": 20
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 75,
       "to": 76
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 75,
       "to": 76
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "#include \"trivialfeatures.h\"",
       "lineIdx": 0,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 29,
       "to": 38
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 29,
       "to": 38
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 61,
       "to": 62
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 57,
       "to": 66
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 57,
       "to": 66
     }
   }, {
     "left": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 14,
       "to": 22
     },
     "right": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 14,
       "to": 22
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 2,
       "to": 8
     }
   }, {
     "left": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 77,
       "to": 82
     },
     "right": {
-      "line": "double LineLength::sidedCompute(const OneToOneAlignment &alignment, int idx) const",
       "lineIdx": 5,
       "from": 77,
       "to": 82
     }
   }, {
     "left": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).size());",
       "lineIdx": 7,
       "from": 54,
       "to": 55
     },
     "right": {
-      "line": "  return static_cast<double>(alignment.line(mSide, idx).trimmed().size());",
       "lineIdx": 7,
       "from": 54,
       "to": 55
     }
   }, {
     "left": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "#include \"mix/diffside.h\"",
       "lineIdx": 2,
       "from": 24,
       "to": 25

@@ -1,7709 +1,6523 @@
 {
   "matches": [{
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 2,
       "to": 6
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 2,
       "to": 6
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 66,
       "to": 67
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 66,
       "to": 67
     }
   }, {
     "left": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 18,
       "to": 26
     },
     "right": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 18,
       "to": 26
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "  };",
       "lineIdx": 47,
       "from": 3,
       "to": 4
     },
     "right": {
-      "line": "  };",
       "lineIdx": 47,
       "from": 3,
       "to": 4
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 19,
       "to": 46
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 19,
       "to": 46
     }
   }, {
     "left": {
-      "line": "class MLSample {",
       "lineIdx": 18,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "class MLSample {",
       "lineIdx": 18,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 20,
       "to": 36
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 33,
       "to": 49
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 75,
       "to": 87
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 75,
       "to": 87
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 42,
       "to": 43
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 42,
       "to": 43
     }
   }, {
     "left": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 40,
       "to": 49
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 40,
       "to": 49
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 20,
       "to": 24
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 20,
       "to": 24
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 96,
       "to": 97
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 96,
       "to": 97
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 74,
       "to": 93
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 74,
       "to": 93
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 2,
       "to": 9
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 2,
       "to": 9
     }
   }, {
     "left": {
-      "line": "class svm_node;",
       "lineIdx": 16,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "class svm_node;",
       "lineIdx": 16,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 74,
       "to": 81
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 74,
       "to": 81
     }
   }, {
     "left": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 10,
       "to": 17
     },
     "right": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 10,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 43,
       "to": 51
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 43,
       "to": 51
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 19,
       "to": 29
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 19,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "  return result;",
       "lineIdx": 68,
       "from": 9,
       "to": 15
     },
     "right": {
-      "line": "  return result;",
       "lineIdx": 68,
       "from": 9,
       "to": 15
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 41,
       "to": 47
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 41,
       "to": 47
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 9,
       "to": 21
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 9,
       "to": 21
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 72,
       "to": 73
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 72,
       "to": 73
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 14,
       "to": 19
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 14,
       "to": 19
     }
   }, {
     "left": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 16,
       "to": 23
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 16,
       "to": 23
     }
   }, {
     "left": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 41,
       "to": 46
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 41,
       "to": 46
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 3,
       "to": 4
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 3,
       "to": 4
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 6,
       "to": 12
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 6,
       "to": 12
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 6,
       "to": 12
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 6,
       "to": 12
     }
   }, {
     "left": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 7,
       "to": 20
     },
     "right": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 7,
       "to": 20
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 73,
       "to": 78
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 86,
       "to": 91
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 72,
       "to": 73
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 72,
       "to": 73
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 45,
       "to": 50
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 45,
       "to": 50
     }
   }, {
     "left": {
-      "line": "class MLSample {",
       "lineIdx": 18,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "class MLSample {",
       "lineIdx": 18,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 42,
       "to": 49
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 42,
       "to": 49
     }
   }, {
     "left": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 14,
       "to": 21
     },
     "right": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 14,
       "to": 21
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 21,
       "to": 27
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 21,
       "to": 27
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 64,
       "to": 71
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 64,
       "to": 71
     }
   }, {
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 34,
       "to": 39
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 34,
       "to": 39
     }
   }, {
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    result += endLine;",
       "lineIdx": 66,
       "from": 14,
       "to": 21
     },
     "right": {
-      "line": "    result += endLine;",
       "lineIdx": 66,
       "from": 14,
       "to": 21
     }
   }, {
     "left": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 8,
       "to": 20
     },
     "right": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 8,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "{",
       "lineIdx": 72,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "{",
       "lineIdx": 72,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 103,
       "to": 104
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 103,
       "to": 104
     }
   }, {
     "left": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 51,
       "to": 56
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 51,
       "to": 56
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 59,
       "to": 60
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 59,
       "to": 60
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 14,
       "to": 26
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 14,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 8,
       "to": 13
     },
     "right": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 8,
       "to": 13
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 21,
       "to": 27
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 21,
       "to": 27
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 95,
       "to": 102
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 95,
       "to": 102
     }
   }, {
     "left": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 7,
       "to": 15
     },
     "right": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 7,
       "to": 15
     }
   }, {
     "left": {
-      "line": "  };",
       "lineIdx": 47,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "  };",
       "lineIdx": 47,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 121,
       "to": 124
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 121,
       "to": 124
     }
   }, {
     "left": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 18,
       "to": 27
     },
     "right": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 18,
       "to": 27
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 21,
       "to": 34
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 21,
       "to": 34
     }
   }, {
     "left": {
-      "line": "    result += endLine;",
       "lineIdx": 66,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "    result += endLine;",
       "lineIdx": 66,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "public:",
       "lineIdx": 19,
       "from": 0,
       "to": 6
     },
     "right": {
-      "line": "public:",
       "lineIdx": 19,
       "from": 0,
       "to": 6
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 28,
       "to": 33
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 28,
       "to": 33
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 6,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 6,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 2,
       "to": 6
     },
     "right": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 2,
       "to": 6
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 30,
       "to": 37
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 30,
       "to": 37
     }
   }, {
     "left": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 57,
       "to": 58
     },
     "right": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 57,
       "to": 58
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  extern const FeatureExtractor standardExtractor;",
       "lineIdx": 73,
       "from": 9,
       "to": 14
     },
     "right": {
-      "line": "  extern const FeatureExtractor standardExtractor;",
       "lineIdx": 73,
       "from": 9,
       "to": 14
     }
   }, {
     "left": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 6,
       "to": 17
     },
     "right": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 6,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 40,
       "to": 46
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 40,
       "to": 46
     }
   }, {
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "class OneToOneAlignment;",
       "lineIdx": 13,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "class OneToOneAlignmentWithAmbiguity;",
       "lineIdx": 13,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 61,
       "to": 71
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 61,
       "to": 71
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 34,
       "to": 39
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 34,
       "to": 39
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 48,
       "to": 49
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 85,
       "to": 89
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 85,
       "to": 89
     }
   }, {
     "left": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 176,
       "to": 177
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 189,
       "to": 190
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 80,
       "to": 81
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 80,
       "to": 81
     }
   }, {
     "left": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  const double mLow;",
       "lineIdx": 31,
       "from": 2,
       "to": 7
     },
     "right": {
-      "line": "  const double mLow;",
       "lineIdx": 31,
       "from": 2,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 47,
       "to": 52
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 47,
       "to": 52
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 49,
       "to": 50
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 49,
       "to": 50
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 28,
       "to": 37
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 28,
       "to": 37
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 53,
       "to": 54
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 53,
       "to": 54
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 62,
       "to": 63
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 62,
       "to": 63
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 67,
       "to": 72
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 67,
       "to": 72
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "struct FeatureRange {",
       "lineIdx": 30,
       "from": 0,
       "to": 6
     },
     "right": {
-      "line": "struct FeatureRange {",
       "lineIdx": 30,
       "from": 0,
       "to": 6
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 60,
       "to": 66
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 60,
       "to": 66
     }
   }, {
     "left": {
-      "line": "  return result;",
       "lineIdx": 68,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "  return result;",
       "lineIdx": 68,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    result += endLine;",
       "lineIdx": 66,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    result += endLine;",
       "lineIdx": 66,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    int columnIdx = 1;",
       "lineIdx": 60,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "    int columnIdx = 1;",
       "lineIdx": 60,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "class svm_node;",
       "lineIdx": 16,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "class svm_node;",
       "lineIdx": 16,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 9,
       "to": 17
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 9,
       "to": 17
     }
   }, {
     "left": {
-      "line": "namespace MLPipeline",
       "lineIdx": 71,
       "from": 0,
       "to": 9
     },
     "right": {
-      "line": "namespace MLPipeline",
       "lineIdx": 71,
       "from": 0,
       "to": 9
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 62,
       "to": 63
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 62,
       "to": 63
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "  bool mSame;",
       "lineIdx": 22,
       "from": 2,
       "to": 6
     },
     "right": {
-      "line": "  bool mSame;",
       "lineIdx": 22,
       "from": 2,
       "to": 6
     }
   }, {
     "left": {
-      "line": "class MLSample {",
       "lineIdx": 18,
       "from": 6,
       "to": 14
     },
     "right": {
-      "line": "class MLSample {",
       "lineIdx": 18,
       "from": 6,
       "to": 14
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 50,
       "to": 51
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 132,
       "to": 133
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 145,
       "to": 146
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 71,
       "to": 72
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 71,
       "to": 72
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 9,
       "to": 17
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 9,
       "to": 17
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 6,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 6,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 175,
       "to": 176
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 188,
       "to": 189
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 4,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 10,
       "to": 17
     },
     "right": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 10,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 22,
       "to": 28
     },
     "right": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 22,
       "to": 28
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 105,
       "to": 107
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 105,
       "to": 107
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 5,
       "to": 12
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 5,
       "to": 12
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 9,
       "to": 20
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 9,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 80,
       "to": 85
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 93,
       "to": 98
     }
   }, {
     "left": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 14,
       "to": 20
     },
     "right": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 14,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 2,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 121,
       "to": 132
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 134,
       "to": 145
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 76,
       "to": 77
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 76,
       "to": 77
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 108,
       "to": 114
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 108,
       "to": 114
     }
   }, {
     "left": {
-      "line": "{",
       "lineIdx": 53,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "{",
       "lineIdx": 53,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  return result;",
       "lineIdx": 68,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "  return result;",
       "lineIdx": 68,
       "from": 2,
       "to": 8
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  const double mHigh;",
       "lineIdx": 32,
       "from": 2,
       "to": 7
     },
     "right": {
-      "line": "  const double mHigh;",
       "lineIdx": 32,
       "from": 2,
       "to": 7
     }
   }, {
     "left": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "#include <QString>",
       "lineIdx": 5,
       "from": 10,
       "to": 17
     },
     "right": {
-      "line": "#include <QString>",
       "lineIdx": 5,
       "from": 10,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 50,
       "to": 51
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 90,
       "to": 94
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 90,
       "to": 94
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "  const double mLow;",
       "lineIdx": 31,
       "from": 8,
       "to": 14
     },
     "right": {
-      "line": "  const double mLow;",
       "lineIdx": 31,
       "from": 8,
       "to": 14
     }
   }, {
     "left": {
-      "line": "struct SVMModelDeleter {",
       "lineIdx": 35,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "struct SVMModelDeleter {",
       "lineIdx": 35,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 42,
       "to": 43
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 42,
       "to": 43
     }
   }, {
     "left": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 26,
       "to": 34
     },
     "right": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 26,
       "to": 34
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 11,
       "to": 16
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 11,
       "to": 16
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 26,
       "to": 32
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 26,
       "to": 32
     }
   }, {
     "left": {
-      "line": "};",
       "lineIdx": 37,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "};",
       "lineIdx": 37,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 54,
       "to": 60
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 54,
       "to": 60
     }
   }, {
     "left": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 2,
       "to": 5
     },
     "right": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 2,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 54,
       "to": 55
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 54,
       "to": 55
     }
   }, {
     "left": {
-      "line": "struct SVMModelDeleter {",
       "lineIdx": 35,
       "from": 0,
       "to": 6
     },
     "right": {
-      "line": "struct SVMModelDeleter {",
       "lineIdx": 35,
       "from": 0,
       "to": 6
     }
   }, {
     "left": {
-      "line": "      ++columnIdx;",
       "lineIdx": 64,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "      ++columnIdx;",
       "lineIdx": 64,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 50,
       "to": 51
     }
   }, {
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 18,
       "to": 23
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 18,
       "to": 23
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 2,
       "to": 10
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 2,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 54,
       "to": 62
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 54,
       "to": 62
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 30,
       "to": 36
     },
     "right": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 30,
       "to": 36
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 1,
       "to": 7
     },
     "right": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 1,
       "to": 7
     }
   }, {
     "left": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "}",
       "lineIdx": 80,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "}",
       "lineIdx": 80,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 14,
       "from": 6,
       "to": 22
     },
     "right": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 14,
       "from": 6,
       "to": 22
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 78,
       "to": 79
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 91,
       "to": 92
     }
   }, {
     "left": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 11,
       "to": 21
     },
     "right": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 11,
       "to": 21
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 6,
       "to": 7
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 45,
       "to": 46
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 45,
       "to": 46
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 30,
       "to": 37
     },
     "right": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 30,
       "to": 37
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 36,
       "to": 41
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 36,
       "to": 41
     }
   }, {
     "left": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 10,
       "to": 16
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 10,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 42,
       "to": 43
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 42,
       "to": 43
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 123,
       "to": 124
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 123,
       "to": 124
     }
   }, {
     "left": {
-      "line": "#include <QString>",
       "lineIdx": 5,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include <QString>",
       "lineIdx": 5,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 0,
       "to": 7
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 0,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 87,
       "to": 88
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 87,
       "to": 88
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 86,
       "to": 102
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 99,
       "to": 115
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 55,
       "to": 63
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 55,
       "to": 63
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "  const double mHigh;",
       "lineIdx": 32,
       "from": 15,
       "to": 20
     },
     "right": {
-      "line": "  const double mHigh;",
       "lineIdx": 32,
       "from": 15,
       "to": 20
     }
   }, {
     "left": {
-      "line": "};",
       "lineIdx": 27,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "};",
       "lineIdx": 27,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 35,
       "to": 39
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 35,
       "to": 39
     }
   }, {
     "left": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 2,
       "to": 9
     },
     "right": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 2,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 48,
       "to": 54
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 48,
       "to": 54
     }
   }, {
     "left": {
-      "line": "namespace std {",
       "lineIdx": 40,
       "from": 0,
       "to": 9
     },
     "right": {
-      "line": "namespace std {",
       "lineIdx": 40,
       "from": 0,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 74,
       "to": 75
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 74,
       "to": 75
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 10,
       "to": 13
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 10,
       "to": 13
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 32,
       "to": 36
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 32,
       "to": 36
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 23,
       "to": 29
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 23,
       "to": 29
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 25,
       "to": 30
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 25,
       "to": 30
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 21,
       "to": 25
     },
     "right": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 21,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 160,
       "to": 161
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 173,
       "to": 174
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 112,
       "to": 113
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 112,
       "to": 113
     }
   }, {
     "left": {
-      "line": "      ++columnIdx;",
       "lineIdx": 64,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "      ++columnIdx;",
       "lineIdx": 64,
       "from": 6,
       "to": 7
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 10,
       "to": 23
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 10,
       "to": 23
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 40,
       "to": 46
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 40,
       "to": 46
     }
   }, {
     "left": {
-      "line": "  }",
       "lineIdx": 67,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "  }",
       "lineIdx": 67,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "  const double mLow;",
       "lineIdx": 31,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "  const double mLow;",
       "lineIdx": 31,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 7,
       "to": 15
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 7,
       "to": 15
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 14,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 14,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  {",
       "lineIdx": 42,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "  {",
       "lineIdx": 42,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 62,
       "to": 63
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 62,
       "to": 63
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 37,
       "to": 42
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 50,
       "to": 55
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 154,
       "to": 166
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 167,
       "to": 179
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 24,
       "to": 32
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 24,
       "to": 32
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 56,
       "to": 57
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 69,
       "to": 70
     }
   }, {
     "left": {
-      "line": "    {",
       "lineIdx": 44,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "    {",
       "lineIdx": 44,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 114,
       "to": 123
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 114,
       "to": 123
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 90,
       "to": 95
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 90,
       "to": 95
     }
   }, {
     "left": {
-      "line": "#include <QString>",
       "lineIdx": 5,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "#include <QString>",
       "lineIdx": 5,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 2,
       "to": 8
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  extern const FeatureExtractor standardExtractor;",
       "lineIdx": 73,
       "from": 32,
       "to": 49
     },
     "right": {
-      "line": "  extern const FeatureExtractor standardExtractor;",
       "lineIdx": 73,
       "from": 32,
       "to": 49
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 13,
       "to": 16
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 13,
       "to": 16
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 66,
       "to": 67
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 66,
       "to": 67
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 9,
       "to": 17
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 9,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 57,
       "to": 58
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 57,
       "to": 58
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 97,
       "to": 98
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 97,
       "to": 98
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 169,
       "to": 175
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 182,
       "to": 188
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 74,
       "to": 75
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 74,
       "to": 75
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 22,
       "to": 35
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 22,
       "to": 35
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 36,
       "to": 42
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 36,
       "to": 42
     }
   }, {
     "left": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 23,
       "to": 33
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 23,
       "to": 33
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 2,
       "to": 8
     }
   }, {
     "left": {
-      "line": "#include <QString>",
       "lineIdx": 5,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include <QString>",
       "lineIdx": 5,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "    }",
       "lineIdx": 46,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "    }",
       "lineIdx": 46,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 17,
       "to": 20
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 17,
       "to": 20
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 45,
       "to": 46
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 45,
       "to": 46
     }
   }, {
     "left": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 1,
       "to": 7
     },
     "right": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 1,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 139,
       "to": 140
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 152,
       "to": 153
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 84,
       "to": 85
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 84,
       "to": 85
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "};",
       "lineIdx": 33,
       "from": 1,
       "to": 2
     },
     "right": {
-      "line": "};",
       "lineIdx": 33,
       "from": 1,
       "to": 2
     }
   }, {
     "left": {
-      "line": "  bool mSame;",
       "lineIdx": 22,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "  bool mSame;",
       "lineIdx": 22,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 42,
       "to": 52
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 42,
       "to": 52
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  extern const FeatureExtractor standardExtractor;",
       "lineIdx": 73,
       "from": 15,
       "to": 31
     },
     "right": {
-      "line": "  extern const FeatureExtractor standardExtractor;",
       "lineIdx": 73,
       "from": 15,
       "to": 31
     }
   }, {
     "left": {
-      "line": "};",
       "lineIdx": 27,
       "from": 1,
       "to": 2
     },
     "right": {
-      "line": "};",
       "lineIdx": 27,
       "from": 1,
       "to": 2
     }
   }, {
     "left": {
-      "line": "  const double mHigh;",
       "lineIdx": 32,
       "from": 8,
       "to": 14
     },
     "right": {
-      "line": "  const double mHigh;",
       "lineIdx": 32,
       "from": 8,
       "to": 14
     }
   }, {
     "left": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 4,
       "to": 11
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 4,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 63,
       "to": 64
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 63,
       "to": 64
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 153,
       "to": 154
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 166,
       "to": 167
     }
   }, {
     "left": {
-      "line": "namespace std {",
       "lineIdx": 40,
       "from": 10,
       "to": 13
     },
     "right": {
-      "line": "namespace std {",
       "lineIdx": 40,
       "from": 10,
       "to": 13
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 49,
       "to": 50
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 49,
       "to": 50
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 16,
       "to": 19
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 16,
       "to": 19
     }
   }, {
     "left": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 57,
       "to": 63
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 57,
       "to": 63
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 42,
       "to": 43
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 42,
       "to": 43
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 37,
       "to": 42
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 37,
       "to": 42
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 68,
       "to": 73
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 68,
       "to": 73
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 54,
       "to": 58
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 54,
       "to": 58
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 6,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 6,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 54,
       "to": 55
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 54,
       "to": 55
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 31,
       "to": 40
     },
     "right": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 31,
       "to": 40
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 35,
       "to": 41
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 35,
       "to": 41
     }
   }, {
     "left": {
-      "line": "#include <memory>",
       "lineIdx": 7,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include <memory>",
       "lineIdx": 7,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 23,
       "to": 29
     },
     "right": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 23,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  }",
       "lineIdx": 25,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "  }",
       "lineIdx": 25,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 104,
       "to": 113
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 117,
       "to": 126
     }
   }, {
     "left": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 82,
       "from": 10,
       "to": 22
     },
     "right": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 82,
       "from": 10,
       "to": 22
     }
   }, {
     "left": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 167,
       "to": 168
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 180,
       "to": 181
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 63,
       "to": 64
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 63,
       "to": 64
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 68,
       "to": 74
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 68,
       "to": 74
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 19,
       "to": 24
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 19,
       "to": 24
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 134,
       "to": 139
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 147,
       "to": 152
     }
   }, {
     "left": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 6,
       "to": 11
     },
     "right": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 6,
       "to": 11
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 63,
       "to": 64
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 63,
       "to": 64
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 72,
       "to": 73
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 72,
       "to": 73
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 6,
       "from": 10,
       "to": 23
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 6,
       "from": 10,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    result += endLine;",
       "lineIdx": 66,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "    result += endLine;",
       "lineIdx": 66,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 8,
       "to": 13
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 8,
       "to": 13
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 58,
       "to": 62
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 58,
       "to": 62
     }
   }, {
     "left": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 7,
       "to": 8
     },
     "right": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 7,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 5,
       "to": 6
     },
     "right": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 5,
       "to": 6
     }
   }, {
     "left": {
-      "line": "  extern const FeatureExtractor standardExtractor;",
       "lineIdx": 73,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "  extern const FeatureExtractor standardExtractor;",
       "lineIdx": 73,
       "from": 2,
       "to": 8
     }
   }, {
     "left": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 82,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 82,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 48,
       "to": 49
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 22,
       "to": 30
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 22,
       "to": 30
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 90,
       "to": 96
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 90,
       "to": 96
     }
   }, {
     "left": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 2,
       "to": 10
     },
     "right": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 2,
       "to": 10
     }
   }, {
     "left": {
-      "line": "#include <QString>",
       "lineIdx": 5,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include <QString>",
       "lineIdx": 5,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  const double mHigh;",
       "lineIdx": 32,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  const double mHigh;",
       "lineIdx": 32,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "}",
       "lineIdx": 48,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "}",
       "lineIdx": 48,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 14,
       "to": 21
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 14,
       "to": 21
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 32,
       "to": 41
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 32,
       "to": 41
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 113,
       "to": 114
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 126,
       "to": 127
     }
   }, {
     "left": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 5,
       "to": 6
     },
     "right": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 5,
       "to": 6
     }
   }, {
     "left": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#ifndef MLPIPELINE_H",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 102,
       "to": 103
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 115,
       "to": 116
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 45,
       "to": 52
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 45,
       "to": 52
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 30,
       "to": 35
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 30,
       "to": 35
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 21,
       "to": 27
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 21,
       "to": 27
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 88,
       "to": 89
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 88,
       "to": 89
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 116,
       "to": 120
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 116,
       "to": 120
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 44,
       "to": 49
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 44,
       "to": 49
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 25,
       "to": 31
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 25,
       "to": 31
     }
   }, {
     "left": {
-      "line": "};",
       "lineIdx": 37,
       "from": 1,
       "to": 2
     },
     "right": {
-      "line": "};",
       "lineIdx": 37,
       "from": 1,
       "to": 2
     }
   }, {
     "left": {
-      "line": "struct FeatureRange {",
       "lineIdx": 30,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "struct FeatureRange {",
       "lineIdx": 30,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 82,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 82,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "#include <memory>",
       "lineIdx": 7,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include <memory>",
       "lineIdx": 7,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 59,
       "to": 64
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 59,
       "to": 64
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 40,
       "to": 47
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 40,
       "to": 47
     }
   }, {
     "left": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "  template <> struct hash<MLSample>",
       "lineIdx": 41,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 41,
       "to": 44
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 41,
       "to": 44
     }
   }, {
     "left": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 21,
       "to": 28
     },
     "right": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 21,
       "to": 28
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 53,
       "to": 54
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 53,
       "to": 54
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 69,
       "to": 73
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 69,
       "to": 73
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 125,
       "to": 130
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 125,
       "to": 130
     }
   }, {
     "left": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 82,
       "from": 7,
       "to": 8
     },
     "right": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 82,
       "from": 7,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 49,
       "to": 53
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 49,
       "to": 53
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 13,
       "to": 17
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 13,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 81,
       "to": 82
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 81,
       "to": 82
     }
   }, {
     "left": {
-      "line": "class svm_model;",
       "lineIdx": 15,
       "from": 6,
       "to": 15
     },
     "right": {
-      "line": "class svm_model;",
       "lineIdx": 15,
       "from": 6,
       "to": 15
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 81,
       "to": 82
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 81,
       "to": 82
     }
   }, {
     "left": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 12,
       "to": 20
     },
     "right": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 12,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 11,
       "to": 19
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 11,
       "to": 19
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 38,
       "to": 40
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 38,
       "to": 40
     }
   }, {
     "left": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 38,
       "to": 47
     },
     "right": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 38,
       "to": 47
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 23,
       "to": 26
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 23,
       "to": 26
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 42,
       "to": 47
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 42,
       "to": 47
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "class svm_model;",
       "lineIdx": 15,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "class svm_model;",
       "lineIdx": 15,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "namespace std {",
       "lineIdx": 40,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "namespace std {",
       "lineIdx": 40,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 20,
       "to": 30
     },
     "right": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 20,
       "to": 30
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 102,
       "to": 103
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 102,
       "to": 103
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 31,
       "to": 40
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 31,
       "to": 40
     }
   }, {
     "left": {
-      "line": "    }",
       "lineIdx": 65,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "    }",
       "lineIdx": 65,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 63,
       "to": 64
     }
   }, {
     "left": {
-      "line": "#include <memory>",
       "lineIdx": 7,
       "from": 10,
       "to": 16
     },
     "right": {
-      "line": "#include <memory>",
       "lineIdx": 7,
       "from": 10,
       "to": 16
     }
   }, {
     "left": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "  for(const MLSample& sample: samples) {",
       "lineIdx": 58,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 55,
       "to": 56
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 55,
       "to": 56
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "#include <memory>",
       "lineIdx": 7,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include <memory>",
       "lineIdx": 7,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 14,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "class FeatureExtractor;",
       "lineIdx": 14,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 6,
       "to": 9
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 6,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 29,
       "to": 32
     },
     "right": {
-      "line": "  void operator()(svm_model* ptr);",
       "lineIdx": 36,
       "from": 29,
       "to": 32
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "    int columnIdx = 1;",
       "lineIdx": 60,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "    int columnIdx = 1;",
       "lineIdx": 60,
       "from": 4,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 83,
       "to": 88
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 83,
       "to": 88
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 51,
       "to": 58
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 51,
       "to": 58
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 79,
       "to": 80
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 79,
       "to": 80
     }
   }, {
     "left": {
-      "line": "      ++columnIdx;",
       "lineIdx": 64,
       "from": 7,
       "to": 8
     },
     "right": {
-      "line": "      ++columnIdx;",
       "lineIdx": 64,
       "from": 7,
       "to": 8
     }
   }, {
     "left": {
-      "line": "    result += endLine;",
       "lineIdx": 66,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    result += endLine;",
       "lineIdx": 66,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "class OneToOneAlignment;",
       "lineIdx": 13,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "class OneToOneAlignmentWithAmbiguity;",
       "lineIdx": 13,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 82,
       "from": 1,
       "to": 6
     },
     "right": {
-      "line": "#endif // MLPIPELINE_H",
       "lineIdx": 82,
       "from": 1,
       "to": 6
     }
   }, {
     "left": {
-      "line": "  extern const FeatureExtractor standardExtractor;",
       "lineIdx": 73,
       "from": 49,
       "to": 50
     },
     "right": {
-      "line": "  extern const FeatureExtractor standardExtractor;",
       "lineIdx": 73,
       "from": 49,
       "to": 50
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 36,
       "to": 43
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 36,
       "to": 43
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 11,
       "to": 17
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 11,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "struct SVMModelDeleter {",
       "lineIdx": 35,
       "from": 7,
       "to": 22
     },
     "right": {
-      "line": "struct SVMModelDeleter {",
       "lineIdx": 35,
       "from": 7,
       "to": 22
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 6,
       "to": 9
     },
     "right": {
-      "line": "using std::vector;",
       "lineIdx": 10,
       "from": 6,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 71,
       "to": 72
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 71,
       "to": 72
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 62,
       "to": 67
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 62,
       "to": 67
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 115,
       "to": 120
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 128,
       "to": 133
     }
   }, {
     "left": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "  bool operator==(const MLSample& other) const {",
       "lineIdx": 23,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 3,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 114,
       "to": 115
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 114,
       "to": 115
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "    int columnIdx = 1;",
       "lineIdx": 60,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    int columnIdx = 1;",
       "lineIdx": 60,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 6,
       "to": 12
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 6,
       "to": 12
     }
   }, {
     "left": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 8,
       "to": 20
     },
     "right": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 8,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 30,
       "to": 36
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 30,
       "to": 36
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 53,
       "to": 60
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 53,
       "to": 60
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 65,
       "to": 67
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 65,
       "to": 67
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 0,
       "to": 8
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 0,
       "to": 8
     }
   }, {
     "left": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 48,
       "to": 62
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 48,
       "to": 62
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 58,
       "to": 63
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 71,
       "to": 76
     }
   }, {
     "left": {
-      "line": "namespace MLPipeline",
       "lineIdx": 71,
       "from": 10,
       "to": 20
     },
     "right": {
-      "line": "namespace MLPipeline",
       "lineIdx": 71,
       "from": 10,
       "to": 20
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 141,
       "to": 146
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 154,
       "to": 159
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 66,
       "to": 80
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 66,
       "to": 80
     }
   }, {
     "left": {
-      "line": "    int columnIdx = 1;",
       "lineIdx": 60,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    int columnIdx = 1;",
       "lineIdx": 60,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 43,
       "to": 50
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 56,
       "to": 63
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 2,
       "to": 4
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 2,
       "to": 4
     }
   }, {
     "left": {
-      "line": "class svm_node;",
       "lineIdx": 16,
       "from": 6,
       "to": 14
     },
     "right": {
-      "line": "class svm_node;",
       "lineIdx": 16,
       "from": 6,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 28,
       "to": 36
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 28,
       "to": 36
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 52,
       "to": 56
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 65,
       "to": 69
     }
   }, {
     "left": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 96,
       "to": 112
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 96,
       "to": 112
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "#include <unordered_map>",
       "lineIdx": 6,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include <unordered_map>",
       "lineIdx": 6,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 50,
       "to": 55
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 50,
       "to": 55
     }
   }, {
     "left": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "  vector<svm_node> scaleNodes(const vector<svm_node>& sample, const vector<FeatureRange>& minMax);",
       "lineIdx": 77,
       "from": 2,
       "to": 8
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "  bool mSame;",
       "lineIdx": 22,
       "from": 7,
       "to": 12
     },
     "right": {
-      "line": "  bool mSame;",
       "lineIdx": 22,
       "from": 7,
       "to": 12
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 9,
       "to": 17
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 9,
       "to": 17
     }
   }, {
     "left": {
-      "line": "class svm_model;",
       "lineIdx": 15,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "class svm_model;",
       "lineIdx": 15,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 3,
       "to": 4
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 3,
       "to": 4
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 159,
       "to": 160
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 172,
       "to": 173
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 2,
       "to": 8
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 13,
       "to": 18
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 13,
       "to": 18
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 93,
       "to": 94
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 93,
       "to": 94
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 25,
       "to": 29
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 25,
       "to": 29
     }
   }, {
     "left": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 22,
       "to": 27
     },
     "right": {
-      "line": "    size_t operator()(const MLSample& /*sample*/) const",
       "lineIdx": 43,
       "from": 22,
       "to": 27
     }
   }, {
     "left": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 49,
       "to": 50
     }
   }, {
     "left": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 10,
       "to": 16
     },
     "right": {
-      "line": "#include <vector>",
       "lineIdx": 2,
       "from": 10,
       "to": 16
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 73,
       "to": 74
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 73,
       "to": 74
     }
   }, {
     "left": {
-      "line": "    int columnIdx = 1;",
       "lineIdx": 60,
       "from": 8,
       "to": 17
     },
     "right": {
-      "line": "    int columnIdx = 1;",
       "lineIdx": 60,
       "from": 8,
       "to": 17
     }
   }, {
     "left": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 11,
       "to": 24
     },
     "right": {
-      "line": "using std::unordered_map;",
       "lineIdx": 11,
       "from": 11,
       "to": 24
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 49,
       "to": 50
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 49,
       "to": 50
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 18,
       "to": 22
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 18,
       "to": 22
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 36,
       "to": 40
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 36,
       "to": 40
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 9,
       "to": 15
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 9,
       "to": 15
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 150,
       "to": 159
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 163,
       "to": 172
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 12,
       "to": 18
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 12,
       "to": 18
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 6,
       "to": 9
     },
     "right": {
-      "line": "using std::unique_ptr;",
       "lineIdx": 12,
       "from": 6,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 147,
       "to": 153
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 160,
       "to": 166
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 83,
       "to": 84
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 83,
       "to": 84
     }
   }, {
     "left": {
-      "line": "      ++columnIdx;",
       "lineIdx": 64,
       "from": 8,
       "to": 17
     },
     "right": {
-      "line": "      ++columnIdx;",
       "lineIdx": 64,
       "from": 8,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "  if(samples.size() == 0) return \"\";",
       "lineIdx": 54,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 12,
       "to": 21
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 12,
       "to": 21
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 125,
       "to": 132
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 125,
       "to": 132
     }
   }, {
     "left": {
-      "line": "public:",
       "lineIdx": 19,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "public:",
       "lineIdx": 19,
       "from": 6,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 49,
       "to": 50
     },
     "right": {
-      "line": "  //QString header = headerStrings.join(separator);",
       "lineIdx": 56,
       "from": 49,
       "to": 50
     }
   }, {
     "left": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#define MLPIPELINE_H",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 30,
       "to": 39
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 30,
       "to": 39
     }
   }, {
     "left": {
-      "line": "};",
       "lineIdx": 33,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "};",
       "lineIdx": 33,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 4,
       "to": 8
     },
     "right": {
-      "line": "  //TODO search for same data different result (contradictions)",
       "lineIdx": 26,
       "from": 4,
       "to": 8
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 50,
       "to": 51
     }
   }, {
     "left": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 78,
       "to": 79
     },
     "right": {
-      "line": "      result += QString::number(columnIdx) + \":\" + QString::number(value) + \" \";",
       "lineIdx": 63,
       "from": 78,
       "to": 79
     }
   }, {
     "left": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "  vector<FeatureRange> loadRanges(const QString& path);",
       "lineIdx": 79,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "}",
       "lineIdx": 69,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "}",
       "lineIdx": 69,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 62,
       "to": 66
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 62,
       "to": 66
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 74,
       "to": 75
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 74,
       "to": 75
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 54,
       "to": 57
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 54,
       "to": 57
     }
   }, {
     "left": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 2,
       "to": 5
     },
     "right": {
-      "line": "  std::unordered_map<QString, double> mFeatures;",
       "lineIdx": 21,
       "from": 2,
       "to": 5
     }
   }, {
     "left": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "QString toStr(const C<MLSample, Args...>& samples, const vector<QString>& orderedFeatureNames)",
       "lineIdx": 52,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "      double value = sample.mFeatures.at(column);",
       "lineIdx": 62,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 64,
       "to": 68
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 64,
       "to": 68
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 71,
       "to": 72
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 84,
       "to": 85
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 64,
       "to": 71
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 77,
       "to": 84
     }
   }, {
     "left": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 42,
       "to": 57
     },
     "right": {
-      "line": "using SVMModelPtr = unique_ptr<svm_model, SVMModelDeleter>;",
       "lineIdx": 39,
       "from": 42,
       "to": 57
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 148,
       "to": 149
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 161,
       "to": 162
     }
   }, {
     "left": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 53,
       "to": 58
     },
     "right": {
-      "line": "    return  mFeatures == other.mFeatures && mSame == other.mSame;",
       "lineIdx": 24,
       "from": 53,
       "to": 58
     }
   }, {
     "left": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 45,
       "to": 51
     },
     "right": {
-      "line": "  MLSample(const std::unordered_map<QString, double>& features, bool same);",
       "lineIdx": 20,
       "from": 45,
       "to": 51
     }
   }, {
     "left": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 54,
       "to": 60
     },
     "right": {
-      "line": "  double singleScale(double value, double featureMin, double featureMax);",
       "lineIdx": 78,
       "from": 54,
       "to": 60
     }
   }, {
     "left": {
-      "line": "#include <memory>",
       "lineIdx": 7,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "#include <memory>",
       "lineIdx": 7,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  QString endLine = \"\\n\";",
       "lineIdx": 55,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "  OneToOneAlignment computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 166,
       "to": 167
     },
     "right": {
-      "line": "  OneToOneAlignmentWithAmbiguity computeAlignment(const QString& left, const QString& right, const FeatureExtractor& extractor, const SVMModelPtr& model, const vector<FeatureRange>& ranges);",
       "lineIdx": 74,
       "from": 179,
       "to": 180
     }
   }, {
     "left": {
-      "line": "struct FeatureRange {",
       "lineIdx": 30,
       "from": 7,
       "to": 19
     },
     "right": {
-      "line": "struct FeatureRange {",
       "lineIdx": 30,
       "from": 7,
       "to": 19
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 19,
       "to": 41
     },
     "right": {
-      "line": "  vector<LinePair> withoutInconsistencies(const vector<LinePair>& learnedMatches); //TODO this shouldn't be public, only for testing",
       "lineIdx": 76,
       "from": 19,
       "to": 41
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"aligner/linepair.h\"",
       "lineIdx": 4,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignment& reference);",
       "lineIdx": 75,
       "from": 88,
       "to": 89
     },
     "right": {
-      "line": "  vector<MLSample> extractSamplesFromReference(const QString& left, const QString& right, const FeatureExtractor& extractor, const OneToOneAlignmentWithAmbiguity& reference);",
       "lineIdx": 75,
       "from": 88,
       "to": 89
     }
   }, {
     "left": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 31,
       "to": 50
     },
     "right": {
-      "line": "    for(const QString& column: orderedFeatureNames) {",
       "lineIdx": 61,
       "from": 31,
       "to": 50
     }
   }, {
     "left": {
-      "line": "  const double mLow;",
       "lineIdx": 31,
       "from": 15,
       "to": 19
     },
     "right": {
-      "line": "  const double mLow;",
       "lineIdx": 31,
       "from": 15,
       "to": 19
     }
   }, {
     "left": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "      return std::hash<int>()(0); //TODO not optimal, but that's ok ",
       "lineIdx": 45,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "  QString result = /*header + endLine*/ \"\";",
       "lineIdx": 57,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "    result += QString::number(sample.mSame ? 1 : -1) + \" \";",
       "lineIdx": 59,
       "from": 50,
       "to": 51
     }
   }, {
     "left": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 26,
       "to": 31
     },
     "right": {
-      "line": "template<template <class, class...> class C, class... Args>",
       "lineIdx": 51,
       "from": 26,
       "to": 31

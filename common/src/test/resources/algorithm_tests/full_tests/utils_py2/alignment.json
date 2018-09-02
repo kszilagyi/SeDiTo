@@ -1,4719 +1,3993 @@
 {
   "matches": [{
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 19,
       "to": 22
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 19,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 30,
       "to": 40
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 30,
       "to": 40
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 32,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 73,
       "to": 76
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 73,
       "to": 76
     }
   }, {
     "left": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 42,
       "from": 24,
       "to": 34
     },
     "right": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 51,
       "from": 24,
       "to": 34
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 61,
       "to": 64
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 61,
       "to": 64
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 54,
       "to": 64
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 54,
       "to": 64
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 80,
       "to": 81
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 80,
       "to": 81
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 55,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "    return scaled_input",
       "lineIdx": 33,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    return scaled_input",
       "lineIdx": 42,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 8,
       "to": 11
     },
     "right": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 8,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    return res",
       "lineIdx": 9,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    return res",
       "lineIdx": 9,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 4,
       "to": 6
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 4,
       "to": 6
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 25,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 34,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 73,
       "to": 76
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 73,
       "to": 76
     }
   }, {
     "left": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 42,
       "from": 11,
       "to": 21
     },
     "right": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 51,
       "from": 11,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 52,
       "to": 60
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 52,
       "to": 60
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 56,
       "to": 57
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 56,
       "to": 57
     }
   }, {
     "left": {
-      "line": "    return scaled_input",
       "lineIdx": 33,
       "from": 11,
       "to": 23
     },
     "right": {
-      "line": "    return scaled_input",
       "lineIdx": 42,
       "from": 11,
       "to": 23
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 26,
       "to": 32
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 26,
       "to": 32
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 78,
       "to": 79
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 78,
       "to": 79
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 4,
       "to": 15
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 40,
       "from": 4,
       "to": 15
     }
   }, {
     "left": {
-      "line": "def zipDicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "def zip_dicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 38,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 47,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 15,
       "to": 18
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 15,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 68,
       "to": 69
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 68,
       "to": 69
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 23,
       "to": 27
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 23,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 23,
       "to": 30
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 49,
       "from": 23,
       "to": 30
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 44,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 9,
       "to": 14
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 54,
       "from": 9,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 27,
       "to": 37
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 27,
       "to": 37
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 41,
       "to": 44
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 41,
       "to": 44
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 15,
       "to": 18
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 35,
       "from": 15,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 40,
       "to": 43
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 40,
       "to": 43
     }
   }, {
     "left": {
-      "line": "    return res",
       "lineIdx": 16,
       "from": 11,
       "to": 14
     },
     "right": {
-      "line": "    return res",
       "lineIdx": 16,
       "from": 11,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 13,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 13,
       "from": 4,
       "to": 7
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 76,
       "to": 77
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 76,
       "to": 77
     }
   }, {
     "left": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 4,
       "to": 13
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 4,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "    return res",
       "lineIdx": 29,
       "from": 11,
       "to": 14
     },
     "right": {
-      "line": "    return res",
       "lineIdx": 38,
       "from": 11,
       "to": 14
     }
   }, {
     "left": {
-      "line": "def zipDicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 13,
       "to": 18
     },
     "right": {
-      "line": "def zip_dicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 14,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 26,
       "to": 32
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 26,
       "to": 32
     }
   }, {
     "left": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "import functools",
       "lineIdx": 1,
       "from": 7,
       "to": 16
     },
     "right": {
-      "line": "import functools",
       "lineIdx": 1,
       "from": 7,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 11,
       "to": 16
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 11,
       "to": 16
     }
   }, {
     "left": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 44,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 19,
       "to": 23
     },
     "right": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 19,
       "to": 23
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 54,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 4,
       "to": 12
     },
     "right": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 4,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 67,
       "to": 68
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 67,
       "to": 68
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 53,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 45,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 44,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 80,
       "to": 81
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 80,
       "to": 81
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 32,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 49,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 8,
       "to": 14
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 49,
       "from": 8,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 71,
       "to": 78
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 71,
       "to": 78
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 32,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 13,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 13,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 61,
       "to": 62
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 61,
       "to": 62
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 79,
       "to": 80
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 79,
       "to": 80
     }
   }, {
     "left": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 42,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 51,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 40,
       "to": 48
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 40,
       "to": 48
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 6,
       "to": 12
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 6,
       "to": 12
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 50,
       "to": 51
     }
   }, {
     "left": {
-      "line": "    return zipDicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 31,
       "to": 40
     },
     "right": {
-      "line": "    return zip_dicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 32,
       "to": 41
     }
   }, {
     "left": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 13,
       "to": 17
     },
     "right": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 13,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 69,
       "to": 70
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 69,
       "to": 70
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 45,
       "to": 55
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 45,
       "to": 55
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 4,
       "to": 9
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 45,
       "from": 4,
       "to": 9
     }
   }, {
     "left": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 8,
       "to": 11
     },
     "right": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 8,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 35,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 14,
       "to": 17
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 14,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 63,
       "to": 66
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 63,
       "to": 66
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "def zipDicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 20,
       "to": 25
     },
     "right": {
-      "line": "def zip_dicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 21,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 5,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 5,
       "from": 4,
       "to": 7
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 11,
       "to": 15
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 11,
       "to": 15
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 4,
       "to": 16
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 44,
       "from": 4,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    return zipDicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "    return zip_dicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 45,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 54,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 20,
       "to": 25
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 20,
       "to": 25
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 55,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 57,
       "to": 58
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 57,
       "to": 58
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 44,
       "to": 47
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 44,
       "to": 47
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 76,
       "to": 77
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 76,
       "to": 77
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 55,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "def zipDicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 4,
       "to": 12
     },
     "right": {
-      "line": "def zip_dicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 4,
       "to": 13
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 80,
       "to": 81
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 80,
       "to": 81
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 40,
       "to": 43
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 40,
       "to": 43
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 28,
       "to": 34
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 28,
       "to": 34
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 67,
       "to": 70
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 67,
       "to": 70
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 56,
       "to": 57
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 56,
       "to": 57
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 5,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 5,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 15,
       "to": 19
     },
     "right": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 15,
       "to": 19
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 8,
       "to": 11
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 8,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 53,
       "to": 56
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 53,
       "to": 56
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 5,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 5,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 35,
       "to": 38
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 35,
       "to": 38
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 36,
       "to": 39
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 36,
       "to": 39
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 42,
       "to": 43
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 42,
       "to": 43
     }
   }, {
     "left": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 20,
       "to": 24
     },
     "right": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 20,
       "to": 24
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 38,
       "to": 41
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 38,
       "to": 41
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 77,
       "to": 78
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 77,
       "to": 78
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 59,
       "to": 60
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 59,
       "to": 60
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 53,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 49,
       "to": 52
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 49,
       "to": 52
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 39,
       "to": 42
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 39,
       "to": 42
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 44,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 53,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 33,
       "to": 39
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 33,
       "to": 39
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 35,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 73,
       "to": 76
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 73,
       "to": 76
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 54,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 82,
       "to": 83
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 82,
       "to": 83
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 32,
       "to": 37
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 32,
       "to": 37
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 38,
       "from": 16,
       "to": 20
     },
     "right": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 47,
       "from": 16,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    return zipDicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    return zip_dicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 69,
       "to": 70
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 69,
       "to": 70
     }
   }, {
     "left": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 38,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 47,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 35,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 36,
       "to": 46
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 44,
       "from": 36,
       "to": 46
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 77,
       "to": 78
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 77,
       "to": 78
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 55,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 45,
       "to": 50
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 45,
       "to": 50
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 12,
       "to": 15
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 12,
       "to": 15
     }
   }, {
     "left": {
-      "line": "def zipDicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "def zip_dicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 72,
       "to": 73
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 72,
       "to": 73
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 66,
       "to": 71
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 66,
       "to": 71
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 13,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 13,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 32,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 19,
       "to": 29
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 40,
       "from": 19,
       "to": 29
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 25,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 34,
       "from": 4,
       "to": 7
     }
   }, {
     "left": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "def zipDicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "def zip_dicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 4,
       "to": 13
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 4,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 52,
       "to": 60
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 52,
       "to": 60
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 71,
       "to": 72
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 71,
       "to": 72
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 59,
       "to": 60
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 59,
       "to": 60
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 48,
       "to": 51
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 48,
       "to": 51
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 42,
       "to": 52
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 42,
       "to": 52
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 16,
       "to": 20
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 16,
       "to": 20
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 15,
       "to": 25
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 54,
       "from": 15,
       "to": 25
     }
   }, {
     "left": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 21,
       "to": 25
     },
     "right": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 21,
       "to": 25
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 23,
       "to": 26
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 23,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 58,
       "to": 68
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 58,
       "to": 68
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 4,
       "to": 12
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 32,
       "from": 4,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 77,
       "to": 78
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 77,
       "to": 78
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 79,
       "to": 80
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 79,
       "to": 80
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 8,
       "to": 11
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 35,
       "from": 8,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 38,
       "from": 4,
       "to": 11
     },
     "right": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 47,
       "from": 4,
       "to": 11
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 34,
       "to": 38
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 34,
       "to": 38
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 48,
       "to": 49
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 12,
       "to": 14
     },
     "right": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 12,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 70,
       "to": 71
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 70,
       "to": 71
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 16,
       "to": 25
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 16,
       "to": 25
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 54,
       "to": 55
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 54,
       "to": 55
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 71,
       "to": 72
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 71,
       "to": 72
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 53,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 40,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 12,
       "to": 14
     },
     "right": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 12,
       "to": 14
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 62,
       "to": 72
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 62,
       "to": 72
     }
   }, {
     "left": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 15,
       "to": 20
     },
     "right": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 15,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    return res",
       "lineIdx": 16,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    return res",
       "lineIdx": 16,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    return zipDicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 20,
       "to": 29
     },
     "right": {
-      "line": "    return zip_dicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 21,
       "to": 30
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 42,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 51,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 27,
       "to": 32
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 27,
       "to": 32
     }
   }, {
     "left": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 19,
       "to": 23
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 35,
       "from": 19,
       "to": 23
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 12,
       "to": 14
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 35,
       "from": 12,
       "to": 14
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 57,
       "to": 58
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 57,
       "to": 58
     }
   }, {
     "left": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 15,
       "to": 20
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 49,
       "from": 15,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 40,
       "to": 43
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 40,
       "to": 43
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 65,
       "to": 66
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 65,
       "to": 66
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 12,
       "to": 17
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 53,
       "from": 12,
       "to": 17
     }
   }, {
     "left": {
-      "line": "def zipDicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "def zip_dicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "    return zipDicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "    return zip_dicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 13,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 13,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 81,
       "to": 82
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 81,
       "to": 82
     }
   }, {
     "left": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 25,
       "to": 28
     },
     "right": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 25,
       "to": 28
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 16,
       "to": 25
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 16,
       "to": 25
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 3,
       "to": 4
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 3,
       "to": 4
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 32,
       "to": 35
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 32,
       "to": 35
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 79,
       "to": 80
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 79,
       "to": 80
     }
   }, {
     "left": {
-      "line": "    upper = 1.0",
       "lineIdx": 37,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "    upper = 1.0",
       "lineIdx": 46,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    return zipDicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "    return zip_dicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 45,
       "to": 50
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 45,
       "to": 50
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 66,
       "to": 71
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 66,
       "to": 71
     }
   }, {
     "left": {
-      "line": "    return res",
       "lineIdx": 9,
       "from": 11,
       "to": 14
     },
     "right": {
-      "line": "    return res",
       "lineIdx": 9,
       "from": 11,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 45,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    upper = 1.0",
       "lineIdx": 37,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "    upper = 1.0",
       "lineIdx": 46,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 24,
       "to": 27
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 24,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 40,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 4,
       "to": 16
     },
     "right": {
-      "line": "def find_min_max(x):",
       "lineIdx": 18,
       "from": 4,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    return zipDicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 11,
       "to": 19
     },
     "right": {
-      "line": "    return zip_dicts(minValues, maxValues)",
       "lineIdx": 21,
       "from": 11,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    return res",
       "lineIdx": 29,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    return res",
       "lineIdx": 38,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 24,
       "to": 34
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 44,
       "from": 24,
       "to": 34
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 53,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 78,
       "to": 79
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 78,
       "to": 79
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 19,
       "to": 23
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 19,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 40,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 31,
       "to": 35
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 31,
       "to": 35
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 27,
       "to": 32
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 53,
       "from": 27,
       "to": 32
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 38,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    epsilon = 0.0001",
       "lineIdx": 47,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 42,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "    assert featureMin < featureMax;",
       "lineIdx": 51,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 20,
       "to": 27
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 20,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 45,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "import functools",
       "lineIdx": 1,
       "from": 0,
       "to": 6
     },
     "right": {
-      "line": "import functools",
       "lineIdx": 1,
       "from": 0,
       "to": 6
     }
   }, {
     "left": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 4,
       "to": 7
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 8,
       "to": 11
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 8,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 50,
       "to": 51
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 40,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 12,
       "to": 15
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 12,
       "to": 15
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 44,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 76,
       "to": 77
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 76,
       "to": 77
     }
   }, {
     "left": {
-      "line": "    upper = 1.0",
       "lineIdx": 37,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    upper = 1.0",
       "lineIdx": 46,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 32,
       "from": 4,
       "to": 16
     },
     "right": {
-      "line": "    scaled_input = list(map(lambda row: scaleRow(row, range_dict), x))",
       "lineIdx": 41,
       "from": 4,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 21,
       "to": 26
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 53,
       "from": 21,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 53,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 35,
       "from": 4,
       "to": 7
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 56,
       "to": 57
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 56,
       "to": 57
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 26,
       "to": 29
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 26,
       "to": 29
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 17,
       "to": 22
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 44,
       "from": 17,
       "to": 22
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 42,
       "to": 43
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 42,
       "to": 43
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 5,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 5,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 26,
       "to": 30
     },
     "right": {
-      "line": "    assert row1.keys() == row2.keys()",
       "lineIdx": 4,
       "from": 26,
       "to": 30
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 61,
       "to": 64
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 61,
       "to": 64
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 40,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 25,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 34,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 28,
       "to": 31
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 28,
       "to": 31
     }
   }, {
     "left": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 45,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "        (value-featureMin)/",
       "lineIdx": 54,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 11,
       "to": 14
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 11,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 9,
       "to": 19
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 55,
       "from": 9,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 33,
       "to": 37
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 33,
       "to": 37
     }
   }, {
     "left": {
-      "line": "def zipDicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "def zip_dicts(dict1, dict2):",
       "lineIdx": 11,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 8,
       "to": 11
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 8,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 49,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    lower = -1.0",
       "lineIdx": 36,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    lower = -1.0",
       "lineIdx": 45,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 33,
       "to": 39
     },
     "right": {
-      "line": "    maxValues = functools.reduce(lambda acc, value: dict_map(acc, value, max), x)",
       "lineIdx": 20,
       "from": 33,
       "to": 39
     }
   }, {
     "left": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 26,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    for idx in row.keys():",
       "lineIdx": 35,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    upper = 1.0",
       "lineIdx": 37,
       "from": 4,
       "to": 9
     },
     "right": {
-      "line": "    upper = 1.0",
       "lineIdx": 46,
       "from": 4,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 12,
       "to": 15
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 12,
       "to": 15
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 18,
       "to": 28
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 32,
       "from": 18,
       "to": 28
     }
   }, {
     "left": {
-      "line": "    upper = 1.0",
       "lineIdx": 37,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    upper = 1.0",
       "lineIdx": 46,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 39,
       "from": 7,
       "to": 17
     },
     "right": {
-      "line": "    if featureMax - epsilon < featureMin and featureMin < featureMax + epsilon:",
       "lineIdx": 48,
       "from": 7,
       "to": 17
     }
   }, {
     "left": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 31,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "def scale_input(x, range_dict):",
       "lineIdx": 40,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "    minValues = functools.reduce(lambda acc, value: dict_map(acc, value, min), x)",
       "lineIdx": 19,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 66,
       "to": 67
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 66,
       "to": 67
     }
   }, {
     "left": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "    for idx in dict1.keys():",
       "lineIdx": 14,
       "from": 4,
       "to": 7
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 13,
       "to": 16
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 32,
       "from": 13,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 17,
       "to": 21
     },
     "right": {
-      "line": "    assert dict1.keys() == dict2.keys()",
       "lineIdx": 12,
       "from": 17,
       "to": 21
     }
   }, {
     "left": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 46,
       "from": 20,
       "to": 30
     },
     "right": {
-      "line": "        (featureMax-featureMin))",
       "lineIdx": 55,
       "from": 20,
       "to": 30
     }
   }, {
     "left": {
-      "line": "    res = {}",
       "lineIdx": 25,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    res = {}",
       "lineIdx": 34,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 31,
       "to": 36
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 49,
       "from": 31,
       "to": 36
     }
   }, {
     "left": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "    for idx in row1.keys():",
       "lineIdx": 6,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 35,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "def single_scale(value, featureMin, featureMax):",
       "lineIdx": 44,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "        res[idx] = fun(row1[idx], row2[idx])",
       "lineIdx": 7,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "        res[idx] = (dict1[idx], dict2[idx]) ",
       "lineIdx": 15,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 44,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    return (lower + (upper-lower) *",
       "lineIdx": 53,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 23,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "def scaleRow(row, range_dict): ",
       "lineIdx": 32,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 24,
       "from": 71,
       "to": 81
     },
     "right": {
-      "line": "    assert len(row) == len(range_dict), str(len(row)) + \"!=\" + str(len(range_dict))",
       "lineIdx": 33,
       "from": 71,
       "to": 81
     }
   }, {
     "left": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "def dict_map(row1, row2, fun):",
       "lineIdx": 3,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 27,
       "from": 19,
       "to": 31
     },
     "right": {
-      "line": "        res[idx] = single_scale(row[idx], range_dict[idx][0], range_dict[idx][1])",
       "lineIdx": 36,
       "from": 19,
       "to": 31
     }
   }, {
     "left": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 40,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "        assert False, \"invalid range\"",
       "lineIdx": 49,
       "from": 22,
       "to": 23

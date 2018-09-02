@@ -1,5967 +1,5049 @@
 {
   "matches": [{
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 73,
       "to": 74
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 73,
       "to": 74
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 5,
       "to": 13
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 5,
       "to": 13
     }
   }, {
     "left": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 13,
       "from": 54,
       "to": 72
     },
     "right": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 15,
       "from": 54,
       "to": 72
     }
   }, {
     "left": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 10,
       "to": 13
     },
     "right": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 10,
       "to": 13
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 73,
       "to": 74
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 73,
       "to": 74
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 48,
       "to": 55
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 48,
       "to": 55
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 13,
       "to": 29
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 13,
       "to": 29
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 65,
       "to": 70
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 65,
       "to": 70
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 84,
       "to": 92
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 84,
       "to": 92
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 65,
       "to": 66
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 65,
       "to": 66
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 65,
       "to": 66
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 65,
       "to": 66
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 72,
       "to": 73
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 72,
       "to": 73
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "  return left.mLeft < right.mLeft;",
       "lineIdx": 16,
       "from": 22,
       "to": 27
     },
     "right": {
-      "line": "    return left.mLeftIdx < right.mLeftIdx;",
       "lineIdx": 19,
       "from": 27,
       "to": 32
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 71,
       "to": 72
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 71,
       "to": 72
     }
   }, {
     "left": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 14,
       "to": 20
     },
     "right": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 14,
       "to": 20
     }
   }, {
     "left": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 19,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 24,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 27,
       "to": 34
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 27,
       "to": 34
     }
   }, {
     "left": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 4,
       "to": 6
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 4,
       "to": 6
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 33,
       "from": 8,
       "to": 25
     },
     "right": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 38,
       "from": 8,
       "to": 25
     }
   }, {
     "left": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 19,
       "from": 29,
       "to": 36
     },
     "right": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 24,
       "from": 29,
       "to": 36
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 6,
       "to": 7
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 62,
       "to": 63
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 62,
       "to": 63
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 26,
       "to": 43
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 26,
       "to": 43
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 98,
       "to": 103
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 98,
       "to": 103
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 31,
       "to": 48
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 31,
       "to": 48
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 77,
       "to": 78
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 77,
       "to": 78
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 85,
       "to": 86
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 85,
       "to": 86
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 17,
       "to": 23
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 17,
       "to": 23
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 14,
       "to": 24
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 14,
       "to": 24
     }
   }, {
     "left": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 13,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 15,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "  }",
       "lineIdx": 24,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "  }",
       "lineIdx": 29,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 70,
       "to": 75
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 70,
       "to": 75
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 21,
       "to": 25
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 21,
       "to": 25
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 44,
       "to": 45
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 44,
       "to": 45
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 94,
       "to": 95
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 94,
       "to": 95
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 83,
       "to": 84
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 83,
       "to": 84
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 108,
       "to": 109
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 108,
       "to": 109
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 49,
       "to": 63
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 49,
       "to": 63
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 14,
       "to": 26
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 14,
       "to": 26
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 80,
       "to": 84
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 80,
       "to": 84
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 21,
       "to": 24
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 21,
       "to": 24
     }
   }, {
     "left": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 6,
       "to": 12
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 6,
       "to": 12
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 105,
       "to": 106
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 105,
       "to": 106
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 70,
       "to": 71
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 70,
       "to": 71
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 36,
       "to": 40
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 31,
       "to": 35
     }
   }, {
     "left": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 79,
       "to": 84
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 79,
       "to": 84
     }
   }, {
     "left": {
-      "line": "#include <set>",
       "lineIdx": 9,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include <set>",
       "lineIdx": 11,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 72,
       "to": 73
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 72,
       "to": 73
     }
   }, {
     "left": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 48,
       "to": 49
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "      else {",
       "lineIdx": 32,
       "from": 6,
       "to": 10
     },
     "right": {
-      "line": "      else {",
       "lineIdx": 37,
       "from": 6,
       "to": 10
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 6,
       "to": 8
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 6,
       "to": 8
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 40,
       "to": 47
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 40,
       "to": 47
     }
   }, {
     "left": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 115,
       "to": 116
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 115,
       "to": 116
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 6,
       "to": 11
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 6,
       "to": 11
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 49,
       "to": 60
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 49,
       "to": 60
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 15,
       "to": 20
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 15,
       "to": 20
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 0,
       "to": 4
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 0,
       "to": 4
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 71,
       "to": 72
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 71,
       "to": 72
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 66,
       "to": 67
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 66,
       "to": 67
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 106,
       "to": 107
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 68,
       "to": 69
     }
   }, {
     "left": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 13,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 15,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 53,
       "to": 58
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 53,
       "to": 58
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 116,
       "to": 117
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 116,
       "to": 117
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 68,
       "to": 69
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 84,
       "to": 85
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 84,
       "to": 85
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 104,
       "to": 105
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 104,
       "to": 105
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 92,
       "to": 93
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 92,
       "to": 93
     }
   }, {
     "left": {
-      "line": "#include <set>",
       "lineIdx": 9,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "#include <set>",
       "lineIdx": 11,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 55,
       "to": 56
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 55,
       "to": 56
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 60,
       "to": 72
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 60,
       "to": 72
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 65,
       "to": 66
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 65,
       "to": 66
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 142,
       "to": 143
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 92,
       "to": 93
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 97,
       "to": 98
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 97,
       "to": 98
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 16,
       "to": 26
     },
     "right": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 16,
       "to": 26
     }
   }, {
     "left": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 13,
       "from": 53,
       "to": 54
     },
     "right": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 15,
       "from": 53,
       "to": 54
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 30,
       "to": 47
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 30,
       "to": 47
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 26,
       "to": 44
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 26,
       "to": 44
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 57,
       "to": 58
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 57,
       "to": 58
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 81,
       "to": 85
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 81,
       "to": 85
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 104,
       "to": 105
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 89,
       "to": 90
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 84,
       "to": 85
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 84,
       "to": 85
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 63,
       "to": 64
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 63,
       "to": 64
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "using std::set;",
       "lineIdx": 10,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "using std::set;",
       "lineIdx": 12,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 82,
       "to": 83
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 82,
       "to": 83
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 27,
       "to": 32
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 27,
       "to": 32
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 55,
       "to": 56
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 55,
       "to": 56
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 32,
       "to": 39
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 32,
       "to": 39
     }
   }, {
     "left": {
-      "line": "  return left.mLeft < right.mLeft;",
       "lineIdx": 16,
       "from": 2,
       "to": 8
     },
     "right": {
-      "line": "    return left.mLeftIdx < right.mLeftIdx;",
       "lineIdx": 19,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 134,
       "to": 135
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 91,
       "to": 92
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 66,
       "to": 71
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 66,
       "to": 71
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 27,
       "to": 30
     },
     "right": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 27,
       "to": 30
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 61,
       "to": 72
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 61,
       "to": 72
     }
   }, {
     "left": {
-      "line": "using std::set;",
       "lineIdx": 10,
       "from": 11,
       "to": 14
     },
     "right": {
-      "line": "using std::set;",
       "lineIdx": 12,
       "from": 11,
       "to": 14
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 62,
       "to": 63
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 89,
       "to": 90
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 84,
       "to": 85
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 70,
       "to": 71
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 70,
       "to": 71
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 61,
       "to": 64
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 61,
       "to": 64
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 98,
       "to": 99
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 85,
       "to": 86
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 96,
       "to": 97
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 96,
       "to": 97
     }
   }, {
     "left": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 19,
       "from": 5,
       "to": 27
     },
     "right": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 24,
       "from": 5,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 97,
       "to": 98
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 97,
       "to": 98
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 83,
       "to": 88
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 54,
       "to": 59
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 136,
       "to": 139
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 86,
       "to": 89
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 12,
       "to": 21
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 12,
       "to": 21
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 50,
       "to": 51
     }
   }, {
     "left": {
-      "line": "  return left.mLeft < right.mLeft;",
       "lineIdx": 16,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "    return left.mLeftIdx < right.mLeftIdx;",
       "lineIdx": 19,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 105,
       "to": 106
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 90,
       "to": 91
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 112,
       "to": 115
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 80,
       "to": 83
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 73,
       "to": 74
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 73,
       "to": 74
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 99,
       "to": 104
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 61,
       "to": 66
     }
   }, {
     "left": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 13,
       "from": 14,
       "to": 36
     },
     "right": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 15,
       "from": 14,
       "to": 36
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 33,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 38,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 16,
       "to": 27
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 16,
       "to": 27
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 2,
       "to": 7
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 2,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  return left.mLeft < right.mLeft;",
       "lineIdx": 16,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    return left.mLeftIdx < right.mLeftIdx;",
       "lineIdx": 19,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "using std::set;",
       "lineIdx": 10,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "using std::set;",
       "lineIdx": 12,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 65,
       "to": 66
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 65,
       "to": 66
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 8,
       "to": 15
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 8,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 73,
       "to": 74
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 73,
       "to": 74
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 74,
       "to": 75
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 74,
       "to": 75
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 86,
       "to": 89
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 86,
       "to": 89
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 75,
       "to": 76
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 75,
       "to": 76
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 81,
       "to": 82
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 10,
       "to": 32
     },
     "right": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 10,
       "to": 32
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 33,
       "from": 45,
       "to": 50
     },
     "right": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 38,
       "from": 45,
       "to": 50
     }
   }, {
     "left": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 17,
       "to": 23
     },
     "right": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 17,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 13,
       "from": 72,
       "to": 73
     },
     "right": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 15,
       "from": 72,
       "to": 73
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "}",
       "lineIdx": 42,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "}",
       "lineIdx": 50,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 19,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 24,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 59,
       "to": 60
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 59,
       "to": 60
     }
   }, {
     "left": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 46,
       "to": 64
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 46,
       "to": 64
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 82,
       "to": 83
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 79,
       "to": 80
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 10,
       "to": 13
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 10,
       "to": 13
     }
   }, {
     "left": {
-      "line": "  return left.mLeft < right.mLeft;",
       "lineIdx": 16,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "    return left.mLeftIdx < right.mLeftIdx;",
       "lineIdx": 19,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 42,
       "to": 43
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 42,
       "to": 43
     }
   }, {
     "left": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 27,
       "to": 41
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 22,
       "to": 36
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 10,
       "to": 17
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 10,
       "to": 17
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 70,
       "to": 71
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 89,
       "to": 90
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 89,
       "to": 90
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 2,
       "to": 5
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 2,
       "to": 5
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 33,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 38,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 105,
       "to": 106
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 105,
       "to": 106
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 68,
       "to": 69
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 68,
       "to": 69
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 95,
       "to": 96
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 95,
       "to": 96
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 107,
       "to": 108
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 107,
       "to": 108
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 43,
       "to": 48
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 43,
       "to": 48
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 66,
       "to": 73
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 66,
       "to": 73
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 71,
       "to": 72
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 71,
       "to": 72
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 45,
       "to": 48
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 45,
       "to": 48
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 83,
       "to": 84
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 83,
       "to": 84
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 25,
       "to": 36
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 25,
       "to": 36
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 25,
       "to": 31
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 25,
       "to": 31
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 7,
       "to": 12
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 7,
       "to": 12
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 72,
       "to": 73
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 72,
       "to": 73
     }
   }, {
     "left": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 17,
       "to": 26
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 17,
       "to": 26
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 83,
       "to": 84
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 83,
       "to": 84
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 89,
       "to": 94
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 89,
       "to": 94
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 42,
       "to": 47
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 37,
       "to": 42
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 45,
       "to": 46
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 45,
       "to": 46
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 9,
       "to": 19
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 9,
       "to": 19
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 49,
       "to": 50
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 49,
       "to": 50
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 39,
       "to": 58
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 39,
       "to": 58
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 77,
       "to": 78
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 77,
       "to": 78
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 64,
       "to": 65
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 32,
       "to": 36
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 32,
       "to": 36
     }
   }, {
     "left": {
-      "line": "  return left.mLeft < right.mLeft;",
       "lineIdx": 16,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "    return left.mLeftIdx < right.mLeftIdx;",
       "lineIdx": 19,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 93,
       "to": 94
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 93,
       "to": 94
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 2,
       "to": 7
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 2,
       "to": 7
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 33,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 38,
       "from": 50,
       "to": 51
     }
   }, {
     "left": {
-      "line": "#include <set>",
       "lineIdx": 9,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include <set>",
       "lineIdx": 11,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 89,
       "to": 92
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 89,
       "to": 92
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "using std::set;",
       "lineIdx": 10,
       "from": 6,
       "to": 9
     },
     "right": {
-      "line": "using std::set;",
       "lineIdx": 12,
       "from": 6,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 110,
       "to": 111
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 85,
       "to": 86
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 106,
       "to": 115
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 106,
       "to": 115
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 96,
       "to": 97
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 66,
       "to": 67
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 74,
       "to": 75
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 74,
       "to": 75
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 60,
       "to": 79
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 60,
       "to": 79
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 50,
       "to": 51
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 75,
       "to": 76
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 75,
       "to": 76
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 117,
       "to": 118
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 117,
       "to": 118
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 59,
       "to": 60
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 59,
       "to": 60
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 8,
       "to": 11
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 8,
       "to": 11
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "using std::set;",
       "lineIdx": 10,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "using std::set;",
       "lineIdx": 12,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "{",
       "lineIdx": 20,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "{",
       "lineIdx": 25,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "      else {",
       "lineIdx": 32,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "      else {",
       "lineIdx": 37,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 9,
       "to": 19
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 9,
       "to": 19
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 63,
       "to": 68
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 53,
       "to": 58
     }
   }, {
     "left": {
-      "line": "  }",
       "lineIdx": 41,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "  }",
       "lineIdx": 49,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 63,
       "to": 64
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 63,
       "to": 64
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 8,
       "to": 25
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 8,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 79,
       "to": 82
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 79,
       "to": 82
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 88,
       "to": 89
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 86,
       "to": 87
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 86,
       "to": 87
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 80,
       "to": 81
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 80,
       "to": 81
     }
   }, {
     "left": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 10,
       "to": 15
     },
     "right": {
-      "line": "#include <boost/filesystem.hpp>",
       "lineIdx": 2,
       "from": 10,
       "to": 15
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 10,
       "to": 16
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 10,
       "to": 16
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 52,
       "to": 63
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 52,
       "to": 63
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 75,
       "to": 86
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 75,
       "to": 86
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 2,
       "to": 4
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 2,
       "to": 4
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 33,
       "from": 38,
       "to": 44
     },
     "right": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 38,
       "from": 38,
       "to": 44
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 67,
       "to": 68
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 67,
       "to": 68
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 13,
       "to": 17
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 13,
       "to": 17
     }
   }, {
     "left": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 13,
       "from": 73,
       "to": 74
     },
     "right": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 15,
       "from": 73,
       "to": 74
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 74,
       "to": 75
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 74,
       "to": 75
     }
   }, {
     "left": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 79,
       "to": 80
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 79,
       "to": 80
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 81,
       "to": 82
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 81,
       "to": 82
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 52,
       "to": 59
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 52,
       "to": 59
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 46,
       "to": 50
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 46,
       "to": 50
     }
   }, {
     "left": {
-      "line": "  return left.mLeft < right.mLeft;",
       "lineIdx": 16,
       "from": 9,
       "to": 13
     },
     "right": {
-      "line": "    return left.mLeftIdx < right.mLeftIdx;",
       "lineIdx": 19,
       "from": 11,
       "to": 15
     }
   }, {
     "left": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "}",
       "lineIdx": 17,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "}",
       "lineIdx": 22,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 45,
       "to": 57
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 45,
       "to": 57
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 8,
       "to": 11
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 8,
       "to": 11
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 88,
       "to": 89
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 88,
       "to": 89
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 14,
       "to": 30
     },
     "right": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 14,
       "to": 30
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 41,
       "to": 44
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 41,
       "to": 44
     }
   }, {
     "left": {
-      "line": "    }",
       "lineIdx": 40,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "    }",
       "lineIdx": 48,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "#include <set>",
       "lineIdx": 9,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include <set>",
       "lineIdx": 11,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 90,
       "to": 91
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 61,
       "to": 62
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 118,
       "to": 119
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 118,
       "to": 119
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 33,
       "from": 44,
       "to": 45
     },
     "right": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 38,
       "from": 44,
       "to": 45
     }
   }, {
     "left": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 80,
       "to": 81
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 80,
       "to": 81
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 80,
       "to": 81
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 59,
       "to": 60
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 68,
       "to": 75
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 68,
       "to": 75
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 56,
       "to": 62
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 56,
       "to": 62
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 59,
       "to": 60
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 59,
       "to": 60
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 44,
       "to": 45
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 44,
       "to": 45
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 91,
       "to": 95
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 91,
       "to": 95
     }
   }, {
     "left": {
-      "line": "using std::set;",
       "lineIdx": 10,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "using std::set;",
       "lineIdx": 12,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 96,
       "to": 105
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 96,
       "to": 105
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 96,
       "to": 97
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 96,
       "to": 97
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 13,
       "to": 16
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 13,
       "to": 16
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 26,
       "to": 33
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 26,
       "to": 33
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 74,
       "to": 83
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 74,
       "to": 83
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 26,
       "to": 32
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 26,
       "to": 32
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 17,
       "to": 24
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 17,
       "to": 24
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 27,
       "to": 49
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 22,
       "to": 44
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 88,
       "to": 89
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 88,
       "to": 89
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 78,
       "to": 79
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 78,
       "to": 79
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 34,
       "from": 94,
       "to": 95
     },
     "right": {
-      "line": "        OneToOneAlignment computedAlignment = NonLearningAligner::compute(alignment.leftText(), alignment.rightText());",
       "lineIdx": 39,
       "from": 94,
       "to": 95
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 5,
       "to": 6
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 5,
       "to": 6
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 44,
       "to": 45
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 44,
       "to": 45
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 40,
       "to": 47
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 40,
       "to": 47
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 75,
       "to": 80
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 75,
       "to": 80
     }
   }, {
     "left": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"mix/qstringutils.h\"",
       "lineIdx": 8,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 59,
       "to": 70
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 59,
       "to": 70
     }
   }, {
     "left": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 13,
       "from": 38,
       "to": 50
     },
     "right": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 15,
       "from": 38,
       "to": 50
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 85,
       "to": 107
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 85,
       "to": 107
     }
   }, {
     "left": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 10,
       "to": 13
     },
     "right": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 10,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 30,
       "to": 35
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 30,
       "to": 35
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 8,
       "to": 20
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 8,
       "to": 20
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 25,
       "to": 38
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 25,
       "to": 38
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 87,
       "to": 88
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 87,
       "to": 88
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 72,
       "to": 73
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 72,
       "to": 73
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 103,
       "to": 104
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 103,
       "to": 104
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 40,
       "to": 44
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 40,
       "to": 44
     }
   }, {
     "left": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 19,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 24,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 58,
       "to": 59
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 7,
       "to": 8
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 7,
       "to": 8
     }
   }, {
     "left": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 17,
       "to": 24
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 17,
       "to": 24
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 57,
       "to": 58
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 57,
       "to": 58
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 88,
       "to": 89
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 83,
       "to": 84
     }
   }, {
     "left": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 38,
       "from": 8,
       "to": 16
     },
     "right": {
-      "line": "        QVERIFY2(alignment == computedAlignment, debugString.toStdString().c_str());",
       "lineIdx": 46,
       "from": 8,
       "to": 16
     }
   }, {
     "left": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 19,
       "from": 0,
       "to": 4
     },
     "right": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 24,
       "from": 0,
       "to": 4
     }
   }, {
     "left": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 118,
       "to": 119
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 86,
       "to": 87
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 6,
       "to": 12
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 6,
       "to": 12
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 13,
       "to": 23
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 13,
       "to": 23
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 33,
       "from": 26,
       "to": 35
     },
     "right": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 38,
       "from": 26,
       "to": 35
     }
   }, {
     "left": {
-      "line": "      }",
       "lineIdx": 39,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "      }",
       "lineIdx": 47,
       "from": 6,
       "to": 7
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 109,
       "to": 110
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 109,
       "to": 110
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 90,
       "to": 91
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 90,
       "to": 91
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 22,
       "to": 27
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 22,
       "to": 27
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 48,
       "to": 49
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 21,
       "to": 39
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 21,
       "to": 39
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 7,
       "to": 8
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 7,
       "to": 8
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 61,
       "to": 62
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 51,
       "to": 52
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 106,
       "to": 107
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 106,
       "to": 107
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 45,
       "to": 46
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 45,
       "to": 46
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 63,
       "to": 64
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 63,
       "to": 64
     }
   }, {
     "left": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 73,
       "to": 79
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 73,
       "to": 79
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 22,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "  if(!boost::filesystem::exists(dirPath)) {",
       "lineIdx": 27,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 13,
       "to": 16
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 13,
       "to": 16
     }
   }, {
     "left": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 18,
       "to": 35
     },
     "right": {
-      "line": "#include \"aligner/onetoonealignment.h\"",
       "lineIdx": 7,
       "from": 18,
       "to": 35
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 61,
       "to": 62
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 61,
       "to": 62
     }
   }, {
     "left": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "#include \"nonlearningalignertest.h\"",
       "lineIdx": 1,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 26,
       "from": 85,
       "to": 88
     },
     "right": {
-      "line": "  boost::filesystem::directory_iterator end_itr; // default construction yields past-the-end",
       "lineIdx": 31,
       "from": 85,
       "to": 88
     }
   }, {
     "left": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 19,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "void NonLearningAlignerTest::testAll()",
       "lineIdx": 24,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 70,
       "to": 71
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 44,
       "to": 45
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 50,
       "to": 57
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 50,
       "to": 57
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"../src/aligner/serialisation/onetoonealignmentio.h\"",
       "lineIdx": 3,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 10,
       "to": 16
     },
     "right": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 10,
       "to": 16
     }
   }, {
     "left": {
-      "line": "#include <set>",
       "lineIdx": 9,
       "from": 10,
       "to": 13
     },
     "right": {
-      "line": "#include <set>",
       "lineIdx": 11,
       "from": 10,
       "to": 13
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 21,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "  boost::filesystem::path dirPath = (\"../\" + testCasesDir).toStdString();",
       "lineIdx": 26,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 28,
       "from": 7,
       "to": 8
     },
     "right": {
-      "line": "    if (is_directory(itr->status())) {",
       "lineIdx": 33,
       "from": 7,
       "to": 8
     }
   }, {
     "left": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 13,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 15,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedMatches = set<OneToOneMatch>(alignment.matches().begin(), alignment.matches().end());",
       "lineIdx": 35,
       "from": 72,
       "to": 73
     },
     "right": {
-      "line": "        set<LinePair> orderedMatches(referenceMatches.begin(), referenceMatches.end());",
       "lineIdx": 41,
       "from": 53,
       "to": 54
     }
   }, {
     "left": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 13,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 15,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 27,
       "from": 85,
       "to": 86
     },
     "right": {
-      "line": "  for (boost::filesystem::directory_iterator itr( dirPath ); itr != end_itr; ++itr ) {",
       "lineIdx": 32,
       "from": 85,
       "to": 86
     }
   }, {
     "left": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 13,
       "from": 6,
       "to": 13
     },
     "right": {
-      "line": "const QString NonLearningAlignerTest::testCasesDir = \"unique_lines_tests\";",
       "lineIdx": 15,
       "from": 6,
       "to": 13
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 18,
       "to": 25
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 18,
       "to": 25
     }
   }, {
     "left": {
-      "line": "        set<OneToOneMatch> orderedComputedMatches = set<OneToOneMatch>(computedAlignment.matches().begin(), computedAlignment.matches().end());",
       "lineIdx": 36,
       "from": 97,
       "to": 98
     },
     "right": {
-      "line": "        set<LinePair> orderedComputedMatches(computedMatches.begin(), computedMatches.end());",
       "lineIdx": 44,
       "from": 67,
       "to": 68
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 56,
       "to": 57
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 56,
       "to": 57
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "bool operator<(const OneToOneMatch& left, const OneToOneMatch& right) {",
       "lineIdx": 15,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "bool operator<(const LinePair& left, const LinePair& right) {",
       "lineIdx": 17,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 33,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "        OneToOneAlignment alignment = result.right();",
       "lineIdx": 38,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 29,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "      logger.info(QString(\"Testing: \") + itr->path().c_str());",
       "lineIdx": 34,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 33,
       "to": 39
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 33,
       "to": 39
     }
   }, {
     "left": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 37,
       "to": 55
     },
     "right": {
-      "line": "#include \"../src/aligner/nonlearning/nonlearningaligner.h\"",
       "lineIdx": 4,
       "from": 37,
       "to": 55
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 51,
       "to": 57
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 51,
       "to": 57
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 23,
       "from": 4,
       "to": 9
     },
     "right": {
-      "line": "    QFAIL((\"Directory doesn't exist:\" + QString(dirPath.string().c_str())).toStdString().c_str());",
       "lineIdx": 28,
       "from": 4,
       "to": 9
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 47,
       "to": 51
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 47,
       "to": 51
     }
   }, {
     "left": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 30,
       "from": 95,
       "to": 96
     },
     "right": {
-      "line": "      Either<DisplayableError, OneToOneAlignment>  result = OneToOneAlignmentIO::read(itr->path().c_str());",
       "lineIdx": 35,
       "from": 95,
       "to": 96
     }
   }, {
     "left": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "#include \"mix/displayableerror.h\"",
       "lineIdx": 6,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "#include \"mix/either.h\"",
       "lineIdx": 5,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 37,
       "from": 48,
       "to": 49
     },
     "right": {
-      "line": "        QString debugString = (\"left = \" + toStr(orderedMatches) + \", right\" + toStr(orderedComputedMatches));",
       "lineIdx": 45,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 31,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "      if (result.isLeft()) QFAIL(result.left().mMsg.toStdString().c_str());",
       "lineIdx": 36,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "#include <QtTest/QtTest>",
       "lineIdx": 0,
       "from": 23,
       "to": 24

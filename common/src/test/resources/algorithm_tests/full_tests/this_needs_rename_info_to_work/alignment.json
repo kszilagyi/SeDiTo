@@ -1,4706 +1,3982 @@
 {
   "matches": [{
     "left": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train)",
       "lineIdx": 47,
       "from": 18,
       "to": 35
     },
     "right": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train_reduced)",
       "lineIdx": 41,
       "from": 18,
       "to": 35
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 4,
       "to": 9
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 4,
       "to": 9
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 4,
       "to": 7
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 4,
       "to": 7
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    f_trains = []",
       "lineIdx": 39,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "    f_trains = []",
       "lineIdx": 34,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train)",
       "lineIdx": 47,
       "from": 35,
       "to": 36
     },
     "right": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train_reduced)",
       "lineIdx": 41,
       "from": 35,
       "to": 36
     }
   }, {
     "left": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 24,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 28,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    f_vals = []",
       "lineIdx": 40,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    f_tests = []",
       "lineIdx": 35,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 55,
       "from": 17,
       "to": 23
     },
     "right": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 49,
       "from": 17,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 38,
       "to": 41
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 44,
       "to": 47
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "        f_vals.append(f_val)",
       "lineIdx": 56,
       "from": 15,
       "to": 21
     },
     "right": {
-      "line": "        f_tests.append(f_test)",
       "lineIdx": 50,
       "from": 16,
       "to": 22
     }
   }, {
     "left": {
-      "line": "from svm_helper import *",
       "lineIdx": 1,
       "from": 0,
       "to": 4
     },
     "right": {
-      "line": "from svm_helper import *",
       "lineIdx": 1,
       "from": 0,
       "to": 4
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 42,
       "to": 43
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 42,
       "to": 43
     }
   }, {
     "left": {
-      "line": "def main():",
       "lineIdx": 9,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "def main():",
       "lineIdx": 9,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 22,
       "to": 30
     },
     "right": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 22,
       "to": 30
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "    pl.show()",
       "lineIdx": 62,
       "from": 4,
       "to": 6
     },
     "right": {
-      "line": "    pl.show()",
       "lineIdx": 56,
       "from": 4,
       "to": 6
     }
   }, {
     "left": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 16,
       "to": 19
     },
     "right": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 16,
       "to": 19
     }
   }, {
     "left": {
-      "line": "        print(\"f_valid: \" + str(f_val))",
       "lineIdx": 52,
       "from": 15,
       "to": 22
     },
     "right": {
-      "line": "        print(\"f_valid: \" + str(f_test))",
       "lineIdx": 46,
       "from": 15,
       "to": 22
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 19,
       "to": 21
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 19,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    ranges = find_min_max(x)",
       "lineIdx": 20,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "    ranges = find_min_max(x_train)",
       "lineIdx": 22,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "from utils import *",
       "lineIdx": 7,
       "from": 0,
       "to": 4
     },
     "right": {
-      "line": "from utils import *",
       "lineIdx": 7,
       "from": 0,
       "to": 4
     }
   }, {
     "left": {
-      "line": "from utils import *",
       "lineIdx": 7,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "from utils import *",
       "lineIdx": 7,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    x = scale_input(x, ranges)",
       "lineIdx": 21,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "    x_train = scale_input(x_train, ranges)",
       "lineIdx": 23,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 52,
       "to": 54
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 58,
       "to": 60
     }
   }, {
     "left": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 58,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 52,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 44,
       "to": 45
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 56,
       "to": 57
     }
   }, {
     "left": {
-      "line": "        print(\"f_valid: \" + str(f_val))",
       "lineIdx": 52,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        print(\"f_valid: \" + str(f_test))",
       "lineIdx": 46,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "from svmutil import *",
       "lineIdx": 4,
       "from": 5,
       "to": 12
     },
     "right": {
-      "line": "from svmutil import *",
       "lineIdx": 4,
       "from": 5,
       "to": 12
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "        f_val = f_score_from_data(valid_prediction, y_val)",
       "lineIdx": 49,
       "from": 50,
       "to": 51
     },
     "right": {
-      "line": "        f_test = f_score_from_data(test_prediction, y_test)",
       "lineIdx": 43,
       "from": 50,
       "to": 51
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 61,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 55,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "        train_prediction = predict(model, x_train)",
       "lineIdx": 46,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "        train_prediction = predict(model, x_train_reduced)",
       "lineIdx": 40,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "    y, x = svm_read_problem(training_file)",
       "lineIdx": 18,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "    y_train, x_train = svm_read_problem(training_file)",
       "lineIdx": 19,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "        valid_prediction = predict(model, x_val)",
       "lineIdx": 48,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "        test_prediction = predict(model, x_test)",
       "lineIdx": 42,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "    x = scale_input(x, ranges)",
       "lineIdx": 21,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "    x_train = scale_input(x_train, ranges)",
       "lineIdx": 23,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 8,
       "to": 13
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 8,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 26,
       "to": 31
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 26,
       "to": 31
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 30,
       "to": 32
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 36,
       "to": 38
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 53,
       "to": 54
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    pl.show()",
       "lineIdx": 62,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    pl.show()",
       "lineIdx": 56,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 40,
       "to": 45
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 56,
       "to": 61
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 26,
       "to": 31
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 26,
       "to": 31
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 25,
       "to": 33
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 25,
       "to": 33
     }
   }, {
     "left": {
-      "line": "import pylab as pl",
       "lineIdx": 5,
       "from": 16,
       "to": 18
     },
     "right": {
-      "line": "import pylab as pl",
       "lineIdx": 5,
       "from": 16,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "def main():",
       "lineIdx": 9,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "def main():",
       "lineIdx": 9,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 54,
       "to": 55
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    x = scale_input(x, ranges)",
       "lineIdx": 21,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "    x_train = scale_input(x_train, ranges)",
       "lineIdx": 23,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "        train_prediction = predict(model, x_train)",
       "lineIdx": 46,
       "from": 8,
       "to": 24
     },
     "right": {
-      "line": "        train_prediction = predict(model, x_train_reduced)",
       "lineIdx": 40,
       "from": 8,
       "to": 24
     }
   }, {
     "left": {
-      "line": "        f_vals.append(f_val)",
       "lineIdx": 56,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "        f_tests.append(f_test)",
       "lineIdx": 50,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "        print(\"\")",
       "lineIdx": 53,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "        print(\"\")",
       "lineIdx": 47,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "        f_vals.append(f_val)",
       "lineIdx": 56,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "        f_tests.append(f_test)",
       "lineIdx": 50,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 58,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 52,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    train_sizes = []",
       "lineIdx": 38,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "    train_sizes = []",
       "lineIdx": 33,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 54,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 48,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 7,
       "to": 11
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 7,
       "to": 11
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 32,
       "to": 39
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 32,
       "to": 39
     }
   }, {
     "left": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 58,
       "from": 11,
       "to": 19
     },
     "right": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 52,
       "from": 11,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "        print(\"f_valid: \" + str(f_val))",
       "lineIdx": 52,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "        print(\"f_valid: \" + str(f_test))",
       "lineIdx": 46,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 12,
       "to": 23
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 12,
       "to": 23
     }
   }, {
     "left": {
-      "line": "import pylab as pl",
       "lineIdx": 5,
       "from": 7,
       "to": 12
     },
     "right": {
-      "line": "import pylab as pl",
       "lineIdx": 5,
       "from": 7,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "        print(\"f_valid: \" + str(f_val))",
       "lineIdx": 52,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "        print(\"f_valid: \" + str(f_test))",
       "lineIdx": 46,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 39,
       "to": 42
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 39,
       "to": 42
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 16,
       "to": 21
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 16,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 4,
       "to": 9
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 4,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 54,
       "from": 8,
       "to": 19
     },
     "right": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 48,
       "from": 8,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    number_of_data_points = 40",
       "lineIdx": 37,
       "from": 4,
       "to": 25
     },
     "right": {
-      "line": "    number_of_data_points = 80",
       "lineIdx": 32,
       "from": 4,
       "to": 25
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 6,
       "to": 12
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 6,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 50,
       "to": 52
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 50,
       "to": 52
     }
   }, {
     "left": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    x = scale_input(x, ranges)",
       "lineIdx": 21,
       "from": 23,
       "to": 29
     },
     "right": {
-      "line": "    x_train = scale_input(x_train, ranges)",
       "lineIdx": 23,
       "from": 35,
       "to": 41
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 8,
       "to": 13
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 8,
       "to": 13
     }
   }, {
     "left": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 33,
       "to": 36
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 33,
       "to": 36
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 40,
       "to": 44
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 41,
       "to": 45
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 50,
       "to": 53
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 45,
       "to": 48
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 71,
       "to": 72
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 77,
       "to": 78
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 9,
       "to": 13
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 9,
       "to": 13
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 22,
       "to": 25
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 22,
       "to": 25
     }
   }, {
     "left": {
-      "line": "    y, x = svm_read_problem(training_file)",
       "lineIdx": 18,
       "from": 11,
       "to": 27
     },
     "right": {
-      "line": "    y_train, x_train = svm_read_problem(training_file)",
       "lineIdx": 19,
       "from": 23,
       "to": 39
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 14,
       "to": 17
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 14,
       "to": 17
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "        print(\"f_valid: \" + str(f_val))",
       "lineIdx": 52,
       "from": 28,
       "to": 31
     },
     "right": {
-      "line": "        print(\"f_valid: \" + str(f_test))",
       "lineIdx": 46,
       "from": 28,
       "to": 31
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 43,
       "to": 56
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 43,
       "to": 56
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 7,
       "to": 11
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 7,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 11,
       "to": 17
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 11,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 70,
       "to": 71
     }
   }, {
     "left": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 24,
       "from": 14,
       "to": 17
     },
     "right": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 28,
       "from": 14,
       "to": 17
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 28,
       "to": 29
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 4,
       "to": 17
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 4,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    f_trains = []",
       "lineIdx": 39,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "    f_trains = []",
       "lineIdx": 34,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 4,
       "to": 6
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 4,
       "to": 6
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 22,
       "to": 27
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 22,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 84,
       "to": 85
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 84,
       "to": 85
     }
   }, {
     "left": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train)",
       "lineIdx": 47,
       "from": 8,
       "to": 15
     },
     "right": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train_reduced)",
       "lineIdx": 41,
       "from": 8,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 58,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 52,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 21,
       "to": 26
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 21,
       "to": 26
     }
   }, {
     "left": {
-      "line": "        f_val = f_score_from_data(valid_prediction, y_val)",
       "lineIdx": 49,
       "from": 57,
       "to": 58
     },
     "right": {
-      "line": "        f_test = f_score_from_data(test_prediction, y_test)",
       "lineIdx": 43,
       "from": 58,
       "to": 59
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 27,
       "to": 28
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 27,
       "to": 28
     }
   }, {
     "left": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train)",
       "lineIdx": 47,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train_reduced)",
       "lineIdx": 41,
       "from": 52,
       "to": 53
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 55,
       "to": 56
     }
   }, {
     "left": {
-      "line": "        print(\"\")",
       "lineIdx": 53,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "        print(\"\")",
       "lineIdx": 47,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "        f_val = f_score_from_data(valid_prediction, y_val)",
       "lineIdx": 49,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "        f_test = f_score_from_data(test_prediction, y_test)",
       "lineIdx": 43,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 27,
       "to": 29
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 27,
       "to": 29
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 34,
       "to": 37
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 40,
       "to": 43
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 8,
       "to": 13
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 8,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    y, x = svm_read_problem(training_file)",
       "lineIdx": 18,
       "from": 5,
       "to": 6
     },
     "right": {
-      "line": "    y_train, x_train = svm_read_problem(training_file)",
       "lineIdx": 19,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 33,
       "to": 38
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 34,
       "to": 39
     }
   }, {
     "left": {
-      "line": "        print(\"f_valid: \" + str(f_val))",
       "lineIdx": 52,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "        print(\"f_valid: \" + str(f_test))",
       "lineIdx": 46,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    f_vals = []",
       "lineIdx": 40,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    f_tests = []",
       "lineIdx": 35,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 45,
       "to": 46
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 57,
       "to": 58
     }
   }, {
     "left": {
-      "line": "        valid_prediction = predict(model, x_val)",
       "lineIdx": 48,
       "from": 8,
       "to": 24
     },
     "right": {
-      "line": "        test_prediction = predict(model, x_test)",
       "lineIdx": 42,
       "from": 8,
       "to": 23
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 4,
       "to": 8
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 4,
       "to": 8
     }
   }, {
     "left": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 37,
       "to": 46
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 37,
       "to": 46
     }
   }, {
     "left": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 2,
       "to": 3
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 2,
       "to": 3
     }
   }, {
     "left": {
-      "line": "        train_prediction = predict(model, x_train)",
       "lineIdx": 46,
       "from": 49,
       "to": 50
     },
     "right": {
-      "line": "        train_prediction = predict(model, x_train_reduced)",
       "lineIdx": 40,
       "from": 57,
       "to": 58
     }
   }, {
     "left": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 24,
       "from": 18,
       "to": 22
     },
     "right": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 28,
       "from": 18,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 4,
       "to": 6
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 4,
       "to": 6
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 4,
       "to": 8
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 4,
       "to": 8
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 6,
       "to": 7
     }
   }, {
     "left": {
-      "line": "    train_sizes = []",
       "lineIdx": 38,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    train_sizes = []",
       "lineIdx": 33,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "from svm_helper import *",
       "lineIdx": 1,
       "from": 16,
       "to": 22
     },
     "right": {
-      "line": "from svm_helper import *",
       "lineIdx": 1,
       "from": 16,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 6,
       "to": 7
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "from svmutil import *",
       "lineIdx": 4,
       "from": 13,
       "to": 19
     },
     "right": {
-      "line": "from svmutil import *",
       "lineIdx": 4,
       "from": 13,
       "to": 19
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train)",
       "lineIdx": 47,
       "from": 61,
       "to": 62
     },
     "right": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train_reduced)",
       "lineIdx": 41,
       "from": 69,
       "to": 70
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 15,
       "to": 38
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 15,
       "to": 38
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 56,
       "to": 64
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 62,
       "to": 70
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 37,
       "to": 38
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 54,
       "to": 55
     }
   }, {
     "left": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 55,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 49,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 15,
       "to": 16
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    ranges = find_min_max(x)",
       "lineIdx": 20,
       "from": 13,
       "to": 25
     },
     "right": {
-      "line": "    ranges = find_min_max(x_train)",
       "lineIdx": 22,
       "from": 13,
       "to": 25
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 11,
       "to": 16
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 11,
       "to": 16
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 61,
       "from": 4,
       "to": 9
     },
     "right": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 55,
       "from": 4,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 22,
       "to": 30
     },
     "right": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 22,
       "to": 30
     }
   }, {
     "left": {
-      "line": "    train_sizes = []",
       "lineIdx": 38,
       "from": 4,
       "to": 15
     },
     "right": {
-      "line": "    train_sizes = []",
       "lineIdx": 33,
       "from": 4,
       "to": 15
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 39,
       "to": 40
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "main()    ",
       "lineIdx": 66,
       "from": 5,
       "to": 6
     },
     "right": {
-      "line": "main()    ",
       "lineIdx": 60,
       "from": 5,
       "to": 6
     }
   }, {
     "left": {
-      "line": "from svmutil import *",
       "lineIdx": 4,
       "from": 0,
       "to": 4
     },
     "right": {
-      "line": "from svmutil import *",
       "lineIdx": 4,
       "from": 0,
       "to": 4
     }
   }, {
     "left": {
-      "line": "def main():",
       "lineIdx": 9,
       "from": 4,
       "to": 8
     },
     "right": {
-      "line": "def main():",
       "lineIdx": 9,
       "from": 4,
       "to": 8
     }
   }, {
     "left": {
-      "line": "        valid_prediction = predict(model, x_val)",
       "lineIdx": 48,
       "from": 27,
       "to": 34
     },
     "right": {
-      "line": "        test_prediction = predict(model, x_test)",
       "lineIdx": 42,
       "from": 26,
       "to": 33
     }
   }, {
     "left": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 45,
       "to": 46
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 45,
       "to": 46
     }
   }, {
     "left": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 55,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 49,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "        valid_prediction = predict(model, x_val)",
       "lineIdx": 48,
       "from": 35,
       "to": 40
     },
     "right": {
-      "line": "        test_prediction = predict(model, x_test)",
       "lineIdx": 42,
       "from": 34,
       "to": 39
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "import random",
       "lineIdx": 6,
       "from": 0,
       "to": 6
     },
     "right": {
-      "line": "import random",
       "lineIdx": 6,
       "from": 0,
       "to": 6
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 56,
       "to": 57
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 56,
       "to": 57
     }
   }, {
     "left": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 61,
       "from": 11,
       "to": 18
     },
     "right": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 55,
       "from": 11,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "        train_prediction = predict(model, x_train)",
       "lineIdx": 46,
       "from": 35,
       "to": 40
     },
     "right": {
-      "line": "        train_prediction = predict(model, x_train_reduced)",
       "lineIdx": 40,
       "from": 35,
       "to": 40
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 61,
       "to": 62
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 77,
       "to": 78
     }
   }, {
     "left": {
-      "line": "import sys",
       "lineIdx": 2,
       "from": 7,
       "to": 10
     },
     "right": {
-      "line": "import sys",
       "lineIdx": 2,
       "from": 7,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    x = scale_input(x, ranges)",
       "lineIdx": 21,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "    x_train = scale_input(x_train, ranges)",
       "lineIdx": 23,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    y, x = svm_read_problem(training_file)",
       "lineIdx": 18,
       "from": 28,
       "to": 41
     },
     "right": {
-      "line": "    y_train, x_train = svm_read_problem(training_file)",
       "lineIdx": 19,
       "from": 40,
       "to": 53
     }
   }, {
     "left": {
-      "line": "        f_vals.append(f_val)",
       "lineIdx": 56,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "        f_tests.append(f_test)",
       "lineIdx": 50,
       "from": 15,
       "to": 16
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 17,
       "to": 18
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 17,
       "to": 18
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 5,
       "to": 6
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 8,
       "to": 13
     },
     "right": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 8,
       "to": 13
     }
   }, {
     "left": {
-      "line": "import pylab as pl",
       "lineIdx": 5,
       "from": 0,
       "to": 6
     },
     "right": {
-      "line": "import pylab as pl",
       "lineIdx": 5,
       "from": 0,
       "to": 6
     }
   }, {
     "left": {
-      "line": "        f_val = f_score_from_data(valid_prediction, y_val)",
       "lineIdx": 49,
       "from": 34,
       "to": 50
     },
     "right": {
-      "line": "        f_test = f_score_from_data(test_prediction, y_test)",
       "lineIdx": 43,
       "from": 35,
       "to": 50
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 3,
       "to": 4
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 3,
       "to": 4
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 7,
       "to": 11
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 13,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "        print(\"f_valid: \" + str(f_val))",
       "lineIdx": 52,
       "from": 8,
       "to": 13
     },
     "right": {
-      "line": "        print(\"f_valid: \" + str(f_test))",
       "lineIdx": 46,
       "from": 8,
       "to": 13
     }
   }, {
     "left": {
-      "line": "import pylab as pl",
       "lineIdx": 5,
       "from": 13,
       "to": 15
     },
     "right": {
-      "line": "import pylab as pl",
       "lineIdx": 5,
       "from": 13,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 62,
       "to": 83
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 62,
       "to": 83
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 46,
       "to": 47
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 54,
       "from": 36,
       "to": 37
     },
     "right": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 48,
       "from": 36,
       "to": 37
     }
   }, {
     "left": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 8,
       "to": 13
     },
     "right": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 8,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 54,
       "to": 55
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 54,
       "to": 55
     }
   }, {
     "left": {
-      "line": "        f_val = f_score_from_data(valid_prediction, y_val)",
       "lineIdx": 49,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "        f_test = f_score_from_data(test_prediction, y_test)",
       "lineIdx": 43,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 70,
       "to": 71
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 76,
       "to": 77
     }
   }, {
     "left": {
-      "line": "def main():",
       "lineIdx": 9,
       "from": 0,
       "to": 3
     },
     "right": {
-      "line": "def main():",
       "lineIdx": 9,
       "from": 0,
       "to": 3
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 45,
       "to": 46
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 45,
       "to": 46
     }
   }, {
     "left": {
-      "line": "        print(\"\")",
       "lineIdx": 53,
       "from": 8,
       "to": 13
     },
     "right": {
-      "line": "        print(\"\")",
       "lineIdx": 47,
       "from": 8,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 22,
       "to": 25
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 22,
       "to": 25
     }
   }, {
     "left": {
-      "line": "        print(\"f_valid: \" + str(f_val))",
       "lineIdx": 52,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "        print(\"f_valid: \" + str(f_test))",
       "lineIdx": 46,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "main()    ",
       "lineIdx": 66,
       "from": 0,
       "to": 4
     },
     "right": {
-      "line": "main()    ",
       "lineIdx": 60,
       "from": 0,
       "to": 4
     }
   }, {
     "left": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 24,
       "from": 4,
       "to": 11
     },
     "right": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 28,
       "from": 4,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 45,
       "to": 46
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 61,
       "to": 62
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 57,
       "to": 60
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 57,
       "to": 60
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "        train_prediction = predict(model, x_train)",
       "lineIdx": 46,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "        train_prediction = predict(model, x_train_reduced)",
       "lineIdx": 40,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 15,
       "to": 18
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 15,
       "to": 18
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 25,
       "to": 28
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 25,
       "to": 28
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 51,
       "to": 52
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 57,
       "to": 58
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 14,
       "to": 17
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 20,
       "to": 23
     }
   }, {
     "left": {
-      "line": "        train_prediction = predict(model, x_train)",
       "lineIdx": 46,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "        train_prediction = predict(model, x_train_reduced)",
       "lineIdx": 40,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 60,
       "to": 61
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 60,
       "to": 61
     }
   }, {
     "left": {
-      "line": "from svm_helper import *",
       "lineIdx": 1,
       "from": 5,
       "to": 15
     },
     "right": {
-      "line": "from svm_helper import *",
       "lineIdx": 1,
       "from": 5,
       "to": 15
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 47,
       "to": 52
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 63,
       "to": 68
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 19,
       "to": 22
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 25,
       "to": 28
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 55,
       "from": 8,
       "to": 16
     },
     "right": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 49,
       "from": 8,
       "to": 16
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 3,
       "to": 4
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 3,
       "to": 4
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "    number_of_data_points = 40",
       "lineIdx": 37,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "    number_of_data_points = 80",
       "lineIdx": 32,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 16,
       "to": 19
     },
     "right": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 16,
       "to": 19
     }
   }, {
     "left": {
-      "line": "        print(\"\")",
       "lineIdx": 53,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "        print(\"\")",
       "lineIdx": 47,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 41,
       "to": 42
     }
   }, {
     "left": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 9,
       "to": 15
     },
     "right": {
-      "line": "sys.path.insert(0, './../lib')",
       "lineIdx": 3,
       "from": 9,
       "to": 15
     }
   }, {
     "left": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 58,
       "from": 4,
       "to": 9
     },
     "right": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 52,
       "from": 4,
       "to": 9
     }
   }, {
     "left": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 54,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 48,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "main()    ",
       "lineIdx": 66,
       "from": 4,
       "to": 5
     },
     "right": {
-      "line": "main()    ",
       "lineIdx": 60,
       "from": 4,
       "to": 5
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 18,
       "to": 20
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 18,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 44,
       "to": 45
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 45,
       "to": 46
     }
   }, {
     "left": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train)",
       "lineIdx": 47,
       "from": 36,
       "to": 52
     },
     "right": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train_reduced)",
       "lineIdx": 41,
       "from": 36,
       "to": 52
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 83,
       "to": 84
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 83,
       "to": 84
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 75,
       "to": 76
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 87,
       "to": 88
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 34,
       "to": 51
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 40,
       "to": 57
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 74,
       "to": 75
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 86,
       "to": 87
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 54,
       "to": 61
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 70,
       "to": 77
     }
   }, {
     "left": {
-      "line": "def main():",
       "lineIdx": 9,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "def main():",
       "lineIdx": 9,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 27,
       "to": 42
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 27,
       "to": 42
     }
   }, {
     "left": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 55,
       "from": 24,
       "to": 31
     },
     "right": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 49,
       "from": 24,
       "to": 31
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 12,
       "to": 23
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 12,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 11,
       "to": 16
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 11,
       "to": 16
     }
   }, {
     "left": {
-      "line": "    pl.show()",
       "lineIdx": 62,
       "from": 7,
       "to": 11
     },
     "right": {
-      "line": "    pl.show()",
       "lineIdx": 56,
       "from": 7,
       "to": 11
     }
   }, {
     "left": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 26,
       "to": 27
     },
     "right": {
-      "line": "    training_file = \"../../features_output/train_samples.txt\"",
       "lineIdx": 17,
       "from": 26,
       "to": 27
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 28,
       "to": 29
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "    pl.show()",
       "lineIdx": 62,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "    pl.show()",
       "lineIdx": 56,
       "from": 6,
       "to": 7
     }
   }, {
     "left": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 61,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 55,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    y, x = svm_read_problem(training_file)",
       "lineIdx": 18,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "    y_train, x_train = svm_read_problem(training_file)",
       "lineIdx": 19,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    ranges = find_min_max(x)",
       "lineIdx": 20,
       "from": 11,
       "to": 12
     },
     "right": {
-      "line": "    ranges = find_min_max(x_train)",
       "lineIdx": 22,
       "from": 11,
       "to": 12
     }
   }, {
     "left": {
-      "line": "        print(\"f_valid: \" + str(f_val))",
       "lineIdx": 52,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "        print(\"f_valid: \" + str(f_test))",
       "lineIdx": 46,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 13,
       "to": 14
     }
   }, {
     "left": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 30,
       "to": 31
     },
     "right": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 30,
       "to": 31
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "    ranges = find_min_max(x)",
       "lineIdx": 20,
       "from": 4,
       "to": 10
     },
     "right": {
-      "line": "    ranges = find_min_max(x_train)",
       "lineIdx": 22,
       "from": 4,
       "to": 10
     }
   }, {
     "left": {
-      "line": "        valid_prediction = predict(model, x_val)",
       "lineIdx": 48,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "        test_prediction = predict(model, x_test)",
       "lineIdx": 42,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "        train_prediction = predict(model, x_train)",
       "lineIdx": 46,
       "from": 27,
       "to": 34
     },
     "right": {
-      "line": "        train_prediction = predict(model, x_train_reduced)",
       "lineIdx": 40,
       "from": 27,
       "to": 34
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 8,
       "to": 17
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 8,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 18,
       "to": 19
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 18,
       "to": 19
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 53,
       "to": 54
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 53,
       "to": 54
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 23,
       "to": 29
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 29,
       "to": 35
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 48,
       "to": 49
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 58,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    print(\"plotting\")",
       "lineIdx": 52,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 61,
       "to": 62
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 61,
       "to": 62
     }
   }, {
     "left": {
-      "line": "    for train_len in range(10, all_len - val_len, int(all_len/number_of_data_points)):",
       "lineIdx": 41,
       "from": 85,
       "to": 86
     },
     "right": {
-      "line": "    for train_len in range(10, len(y_train), int(len(y_train)/number_of_data_points)):",
       "lineIdx": 36,
       "from": 85,
       "to": 86
     }
   }, {
     "left": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 61,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 55,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "        model = train(y_train, x_train, c_exp, g_exp, max_idx)",
       "lineIdx": 45,
       "from": 52,
       "to": 53
     },
     "right": {
-      "line": "        model = train(y_train_reduced, x_train_reduced, c_exp, g_exp, max_idx)",
       "lineIdx": 39,
       "from": 68,
       "to": 69
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 48,
       "to": 49
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 48,
       "to": 49
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 35,
       "to": 40
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 35,
       "to": 40
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "        valid_prediction = predict(model, x_val)",
       "lineIdx": 48,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "        test_prediction = predict(model, x_test)",
       "lineIdx": 42,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "    x, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x))",
       "lineIdx": 23,
       "from": 65,
       "to": 70
     },
     "right": {
-      "line": "    x_train, idxs = zip(*map(lambda xi: gen_svm_nodearray(xi, isKernel=False), x_train))",
       "lineIdx": 26,
       "from": 71,
       "to": 76
     }
   }, {
     "left": {
-      "line": "        print(\"\")",
       "lineIdx": 53,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "        print(\"\")",
       "lineIdx": 47,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 24,
       "to": 25
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "        print(\"f_valid: \" + str(f_val))",
       "lineIdx": 52,
       "from": 38,
       "to": 39
     },
     "right": {
-      "line": "        print(\"f_valid: \" + str(f_test))",
       "lineIdx": 46,
       "from": 39,
       "to": 40
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 45,
       "to": 46
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 46,
       "to": 47
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 4,
       "to": 9
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 4,
       "to": 9
     }
   }, {
     "left": {
-      "line": "    ranges = find_min_max(x)",
       "lineIdx": 20,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "    ranges = find_min_max(x_train)",
       "lineIdx": 22,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "    print(\"g_exp: \" + str(g_exp))",
       "lineIdx": 16,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "    f_trains = []",
       "lineIdx": 39,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "    f_trains = []",
       "lineIdx": 34,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    train_sizes = []",
       "lineIdx": 38,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "    train_sizes = []",
       "lineIdx": 33,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 14,
       "to": 15
     },
     "right": {
-      "line": "        c_exp = int(f.readline())",
       "lineIdx": 12,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "import random",
       "lineIdx": 6,
       "from": 7,
       "to": 13
     },
     "right": {
-      "line": "import random",
       "lineIdx": 6,
       "from": 7,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "import sys",
       "lineIdx": 2,
       "from": 0,
       "to": 6
     },
     "right": {
-      "line": "import sys",
       "lineIdx": 2,
       "from": 0,
       "to": 6
     }
   }, {
     "left": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 54,
       "from": 20,
       "to": 26
     },
     "right": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 48,
       "from": 20,
       "to": 26
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train)",
       "lineIdx": 47,
       "from": 16,
       "to": 17
     },
     "right": {
-      "line": "        f_train = f_score_from_data(train_prediction, y_train_reduced)",
       "lineIdx": 41,
       "from": 16,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    x = scale_input(x, ranges)",
       "lineIdx": 21,
       "from": 8,
       "to": 19
     },
     "right": {
-      "line": "    x_train = scale_input(x_train, ranges)",
       "lineIdx": 23,
       "from": 14,
       "to": 25
     }
   }, {
     "left": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 19,
       "to": 20
     },
     "right": {
-      "line": "        g_exp = int(f.readline())",
       "lineIdx": 13,
       "from": 19,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 59,
       "from": 42,
       "to": 45
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_trains, color=\"red\")",
       "lineIdx": 53,
       "from": 42,
       "to": 45
     }
   }, {
     "left": {
-      "line": "    pl.show()",
       "lineIdx": 62,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "    pl.show()",
       "lineIdx": 56,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "    y, x = svm_read_problem(training_file)",
       "lineIdx": 18,
       "from": 41,
       "to": 42
     },
     "right": {
-      "line": "    y_train, x_train = svm_read_problem(training_file)",
       "lineIdx": 19,
       "from": 53,
       "to": 54
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 18,
       "to": 20
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 18,
       "to": 20
     }
   }, {
     "left": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 24,
       "from": 22,
       "to": 23
     },
     "right": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 28,
       "from": 22,
       "to": 23
     }
   }, {
     "left": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 61,
       "from": 10,
       "to": 11
     },
     "right": {
-      "line": "    print(\"plotted\")",
       "lineIdx": 55,
       "from": 10,
       "to": 11
     }
   }, {
     "left": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "# -*- coding: utf-8 -*-",
       "lineIdx": 0,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "    print(\"c_exp: \" + str(c_exp))",
       "lineIdx": 15,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 40,
       "to": 41
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 40,
       "to": 41
     }
   }, {
     "left": {
-      "line": "    f_vals = []",
       "lineIdx": 40,
       "from": 13,
       "to": 14
     },
     "right": {
-      "line": "    f_tests = []",
       "lineIdx": 35,
       "from": 14,
       "to": 15
     }
   }, {
     "left": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 50,
       "from": 47,
       "to": 48
     },
     "right": {
-      "line": "        print(\"num of train: \" + str(train_len))",
       "lineIdx": 44,
       "from": 47,
       "to": 48
     }
   }, {
     "left": {
-      "line": "    pl.plot(train_sizes, f_vals, color=\"blue\")",
       "lineIdx": 60,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "    pl.plot(train_sizes, f_tests, color=\"blue\")",
       "lineIdx": 54,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 54,
       "from": 27,
       "to": 36
     },
     "right": {
-      "line": "        train_sizes.append(train_len)",
       "lineIdx": 48,
       "from": 27,
       "to": 36
     }
   }, {
     "left": {
-      "line": "from utils import *",
       "lineIdx": 7,
       "from": 11,
       "to": 17
     },
     "right": {
-      "line": "from utils import *",
       "lineIdx": 7,
       "from": 11,
       "to": 17
     }
   }, {
     "left": {
-      "line": "    print(\"Number of samples: \" + str(len(y)))",
       "lineIdx": 25,
       "from": 21,
       "to": 28
     },
     "right": {
-      "line": "    print(\"Number of train samples: \" + str(len(y_train)))",
       "lineIdx": 29,
       "from": 27,
       "to": 34
     }
   }, {
     "left": {
-      "line": "        f_val = f_score_from_data(valid_prediction, y_val)",
       "lineIdx": 49,
       "from": 16,
       "to": 33
     },
     "right": {
-      "line": "        f_test = f_score_from_data(test_prediction, y_test)",
       "lineIdx": 43,
       "from": 17,
       "to": 34
     }
   }, {
     "left": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 24,
       "from": 12,
       "to": 13
     },
     "right": {
-      "line": "    max_idx = max(idxs)",
       "lineIdx": 28,
       "from": 12,
       "to": 13
     }
   }, {
     "left": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 55,
       "from": 31,
       "to": 32
     },
     "right": {
-      "line": "        f_trains.append(f_train)",
       "lineIdx": 49,
       "from": 31,
       "to": 32
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 15,
       "to": 22
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 15,
       "to": 22
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 43,
       "to": 44
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 43,
       "to": 44
     }
   }, {
     "left": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 42,
       "to": 43
     },
     "right": {
-      "line": "    with open('cross_vaildation_result.txt', 'r') as f:",
       "lineIdx": 11,
       "from": 42,
       "to": 43
     }
   }, {
     "left": {
-      "line": "from svm_helper import *",
       "lineIdx": 1,
       "from": 23,
       "to": 24
     },
     "right": {
-      "line": "from svm_helper import *",
       "lineIdx": 1,
       "from": 23,
       "to": 24
     }
   }, {
     "left": {
-      "line": "        print(\"f_valid: \" + str(f_val))",
       "lineIdx": 52,
       "from": 37,
       "to": 38
     },
     "right": {
-      "line": "        print(\"f_valid: \" + str(f_test))",
       "lineIdx": 46,
       "from": 38,
       "to": 39
     }
   }, {
     "left": {
-      "line": "from utils import *",
       "lineIdx": 7,
       "from": 5,
       "to": 10
     },
     "right": {
-      "line": "from utils import *",
       "lineIdx": 7,
       "from": 5,
       "to": 10
     }
   }, {
     "left": {
-      "line": "    f_trains = []",
       "lineIdx": 39,
       "from": 4,
       "to": 12
     },
     "right": {
-      "line": "    f_trains = []",
       "lineIdx": 34,
       "from": 4,
       "to": 12
     }
   }, {
     "left": {
-      "line": "from svmutil import *",
       "lineIdx": 4,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "from svmutil import *",
       "lineIdx": 4,
       "from": 20,
       "to": 21
     }
   }, {
     "left": {
-      "line": "        valid_prediction = predict(model, x_val)",
       "lineIdx": 48,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "        test_prediction = predict(model, x_test)",
       "lineIdx": 42,
       "from": 24,
       "to": 25
     }
   }, {
     "left": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 51,
       "from": 28,
       "to": 31
     },
     "right": {
-      "line": "        print(\"f_train: \" + str(f_train))",
       "lineIdx": 45,
       "from": 28,
       "to": 31

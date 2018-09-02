@@ -1,650 +1,550 @@
 {
   "matches": [{
     "left": {
-      "line": "class AboveBelowLineCount: public AboveBelowSidedFeature",
       "lineIdx": 4,
       "from": 27,
       "to": 33
     },
     "right": {
-      "line": "class AboveBelowLineCount: public AboveBelowSidedFeature",
       "lineIdx": 4,
       "from": 27,
       "to": 33
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#endif // ABOVEBELOWLINECOUNT_H",
       "lineIdx": 12,
       "from": 7,
       "to": 8
     },
     "right": {
-      "line": "#endif // ABOVEBELOWLINECOUNT_H",
       "lineIdx": 12,
       "from": 7,
       "to": 8
     }
   }, {
     "left": {
-      "line": "class AboveBelowLineCount: public AboveBelowSidedFeature",
       "lineIdx": 4,
       "from": 25,
       "to": 26
     },
     "right": {
-      "line": "class AboveBelowLineCount: public AboveBelowSidedFeature",
       "lineIdx": 4,
       "from": 25,
       "to": 26
     }
   }, {
     "left": {
-      "line": "#define ABOVEBELOWLINECOUNT_H",
       "lineIdx": 1,
       "from": 1,
       "to": 7
     },
     "right": {
-      "line": "#define ABOVEBELOWLINECOUNT_H",
       "lineIdx": 1,
       "from": 1,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 80,
       "to": 81
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 81,
       "to": 82
     }
   }, {
     "left": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 26,
       "to": 29
     },
     "right": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 26,
       "to": 29
     }
   }, {
     "left": {
-      "line": "{",
       "lineIdx": 5,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "{",
       "lineIdx": 5,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 29,
       "to": 30
     },
     "right": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 29,
       "to": 30
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     },
     "right": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 9,
       "to": 10
     }
   }, {
     "left": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 45,
       "to": 46
     },
     "right": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 45,
       "to": 46
     }
   }, {
     "left": {
-      "line": "#endif // ABOVEBELOWLINECOUNT_H",
       "lineIdx": 12,
       "from": 10,
       "to": 31
     },
     "right": {
-      "line": "#endif // ABOVEBELOWLINECOUNT_H",
       "lineIdx": 12,
       "from": 10,
       "to": 31
     }
   }, {
     "left": {
-      "line": "#endif // ABOVEBELOWLINECOUNT_H",
       "lineIdx": 12,
       "from": 8,
       "to": 9
     },
     "right": {
-      "line": "#endif // ABOVEBELOWLINECOUNT_H",
       "lineIdx": 12,
       "from": 8,
       "to": 9
     }
   }, {
     "left": {
-      "line": "class AboveBelowLineCount: public AboveBelowSidedFeature",
       "lineIdx": 4,
       "from": 34,
       "to": 56
     },
     "right": {
-      "line": "class AboveBelowLineCount: public AboveBelowSidedFeature",
       "lineIdx": 4,
       "from": 34,
       "to": 56
     }
   }, {
     "left": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 22,
       "to": 25
     },
     "right": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 22,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 44,
       "to": 45
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 45,
       "to": 46
     }
   }, {
     "left": {
-      "line": "#endif // ABOVEBELOWLINECOUNT_H",
       "lineIdx": 12,
       "from": 1,
       "to": 6
     },
     "right": {
-      "line": "#endif // ABOVEBELOWLINECOUNT_H",
       "lineIdx": 12,
       "from": 1,
       "to": 6
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 46,
       "to": 55
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 47,
       "to": 56
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 34,
       "to": 35
     },
     "right": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 34,
       "to": 35
     }
   }, {
     "left": {
-      "line": "#define ABOVEBELOWLINECOUNT_H",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#define ABOVEBELOWLINECOUNT_H",
       "lineIdx": 1,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 40,
       "to": 44
     },
     "right": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 40,
       "to": 44
     }
   }, {
     "left": {
-      "line": "class AboveBelowLineCount: public AboveBelowSidedFeature",
       "lineIdx": 4,
       "from": 6,
       "to": 25
     },
     "right": {
-      "line": "class AboveBelowLineCount: public AboveBelowSidedFeature",
       "lineIdx": 4,
       "from": 6,
       "to": 25
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 55,
       "to": 56
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 56,
       "to": 57
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 64,
       "to": 65
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 65,
       "to": 66
     }
   }, {
     "left": {
-      "line": "#ifndef ABOVEBELOWLINECOUNT_H",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#ifndef ABOVEBELOWLINECOUNT_H",
       "lineIdx": 0,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 33,
       "to": 34
     },
     "right": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 33,
       "to": 34
     }
   }, {
     "left": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 2,
       "to": 21
     },
     "right": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 2,
       "to": 21
     }
   }, {
     "left": {
-      "line": "};",
       "lineIdx": 10,
       "from": 1,
       "to": 2
     },
     "right": {
-      "line": "};",
       "lineIdx": 10,
       "from": 1,
       "to": 2
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 10,
       "to": 32
     },
     "right": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 10,
       "to": 32
     }
   }, {
     "left": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 31,
       "to": 39
     },
     "right": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 31,
       "to": 39
     }
   }, {
     "left": {
-      "line": "#define ABOVEBELOWLINECOUNT_H",
       "lineIdx": 1,
       "from": 8,
       "to": 29
     },
     "right": {
-      "line": "#define ABOVEBELOWLINECOUNT_H",
       "lineIdx": 1,
       "from": 8,
       "to": 29
     }
   }, {
     "left": {
-      "line": "class AboveBelowLineCount: public AboveBelowSidedFeature",
       "lineIdx": 4,
       "from": 0,
       "to": 5
     },
     "right": {
-      "line": "class AboveBelowLineCount: public AboveBelowSidedFeature",
       "lineIdx": 4,
       "from": 0,
       "to": 5
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 8,
       "to": 20
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 9,
       "to": 21
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 32,
       "to": 33
     },
     "right": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 32,
       "to": 33
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 72,
       "to": 80
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 73,
       "to": 81
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 27,
       "to": 44
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 28,
       "to": 45
     }
   }, {
     "left": {
-      "line": "};",
       "lineIdx": 10,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "};",
       "lineIdx": 10,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     },
     "right": {
-      "line": "#include \"abovebelowsidedfeature.h\"",
       "lineIdx": 2,
       "from": 1,
       "to": 8
     }
   }, {
     "left": {
-      "line": "public:",
       "lineIdx": 6,
       "from": 0,
       "to": 6
     },
     "right": {
-      "line": "public:",
       "lineIdx": 6,
       "from": 0,
       "to": 6
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 21,
       "to": 26
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 22,
       "to": 27
     }
   }, {
     "left": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 44,
       "to": 45
     },
     "right": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 44,
       "to": 45
     }
   }, {
     "left": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 21,
       "to": 22
     },
     "right": {
-      "line": "  AboveBelowLineCount(Dir dir, DiffSide side);",
       "lineIdx": 7,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "public:",
       "lineIdx": 6,
       "from": 6,
       "to": 7
     },
     "right": {
-      "line": "public:",
       "lineIdx": 6,
       "from": 6,
       "to": 7
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 61,
       "to": 64
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 62,
       "to": 65
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 20,
       "to": 21
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 21,
       "to": 22
     }
   }, {
     "left": {
-      "line": "#endif // ABOVEBELOWLINECOUNT_H",
       "lineIdx": 12,
       "from": 0,
       "to": 1
     },
     "right": {
-      "line": "#endif // ABOVEBELOWLINECOUNT_H",
       "lineIdx": 12,
       "from": 0,
       "to": 1
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 57,
       "to": 60
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 58,
       "to": 61
     }
   }, {
     "left": {
-      "line": "#ifndef ABOVEBELOWLINECOUNT_H",
       "lineIdx": 0,
       "from": 1,
       "to": 7
     },
     "right": {
-      "line": "#ifndef ABOVEBELOWLINECOUNT_H",
       "lineIdx": 0,
       "from": 1,
       "to": 7
     }
   }, {
     "left": {
-      "line": "#ifndef ABOVEBELOWLINECOUNT_H",
       "lineIdx": 0,
       "from": 8,
       "to": 29
     },
     "right": {
-      "line": "#ifndef ABOVEBELOWLINECOUNT_H",
       "lineIdx": 0,
       "from": 8,
       "to": 29
     }
   }, {
     "left": {
-      "line": "  float sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 66,
       "to": 71
     },
     "right": {
-      "line": "  double sidedCompute(const OneToOneAlignment& alignment, int idx) const override;",
       "lineIdx": 8,
       "from": 67,
       "to": 72
