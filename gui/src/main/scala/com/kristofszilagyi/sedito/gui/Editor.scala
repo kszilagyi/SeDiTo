@@ -1,6 +1,7 @@
 package com.kristofszilagyi.sedito.gui
 
 import java.time.Duration
+import java.util
 
 import com.kristofszilagyi.sedito.common.AssertionEx.fail
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
@@ -14,6 +15,7 @@ import javafx.scene.control.Label
 import javafx.stage.Popup
 import org.fxmisc.flowless.{Cell, VirtualFlow}
 import org.fxmisc.richtext.event.MouseOverTextEvent
+import org.fxmisc.richtext.model.{StyleSpans, StyleSpansBuilder}
 import org.fxmisc.richtext.model.TwoDimensional.Bias
 import org.fxmisc.richtext.{CodeArea, GenericStyledArea}
 
@@ -51,6 +53,18 @@ object Editor {
       case _: CharsMoved => CharCssClass("moved_char")
     }
   }
+
+  private def toStylesSpans(highlight: Map[LineIdx, LineEdits]): StyleSpans[util.Collection[String]] = {
+    val builder = new StyleSpansBuilder[util.Collection[String]]
+    highlight.toSeq.sortBy(_._1).foreach{ case (_, edits) =>
+      edits.charEdits.toSeq.sortBy(_.from).foreach { edit =>
+        val charClass = getCharCssClass(edit.editType, edits.line)
+        builder.add(List(charClass.s).asJava, edit.length)
+      }
+    }
+    builder.create()
+  }
+
 }
 
 final case class LineEdits(line: LineEditType, charEdits: Traversable[CharEdit])
@@ -161,14 +175,8 @@ final class Editor extends CodeArea {
     applyLineTypeCss(lineIdx, Some(newEdit))
   }
 
-  private def applyCharCss(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {
-    setStyle(lineIdx.i, from.i, to.i,
-      List(
-        getCharCssClass(
-          editType,
-          editTypes.getOrElse(lineIdx, fail(s"Missing line edit type for $lineIdx")).line
-        ).s).asJava
-    )
+  def applyCharEdits(): Unit = {
+    setStyleSpans(0, toStylesSpans(editTypes))
   }
 
   def setCharEdit(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {
@@ -181,17 +189,17 @@ final class Editor extends CodeArea {
     applyLineTypeCss(lineIdx, Some(newEdit))
   }
 
-  def highlightLine(lineIdx: LineIdx): Unit = {
+  private def highlightLine(lineIdx: LineIdx): Unit = {
     highlightedLines ++= Traversable(lineIdx)
     setParagraphStyle(lineIdx.i, List("highlighted").asJava)
   }
 
-  def highlightChar(selection: Selection): Unit = {
+  private def highlightChar(selection: Selection): Unit = {
     highlightedChars ++= Traversable(selection)
     setStyle(selection.lineIdx.i, selection.from.i, selection.toExcl.i, List("highlighted_char").asJava)
   }
 
-  def resetHighlighting(): Unit = {
+  private def resetHighlighting(): Unit = {
     highlightedLines.foreach { line =>
       applyLineTypeCss(line, editTypes.get(line))
     }

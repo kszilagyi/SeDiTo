@@ -20,7 +20,7 @@ object Selection {
     if (from.i < 0 || from.i >= line.length) Invalid(IndexIsOutOfRange(from.i, line))
     else if (toExcl.i < 0 || toExcl.i > line.length) Invalid(IndexIsOutOfRange(toExcl.i, line))
     else if (from.i >= toExcl.i) Invalid(RangeIsNotPositive(from.i, toExcl.i, line))
-    else Valid(new Selection(line, lineIdx, from, toExcl, absoluteFrom) {})
+    else Valid(new Selection(lineIdx, from, toExcl)(line, absoluteFrom) {})
   }
 
   private object MinimalSelection {
@@ -60,7 +60,7 @@ object Selection {
   }
 }
 //I am using this instead of indexing into the whole string so that line ending types do not make a difference
-sealed abstract case class Selection private(line: String, lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine, absoluteFrom: Int) {
+sealed abstract case class Selection private(lineIdx: LineIdx, from: CharIdxInLine, toExcl: CharIdxInLine)(val line: String, val absoluteFrom: Int) {
   def toText: String = line.substring(from.i, toExcl.i)
 
   override def toString: String = {

@@ -31,6 +31,12 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
     lines.map(_.prodLine).map(_.length).take(idx.i).sum //not exatly correct but should be enough
   }
   private def test(leftLines: List[Line], rightLines: List[Line]) = {
+    def toWords(testLines: List[Line]) = {
+      Wordizer.toWordIndices(testLines.map { line =>
+        line.prodLine
+      }.mkString("\n"))
+    }
+
     def toProdLines(testLines: List[Line]): Lines = {
       Lines(testLines.map { line =>
         line.prodLine
@@ -54,8 +60,11 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
     val indexedLeftLines = leftLines.zipWithIndex.map{case (s, idx) => (s, LineIdx(idx))}
     val indexedRightLines = rightLines.zipWithIndex.map{case (s, idx) => (s, LineIdx(idx))}
 
+    val leftWords = toWords(leftLines)
+    val rightWords = toWords(rightLines)
     val prodLeftLines = toProdLines(leftLines)
     val prodRightLines = toProdLines(rightLines)
+
     val lineIds = leftLines.map(_.id)
     val lineAlignment = lineIds.flatMap { lineId =>
       val left = indexedLeftLines.filter(_._1.id ==== lineId).single.getOrElse(fail(s"Bug in test: should be one, id = $lineId"))
@@ -112,8 +121,7 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
       }.toMap
     }
 
-    println(s"prodLeftLines: $prodLeftLines\nprodRightLines: $prodRightLines\nwords: $wordMatches\nlines: $lineAlignment\n")
-    toSortedHightligh(CharHighlightCalculator.calc(prodLeftLines, prodRightLines, UnambiguousWordAlignment(wordMatches.toSet),
+    toSortedHightligh(CharHighlightCalculator.calc(leftWords, rightWords, UnambiguousWordAlignment(wordMatches.toSet),
       UnambiguousLineAlignment(lineAlignment.toSet))
     ) shouldBe
       toSortedHightligh(CharHighlight(toHighlight(indexedLeftLines), toHighlight(indexedRightLines)))

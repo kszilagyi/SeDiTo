@@ -184,6 +184,7 @@ object TrainAndDiff {
   }
 
 }
+//see if any of the metrics are useless
 object Train extends App {
   private val logger = getLogger
 

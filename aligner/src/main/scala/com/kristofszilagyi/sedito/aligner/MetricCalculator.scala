@@ -100,6 +100,10 @@ object MetricCalculator {
   }
 
   private def calcMetrics(left: String, right: String, supposedMaxLength: Int) = {
+    //todo edit this so we can set maximum
+    //todo http://www.mit.edu/~andoni/papers/compEdit.pdf
+    //try n-grams
+    //try prallelising
     val ld = ldCalculator.distance(left, right)
     val ldLenSim = LdLenSimilarity.calcFast(ld, left, right)
     val maxLen = math.max(left.length, right.length)

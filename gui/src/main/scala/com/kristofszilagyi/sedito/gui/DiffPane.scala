@@ -34,6 +34,7 @@ object DiffPane {
       (y1 - emptyLineWidth / 2, y2 + emptyLineWidth / 2)
     } else (y1, y2)
   }
+
 }
 
 final class DiffPane extends StackPane {
@@ -171,7 +172,7 @@ final class DiffPane extends StackPane {
               val xs = Array(leftX, leftX, rightX, rightX)
 
               val heightPerLine = 16.0 // todo calculate dynamically - do we need that?
-            val y1 = offScreenY(firstLeft, eqPoint.left.from, heightPerLine, firstLeftBounds.getMinY)
+              val y1 = offScreenY(firstLeft, eqPoint.left.from, heightPerLine, firstLeftBounds.getMinY)
               val y2 = offScreenY(firstLeft, eqPoint.left.to, heightPerLine, firstLeftBounds.getMinY)
               val y3 = offScreenY(firstRight, eqPoint.right.to, heightPerLine, firstRightBounds.getMinY)
               val y4 = offScreenY(firstRight, eqPoint.right.from, heightPerLine, firstRightBounds.getMinY)
@@ -252,9 +253,13 @@ final class DiffPane extends StackPane {
     }
     eqPoints = InsertionPointCalculator.calc(partitioned.notMoved, moved, leftLineCount = leftLines.l.size,
       rightLineCount = rightLines.l.size)
-    val highlight = CharHighlightCalculator.calc(leftLines, rightLines, newWordAlignment, lineAlignment)
+    val leftWords = Wordizer.toWordIndices(left.s)
+    val rightWords = Wordizer.toWordIndices(right.s)
+    val highlight = CharHighlightCalculator.calc(leftWords, rightWords, newWordAlignment, lineAlignment)
     applyHighlight(codeAreaLeft, highlight.left)
     applyHighlight(codeAreaRight, highlight.right)
+    codeAreaLeft.applyCharEdits()
+    codeAreaRight.applyCharEdits()
     layout()
     requestRedraw()
   }
