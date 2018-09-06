@@ -20,7 +20,7 @@ final case class CharEdit(from: CharIdxInLine, to: CharIdxInLine, editType: Char
   }
 
   def length: Int = {
-    to.i - from.i - 1
+    to.i - from.i
   }
 }
 
@@ -48,6 +48,8 @@ final case class ActualCharEdit(from: CharIdxInLine, to: CharIdxInLine, editType
     line.substring(from.i, to.i)
   }
   def toCharEdit: CharEdit = CharEdit(from, to, editType)
+
+  def length: Int = to.i - from.i
 }
 
 final case class CharHighlight(left: Map[LineIdx, Traversable[CharEdit]], right: Map[LineIdx, Traversable[CharEdit]])

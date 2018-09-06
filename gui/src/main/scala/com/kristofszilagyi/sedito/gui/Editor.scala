@@ -15,8 +15,8 @@ import javafx.scene.control.Label
 import javafx.stage.Popup
 import org.fxmisc.flowless.{Cell, VirtualFlow}
 import org.fxmisc.richtext.event.MouseOverTextEvent
-import org.fxmisc.richtext.model.{StyleSpans, StyleSpansBuilder}
 import org.fxmisc.richtext.model.TwoDimensional.Bias
+import org.fxmisc.richtext.model.{StyleSpans, StyleSpansBuilder}
 import org.fxmisc.richtext.{CodeArea, GenericStyledArea}
 
 import scala.collection.JavaConverters._
@@ -39,30 +39,76 @@ object Editor {
     }).getOrElse(LineCssClass("white"))
   }
 
+  private val sameCharClass = CharCssClass("same_char")
+  private val insertedCharClass = CharCssClass("inserted_char")
+  private val deletedCharClass = CharCssClass("deleted_char")
+  private val movedCharClass = CharCssClass("moved_char")
+
   private def getCharCssClass(editType: CharEditType, lineEditType: LineEditType) = {
     editType match {
-      case CharsInserted => CharCssClass("inserted_char")
-      case CharsDeleted => CharCssClass("deleted_char")
+      case CharsInserted => insertedCharClass
+      case CharsDeleted => deletedCharClass
       case CharsSame =>
         lineEditType match {
           case LineMoved(_) => CharCssClass("same_char_in_moved_line")
           case LineInserted => fail("Char is same but line is inserted")
           case LineDeleted => fail("Char is same but line is deleted")
-          case LineSame => CharCssClass("same_char")
+          case LineSame => sameCharClass
         }
-      case _: CharsMoved => CharCssClass("moved_char")
+      case _: CharsMoved => movedCharClass
     }
   }
 
-  private def toStylesSpans(highlight: Map[LineIdx, LineEdits]): StyleSpans[util.Collection[String]] = {
+  private final case class Span(cssClass: CharCssClass, length: Int)
+//  private def calculateMovedSpans(lineEditType: LineEditType, move: CharEdit, minorEdits: Seq[ActualCharEdit]) = {
+//    val moveStyle = getCharCssClass(move.editType, lineEditType)
+//    val (spans, finalPos) = minorEdits.foldLeft((Seq.empty[Span], move.from)) { case ((acc, lastPos), edit) =>
+//      val newAcc = acc :+ Span(moveStyle, edit.from.i - lastPos.i) :+
+//        Span(getCharCssClass(edit.editType, lineEditType), edit.length)
+//      (newAcc, edit.to)
+//    }
+//    spans :+ Span(moveStyle, move.to.i - finalPos.i)
+//  }
+
+  private def charClassForLineEdit(lineEditType: LineEditType) = {
+    lineEditType match {
+      case LineMoved(_) => movedCharClass
+      case LineInserted => insertedCharClass
+      case LineDeleted => deletedCharClass
+      case LineSame => sameCharClass
+    }
+  }
+
+  private def toStylesSpans(highlight: Map[LineIdx, LineEdits], lines: IndexedSeq[String]): StyleSpans[util.Collection[String]] = {
     val builder = new StyleSpansBuilder[util.Collection[String]]
-    highlight.toSeq.sortBy(_._1).foreach{ case (_, edits) =>
+    highlight.toSeq.sortBy(_._1).foreach{ case (lineIdx, edits) =>
+      @SuppressWarnings(Array(Warts.Var))
+      var nextIdxInLine = 0
       edits.charEdits.toSeq.sortBy(_.from).foreach { edit =>
-        val charClass = getCharCssClass(edit.editType, edits.line)
-        builder.add(List(charClass.s).asJava, edit.length)
+
+        if (edit.from.i > nextIdxInLine) {
+          discard(builder.add(List(sameCharClass.s).asJava, edit.from.i - nextIdxInLine))
+        }
+
+        val spans = edit.editType match {
+          case tpe: ApplicableCharEditType =>
+            Seq(Span(getCharCssClass(tpe, edits.line), edit.length))
+          case CharsMoved(_, _) =>
+            //calculateMovedSpans(edits.line, edit, minorEdits.toSeq.sortBy(_.from))
+            Seq(Span(getCharCssClass(edit.editType, edits.line), edit.length))
+        }
+        spans.foreach { span =>
+          discard(builder.add(List(span.cssClass.s).asJava, span.length))
+        }
+        nextIdxInLine = edit.to.i
+      }
+      val maybeLine = lines.lift(lineIdx.i)
+      maybeLine.foreach { line =>
+        discard(builder.add(List(charClassForLineEdit(edits.line).s).asJava, line.length - nextIdxInLine))
       }
     }
-    builder.create()
+    val s = builder.create()
+    s
   }
 
 }
@@ -151,17 +197,7 @@ final class Editor extends CodeArea {
       lineNoStyle.clear()
       discard(lineNoStyle.add(lineCssClass))
     }
-    editType.toList.flatMap(_.charEdits).foreach{ edit =>
-      edit.editType match {
-        case tpe: ApplicableCharEditType =>
-          applyCharCss(lineIdx, edit.from, edit.to, tpe)
-        case tpe @ CharsMoved(_, edits) =>
-          applyCharCss(lineIdx, edit.from, edit.to, tpe)
-          edits.foreach{ editInMove =>
-            applyCharCss(lineIdx, editInMove.from, editInMove.to, editInMove.editType)
-          }
-      }
-    }
+
   }
 
   def setLineType(lineIdx: LineIdx, editType: LineEditType): Unit = {
@@ -176,7 +212,7 @@ final class Editor extends CodeArea {
   }
 
   def applyCharEdits(): Unit = {
-    setStyleSpans(0, toStylesSpans(editTypes))
+    setStyleSpans(0, toStylesSpans(editTypes, this.getText().linesWithSeparators.toIndexedSeq))
   }
 
   def setCharEdit(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {

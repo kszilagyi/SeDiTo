@@ -206,11 +206,6 @@ final class DiffPane extends StackPane {
     }
   }
 
-  private def getParagraphTexts(codeArea: Editor): Lines ={
-    val size = codeArea.getParagraphs.size()
-    Lines((0 until size).map(i => codeArea.getText(i)))
-  }
-
   def openTestCase(left: FullText, right: FullText, newWordAlignment: UnambiguousWordAlignment): Unit = {
     needToDraw = false
     //todo probably reset should recreate everything
@@ -224,8 +219,8 @@ final class DiffPane extends StackPane {
     codeAreaRight.moveTo(0)
     codeAreaRight.requestFollowCaret()
     wordAlignment = newWordAlignment
-    val leftLines = getParagraphTexts(codeAreaLeft)
-    val rightLines = getParagraphTexts(codeAreaRight)
+    val leftLines = Lines(left.s.lines.toIndexedSeq)
+    val rightLines = Lines(right.s.lines.toIndexedSeq)
 
     val lineAlignment = WhiteSpaceAligner.align(leftLines, rightLines, LineAligner.align(newWordAlignment))
 
