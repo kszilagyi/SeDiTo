@@ -60,15 +60,15 @@ object Editor {
   }
 
   private final case class Span(cssClass: CharCssClass, length: Int)
-//  private def calculateMovedSpans(lineEditType: LineEditType, move: CharEdit, minorEdits: Seq[ActualCharEdit]) = {
-//    val moveStyle = getCharCssClass(move.editType, lineEditType)
-//    val (spans, finalPos) = minorEdits.foldLeft((Seq.empty[Span], move.from)) { case ((acc, lastPos), edit) =>
-//      val newAcc = acc :+ Span(moveStyle, edit.from.i - lastPos.i) :+
-//        Span(getCharCssClass(edit.editType, lineEditType), edit.length)
-//      (newAcc, edit.to)
-//    }
-//    spans :+ Span(moveStyle, move.to.i - finalPos.i)
-//  }
+  private def calculateMovedSpans(lineEditType: LineEditType, move: CharEdit, minorEdits: Seq[ActualCharEdit]) = {
+    val moveStyle = getCharCssClass(move.editType, lineEditType)
+    val (spans, finalPos) = minorEdits.foldLeft((Seq.empty[Span], move.from)) { case ((acc, lastPos), edit) =>
+      val newAcc = acc :+ Span(moveStyle, edit.from.i - lastPos.i) :+
+        Span(getCharCssClass(edit.editType, lineEditType), edit.length)
+      (newAcc, edit.to)
+    }
+    spans :+ Span(moveStyle, move.to.i - finalPos.i)
+  }
 
   private def charClassForLineEdit(lineEditType: LineEditType) = {
     lineEditType match {
@@ -84,18 +84,18 @@ object Editor {
     highlight.toSeq.sortBy(_._1).foreach{ case (lineIdx, edits) =>
       @SuppressWarnings(Array(Warts.Var))
       var nextIdxInLine = 0
+      val lineClass = charClassForLineEdit(edits.line)
       edits.charEdits.toSeq.sortBy(_.from).foreach { edit =>
 
         if (edit.from.i > nextIdxInLine) {
-          discard(builder.add(List(sameCharClass.s).asJava, edit.from.i - nextIdxInLine))
+          discard(builder.add(List(lineClass.s).asJava, edit.from.i - nextIdxInLine))
         }
 
         val spans = edit.editType match {
           case tpe: ApplicableCharEditType =>
             Seq(Span(getCharCssClass(tpe, edits.line), edit.length))
-          case CharsMoved(_, _) =>
-            //calculateMovedSpans(edits.line, edit, minorEdits.toSeq.sortBy(_.from))
-            Seq(Span(getCharCssClass(edit.editType, edits.line), edit.length))
+          case CharsMoved(_, minorEdits) =>
+            calculateMovedSpans(edits.line, edit, minorEdits.toSeq.sortBy(_.from))
         }
         spans.foreach { span =>
           discard(builder.add(List(span.cssClass.s).asJava, span.length))
@@ -104,11 +104,10 @@ object Editor {
       }
       val maybeLine = lines.lift(lineIdx.i)
       maybeLine.foreach { line =>
-        discard(builder.add(List(charClassForLineEdit(edits.line).s).asJava, line.length - nextIdxInLine))
+        discard(builder.add(List(lineClass.s).asJava, line.length - nextIdxInLine))
       }
     }
-    val s = builder.create()
-    s
+    builder.create()
   }
 
 }

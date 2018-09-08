@@ -3,8 +3,8 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.{Files, Path, Paths}
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.MetricCalculator
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
+import com.kristofszilagyi.sedito.aligner.{Aligner, MetricCalculator}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
@@ -136,12 +136,12 @@ object TrainAndDiff {
   private def displayTestCase(testCase: TestCase, classifier: SoftClassifier[Array[Double]], scaler: Scaler) = {
     val calculatedAlignment = new Aligner(classifier, scaler).align(testCase.left, testCase.right)
     logger.info("Aligning finished")
-//    val expected = new MainWindow()
-//    expected.setTitle("Excpected")
-//    val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
-//    logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
-//
-//    expected.setContent(testCase.left, testCase.right, unambiguousWordAlignment)
+    val expected = new MainWindow()
+    expected.setTitle("Excpected")
+    val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
+    logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
+
+    expected.setContent(testCase.left, testCase.right, unambiguousWordAlignment)
     val actual = new MainWindow()
     actual.setTitle("Actual")
     actual.setContent(testCase.left, testCase.right, calculatedAlignment)
