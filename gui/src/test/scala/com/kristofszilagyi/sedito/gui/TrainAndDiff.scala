@@ -171,16 +171,23 @@ object TrainAndDiff {
     }
   }
 
-  def f1s(files: List[(Path, IndexedSeq[MetricsWithResults])], scaler: Scaler,
-                  classifier: NeuralNetwork, numOfAttributes: Int) = {
+  final case class PerformanceMetrics(f1: Double, fn: Int, fp: Int, sampleSize: Int) {
+    override def toString: String = f"f1: $f1%.3f, fn: $fn%2d, fp: $fp%2d, sample size: $sampleSize"
+  }
+
+  @SuppressWarnings(Array(Warts.ToString))
+  def performanceMetrics(files: List[(Path, IndexedSeq[MetricsWithResults])], scaler: Scaler,
+                         classifier: NeuralNetwork, numOfAttributes: Int) = {
     files.map { case (path, singleTest) =>
       val singleDataSet = toAttributeDataSet(singleTest, numOfAttributes)
       val singleTestX = scaler.transform(singleDataSet.x())
       val singleTestY = singleDataSet.labels()
       val singlePred = singleTestX.map(classifier.predict)
       val f1Score = f1(singleTestY, singlePred)
-      path -> f1Score
-    }.sortBy(_._2)
+      val fp = countFP(singleTestY, singlePred)
+      val fn = countFN(singleTestY, singlePred)
+      path.getFileName.toString.padTo(30, " ").mkString -> PerformanceMetrics(f1Score, fn, fp, singleTestY.length)
+    }.sortBy(_._2.f1)
   }
 
 }
@@ -196,13 +203,13 @@ object Train extends App {
   val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
     nestedTest = nestedTest.map(_._2), numOfAttributes)
 
-  val trainingF1s = f1s(nestedTraining, scaler, classifier, numOfAttributes)
+  val trainingMetrics = performanceMetrics(nestedTraining, scaler, classifier, numOfAttributes)
 
-  logger.info("Training f1s: \n" + trainingF1s.mkString("\n"))
+  logger.info("Training f1s: \n" + trainingMetrics.mkString("\n"))
 
-  val testf1s = f1s(nestedTest, scaler, classifier, numOfAttributes)
+  val testMetrics = performanceMetrics(nestedTest, scaler, classifier, numOfAttributes)
 
-  logger.info("Test f1s: \n" + testf1s.mkString("\n"))
+  logger.info("Test f1s: \n" + testMetrics.mkString("\n"))
   write.xstream(classifier, "linear_regression.model")
   write.xstream(scaler, "linear_regression.scaler")
   val duration = Duration.between(start, Instant.now())

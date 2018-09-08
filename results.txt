@@ -1,442 +1,442 @@
-/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=9071840521693 -javaagent:/home/szkster/Programs/idea-IC-181.4203.550/lib/idea_rt.jar=46155:/home/szkster/Programs/idea-IC-181.4203.550/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-library.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.12/jars/scala-java8-compat_2.12-0.9.0.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-text/jars/commons-text-1.3.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.7.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-reflect.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.richtext/richtextfx/jars/richtextfx-0.9.1.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-2.1.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.3.jar com.kristofszilagyi.sedito.gui.Train
-22:54:44.626 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Start
-22:54:44.962 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/25
-22:54:44.963 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines4
-22:54:44.963 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp
-22:54:44.963 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h
-22:54:45.207 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp
-22:54:45.209 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/25
-22:54:45.209 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h
-22:54:45.218 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines4
-22:54:47.514 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines14
-22:54:47.528 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines14
-22:54:48.099 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_line_problems
-22:54:48.134 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_line_problems
-22:54:48.255 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py
-22:54:48.268 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py
-22:54:48.334 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_3
-22:54:48.357 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_3
-22:54:48.546 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_txt
-22:54:48.579 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_txt
-22:54:49.828 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple_2
-22:54:49.836 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple_2
-22:54:50.668 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h2
-22:54:50.670 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h2
-22:54:51.008 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/11
-22:54:51.022 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/11
-22:54:51.123 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_cpp
-22:54:51.137 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_cpp
-22:54:51.246 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13_tough
-22:54:51.261 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13_tough
-22:54:51.774 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file10
-22:54:51.802 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file10
-22:54:53.019 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line
-22:54:53.022 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line
-22:54:53.106 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/1
-22:54:53.145 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/1
-22:54:53.947 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/move_block
-22:54:53.958 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/move_block
-22:54:54.379 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/real_life_function_extraction
-22:54:54.403 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/real_life_function_extraction
-22:54:54.581 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_change
-22:54:54.601 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_change
-22:54:54.925 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/this_needs_rename_info_to_work
-22:54:54.928 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/this_needs_rename_info_to_work
-22:54:57.224 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare2
-22:54:57.228 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare2
-22:54:57.710 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/20
-22:54:57.714 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/20
-22:54:58.314 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines2
-22:54:58.320 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines2
-22:54:58.562 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/trivial
-22:54:58.564 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/trivial
-22:54:59.379 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h3
-22:54:59.391 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h3
-22:54:59.414 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/everything_commented
-22:54:59.416 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/everything_commented
-22:54:59.837 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong
-22:54:59.839 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong
-22:54:59.964 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences2
-22:54:59.969 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences2
-22:55:00.229 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy2
-22:55:00.230 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy2
-22:55:00.252 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/move_within_line
-22:55:00.252 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/move_within_line
-22:55:00.254 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp2
-22:55:00.270 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp2
-22:55:00.300 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mix_imports
-22:55:00.302 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mix_imports
-22:55:00.426 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy4
-22:55:00.428 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy4
-22:55:00.467 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/header_mod
-22:55:00.469 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/header_mod
-22:55:00.907 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes2
-22:55:00.909 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes2
-22:55:01.019 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/19
-22:55:01.023 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/19
-22:55:01.026 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_cpp
-22:55:01.027 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_cpp
-22:55:01.062 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file2
-22:55:01.063 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file2
-22:55:01.096 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py2
-22:55:01.100 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py2
-22:55:01.241 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp4
-22:55:01.248 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp4
-22:55:01.759 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/4
-22:55:01.761 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/4
-22:55:02.095 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/equalcharcnt
-22:55:02.097 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/equalcharcnt
-22:55:02.346 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines15
-22:55:02.348 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines15
-22:55:02.810 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py2
-22:55:02.813 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py2
-22:55:03.446 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_deleted
-22:55:03.457 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_deleted
-22:55:03.714 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/5
-22:55:03.719 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/5
-22:55:04.290 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/14
-22:55:04.292 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/14
-22:55:04.402 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/17_complex
-22:55:04.405 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/17_complex
-22:55:06.276 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/really_changed
-22:55:06.282 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/really_changed
-22:55:07.380 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines16
-22:55:07.383 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines16
-22:55:08.429 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h
-22:55:08.431 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h
-22:55:09.496 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/indent_fixes
-22:55:09.505 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/indent_fixes
-22:55:10.569 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/nonlearningalignertestcpp
-22:55:10.574 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/nonlearningalignertestcpp
-22:55:10.725 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_6
-22:55:10.729 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_6
-22:55:12.183 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h2
-22:55:12.188 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h2
-22:55:12.894 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines7
-22:55:12.904 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines7
-22:55:14.342 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_2
-22:55:14.348 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_2
-22:55:15.240 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py2
-22:55:15.250 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py2
-22:55:15.713 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/perfecto
-22:55:15.725 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/perfecto
-22:55:17.170 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy5
-22:55:17.172 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy5
-22:55:17.391 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file
-22:55:17.395 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file
-22:55:18.021 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/22
-22:55:18.025 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/22
-22:55:18.178 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_h
-22:55:18.185 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_h
-22:55:18.371 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple
-22:55:18.373 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple
-22:55:19.184 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file3
-22:55:19.186 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file3
-22:55:19.226 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong2
-22:55:19.229 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong2
-22:55:19.581 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines9
-22:55:19.585 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines9
-22:55:21.244 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_4
-22:55:21.249 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_4
-22:55:22.848 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/feature_extractor_cpp
-22:55:22.849 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/feature_extractor_cpp
-22:55:22.931 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlsample
-22:55:22.934 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlsample
-22:55:23.800 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utilstest_py
-22:55:23.814 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utilstest_py
-22:55:24.013 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/12
-22:55:24.024 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/12
-22:55:24.458 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/6
-22:55:24.460 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/6
-22:55:24.555 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_5
-22:55:24.559 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_5
-22:55:25.284 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems
-22:55:25.287 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems
-22:55:26.226 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes
-22:55:26.236 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes
-22:55:26.274 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py
-22:55:26.276 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py
-22:55:26.388 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy
-22:55:26.389 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy
-22:55:26.606 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_problem
-22:55:26.609 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_problem
-22:55:26.832 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_pro_changes
-22:55:26.836 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_pro_changes
-22:55:27.272 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/7
-22:55:27.278 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/7
-22:55:27.697 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/21
-22:55:27.700 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/21
-22:55:29.069 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp
-22:55:29.074 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp
-22:55:29.151 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h5
-22:55:29.157 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h5
-22:55:29.200 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_cpp
-22:55:29.208 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_cpp
-22:55:29.666 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_lines
-22:55:29.668 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_lines
-22:55:29.668 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp5
-22:55:29.675 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp5
-22:55:29.683 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/extractor_cpp2
-22:55:29.688 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/extractor_cpp2
-22:55:30.277 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_h
-22:55:30.278 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_h
-22:55:30.328 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h4
-22:55:30.329 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h4
-22:55:30.372 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_pair_h
-22:55:30.373 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_pair_h
-22:55:30.539 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy3
-22:55:30.541 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy3
-22:55:30.773 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines5
-22:55:30.774 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines5
-22:55:30.821 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insert
-22:55:30.822 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insert
-22:55:30.848 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py
-22:55:30.850 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py
-22:55:31.189 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/24
-22:55:31.190 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/24
-22:55:31.250 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lev_dist_cpp
-22:55:31.252 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lev_dist_cpp
-22:55:31.432 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertion
-22:55:31.438 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertion
-22:55:32.306 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lib_svm_hack
-22:55:32.315 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lib_svm_hack
-22:55:32.480 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py4
-22:55:32.488 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py4
-22:55:34.273 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/9
-22:55:34.277 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/9
-22:55:36.437 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lot_of_empty_lines
-22:55:36.442 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lot_of_empty_lines
-22:55:36.695 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp3
-22:55:36.701 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp3
-22:55:36.936 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py2
-22:55:36.941 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py2
-22:55:37.841 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13
-22:55:37.846 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13
-22:55:38.054 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/18
-22:55:38.055 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/18
-22:55:38.180 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/learning_curve_py
-22:55:38.182 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/learning_curve_py
-22:55:38.771 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertions
-22:55:38.775 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertions
-22:55:39.472 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_problems
-22:55:39.474 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_problems
-22:55:39.729 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines12
-22:55:39.734 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines12
-22:55:41.920 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_7
-22:55:41.925 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_7
-22:55:42.229 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py3
-22:55:42.233 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py3
-22:55:42.592 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/extractor_cpp
-22:55:42.596 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/extractor_cpp
-22:55:44.828 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/23
-22:55:44.831 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/23
-22:55:44.874 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare
-22:55:44.877 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare
-22:55:45.223 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lots_of_pairings
-22:55:45.224 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lots_of_pairings
-22:55:45.503 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file
-22:55:45.504 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file
-22:55:45.530 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_complex
-22:55:45.534 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_complex
-22:55:48.692 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines10
-22:55:48.693 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines10
-22:55:48.728 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines1
-22:55:48.731 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines1
-22:55:49.723 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_8
-22:55:49.728 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_8
-22:55:50.111 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences
-22:55:50.113 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences
-22:55:50.239 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines17
-22:55:50.241 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines17
-22:55:50.694 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp7
-22:55:50.702 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp7
-22:55:51.322 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/3
-22:55:51.326 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/3
-22:55:52.093 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py4
-22:55:52.097 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py4
-22:55:57.110 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/15
-22:55:57.115 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/15
-22:56:00.773 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp6
-22:56:00.779 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp6
-22:56:06.221 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines13
-22:56:06.226 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines13
-22:56:09.314 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py
-22:56:09.317 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py
-22:56:14.724 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/16
-22:56:14.726 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/16
-22:56:14.960 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_9
-22:56:14.964 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_9
-22:56:16.397 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py3
-22:56:16.400 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py3
-22:56:17.264 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines11
-22:56:17.267 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines11
-22:56:17.734 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line2
-22:56:17.736 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line2
-22:56:18.228 [main] INFO  c.k.sedito.gui.TrainAndDiff - Training size: 532161
-22:56:18.230 [main] INFO  c.k.sedito.gui.TrainAndDiff - Test size: 447111
-22:56:18.242 [main] INFO  c.k.sedito.gui.TrainAndDiff - 1s in training: 48101
-22:56:18.263 [main] INFO  c.k.sedito.gui.TrainAndDiff - 0s in training: 484060
-22:56:18.274 [main] INFO  c.k.sedito.gui.TrainAndDiff - 1s in test: 39215
-22:56:18.291 [main] INFO  c.k.sedito.gui.TrainAndDiff - 0s in test: 407896
-22:56:31.022 [main] INFO  c.k.sedito.gui.TrainAndDiff - Starting training
-22:56:59.997 [main] INFO  smile.util.package$ - runtime: 28969.645488 ms
-22:56:59.999 [main] INFO  c.k.sedito.gui.TrainAndDiff - Training finished
-22:57:13.734 [main] INFO  c.k.sedito.gui.TrainAndDiff - training accuracy: 0.9990980173293421
-22:57:13.753 [main] INFO  c.k.sedito.gui.TrainAndDiff - training recall: 0.9938047026049355
-22:57:13.759 [main] INFO  c.k.sedito.gui.TrainAndDiff - training sensitivity(TP / (TP + FN)): 0.9938047026049355
-22:57:13.771 [main] INFO  c.k.sedito.gui.TrainAndDiff - training specificity(TN / (FP + TN)): 0.999624013552039
-22:57:13.789 [main] INFO  c.k.sedito.gui.TrainAndDiff - training fallout(FP / (FP + TN)): 3.7598644796099645E-4
-22:57:13.798 [main] INFO  c.k.sedito.gui.TrainAndDiff - training fdr(FP / (TP + FP)): 0.0037928519328956968
-22:57:13.871 [main] INFO  c.k.sedito.gui.TrainAndDiff - training FP count: 182
-22:57:13.941 [main] INFO  c.k.sedito.gui.TrainAndDiff - training FN count: 298
-22:57:13.957 [main] INFO  c.k.sedito.gui.TrainAndDiff - training f1: 0.9950044751576712
-22:57:13.958 [main] INFO  c.k.sedito.gui.TrainAndDiff - test accuracy: 0.9986916000724653
-22:57:13.959 [main] INFO  c.k.sedito.gui.TrainAndDiff - test recall: 0.9913553487186025
-22:57:13.962 [main] INFO  c.k.sedito.gui.TrainAndDiff - test sensitivity(TP / (TP + FN)): 0.9913553487186025
-22:57:13.963 [main] INFO  c.k.sedito.gui.TrainAndDiff - test specificity(TN / (FP + TN)): 0.9993969050934552
-22:57:13.971 [main] INFO  c.k.sedito.gui.TrainAndDiff - test fallout(FP / (FP + TN)): 6.030949065447544E-4
-22:57:13.972 [main] INFO  c.k.sedito.gui.TrainAndDiff - test fdr(FP / (TP + FP)): 0.006288022084760493
-22:57:14.000 [main] INFO  c.k.sedito.gui.TrainAndDiff - test FP count: 246
-22:57:14.025 [main] INFO  c.k.sedito.gui.TrainAndDiff - test FN count: 339
-22:57:14.034 [main] INFO  c.k.sedito.gui.TrainAndDiff - test f1: 0.992532264447196
-22:57:24.911 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Training f1s:
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/move_within_line,0.8571428571428571)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/this_needs_rename_info_to_work,0.9287671232876713)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py2,0.9454545454545454)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/17_complex,0.9627507163323782)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong,0.9648711943793911)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/nonlearningalignertestcpp,0.967032967032967)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py4,0.9805398618957942)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines13,0.9836829836829837)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_complex,0.9854604200323103)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp,0.9878899082568807)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp2,0.9880952380952381)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines11,0.9909420289855073)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp3,0.9917355371900827)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/trivial,0.9924050632911393)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line2,0.9948717948717948)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/real_life_function_extraction,0.9949494949494949)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines7,0.9950248756218906)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_problem,0.9950980392156863)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/equalcharcnt,0.9951923076923077)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/header_mod,0.9965986394557823)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy,0.9966555183946488)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mix_imports,0.9967426710097721)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp7,0.9967614249730118)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/extractor_cpp,0.9969001859888407)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py3,0.997080291970803)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines2,0.9975186104218362)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_txt,0.9975288303130149)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines17,0.998003992015968)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/perfecto,0.9982507288629737)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py,0.9985294117647059)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h,0.9987325728770595)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/12,0.99875)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/1,0.9992743105950653)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines4,0.9993552546744036)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes,0.9993710691823898)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp6,0.9997117324877486)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h3,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/everything_commented,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/4,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines15,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py2,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/14,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/21,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py3,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lots_of_pairings,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/3,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/15,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_3,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/20,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy2,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/indent_fixes,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy5,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_4,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/extractor_cpp2,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/24,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lev_dist_cpp,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertion,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lib_svm_hack,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/23,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines10,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines1,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/16,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_9,1.0)
-22:57:33.984 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Test f1s:
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp,0.888030888030888)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py,0.937984496124031)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_cpp,0.9448818897637796)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/25,0.9521531100478471)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_problems,0.9565217391304347)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13_tough,0.9602996254681648)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare,0.961764705882353)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/really_changed,0.9632495164410056)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems,0.9640479360852198)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong2,0.965603502188868)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/9,0.9748020158387329)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines14,0.9757412398921832)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py,0.979328165374677)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines16,0.9793362554790233)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp5,0.9800235017626322)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/19,0.9823008849557522)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py4,0.9837702871410736)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py,0.9851632047477744)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py2,0.9886363636363636)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/5,0.990561797752809)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp4,0.9920391916717698)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare2,0.9952885747938752)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h2,0.9974768713204373)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlsample,0.9976303317535545)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_5,0.9983722192078134)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines12,0.9994585814834868)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_line_problems,0.9995661605206074)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_8,0.9996250468691413)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_cpp,0.9996267263904441)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_change,0.9996860282574568)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/move_block,0.9997632015155103)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h2,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_cpp,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences2,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy4,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_6,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_2,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/22,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_h,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file3,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/7,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py2,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/learning_curve_py,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertions,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_7,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple_2,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/11,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file10,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes2,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file2,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_deleted,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines9,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/feature_extractor_cpp,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utilstest_py,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/6,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_pro_changes,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h5,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_h,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h4,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_pair_h,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy3,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines5,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insert,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lot_of_empty_lines,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/18,1.0)
-(/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_lines,NaN)
-22:57:34.232 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Took: 2 minutes, 49 seconds
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=16564987218364 -javaagent:/home/szkster/Programs/idea-IC-181.4203.550/lib/idea_rt.jar=36313:/home/szkster/Programs/idea-IC-181.4203.550/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-library.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.12/jars/scala-java8-compat_2.12-0.9.0.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-text/jars/commons-text-1.3.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.7.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.sbt/boot/scala-2.12.4/lib/scala-reflect.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.richtext/richtextfx/jars/richtextfx-0.9.1.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-2.1.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.3.jar com.kristofszilagyi.sedito.gui.Train
+15:18:55.989 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Start
+15:18:56.674 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_h
+15:18:56.677 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp
+15:18:56.674 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/25
+15:18:56.689 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines4
+15:18:57.094 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp
+15:18:57.098 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_h
+15:18:57.108 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/25
+15:18:57.158 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines4
+15:18:57.925 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple
+15:18:57.930 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple
+15:18:59.699 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines14
+15:18:59.703 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines14
+15:18:59.786 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file3
+15:18:59.790 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file3
+15:18:59.842 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong2
+15:18:59.850 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong2
+15:19:00.114 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_line_problems
+15:19:00.132 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_line_problems
+15:19:00.423 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py
+15:19:00.429 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py
+15:19:00.480 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_txt
+15:19:00.486 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_txt
+15:19:01.590 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple_2
+15:19:01.599 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/simple_2
+15:19:02.837 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/11
+15:19:02.850 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/11
+15:19:02.939 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h2
+15:19:02.940 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h2
+15:19:03.039 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_cpp
+15:19:03.046 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/qstringutils_cpp
+15:19:03.098 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13_tough
+15:19:03.102 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13_tough
+15:19:03.247 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file10
+15:19:03.259 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file10
+15:19:05.321 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line
+15:19:05.323 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line
+15:19:05.535 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/move_block
+15:19:05.541 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/move_block
+15:19:05.854 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/real_life_function_extraction
+15:19:05.862 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/real_life_function_extraction
+15:19:06.764 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_change
+15:19:06.782 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_change
+15:19:08.700 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare2
+15:19:08.703 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare2
+15:19:08.712 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems
+15:19:08.714 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/similar_problems
+15:19:09.711 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines2
+15:19:09.712 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines2
+15:19:09.873 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/trivial
+15:19:09.875 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/trivial
+15:19:10.712 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h3
+15:19:10.713 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h3
+15:19:10.733 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/everything_commented
+15:19:10.734 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/everything_commented
+15:19:10.742 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/7
+15:19:10.746 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/7
+15:19:11.068 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong
+15:19:11.069 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/very_wrong
+15:19:11.088 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences2
+15:19:11.091 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences2
+15:19:11.461 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mix_imports
+15:19:11.462 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mix_imports
+15:19:11.487 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy4
+15:19:11.488 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy4
+15:19:11.611 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/header_mod
+15:19:11.612 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/header_mod
+15:19:12.099 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/19
+15:19:12.101 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/19
+15:19:12.125 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes2
+15:19:12.125 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes2
+15:19:12.245 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_cpp
+15:19:12.246 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_cpp
+15:19:12.279 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file2
+15:19:12.280 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file2
+15:19:12.308 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp4
+15:19:12.313 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp4
+15:19:12.318 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py2
+15:19:12.320 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py2
+15:19:12.627 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/4
+15:19:12.628 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/4
+15:19:12.717 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_lines
+15:19:12.718 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/empty_lines
+15:19:12.719 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp5
+15:19:12.724 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp5
+15:19:12.995 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/equalcharcnt
+15:19:12.997 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/equalcharcnt
+15:19:13.261 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines15
+15:19:13.262 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines15
+15:19:13.787 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py2
+15:19:13.788 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py2
+15:19:14.913 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_deleted
+15:19:14.915 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_deleted
+15:19:15.209 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/5
+15:19:15.213 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/5
+15:19:15.561 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/14
+15:19:15.562 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/14
+15:19:15.645 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/17_complex
+15:19:15.648 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/17_complex
+15:19:17.548 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/really_changed
+15:19:17.550 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/really_changed
+15:19:17.647 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/9
+15:19:17.649 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/9
+15:19:18.794 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines16
+15:19:18.797 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines16
+15:19:20.255 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py2
+15:19:20.258 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py2
+15:19:21.370 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/learning_curve_py
+15:19:21.372 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/learning_curve_py
+15:19:21.570 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_6
+15:19:21.573 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_6
+15:19:21.950 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertions
+15:19:21.952 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertions
+15:19:22.657 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_problems
+15:19:22.658 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_problems
+15:19:22.967 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines12
+15:19:22.970 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines12
+15:19:23.014 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h2
+15:19:23.016 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h2
+15:19:24.514 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_2
+15:19:24.517 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_2
+15:19:25.032 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py2
+15:19:25.034 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py2
+15:19:25.575 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_7
+15:19:25.580 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_7
+15:19:27.218 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/22
+15:19:27.220 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/22
+15:19:28.216 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare
+15:19:28.218 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/good_cand_for_char_based_compare
+15:19:28.795 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines9
+15:19:28.798 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines9
+15:19:31.953 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/feature_extractor_cpp
+15:19:31.953 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/feature_extractor_cpp
+15:19:32.034 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlsample
+15:19:32.035 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlsample
+15:19:32.801 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utilstest_py
+15:19:32.802 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utilstest_py
+15:19:33.023 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_8
+15:19:33.027 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_8
+15:19:33.403 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/6
+15:19:33.404 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/6
+15:19:33.492 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_5
+15:19:33.495 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_5
+15:19:34.321 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy
+15:19:34.322 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy
+15:19:34.524 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_problem
+15:19:34.525 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/include_problem
+15:19:35.089 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py
+15:19:35.090 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/utils_py
+15:19:35.564 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_pro_changes
+15:19:35.566 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_pro_changes
+15:19:35.641 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/21
+15:19:35.643 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/21
+15:19:36.056 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h
+15:19:36.057 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_h
+15:19:36.464 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp
+15:19:36.468 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp
+15:19:37.282 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_3
+15:19:37.286 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_3
+15:19:37.362 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h5
+15:19:37.363 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h5
+15:19:37.391 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_cpp
+15:19:37.395 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sensidiff_cpp
+15:19:38.464 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_h
+15:19:38.464 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/sided_feature_h
+15:19:38.513 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h4
+15:19:38.514 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h4
+15:19:38.557 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_pair_h
+15:19:38.557 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/line_pair_h
+15:19:38.693 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy3
+15:19:38.694 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy3
+15:19:38.925 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines5
+15:19:38.926 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines5
+15:19:38.972 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insert
+15:19:38.973 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insert
+15:19:38.998 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py
+15:19:39.000 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py
+15:19:40.207 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/1
+15:19:40.785 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/1
+15:19:41.091 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py4
+15:19:41.093 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py4
+15:19:41.458 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/this_needs_rename_info_to_work
+15:19:41.460 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/this_needs_rename_info_to_work
+15:19:42.988 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/20
+15:19:42.991 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/20
+15:19:44.453 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lot_of_empty_lines
+15:19:44.456 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lot_of_empty_lines
+15:19:45.049 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13
+15:19:45.053 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/13
+15:19:45.090 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy2
+15:19:45.091 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy2
+15:19:45.112 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/move_within_line
+15:19:45.113 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/move_within_line
+15:19:45.115 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp2
+15:19:45.119 [scala-execution-context-global-13] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp2
+15:19:45.928 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/18
+15:19:45.929 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/18
+15:19:45.995 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes
+15:19:45.995 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h
+15:19:45.996 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/easy_h
+15:19:45.999 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/minor_changes
+15:19:47.055 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/indent_fixes
+15:19:47.062 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/indent_fixes
+15:19:48.107 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/nonlearningalignertestcpp
+15:19:48.109 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/nonlearningalignertestcpp
+15:19:48.957 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/extractor_cpp2
+15:19:48.961 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/extractor_cpp2
+15:19:50.064 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py3
+15:19:50.069 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py3
+15:19:51.063 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/24
+15:19:51.064 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/24
+15:19:51.193 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines7
+15:19:51.197 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines7
+15:19:51.198 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lev_dist_cpp
+15:19:51.199 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lev_dist_cpp
+15:19:51.574 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertion
+15:19:51.579 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/insertion
+15:19:53.500 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lib_svm_hack
+15:19:53.510 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lib_svm_hack
+15:19:55.008 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/perfecto
+15:19:55.010 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/perfecto
+15:19:56.119 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lots_of_pairings
+15:19:56.120 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/lots_of_pairings
+15:19:56.703 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file
+15:19:56.703 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ignore_file
+15:19:56.753 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_complex
+15:19:56.764 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_complex
+15:19:57.395 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy5
+15:19:57.396 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/cpp_easy5
+15:19:57.663 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file
+15:19:57.669 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file
+15:19:59.465 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp3
+15:19:59.469 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp3
+15:20:01.149 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_4
+15:20:01.152 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_4
+15:20:01.533 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences
+15:20:01.534 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/space_differences
+15:20:01.662 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines17
+15:20:01.663 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines17
+15:20:02.743 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/3
+15:20:02.744 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/3
+15:20:03.588 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py4
+15:20:03.590 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py4
+15:20:03.799 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/12
+15:20:03.803 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/12
+15:20:05.313 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/extractor_cpp
+15:20:05.316 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/extractor_cpp
+15:20:05.885 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/23
+15:20:05.888 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/23
+15:20:07.551 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/16
+15:20:07.552 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/16
+15:20:07.788 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_9
+15:20:07.790 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/pro_file_9
+15:20:08.553 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/15
+15:20:08.557 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/15
+15:20:09.228 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py3
+15:20:09.230 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_py3
+15:20:09.784 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines10
+15:20:09.785 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines10
+15:20:09.821 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines1
+15:20:09.823 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines1
+15:20:10.095 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines11
+15:20:10.097 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines11
+15:20:10.570 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line2
+15:20:10.571 [scala-execution-context-global-12] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/one_line2
+15:20:11.697 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp6
+15:20:11.702 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp6
+15:20:11.794 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp7
+15:20:11.797 [scala-execution-context-global-11] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/mlpipeline_cpp7
+15:20:17.129 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines13
+15:20:17.131 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/ambiguous_space_lines13
+15:20:20.221 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - Opening test case: /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py
+15:20:20.223 [scala-execution-context-global-10] INFO  c.k.sedito.common.TestCase - TestCase opening successfully finished for /home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes/algorithm_tests/full_tests/grid_master_py
+15:20:35.082 [main] INFO  c.k.sedito.gui.TrainAndDiff - Training size: 532161
+15:20:35.083 [main] INFO  c.k.sedito.gui.TrainAndDiff - Test size: 447111
+15:20:35.096 [main] INFO  c.k.sedito.gui.TrainAndDiff - 1s in training: 48101
+15:20:35.111 [main] INFO  c.k.sedito.gui.TrainAndDiff - 0s in training: 484060
+15:20:35.122 [main] INFO  c.k.sedito.gui.TrainAndDiff - 1s in test: 39215
+15:20:35.134 [main] INFO  c.k.sedito.gui.TrainAndDiff - 0s in test: 407896
+15:20:49.935 [main] INFO  c.k.sedito.gui.TrainAndDiff - Starting training
+15:21:16.187 [main] INFO  smile.util.package$ - runtime: 26246.677985 ms
+15:21:16.189 [main] INFO  c.k.sedito.gui.TrainAndDiff - Training finished
+15:21:28.194 [main] INFO  c.k.sedito.gui.TrainAndDiff - training accuracy: 0.9990980173293421
+15:21:28.199 [main] INFO  c.k.sedito.gui.TrainAndDiff - training recall: 0.9938047026049355
+15:21:28.205 [main] INFO  c.k.sedito.gui.TrainAndDiff - training sensitivity(TP / (TP + FN)): 0.9938047026049355
+15:21:28.215 [main] INFO  c.k.sedito.gui.TrainAndDiff - training specificity(TN / (FP + TN)): 0.999624013552039
+15:21:28.223 [main] INFO  c.k.sedito.gui.TrainAndDiff - training fallout(FP / (FP + TN)): 3.7598644796099645E-4
+15:21:28.231 [main] INFO  c.k.sedito.gui.TrainAndDiff - training fdr(FP / (TP + FP)): 0.0037928519328956968
+15:21:28.284 [main] INFO  c.k.sedito.gui.TrainAndDiff - training FP count: 182
+15:21:28.323 [main] INFO  c.k.sedito.gui.TrainAndDiff - training FN count: 298
+15:21:28.339 [main] INFO  c.k.sedito.gui.TrainAndDiff - training f1: 0.9950044751576712
+15:21:28.340 [main] INFO  c.k.sedito.gui.TrainAndDiff - test accuracy: 0.9986916000724653
+15:21:28.343 [main] INFO  c.k.sedito.gui.TrainAndDiff - test recall: 0.9913553487186025
+15:21:28.343 [main] INFO  c.k.sedito.gui.TrainAndDiff - test sensitivity(TP / (TP + FN)): 0.9913553487186025
+15:21:28.344 [main] INFO  c.k.sedito.gui.TrainAndDiff - test specificity(TN / (FP + TN)): 0.9993969050934552
+15:21:28.345 [main] INFO  c.k.sedito.gui.TrainAndDiff - test fallout(FP / (FP + TN)): 6.030949065447544E-4
+15:21:28.346 [main] INFO  c.k.sedito.gui.TrainAndDiff - test fdr(FP / (TP + FP)): 0.006288022084760493
+15:21:28.367 [main] INFO  c.k.sedito.gui.TrainAndDiff - test FP count: 246
+15:21:28.389 [main] INFO  c.k.sedito.gui.TrainAndDiff - test FN count: 339
+15:21:28.397 [main] INFO  c.k.sedito.gui.TrainAndDiff - test f1: 0.992532264447196
+15:21:39.790 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Training f1s:
+(move_within_line              ,f1: 0.857, fn:  1, fp:  0, sample size: 4)
+(this_needs_rename_info_to_work,f1: 0.929, fn: 23, fp: 29, sample size: 9488)
+(test_model_py2                ,f1: 0.945, fn: 24, fp: 39, sample size: 24683)
+(17_complex                    ,f1: 0.963, fn: 36, fp: 29, sample size: 22756)
+(very_wrong                    ,f1: 0.965, fn: 13, fp:  2, sample size: 1715)
+(nonlearningalignertestcpp     ,f1: 0.967, fn: 19, fp: 11, sample size: 5671)
+(test_model_py4                ,f1: 0.981, fn: 20, fp: 11, sample size: 17542)
+(ambiguous_space_lines13       ,f1: 0.984, fn: 17, fp:  4, sample size: 11353)
+(cpp_complex                   ,f1: 0.985, fn: 17, fp: 10, sample size: 10259)
+(mlpipeline_cpp                ,f1: 0.988, fn: 28, fp:  5, sample size: 17362)
+(mlpipeline_cpp2               ,f1: 0.988, fn: 33, fp:  3, sample size: 17804)
+(ambiguous_space_lines11       ,f1: 0.991, fn:  2, fp:  8, sample size: 2354)
+(mlpipeline_cpp3               ,f1: 0.992, fn: 24, fp:  3, sample size: 14661)
+(trivial                       ,f1: 0.992, fn:  0, fp:  3, sample size: 1326)
+(one_line2                     ,f1: 0.995, fn:  4, fp:  0, sample size: 1968)
+(real_life_function_extraction ,f1: 0.995, fn:  0, fp:  6, sample size: 10506)
+(ambiguous_space_lines7        ,f1: 0.995, fn:  1, fp:  1, sample size: 2693)
+(include_problem               ,f1: 0.995, fn:  6, fp:  0, sample size: 6906)
+(equalcharcnt                  ,f1: 0.995, fn:  0, fp:  2, sample size: 1218)
+(header_mod                    ,f1: 0.997, fn:  0, fp:  2, sample size: 2857)
+(cpp_easy                      ,f1: 0.997, fn:  1, fp:  0, sample size: 760)
+(mix_imports                   ,f1: 0.997, fn:  1, fp:  0, sample size: 1122)
+(mlpipeline_cpp7               ,f1: 0.997, fn:  4, fp:  5, sample size: 45615)
+(extractor_cpp                 ,f1: 0.997, fn:  3, fp:  2, sample size: 8973)
+(grid_py3                      ,f1: 0.997, fn:  4, fp:  0, sample size: 4183)
+(ambiguous_space_lines2        ,f1: 0.998, fn:  0, fp:  1, sample size: 622)
+(sensidiff_txt                 ,f1: 0.998, fn:  6, fp:  0, sample size: 12817)
+(ambiguous_space_lines17       ,f1: 0.998, fn:  0, fp:  1, sample size: 2168)
+(perfecto                      ,f1: 0.998, fn:  3, fp:  0, sample size: 4379)
+(grid_master_py                ,f1: 0.999, fn:  2, fp:  0, sample size: 11772)
+(easy_h                        ,f1: 0.999, fn:  0, fp:  1, sample size: 2662)
+(12                            ,f1: 0.999, fn:  4, fp:  0, sample size: 7030)
+(1                             ,f1: 0.999, fn:  1, fp:  1, sample size: 4168)
+(ambiguous_space_lines4        ,f1: 0.999, fn:  0, fp:  1, sample size: 3988)
+(minor_changes                 ,f1: 0.999, fn:  0, fp:  2, sample size: 10690)
+(mlpipeline_cpp6               ,f1: 1.000, fn:  1, fp:  0, sample size: 14655)
+(easy_h3                       ,f1: 1.000, fn:  0, fp:  0, sample size: 100)
+(everything_commented          ,f1: 1.000, fn:  0, fp:  0, sample size: 1922)
+(4                             ,f1: 1.000, fn:  0, fp:  0, sample size: 1955)
+(ambiguous_space_lines15       ,f1: 1.000, fn:  0, fp:  0, sample size: 1318)
+(utils_py2                     ,f1: 1.000, fn:  0, fp:  0, sample size: 6941)
+(14                            ,f1: 1.000, fn:  0, fp:  0, sample size: 599)
+(21                            ,f1: 1.000, fn:  0, fp:  0, sample size: 2902)
+(13                            ,f1: 1.000, fn:  0, fp:  0, sample size: 15728)
+(test_model_py3                ,f1: 1.000, fn:  0, fp:  0, sample size: 8509)
+(lots_of_pairings              ,f1: 1.000, fn:  0, fp:  0, sample size: 596)
+(ignore_file                   ,f1: 1.000, fn:  0, fp:  0, sample size: 300)
+(space_differences             ,f1: 1.000, fn:  0, fp:  0, sample size: 725)
+(3                             ,f1: 1.000, fn:  0, fp:  0, sample size: 4458)
+(15                            ,f1: 1.000, fn:  0, fp:  0, sample size: 11351)
+(mlpipeline_h                  ,f1: 1.000, fn:  0, fp:  0, sample size: 2378)
+(pro_file_3                    ,f1: 1.000, fn:  0, fp:  0, sample size: 23810)
+(20                            ,f1: 1.000, fn:  0, fp:  0, sample size: 18454)
+(cpp_easy2                     ,f1: 1.000, fn:  0, fp:  0, sample size: 123)
+(indent_fixes                  ,f1: 1.000, fn:  0, fp:  0, sample size: 5166)
+(cpp_easy5                     ,f1: 1.000, fn:  0, fp:  0, sample size: 767)
+(pro_file                      ,f1: 1.000, fn:  0, fp:  0, sample size: 23608)
+(pro_file_4                    ,f1: 1.000, fn:  0, fp:  0, sample size: 20673)
+(extractor_cpp2                ,f1: 1.000, fn:  0, fp:  0, sample size: 5105)
+(24                            ,f1: 1.000, fn:  0, fp:  0, sample size: 387)
+(lev_dist_cpp                  ,f1: 1.000, fn:  0, fp:  0, sample size: 666)
+(insertion                     ,f1: 1.000, fn:  0, fp:  0, sample size: 3823)
+(lib_svm_hack                  ,f1: 1.000, fn:  0, fp:  0, sample size: 22064)
+(23                            ,f1: 1.000, fn:  0, fp:  0, sample size: 8357)
+(ambiguous_space_lines10       ,f1: 1.000, fn:  0, fp:  0, sample size: 320)
+(ambiguous_space_lines1        ,f1: 1.000, fn:  0, fp:  0, sample size: 5509)
+(16                            ,f1: 1.000, fn:  0, fp:  0, sample size: 1340)
+(pro_file_9                    ,f1: 1.000, fn:  0, fp:  0, sample size: 13477)
+15:21:49.067 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Test f1s:
+(textblocklinked1to1_cpp       ,f1: 0.888, fn: 21, fp:  8, sample size: 2533)
+(grid_py                       ,f1: 0.938, fn: 16, fp:  0, sample size: 2692)
+(sided_feature_cpp             ,f1: 0.945, fn:  2, fp:  5, sample size: 191)
+(25                            ,f1: 0.952, fn:  2, fp: 18, sample size: 2036)
+(space_problems                ,f1: 0.957, fn:  3, fp:  2, sample size: 225)
+(13_tough                      ,f1: 0.960, fn: 29, fp: 24, sample size: 5002)
+(good_cand_for_char_based_compare,f1: 0.962, fn: 41, fp: 11, sample size: 17366)
+(really_changed                ,f1: 0.963, fn: 12, fp: 26, sample size: 13015)
+(similar_problems              ,f1: 0.964, fn: 13, fp: 14, sample size: 4976)
+(very_wrong2                   ,f1: 0.966, fn: 24, fp: 31, sample size: 16244)
+(9                             ,f1: 0.975, fn: 29, fp:  6, sample size: 8159)
+(ambiguous_space_lines14       ,f1: 0.976, fn:  7, fp:  2, sample size: 1107)
+(test_model_py                 ,f1: 0.979, fn:  4, fp: 12, sample size: 4914)
+(ambiguous_space_lines16       ,f1: 0.979, fn:  1, fp: 32, sample size: 20555)
+(mlpipeline_cpp5               ,f1: 0.980, fn: 59, fp:  9, sample size: 12064)
+(19                            ,f1: 0.982, fn:  8, fp:  0, sample size: 1359)
+(grid_py4                      ,f1: 0.984, fn:  1, fp: 25, sample size: 14397)
+(utils_py                      ,f1: 0.985, fn:  1, fp:  4, sample size: 2181)
+(grid_py2                      ,f1: 0.989, fn: 10, fp:  4, sample size: 10265)
+(5                             ,f1: 0.991, fn: 19, fp:  2, sample size: 14611)
+(mlpipeline_cpp4               ,f1: 0.992, fn: 24, fp:  2, sample size: 12790)
+(good_cand_for_char_based_compare2,f1: 0.995, fn:  7, fp:  1, sample size: 8669)
+(mlpipeline_h2                 ,f1: 0.997, fn:  0, fp:  3, sample size: 3122)
+(mlsample                      ,f1: 0.998, fn:  1, fp:  1, sample size: 2075)
+(pro_file_5                    ,f1: 0.998, fn:  3, fp:  0, sample size: 14811)
+(ambiguous_space_lines12       ,f1: 0.999, fn:  0, fp:  1, sample size: 21873)
+(empty_line_problems           ,f1: 1.000, fn:  1, fp:  0, sample size: 14977)
+(pro_file_8                    ,f1: 1.000, fn:  0, fp:  1, sample size: 23840)
+(sensidiff_cpp                 ,f1: 1.000, fn:  0, fp:  1, sample size: 6738)
+(include_change                ,f1: 1.000, fn:  0, fp:  1, sample size: 6175)
+(move_block                    ,f1: 1.000, fn:  1, fp:  0, sample size: 17542)
+(easy_h2                       ,f1: 1.000, fn:  0, fp:  0, sample size: 371)
+(qstringutils_cpp              ,f1: 1.000, fn:  0, fp:  0, sample size: 429)
+(one_line                      ,f1: 1.000, fn:  0, fp:  0, sample size: 5225)
+(space_differences2            ,f1: 1.000, fn:  0, fp:  0, sample size: 1889)
+(cpp_easy4                     ,f1: 1.000, fn:  0, fp:  0, sample size: 705)
+(pro_file_6                    ,f1: 1.000, fn:  0, fp:  0, sample size: 13888)
+(pro_file_2                    ,f1: 1.000, fn:  0, fp:  0, sample size: 19899)
+(22                            ,f1: 1.000, fn:  0, fp:  0, sample size: 633)
+(qstringutils_h                ,f1: 1.000, fn:  0, fp:  0, sample size: 862)
+(simple                        ,f1: 1.000, fn:  0, fp:  0, sample size: 2074)
+(ignore_file3                  ,f1: 1.000, fn:  0, fp:  0, sample size: 400)
+(7                             ,f1: 1.000, fn:  0, fp:  0, sample size: 8016)
+(grid_master_py2               ,f1: 1.000, fn:  0, fp:  0, sample size: 4825)
+(learning_curve_py             ,f1: 1.000, fn:  0, fp:  0, sample size: 3946)
+(insertions                    ,f1: 1.000, fn:  0, fp:  0, sample size: 4785)
+(pro_file_7                    ,f1: 1.000, fn:  0, fp:  0, sample size: 23985)
+(simple_2                      ,f1: 1.000, fn:  0, fp:  0, sample size: 4838)
+(11                            ,f1: 1.000, fn:  0, fp:  0, sample size: 1822)
+(pro_file10                    ,f1: 1.000, fn:  0, fp:  0, sample size: 14006)
+(minor_changes2                ,f1: 1.000, fn:  0, fp:  0, sample size: 721)
+(ignore_file2                  ,f1: 1.000, fn:  0, fp:  0, sample size: 369)
+(line_deleted                  ,f1: 1.000, fn:  0, fp:  0, sample size: 1940)
+(ambiguous_space_lines9        ,f1: 1.000, fn:  0, fp:  0, sample size: 7357)
+(feature_extractor_cpp         ,f1: 1.000, fn:  0, fp:  0, sample size: 482)
+(utilstest_py                  ,f1: 1.000, fn:  0, fp:  0, sample size: 2914)
+(6                             ,f1: 1.000, fn:  0, fp:  0, sample size: 625)
+(test_pro_changes              ,f1: 1.000, fn:  0, fp:  0, sample size: 16308)
+(easy_h5                       ,f1: 1.000, fn:  0, fp:  0, sample size: 165)
+(sided_feature_h               ,f1: 1.000, fn:  0, fp:  0, sample size: 234)
+(easy_h4                       ,f1: 1.000, fn:  0, fp:  0, sample size: 202)
+(line_pair_h                   ,f1: 1.000, fn:  0, fp:  0, sample size: 459)
+(cpp_easy3                     ,f1: 1.000, fn:  0, fp:  0, sample size: 864)
+(ambiguous_space_lines5        ,f1: 1.000, fn:  0, fp:  0, sample size: 284)
+(insert                        ,f1: 1.000, fn:  0, fp:  0, sample size: 300)
+(lot_of_empty_lines            ,f1: 1.000, fn:  0, fp:  0, sample size: 14348)
+(18                            ,f1: 1.000, fn:  0, fp:  0, sample size: 437)
+(empty_lines                   ,f1: NaN, fn:  0, fp:  0, sample size: 0)
+15:21:49.287 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Took: 2 minutes, 53 seconds
 
 Process finished with exit code 0
