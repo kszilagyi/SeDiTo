@@ -240,6 +240,7 @@ final class Editor extends CodeArea {
     }
     highlightedLines = Traversable.empty
 
+    //todo this doesn't work anymore as applyLineTypeCss doesn't change the char css anymore
     highlightedChars.foreach { selection =>
       val line = selection.lineIdx
       applyLineTypeCss(line, editTypes.get(line))
