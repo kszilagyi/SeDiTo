@@ -32,6 +32,11 @@ object MetricCalculator {
 
   private val ldCalculator = new Levenshtein()
 
+  object PairwiseMetrics {
+    def columnNames: List[String] = {
+      List("ldSim", "ldSimEdgeAdjusted", "normalizedLd", "normalizedLdLenSim", "ldLenSim")
+    }
+  }
   /**
     * @param normalizedLdLenSim 1 if they are the same.
     * @param ldLenSim
@@ -48,6 +53,11 @@ object MetricCalculator {
     def toDoubles: List[Double] = List(ldSim, ldSimEdgeAdjusted, normalizedLd, normalizedLdLenSim, ldLenSim)
   }
 
+  object ContextMetrics {
+    def columnNames: List[String] = {
+      Metrics.withChildren("before", PairwiseMetrics.columnNames) ++ Metrics.withChildren("after", PairwiseMetrics.columnNames)
+    }
+  }
 
   final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics) {
     def doubles: List[Double] = {
@@ -63,10 +73,36 @@ object MetricCalculator {
                                          leftLineIdx: LineIdx, rightLineIdx: LineIdx)
 
 
+  object ContextIsClosest {
+    def columnNames: List[String] = {
+      List("beforeFromLeft", "beforeFromRight", "afterFromLeft", "afterFromRight")
+    }
+  }
   final case class ContextIsClosest(beforeFromLeft: Boolean, beforeFromRight: Boolean, afterFromLeft: Boolean, afterFromRight: Boolean) {
     override def toString: String = s"CIC(bL: $beforeFromLeft, bR: $beforeFromRight, aL: $afterFromLeft, aR: $afterFromRight)"
 
     def doubles: Seq[Double] = Seq(beforeFromLeft, beforeFromRight, afterFromLeft, afterFromRight).map(if (_) 1.0 else 0.0)
+  }
+  object Metrics {
+    def withChildren(parent: String, children: List[String]): List[String] = {
+      children.map { c =>
+        s"$parent.$c"
+      }
+    }
+    def columnNames: List[String] = {
+      List(List("sameLineSameWord"),
+        withChildren("word", PairwiseMetrics.columnNames),
+        withChildren("contextFull", ContextMetrics.columnNames),
+        withChildren("context4th", ContextMetrics.columnNames),
+        withChildren("context8th", ContextMetrics.columnNames),
+        withChildren("context16th", ContextMetrics.columnNames),
+        withChildren("closestFull", ContextIsClosest.columnNames),
+        withChildren("closest4th", ContextIsClosest.columnNames),
+        withChildren("closest8th", ContextIsClosest.columnNames),
+        withChildren("closest16th",   ContextIsClosest.columnNames),
+        List("lineIsClosestMatchInText")
+      ).flatten
+    }
   }
   final case class Metrics(phase1Metrics: Phase1Metrics,
                            lineIsClosestMatchInText: Boolean,
@@ -87,7 +123,7 @@ object MetricCalculator {
     def leftLineIdx: LineIdx = phase1Metrics.leftLineIdx
     def rightLineIdx: LineIdx = phase1Metrics.rightLineIdx
 
-    def toLdLenSimDouble: Array[Double]= {
+    def doubles: Array[Double]= {
       (sameLineSameWord +: (word.toDoubles ++ line.toDoubles ++ contextFull.doubles ++ context4th.doubles ++
         context8th.doubles ++ context16th.doubles ++ closestFull.doubles ++ closest4th.doubles
         ++ closest8th.doubles ++ closest16th.doubles :+ (if (lineIsClosestMatchInText) 1.0 else 0.0))).toArray

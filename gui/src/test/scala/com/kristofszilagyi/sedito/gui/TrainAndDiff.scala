@@ -72,7 +72,7 @@ object TrainAndDiff {
     }
     val attributeDataset = new AttributeDataset("matches", attributes.toArray, new NominalAttribute("doesMatch"))
     metrics.foreach { m =>
-      val doubles = m.metrics.toLdLenSimDouble
+      val doubles = m.metrics.doubles
       assert(numOfAttributes ==== doubles.length, s"$numOfAttributes != ${doubles.length}")
       attributeDataset.add(new attributeDataset.Row(doubles, if (m.matching) 1.0 else 0.0))
     }
@@ -159,7 +159,7 @@ object TrainAndDiff {
     @SuppressWarnings(Array(Warts.OptionPartial))
     val nonEmpty = metrics.find(_.nonEmpty).get
     @SuppressWarnings(Array(Warts.TraversableOps))
-    val num = nonEmpty.head.metrics.toLdLenSimDouble.length
+    val num = nonEmpty.head.metrics.doubles.length
     num
   }
 
@@ -207,6 +207,7 @@ object Train extends App {
   val samples = readDataSetAndMeasureMetrics()
   val metricsWithResults = samples.map(_._2.metricsWithResults)
   val numOfAttributes = calcNumOfAttributes(metricsWithResults)
+  assert(numOfAttributes ==== Metrics.columnNames.size)
   val (nestedTraining, nestedTest) = samples.splitAt(samples.size / 2)
   val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
     nestedTest = nestedTest.map(_._2), numOfAttributes)

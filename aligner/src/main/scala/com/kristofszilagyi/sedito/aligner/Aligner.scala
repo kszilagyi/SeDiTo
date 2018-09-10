@@ -27,7 +27,7 @@ object Aligner {
   private def findPotentialMatches(classifier: SoftClassifier[Array[Double]], scaler: Scaler, left: FullText, right: FullText): Traversable[PartialResult] = {
     val metrics = MetricCalculator.calcAlignerMetrics(left, right)
     logger.debug("Debug metrics: \n" + metrics.mkString("\n"))
-    val xs = metrics.map(m => m -> m.toLdLenSimDouble).toArray
+    val xs = metrics.map(m => m -> m.doubles).toArray
 
     val probabilitiesWithMetrics = xs.flatMap { case (m, x) =>
       val probs = new Array[Double](1)
