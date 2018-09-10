@@ -24,6 +24,7 @@ import scala.collection.JavaConverters._
 import scala.util.{Failure, Success}
 
 final case class MetricsWithResults(metrics: Metrics, matching: Boolean)
+final case class Samples(lostPositives: Int, metricsWithResults: IndexedSeq[MetricsWithResults])
 
 object TrainAndDiff {
   private val logger = getLogger
@@ -44,14 +45,16 @@ object TrainAndDiff {
     val matches = testCase.wordAlignment.matches.toSeq
     val matchesSet = matches.toSet
     discard(assert(matches.size ==== matchesSet.size))
-
-    metrics.map { m =>
+    val metricsWithResult = metrics.map { m =>
       val potentialMatch = WordMatch(m.leftWord, m.rightWord)
       MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))
     }
+
+    val lost = matches.size - metricsWithResult.count(_.matching)
+    Samples(lost, metricsWithResult)
   }
 
-  def readDataSetAndMeasureMetrics(): List[(Path, IndexedSeq[MetricsWithResults])] = {
+  def readDataSetAndMeasureMetrics() = {
     val parentDir = Paths.get(getClass.getClassLoader.getResource("algorithm_tests/full_tests").getPath)
     val testDirs = using(Files.newDirectoryStream(parentDir)) { stream =>
       stream.iterator().asScala.toList.filter(p => Files.isDirectory(p))
@@ -84,10 +87,10 @@ object TrainAndDiff {
     truth.zip(prediction).count{ case (t, p) => t ==== 1 && p ==== 0 }
   }
 
-  def generateClassifier(nestedTraining: List[IndexedSeq[MetricsWithResults]],
-                                 nestedTest: List[IndexedSeq[MetricsWithResults]], numOfAttributes: Int) = {
-    val training = nestedTraining.flatten
-    val test = nestedTest.flatten
+  def generateClassifier(nestedTraining: List[Samples],
+                                 nestedTest: List[Samples], numOfAttributes: Int) = {
+    val training = nestedTraining.flatMap(_.metricsWithResults)
+    val test = nestedTest.flatMap(_.metricsWithResults)
     logger.info(s"Training size: ${training.size}")
     logger.info(s"Test size: ${test.size}")
     logger.info(s"1s in training: ${training.count(_.matching)}")
@@ -110,7 +113,10 @@ object TrainAndDiff {
     val trainingPred = transformedTrainingSet.map(classifier.predict)
     val testPred = testX.map(classifier.predict)
 
+    val lostPositivesInTraining = nestedTraining.map(_.lostPositives).sum
+    val lostPositivesInTest = nestedTest.map(_.lostPositives).sum
 
+    logger.info(s"test lost positives: $lostPositivesInTraining")
     logger.info("training accuracy: " + accuracy(trainingY, trainingPred).toString)
     logger.info("training recall: " + recall(trainingY, trainingPred).toString)
     logger.info("training sensitivity(TP / (TP + FN)): " + sensitivity(trainingY, trainingPred).toString)
@@ -121,6 +127,7 @@ object TrainAndDiff {
     logger.info(s"training FN count: ${countFN(trainingY, trainingPred)}")
     logger.info("training f1: " + f1(trainingY, trainingPred).toString)
 
+    logger.info(s"test lost positives: $lostPositivesInTest")
     logger.info("test accuracy: " + accuracy(testY, testPred).toString)
     logger.info("test recall: " + recall(testY, testPred).toString)
     logger.info("test sensitivity(TP / (TP + FN)): " + sensitivity(testY, testPred).toString)
@@ -148,11 +155,11 @@ object TrainAndDiff {
     logger.info("opening finished")
   }
 
-  def calcNumOfAttributes(metrics: List[(Path, IndexedSeq[MetricsWithResults])]) = {
+  def calcNumOfAttributes(metrics: List[IndexedSeq[MetricsWithResults]]) = {
     @SuppressWarnings(Array(Warts.OptionPartial))
-    val nonEmpty = metrics.find(_._2.nonEmpty).get
+    val nonEmpty = metrics.find(_.nonEmpty).get
     @SuppressWarnings(Array(Warts.TraversableOps))
-    val num = nonEmpty._2.head.metrics.toLdLenSimDouble.length
+    val num = nonEmpty.head.metrics.toLdLenSimDouble.length
     num
   }
 
@@ -171,22 +178,22 @@ object TrainAndDiff {
     }
   }
 
-  final case class PerformanceMetrics(f1: Double, fn: Int, fp: Int, sampleSize: Int) {
-    override def toString: String = f"f1: $f1%.3f, fn: $fn%2d, fp: $fp%2d, sample size: $sampleSize"
+  final case class PerformanceMetrics(f1: Double, lostPositives: Int, fn: Int, fp: Int, sampleSize: Int) {
+    override def toString: String = f"f1: $f1%.3f, lost positives: $lostPositives, fn: $fn%2d, fp: $fp%2d, sample size: $sampleSize"
   }
 
   @SuppressWarnings(Array(Warts.ToString))
-  def performanceMetrics(files: List[(Path, IndexedSeq[MetricsWithResults])], scaler: Scaler,
+  def performanceMetrics(files: List[(Path, Samples)], scaler: Scaler,
                          classifier: NeuralNetwork, numOfAttributes: Int) = {
     files.map { case (path, singleTest) =>
-      val singleDataSet = toAttributeDataSet(singleTest, numOfAttributes)
+      val singleDataSet = toAttributeDataSet(singleTest.metricsWithResults, numOfAttributes)
       val singleTestX = scaler.transform(singleDataSet.x())
       val singleTestY = singleDataSet.labels()
       val singlePred = singleTestX.map(classifier.predict)
       val f1Score = f1(singleTestY, singlePred)
       val fp = countFP(singleTestY, singlePred)
       val fn = countFN(singleTestY, singlePred)
-      path.getFileName.toString.padTo(30, " ").mkString -> PerformanceMetrics(f1Score, fn, fp, singleTestY.length)
+      path.getFileName.toString.padTo(30, " ").mkString -> PerformanceMetrics(f1Score, singleTest.lostPositives, fn, fp, singleTestY.length)
     }.sortBy(_._2.f1)
   }
 
@@ -197,9 +204,10 @@ object Train extends App {
 
   logger.info("Start")
   val start = Instant.now()
-  val metrics = readDataSetAndMeasureMetrics()
-  val numOfAttributes = calcNumOfAttributes(metrics)
-  val (nestedTraining, nestedTest) = metrics.splitAt(metrics.size / 2)
+  val samples = readDataSetAndMeasureMetrics()
+  val metricsWithResults = samples.map(_._2.metricsWithResults)
+  val numOfAttributes = calcNumOfAttributes(metricsWithResults)
+  val (nestedTraining, nestedTest) = samples.splitAt(samples.size / 2)
   val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
     nestedTest = nestedTest.map(_._2), numOfAttributes)
 
