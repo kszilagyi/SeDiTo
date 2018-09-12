@@ -72,29 +72,31 @@ object TrainAndDiff {
   }
 
 
-  private def toAttributeDataSet(metrics: Traversable[MetricsWithResults], numOfAttributes: Int) = {
-    val attributes = (0 until numOfAttributes).map { name =>
+  private def toAttributeDataSet(metrics: Traversable[MetricsWithResults], numOfAttributes: Int, excludedIdxes: Set[Int]) = {
+    val idxesToKeep = (0 until numOfAttributes).filterNot(excludedIdxes.contains)
+    val attributes = idxesToKeep.map { name =>
       new NumericAttribute(name.toString)
     }
     val attributeDataset = new AttributeDataset("matches", attributes.toArray, new NominalAttribute("doesMatch"))
     metrics.foreach { m =>
       val doubles = m.metrics.doubles
       assert(numOfAttributes ==== doubles.length, s"$numOfAttributes != ${doubles.length}")
-      attributeDataset.add(new attributeDataset.Row(doubles, if (m.matching) 1.0 else 0.0))
+      val valuesToKeep = idxesToKeep.map{idx => doubles(idx)}.toArray
+      attributeDataset.add(new attributeDataset.Row(valuesToKeep, if (m.matching) 1.0 else 0.0))
     }
     attributeDataset
   }
 
-  private def countFP(truth: Array[Int], prediction: Array[Int]): Int = {
+  def countFP(truth: Array[Int], prediction: Array[Int]): Int = {
     truth.zip(prediction).count{ case (t, p) => t ==== 0 && p ==== 1 }
   }
 
-  private def countFN(truth: Array[Int], prediction: Array[Int]): Int = {
+  def countFN(truth: Array[Int], prediction: Array[Int]): Int = {
     truth.zip(prediction).count{ case (t, p) => t ==== 1 && p ==== 0 }
   }
 
-  def generateClassifier(nestedTraining: List[Samples],
-                                 nestedTest: List[Samples], numOfAttributes: Int) = {
+  def logBasicStats(nestedTraining: List[Samples],
+                    nestedTest: List[Samples]): Unit = {
     val training = nestedTraining.flatMap(_.metricsWithResults)
     val test = nestedTest.flatMap(_.metricsWithResults)
     logger.info(s"Training size: ${training.size}")
@@ -103,17 +105,21 @@ object TrainAndDiff {
     logger.info(s"0s in training: ${training.count(_.matching ==== false)}")
     logger.info(s"1s in test: ${test.count(_.matching)}")
     logger.info(s"0s in test: ${test.count(_.matching ==== false)}")
+  }
 
-    val trainingSet = toAttributeDataSet(training, numOfAttributes)
+  def generateClassifier(nestedTraining: List[Samples], nestedTest: List[Samples],
+                         numOfAttributes: Int, idxesToExclude: Set[Int]): (NeuralNetwork, Scaler, TrainingData) = {
+    val training = nestedTraining.flatMap(_.metricsWithResults)
+    val test = nestedTest.flatMap(_.metricsWithResults)
+
+    val trainingSet = toAttributeDataSet(training, numOfAttributes, idxesToExclude)
     val scaler = new Scaler(true)
     scaler.learn(trainingSet.attributes(), trainingSet.x())
     val transformedTrainingSet = scaler.transform(trainingSet.x())
     val trainingY = trainingSet.labels()
-    logger.info("Starting training")
     val classifier = classification.mlp(transformedTrainingSet, trainingY, Array(numOfAttributes, 5, 1), ErrorFunction.CROSS_ENTROPY, ActivationFunction.LOGISTIC_SIGMOID)
-    logger.info("Training finished")
 
-    val testSet = toAttributeDataSet(test, numOfAttributes)
+    val testSet = toAttributeDataSet(test, numOfAttributes, idxesToExclude)
     val testX = scaler.transform(testSet.x())
     val testY = testSet.labels()
     val trainingPred = transformedTrainingSet.map(classifier.predict)
@@ -122,28 +128,13 @@ object TrainAndDiff {
     val lostPositivesInTraining = nestedTraining.map(_.lostPositives).sum
     val lostPositivesInTest = nestedTest.map(_.lostPositives).sum
 
-    logger.info(s"test lost positives: $lostPositivesInTraining")
-    logger.info("training accuracy: " + accuracy(trainingY, trainingPred).toString)
-    logger.info("training recall: " + recall(trainingY, trainingPred).toString)
-    logger.info("training sensitivity(TP / (TP + FN)): " + sensitivity(trainingY, trainingPred).toString)
-    logger.info("training specificity(TN / (FP + TN)): " + specificity(trainingY, trainingPred).toString)
-    logger.info("training fallout(FP / (FP + TN)): " + fallout(trainingY, trainingPred).toString)
-    logger.info("training fdr(FP / (TP + FP)): " + fdr(trainingY, trainingPred).toString)
-    logger.info(s"training FP count: ${countFP(trainingY, trainingPred)}")
-    logger.info(s"training FN count: ${countFN(trainingY, trainingPred)}")
-    logger.info("training f1: " + f1(trainingY, trainingPred).toString)
-
-    logger.info(s"test lost positives: $lostPositivesInTest")
-    logger.info("test accuracy: " + accuracy(testY, testPred).toString)
-    logger.info("test recall: " + recall(testY, testPred).toString)
-    logger.info("test sensitivity(TP / (TP + FN)): " + sensitivity(testY, testPred).toString)
-    logger.info("test specificity(TN / (FP + TN)): " + specificity(testY, testPred).toString)
-    logger.info("test fallout(FP / (FP + TN)): " + fallout(testY, testPred).toString)
-    logger.info("test fdr(FP / (TP + FP)): " + fdr(testY, testPred).toString)
-    logger.info(s"test FP count: ${countFP(testY, testPred)}")
-    logger.info(s"test FN count: ${countFN(testY, testPred)}")
-    logger.info("test f1: " + f1(testY, testPred).toString)
-    (classifier, scaler)
+    val trainingData = TrainingData(
+      training = new YAndPred(trainingY, trainingPred),
+      test = new YAndPred(testY, testPred),
+      lostPositivesInTraining = lostPositivesInTraining,
+      lostPositivesInTest = lostPositivesInTest
+    )
+    (classifier, scaler, trainingData)
   }
 
   private def displayTestCase(testCase: TestCase, classifier: SoftClassifier[Array[Double]], scaler: Scaler) = {
@@ -190,9 +181,9 @@ object TrainAndDiff {
 
   @SuppressWarnings(Array(Warts.ToString))
   def performanceMetrics(files: List[(Path, Samples)], scaler: Scaler,
-                         classifier: NeuralNetwork, numOfAttributes: Int) = {
+                         classifier: NeuralNetwork, numOfAttributes: Int, idxesToExclude: Set[Int]) = {
     files.map { case (path, singleTest) =>
-      val singleDataSet = toAttributeDataSet(singleTest.metricsWithResults, numOfAttributes)
+      val singleDataSet = toAttributeDataSet(singleTest.metricsWithResults, numOfAttributes, idxesToExclude)
       val singleTestX = scaler.transform(singleDataSet.x())
       val singleTestY = singleDataSet.labels()
       val singlePred = singleTestX.map(classifier.predict)
@@ -214,14 +205,18 @@ object Train extends App {
   val metricsWithResults = samples.map(_._2.metricsWithResults)
   val numOfAttributes = calcNumOfAttributes(metricsWithResults)
   val (nestedTraining, nestedTest) = samples.splitAt(samples.size / 2)
-  val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
-    nestedTest = nestedTest.map(_._2), numOfAttributes)
+  logBasicStats(nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
+  logger.info("Starting training")
 
-  val trainingMetrics = performanceMetrics(nestedTraining, scaler, classifier, numOfAttributes)
+  val (classifier, scaler, trainingData) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
+    nestedTest = nestedTest.map(_._2), numOfAttributes, idxesToExclude = Set.empty)
+
+  trainingData.printDetailedStats()
+  val trainingMetrics = performanceMetrics(nestedTraining, scaler, classifier, numOfAttributes, idxesToExclude = Set.empty)
 
   logger.info("Training f1s: \n" + trainingMetrics.mkString("\n"))
 
-  val testMetrics = performanceMetrics(nestedTest, scaler, classifier, numOfAttributes)
+  val testMetrics = performanceMetrics(nestedTest, scaler, classifier, numOfAttributes, idxesToExclude = Set.empty)
 
   logger.info("Test f1s: \n" + testMetrics.mkString("\n"))
   write.xstream(classifier, "linear_regression.model")
