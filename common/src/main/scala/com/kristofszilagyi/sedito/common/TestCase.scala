@@ -18,7 +18,7 @@ object TestCase {
   private val rightFileName = "right.txt"
   private val alignmentFileName = "alignment.json"
   def open(testDir: Path): Try[TestCase] = {
-    logger.info(s"Opening test case: $testDir")
+    logger.debug(s"Opening test case: $testDir")
 
     //todo handle line endings properly
     Try {
@@ -31,7 +31,7 @@ object TestCase {
       (left, right, alignment)
     }.map{ case (left, right, alignment) =>
       val testCase = TestCase(left, right, alignment)
-      logger.info(s"TestCase opening successfully finished for $testDir")
+      logger.debug(s"TestCase opening successfully finished for $testDir")
       testCase
     }
 
