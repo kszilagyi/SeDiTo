@@ -176,13 +176,7 @@ object MetricCalculator {
     val leftWordString = leftWord.word.toText
     val rightWordString = rightWord.word.toText
     val wordMetrics = calcMetrics(leftWordString, rightWordString, math.max(leftWordString.length, rightWordString.length))
-    val leftSelection = leftWord.word
-    val leftLine = leftSelection.line
-    val rightSelection = rightWord.word
-    val rightLine = rightSelection.line
-    val lineMetrics = calcMetrics(leftLine, rightLine, math.max(leftLine.length, rightLine.length))//todo this could be cached/sped up
-    val sameLineSameWord = if (leftLine ==== rightLine && leftSelection.from ==== rightSelection.from) 1.0
-                        else 0.0
+
     val contextMetrics = if(wordMetrics.ldLenSim >= 0.99) {
       Some((
         calcContextMetrics(leftWord, rightWord, contextSize),
@@ -194,6 +188,12 @@ object MetricCalculator {
       None
     }
     contextMetrics.map { case (full, forth, eight, sixteenth) =>
+      val leftSelection = leftWord.word
+      val leftLine = leftSelection.line
+      val rightSelection = rightWord.word
+      val rightLine = rightSelection.line
+      val lineMetrics = calcMetrics(leftLine, rightLine, math.max(leftLine.length, rightLine.length))//todo this could be cached/sped up
+      val sameLineSameWord = if (leftLine ==== rightLine && leftSelection.from ==== rightSelection.from) 1.0 else 0.0
       Phase1Metrics(sameLineSameWord, leftSelection, rightSelection, word = wordMetrics, line = lineMetrics,
         contextFull = full, context4th = forth, context8th = eight,  context16th = sixteenth, leftLineIdx= leftSelection.lineIdx,
         rightLineIdx = rightSelection.lineIdx)
