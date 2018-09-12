@@ -24,8 +24,11 @@ final case class TrainingData(training: YAndPred, test: YAndPred, lostPositivesI
     logger.info("training specificity(TN / (FP + TN)): " + specificity(trainingY, trainingPred).toString)
     logger.info("training fallout(FP / (FP + TN)): " + fallout(trainingY, trainingPred).toString)
     logger.info("training fdr(FP / (TP + FP)): " + fdr(trainingY, trainingPred).toString)
-    logger.info(s"training FP count: ${countFP(trainingY, trainingPred)}")
-    logger.info(s"training FN count: ${countFN(trainingY, trainingPred)}")
+    val trainFp = countFP(trainingY, trainingPred)
+    val trainFn = countFN(trainingY, trainingPred)
+    logger.info(s"training FP count: $trainFp")
+    logger.info(s"training FN count: $trainFn")
+    logger.info(s"total mispred: ${trainFp + trainFn}")
     logger.info("training f1: " + f1(trainingY, trainingPred).toString)
 
     logger.info(s"test lost positives: $lostPositivesInTest")
@@ -35,8 +38,11 @@ final case class TrainingData(training: YAndPred, test: YAndPred, lostPositivesI
     logger.info("test specificity(TN / (FP + TN)): " + specificity(testY, testPred).toString)
     logger.info("test fallout(FP / (FP + TN)): " + fallout(testY, testPred).toString)
     logger.info("test fdr(FP / (TP + FP)): " + fdr(testY, testPred).toString)
-    logger.info(s"test FP count: ${countFP(testY, testPred)}")
-    logger.info(s"test FN count: ${countFN(testY, testPred)}")
+    val testFp = countFP(testY, testPred)
+    val testFn = countFN(testY, testPred)
+    logger.info(s"test FP count: $testFp")
+    logger.info(s"test FN count: $testFn")
+    logger.info(s"total mispred: ${testFp + testFn}")
     logger.info("test f1: " + f1(testY, testPred).toString)
   }
 
