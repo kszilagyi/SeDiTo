@@ -1,7 +1,6 @@
 <smile.feature.Scaler>
   <copy>true</copy>
   <lo>
-    <double>0.0</double>
     <double>1.0</double>
     <double>1.0</double>
     <double>0.0</double>
@@ -71,7 +70,6 @@
     <double>0.0</double>
   </lo>
   <hi>
-    <double>1.0</double>
     <double>36.0</double>
     <double>36.0</double>
     <double>0.48</double>

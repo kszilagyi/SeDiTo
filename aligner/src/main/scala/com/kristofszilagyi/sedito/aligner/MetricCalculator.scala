@@ -1,6 +1,5 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps.AnyOps
 import com.kristofszilagyi.sedito.common._
 import info.debatty.java.stringsimilarity.Levenshtein
 import org.log4s.getLogger
@@ -67,7 +66,7 @@ object MetricCalculator {
     override def toString: String = s"(b: $before,a: $after)"
   }
 
-  final case class Phase1Metrics(sameLineSameWord: Double, leftWord: Selection, rightWord: Selection,
+  final case class Phase1Metrics(leftWord: Selection, rightWord: Selection,
                                          word: PairwiseMetrics, line: PairwiseMetrics, contextFull: ContextMetrics,
                                          context4th: ContextMetrics, context8th: ContextMetrics, context16th: ContextMetrics,
                                          leftLineIdx: LineIdx, rightLineIdx: LineIdx)
@@ -90,7 +89,7 @@ object MetricCalculator {
       }
     }
     def columnNames: List[String] = {
-      List(List("sameLineSameWord"),
+      List(
         withChildren("word", PairwiseMetrics.columnNames),
         withChildren("line", PairwiseMetrics.columnNames),
         withChildren("contextFull", ContextMetrics.columnNames),
@@ -112,7 +111,6 @@ object MetricCalculator {
                            closest8th: ContextIsClosest,
                            closest16th: ContextIsClosest) {
 
-    def sameLineSameWord: Double = phase1Metrics.sameLineSameWord
     def word: PairwiseMetrics = phase1Metrics.word
     def line: PairwiseMetrics = phase1Metrics.line
     def contextFull: ContextMetrics = phase1Metrics.contextFull
@@ -125,13 +123,13 @@ object MetricCalculator {
     def rightLineIdx: LineIdx = phase1Metrics.rightLineIdx
 
     def doubles: Array[Double]= {
-      (sameLineSameWord +: (word.toDoubles ++ line.toDoubles ++ contextFull.doubles ++ context4th.doubles ++
+      (word.toDoubles ++ line.toDoubles ++ contextFull.doubles ++ context4th.doubles ++
         context8th.doubles ++ context16th.doubles ++ closestFull.doubles ++ closest4th.doubles
-        ++ closest8th.doubles ++ closest16th.doubles :+ (if (lineIsClosestMatchInText) 1.0 else 0.0))).toArray
+        ++ closest8th.doubles ++ closest16th.doubles :+ (if (lineIsClosestMatchInText) 1.0 else 0.0)).toArray
     }
 
     override def toString: String = {
-      s"$leftWord - $rightWord: ss: $sameLineSameWord, word: $word, full: $contextFull," +
+      s"$leftWord - $rightWord, word: $word, full: $contextFull," +
         s" 4: $context4th, 16: $context16th, lineIsClosest: $lineIsClosestMatchInText"
     }
   }
@@ -193,8 +191,7 @@ object MetricCalculator {
       val rightSelection = rightWord.word
       val rightLine = rightSelection.line
       val lineMetrics = calcMetrics(leftLine, rightLine, math.max(leftLine.length, rightLine.length))//todo this could be cached/sped up
-      val sameLineSameWord = if (leftLine ==== rightLine && leftSelection.from ==== rightSelection.from) 1.0 else 0.0
-      Phase1Metrics(sameLineSameWord, leftSelection, rightSelection, word = wordMetrics, line = lineMetrics,
+      Phase1Metrics(leftSelection, rightSelection, word = wordMetrics, line = lineMetrics,
         contextFull = full, context4th = forth, context8th = eight,  context16th = sixteenth, leftLineIdx= leftSelection.lineIdx,
         rightLineIdx = rightSelection.lineIdx)
     }.toList
