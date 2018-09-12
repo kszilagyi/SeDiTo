@@ -92,6 +92,7 @@ object MetricCalculator {
     def columnNames: List[String] = {
       List(List("sameLineSameWord"),
         withChildren("word", PairwiseMetrics.columnNames),
+        withChildren("line", PairwiseMetrics.columnNames),
         withChildren("contextFull", ContextMetrics.columnNames),
         withChildren("context4th", ContextMetrics.columnNames),
         withChildren("context8th", ContextMetrics.columnNames),

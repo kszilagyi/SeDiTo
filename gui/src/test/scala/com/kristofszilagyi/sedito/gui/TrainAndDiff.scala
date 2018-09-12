@@ -60,7 +60,11 @@ object TrainAndDiff {
       stream.iterator().asScala.toList.filter(p => Files.isDirectory(p))
     }
     val metrics = testDirs.par.map { testDir =>
-      testDir -> readSingleDataSetAndMeasureMetrics(testDir)
+      val samples = readSingleDataSetAndMeasureMetrics(testDir)
+      val metricsNumInSamples = calcNumOfAttributes(List(samples.metricsWithResults))
+      val columnCount = Metrics.columnNames.size
+      assert(metricsNumInSamples ==== columnCount, s"$metricsNumInSamples != $columnCount")
+      testDir -> samples
     }
     metrics.seq.toList
   }
@@ -207,7 +211,6 @@ object Train extends App {
   val samples = readDataSetAndMeasureMetrics()
   val metricsWithResults = samples.map(_._2.metricsWithResults)
   val numOfAttributes = calcNumOfAttributes(metricsWithResults)
-  assert(numOfAttributes ==== Metrics.columnNames.size)
   val (nestedTraining, nestedTest) = samples.splitAt(samples.size / 2)
   val (classifier, scaler) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
     nestedTest = nestedTest.map(_._2), numOfAttributes)
