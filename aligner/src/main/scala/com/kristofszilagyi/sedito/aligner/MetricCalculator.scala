@@ -95,6 +95,7 @@ object MetricCalculator {
         withChildren("line", PairwiseMetrics.columnNames),
         withChildren("contextFull", ContextMetrics.columnNames),
         withChildren("context4th", ContextMetrics.columnNames),
+        withChildren("context8th", ContextMetrics.columnNames),
         withChildren("context16th", ContextMetrics.columnNames),
         withChildren("closestFull", ContextIsClosest.columnNames),
         withChildren("closest4th", ContextIsClosest.columnNames),
@@ -116,6 +117,7 @@ object MetricCalculator {
     def line: PairwiseMetrics = phase1Metrics.line
     def contextFull: ContextMetrics = phase1Metrics.contextFull
     def context4th: ContextMetrics = phase1Metrics.context4th
+    def context8th: ContextMetrics = phase1Metrics.context8th
     def context16th: ContextMetrics = phase1Metrics.context16th
     def leftWord: Selection = phase1Metrics.leftWord
     def rightWord: Selection = phase1Metrics.rightWord
@@ -123,8 +125,8 @@ object MetricCalculator {
     def rightLineIdx: LineIdx = phase1Metrics.rightLineIdx
 
     def doubles: Array[Double]= {
-      (sameLineSameWord +: (word.toDoubles ++ line.toDoubles ++ contextFull.doubles ++ context4th.doubles
-        ++ context16th.doubles ++ closestFull.doubles ++ closest4th.doubles
+      (sameLineSameWord +: (word.toDoubles ++ line.toDoubles ++ contextFull.doubles ++ context4th.doubles ++
+        context8th.doubles ++ context16th.doubles ++ closestFull.doubles ++ closest4th.doubles
         ++ closest8th.doubles ++ closest16th.doubles :+ (if (lineIsClosestMatchInText) 1.0 else 0.0))).toArray
     }
 
