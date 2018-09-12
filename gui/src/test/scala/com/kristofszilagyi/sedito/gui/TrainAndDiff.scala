@@ -107,6 +107,7 @@ object TrainAndDiff {
     logger.info(s"0s in test: ${test.count(_.matching ==== false)}")
   }
 
+  //todo try with more neurons
   def generateClassifier(nestedTraining: List[Samples], nestedTest: List[Samples],
                          numOfAttributes: Int, idxesToExclude: Set[Int]): (NeuralNetwork, Scaler, TrainingData) = {
     val training = nestedTraining.flatMap(_.metricsWithResults)
@@ -117,7 +118,7 @@ object TrainAndDiff {
     scaler.learn(trainingSet.attributes(), trainingSet.x())
     val transformedTrainingSet = scaler.transform(trainingSet.x())
     val trainingY = trainingSet.labels()
-    val classifier = classification.mlp(transformedTrainingSet, trainingY, Array(numOfAttributes, 5, 1), ErrorFunction.CROSS_ENTROPY, ActivationFunction.LOGISTIC_SIGMOID)
+    val classifier = classification.mlp(transformedTrainingSet, trainingY, Array(numOfAttributes - idxesToExclude.size, 5, 1), ErrorFunction.CROSS_ENTROPY, ActivationFunction.LOGISTIC_SIGMOID)
 
     val testSet = toAttributeDataSet(test, numOfAttributes, idxesToExclude)
     val testX = scaler.transform(testSet.x())

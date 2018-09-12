@@ -1,0 +1,285 @@
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=18481577193142 -javaagent:/home/szkster/Programs/idea-IC-181.4203.550/lib/idea_rt.jar=38999:/home/szkster/Programs/idea-IC-181.4203.550/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.3.jar:/home/szkster/.sbt/boot/scala-2.12.6/lib/scala-reflect.jar:/home/szkster/.sbt/boot/scala-2.12.6/lib/scala-library.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.12/jars/scala-java8-compat_2.12-0.9.0.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-text/jars/commons-text-1.3.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.7.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.richtext/richtextfx/jars/richtextfx-0.9.1.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-2.1.0.jar com.kristofszilagyi.sedito.gui.FeatureElimination
+13:10:47.235 [main] INFO  c.k.sedito.gui.FeatureElimination - Start
+13:12:14.835 [main] INFO  c.k.sedito.gui.TrainAndDiff - Training size: 532161
+13:12:14.837 [main] INFO  c.k.sedito.gui.TrainAndDiff - Test size: 447111
+13:12:14.849 [main] INFO  c.k.sedito.gui.TrainAndDiff - 1s in training: 48101
+13:12:14.866 [main] INFO  c.k.sedito.gui.TrainAndDiff - 0s in training: 484060
+13:12:14.877 [main] INFO  c.k.sedito.gui.TrainAndDiff - 1s in test: 39215
+13:12:14.890 [main] INFO  c.k.sedito.gui.TrainAndDiff - 0s in test: 407896
+13:12:53.739 [main] INFO  smile.util.package$ - runtime: 25003.189855 ms
+13:13:06.083 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: sameLineSameWord. F1s: F1s(0.9943361652507079,0.9927664033944228)
+13:13:43.234 [main] INFO  smile.util.package$ - runtime: 24554.732832 ms
+13:13:54.480 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: word.ldSim. F1s: F1s(0.9944683721654299,0.9924241459656986)
+13:14:32.130 [main] INFO  smile.util.package$ - runtime: 24838.276435 ms
+13:14:42.843 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: word.ldSimEdgeAdjusted. F1s: F1s(0.9948204850854931,0.9929286224854489)
+13:15:19.964 [main] INFO  smile.util.package$ - runtime: 24563.799681 ms
+13:15:31.170 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: word.normalizedLd. F1s: F1s(0.9949402071709836,0.9927569497577149)
+13:16:10.545 [main] INFO  smile.util.package$ - runtime: 27870.33935 ms
+13:16:22.167 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: word.normalizedLdLenSim. F1s: F1s(0.9940868915722645,0.9923388225712031)
+13:17:00.808 [main] INFO  smile.util.package$ - runtime: 27094.419137 ms
+13:17:11.733 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: word.ldLenSim. F1s: F1s(0.9946188340807175,0.9934277823240589)
+13:17:47.869 [main] INFO  smile.util.package$ - runtime: 24587.765942 ms
+13:17:58.989 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: line.ldSim. F1s: F1s(0.9943859285010118,0.9922468777451018)
+13:18:35.063 [main] INFO  smile.util.package$ - runtime: 24637.040034 ms
+13:18:46.138 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: line.ldSimEdgeAdjusted. F1s: F1s(0.9936629432568945,0.9917946238884578)
+13:19:21.800 [main] INFO  smile.util.package$ - runtime: 24550.050031 ms
+13:19:33.481 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: line.normalizedLd. F1s: F1s(0.9929830065359477,0.9923589743589745)
+13:20:09.315 [main] INFO  smile.util.package$ - runtime: 24535.933655 ms
+13:20:20.414 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: line.normalizedLdLenSim. F1s: F1s(0.9944614229240766,0.9930427665234295)
+13:20:56.471 [main] INFO  smile.util.package$ - runtime: 24590.566563 ms
+13:21:08.076 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: line.ldLenSim. F1s: F1s(0.9944318158119747,0.9929261272785418)
+13:21:44.416 [main] INFO  smile.util.package$ - runtime: 24778.812412 ms
+13:21:55.467 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: contextFull.before.ldSim. F1s: F1s(0.9948863990687427,0.9927191584316226)
+13:22:31.354 [main] INFO  smile.util.package$ - runtime: 24488.237767 ms
+13:22:42.712 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: contextFull.before.ldSimEdgeAdjusted. F1s: F1s(0.9946014409999794,0.9925618361056626)
+13:23:18.508 [main] INFO  smile.util.package$ - runtime: 24555.071399 ms
+13:23:29.924 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: contextFull.before.normalizedLd. F1s: F1s(0.9948807591459607,0.9928753830439224)
+13:24:06.077 [main] INFO  smile.util.package$ - runtime: 24570.217605 ms
+13:24:17.358 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: contextFull.before.normalizedLdLenSim. F1s: F1s(0.995135438538137,0.9927187870595887)
+13:24:53.707 [main] INFO  smile.util.package$ - runtime: 24537.64656 ms
+13:25:05.027 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: contextFull.before.ldLenSim. F1s: F1s(0.9942431637569615,0.9926908257702795)
+13:25:41.163 [main] INFO  smile.util.package$ - runtime: 24565.271656 ms
+13:25:52.884 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: contextFull.after.ldSim. F1s: F1s(0.994918995460414,0.9931124372260628)
+13:26:29.010 [main] INFO  smile.util.package$ - runtime: 24588.739926 ms
+13:26:40.358 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: contextFull.after.ldSimEdgeAdjusted. F1s: F1s(0.9948272811481977,0.9924326531653969)
+13:27:16.552 [main] INFO  smile.util.package$ - runtime: 24773.683598 ms
+13:27:28.165 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: contextFull.after.normalizedLd. F1s: F1s(0.9947205648058479,0.992757418217584)
+13:28:04.495 [main] INFO  smile.util.package$ - runtime: 24916.178272 ms
+13:28:16.490 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: contextFull.after.normalizedLdLenSim. F1s: F1s(0.9947328975309156,0.992973580663294)
+13:28:52.801 [main] INFO  smile.util.package$ - runtime: 24776.112915 ms
+13:29:04.269 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: contextFull.after.ldLenSim. F1s: F1s(0.9948149844866001,0.9929985946084068)
+13:29:40.319 [main] INFO  smile.util.package$ - runtime: 24524.180026 ms
+13:29:51.513 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context4th.before.ldSim. F1s: F1s(0.994552303078727,0.9923090635902921)
+13:30:27.494 [main] INFO  smile.util.package$ - runtime: 24490.336083 ms
+13:30:38.855 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context4th.before.ldSimEdgeAdjusted. F1s: F1s(0.9947419385067104,0.9932096086590253)
+13:31:14.904 [main] INFO  smile.util.package$ - runtime: 24500.828457 ms
+13:31:26.275 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context4th.before.normalizedLd. F1s: F1s(0.995080961344468,0.9931078493937461)
+13:32:02.500 [main] INFO  smile.util.package$ - runtime: 24468.805792 ms
+13:32:14.009 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context4th.before.normalizedLdLenSim. F1s: F1s(0.9946781366187942,0.9927199346071319)
+13:32:50.092 [main] INFO  smile.util.package$ - runtime: 24583.162885 ms
+13:33:01.163 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context4th.before.ldLenSim. F1s: F1s(0.9939062565215577,0.9932970041190164)
+13:33:36.748 [main] INFO  smile.util.package$ - runtime: 24483.686156 ms
+13:33:48.268 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context4th.after.ldSim. F1s: F1s(0.9942219440967878,0.99317205400982)
+13:34:24.093 [main] INFO  smile.util.package$ - runtime: 24524.219205 ms
+13:34:35.211 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context4th.after.ldSimEdgeAdjusted. F1s: F1s(0.9948971090560692,0.9929976999744442)
+13:35:11.418 [main] INFO  smile.util.package$ - runtime: 24770.370304 ms
+13:35:22.480 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context4th.after.normalizedLd. F1s: F1s(0.9944414373152349,0.9924902296354952)
+13:35:58.407 [main] INFO  smile.util.package$ - runtime: 24815.107408 ms
+13:36:09.659 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context4th.after.normalizedLdLenSim. F1s: F1s(0.9947937274828713,0.9926569184598685)
+13:36:45.617 [main] INFO  smile.util.package$ - runtime: 24608.498831 ms
+13:36:57.080 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context4th.after.ldLenSim. F1s: F1s(0.9943251963357574,0.9919578550886927)
+13:37:33.026 [main] INFO  smile.util.package$ - runtime: 24712.418663 ms
+13:37:44.835 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context8th.before.ldSim. F1s: F1s(0.9948143452461367,0.9930775997246338)
+13:38:21.073 [main] INFO  smile.util.package$ - runtime: 24584.249808 ms
+13:38:32.403 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context8th.before.ldSimEdgeAdjusted. F1s: F1s(0.9945400741883048,0.9928778753819989)
+13:39:08.803 [main] INFO  smile.util.package$ - runtime: 24729.088637 ms
+13:39:20.308 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context8th.before.normalizedLd. F1s: F1s(0.9945908764030891,0.992838508363599)
+13:39:56.464 [main] INFO  smile.util.package$ - runtime: 24695.208546 ms
+13:40:07.818 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context8th.before.normalizedLdLenSim. F1s: F1s(0.9944440405844662,0.9928099742484893)
+13:40:44.439 [main] INFO  smile.util.package$ - runtime: 24790.94826 ms
+13:40:56.353 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context8th.before.ldLenSim. F1s: F1s(0.9948365604830315,0.99273224253107)
+13:41:32.461 [main] INFO  smile.util.package$ - runtime: 24643.004969 ms
+13:41:43.935 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context8th.after.ldSim. F1s: F1s(0.994503724791422,0.9930009306594935)
+13:42:20.163 [main] INFO  smile.util.package$ - runtime: 24876.746439 ms
+13:42:31.783 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context8th.after.ldSimEdgeAdjusted. F1s: F1s(0.9939576099911903,0.9915942876762848)
+13:43:07.586 [main] INFO  smile.util.package$ - runtime: 24664.790191 ms
+13:43:19.012 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context8th.after.normalizedLd. F1s: F1s(0.9946847793299285,0.9929059916300909)
+13:43:54.876 [main] INFO  smile.util.package$ - runtime: 24550.754318 ms
+13:44:06.136 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context8th.after.normalizedLdLenSim. F1s: F1s(0.9948578090519216,0.993042878843969)
+13:44:42.493 [main] INFO  smile.util.package$ - runtime: 24570.262309 ms
+13:44:53.689 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context8th.after.ldLenSim. F1s: F1s(0.9947172642305648,0.9928289297081719)
+13:45:29.851 [main] INFO  smile.util.package$ - runtime: 24588.533127 ms
+13:45:40.828 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context16th.before.ldSim. F1s: F1s(0.9947848490515074,0.9925080271138066)
+13:46:16.557 [main] INFO  smile.util.package$ - runtime: 24552.320167 ms
+13:46:28.145 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context16th.before.ldSimEdgeAdjusted. F1s: F1s(0.9946929492039425,0.9927914618304082)
+13:47:03.989 [main] INFO  smile.util.package$ - runtime: 24552.924838 ms
+13:47:15.358 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context16th.before.normalizedLd. F1s: F1s(0.9948863222137747,0.9930128884744593)
+13:47:51.109 [main] INFO  smile.util.package$ - runtime: 24638.674885 ms
+13:48:02.679 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context16th.before.normalizedLdLenSim. F1s: F1s(0.9944929678635005,0.9930705325353172)
+13:48:38.603 [main] INFO  smile.util.package$ - runtime: 24574.980659 ms
+13:48:50.105 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context16th.before.ldLenSim. F1s: F1s(0.9950374784576732,0.992879797220701)
+13:49:25.847 [main] INFO  smile.util.package$ - runtime: 24603.657793 ms
+13:49:37.195 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context16th.after.ldSim. F1s: F1s(0.9946417445482866,0.9926854754440961)
+13:50:13.080 [main] INFO  smile.util.package$ - runtime: 24639.176759 ms
+13:50:24.673 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context16th.after.ldSimEdgeAdjusted. F1s: F1s(0.9948317995112568,0.9928138362371562)
+13:51:00.814 [main] INFO  smile.util.package$ - runtime: 24760.153224 ms
+13:51:12.452 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context16th.after.normalizedLd. F1s: F1s(0.9944882628129658,0.9930297100615176)
+13:51:48.597 [main] INFO  smile.util.package$ - runtime: 24535.974751 ms
+13:51:59.666 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context16th.after.normalizedLdLenSim. F1s: F1s(0.9949090909090909,0.9927068723702664)
+13:52:35.821 [main] INFO  smile.util.package$ - runtime: 24724.84908 ms
+13:52:47.244 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: context16th.after.ldLenSim. F1s: F1s(0.9946199705033132,0.9922662351727037)
+13:53:23.378 [main] INFO  smile.util.package$ - runtime: 24651.19097 ms
+13:53:34.486 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closestFull.beforeFromLeft. F1s: F1s(0.9940878905843412,0.9928277903979171)
+13:54:10.715 [main] INFO  smile.util.package$ - runtime: 24623.457154 ms
+13:54:22.068 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closestFull.beforeFromRight. F1s: F1s(0.9944003830221279,0.9924942558080163)
+13:54:58.274 [main] INFO  smile.util.package$ - runtime: 24604.50318 ms
+13:55:10.323 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closestFull.afterFromLeft. F1s: F1s(0.9946585193498774,0.9926026069433462)
+13:55:46.227 [main] INFO  smile.util.package$ - runtime: 24580.758868 ms
+13:55:57.858 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closestFull.afterFromRight. F1s: F1s(0.9946916260660897,0.9923022022838499)
+13:56:34.193 [main] INFO  smile.util.package$ - runtime: 24728.667982 ms
+13:56:45.729 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest4th.beforeFromLeft. F1s: F1s(0.993235543195291,0.9928511030824814)
+13:57:21.890 [main] INFO  smile.util.package$ - runtime: 24703.655032 ms
+13:57:33.327 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest4th.beforeFromRight. F1s: F1s(0.9947995059011594,0.9925137502546344)
+13:58:09.439 [main] INFO  smile.util.package$ - runtime: 24666.68289 ms
+13:58:20.519 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest4th.afterFromLeft. F1s: F1s(0.994520889110267,0.9921728838150509)
+13:58:57.128 [main] INFO  smile.util.package$ - runtime: 24891.470774 ms
+13:59:08.071 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest4th.afterFromRight. F1s: F1s(0.9949322920993603,0.9928119902120717)
+13:59:43.974 [main] INFO  smile.util.package$ - runtime: 24838.728706 ms
+13:59:55.615 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest8th.beforeFromLeft. F1s: F1s(0.9949938073084168,0.9929809336634422)
+14:00:31.751 [main] INFO  smile.util.package$ - runtime: 24647.485911 ms
+14:00:43.441 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest8th.beforeFromRight. F1s: F1s(0.994630412430024,0.9924951900411555)
+14:01:20.166 [main] INFO  smile.util.package$ - runtime: 24690.236639 ms
+14:01:31.946 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest8th.afterFromLeft. F1s: F1s(0.9936691669626627,0.9932519815101732)
+14:02:08.349 [main] INFO  smile.util.package$ - runtime: 24951.695448 ms
+14:02:19.786 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest8th.afterFromRight. F1s: F1s(0.9948059503033324,0.9922099116443334)
+14:02:55.676 [main] INFO  smile.util.package$ - runtime: 24608.944931 ms
+14:03:07.062 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest16th.beforeFromLeft. F1s: F1s(0.9941277705345501,0.9931595299893877)
+14:03:43.103 [main] INFO  smile.util.package$ - runtime: 24581.211553 ms
+14:03:54.354 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest16th.beforeFromRight. F1s: F1s(0.9946152726667914,0.9930582140213868)
+14:04:30.196 [main] INFO  smile.util.package$ - runtime: 24574.874947 ms
+14:04:41.689 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest16th.afterFromLeft. F1s: F1s(0.9945614308740186,0.9932222860425042)
+14:05:17.825 [main] INFO  smile.util.package$ - runtime: 24723.05839 ms
+14:05:29.385 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: closest16th.afterFromRight. F1s: F1s(0.9949477098363723,0.9927055702917772)
+14:06:05.778 [main] INFO  smile.util.package$ - runtime: 24694.055618 ms
+14:06:17.192 [main] INFO  c.k.sedito.gui.FeatureElimination - Excluded metric: lineIsClosestMatchInText. F1s: F1s(0.994394933602321,0.9922623151765877)
+14:06:17.192 [main] INFO  c.k.sedito.gui.FeatureElimination - Results sorted by test
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.after.ldSimEdgeAdjusted: 0.9915942876762848
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - line.ldSimEdgeAdjusted: 0.9917946238884578
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.after.ldLenSim: 0.9919578550886927
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - closest4th.afterFromLeft: 0.9921728838150509
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - closest8th.afterFromRight: 0.9922099116443334
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - line.ldSim: 0.9922468777451018
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - lineIsClosestMatchInText: 0.9922623151765877
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.after.ldLenSim: 0.9922662351727037
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - closestFull.afterFromRight: 0.9923022022838499
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.before.ldSim: 0.9923090635902921
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - word.normalizedLdLenSim: 0.9923388225712031
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - line.normalizedLd: 0.9923589743589745
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - word.ldSim: 0.9924241459656986
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.after.ldSimEdgeAdjusted: 0.9924326531653969
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.after.normalizedLd: 0.9924902296354952
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - closestFull.beforeFromRight: 0.9924942558080163
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - closest8th.beforeFromRight: 0.9924951900411555
+14:06:17.194 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.before.ldSim: 0.9925080271138066
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - closest4th.beforeFromRight: 0.9925137502546344
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.before.ldSimEdgeAdjusted: 0.9925618361056626
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - closestFull.afterFromLeft: 0.9926026069433462
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.after.normalizedLdLenSim: 0.9926569184598685
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.after.ldSim: 0.9926854754440961
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.before.ldLenSim: 0.9926908257702795
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - closest16th.afterFromRight: 0.9927055702917772
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.after.normalizedLdLenSim: 0.9927068723702664
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.before.normalizedLdLenSim: 0.9927187870595887
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.before.ldSim: 0.9927191584316226
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.before.normalizedLdLenSim: 0.9927199346071319
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.before.ldLenSim: 0.99273224253107
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - word.normalizedLd: 0.9927569497577149
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.after.normalizedLd: 0.992757418217584
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - sameLineSameWord: 0.9927664033944228
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.before.ldSimEdgeAdjusted: 0.9927914618304082
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.before.normalizedLdLenSim: 0.9928099742484893
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - closest4th.afterFromRight: 0.9928119902120717
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.after.ldSimEdgeAdjusted: 0.9928138362371562
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - closestFull.beforeFromLeft: 0.9928277903979171
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.after.ldLenSim: 0.9928289297081719
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.before.normalizedLd: 0.992838508363599
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - closest4th.beforeFromLeft: 0.9928511030824814
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.before.normalizedLd: 0.9928753830439224
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.before.ldSimEdgeAdjusted: 0.9928778753819989
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.before.ldLenSim: 0.992879797220701
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.after.normalizedLd: 0.9929059916300909
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - line.ldLenSim: 0.9929261272785418
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - word.ldSimEdgeAdjusted: 0.9929286224854489
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.after.normalizedLdLenSim: 0.992973580663294
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - closest8th.beforeFromLeft: 0.9929809336634422
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.after.ldSimEdgeAdjusted: 0.9929976999744442
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.after.ldLenSim: 0.9929985946084068
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.after.ldSim: 0.9930009306594935
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.before.normalizedLd: 0.9930128884744593
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.after.normalizedLd: 0.9930297100615176
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - line.normalizedLdLenSim: 0.9930427665234295
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.after.normalizedLdLenSim: 0.993042878843969
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - closest16th.beforeFromRight: 0.9930582140213868
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.before.normalizedLdLenSim: 0.9930705325353172
+14:06:17.195 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.before.ldSim: 0.9930775997246338
+14:06:17.196 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.before.normalizedLd: 0.9931078493937461
+14:06:17.196 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.after.ldSim: 0.9931124372260628
+14:06:17.196 [main] INFO  c.k.sedito.gui.FeatureElimination - closest16th.beforeFromLeft: 0.9931595299893877
+14:06:17.196 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.after.ldSim: 0.99317205400982
+14:06:17.196 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.before.ldSimEdgeAdjusted: 0.9932096086590253
+14:06:17.196 [main] INFO  c.k.sedito.gui.FeatureElimination - closest16th.afterFromLeft: 0.9932222860425042
+14:06:17.196 [main] INFO  c.k.sedito.gui.FeatureElimination - closest8th.afterFromLeft: 0.9932519815101732
+14:06:17.196 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.before.ldLenSim: 0.9932970041190164
+14:06:17.196 [main] INFO  c.k.sedito.gui.FeatureElimination - word.ldLenSim: 0.9934277823240589
+14:06:17.196 [main] INFO  c.k.sedito.gui.FeatureElimination - Results sorted by training
+14:06:17.197 [main] INFO  c.k.sedito.gui.FeatureElimination - line.normalizedLd: 0.9929830065359477
+14:06:17.197 [main] INFO  c.k.sedito.gui.FeatureElimination - closest4th.beforeFromLeft: 0.993235543195291
+14:06:17.197 [main] INFO  c.k.sedito.gui.FeatureElimination - line.ldSimEdgeAdjusted: 0.9936629432568945
+14:06:17.197 [main] INFO  c.k.sedito.gui.FeatureElimination - closest8th.afterFromLeft: 0.9936691669626627
+14:06:17.197 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.before.ldLenSim: 0.9939062565215577
+14:06:17.197 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.after.ldSimEdgeAdjusted: 0.9939576099911903
+14:06:17.197 [main] INFO  c.k.sedito.gui.FeatureElimination - word.normalizedLdLenSim: 0.9940868915722645
+14:06:17.197 [main] INFO  c.k.sedito.gui.FeatureElimination - closestFull.beforeFromLeft: 0.9940878905843412
+14:06:17.197 [main] INFO  c.k.sedito.gui.FeatureElimination - closest16th.beforeFromLeft: 0.9941277705345501
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.after.ldSim: 0.9942219440967878
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.before.ldLenSim: 0.9942431637569615
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.after.ldLenSim: 0.9943251963357574
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - sameLineSameWord: 0.9943361652507079
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - line.ldSim: 0.9943859285010118
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - lineIsClosestMatchInText: 0.994394933602321
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - closestFull.beforeFromRight: 0.9944003830221279
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - line.ldLenSim: 0.9944318158119747
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.after.normalizedLd: 0.9944414373152349
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.before.normalizedLdLenSim: 0.9944440405844662
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - line.normalizedLdLenSim: 0.9944614229240766
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - word.ldSim: 0.9944683721654299
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.after.normalizedLd: 0.9944882628129658
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.before.normalizedLdLenSim: 0.9944929678635005
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.after.ldSim: 0.994503724791422
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - closest4th.afterFromLeft: 0.994520889110267
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.before.ldSimEdgeAdjusted: 0.9945400741883048
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.before.ldSim: 0.994552303078727
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - closest16th.afterFromLeft: 0.9945614308740186
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.before.normalizedLd: 0.9945908764030891
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.before.ldSimEdgeAdjusted: 0.9946014409999794
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - closest16th.beforeFromRight: 0.9946152726667914
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - word.ldLenSim: 0.9946188340807175
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.after.ldLenSim: 0.9946199705033132
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - closest8th.beforeFromRight: 0.994630412430024
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.after.ldSim: 0.9946417445482866
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - closestFull.afterFromLeft: 0.9946585193498774
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.before.normalizedLdLenSim: 0.9946781366187942
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.after.normalizedLd: 0.9946847793299285
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - closestFull.afterFromRight: 0.9946916260660897
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.before.ldSimEdgeAdjusted: 0.9946929492039425
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.after.ldLenSim: 0.9947172642305648
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.after.normalizedLd: 0.9947205648058479
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.after.normalizedLdLenSim: 0.9947328975309156
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.before.ldSimEdgeAdjusted: 0.9947419385067104
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.before.ldSim: 0.9947848490515074
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.after.normalizedLdLenSim: 0.9947937274828713
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - closest4th.beforeFromRight: 0.9947995059011594
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - closest8th.afterFromRight: 0.9948059503033324
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.before.ldSim: 0.9948143452461367
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.after.ldLenSim: 0.9948149844866001
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - word.ldSimEdgeAdjusted: 0.9948204850854931
+14:06:17.198 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.after.ldSimEdgeAdjusted: 0.9948272811481977
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.after.ldSimEdgeAdjusted: 0.9948317995112568
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.before.ldLenSim: 0.9948365604830315
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - context8th.after.normalizedLdLenSim: 0.9948578090519216
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.before.normalizedLd: 0.9948807591459607
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.before.normalizedLd: 0.9948863222137747
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.before.ldSim: 0.9948863990687427
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.after.ldSimEdgeAdjusted: 0.9948971090560692
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.after.normalizedLdLenSim: 0.9949090909090909
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.after.ldSim: 0.994918995460414
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - closest4th.afterFromRight: 0.9949322920993603
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - word.normalizedLd: 0.9949402071709836
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - closest16th.afterFromRight: 0.9949477098363723
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - closest8th.beforeFromLeft: 0.9949938073084168
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - context16th.before.ldLenSim: 0.9950374784576732
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - context4th.before.normalizedLd: 0.995080961344468
+14:06:17.199 [main] INFO  c.k.sedito.gui.FeatureElimination - contextFull.before.normalizedLdLenSim: 0.995135438538137
+14:06:17.200 [main] INFO  c.k.sedito.gui.FeatureElimination - Took: 55 minutes, 29 seconds
+
+Process finished with exit code 0
