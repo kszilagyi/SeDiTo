@@ -61,9 +61,11 @@ object TrainAndDiff {
     }
     val metrics = testDirs.par.map { testDir =>
       val samples = readSingleDataSetAndMeasureMetrics(testDir)
-      val metricsNumInSamples = calcNumOfAttributes(List(samples.metricsWithResults))
-      val columnCount = Metrics.columnNames.size
-      assert(metricsNumInSamples ==== columnCount, s"$metricsNumInSamples != $columnCount")
+      if (samples.metricsWithResults.nonEmpty) {
+        val metricsNumInSamples = calcNumOfAttributes(List(samples.metricsWithResults))
+        val columnCount = Metrics.columnNames.size
+        assert(metricsNumInSamples ==== columnCount, s"$metricsNumInSamples != $columnCount")
+      }
       testDir -> samples
     }
     metrics.seq.toList
