@@ -29,7 +29,7 @@ final case class Samples(lostPositives: Int, metricsWithResults: IndexedSeq[Metr
 object TrainAndDiff {
   private val logger = getLogger
 
-  private def readTestCase(testDir: Path): TestCase = {
+  def readTestCase(testDir: Path): TestCase = {
     TestCase.open(testDir) match {
       case Failure(exception) =>
         println(s"$testDir -> ${exception.getMessage}")
@@ -54,11 +54,15 @@ object TrainAndDiff {
     Samples(lost, metricsWithResult)
   }
 
-  def readDataSetAndMeasureMetrics() = {
+  def testDirs: Seq[Path] = {
     val parentDir = Paths.get(getClass.getClassLoader.getResource("algorithm_tests/full_tests").getPath)
-    val testDirs = using(Files.newDirectoryStream(parentDir)) { stream =>
-      stream.iterator().asScala.toList.filter(p => Files.isDirectory(p))
+    using(Files.newDirectoryStream(parentDir)) { stream =>
+      stream.iterator().asScala.toList.filter(p => Files.isDirectory(p)).sorted
     }
+  }
+
+  def readDataSetAndMeasureMetrics() = {
+
     val metrics = testDirs.par.map { testDir =>
       val samples = readSingleDataSetAndMeasureMetrics(testDir)
       if (samples.metricsWithResults.nonEmpty) {
@@ -161,13 +165,17 @@ object TrainAndDiff {
     num
   }
 
-
   @SuppressWarnings(Array(Warts.AsInstanceOf))
+  def loadAI(): (NeuralNetwork, Scaler) = {
+    val classifier = read.xstream("linear_regression.model").asInstanceOf[NeuralNetwork]
+    val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
+    (classifier, scaler)
+  }
+
   final class ShowOne extends Application {
     def start(stage: Stage): Unit = {
 
-      val classifier = read.xstream("linear_regression.model").asInstanceOf[NeuralNetwork]
-      val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
+      val (classifier, scaler) = loadAI()
       val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
         "scala-2.12/test-classes/algorithm_tests/full_tests/17_complex" +
         ""))
@@ -196,7 +204,6 @@ object TrainAndDiff {
   }
 
 }
-//see if any of the metrics are useless
 object Train extends App {
   private val logger = getLogger
 
