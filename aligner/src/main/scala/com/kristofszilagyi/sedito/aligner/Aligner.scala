@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.Aligner.{findPotentialMatches, logger, resolveWithMostProbable}
+import com.kristofszilagyi.sedito.aligner.Aligner.{findPotentialMatches, resolveWithMostProbable}
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.{FullText, Selection, UnambiguousWordAlignment, WordMatch}
@@ -48,10 +48,8 @@ object Aligner {
 final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
   def align(left: FullText, right: FullText): UnambiguousWordAlignment = {
     val potentialMatches = findPotentialMatches(classifier, scaler, left, right)
-    logger.info(s"potential matches: ${potentialMatches.size}")
     val leftResolved = resolveWithMostProbable(potentialMatches.groupBy(_.left))
     val bothResolved = resolveWithMostProbable(leftResolved.groupBy(_.right))
-    logger.info(s"Matches resolved by probability: ${bothResolved.size}")
     UnambiguousWordAlignment(bothResolved.map(p => WordMatch(p.left, p.right)).toSet)
   }
 }
