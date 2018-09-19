@@ -1,173 +1,173 @@
-/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=17706653730767 -javaagent:/home/szkster/Programs/idea-IC-181.4203.550/lib/idea_rt.jar=39273:/home/szkster/Programs/idea-IC-181.4203.550/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.3.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-2.1.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.richtext/richtextfx/jars/richtextfx-0.9.1.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.7.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-text/jars/commons-text-1.3.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.12/jars/scala-java8-compat_2.12-0.9.0.jar:/home/szkster/.sbt/boot/scala-2.12.6/lib/scala-library.jar:/home/szkster/.sbt/boot/scala-2.12.6/lib/scala-reflect.jar com.kristofszilagyi.sedito.gui.Train
-13:09:15.475 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Start
-13:09:48.780 [main] INFO  c.k.sedito.gui.TrainAndDiff - Training size: 357611
-13:09:48.782 [main] INFO  c.k.sedito.gui.TrainAndDiff - Test size: 621661
-13:09:48.791 [main] INFO  c.k.sedito.gui.TrainAndDiff - 1s in training: 34598
-13:09:48.803 [main] INFO  c.k.sedito.gui.TrainAndDiff - 0s in training: 323013
-13:09:48.817 [main] INFO  c.k.sedito.gui.TrainAndDiff - 1s in test: 52718
-13:09:48.836 [main] INFO  c.k.sedito.gui.TrainAndDiff - 0s in test: 568943
-13:09:48.836 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Starting training
-13:10:16.220 [main] INFO  smile.util.package$ - runtime: 17093.835054 ms
-13:10:35.553 [main] INFO  c.k.sedito.gui.TrainingData - test lost positives: 2
-13:10:35.558 [main] INFO  c.k.sedito.gui.TrainingData - training accuracy: 0.998929003861738
-13:10:35.562 [main] INFO  c.k.sedito.gui.TrainingData - training recall: 0.9922249841031273
-13:10:35.566 [main] INFO  c.k.sedito.gui.TrainingData - training sensitivity(TP / (TP + FN)): 0.9922249841031273
-13:10:35.571 [main] INFO  c.k.sedito.gui.TrainingData - training specificity(TN / (FP + TN)): 0.9996470730280206
-13:10:35.577 [main] INFO  c.k.sedito.gui.TrainingData - training fallout(FP / (FP + TN)): 3.52926971979417E-4
-13:10:35.581 [main] INFO  c.k.sedito.gui.TrainingData - training fdr(FP / (TP + FP)): 0.0033098162180994688
-13:10:35.646 [main] INFO  c.k.sedito.gui.TrainingData - training FP count: 114
-13:10:35.647 [main] INFO  c.k.sedito.gui.TrainingData - training FN count: 269
-13:10:35.647 [main] INFO  c.k.sedito.gui.TrainingData - total mispred: 383
-13:10:35.652 [main] INFO  c.k.sedito.gui.TrainingData - training f1: 0.9944525716603178
-13:10:35.652 [main] INFO  c.k.sedito.gui.TrainingData - test lost positives: 0
-13:10:35.654 [main] INFO  c.k.sedito.gui.TrainingData - test accuracy: 0.9987935546865575
-13:10:35.657 [main] INFO  c.k.sedito.gui.TrainingData - test recall: 0.9903638226032854
-13:10:35.661 [main] INFO  c.k.sedito.gui.TrainingData - test sensitivity(TP / (TP + FN)): 0.9903638226032854
-13:10:35.662 [main] INFO  c.k.sedito.gui.TrainingData - test specificity(TN / (FP + TN)): 0.9995746498331116
-13:10:35.664 [main] INFO  c.k.sedito.gui.TrainingData - test fallout(FP / (FP + TN)): 4.25350166888383E-4
-13:10:35.665 [main] INFO  c.k.sedito.gui.TrainingData - test fdr(FP / (TP + FP)): 0.00461374208800427
-13:10:35.699 [main] INFO  c.k.sedito.gui.TrainingData - test FP count: 242
-13:10:35.700 [main] INFO  c.k.sedito.gui.TrainingData - test FN count: 508
-13:10:35.700 [main] INFO  c.k.sedito.gui.TrainingData - total mispred: 750
-13:10:35.701 [main] INFO  c.k.sedito.gui.TrainingData - test f1: 0.9928686887895788
-13:10:44.272 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Training f1s:
-(grid_py                       ,f1: 0.942, lost positives: 0, fn: 15, fp:  0, tp:  122,sample size: 2692)
-(good_cand_for_char_based_compare,f1: 0.966, lost positives: 0, fn: 38, fp:  8, tp:  657,sample size: 17366)
-(17_complex                    ,f1: 0.967, lost positives: 2, fn: 36, fp: 21, tp:  840,sample size: 22756)
-(ambiguous_space_lines13       ,f1: 0.972, lost positives: 0, fn: 32, fp:  3, tp:  618,sample size: 11353)
-(13_tough                      ,f1: 0.973, lost positives: 0, fn: 26, fp: 10, tp:  644,sample size: 5002)
-(25                            ,f1: 0.978, lost positives: 0, fn:  2, fp:  7, tp:  199,sample size: 2036)
-(9                             ,f1: 0.981, lost positives: 0, fn: 25, fp:  2, tp:  681,sample size: 8159)
-(cpp_complex                   ,f1: 0.982, lost positives: 0, fn: 28, fp:  6, tp:  904,sample size: 10259)
-(6                             ,f1: 0.989, lost positives: 0, fn:  3, fp:  0, tp:  134,sample size: 625)
-(grid_py4                      ,f1: 0.989, lost positives: 0, fn:  2, fp: 15, tp:  787,sample size: 14397)
-(ambiguous_space_lines11       ,f1: 0.991, lost positives: 0, fn:  3, fp:  7, tp:  546,sample size: 2354)
-(ambiguous_space_lines16       ,f1: 0.992, lost positives: 0, fn:  0, fp: 13, tp:  783,sample size: 20555)
-(grid_py3                      ,f1: 0.992, lost positives: 0, fn: 11, fp:  0, tp:  676,sample size: 4183)
-(5                             ,f1: 0.992, lost positives: 0, fn: 14, fp:  3, tp: 1107,sample size: 14611)
-(grid_py2                      ,f1: 0.994, lost positives: 0, fn:  7, fp:  1, tp:  612,sample size: 10265)
-(equalcharcnt                  ,f1: 0.995, lost positives: 0, fn:  0, fp:  2, tp:  207,sample size: 1218)
-(good_cand_for_char_based_compare2,f1: 0.995, lost positives: 0, fn:  8, fp:  0, tp:  844,sample size: 8669)
-(19                            ,f1: 0.996, lost positives: 0, fn:  2, fp:  0, tp:  228,sample size: 1359)
-(3                             ,f1: 0.996, lost positives: 0, fn:  3, fp:  0, tp:  422,sample size: 4458)
-(header_mod                    ,f1: 0.997, lost positives: 0, fn:  0, fp:  2, tp:  293,sample size: 2857)
-(ambiguous_space_lines1        ,f1: 0.997, lost positives: 0, fn:  1, fp:  2, tp:  535,sample size: 5509)
-(ambiguous_space_lines14       ,f1: 0.997, lost positives: 0, fn:  0, fp:  1, tp:  188,sample size: 1107)
-(ambiguous_space_lines2        ,f1: 0.998, lost positives: 0, fn:  0, fp:  1, tp:  201,sample size: 622)
-(ambiguous_space_lines7        ,f1: 0.998, lost positives: 0, fn:  0, fp:  1, tp:  201,sample size: 2693)
-(extractor_cpp                 ,f1: 0.998, lost positives: 0, fn:  2, fp:  2, tp:  805,sample size: 8973)
-(grid_master_py                ,f1: 0.998, lost positives: 0, fn:  2, fp:  1, tp:  679,sample size: 11772)
-(empty_line_problems           ,f1: 0.999, lost positives: 0, fn:  3, fp:  0, tp: 1150,sample size: 14977)
-(23                            ,f1: 0.999, lost positives: 0, fn:  2, fp:  0, tp:  786,sample size: 8357)
-(easy_h                        ,f1: 0.999, lost positives: 0, fn:  0, fp:  1, tp:  394,sample size: 2662)
-(12                            ,f1: 0.999, lost positives: 0, fn:  2, fp:  2, tp: 1600,sample size: 7030)
-(13                            ,f1: 0.999, lost positives: 0, fn:  1, fp:  1, tp: 1244,sample size: 15728)
-(1                             ,f1: 0.999, lost positives: 0, fn:  1, fp:  1, tp: 1377,sample size: 4168)
-(include_change                ,f1: 1.000, lost positives: 0, fn:  0, fp:  1, tp: 1592,sample size: 6175)
-(11                            ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  271,sample size: 1822)
-(14                            ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  259,sample size: 599)
-(15                            ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 1308,sample size: 11351)
-(16                            ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  249,sample size: 1340)
-(18                            ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  126,sample size: 437)
-(20                            ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  996,sample size: 18454)
-(21                            ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  632,sample size: 2902)
-(22                            ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  244,sample size: 633)
-(24                            ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  105,sample size: 387)
-(4                             ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  309,sample size: 1955)
-(7                             ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 1284,sample size: 8016)
-(ambiguous_space_lines10       ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:   59,sample size: 320)
-(ambiguous_space_lines12       ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  923,sample size: 21873)
-(ambiguous_space_lines15       ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  181,sample size: 1318)
-(ambiguous_space_lines17       ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  250,sample size: 2168)
-(ambiguous_space_lines4        ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  775,sample size: 3988)
-(ambiguous_space_lines5        ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:   76,sample size: 284)
-(ambiguous_space_lines9        ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  830,sample size: 7357)
-(cpp_easy                      ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  150,sample size: 760)
-(cpp_easy2                     ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:   60,sample size: 123)
-(cpp_easy3                     ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  177,sample size: 864)
-(cpp_easy4                     ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  181,sample size: 705)
-(cpp_easy5                     ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  181,sample size: 767)
-(easy_h2                       ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  106,sample size: 371)
-(easy_h3                       ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:   50,sample size: 100)
-(easy_h4                       ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:   72,sample size: 202)
-(easy_h5                       ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:   65,sample size: 165)
-(everything_commented          ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  198,sample size: 1922)
-(extractor_cpp2                ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  954,sample size: 5105)
-(feature_extractor_cpp         ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  116,sample size: 482)
-(grid_master_py2               ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  847,sample size: 4825)
-(ignore_file                   ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:   68,sample size: 300)
-(ignore_file2                  ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:   75,sample size: 369)
-(ignore_file3                  ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:   96,sample size: 400)
-(empty_lines                   ,f1: NaN, lost positives: 0, fn:  0, fp:  0, tp:    0,sample size: 0)
-13:10:59.313 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Test f1s:
-(move_within_line              ,f1: 0.857, lost positives: 0, fn:  1, fp:  0, tp:    3,sample size: 4)
-(textblocklinked1to1_cpp       ,f1: 0.863, lost positives: 0, fn: 29, fp:  5, tp:  107,sample size: 2533)
-(this_needs_rename_info_to_work,f1: 0.895, lost positives: 0, fn: 50, fp: 23, tp:  312,sample size: 9488)
-(sided_feature_cpp             ,f1: 0.937, lost positives: 0, fn:  3, fp:  5, tp:   59,sample size: 191)
-(space_problems                ,f1: 0.938, lost positives: 0, fn:  5, fp:  2, tp:   53,sample size: 225)
-(test_model_py2                ,f1: 0.941, lost positives: 0, fn: 40, fp: 26, tp:  530,sample size: 24683)
-(test_model_py4                ,f1: 0.959, lost positives: 0, fn: 26, fp: 41, tp:  775,sample size: 17542)
-(very_wrong2                   ,f1: 0.960, lost positives: 0, fn: 45, fp: 18, tp:  751,sample size: 16244)
-(very_wrong                    ,f1: 0.962, lost positives: 0, fn: 15, fp:  1, tp:  204,sample size: 1715)
-(nonlearningalignertestcpp     ,f1: 0.962, lost positives: 0, fn: 24, fp: 10, tp:  435,sample size: 5671)
-(really_changed                ,f1: 0.973, lost positives: 0, fn: 13, fp: 15, tp:  497,sample size: 13015)
-(trivial                       ,f1: 0.974, lost positives: 0, fn:  8, fp:  2, tp:  188,sample size: 1326)
-(test_model_py                 ,f1: 0.978, lost positives: 0, fn:  8, fp:  9, tp:  375,sample size: 4914)
-(mlpipeline_cpp5               ,f1: 0.980, lost positives: 0, fn: 52, fp: 18, tp: 1675,sample size: 12064)
-(similar_problems              ,f1: 0.983, lost positives: 0, fn:  3, fp: 10, tp:  372,sample size: 4976)
-(mlpipeline_cpp2               ,f1: 0.985, lost positives: 0, fn: 46, fp:  0, tp: 1481,sample size: 17804)
-(include_problem               ,f1: 0.986, lost positives: 0, fn:  7, fp: 10, tp:  608,sample size: 6906)
-(mlpipeline_cpp                ,f1: 0.988, lost positives: 0, fn: 28, fp:  5, tp: 1346,sample size: 17362)
-(real_life_function_extraction ,f1: 0.991, lost positives: 0, fn:  9, fp:  2, tp:  582,sample size: 10506)
-(utils_py                      ,f1: 0.991, lost positives: 0, fn:  1, fp:  2, tp:  166,sample size: 2181)
-(perfecto                      ,f1: 0.991, lost positives: 0, fn: 15, fp:  0, tp:  844,sample size: 4379)
-(mlpipeline_cpp3               ,f1: 0.991, lost positives: 0, fn: 24, fp:  4, tp: 1620,sample size: 14661)
-(mlpipeline_cpp4               ,f1: 0.992, lost positives: 0, fn: 24, fp:  2, tp: 1620,sample size: 12790)
-(mlpipeline_cpp7               ,f1: 0.992, lost positives: 0, fn: 16, fp:  6, tp: 1373,sample size: 45615)
-(lots_of_pairings              ,f1: 0.993, lost positives: 0, fn:  0, fp:  1, tp:   75,sample size: 596)
-(one_line2                     ,f1: 0.994, lost positives: 0, fn:  5, fp:  0, tp:  387,sample size: 1968)
-(mlsample                      ,f1: 0.995, lost positives: 0, fn:  3, fp:  1, tp:  419,sample size: 2075)
-(lev_dist_cpp                  ,f1: 0.996, lost positives: 0, fn:  1, fp:  0, tp:  129,sample size: 666)
-(sensidiff_txt                 ,f1: 0.996, lost positives: 0, fn:  7, fp:  2, tp: 1210,sample size: 12817)
-(mlpipeline_h                  ,f1: 0.997, lost positives: 0, fn:  0, fp:  2, tp:  365,sample size: 2378)
-(mlpipeline_h2                 ,f1: 0.997, lost positives: 0, fn:  0, fp:  3, tp:  593,sample size: 3122)
-(test_pro_changes              ,f1: 0.998, lost positives: 0, fn:  0, fp:  4, tp:  903,sample size: 16308)
-(insertions                    ,f1: 0.999, lost positives: 0, fn:  0, fp:  1, tp:  458,sample size: 4785)
-(pro_file_5                    ,f1: 0.999, lost positives: 0, fn:  0, fp:  2, tp:  923,sample size: 14811)
-(simple_2                      ,f1: 0.999, lost positives: 0, fn:  0, fp:  1, tp:  534,sample size: 4838)
-(one_line                      ,f1: 0.999, lost positives: 0, fn:  0, fp:  1, tp:  572,sample size: 5225)
-(mlpipeline_cpp6               ,f1: 0.999, lost positives: 0, fn:  0, fp:  3, tp: 1735,sample size: 14655)
-(minor_changes                 ,f1: 0.999, lost positives: 0, fn:  0, fp:  2, tp: 1589,sample size: 10690)
-(move_block                    ,f1: 1.000, lost positives: 0, fn:  0, fp:  2, tp: 2112,sample size: 17542)
-(lib_svm_hack                  ,f1: 1.000, lost positives: 0, fn:  0, fp:  1, tp: 2636,sample size: 22064)
-(indent_fixes                  ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 2659,sample size: 5166)
-(insert                        ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:   66,sample size: 300)
-(insertion                     ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 1443,sample size: 3823)
-(learning_curve_py             ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  478,sample size: 3946)
-(line_deleted                  ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  543,sample size: 1940)
-(line_pair_h                   ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:   84,sample size: 459)
-(lot_of_empty_lines            ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 1049,sample size: 14348)
-(minor_changes2                ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  130,sample size: 721)
-(mix_imports                   ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  154,sample size: 1122)
-(pro_file                      ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 1012,sample size: 23608)
-(pro_file10                    ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  962,sample size: 14006)
-(pro_file_2                    ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 1190,sample size: 19899)
-(pro_file_3                    ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 1205,sample size: 23810)
-(pro_file_4                    ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 1211,sample size: 20673)
-(pro_file_6                    ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  947,sample size: 13888)
-(pro_file_7                    ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 1313,sample size: 23985)
-(pro_file_8                    ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 1333,sample size: 23840)
-(pro_file_9                    ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  977,sample size: 13477)
-(qstringutils_cpp              ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  109,sample size: 429)
-(qstringutils_h                ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  319,sample size: 862)
-(sensidiff_cpp                 ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp: 1339,sample size: 6738)
-(sided_feature_h               ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  104,sample size: 234)
-(simple                        ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  384,sample size: 2074)
-(space_differences             ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  181,sample size: 725)
-(space_differences2            ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  911,sample size: 1889)
-(test_model_py3                ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  911,sample size: 8509)
-(utils_py2                     ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  363,sample size: 6941)
-(utilstest_py                  ,f1: 1.000, lost positives: 0, fn:  0, fp:  0, tp:  217,sample size: 2914)
-13:10:59.539 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Took: 1 minutes, 44 seconds
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=18062604079744 -javaagent:/home/szkster/Programs/idea-IC-181.4203.550/lib/idea_rt.jar=33539:/home/szkster/Programs/idea-IC-181.4203.550/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.3.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-2.1.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.richtext/richtextfx/jars/richtextfx-0.9.1.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.7.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-text/jars/commons-text-1.3.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.12/jars/scala-java8-compat_2.12-0.9.0.jar:/home/szkster/.sbt/boot/scala-2.12.6/lib/scala-library.jar:/home/szkster/.sbt/boot/scala-2.12.6/lib/scala-reflect.jar com.kristofszilagyi.sedito.gui.Train
+13:15:10.790 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Start
+13:15:45.699 [main] INFO  c.k.sedito.gui.TrainAndDiff - Training size: 357611
+13:15:45.701 [main] INFO  c.k.sedito.gui.TrainAndDiff - Test size: 621661
+13:15:45.710 [main] INFO  c.k.sedito.gui.TrainAndDiff - 1s in training: 34598
+13:15:45.722 [main] INFO  c.k.sedito.gui.TrainAndDiff - 0s in training: 323013
+13:15:45.738 [main] INFO  c.k.sedito.gui.TrainAndDiff - 1s in test: 52718
+13:15:45.757 [main] INFO  c.k.sedito.gui.TrainAndDiff - 0s in test: 568943
+13:15:45.757 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Starting training
+13:16:12.378 [main] INFO  smile.util.package$ - runtime: 17073.489129 ms
+13:16:30.471 [main] INFO  c.k.sedito.gui.TrainingData - test lost positives: 2
+13:16:30.476 [main] INFO  c.k.sedito.gui.TrainingData - training accuracy: 0.998929003861738
+13:16:30.481 [main] INFO  c.k.sedito.gui.TrainingData - training recall: 0.9922249841031273
+13:16:30.485 [main] INFO  c.k.sedito.gui.TrainingData - training sensitivity(TP / (TP + FN)): 0.9922249841031273
+13:16:30.491 [main] INFO  c.k.sedito.gui.TrainingData - training specificity(TN / (FP + TN)): 0.9996470730280206
+13:16:30.496 [main] INFO  c.k.sedito.gui.TrainingData - training fallout(FP / (FP + TN)): 3.52926971979417E-4
+13:16:30.500 [main] INFO  c.k.sedito.gui.TrainingData - training fdr(FP / (TP + FP)): 0.0033098162180994688
+13:16:30.557 [main] INFO  c.k.sedito.gui.TrainingData - training FP count: 114
+13:16:30.557 [main] INFO  c.k.sedito.gui.TrainingData - training FN count: 269
+13:16:30.557 [main] INFO  c.k.sedito.gui.TrainingData - total mispred: 383
+13:16:30.563 [main] INFO  c.k.sedito.gui.TrainingData - training f1: 0.9944525716603178
+13:16:30.563 [main] INFO  c.k.sedito.gui.TrainingData - test lost positives: 0
+13:16:30.563 [main] INFO  c.k.sedito.gui.TrainingData - test accuracy: 0.9987935546865575
+13:16:30.567 [main] INFO  c.k.sedito.gui.TrainingData - test recall: 0.9903638226032854
+13:16:30.568 [main] INFO  c.k.sedito.gui.TrainingData - test sensitivity(TP / (TP + FN)): 0.9903638226032854
+13:16:30.569 [main] INFO  c.k.sedito.gui.TrainingData - test specificity(TN / (FP + TN)): 0.9995746498331116
+13:16:30.571 [main] INFO  c.k.sedito.gui.TrainingData - test fallout(FP / (FP + TN)): 4.25350166888383E-4
+13:16:30.572 [main] INFO  c.k.sedito.gui.TrainingData - test fdr(FP / (TP + FP)): 0.00461374208800427
+13:16:30.630 [main] INFO  c.k.sedito.gui.TrainingData - test FP count: 242
+13:16:30.630 [main] INFO  c.k.sedito.gui.TrainingData - test FN count: 508
+13:16:30.630 [main] INFO  c.k.sedito.gui.TrainingData - total mispred: 750
+13:16:30.632 [main] INFO  c.k.sedito.gui.TrainingData - test f1: 0.9928686887895788
+13:16:39.957 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Training f1s:
+(grid_py                           ,f1: 0.942, tp:  122, fp:  0, fn: 15, lost positives: 0,sample size: 2692)
+(good_cand_for_char_based_compare  ,f1: 0.966, tp:  657, fp:  8, fn: 38, lost positives: 0,sample size: 17366)
+(17_complex                        ,f1: 0.967, tp:  840, fp: 21, fn: 36, lost positives: 2,sample size: 22756)
+(ambiguous_space_lines13           ,f1: 0.972, tp:  618, fp:  3, fn: 32, lost positives: 0,sample size: 11353)
+(13_tough                          ,f1: 0.973, tp:  644, fp: 10, fn: 26, lost positives: 0,sample size: 5002)
+(25                                ,f1: 0.978, tp:  199, fp:  7, fn:  2, lost positives: 0,sample size: 2036)
+(9                                 ,f1: 0.981, tp:  681, fp:  2, fn: 25, lost positives: 0,sample size: 8159)
+(cpp_complex                       ,f1: 0.982, tp:  904, fp:  6, fn: 28, lost positives: 0,sample size: 10259)
+(6                                 ,f1: 0.989, tp:  134, fp:  0, fn:  3, lost positives: 0,sample size: 625)
+(grid_py4                          ,f1: 0.989, tp:  787, fp: 15, fn:  2, lost positives: 0,sample size: 14397)
+(ambiguous_space_lines11           ,f1: 0.991, tp:  546, fp:  7, fn:  3, lost positives: 0,sample size: 2354)
+(ambiguous_space_lines16           ,f1: 0.992, tp:  783, fp: 13, fn:  0, lost positives: 0,sample size: 20555)
+(grid_py3                          ,f1: 0.992, tp:  676, fp:  0, fn: 11, lost positives: 0,sample size: 4183)
+(5                                 ,f1: 0.992, tp: 1107, fp:  3, fn: 14, lost positives: 0,sample size: 14611)
+(grid_py2                          ,f1: 0.994, tp:  612, fp:  1, fn:  7, lost positives: 0,sample size: 10265)
+(equalcharcnt                      ,f1: 0.995, tp:  207, fp:  2, fn:  0, lost positives: 0,sample size: 1218)
+(good_cand_for_char_based_compare2 ,f1: 0.995, tp:  844, fp:  0, fn:  8, lost positives: 0,sample size: 8669)
+(19                                ,f1: 0.996, tp:  228, fp:  0, fn:  2, lost positives: 0,sample size: 1359)
+(3                                 ,f1: 0.996, tp:  422, fp:  0, fn:  3, lost positives: 0,sample size: 4458)
+(header_mod                        ,f1: 0.997, tp:  293, fp:  2, fn:  0, lost positives: 0,sample size: 2857)
+(ambiguous_space_lines1            ,f1: 0.997, tp:  535, fp:  2, fn:  1, lost positives: 0,sample size: 5509)
+(ambiguous_space_lines14           ,f1: 0.997, tp:  188, fp:  1, fn:  0, lost positives: 0,sample size: 1107)
+(ambiguous_space_lines2            ,f1: 0.998, tp:  201, fp:  1, fn:  0, lost positives: 0,sample size: 622)
+(ambiguous_space_lines7            ,f1: 0.998, tp:  201, fp:  1, fn:  0, lost positives: 0,sample size: 2693)
+(extractor_cpp                     ,f1: 0.998, tp:  805, fp:  2, fn:  2, lost positives: 0,sample size: 8973)
+(grid_master_py                    ,f1: 0.998, tp:  679, fp:  1, fn:  2, lost positives: 0,sample size: 11772)
+(empty_line_problems               ,f1: 0.999, tp: 1150, fp:  0, fn:  3, lost positives: 0,sample size: 14977)
+(23                                ,f1: 0.999, tp:  786, fp:  0, fn:  2, lost positives: 0,sample size: 8357)
+(easy_h                            ,f1: 0.999, tp:  394, fp:  1, fn:  0, lost positives: 0,sample size: 2662)
+(12                                ,f1: 0.999, tp: 1600, fp:  2, fn:  2, lost positives: 0,sample size: 7030)
+(13                                ,f1: 0.999, tp: 1244, fp:  1, fn:  1, lost positives: 0,sample size: 15728)
+(1                                 ,f1: 0.999, tp: 1377, fp:  1, fn:  1, lost positives: 0,sample size: 4168)
+(include_change                    ,f1: 1.000, tp: 1592, fp:  1, fn:  0, lost positives: 0,sample size: 6175)
+(11                                ,f1: 1.000, tp:  271, fp:  0, fn:  0, lost positives: 0,sample size: 1822)
+(14                                ,f1: 1.000, tp:  259, fp:  0, fn:  0, lost positives: 0,sample size: 599)
+(15                                ,f1: 1.000, tp: 1308, fp:  0, fn:  0, lost positives: 0,sample size: 11351)
+(16                                ,f1: 1.000, tp:  249, fp:  0, fn:  0, lost positives: 0,sample size: 1340)
+(18                                ,f1: 1.000, tp:  126, fp:  0, fn:  0, lost positives: 0,sample size: 437)
+(20                                ,f1: 1.000, tp:  996, fp:  0, fn:  0, lost positives: 0,sample size: 18454)
+(21                                ,f1: 1.000, tp:  632, fp:  0, fn:  0, lost positives: 0,sample size: 2902)
+(22                                ,f1: 1.000, tp:  244, fp:  0, fn:  0, lost positives: 0,sample size: 633)
+(24                                ,f1: 1.000, tp:  105, fp:  0, fn:  0, lost positives: 0,sample size: 387)
+(4                                 ,f1: 1.000, tp:  309, fp:  0, fn:  0, lost positives: 0,sample size: 1955)
+(7                                 ,f1: 1.000, tp: 1284, fp:  0, fn:  0, lost positives: 0,sample size: 8016)
+(ambiguous_space_lines10           ,f1: 1.000, tp:   59, fp:  0, fn:  0, lost positives: 0,sample size: 320)
+(ambiguous_space_lines12           ,f1: 1.000, tp:  923, fp:  0, fn:  0, lost positives: 0,sample size: 21873)
+(ambiguous_space_lines15           ,f1: 1.000, tp:  181, fp:  0, fn:  0, lost positives: 0,sample size: 1318)
+(ambiguous_space_lines17           ,f1: 1.000, tp:  250, fp:  0, fn:  0, lost positives: 0,sample size: 2168)
+(ambiguous_space_lines4            ,f1: 1.000, tp:  775, fp:  0, fn:  0, lost positives: 0,sample size: 3988)
+(ambiguous_space_lines5            ,f1: 1.000, tp:   76, fp:  0, fn:  0, lost positives: 0,sample size: 284)
+(ambiguous_space_lines9            ,f1: 1.000, tp:  830, fp:  0, fn:  0, lost positives: 0,sample size: 7357)
+(cpp_easy                          ,f1: 1.000, tp:  150, fp:  0, fn:  0, lost positives: 0,sample size: 760)
+(cpp_easy2                         ,f1: 1.000, tp:   60, fp:  0, fn:  0, lost positives: 0,sample size: 123)
+(cpp_easy3                         ,f1: 1.000, tp:  177, fp:  0, fn:  0, lost positives: 0,sample size: 864)
+(cpp_easy4                         ,f1: 1.000, tp:  181, fp:  0, fn:  0, lost positives: 0,sample size: 705)
+(cpp_easy5                         ,f1: 1.000, tp:  181, fp:  0, fn:  0, lost positives: 0,sample size: 767)
+(easy_h2                           ,f1: 1.000, tp:  106, fp:  0, fn:  0, lost positives: 0,sample size: 371)
+(easy_h3                           ,f1: 1.000, tp:   50, fp:  0, fn:  0, lost positives: 0,sample size: 100)
+(easy_h4                           ,f1: 1.000, tp:   72, fp:  0, fn:  0, lost positives: 0,sample size: 202)
+(easy_h5                           ,f1: 1.000, tp:   65, fp:  0, fn:  0, lost positives: 0,sample size: 165)
+(everything_commented              ,f1: 1.000, tp:  198, fp:  0, fn:  0, lost positives: 0,sample size: 1922)
+(extractor_cpp2                    ,f1: 1.000, tp:  954, fp:  0, fn:  0, lost positives: 0,sample size: 5105)
+(feature_extractor_cpp             ,f1: 1.000, tp:  116, fp:  0, fn:  0, lost positives: 0,sample size: 482)
+(grid_master_py2                   ,f1: 1.000, tp:  847, fp:  0, fn:  0, lost positives: 0,sample size: 4825)
+(ignore_file                       ,f1: 1.000, tp:   68, fp:  0, fn:  0, lost positives: 0,sample size: 300)
+(ignore_file2                      ,f1: 1.000, tp:   75, fp:  0, fn:  0, lost positives: 0,sample size: 369)
+(ignore_file3                      ,f1: 1.000, tp:   96, fp:  0, fn:  0, lost positives: 0,sample size: 400)
+(empty_lines                       ,f1: NaN, tp:    0, fp:  0, fn:  0, lost positives: 0,sample size: 0)
+13:16:54.000 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Test f1s:
+(move_within_line                  ,f1: 0.857, tp:    3, fp:  0, fn:  1, lost positives: 0,sample size: 4)
+(textblocklinked1to1_cpp           ,f1: 0.863, tp:  107, fp:  5, fn: 29, lost positives: 0,sample size: 2533)
+(this_needs_rename_info_to_work    ,f1: 0.895, tp:  312, fp: 23, fn: 50, lost positives: 0,sample size: 9488)
+(sided_feature_cpp                 ,f1: 0.937, tp:   59, fp:  5, fn:  3, lost positives: 0,sample size: 191)
+(space_problems                    ,f1: 0.938, tp:   53, fp:  2, fn:  5, lost positives: 0,sample size: 225)
+(test_model_py2                    ,f1: 0.941, tp:  530, fp: 26, fn: 40, lost positives: 0,sample size: 24683)
+(test_model_py4                    ,f1: 0.959, tp:  775, fp: 41, fn: 26, lost positives: 0,sample size: 17542)
+(very_wrong2                       ,f1: 0.960, tp:  751, fp: 18, fn: 45, lost positives: 0,sample size: 16244)
+(very_wrong                        ,f1: 0.962, tp:  204, fp:  1, fn: 15, lost positives: 0,sample size: 1715)
+(nonlearningalignertestcpp         ,f1: 0.962, tp:  435, fp: 10, fn: 24, lost positives: 0,sample size: 5671)
+(really_changed                    ,f1: 0.973, tp:  497, fp: 15, fn: 13, lost positives: 0,sample size: 13015)
+(trivial                           ,f1: 0.974, tp:  188, fp:  2, fn:  8, lost positives: 0,sample size: 1326)
+(test_model_py                     ,f1: 0.978, tp:  375, fp:  9, fn:  8, lost positives: 0,sample size: 4914)
+(mlpipeline_cpp5                   ,f1: 0.980, tp: 1675, fp: 18, fn: 52, lost positives: 0,sample size: 12064)
+(similar_problems                  ,f1: 0.983, tp:  372, fp: 10, fn:  3, lost positives: 0,sample size: 4976)
+(mlpipeline_cpp2                   ,f1: 0.985, tp: 1481, fp:  0, fn: 46, lost positives: 0,sample size: 17804)
+(include_problem                   ,f1: 0.986, tp:  608, fp: 10, fn:  7, lost positives: 0,sample size: 6906)
+(mlpipeline_cpp                    ,f1: 0.988, tp: 1346, fp:  5, fn: 28, lost positives: 0,sample size: 17362)
+(real_life_function_extraction     ,f1: 0.991, tp:  582, fp:  2, fn:  9, lost positives: 0,sample size: 10506)
+(utils_py                          ,f1: 0.991, tp:  166, fp:  2, fn:  1, lost positives: 0,sample size: 2181)
+(perfecto                          ,f1: 0.991, tp:  844, fp:  0, fn: 15, lost positives: 0,sample size: 4379)
+(mlpipeline_cpp3                   ,f1: 0.991, tp: 1620, fp:  4, fn: 24, lost positives: 0,sample size: 14661)
+(mlpipeline_cpp4                   ,f1: 0.992, tp: 1620, fp:  2, fn: 24, lost positives: 0,sample size: 12790)
+(mlpipeline_cpp7                   ,f1: 0.992, tp: 1373, fp:  6, fn: 16, lost positives: 0,sample size: 45615)
+(lots_of_pairings                  ,f1: 0.993, tp:   75, fp:  1, fn:  0, lost positives: 0,sample size: 596)
+(one_line2                         ,f1: 0.994, tp:  387, fp:  0, fn:  5, lost positives: 0,sample size: 1968)
+(mlsample                          ,f1: 0.995, tp:  419, fp:  1, fn:  3, lost positives: 0,sample size: 2075)
+(lev_dist_cpp                      ,f1: 0.996, tp:  129, fp:  0, fn:  1, lost positives: 0,sample size: 666)
+(sensidiff_txt                     ,f1: 0.996, tp: 1210, fp:  2, fn:  7, lost positives: 0,sample size: 12817)
+(mlpipeline_h                      ,f1: 0.997, tp:  365, fp:  2, fn:  0, lost positives: 0,sample size: 2378)
+(mlpipeline_h2                     ,f1: 0.997, tp:  593, fp:  3, fn:  0, lost positives: 0,sample size: 3122)
+(test_pro_changes                  ,f1: 0.998, tp:  903, fp:  4, fn:  0, lost positives: 0,sample size: 16308)
+(insertions                        ,f1: 0.999, tp:  458, fp:  1, fn:  0, lost positives: 0,sample size: 4785)
+(pro_file_5                        ,f1: 0.999, tp:  923, fp:  2, fn:  0, lost positives: 0,sample size: 14811)
+(simple_2                          ,f1: 0.999, tp:  534, fp:  1, fn:  0, lost positives: 0,sample size: 4838)
+(one_line                          ,f1: 0.999, tp:  572, fp:  1, fn:  0, lost positives: 0,sample size: 5225)
+(mlpipeline_cpp6                   ,f1: 0.999, tp: 1735, fp:  3, fn:  0, lost positives: 0,sample size: 14655)
+(minor_changes                     ,f1: 0.999, tp: 1589, fp:  2, fn:  0, lost positives: 0,sample size: 10690)
+(move_block                        ,f1: 1.000, tp: 2112, fp:  2, fn:  0, lost positives: 0,sample size: 17542)
+(lib_svm_hack                      ,f1: 1.000, tp: 2636, fp:  1, fn:  0, lost positives: 0,sample size: 22064)
+(indent_fixes                      ,f1: 1.000, tp: 2659, fp:  0, fn:  0, lost positives: 0,sample size: 5166)
+(insert                            ,f1: 1.000, tp:   66, fp:  0, fn:  0, lost positives: 0,sample size: 300)
+(insertion                         ,f1: 1.000, tp: 1443, fp:  0, fn:  0, lost positives: 0,sample size: 3823)
+(learning_curve_py                 ,f1: 1.000, tp:  478, fp:  0, fn:  0, lost positives: 0,sample size: 3946)
+(line_deleted                      ,f1: 1.000, tp:  543, fp:  0, fn:  0, lost positives: 0,sample size: 1940)
+(line_pair_h                       ,f1: 1.000, tp:   84, fp:  0, fn:  0, lost positives: 0,sample size: 459)
+(lot_of_empty_lines                ,f1: 1.000, tp: 1049, fp:  0, fn:  0, lost positives: 0,sample size: 14348)
+(minor_changes2                    ,f1: 1.000, tp:  130, fp:  0, fn:  0, lost positives: 0,sample size: 721)
+(mix_imports                       ,f1: 1.000, tp:  154, fp:  0, fn:  0, lost positives: 0,sample size: 1122)
+(pro_file                          ,f1: 1.000, tp: 1012, fp:  0, fn:  0, lost positives: 0,sample size: 23608)
+(pro_file10                        ,f1: 1.000, tp:  962, fp:  0, fn:  0, lost positives: 0,sample size: 14006)
+(pro_file_2                        ,f1: 1.000, tp: 1190, fp:  0, fn:  0, lost positives: 0,sample size: 19899)
+(pro_file_3                        ,f1: 1.000, tp: 1205, fp:  0, fn:  0, lost positives: 0,sample size: 23810)
+(pro_file_4                        ,f1: 1.000, tp: 1211, fp:  0, fn:  0, lost positives: 0,sample size: 20673)
+(pro_file_6                        ,f1: 1.000, tp:  947, fp:  0, fn:  0, lost positives: 0,sample size: 13888)
+(pro_file_7                        ,f1: 1.000, tp: 1313, fp:  0, fn:  0, lost positives: 0,sample size: 23985)
+(pro_file_8                        ,f1: 1.000, tp: 1333, fp:  0, fn:  0, lost positives: 0,sample size: 23840)
+(pro_file_9                        ,f1: 1.000, tp:  977, fp:  0, fn:  0, lost positives: 0,sample size: 13477)
+(qstringutils_cpp                  ,f1: 1.000, tp:  109, fp:  0, fn:  0, lost positives: 0,sample size: 429)
+(qstringutils_h                    ,f1: 1.000, tp:  319, fp:  0, fn:  0, lost positives: 0,sample size: 862)
+(sensidiff_cpp                     ,f1: 1.000, tp: 1339, fp:  0, fn:  0, lost positives: 0,sample size: 6738)
+(sided_feature_h                   ,f1: 1.000, tp:  104, fp:  0, fn:  0, lost positives: 0,sample size: 234)
+(simple                            ,f1: 1.000, tp:  384, fp:  0, fn:  0, lost positives: 0,sample size: 2074)
+(space_differences                 ,f1: 1.000, tp:  181, fp:  0, fn:  0, lost positives: 0,sample size: 725)
+(space_differences2                ,f1: 1.000, tp:  911, fp:  0, fn:  0, lost positives: 0,sample size: 1889)
+(test_model_py3                    ,f1: 1.000, tp:  911, fp:  0, fn:  0, lost positives: 0,sample size: 8509)
+(utils_py2                         ,f1: 1.000, tp:  363, fp:  0, fn:  0, lost positives: 0,sample size: 6941)
+(utilstest_py                      ,f1: 1.000, tp:  217, fp:  0, fn:  0, lost positives: 0,sample size: 2914)
+13:16:54.203 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Took: 1 minutes, 43 seconds
 
 Process finished with exit code 0
