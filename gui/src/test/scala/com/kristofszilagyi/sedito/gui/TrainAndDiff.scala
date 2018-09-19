@@ -99,6 +99,10 @@ object TrainAndDiff {
     truth.zip(prediction).count{ case (t, p) => t ==== 1 && p ==== 0 }
   }
 
+  def countTP(truth: Array[Int], prediction: Array[Int]): Int = {
+    truth.zip(prediction).count{ case (t, p) => t ==== 1 && p ==== 1 }
+  }
+
   def logBasicStats(nestedTraining: List[Samples],
                     nestedTest: List[Samples]): Unit = {
     val training = nestedTraining.flatMap(_.metricsWithResults)
@@ -184,8 +188,9 @@ object TrainAndDiff {
     }
   }
 
-  final case class PerformanceMetrics(f1: Double, lostPositives: Int, fn: Int, fp: Int, sampleSize: Int) {
-    override def toString: String = f"f1: $f1%.3f, lost positives: $lostPositives, fn: $fn%2d, fp: $fp%2d, sample size: $sampleSize"
+  final case class PerformanceMetrics(f1: Double, lostPositives: Int, fn: Int, fp: Int, tp: Int, sampleSize: Int) {
+    override def toString: String = f"f1: $f1%.3f, lost positives: $lostPositives, fn: $fn%2d, fp: $fp%2d, tp: $tp%4d," +
+      f"sample size: $sampleSize"
   }
 
   @SuppressWarnings(Array(Warts.ToString))
@@ -199,7 +204,8 @@ object TrainAndDiff {
       val f1Score = f1(singleTestY, singlePred)
       val fp = countFP(singleTestY, singlePred)
       val fn = countFN(singleTestY, singlePred)
-      path.getFileName.toString.padTo(30, " ").mkString -> PerformanceMetrics(f1Score, singleTest.lostPositives, fn, fp, singleTestY.length)
+      val tp = countTP(singleTestY, singlePred)
+      path.getFileName.toString.padTo(34, " ").mkString -> PerformanceMetrics(f1Score, singleTest.lostPositives, fn = fn, fp = fp, tp = tp, sampleSize = singleTestY.length)
     }.sortBy(_._2.f1)
   }
 
