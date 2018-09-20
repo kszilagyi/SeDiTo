@@ -103,8 +103,12 @@ object TrainAndDiff {
     truth.zip(prediction).count{ case (t, p) => t ==== 1 && p ==== 1 }
   }
 
-  def countSelectedPositives(truth: Array[Int], prediction: Array[Int]): Int = {
+  def countSelPos(truth: Array[Int], prediction: Array[Int]): Int = {
     truth.zip(prediction).count{ case (_, p) => p ==== 1 }
+  }
+
+  def countExpectedPos(truth: Array[Int], prediction: Array[Int]): Int = {
+    truth.zip(prediction).count{ case (t, _) => t ==== 1 }
   }
 
   def logBasicStats(nestedTraining: List[Samples],
@@ -192,9 +196,9 @@ object TrainAndDiff {
     }
   }
 
-  final case class PerformanceMetrics(f1: Double, lostPositives: Int, fn: Int, fp: Int, tp: Int, selectedPositives: Int, sampleSize: Int) {
-    override def toString: String = f"f1: $f1%.3f, tp: $tp%4d, fp: $fp%2d, fn: $fn%2d, selPos: $selectedPositives%4d, lost positives: $lostPositives," +
-      f"sample size: $sampleSize"
+  final case class PerformanceMetrics(f1: Double, lostPositives: Int, fn: Int, fp: Int, tp: Int, selPos: Int, expectedPos: Int, sampleSize: Int) {
+    override def toString: String = f"f1: $f1%.3f, tp: $tp%4d, fp: $fp%2d, fn: $fn%2d, selPos: $selPos%4d, " +
+      f"expectedPos: $expectedPos%4d, lost positives: $lostPositives, sample size: $sampleSize"
   }
 
   @SuppressWarnings(Array(Warts.ToString))
@@ -209,9 +213,10 @@ object TrainAndDiff {
       val fp = countFP(singleTestY, singlePred)
       val fn = countFN(singleTestY, singlePred)
       val tp = countTP(singleTestY, singlePred)
-      val selectedPositives = countSelectedPositives(singleTestY, singlePred)
+      val selPos = countSelPos(singleTestY, singlePred)
+      val expectedPos = countExpectedPos(singleTestY, singlePred)
       path.getFileName.toString.padTo(34, " ").mkString -> PerformanceMetrics(f1Score, singleTest.lostPositives, fn = fn,
-        fp = fp, tp = tp, selectedPositives = selectedPositives, sampleSize = singleTestY.length)
+        fp = fp, tp = tp, selPos = selPos, expectedPos = expectedPos,sampleSize = singleTestY.length)
     }.sortBy(_._2.f1)
   }
 
