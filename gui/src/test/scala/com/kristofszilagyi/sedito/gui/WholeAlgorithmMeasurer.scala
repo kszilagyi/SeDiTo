@@ -12,9 +12,9 @@ import org.log4s.getLogger
   * Measures overall performance not only classifier performance
   */
 object WholeAlgorithmMeasurer {
-  private final case class Results(tp: Long, fp: Long, fn: Long) {
+  private final case class Results(tp: Long, fp: Long, fn: Long, selPos: Long) {
     def +(other: Results): Results = {
-      Results(tp = tp + other.tp, fp = fp + other.fp, fn = fn + other.fn)
+      Results(tp = tp + other.tp, fp = fp + other.fp, fn = fn + other.fn, selPos = selPos + other.selPos)
     }
     def recall: Double = {
       tp.toDouble / (tp + fn)
@@ -27,7 +27,7 @@ object WholeAlgorithmMeasurer {
     }
 
     def resultString: String = {
-      f"f1: $f1%.5f, tp: $tp%4d, fp: $fp%2d, fn: $fn%2d, total mispred: ${fp + fn}%2d"
+      f"f1: $f1%.5f, tp: $tp%4d, fp: $fp%2d, fn: $fn%2d, selPos: $selPos%4d, total mispred: ${fp + fn}%2d"
     }
   }
   private val logger = getLogger
@@ -39,7 +39,7 @@ object WholeAlgorithmMeasurer {
       val tp = actual.intersect(expected).size
       val fp = actual.size - tp
       val fn = (expected -- actual).size
-      path -> Results(tp = tp.toLong, fp = fp.toLong, fn = fn.toLong)
+      path -> Results(tp = tp.toLong, fp = fp.toLong, fn = fn.toLong, actual.size.toLong)
     }
   }
 

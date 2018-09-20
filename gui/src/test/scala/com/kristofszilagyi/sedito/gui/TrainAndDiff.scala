@@ -193,7 +193,7 @@ object TrainAndDiff {
   }
 
   final case class PerformanceMetrics(f1: Double, lostPositives: Int, fn: Int, fp: Int, tp: Int, selectedPositives: Int, sampleSize: Int) {
-    override def toString: String = f"f1: $f1%.3f, tp: $tp%4d, fp: $fp%2d, fn: $fn%2d, selPos: $selectedPositives%2d, lost positives: $lostPositives," +
+    override def toString: String = f"f1: $f1%.3f, tp: $tp%4d, fp: $fp%2d, fn: $fn%2d, selPos: $selectedPositives%4d, lost positives: $lostPositives," +
       f"sample size: $sampleSize"
   }
 
