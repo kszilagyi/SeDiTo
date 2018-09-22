@@ -172,8 +172,8 @@ final case class AmbiguousWordAlignment(matches: Set[WordMatch]) {
     UnambiguousWordAlignment(botResolved.toSet)
   }
 
-  def leftAmbiguous: Iterable[Set[WordMatch]] = {
-    matches.groupBy(_.left).values.filter(_.size > 1)
+  def leftAmbiguous: String = {
+    matches.groupBy(_.left).values.filter(_.size > 1).map(_.toString).map("  " + _).mkString("\n")
   }
 
   def rightAmbiguous: Iterable[Set[WordMatch]] = {
