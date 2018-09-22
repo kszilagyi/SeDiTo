@@ -171,6 +171,14 @@ final case class AmbiguousWordAlignment(matches: Set[WordMatch]) {
     val botResolved = resolveConflicts(rightMap)
     UnambiguousWordAlignment(botResolved.toSet)
   }
+
+  def leftAmbiguous: Iterable[Set[WordMatch]] = {
+    matches.groupBy(_.left).values.filter(_.size > 1)
+  }
+
+  def rightAmbiguous: Iterable[Set[WordMatch]] = {
+    matches.groupBy(_.right).values.filter(_.size > 1)
+  }
 }
 
 //I am undecided if this should check for conflicts or not. Same for UnambiguousLineAlignment
