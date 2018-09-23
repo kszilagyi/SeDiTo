@@ -163,13 +163,15 @@ object AmbiguousWordAlignment {
 final case class AmbiguousWordAlignment(matches: Set[WordMatch]) {
   def readable: String = matches.map(_.readable).mkString(", ")
 
+  //todo remove: this is not doing anything now (I have an assert for that!)
   def toUnambigous: UnambiguousWordAlignment = {
     //we assume no overlap. So every conflict is caused by a word being matched with multiple other words
     val leftMap = matches.groupBy(m => (m.left.lineIdx, m.left.from, m.left.toExcl))
     val leftResolved = resolveConflicts(leftMap)
     val rightMap = leftResolved.groupBy(m => (m.right.lineIdx, m.right.from, m.right.toExcl))
-    val botResolved = resolveConflicts(rightMap)
-    UnambiguousWordAlignment(botResolved.toSet)
+    val botResolved = resolveConflicts(rightMap).toSet
+    assert(matches.size ==== botResolved.size, s"${matches.size} != ${botResolved.size}")
+    UnambiguousWordAlignment(botResolved)
   }
 
   def leftAmbiguous: String = {
