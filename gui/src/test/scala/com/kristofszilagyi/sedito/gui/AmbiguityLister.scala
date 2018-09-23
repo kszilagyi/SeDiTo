@@ -10,7 +10,7 @@ object AmbiguityLister {
     logger.info("Start")
     val testCases = testDirs.map(dir => dir -> readTestCase(dir))
     logger.info(s"ambig count = ${testCases.map{ case (path , test) =>
-      path -> test.wordAlignment.leftAmbiguous
+      path -> test.wordAlignment.rightAmbiguous
     }.filter(_._2.nonEmpty).mkString("\n")}")
     /*
         logger.info(s"ambig count = " + testCases.map{ case (_, test) =>

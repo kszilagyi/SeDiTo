@@ -32,7 +32,6 @@ object WholeAlgorithmMeasurer {
     }
   }
   private val logger = getLogger
-// how can we reduce fn rate, doens't make sense!
   private def measure(aligner: Aligner, testCases: Seq[(Path, TestCase)]) = {
     testCases.map { case (path, testCase) =>
       val actual = aligner.align(testCase.left, testCase.right).matches
