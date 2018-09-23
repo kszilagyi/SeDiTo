@@ -189,7 +189,7 @@ object TrainAndDiff {
 
       val (classifier, scaler) = loadAI()
       val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/full_tests/17_complex" +
+        "scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py4" +
         ""))
 
       displayTestCase(testCase, classifier, scaler)
