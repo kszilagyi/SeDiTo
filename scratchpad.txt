@@ -10,27 +10,7 @@ problems:
 - line before and after is quite different but humans still know it's the same because wider context is the same and structurally the lines nearby is also the same and the lines itself are the same
 - 100 character easily be just one line and if the line above changed the algorithm will suffer
 - current statistics:
-   this_needs_rename_info_to_work: A lot of line is duplicated and modified. I am not even sure what should we display...
-     But there are also some trivial stuff which do not work due to a lot of change nearby. Ultimately this is a hard one. Rename info would help.
-     Also problem with matching things with big LD (y - y_test)
-   move_within_line: can't match the moved fourb to foura, probably because of the different context
-   test_model_py2:
-     - custom_scale vs single_scale
-     - lot of small change
-   everything_commented:
-     - just randomly not working when the line is short (confused by small changes)
-   textblocklinked1to1_cpp:
-     - confusion because line is actually not the closest in levenstein terms
 
-   grid_py:
-     - confused by small changes nearby
-
-   space_problems:
-     - ec2-user@ec2-52-26-21-157 vs ec2-54-191-134-227
-       - first it doesn't understand where the ec2 belongs to, that's not too bad and would need syntax parsing ability
-       - the bigger problem is that the dashes are not recognized (it's not too bad either)
-       - to be fair this is hard: how is it supposed to know which dash belong to which one?
-       - closest context would probably help here
 
 ideas:
 - add learning curve (more data helps or not?)
@@ -101,9 +81,8 @@ ideas:
 
 
 -- ideas for next:
- - only input things which are not unambigous
- - clean up results with extending + measure results together and separately
- - create UI
+ - try to magnet changes
+ - group together operators like == or ()
 
 
-TODO: probably I should do closest contexts
+TODO: reread this, clean it up, reevaluate current failures

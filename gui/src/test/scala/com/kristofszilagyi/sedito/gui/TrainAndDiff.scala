@@ -221,33 +221,46 @@ object TrainAndDiff {
   }
 
 }
-object Train extends App {
+object Train {
   private val logger = getLogger
 
-  logger.info("Start")
-  val start = Instant.now()
-  val samples = readDataSetAndMeasureMetrics()
-  val metricsWithResults = samples.map(_._2.metricsWithResults)
-  val numOfAttributes = calcNumOfAttributes(metricsWithResults)
-  val (nestedTraining, nestedTest) = samples.splitAt(samples.size / 2)
-  logBasicStats(nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
-  logger.info("Starting training")
+  def train(split: (Int) => (Int, Int), logStats: Boolean): (NeuralNetwork, Scaler) = {
+    val samples = readDataSetAndMeasureMetrics()
+    val metricsWithResults = samples.map(_._2.metricsWithResults)
+    val numOfAttributes = calcNumOfAttributes(metricsWithResults)
+    val (trainingSize, testSize) = split(samples.size)
+    assert(trainingSize + testSize <= samples.size, s"$trainingSize + $testSize <= ${samples.size}")
+    val nestedTraining = samples.take(trainingSize)
+    val nestedTest = samples.takeRight(testSize)
+    if (logStats) {
+      logBasicStats(nestedTraining.map(_._2), nestedTest = nestedTest.map(_._2))
+      logger.info("Starting training")
+    }
 
-  val (classifier, scaler, trainingData) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
-    nestedTest = nestedTest.map(_._2), numOfAttributes, idxesToExclude = Set.empty)
+    val (classifier, scaler, trainingData) = generateClassifier(nestedTraining = nestedTraining.map(_._2),
+      nestedTest = nestedTest.map(_._2), numOfAttributes, idxesToExclude = Set.empty)
 
-  trainingData.printDetailedStats()
-  val trainingMetrics = performanceMetrics(nestedTraining, scaler, classifier, numOfAttributes, idxesToExclude = Set.empty)
+    if (logStats) {
+      trainingData.printDetailedStats()
+      val trainingMetrics = performanceMetrics(nestedTraining, scaler, classifier, numOfAttributes, idxesToExclude = Set.empty)
 
-  logger.info("Training f1s: \n" + trainingMetrics.mkString("\n"))
+      logger.info("Training f1s: \n" + trainingMetrics.mkString("\n"))
 
-  val testMetrics = performanceMetrics(nestedTest, scaler, classifier, numOfAttributes, idxesToExclude = Set.empty)
+      val testMetrics = performanceMetrics(nestedTest, scaler, classifier, numOfAttributes, idxesToExclude = Set.empty)
+      logger.info("Test f1s: \n" + testMetrics.mkString("\n"))
+    }
+    (classifier, scaler)
+  }
+  def main(args: Array[String]) {
+    logger.info("Start")
+    val start = Instant.now()
 
-  logger.info("Test f1s: \n" + testMetrics.mkString("\n"))
-  write.xstream(classifier, "linear_regression.model")
-  write.xstream(scaler, "linear_regression.scaler")
-  val duration = Duration.between(start, Instant.now())
-  logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis/1000 - duration.toMinutes * 60} seconds")
+    val (classifier, scaler) = train((size) => (size/2, size/2), logStats = true)
+    write.xstream(classifier, "linear_regression.model")
+    write.xstream(scaler, "linear_regression.scaler")
+    val duration = Duration.between(start, Instant.now())
+    logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
+  }
 }
 
 
