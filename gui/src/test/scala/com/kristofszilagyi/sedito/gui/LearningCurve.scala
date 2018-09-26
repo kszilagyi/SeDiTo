@@ -2,6 +2,7 @@ package com.kristofszilagyi.sedito.gui
 
 import java.awt.Color
 import java.nio.file.Path
+import java.time.{Duration, Instant}
 
 import com.kristofszilagyi.sedito.aligner.Aligner
 import com.kristofszilagyi.sedito.common.TestCase
@@ -22,6 +23,8 @@ object LearningCurve{
   }
   def main(args: Array[String]): Unit = {
     logger.info("Start")
+    val start = Instant.now()
+
     val testCases = testDirs.map(dir => dir -> readTestCase(dir))
 
     val samples = readDataSetAndMeasureMetrics()
@@ -53,5 +56,7 @@ object LearningCurve{
 
     val _ = plot.plot(data = trainCoords ++ testCoords, label = trainCoords.map(_ => 0) ++ testCoords.map(_ => 1),
       palette = Array(Color.BLUE, Color.RED), legend = Array('x', 'x'))
+    val duration = Duration.between(start, Instant.now())
+    logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis/1000 - duration.toMinutes * 60} seconds")
   }
 }

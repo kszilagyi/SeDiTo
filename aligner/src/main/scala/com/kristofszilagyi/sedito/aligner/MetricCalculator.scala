@@ -122,7 +122,7 @@ object MetricCalculator {
     def leftLineIdx: LineIdx = phase1Metrics.leftLineIdx
     def rightLineIdx: LineIdx = phase1Metrics.rightLineIdx
 
-    def doubles: Array[Double]= {
+    lazy val doubles: Array[Double]= {
       (word.toDoubles ++ line.toDoubles ++ contextFull.doubles ++ context4th.doubles ++
         context8th.doubles ++ context16th.doubles ++ closestFull.doubles ++ closest4th.doubles
         ++ closest8th.doubles ++ closest16th.doubles :+ (if (lineIsClosestMatchInText) 1.0 else 0.0)).toArray
