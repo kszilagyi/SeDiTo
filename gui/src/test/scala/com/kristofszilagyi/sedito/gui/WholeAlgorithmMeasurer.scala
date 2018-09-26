@@ -31,25 +31,31 @@ object WholeAlgorithmMeasurer {
       f"f1: $f1%.5f, tp: $tp%4d, fp: $fp%2d, fn: $fn%2d, selPos: $selPos%4d, expectedPos: $expectedPos%4d, total mispred: ${fp + fn}%2d"
     }
   }
+  final case class MultiResult(results: Seq[(Path, Results)]) {
+    @SuppressWarnings(Array(Warts.TraversableOps))
+    def aggregate: Results = results.map(_._2).reduce(_ + _)
+
+    @SuppressWarnings(Array(Warts.ToString))
+    def nestedResultString = {
+      val resultLines = results.sortBy(_._2.f1).map { case (path, result) =>
+        path.getFileName.toString.padTo(34, " ").mkString + s": ${result.resultString}"
+      }
+      resultLines.mkString("\n")
+    }
+  }
   private val logger = getLogger
   def measure(aligner: Aligner, testCases: Seq[(Path, TestCase)]) = {
-    testCases.map { case (path, testCase) =>
+    MultiResult(testCases.map { case (path, testCase) =>
       val actual = aligner.align(testCase.left, testCase.right).matches
       val expected = testCase.wordAlignment.toUnambigous.matches
       val tp = actual.intersect(expected).size
       val fp = actual.size - tp
       val fn = (expected -- actual).size
       path -> Results(tp = tp.toLong, fp = fp.toLong, fn = fn.toLong, actual.size.toLong, expected.size.toLong)
-    }
+    })
   }
 
-  @SuppressWarnings(Array(Warts.ToString))
-  private def nestedResultString(results: Seq[(Path, Results)]) = {
-    val resultLines = results.sortBy(_._2.f1).map { case (path, result) =>
-      path.getFileName.toString.padTo(34, " ").mkString + s": ${result.resultString}"
-    }
-    resultLines.mkString("\n")
-  }
+
 
   def main(args: Array[String]): Unit = {
     logger.info("Start")
@@ -59,16 +65,14 @@ object WholeAlgorithmMeasurer {
     val aligner = new Aligner(classifier, scaler)
     val (training, test) = testCases.splitAt(testCases.size / 2)
     val nestedTrainingResults = measure(aligner, training)
-    @SuppressWarnings(Array(Warts.TraversableOps))
-    val trainigResults = nestedTrainingResults.map(_._2).reduce(_ + _)
+    val trainigResults = nestedTrainingResults.aggregate
     val nestedTestResults = measure(aligner, test)
-    @SuppressWarnings(Array(Warts.TraversableOps))
-    val testResults = nestedTestResults.map(_._2).reduce(_ + _)
+    val testResults = nestedTestResults.aggregate
 
     logger.info(s"Training results: ${trainigResults.resultString}")
     logger.info(s"Test results: ${testResults.resultString}")
-    logger.info(s"Training: \n${nestedResultString(nestedTrainingResults)}")
-    logger.info(s"Test: \n${nestedResultString(nestedTestResults)}")
+    logger.info(s"Training: \n${nestedTrainingResults.nestedResultString}")
+    logger.info(s"Test: \n${nestedTestResults.nestedResultString}")
     val duration = Duration.between(start, Instant.now())
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis/1000 - duration.toMinutes * 60} seconds")
   }

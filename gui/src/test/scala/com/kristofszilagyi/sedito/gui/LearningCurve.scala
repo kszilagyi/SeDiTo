@@ -3,7 +3,6 @@ package com.kristofszilagyi.sedito.gui
 import java.awt.Color
 
 import com.kristofszilagyi.sedito.aligner.Aligner
-import com.kristofszilagyi.sedito.common.Warts
 import com.kristofszilagyi.sedito.gui.TrainAndDiff.{readDataSetAndMeasureMetrics, readTestCase, testDirs}
 import org.log4s.getLogger
 import smile.plot
@@ -27,10 +26,8 @@ object LearningCurve{
       val (classifier, scaler) = Train.train(trainingSamples, testSamples, logStats = false)
       val aligner = new Aligner(classifier, scaler)
 
-      @SuppressWarnings(Array(Warts.TraversableOps))
-      val trainingResults = WholeAlgorithmMeasurer.measure(aligner, trainingTestCases).map(_._2).reduce(_ + _)
-      @SuppressWarnings(Array(Warts.TraversableOps))
-      val testResults = WholeAlgorithmMeasurer.measure(aligner, testTestCases).map(_._2).reduce(_ + _)
+      val trainingResults = WholeAlgorithmMeasurer.measure(aligner, trainingTestCases).aggregate
+      val testResults = WholeAlgorithmMeasurer.measure(aligner, testTestCases).aggregate
       logger.info(s"Finished size: $size")
       size -> ((trainingResults.f1, testResults.f1))
     }).seq
