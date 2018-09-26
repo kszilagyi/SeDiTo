@@ -12,7 +12,7 @@ import org.log4s.getLogger
   * Measures overall performance not only classifier performance
   */
 object WholeAlgorithmMeasurer {
-  private final case class Results(tp: Long, fp: Long, fn: Long, selPos: Long, expectedPos: Long) {
+  final case class Results(tp: Long, fp: Long, fn: Long, selPos: Long, expectedPos: Long) {
     def +(other: Results): Results = {
       Results(tp = tp + other.tp, fp = fp + other.fp, fn = fn + other.fn,
         selPos = selPos + other.selPos, expectedPos = expectedPos + other.expectedPos)
