@@ -1,15 +1,25 @@
 package com.kristofszilagyi.sedito.gui
 
 import java.awt.Color
+import java.nio.file.Path
 
 import com.kristofszilagyi.sedito.aligner.Aligner
+import com.kristofszilagyi.sedito.common.TestCase
 import com.kristofszilagyi.sedito.gui.TrainAndDiff.{readDataSetAndMeasureMetrics, readTestCase, testDirs}
 import org.log4s.getLogger
 import smile.plot
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 
 object LearningCurve{
   private val logger = getLogger
 
+  private def withMetrics(testCases: Seq[(Path, TestCase)], samples: List[(Path, Samples)]) = {
+    assert(testCases.size ==== samples.size)
+    testCases.zip(samples).map{ case ((path1, testCase), (path2, sample)) =>
+      assert(path1 ==== path2)
+      (path1, testCase, sample.metricsWithResults.map(_.metrics))
+    }
+  }
   def main(args: Array[String]): Unit = {
     logger.info("Start")
     val testCases = testDirs.map(dir => dir -> readTestCase(dir))
@@ -26,8 +36,8 @@ object LearningCurve{
       val (classifier, scaler) = Train.train(trainingSamples, testSamples, logStats = false)
       val aligner = new Aligner(classifier, scaler)
 
-      val trainingResults = WholeAlgorithmMeasurer.measure(aligner, trainingTestCases).aggregate
-      val testResults = WholeAlgorithmMeasurer.measure(aligner, testTestCases).aggregate
+      val trainingResults = WholeAlgorithmMeasurer.measureFast(aligner, withMetrics(trainingTestCases, trainingSamples)).aggregate
+      val testResults = WholeAlgorithmMeasurer.measureFast(aligner, withMetrics(testTestCases, testSamples)).aggregate
       logger.info(s"Finished size: $size")
       size -> ((trainingResults.f1, testResults.f1))
     }).seq

@@ -3,7 +3,8 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.Path
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.Aligner
+import com.kristofszilagyi.sedito.aligner.{Aligner, MetricCalculator}
+import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.common.{TestCase, Warts}
 import com.kristofszilagyi.sedito.gui.TrainAndDiff._
 import org.log4s.getLogger
@@ -36,7 +37,7 @@ object WholeAlgorithmMeasurer {
     def aggregate: Results = results.map(_._2).reduce(_ + _)
 
     @SuppressWarnings(Array(Warts.ToString))
-    def nestedResultString = {
+    def nestedResultString: String = {
       val resultLines = results.sortBy(_._2.f1).map { case (path, result) =>
         path.getFileName.toString.padTo(34, " ").mkString + s": ${result.resultString}"
       }
@@ -44,9 +45,16 @@ object WholeAlgorithmMeasurer {
     }
   }
   private val logger = getLogger
-  def measure(aligner: Aligner, testCases: Seq[(Path, TestCase)]) = {
-    MultiResult(testCases.map { case (path, testCase) =>
-      val actual = aligner.align(testCase.left, testCase.right).matches
+
+  def measure(aligner: Aligner, testCases: Seq[(Path, TestCase)]): MultiResult = {
+    measureFast(aligner, testCases.map { case (path, testCase) =>
+      (path, testCase, MetricCalculator.calcAlignerMetrics(testCase.left, testCase.right))
+    })
+  }
+
+  def measureFast(aligner: Aligner, testCases: Seq[(Path, TestCase, IndexedSeq[Metrics])]): MultiResult = {
+    MultiResult(testCases.map { case (path, testCase, metrics) =>
+      val actual = aligner.alignFast(metrics).matches
       val expected = testCase.wordAlignment.toUnambigous.matches
       val tp = actual.intersect(expected).size
       val fp = actual.size - tp
@@ -54,8 +62,6 @@ object WholeAlgorithmMeasurer {
       path -> Results(tp = tp.toLong, fp = fp.toLong, fn = fn.toLong, actual.size.toLong, expected.size.toLong)
     })
   }
-
-
 
   def main(args: Array[String]): Unit = {
     logger.info("Start")
