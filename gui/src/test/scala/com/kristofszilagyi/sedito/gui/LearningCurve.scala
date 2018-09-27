@@ -1,15 +1,17 @@
 package com.kristofszilagyi.sedito.gui
 
-import java.awt.Color
 import java.nio.file.Path
 import java.time.{Duration, Instant}
 
 import com.kristofszilagyi.sedito.aligner.Aligner
 import com.kristofszilagyi.sedito.common.TestCase
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.gui.TrainAndDiff.{readDataSetAndMeasureMetrics, readTestCase, testDirs}
 import org.log4s.getLogger
-import smile.plot
-import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
+import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
+import smile.write
+
+import scala.util.Random
 
 object LearningCurve{
   private val logger = getLogger
@@ -21,21 +23,20 @@ object LearningCurve{
       (path1, testCase, sample.metricsWithResults.map(_.metrics))
     }
   }
-  def main(args: Array[String]): Unit = {
-    logger.info("Start")
-    val start = Instant.now()
+  private def oneRandomCurve(random: Random, samples: List[(Path, Samples)], testCases: Seq[(Path, TestCase)]) = {
+    assert(samples.size ==== testCases.size)
+    val half = samples.size / 2
 
-    val testCases = testDirs.map(dir => dir -> readTestCase(dir))
+    val shuffledSamples = random.shuffle(samples)
+    val shuffledTestCases = random.shuffle(testCases)
 
-    val samples = readDataSetAndMeasureMetrics()
-    val testSamples = samples.takeRight(samples.size / 2)
+    val testSamples = shuffledSamples.takeRight(half)
+    val testTestCases = shuffledTestCases.takeRight(half)
 
-    val testTestCases = testCases.takeRight(testCases.size / 2)
-
-    val learningCurve = ((1 to samples.size / 2).par map { size =>
+    val learningCurve = ((1 to half).par map { size =>
       logger.info(s"Doing size: $size")
-      val trainingSamples = samples.take(size)
-      val trainingTestCases = testCases.take(size)
+      val trainingSamples = shuffledSamples.take(size)
+      val trainingTestCases = shuffledTestCases.take(size)
       val (classifier, scaler) = Train.train(trainingSamples, testSamples, logStats = false)
       val aligner = new Aligner(classifier, scaler)
 
@@ -45,17 +46,42 @@ object LearningCurve{
       size -> ((trainingResults.f1, testResults.f1))
     }).seq
 
-    logger.info(learningCurve.mkString("\n"))
-    val trainCoords = learningCurve.map { case (size, (train, _)) =>
+    learningCurve
+  }
+  private def toCoords(data: IndexedSeq[(Int, (Double, Double))]) = {
+    val trainCoords = data.map { case (size, (train, _)) =>
       Array(size.toDouble, train)
     }.toArray
-    val testCoords = learningCurve.map { case (size, (_, test)) =>
+    val testCoords = data.map { case (size, (_, test)) =>
       Array(size.toDouble, test)
     }.toArray
+    (trainCoords, testCoords)
+    val attrs = new AttributeDataset("coords", Array(new NumericAttribute("x"), new NumericAttribute("y")),
+      new NominalAttribute("isTraining"))
+    trainCoords.foreach { xs =>
+      attrs.add(xs, 1)
+    }
 
+    testCoords.foreach { xs =>
+      attrs.add(xs, 0)
+    }
+    attrs
+  }
+  def main(args: Array[String]): Unit = {
+    logger.info("Start")
+    val start = Instant.now()
 
-    val _ = plot.plot(data = trainCoords ++ testCoords, label = trainCoords.map(_ => 0) ++ testCoords.map(_ => 1),
-      palette = Array(Color.BLUE, Color.RED), legend = Array('x', 'x'))
+    val testCases = testDirs.map(dir => dir -> readTestCase(dir))
+
+    val samples = readDataSetAndMeasureMetrics()
+    val random = new Random(125)
+    val learningCurves = (1 to 10).map(_ => oneRandomCurve(random, samples, testCases))
+
+    val flattenedLearningCurves = learningCurves.flatten
+    val flattenedCoords = toCoords(flattenedLearningCurves)
+
+    write.arff(flattenedCoords, "flattened_learning_curve.arff")
+    
     val duration = Duration.between(start, Instant.now())
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis/1000 - duration.toMinutes * 60} seconds")
   }
