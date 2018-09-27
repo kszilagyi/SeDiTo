@@ -74,7 +74,10 @@ object LearningCurve{
 
     val samples = readDataSetAndMeasureMetrics()
     val random = new Random(125)
-    val learningCurves = (1 to 10).map(_ => oneRandomCurve(random, samples, testCases))
+    val learningCurves = (1 to 10).map { run =>
+      logger.info(s"Doing run : $run")
+      oneRandomCurve(random, samples, testCases)
+    }
 
     val flattenedLearningCurves = learningCurves.flatten
     val flattenedCoords = toCoords(flattenedLearningCurves)
