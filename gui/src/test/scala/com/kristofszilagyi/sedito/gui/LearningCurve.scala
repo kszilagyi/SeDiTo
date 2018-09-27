@@ -32,7 +32,7 @@ object LearningCurve{
     val testSamples = shuffledSamples.takeRight(half)
     val testTestCases = shuffledTestCases.takeRight(half)
 
-    val learningCurve = ((1 to 5).par map { size =>
+    val learningCurve = ((1 to half).par map { size =>
       logger.info(s"Doing size: $size")
       val trainingSamples = shuffledSamples.take(size)
       val trainingTestCases = shuffledTestCases.take(size)
@@ -47,7 +47,7 @@ object LearningCurve{
 
     learningCurve
   }
-  private def toCoords(data: Traversable[(Int, (Double, Double))]) = {
+  private def toCoords(data: Seq[(Int, (Double, Double))]) = {
     val trainCoords = data.map { case (size, (train, _)) =>
       Array(size.toDouble, train)
     }.toArray
@@ -74,7 +74,7 @@ object LearningCurve{
 
     val samples = readDataSetAndMeasureMetrics()
     val random = new Random(125)
-    val learningCurves = (1 to 2).map(_ => oneRandomCurve(random, samples, testCases))
+    val learningCurves = (1 to 10).map(_ => oneRandomCurve(random, samples, testCases))
 
     val flattenedLearningCurves = learningCurves.flatten
     val flattenedCoords = toCoords(flattenedLearningCurves)
@@ -88,7 +88,7 @@ object LearningCurve{
       val cnt = results.size
       runs -> ((f1Sums._1 / cnt, f1Sums._2 / cnt))
     }
-    val avgCoords = toCoords(avgLearningCurve)
+    val avgCoords = toCoords(avgLearningCurve.toSeq.sortBy(_._1)) //for stability
     write.arff(avgCoords, "avg_learning_curve.arff")
 
     val duration = Duration.between(start, Instant.now())
