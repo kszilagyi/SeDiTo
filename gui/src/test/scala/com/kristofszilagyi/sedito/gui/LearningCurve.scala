@@ -19,7 +19,7 @@ object LearningCurve{
   private def withMetrics(testCases: Seq[(Path, TestCase)], samples: List[(Path, Samples)]) = {
     assert(testCases.size ==== samples.size)
     testCases.zip(samples).map{ case ((path1, testCase), (path2, sample)) =>
-      assert(path1 ==== path2)
+      assert(path1 ==== path2, s"$path1 == $path2")
       (path1, testCase, sample.metricsWithResults.map(_.metrics))
     }
   }
@@ -27,8 +27,7 @@ object LearningCurve{
     assert(samples.size ==== testCases.size)
     val half = samples.size / 2
 
-    val shuffledSamples = random.shuffle(samples)
-    val shuffledTestCases = random.shuffle(testCases)
+    val (shuffledSamples, shuffledTestCases) = random.shuffle(samples.zip(testCases)).unzip
 
     val testSamples = shuffledSamples.takeRight(half)
     val testTestCases = shuffledTestCases.takeRight(half)
@@ -55,9 +54,9 @@ object LearningCurve{
     val testCoords = data.map { case (size, (_, test)) =>
       Array(size.toDouble, test)
     }.toArray
-    (trainCoords, testCoords)
+
     val attrs = new AttributeDataset("coords", Array(new NumericAttribute("x"), new NumericAttribute("y")),
-      new NominalAttribute("isTraining"))
+      new NominalAttribute("isTraining", Array("false", "true")))
     trainCoords.foreach { xs =>
       attrs.add(xs, 1)
     }
