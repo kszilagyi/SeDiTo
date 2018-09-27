@@ -33,7 +33,6 @@ object WholeAlgorithmMeasurer {
     }
   }
   final case class MultiResult(results: Seq[(Path, Results)]) {
-    @SuppressWarnings(Array(Warts.TraversableOps))
     def aggregate: Results = results.map(_._2).reduce(_ + _)
 
     @SuppressWarnings(Array(Warts.ToString))

@@ -172,7 +172,6 @@ object TrainAndDiff {
   def calcNumOfAttributes(metrics: List[IndexedSeq[MetricsWithResults]]): Int = {
     @SuppressWarnings(Array(Warts.OptionPartial))
     val nonEmpty = metrics.find(_.nonEmpty).get
-    @SuppressWarnings(Array(Warts.TraversableOps))
     val num = nonEmpty.head.metrics.doubles.length
     num
   }

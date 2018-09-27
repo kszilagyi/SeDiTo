@@ -59,8 +59,11 @@ val customScalacOptions = Seq(
 
 
 def commonSettings = Seq(
-  wartremoverErrors ++= Warts.allBut(Wart.Any, Wart.Nothing, Wart.ImplicitParameter, Wart.Product, Wart.Serializable,
+  wartremoverErrors in (Compile, compile) ++= Warts.allBut(Wart.Any, Wart.Nothing, Wart.ImplicitParameter, Wart.Product, Wart.Serializable,
     Wart.PublicInference, Wart.ImplicitConversion, Wart.Option2Iterable),
+
+  wartremoverErrors in (Test, compile) := Warts.allBut(Wart.Any, Wart.Nothing, Wart.ImplicitParameter, Wart.Product, Wart.Serializable,
+    Wart.PublicInference, Wart.ImplicitConversion, Wart.Option2Iterable, Wart.TraversableOps),
 
   sources in (Compile, doc) := Seq.empty,
   publishArtifact in (Compile, packageDoc) := false,
