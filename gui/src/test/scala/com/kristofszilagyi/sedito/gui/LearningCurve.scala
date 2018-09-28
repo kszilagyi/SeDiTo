@@ -32,7 +32,7 @@ object LearningCurve{
     val testSamples = shuffledSamples.takeRight(half)
     val testTestCases = shuffledTestCases.takeRight(half)
 
-    val learningCurve = ((1 to half).par map { size =>
+    val learningCurve = ((1 to (half, 6)).par map { size =>
       logger.info(s"Doing size: $size")
       val trainingSamples = shuffledSamples.take(size)
       val trainingTestCases = shuffledTestCases.take(size)
@@ -74,7 +74,7 @@ object LearningCurve{
 
     val samples = readDataSetAndMeasureMetrics()
     val random = new Random(125)
-    val learningCurves = (1 to 10).map { run =>
+    val learningCurves = (1 to 3).map { run =>
       logger.info(s"Doing run : $run")
       oneRandomCurve(random, samples, testCases)
     }
