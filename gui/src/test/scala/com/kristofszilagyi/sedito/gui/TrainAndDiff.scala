@@ -160,8 +160,6 @@ object TrainAndDiff {
     val expected = new MainWindow()
     expected.setTitle("Expected")
     val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
-    logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
-
     expected.setContent(testCase.left, testCase.right, unambiguousWordAlignment)
     val actual = new MainWindow()
     actual.setTitle("Actual")
