@@ -39,6 +39,7 @@ object LearningCurve{
       val (classifier, scaler) = Train.train(trainingSamples, testSamples, logStats = false)
       val aligner = new Aligner(classifier, scaler)
 
+      //todo this is possibly wrong, does learning curves apply to joint algos?
       val trainingResults = WholeAlgorithmMeasurer.measureFast(aligner, withMetrics(trainingTestCases, trainingSamples)).aggregate
       val testResults = WholeAlgorithmMeasurer.measureFast(aligner, withMetrics(testTestCases, testSamples)).aggregate
       logger.info(s"Finished size: $size")
