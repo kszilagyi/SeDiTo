@@ -4,7 +4,7 @@ package com.kristofszilagyi.sedito.gui
 import com.kristofszilagyi.sedito.aligner.Aligner
 import com.kristofszilagyi.sedito.common.{FullText, Warts}
 import com.sun.javafx.css.CssError
-import javafx.application.Application
+import javafx.application.{Application, Platform}
 import javafx.collections.ListChangeListener
 import org.log4s._
 import java.nio.charset.StandardCharsets
@@ -24,16 +24,21 @@ final class Main extends Application {
 
   def start(stage: _root_.javafx.stage.Stage): Unit = {
     logger.info("SeDiTo GUI started")
+    Thread.setDefaultUncaughtExceptionHandler((t: Thread, e: Throwable) => {
+      logger.error(e)("Exception in thread \"" + t.getName + "\"")
+    })
 
     val mainWindow = new MainWindow()
     val args = getParameters.getRaw
     logger.info(s"Args: $args")
     if (args.size() >= 2) {
-      val left = FullText(new String(Files.readAllBytes(Paths.get(args.get(0))), StandardCharsets.UTF_8))
-      val right = FullText(new String(Files.readAllBytes(Paths.get(args.get(1))), StandardCharsets.UTF_8))
-      val (classifier, scaler) = loadAI()
-      val calculatedAlignment = new Aligner(classifier, scaler).align(left, right)
-      mainWindow.setContent(left, right, calculatedAlignment)
+      Platform.runLater { () =>
+        val left = FullText(new String(Files.readAllBytes(Paths.get(args.get(0))), StandardCharsets.UTF_8))
+        val right = FullText(new String(Files.readAllBytes(Paths.get(args.get(1))), StandardCharsets.UTF_8))
+        val (classifier, scaler) = loadAI()
+        val calculatedAlignment = new Aligner(classifier, scaler).align(left, right)
+        mainWindow.setContent(left, right, calculatedAlignment)
+      }
     }
 
     com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {

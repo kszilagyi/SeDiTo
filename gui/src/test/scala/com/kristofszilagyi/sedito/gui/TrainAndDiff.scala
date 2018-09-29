@@ -248,8 +248,8 @@ object Train {
     val samples = readDataSetAndMeasureMetrics()
     val (training, test) = samples.splitAt(samples.size / 2)
     val (classifier, scaler) = train(training, test, logStats = true)
-    write.xstream(classifier, "aligner/resources/model.model")
-    write.xstream(scaler, "aligner/resources/scaler.scaler")
+    write.xstream(classifier, "aligner/src/main/resources/model.model")
+    write.xstream(scaler, "aligner/src/main/resources/scaler.scaler")
     val duration = Duration.between(start, Instant.now())
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
   }
