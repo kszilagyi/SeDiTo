@@ -18,7 +18,7 @@ import smile.classification.{NeuralNetwork, SoftClassifier}
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
 import smile.feature.Scaler
 import smile.validation._
-import smile.{classification, read, write}
+import smile.{classification, write}
 
 import scala.collection.JavaConverters._
 import scala.util.{Failure, Success}
@@ -158,7 +158,7 @@ object TrainAndDiff {
     val calculatedAlignment = new Aligner(classifier, scaler).align(testCase.left, testCase.right)
     logger.info("Aligning finished")
     val expected = new MainWindow()
-    expected.setTitle("Excpected")
+    expected.setTitle("Expected")
     val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
     logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
 
@@ -176,17 +176,12 @@ object TrainAndDiff {
     num
   }
 
-  @SuppressWarnings(Array(Warts.AsInstanceOf))
-  def loadAI(): (NeuralNetwork, Scaler) = {
-    val classifier = read.xstream("linear_regression.model").asInstanceOf[NeuralNetwork]
-    val scaler = read.xstream("linear_regression.scaler").asInstanceOf[Scaler]
-    (classifier, scaler)
-  }
+
 
   final class ShowOne extends Application {
     def start(stage: Stage): Unit = {
 
-      val (classifier, scaler) = loadAI()
+      val (classifier, scaler) = Main.loadAI()
       val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
         "scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp" +
         ""))
@@ -253,8 +248,8 @@ object Train {
     val samples = readDataSetAndMeasureMetrics()
     val (training, test) = samples.splitAt(samples.size / 2)
     val (classifier, scaler) = train(training, test, logStats = true)
-    write.xstream(classifier, "linear_regression.model")
-    write.xstream(scaler, "linear_regression.scaler")
+    write.xstream(classifier, "aligner/resources/model.model")
+    write.xstream(scaler, "aligner/resources/scaler.scaler")
     val duration = Duration.between(start, Instant.now())
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
   }

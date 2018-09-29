@@ -7,7 +7,7 @@ name := "SeDiTo"
 
 version := "0.1"
 
-scalaVersion := "2.12.6"
+scalaVersion := "2.12.7"
 
 
 //Skeleton copied and modified from: https://github.com/ochrons/scalajs-spa-tutorial
@@ -103,6 +103,8 @@ lazy val gui = (project in file("gui"))
     commonSettings
   ).dependsOn(common % "compile->compile;test->test")
    .dependsOn(aligner % "compile->compile;test->test")
+   .enablePlugins(JavaAppPackaging)
+
 
 
 lazy val aligner = (project in file("aligner"))

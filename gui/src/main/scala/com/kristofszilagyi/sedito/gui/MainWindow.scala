@@ -52,18 +52,28 @@ final class MainWindow {
       discard(diffPane.testCase.save(directory.toPath))
     }
   )
+
+  private val open =  menuItem("Open",
+    { _ =>
+      ()
+    }
+  )
   private val fileMenu = {
-  val m = new Menu("File")
+    val m = new Menu("File")
+    discard(m.getItems.addAll(List(open).asJava))
+    m
+  }
+  private val devMenu = {
+    val m = new Menu("Dev")
     discard(m.getItems.addAll(List(openTestCase, saveTestCase).asJava))
     m
   }
-
 
   private val url = getClass.getClassLoader.getResource("simple.css").toExternalForm
   private val stage: Stage = new Stage
   stage.setMaximized(true)
   stage.setScene{
-    val menuBar = new MenuBar(fileMenu)
+    val menuBar = new MenuBar(fileMenu, devMenu)
 
     menuBar.setUseSystemMenuBar(true)
 

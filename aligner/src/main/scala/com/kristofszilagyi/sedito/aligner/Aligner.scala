@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.aligner
 import com.kristofszilagyi.sedito.aligner.Aligner.{findPotentialMatches, resolveWithMostProbable}
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
-import com.kristofszilagyi.sedito.common.{FullText, Selection, UnambiguousWordAlignment, WordMatch}
+import com.kristofszilagyi.sedito.common._
 import org.log4s.getLogger
 import smile.classification.SoftClassifier
 import smile.feature.Scaler
@@ -14,6 +14,7 @@ object Aligner {
 
   private def resolveWithMostProbable(results: Map[Selection, Traversable[PartialResult]]): Traversable[PartialResult] = {
     val mostProbables = results.map { case (_, conflictings) =>
+      @SuppressWarnings(Array(Warts.TraversableOps))
       val best = conflictings.toSeq.maxBy(_.probability) //This should never fail because the map should never have empty list on the left side
       best
     }

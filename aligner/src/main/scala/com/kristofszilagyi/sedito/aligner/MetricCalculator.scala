@@ -211,6 +211,7 @@ object MetricCalculator {
   private def findClosestLines(potentials: Map[_, Traversable[Phase1Metrics]]) = {
     potentials flatMap { case (_, oneGroup) =>
       //we know this will never throw because it doesn't make sense to have empty collection on the right side of the map
+      @SuppressWarnings(Array(Warts.TraversableOps))
       val closest = oneGroup.minBy(_.line.normalizedLd)
       val closestNormalizedLd = closest.line.normalizedLd
       val allClosest = oneGroup.filter(p => math.abs(p.line.normalizedLd - closestNormalizedLd) < 0.0001)
@@ -250,6 +251,7 @@ object MetricCalculator {
     private def findClosestContext(potentials: Map[_, Traversable[Phase1Metrics]], contextSelector: Phase1Metrics => Double) = {
       potentials flatMap { case (_, oneGroup) =>
         //we know this will never throw because it doesn't make sense to have empty collection on the right side of the map
+        @SuppressWarnings(Array(Warts.TraversableOps))
         val closest = oneGroup.maxBy(contextSelector)
         val closestValue = contextSelector(closest)
         val allClosest = oneGroup.filter(p => math.abs(contextSelector(p) - closestValue) < 0.0001)

@@ -9,6 +9,7 @@ import com.kristofszilagyi.sedito.common.{TestCase, Warts}
 import com.kristofszilagyi.sedito.gui.TrainAndDiff._
 import org.log4s.getLogger
 
+//todo add cross-validation and maximum difference
 /**
   * Measures overall performance not only classifier performance
   */
@@ -66,7 +67,7 @@ object WholeAlgorithmMeasurer {
     logger.info("Start")
     val start = Instant.now()
     val testCases = testDirs.map(dir => dir -> readTestCase(dir))
-    val (classifier, scaler) = loadAI()
+    val (classifier, scaler) = Main.loadAI()
     val aligner = new Aligner(classifier, scaler)
     val (training, test) = testCases.splitAt(testCases.size / 2)
     val nestedTrainingResults = measure(aligner, training)
