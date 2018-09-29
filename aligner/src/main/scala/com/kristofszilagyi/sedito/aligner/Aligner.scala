@@ -7,6 +7,7 @@ import com.kristofszilagyi.sedito.common._
 import org.log4s.getLogger
 import smile.classification.SoftClassifier
 import smile.feature.Scaler
+import Aligner._
 
 final case class PartialResult(left: Selection, right: Selection, probability: Double)
 object Aligner {
@@ -48,6 +49,7 @@ object Aligner {
 final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
   def align(left: FullText, right: FullText): UnambiguousWordAlignment = {
     val metrics = MetricCalculator.calcAlignerMetrics(left, right)
+    logger.info(s"Number of metrics: ${metrics.size}")
     alignFast(metrics)
   }
 
