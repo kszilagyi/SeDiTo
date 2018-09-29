@@ -134,7 +134,7 @@ object MetricCalculator {
     }
   }
 
-  private def calcMetrics(left: String, right: String, supposedMaxLength: Int) = {
+  def calcMetrics(left: String, right: String, supposedMaxLength: Int) = {
     //todo edit this so we can set maximum
     //todo http://www.mit.edu/~andoni/papers/compEdit.pdf
     //try n-grams
@@ -170,31 +170,31 @@ object MetricCalculator {
 
   //concat all words
   //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)
-  private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
+  private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int, lineAlignmentCacher: LineAlignmentCacher) = {
     val leftWordString = leftWord.word.toText
     val rightWordString = rightWord.word.toText
-    val wordMetrics = calcMetrics(leftWordString, rightWordString, math.max(leftWordString.length, rightWordString.length))
+//    if (leftWordString.length > 1 && rightWordString.length > 1) {
+      val wordMetrics = calcMetrics(leftWordString, rightWordString, math.max(leftWordString.length, rightWordString.length))
 
-    val contextMetrics = if(wordMetrics.ldLenSim >= 0.99) {
-      Some((
-        calcContextMetrics(leftWord, rightWord, contextSize),
-        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 4),
-        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 8),
-        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 16)
-      ))
-    } else {
-      None
-    }
-    contextMetrics.map { case (full, forth, eight, sixteenth) =>
-      val leftSelection = leftWord.word
-      val leftLine = leftSelection.line
-      val rightSelection = rightWord.word
-      val rightLine = rightSelection.line
-      val lineMetrics = calcMetrics(leftLine, rightLine, math.max(leftLine.length, rightLine.length))//todo this could be cached/sped up
-      Phase1Metrics(leftSelection, rightSelection, word = wordMetrics, line = lineMetrics,
-        contextFull = full, context4th = forth, context8th = eight,  context16th = sixteenth, leftLineIdx= leftSelection.lineIdx,
-        rightLineIdx = rightSelection.lineIdx)
-    }.toList
+      val contextMetrics = if (wordMetrics.ldLenSim >= 0.99) {
+        Some((
+          calcContextMetrics(leftWord, rightWord, contextSize),
+          calcShortenedContextMetrics(leftWord, rightWord, contextSize / 4),
+          calcShortenedContextMetrics(leftWord, rightWord, contextSize / 8),
+          calcShortenedContextMetrics(leftWord, rightWord, contextSize / 16)
+        ))
+      } else {
+        None
+      }
+      contextMetrics.map { case (full, forth, eight, sixteenth) =>
+        val leftSelection = leftWord.word
+        val rightSelection = rightWord.word
+        val lineMetrics = lineAlignmentCacher.calcLineMetrics(leftSelection.lineIdx, rightSelection.lineIdx)
+        Phase1Metrics(leftSelection, rightSelection, word = wordMetrics, line = lineMetrics,
+          contextFull = full, context4th = forth, context8th = eight, context16th = sixteenth, leftLineIdx = leftSelection.lineIdx,
+          rightLineIdx = rightSelection.lineIdx)
+      }
+//    } else None
   }
 
   /**
@@ -289,6 +289,8 @@ object MetricCalculator {
     val rightWords = Wordizer.toWordIndices(right.s)
     logger.debug(s"leftWords: $leftWords")
     logger.debug(s"rightWords: $rightWords")
+    logger.debug(s"Number of leftWords: ${leftWords.size}")
+    logger.debug(s"Number of rightWords: ${rightWords.size}")
     val leftContexts = leftWords.zipWithIndex map { case (word, leftIdx) =>
       val leftBeforeContext = context(leftIdx, leftWords, -contextSize)
       val leftAfterContext = context(leftIdx, leftWords, contextSize)
@@ -302,6 +304,7 @@ object MetricCalculator {
     }
 
     val candidateCtxFinder = new CandidateFinder(rightContexts.toSet)
+    val lineAlignmentCacher = new LineAlignmentCacher(left.s.linesWithSeparators.toVector, right.s.linesWithSeparators.toVector)
     val phase1Metrics = leftContexts.flatMap { leftWord =>
       val candidates = if (leftWord.beforeContext.length < contextSize) {
         rightContexts
@@ -311,7 +314,7 @@ object MetricCalculator {
         candidateCtxFinder.possibleMatches(leftWord)
       }
       candidates.flatMap { rightWord =>
-        calcAllMetrics(leftWord, rightWord, contextSize)
+        calcAllMetrics(leftWord, rightWord, contextSize, lineAlignmentCacher)
       }
     }
     logger.debug(s"Metrics: ${phase1Metrics.mkString("\n")}")
