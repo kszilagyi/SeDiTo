@@ -304,7 +304,7 @@ object MetricCalculator {
     }
 
     val candidateCtxFinder = new CandidateFinder(rightContexts.toSet)
-    val lineAlignmentCacher = new LineAlignmentCacher(left.s.linesWithSeparators.toVector, right.s.linesWithSeparators.toVector)
+    val lineAlignmentCacher = new LineAlignmentCacher(left.s.lines.map(_.trim).toVector, right.s.lines.map(_.trim).toVector)
     val phase1Metrics = leftContexts.flatMap { leftWord =>
       val candidates = if (leftWord.beforeContext.length < contextSize) {
         rightContexts

@@ -135,7 +135,7 @@ object TrainAndDiff {
     val transformedTrainingSet = scaler.transform(trainingSet.x())
     val trainingY = trainingSet.labels()
     val classifier = classification.mlp(transformedTrainingSet, trainingY, Array(numOfAttributes - idxesToExclude.size, 5, 1), ErrorFunction.CROSS_ENTROPY, ActivationFunction.LOGISTIC_SIGMOID)
-
+    logger.info("Classifier created, creating predictions.")
     val testSet = toAttributeDataSet(test, numOfAttributes, idxesToExclude)
     val testX = scaler.transform(testSet.x())
     val testY = testSet.labels()
