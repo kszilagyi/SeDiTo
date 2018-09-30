@@ -35,4 +35,17 @@ final class WordizerTest extends FreeSpecLike {
   "splits on dash" in {
     Wordizer.toWords("apple-cheese") shouldBe Seq("apple", "-", "cheese")
   }
+
+  //with whitespaces tests
+  "2 words, 1 space - keep whitespaces" in {
+    Wordizer.toWordsAndWhiteSpaces("apple cheese") shouldBe Seq("apple", " ", "cheese")
+  }
+
+  "2 words, 2 space - keep whitespaces" in {
+    Wordizer.toWordsAndWhiteSpaces("apple  cheese") shouldBe Seq("apple", " ", " ", "cheese")
+  }
+
+  "starting with space - keep whitespaces" in {
+    Wordizer.toWordsAndWhiteSpaces(" apple cheese") shouldBe Seq(" ", "apple"," ", "cheese")
+  }
 }
