@@ -6,15 +6,15 @@ import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
 
 import scala.collection.Searching._
-
+// todo this might be O(n^2) worst case, could be improved
 object TrivialContextCorrector {
   @SuppressWarnings(Array(Warts.Var, Warts.While))
-  private def localCorrect(startLeft: Int, startRight: Int, leftWords: IndexedSeq[Selection], rightWords: IndexedSeq[Selection]) = {
+  private def localCorrect(startLeft: Int, startRight: Int, dir: Int, leftWords: IndexedSeq[Selection], rightWords: IndexedSeq[Selection]) = {
     var l = startLeft
     var r = startRight
     val builder = IndexedSeq.newBuilder[WordMatch]
     var done = false
-    while(l < leftWords.size && r < rightWords.size && !done) {
+    while(0 <= l && l < leftWords.size && 0 <= r && r < rightWords.size && !done) {
       val left = leftWords(l)
       val right = rightWords(r)
       if (left.toText ==== right.toText) {
@@ -22,24 +22,26 @@ object TrivialContextCorrector {
       } else {
         done = true
       }
-      l += 1; r += 1
+      l += dir; r += dir
     }
     builder.result()
   }
   def correct(left: FullText, right: FullText, alignment: UnambiguousWordAlignment): UnambiguousWordAlignment = {
-    val sortedMatches = alignment.matches.toIndexedSeq.sortBy(_.left)
+    val sortedMatches = alignment.matches.toIndexedSeq.sortBy(_.left) // is sorting important
     val leftWords = Wordizer.toWordIndices(left.s)
     val rightWords = Wordizer.toWordIndices(right.s)
-    val atStartRes = localCorrect(0, 0, leftWords, rightWords)
+    val atStartRes = localCorrect(0, 0, 1, leftWords, rightWords)
+    val atEndRes = localCorrect(leftWords.length - 1, rightWords.length - 1, -1, leftWords, rightWords)
     val middleRes = sortedMatches.flatMap { m =>
       val maybeLeftIdx = leftWords.search(m.left)(Ordering.by(_.absoluteFrom))
       val maybeRightIdx = rightWords.search(m.right)(Ordering.by(_.absoluteFrom))
       (maybeLeftIdx, maybeRightIdx) match {
         case (Found(leftIdx), Found(rightIdx)) =>
-          localCorrect(leftIdx, rightIdx, leftWords, rightWords)
+          localCorrect(leftIdx + 1, rightIdx + 1, 1, leftWords, rightWords) ++
+            localCorrect(leftIdx - 1, rightIdx - 1, -1, leftWords, rightWords)
         case other => fail(s"match $m is not found in texts: $other")
       }
     }
-    UnambiguousWordAlignment(alignment.matches ++ atStartRes ++ middleRes)
+    UnambiguousWordAlignment(alignment.matches ++ atStartRes ++ middleRes ++ atEndRes)
   }
 }

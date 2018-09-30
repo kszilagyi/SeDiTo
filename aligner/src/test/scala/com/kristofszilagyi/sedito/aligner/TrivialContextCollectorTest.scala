@@ -17,16 +17,17 @@ class TrivialContextCollectorTest extends FreeSpecLike {
   }
 
   "forward edge" in {
-    val full = FullText("<include")
+    val left = FullText("<include,")
+    val right = FullText("<include;")
     val m1 = WordMatch(
-      Selection.fromAbsolute(1, 8, full).getAssert,
-      Selection.fromAbsolute(1, 8, full).getAssert
+      Selection.fromAbsolute(1, 8, left).getAssert,
+      Selection.fromAbsolute(1, 8, right).getAssert
     )
     val m2 = WordMatch(
-      Selection.fromAbsolute(0, 1, full).getAssert,
-      Selection.fromAbsolute(0, 1, full).getAssert
+      Selection.fromAbsolute(0, 1, left).getAssert,
+      Selection.fromAbsolute(0, 1, right).getAssert
     )
-    TrivialContextCorrector.correct(full, full, UnambiguousWordAlignment(Set(m1))) shouldBe
+    TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set.empty)) shouldBe
       UnambiguousWordAlignment(Set(m1, m2))
   }
 
@@ -44,4 +45,38 @@ class TrivialContextCollectorTest extends FreeSpecLike {
     TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set(m1))) shouldBe
       UnambiguousWordAlignment(Set(m1, m2))
   }
+
+  "backward edge" in {
+    val left = FullText(",include>")
+    val right = FullText("/include>")
+    val m1 = WordMatch(
+      Selection.fromAbsolute(1, 8, left).getAssert,
+      Selection.fromAbsolute(1, 8, right).getAssert
+    )
+    val m2 = WordMatch(
+      Selection.fromAbsolute(8, 9, left).getAssert,
+      Selection.fromAbsolute(8, 9, right).getAssert
+    )
+    TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set.empty)) shouldBe
+      UnambiguousWordAlignment(Set(m1, m2))
+  }
+
+  "backward middle" in {
+    val left = FullText(".com.sun")
+    val right = FullText(",com.oracle")
+    val m1 = WordMatch(
+      Selection.fromAbsolute(4, 5, left).getAssert,
+      Selection.fromAbsolute(4, 5, right).getAssert
+    )
+    val m2 = WordMatch(
+      Selection.fromAbsolute(1, 4, left).getAssert,
+      Selection.fromAbsolute(1, 4, right).getAssert
+    )
+    TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set(m1))) shouldBe
+      UnambiguousWordAlignment(Set(m1, m2))
+  }
+
+  //todo test for conflicting changes
+  //todo test for self-conflicting changes
+  //spaces?
 }
