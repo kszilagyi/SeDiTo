@@ -76,6 +76,22 @@ class TrivialContextCollectorTest extends FreeSpecLike {
       UnambiguousWordAlignment(Set(m1, m2))
   }
 
+  "conflicting with an original" in {
+    val left = FullText(".com..")
+    val right = FullText(",com..")
+    val m1 = WordMatch(
+      Selection.fromAbsolute(1, 4, left).getAssert,
+      Selection.fromAbsolute(1, 4, right).getAssert
+    )
+    val m2 = WordMatch(
+      Selection.fromAbsolute(4, 5, left).getAssert,
+      Selection.fromAbsolute(5, 6, right).getAssert
+    )
+
+    TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set(m1, m2))) shouldBe
+      UnambiguousWordAlignment(Set(m1, m2))
+  }
+
   //todo test for conflicting changes
   //todo test for self-conflicting changes
   //spaces?
