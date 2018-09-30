@@ -6,7 +6,7 @@ import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
 
 import scala.collection.Searching._
-// todo this might be O(n^2) worst case, could be improved
+
 object TrivialContextCorrector {
   @SuppressWarnings(Array(Warts.Var, Warts.While))
   private def localCorrect(startLeft: Int, startRight: Int, dir: Int, leftWords: IndexedSeq[Selection], rightWords: IndexedSeq[Selection],
@@ -27,12 +27,16 @@ object TrivialContextCorrector {
     }
     builder.result()
   }
+
+  private def ll(matches: Traversable[WordMatch]) = matches.map(_.left).toSet
+  private def rr(matches: Traversable[WordMatch]) = matches.map(_.right).toSet
+
   def correct(left: FullText, right: FullText, alignment: UnambiguousWordAlignment): UnambiguousWordAlignment = {
     val sortedMatches = alignment.matches.toIndexedSeq.sortBy(_.left) // is sorting important
     val leftWords = Wordizer.toWordIndices(left.s)
     val rightWords = Wordizer.toWordIndices(right.s)
-    val leftOfMatches = sortedMatches.map(_.left).toSet
-    val rightOfMatches = sortedMatches.map(_.right).toSet
+    val leftOfMatches = ll(sortedMatches)
+    val rightOfMatches = rr(sortedMatches)
     val atStartRes = localCorrect(0, 0, 1, leftWords, rightWords, leftOfMatches, rightOfMatches)
     val atEndRes = localCorrect(leftWords.length - 1, rightWords.length - 1, -1, leftWords, rightWords, leftOfMatches, rightOfMatches)
     val middleRes = sortedMatches.flatMap { m =>
@@ -45,6 +49,8 @@ object TrivialContextCorrector {
         case other => fail(s"match $m is not found in texts: $other")
       }
     }
-    UnambiguousWordAlignment(alignment.matches ++ atStartRes ++ middleRes ++ atEndRes)
+    val leftResolvedNew = (middleRes ++ atStartRes ++ atEndRes).groupBy(_.left).values.flatMap(_.headOption)
+    val resolvedNew = leftResolvedNew.groupBy(_.right).values.flatMap(_.headOption)
+    UnambiguousWordAlignment(alignment.matches ++ resolvedNew)
   }
 }
