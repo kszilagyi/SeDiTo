@@ -29,4 +29,19 @@ class TrivialContextCollectorTest extends FreeSpecLike {
     TrivialContextCorrector.correct(full, full, UnambiguousWordAlignment(Set(m1))) shouldBe
       UnambiguousWordAlignment(Set(m1, m2))
   }
+
+  "forward middle" in {
+    val left = FullText(".com.sun")
+    val right = FullText(",com.oracle")
+    val m1 = WordMatch(
+      Selection.fromAbsolute(1, 4, left).getAssert,
+      Selection.fromAbsolute(1, 4, right).getAssert
+    )
+    val m2 = WordMatch(
+      Selection.fromAbsolute(4, 5, left).getAssert,
+      Selection.fromAbsolute(4, 5, right).getAssert
+    )
+    TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set(m1))) shouldBe
+      UnambiguousWordAlignment(Set(m1, m2))
+  }
 }
