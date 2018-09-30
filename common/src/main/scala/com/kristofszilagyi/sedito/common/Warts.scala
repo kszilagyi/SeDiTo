@@ -22,6 +22,7 @@ object Warts {
   final val StringPlusAny = "org.wartremover.warts.StringPlusAny"
   final val OptionPartial = "org.wartremover.warts.OptionPartial"
   final val TryPartial = "org.wartremover.warts.TryPartial"
+  final val While = "org.wartremover.warts.While"
 
   def discard(a: Any): Unit = {
     val _ = a
