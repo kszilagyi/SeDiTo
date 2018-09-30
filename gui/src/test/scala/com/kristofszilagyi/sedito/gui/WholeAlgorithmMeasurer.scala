@@ -3,9 +3,9 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.Path
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.{Aligner, MetricCalculator}
+import com.kristofszilagyi.sedito.aligner.{Aligner, MetricCalculator, TrivialContextCorrector}
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
-import com.kristofszilagyi.sedito.common.{TestCase, Warts}
+import com.kristofszilagyi.sedito.common.{TestCase, Warts, WordMatch}
 import com.kristofszilagyi.sedito.gui.TrainAndDiff._
 import org.log4s.getLogger
 
@@ -14,6 +14,17 @@ import org.log4s.getLogger
   * Measures overall performance not only classifier performance
   */
 object WholeAlgorithmMeasurer {
+  final case class TwoPassResults(raw: Results, withCorrection: Results) {
+    def +(other: TwoPassResults): TwoPassResults = {
+      TwoPassResults(raw = other.raw + raw, withCorrection = other.withCorrection + withCorrection)
+    }
+
+    def resultString: String = {
+      s"raw: $raw\nwithCorrection: $withCorrection"
+    }
+
+    def f1: Double = withCorrection.f1
+  }
   final case class Results(tp: Long, fp: Long, fn: Long, selPos: Long, expectedPos: Long) {
     def +(other: Results): Results = {
       Results(tp = tp + other.tp, fp = fp + other.fp, fn = fn + other.fn,
@@ -33,8 +44,8 @@ object WholeAlgorithmMeasurer {
       f"f1: $f1%.5f, tp: $tp%4d, fp: $fp%2d, fn: $fn%2d, selPos: $selPos%4d, expectedPos: $expectedPos%4d, total mispred: ${fp + fn}%2d"
     }
   }
-  final case class MultiResult(results: Seq[(Path, Results)]) {
-    def aggregate: Results = results.map(_._2).reduce(_ + _)
+  final case class MultiResult(results: Seq[(Path, TwoPassResults)]) {
+    def aggregate: TwoPassResults = results.map(_._2).reduce(_ + _)
 
     @SuppressWarnings(Array(Warts.ToString))
     def nestedResultString: String = {
@@ -52,14 +63,23 @@ object WholeAlgorithmMeasurer {
     })
   }
 
+  private def calcResults(actual: Set[WordMatch], expected: Set[WordMatch]) = {
+    val tp = actual.intersect(expected).size
+    val fp = actual.size - tp
+    val fn = (expected -- actual).size
+    Results(tp = tp.toLong, fp = fp.toLong, fn = fn.toLong, actual.size.toLong, expected.size.toLong)
+  }
+
   def measureFast(aligner: Aligner, testCases: Seq[(Path, TestCase, IndexedSeq[Metrics])]): MultiResult = {
     MultiResult(testCases.map { case (path, testCase, metrics) =>
-      val actual = aligner.alignFast(metrics).matches
+      val actualWithoutPost = aligner.alignFastWithoutPost(metrics)
+      val actualWithPost = TrivialContextCorrector.correct(testCase.left, testCase.right, actualWithoutPost)
       val expected = testCase.wordAlignment.toUnambigous.matches
-      val tp = actual.intersect(expected).size
-      val fp = actual.size - tp
-      val fn = (expected -- actual).size
-      path -> Results(tp = tp.toLong, fp = fp.toLong, fn = fn.toLong, actual.size.toLong, expected.size.toLong)
+      path ->
+        TwoPassResults(
+          calcResults(actual = actualWithoutPost.matches, expected = expected),
+          calcResults(actual = actualWithPost.matches, expected = expected)
+        )
     })
   }
 
@@ -71,11 +91,11 @@ object WholeAlgorithmMeasurer {
     val aligner = new Aligner(classifier, scaler)
     val (training, test) = testCases.splitAt(testCases.size / 2)
     val nestedTrainingResults = measure(aligner, training)
-    val trainigResults = nestedTrainingResults.aggregate
+    val trainingResults = nestedTrainingResults.aggregate
     val nestedTestResults = measure(aligner, test)
     val testResults = nestedTestResults.aggregate
 
-    logger.info(s"Training results: ${trainigResults.resultString}")
+    logger.info(s"Training results: ${trainingResults.resultString}")
     logger.info(s"Test results: ${testResults.resultString}")
     logger.info(s"Training: \n${nestedTrainingResults.nestedResultString}")
     logger.info(s"Test: \n${nestedTestResults.nestedResultString}")

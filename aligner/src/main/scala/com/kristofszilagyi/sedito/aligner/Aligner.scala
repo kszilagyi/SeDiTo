@@ -50,13 +50,19 @@ final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
   def align(left: FullText, right: FullText): UnambiguousWordAlignment = {
     val metrics = MetricCalculator.calcAlignerMetrics(left, right)
     logger.info(s"Number of metrics: ${metrics.size}")
-    alignFast(metrics)
+    alignFast(metrics, left, right)
   }
 
-  def alignFast(metrics: IndexedSeq[Metrics]): UnambiguousWordAlignment = {
+  def alignFastWithoutPost(metrics: IndexedSeq[Metrics]): UnambiguousWordAlignment = {
     val potentialMatches = findPotentialMatches(classifier, scaler, metrics)
     val leftResolved = resolveWithMostProbable(potentialMatches.groupBy(_.left))
     val bothResolved = resolveWithMostProbable(leftResolved.groupBy(_.right))
     UnambiguousWordAlignment(bothResolved.map(p => WordMatch(p.left, p.right)).toSet)
   }
+
+  def alignFast(metrics: IndexedSeq[Metrics], left: FullText, right: FullText): UnambiguousWordAlignment = {
+    val wo = alignFastWithoutPost(metrics)
+    TrivialContextCorrector.correct(left, right, wo)
+  }
+
 }
