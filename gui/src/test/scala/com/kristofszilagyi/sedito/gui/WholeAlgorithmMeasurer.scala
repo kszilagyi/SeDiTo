@@ -20,7 +20,7 @@ object WholeAlgorithmMeasurer {
     }
 
     def resultString: String = {
-      s"raw: $raw\nwithCorrection: $withCorrection"
+      s"  raw: ${raw.resultString}\n  end: ${withCorrection.resultString}"
     }
 
     def f1: Double = withCorrection.f1
@@ -50,7 +50,7 @@ object WholeAlgorithmMeasurer {
     @SuppressWarnings(Array(Warts.ToString))
     def nestedResultString: String = {
       val resultLines = results.sortBy(_._2.f1).map { case (path, result) =>
-        path.getFileName.toString.padTo(34, " ").mkString + s": ${result.resultString}"
+        path.getFileName.toString + s":\n${result.resultString}"
       }
       resultLines.mkString("\n")
     }
@@ -95,8 +95,8 @@ object WholeAlgorithmMeasurer {
     val nestedTestResults = measure(aligner, test)
     val testResults = nestedTestResults.aggregate
 
-    logger.info(s"Training results: ${trainingResults.resultString}")
-    logger.info(s"Test results: ${testResults.resultString}")
+    logger.info(s"Training results:\n${trainingResults.resultString}")
+    logger.info(s"Test results:\n${testResults.resultString}")
     logger.info(s"Training: \n${nestedTrainingResults.nestedResultString}")
     logger.info(s"Test: \n${nestedTestResults.nestedResultString}")
     val duration = Duration.between(start, Instant.now())
