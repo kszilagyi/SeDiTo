@@ -22,6 +22,7 @@ import org.fxmisc.richtext.{CodeArea, GenericStyledArea}
 import scala.collection.JavaConverters._
 import scala.compat.java8.OptionConverters.RichOptionalGeneric
 
+final case class MatchInfo(selection: Selection, probability: Option[Double])
 
 object Editor {
 
@@ -135,6 +136,9 @@ final class Editor extends CodeArea {
   @SuppressWarnings(Array(Warts.Var))
   private var _selectedForMatch: Option[Selection] = None
 
+  @SuppressWarnings(Array(Warts.Var))
+  var wordAlignmentByLine: Map[LineIdx, Traversable[MatchInfo]] = Map.empty
+
   def selectedForMatch(): Option[Selection] = _selectedForMatch
 
   def reset(): Unit = {
@@ -148,42 +152,54 @@ final class Editor extends CodeArea {
   private val popupMsg = new Label
   popupMsg.setStyle("-fx-background-color: black;" + "-fx-text-fill: white;" + "-fx-padding: 5;")
   discard(popup.getContent.add(popupMsg))
+
+  private val popupDebug = new Popup
+  private val popupDebugMsg = new Label
+  popupDebugMsg.setStyle("-fx-background-color: black;" + "-fx-text-fill: white;" + "-fx-padding: 5;")
+  discard(popupDebug.getContent.add(popupDebugMsg))
+
   setMouseOverTextDelay(Duration.ofMillis(1))
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_BEGIN, (e: MouseOverTextEvent) => {
 
     val chIdx = e.getCharacterIndex
     val posOnScreen = e.getScreenPosition
     val posInText = offsetToPosition(chIdx, Bias.Forward)
-    editTypes.get(LineIdx(posInText.getMajor)) match {
-      case Some(edit) =>
-        val cursorPosInLine = CharIdxInLine(posInText.getMinor)
-        val moveUnderCursor = edit.charEdits.collect {
-          case charEdit @ CharEdit(_, _, CharsMoved(fromTo, _)) if charEdit.contains(cursorPosInLine) =>
-            fromTo
-        }
-        assert(moveUnderCursor.size <= 1, s"$moveUnderCursor")
-        moveUnderCursor.headOption match {
-          case Some(fromTo) =>
-            popupMsg.setText(s"Moved from/to line ${fromTo.lineIdx.i + 1}")
-            popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
-            otherEditor.foreach(_.highlightChar(fromTo))
-          case None =>
-            edit.line match {
-              case LineMoved(from) =>
-                popupMsg.setText(s"Moved from/to line ${from.i + 1}")
-                popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
-                otherEditor.foreach(_.highlightLine(from))
-              case LineInserted | LineDeleted | LineSame=>
-            }
+    val line = LineIdx(posInText.getMajor)
+    val cursorPosInLine = CharIdxInLine(posInText.getMinor)
+    editTypes.get(line).foreach { edit =>
+      val moveUnderCursor = edit.charEdits.collect {
+        case charEdit @ CharEdit(_, _, CharsMoved(fromTo, _)) if charEdit.contains(cursorPosInLine) =>
+          fromTo
+      }
+      assert(moveUnderCursor.size <= 1, s"$moveUnderCursor")
+      moveUnderCursor.headOption match {
+        case Some(fromTo) =>
+          popupMsg.setText(s"Moved from/to line ${fromTo.lineIdx.i + 1}")
+          popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
+          otherEditor.foreach(_.highlightChar(fromTo))
+        case None =>
+          edit.line match {
+            case LineMoved(from) =>
+              popupMsg.setText(s"Moved from/to line ${from.i + 1}")
+              popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
+              otherEditor.foreach(_.highlightLine(from))
+            case LineInserted | LineDeleted | LineSame=>
+          }
 
-        }
+      }
+    }
 
-      case None =>
+    wordAlignmentByLine.get(line).foreach{ matches =>
+      val maybeMatchUnderCursor = matches.find(m => m.selection.from <= cursorPosInLine && cursorPosInLine < m.selection.toExcl)
+      val probability = maybeMatchUnderCursor.flatMap(_.probability).getOrElse(Double.NaN)
+      popupDebugMsg.setText(f"$probability%.2f")
+      popupDebug.show(this, posOnScreen.getX, posOnScreen.getY + 30)
     }
   })
 
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
     popup.hide()
+    popupDebug.hide()
     otherEditor.foreach(_.resetHighlighting())
   })
 

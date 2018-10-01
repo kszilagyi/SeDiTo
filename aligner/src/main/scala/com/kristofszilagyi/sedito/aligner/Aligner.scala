@@ -38,8 +38,8 @@ object Aligner {
       if(prediction ==== 1) {
         val p = 1 - probs(0) //probs(0) is the probability of the 0 label
         assert(p >= 0.5, s"p = $p")
-        Some(m -> p).toList
-      } else None.toList
+        Some(m -> p)
+      } else None
 
     }
     probabilitiesWithMetrics.map(toPartialResult).toTraversable
@@ -55,9 +55,11 @@ final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
 
   def alignFastWithoutPost(metrics: IndexedSeq[Metrics]): UnambiguousWordAlignment = {
     val potentialMatches = findPotentialMatches(classifier, scaler, metrics)
+    logger.info(s"Potentials: ${potentialMatches.size}")
     val leftResolved = resolveWithMostProbable(potentialMatches.groupBy(_.left))
     val bothResolved = resolveWithMostProbable(leftResolved.groupBy(_.right))
-    UnambiguousWordAlignment(bothResolved.map(p => WordMatch(p.left, p.right)).toSet)
+    logger.info(s"BothResolved: ${bothResolved.size}")
+    UnambiguousWordAlignment(bothResolved.map(p => WordMatch(p.left, p.right, Some(p.probability))).toSet)
   }
 
   def alignFast(metrics: IndexedSeq[Metrics], left: FullText, right: FullText): UnambiguousWordAlignment = {

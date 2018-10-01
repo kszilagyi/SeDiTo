@@ -6,6 +6,7 @@ import com.kristofszilagyi.sedito.common.AmbiguousWordAlignment.resolveConflicts
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import com.kristofszilagyi.sedito.common.Wordizer.LineAndPos
+import com.kristofszilagyi.sedito.common.utils.ExtraFormats
 import com.kristofszilagyi.sedito.common.utils.ExtraFormats._
 import spray.json._
 
@@ -91,13 +92,15 @@ object WordMatch {
       }
     }
   }
-  implicit val writer: RootJsonWriter[WordMatch] = jsonWriter2[Selection, Selection, WordMatch]
+  implicit val writer: RootJsonWriter[WordMatch] = ExtraFormats.jsonWriter[Selection, Selection, WordMatch]("left", "right")
 
 
 }
-final case class WordMatch(left: Selection, right: Selection) {
+
+@SuppressWarnings(Array(Warts.DefaultArguments))
+final case class WordMatch(left: Selection, right: Selection, probability: Option[Double] = None) {
   def readable: String = {
-    s"${left.toText} - ${right.toText}"
+    s"${left.toText} - ${right.toText} ($probability)}"
   }
 }
 

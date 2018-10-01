@@ -219,6 +219,8 @@ final class DiffPane extends StackPane {
     codeAreaRight.moveTo(0)
     codeAreaRight.requestFollowCaret()
     wordAlignment = newWordAlignment
+    codeAreaLeft.wordAlignmentByLine = newWordAlignment.matches.map(m => MatchInfo(m.left, m.probability)).groupBy(_.selection.lineIdx)
+    codeAreaRight.wordAlignmentByLine = newWordAlignment.matches.map(m => MatchInfo(m.right, m.probability)).groupBy(_.selection.lineIdx)
     val leftLines = Lines(left.s.lines.toIndexedSeq)
     val rightLines = Lines(right.s.lines.toIndexedSeq)
 
