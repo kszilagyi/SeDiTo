@@ -173,7 +173,7 @@ object MetricCalculator {
   private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int, lineAlignmentCacher: LineAlignmentCacher) = {
     val leftWordString = leftWord.word.toText
     val rightWordString = rightWord.word.toText
-//    if (leftWordString.length > 1 && rightWordString.length > 1) {
+    if (leftWordString.length > 1 && rightWordString.length > 1) {
       val wordMetrics = calcMetrics(leftWordString, rightWordString, math.max(leftWordString.length, rightWordString.length))
 
       val contextMetrics = if (wordMetrics.ldLenSim >= 0.99) {
@@ -194,7 +194,7 @@ object MetricCalculator {
           contextFull = full, context4th = forth, context8th = eight, context16th = sixteenth, leftLineIdx = leftSelection.lineIdx,
           rightLineIdx = rightSelection.lineIdx)
       }
-//    } else None
+    } else None
   }
 
   /**

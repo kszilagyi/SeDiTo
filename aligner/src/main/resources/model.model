@@ -7,60 +7,56 @@
     <smile.classification.NeuralNetwork_-Layer>
       <units>67</units>
       <output>
-        <double>0.0</double>
-        <double>0.0</double>
-        <double>0.0</double>
-        <double>1.0</double>
-        <double>3.0839528461809902E-18</double>
-        <double>0.0051813471502590676</double>
-        <double>0.0051813471502590676</double>
+        <double>0.05714285714285714</double>
+        <double>0.05714285714285714</double>
         <double>0.0</double>
         <double>1.0</double>
-        <double>0.005494505494505495</double>
+        <double>0.08333333333333333</double>
+        <double>0.24870466321243523</double>
+        <double>0.24870466321243523</double>
+        <double>0.0</double>
+        <double>1.0</double>
+        <double>0.26373626373626374</double>
         <double>0.7407407407407407</double>
         <double>0.7407407407407407</double>
         <double>0.0</double>
         <double>1.0</double>
         <double>0.7407407407407407</double>
-        <double>0.0</double>
+        <double>0.022058823529411766</double>
         <double>0.7352941176470589</double>
+        <double>0.0</double>
+        <double>1.0</double>
+        <double>0.022058823529411766</double>
         <double>1.0</double>
         <double>1.0</double>
         <double>0.0</double>
         <double>1.0</double>
         <double>1.0</double>
-        <double>0.0</double>
-        <double>1.0</double>
-        <double>1.0</double>
-        <double>0.0</double>
-        <double>1.0</double>
-        <double>1.0</double>
+        <double>0.12</double>
         <double>1.0</double>
         <double>0.0</double>
         <double>1.0</double>
-        <double>1.0</double>
-        <double>0.0</double>
+        <double>0.12</double>
         <double>1.0</double>
         <double>1.0</double>
         <double>0.0</double>
         <double>1.0</double>
         <double>1.0</double>
+        <double>0.25</double>
         <double>1.0</double>
         <double>0.0</double>
         <double>1.0</double>
-        <double>1.0</double>
-        <double>0.0</double>
-        <double>1.0</double>
-        <double>1.0</double>
-        <double>0.0</double>
-        <double>1.0</double>
+        <double>0.25</double>
         <double>1.0</double>
         <double>1.0</double>
         <double>0.0</double>
         <double>1.0</double>
         <double>1.0</double>
+        <double>0.5</double>
         <double>1.0</double>
+        <double>0.0</double>
         <double>1.0</double>
+        <double>0.5</double>
         <double>1.0</double>
         <double>1.0</double>
         <double>1.0</double>
@@ -74,800 +70,804 @@
         <double>1.0</double>
         <double>1.0</double>
         <double>0.0</double>
+        <double>0.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
+        <double>1.0</double>
         <double>1.0</double>
       </output>
       <error>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-2.9991506771735203E-28</double>
-        <double>-4.658858737598442E-10</double>
-        <double>-5.568550333957572E-10</double>
-        <double>-0.0</double>
-        <double>0.0</double>
-        <double>-3.9786619631179533E-10</double>
-        <double>-4.862873014901708E-10</double>
-        <double>1.0518831143076273E-10</double>
-        <double>-0.0</double>
-        <double>0.0</double>
-        <double>-5.117612151761933E-10</double>
-        <double>-2.338443931620665E-10</double>
-        <double>-6.433708335382513E-10</double>
-        <double>0.0</double>
-        <double>0.0</double>
-        <double>4.1797772273352226E-10</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>0.0</double>
+        <double>-1.3646057804751013E-7</double>
+        <double>-1.3934633976899842E-7</double>
         <double>0.0</double>
         <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>0.0</double>
-        <double>0.0</double>
-        <double>-0.0</double>
-        <double>0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>-0.0</double>
-        <double>0.0</double>
-        <double>0.0</double>
-        <double>0.0</double>
+        <double>-3.348351587860268E-7</double>
+        <double>-5.756126473452772E-7</double>
+        <double>-5.955293053686328E-7</double>
+        <double>2.6690935182241105E-7</double>
+        <double>8.405630006427738E-8</double>
+        <double>1.5851927256382985E-8</double>
+        <double>-2.860501210648287E-7</double>
+        <double>-1.1965241831236884E-7</double>
+        <double>1.0178063860924656E-6</double>
+        <double>-1.1037682910704805E-8</double>
+        <double>-6.779426207292476E-9</double>
+        <double>-5.048048744954234E-7</double>
+        <double>2.2067960871479546E-7</double>
+        <double>6.729932145041275E-7</double>
+        <double>-1.536706311655865E-8</double>
+        <double>-1.0647591639261862E-8</double>
+        <double>1.283198629233236E-7</double>
+        <double>9.344330488118463E-8</double>
+        <double>2.8993906174945442E-8</double>
+        <double>-8.767535183101976E-9</double>
+        <double>-8.162504559471569E-9</double>
+        <double>2.0667372811090473E-7</double>
+        <double>4.2118763963245334E-7</double>
+        <double>1.6530145900529512E-7</double>
+        <double>-5.045614917201058E-8</double>
+        <double>-5.130463602561849E-8</double>
+        <double>-2.4775154305926273E-7</double>
+        <double>-2.3066170994519383E-7</double>
+        <double>5.445863260435037E-7</double>
+        <double>-2.0424981437252846E-8</double>
+        <double>-1.3101570865038921E-8</double>
+        <double>8.323890219002887E-7</double>
+        <double>7.228628135788176E-7</double>
+        <double>-1.5585429500461133E-8</double>
+        <double>-1.494993690961833E-7</double>
+        <double>-1.4716130217461729E-7</double>
+        <double>8.424910393985966E-7</double>
+        <double>7.869455514320293E-7</double>
+        <double>-3.0497642678119496E-7</double>
+        <double>-3.293913327149601E-8</double>
+        <double>-3.951849901385461E-8</double>
+        <double>5.936196100556505E-7</double>
+        <double>3.631322533210214E-7</double>
+        <double>3.5643632093775634E-7</double>
+        <double>-1.0672075201065401E-7</double>
+        <double>-1.704129477572158E-7</double>
         <double>-0.0</double>
         <double>0.0</double>
         <double>-0.0</double>
-        <double>0.0</double>
-        <double>0.0</double>
-        <double>0.0</double>
-        <double>0.0</double>
-        <double>0.0</double>
         <double>-0.0</double>
-        <double>0.0</double>
+        <double>-0.0</double>
+        <double>-0.0</double>
+        <double>-0.0</double>
+        <double>-0.0</double>
+        <double>-0.0</double>
         <double>0.0</double>
         <double>-0.0</double>
         <double>-0.0</double>
         <double>0.0</double>
         <double>-0.0</double>
+        <double>-0.0</double>
+        <double>-0.0</double>
+        <double>-0.0</double>
+        <double>0.0</double>
       </error>
       <outer-class reference="../../.."/>
     </smile.classification.NeuralNetwork_-Layer>
     <smile.classification.NeuralNetwork_-Layer>
       <units>5</units>
       <output>
-        <double>0.026709547389636826</double>
-        <double>2.034135387577008E-10</double>
-        <double>2.9434498130209564E-11</double>
-        <double>0.006587350526855599</double>
-        <double>0.017487059034292863</double>
+        <double>0.01628898510354389</double>
+        <double>2.4459978923127114E-6</double>
+        <double>0.001195294455492297</double>
+        <double>4.014288625076002E-6</double>
+        <double>0.9999998108317996</double>
         <double>1.0</double>
       </output>
       <error>
-        <double>-4.114499235839625E-10</double>
-        <double>-3.780529233832091E-16</double>
-        <double>-4.44173988188542E-15</double>
-        <double>-2.320209332136315E-9</double>
-        <double>-1.6300356899413714E-11</double>
-        <double>0.0</double>
+        <double>2.0396676371265936E-10</double>
+        <double>4.3975203450725495E-6</double>
+        <double>2.9496802780778743E-9</double>
+        <double>3.515354466450672E-11</double>
+        <double>-2.247189131763069E-6</double>
+        <double>-0.0</double>
       </error>
       <weight>
         <double-array>
-          <double>0.5636380486755023</double>
-          <double>0.7709487781570655</double>
-          <double>1.703526672273609</double>
-          <double>-0.5479514557196915</double>
-          <double>0.2995587953349272</double>
-          <double>-0.7050033710366381</double>
-          <double>-0.6158309175279728</double>
-          <double>5.125786806262892</double>
-          <double>-3.5929523946946387</double>
-          <double>2.7517029609981187</double>
-          <double>0.1591908923977241</double>
-          <double>0.503481302392745</double>
-          <double>1.282429721313356</double>
-          <double>-0.5514852023995112</double>
-          <double>0.10987501448859657</double>
-          <double>-1.3878459502218434</double>
-          <double>1.6207668396807853</double>
-          <double>-0.6875889113954442</double>
-          <double>2.685262235128716</double>
-          <double>-0.2184424761194826</double>
-          <double>2.2979466490008567</double>
-          <double>1.8884214428254917</double>
-          <double>-0.34327475660609946</double>
-          <double>-0.24715431371627952</double>
-          <double>0.015208890075032832</double>
-          <double>1.7873322282161161</double>
-          <double>2.1492370537200896</double>
-          <double>-0.8242795923686367</double>
-          <double>-0.06705352584039952</double>
-          <double>-1.2046418740932567</double>
-          <double>1.9593950485492269</double>
-          <double>1.5925524928998704</double>
-          <double>-0.15838591996067916</double>
-          <double>-0.5425754321825955</double>
-          <double>-0.2789530447076447</double>
-          <double>1.1624339645057318</double>
-          <double>1.1575545872917972</double>
-          <double>0.1428091929845586</double>
-          <double>-0.9037280001473768</double>
-          <double>-1.909561643045047</double>
-          <double>0.8537558509605876</double>
-          <double>0.7700710144141809</double>
-          <double>0.9337790949519208</double>
-          <double>-0.6532420051529683</double>
-          <double>-0.304262140498019</double>
-          <double>1.5356730733187707</double>
-          <double>1.6751970142338402</double>
-          <double>-0.12154590420869942</double>
-          <double>-1.1759602423725037</double>
-          <double>-1.807780325235035</double>
-          <double>-6.26656464399158</double>
-          <double>-1.0883420549150424</double>
-          <double>-0.9659663281254698</double>
-          <double>-1.0480848467188213</double>
-          <double>-1.3363960950006133</double>
-          <double>0.9768719623812477</double>
-          <double>-0.6317163391654975</double>
-          <double>-0.8041294403077918</double>
-          <double>-0.003277619006770924</double>
-          <double>-0.7020358217073775</double>
-          <double>0.19255897289778073</double>
-          <double>-0.32720376674062085</double>
-          <double>0.8003614702785004</double>
-          <double>-0.13744690582580207</double>
-          <double>-2.091092605974738</double>
-          <double>-0.3268116902238763</double>
-          <double>-9.68021177676484</double>
-          <double>1.7026619155913694</double>
+          <double>-0.5663295688775469</double>
+          <double>-0.35901883939602147</double>
+          <double>1.5993728191443661</double>
+          <double>0.19842060868397307</double>
+          <double>-0.758571288745958</double>
+          <double>-0.48473018993695305</double>
+          <double>-0.3955577364282782</double>
+          <double>0.5995534896039448</double>
+          <double>-1.555106992074477</double>
+          <double>0.2432255511360556</double>
+          <double>-1.0245478777426396</double>
+          <double>-0.9682267846162063</double>
+          <double>3.087763068253672</double>
+          <double>0.022256547105919233</double>
+          <double>-0.1342534925061841</double>
+          <double>0.40158829887714875</double>
+          <double>1.0347106471085377</double>
+          <double>-0.004708011948983293</double>
+          <double>0.3917391322430703</double>
+          <double>-0.44926620187930283</double>
+          <double>0.7494111262618586</double>
+          <double>0.6286359981896787</double>
+          <double>1.2894715259779876</double>
+          <double>-0.0750852000373091</double>
+          <double>-0.2193037651975136</double>
+          <double>0.5331756320911811</double>
+          <double>0.21467109224638778</double>
+          <double>1.215005902498564</double>
+          <double>-1.8295941026199127</double>
+          <double>-1.8999206908489574</double>
+          <double>1.251574604178684</double>
+          <double>1.0920166785003438</double>
+          <double>0.753028760220435</double>
+          <double>0.4436948835479447</double>
+          <double>0.47493873936220615</double>
+          <double>0.9251182017981268</double>
+          <double>0.3576989205218966</double>
+          <double>1.056324329265331</double>
+          <double>-0.647093079560046</double>
+          <double>-0.6448053787568309</double>
+          <double>0.9110894307317368</double>
+          <double>1.0432863499028102</double>
+          <double>1.0788446869439527</double>
+          <double>0.8395166334330844</double>
+          <double>0.9635650420224622</double>
+          <double>0.9375203601626061</double>
+          <double>0.5277844110681871</double>
+          <double>1.081633185225382</double>
+          <double>0.34125487464957266</double>
+          <double>0.6130799291180012</double>
+          <double>-3.189115259660684</double>
+          <double>-0.1602924233642052</double>
+          <double>0.4116463515095199</double>
+          <double>0.0699401865253504</double>
+          <double>-2.0061228691947535</double>
+          <double>0.8343602367085678</double>
+          <double>-2.0669246983387066</double>
+          <double>-2.469718177856363</double>
+          <double>-0.036771745807335415</double>
+          <double>1.69493187644323</double>
+          <double>-0.2077444080222242</double>
+          <double>0.2913837648910048</double>
+          <double>0.44564696938491216</double>
+          <double>-1.1056122363975704</double>
+          <double>-0.7079231613446098</double>
+          <double>-1.6436681582569586</double>
+          <double>-2.5378095732337904</double>
+          <double>1.902931248778609</double>
         </double-array>
         <double-array>
-          <double>-0.7194913778270507</double>
-          <double>-0.7636513823811683</double>
-          <double>1.9377230049402336</double>
-          <double>-2.138838757543928</double>
-          <double>-0.7022239924333564</double>
-          <double>-2.4228643436488455</double>
-          <double>-2.4897504996067066</double>
-          <double>0.6931200309743073</double>
-          <double>3.5766024838320942</double>
-          <double>3.1581782293235374</double>
-          <double>-1.9016415453304216</double>
-          <double>-0.254663201650114</double>
-          <double>1.3010725568520225</double>
-          <double>-1.040312663474886</double>
-          <double>-1.0765635570078973</double>
-          <double>-2.3557689377820252</double>
-          <double>0.05539802115816052</double>
-          <double>0.8296794391311763</double>
-          <double>-1.061140121153353</double>
-          <double>-1.3301835345738435</double>
-          <double>-0.8830826475586988</double>
-          <double>-0.7495919511080423</double>
-          <double>0.8363573258738172</double>
-          <double>-1.2420430690321695</double>
-          <double>-1.210589927778863</double>
-          <double>-1.4504747426142555</double>
-          <double>-0.5502873326533512</double>
-          <double>1.118367519724226</double>
-          <double>-0.4509308636033646</double>
-          <double>-0.6093452480886579</double>
-          <double>-0.7530115572995056</double>
-          <double>-0.6633983679078779</double>
-          <double>0.8271911448633024</double>
-          <double>-0.8368221846298454</double>
-          <double>-0.6718640475706501</double>
-          <double>-0.27571719869726363</double>
-          <double>-0.06549210212275185</double>
-          <double>0.3468636291426705</double>
-          <double>-1.1245050157294123</double>
-          <double>-1.2536812631786842</double>
-          <double>-0.3123037388532176</double>
-          <double>-0.3619454474406469</double>
-          <double>0.3896165001177727</double>
-          <double>0.8467290872749034</double>
-          <double>0.7960174088732904</double>
-          <double>-0.36249773859448586</double>
-          <double>-0.2803908766089557</double>
-          <double>0.4481778691254328</double>
-          <double>0.6786229137347987</double>
-          <double>0.3499659223853363</double>
-          <double>0.4456181815010352</double>
-          <double>-1.0426866644684796</double>
-          <double>-1.2149165635383383</double>
-          <double>0.11073487577719907</double>
-          <double>-2.2584142470393127</double>
-          <double>-0.11596667119126355</double>
-          <double>-1.472392098456659</double>
-          <double>0.5422903805073334</double>
-          <double>-2.0212174181360543</double>
-          <double>0.6292364844700646</double>
-          <double>-2.82380705828288</double>
-          <double>-0.18554095673650817</double>
-          <double>-1.925255670869947</double>
-          <double>-0.18616474704735908</double>
-          <double>-2.506998076913875</double>
-          <double>-0.26283139073893924</double>
-          <double>4.607073089861512</double>
-          <double>0.09010664871120032</double>
+          <double>-0.9503195019382298</double>
+          <double>-0.9944795064923566</double>
+          <double>1.3849413480532586</double>
+          <double>-1.0686088743989406</double>
+          <double>-0.8968734677180161</double>
+          <double>-1.7219068641331932</double>
+          <double>-1.7887930200916067</double>
+          <double>-0.055305334000473626</double>
+          <double>3.6674070756120063</double>
+          <double>1.3158771895349282</double>
+          <double>-0.30518033887296653</double>
+          <double>-0.09404392253778132</double>
+          <double>1.176467881911178</double>
+          <double>-0.8569043284666918</double>
+          <double>-0.6200730132068528</double>
+          <double>-0.6892729307366652</double>
+          <double>0.2038509317654684</double>
+          <double>0.5565677396817142</double>
+          <double>-0.4083372666401948</double>
+          <double>-0.4979535237795672</double>
+          <double>0.07882084937335958</double>
+          <double>-0.07090748232915844</double>
+          <double>0.4565686727153764</double>
+          <double>-1.0327574064859217</double>
+          <double>-0.9332333736471314</double>
+          <double>-0.0353469451628203</double>
+          <double>0.3338480242954884</double>
+          <double>0.26169688602450997</double>
+          <double>-1.0152492341414845</double>
+          <double>-0.956915322915797</double>
+          <double>-0.45918602822237786</double>
+          <double>-0.41571336670194997</double>
+          <double>0.9454279959072525</double>
+          <double>-0.6532783678635001</double>
+          <double>-0.4764564356047503</double>
+          <double>0.29612054068925764</double>
+          <double>0.21150398445647303</double>
+          <double>0.162039364699414</double>
+          <double>-0.764201023051489</double>
+          <double>-0.7345723729553761</double>
+          <double>0.8420194439906996</double>
+          <double>0.7828487418497535</double>
+          <double>-0.3782100972217753</double>
+          <double>-0.19526152768133775</double>
+          <double>-0.24521414445225784</double>
+          <double>0.1507263855024654</double>
+          <double>-0.03039945148932019</double>
+          <double>0.3314368035560388</double>
+          <double>-0.1575914146975985</double>
+          <double>-0.2846656958418374</double>
+          <double>-2.4282594942422384</double>
+          <double>1.552451199264157</double>
+          <double>-1.408087535367911</double>
+          <double>-0.3776897196939443</double>
+          <double>-0.8505851199187989</double>
+          <double>-0.6017105669404091</double>
+          <double>-2.1743995449683617</double>
+          <double>0.18973671650849905</double>
+          <double>-0.7419602642687572</double>
+          <double>1.2149810903807543</double>
+          <double>-2.1880364611811065</double>
+          <double>-0.16415512177572822</double>
+          <double>-0.6598873293252386</double>
+          <double>-0.7064095451765723</double>
+          <double>-1.4476885349845872</double>
+          <double>0.3410009900247136</double>
+          <double>0.20035467696353745</double>
+          <double>0.4687856179927065</double>
         </double-array>
         <double-array>
-          <double>-0.09384390131857097</double>
-          <double>-0.14511039573715992</double>
-          <double>2.3433282353474936</double>
-          <double>-2.3742994711286256</double>
-          <double>-0.7147910289683206</double>
-          <double>-4.2459508907918355</double>
-          <double>-4.141527485763846</double>
-          <double>2.7534119428198967</double>
-          <double>2.1276030044000454</double>
-          <double>7.093130703968931</double>
-          <double>-1.7235735202926095</double>
-          <double>1.8182538177047305</double>
-          <double>0.35590491140964614</double>
-          <double>-2.6042871665743403</double>
-          <double>-2.7178259261517725</double>
-          <double>-0.9704043516667823</double>
-          <double>1.3990064120534664</double>
-          <double>-0.5524720436628867</double>
-          <double>-3.076132639002256</double>
-          <double>-2.9889297943499678</double>
-          <double>0.9900757910816513</double>
-          <double>1.7350154114412453</double>
-          <double>-0.9020563395089956</double>
-          <double>-0.741897333647161</double>
-          <double>-1.0716504555206667</double>
-          <double>1.0004469225469894</double>
-          <double>1.6861526108073754</double>
-          <double>-0.6131772260069235</double>
-          <double>-1.426225245580092</double>
-          <double>-1.5792298358951822</double>
-          <double>0.035943024351419245</double>
-          <double>0.19044355127403148</double>
-          <double>0.7296319803065762</double>
-          <double>-0.3593416716292106</double>
-          <double>-0.29825332607109456</double>
-          <double>-0.3532720178241952</double>
-          <double>-0.14698167827047287</double>
-          <double>1.150867859996813</double>
-          <double>0.5257307985280271</double>
-          <double>0.5624132519409485</double>
-          <double>1.3509595690118332</double>
-          <double>1.37577618164732</double>
-          <double>-0.7888169298819343</double>
-          <double>-1.1613226132951584</double>
-          <double>-1.3486700562363538</double>
-          <double>0.5343743970981779</double>
-          <double>0.5256980383433626</double>
-          <double>0.2966860361180972</double>
-          <double>-0.02709028660736026</double>
-          <double>0.04112612277732412</double>
-          <double>-0.3801061756138639</double>
-          <double>-2.1118108826129722</double>
-          <double>0.7016480131076263</double>
-          <double>-2.2257305460756447</double>
-          <double>2.7521097548802897</double>
-          <double>-4.489548473416277</double>
-          <double>0.32400382055520394</double>
-          <double>-3.7191971674376236</double>
-          <double>-0.42288789613453187</double>
-          <double>-2.697152870620702</double>
-          <double>0.8835892089129135</double>
-          <double>-3.4679842602352666</double>
-          <double>0.9686433865487882</double>
-          <double>-3.3203380952907002</double>
-          <double>0.2344882505464585</double>
-          <double>-3.28386814090117</double>
-          <double>-0.6359559290921825</double>
-          <double>0.735012528679356</double>
+          <double>-0.1834466594537244</double>
+          <double>-0.23471315387233704</double>
+          <double>1.5534233703488105</double>
+          <double>-0.4284998516286715</double>
+          <double>-0.5946517151820043</double>
+          <double>-0.7214967164311814</double>
+          <double>-0.617073311402639</double>
+          <double>2.2777843898111114</double>
+          <double>-2.2229422665948193</double>
+          <double>-0.15847886605978512</double>
+          <double>-0.2920705625313673</double>
+          <double>-0.12475819155801883</double>
+          <double>1.6614579655895705</double>
+          <double>-1.7598371269991697</double>
+          <double>-1.5349473024493219</double>
+          <double>-0.934038314507632</double>
+          <double>1.0165420239329976</double>
+          <double>0.22715967605182627</double>
+          <double>-1.585659425923174</double>
+          <double>-2.2045571768324375</double>
+          <double>0.769221989143481</double>
+          <double>0.922546136446945</double>
+          <double>0.6166832842541016</double>
+          <double>-1.4888722647060895</double>
+          <double>-1.6326938223770462</double>
+          <double>0.9620672098498877</double>
+          <double>1.7636674312540668</double>
+          <double>-0.060165620844378244</double>
+          <double>0.09926448111881377</double>
+          <double>-0.4146069386222537</double>
+          <double>0.4727867422784467</double>
+          <double>0.5132918984552646</double>
+          <double>1.2217637965133938</double>
+          <double>0.19372704947322947</double>
+          <double>0.30088514248331855</double>
+          <double>0.33904816555805</double>
+          <double>0.7469429051427212</double>
+          <double>0.9431985735643225</double>
+          <double>-0.9237163228771551</double>
+          <double>-1.1656385165851417</double>
+          <double>0.1559930374470587</double>
+          <double>0.14732802757922459</double>
+          <double>1.2737680348496885</double>
+          <double>0.3573965445443425</double>
+          <double>0.18731139140531491</double>
+          <double>-0.3836601942877985</double>
+          <double>-0.3225675003343136</double>
+          <double>1.855280027403784</double>
+          <double>-0.6899433320462826</double>
+          <double>-0.7133853816531602</double>
+          <double>0.48727184659693606</double>
+          <double>-1.5794991929217252</double>
+          <double>-1.112512452037258</double>
+          <double>0.8432493126535375</double>
+          <double>-0.012232048016377782</double>
+          <double>-2.152069594824274</double>
+          <double>0.48566082649913284</double>
+          <double>-0.7930476272559567</double>
+          <double>0.8704185599553227</double>
+          <double>0.24511274407533687</double>
+          <double>1.0749978590678722</double>
+          <double>0.35468048017559545</double>
+          <double>0.5828430613279905</double>
+          <double>0.744195646832895</double>
+          <double>0.8292253469973978</double>
+          <double>1.3663772395419596</double>
+          <double>-2.8932848058758647</double>
+          <double>1.587019860434413</double>
         </double-array>
         <double-array>
-          <double>0.5013203143156723</double>
-          <double>0.5206153668135914</double>
-          <double>1.414503038772469</double>
-          <double>1.1876754838205223</double>
-          <double>-0.002610714072951908</double>
-          <double>1.4214106424508914</double>
-          <double>1.6586673336048912</double>
-          <double>1.759952009747681</double>
-          <double>-9.809519258643208</double>
-          <double>0.5654915417614363</double>
-          <double>1.1494723430553153</double>
-          <double>-0.33427404285075224</double>
-          <double>3.2776553546250122</double>
-          <double>-0.6820392828569489</double>
-          <double>1.219536889032126</double>
-          <double>0.8614581314533508</double>
-          <double>1.3643886648752028</double>
-          <double>0.015934051369415086</double>
-          <double>-0.8752917317938094</double>
-          <double>-1.0236080933411376</double>
-          <double>1.3156300059312436</double>
-          <double>0.5332673773213337</double>
-          <double>2.13721787658668</double>
-          <double>0.1319810977831075</double>
-          <double>0.866248259581315</double>
-          <double>1.1591191373458423</double>
-          <double>1.890495105252935</double>
-          <double>0.6578509035998811</double>
-          <double>-2.70855009420334</double>
-          <double>-3.1725686486778653</double>
-          <double>1.432927066272992</double>
-          <double>0.9876844640318064</double>
-          <double>1.645992313978271</double>
-          <double>0.3540728780191966</double>
-          <double>0.7986399181975959</double>
-          <double>1.1929376700779</double>
-          <double>1.4880566791823568</double>
-          <double>0.9411236447959779</double>
-          <double>-0.6711469956964251</double>
-          <double>-0.8533847641990787</double>
-          <double>-0.0857218940251498</double>
-          <double>-0.6059349459376141</double>
-          <double>3.0918082566298715</double>
-          <double>0.4934809853395223</double>
-          <double>0.9031441150122728</double>
-          <double>1.4162323143970783</double>
-          <double>1.206899314013587</double>
-          <double>1.0069434955138252</double>
-          <double>0.3309448342011327</double>
-          <double>0.4341458234977139</double>
-          <double>-1.3228757263011857</double>
-          <double>-0.11537087761467671</double>
-          <double>0.12460659475704226</double>
-          <double>0.4835014538604798</double>
-          <double>-3.4836494954483435</double>
-          <double>0.3624433983035727</double>
-          <double>-3.3597400471685206</double>
-          <double>-2.2355291795100207</double>
-          <double>-2.5645198382720933</double>
-          <double>-0.19720729870752424</double>
-          <double>-0.10061337558538902</double>
-          <double>1.5243385044799067</double>
-          <double>-1.188109642004245</double>
-          <double>-0.8563929667233058</double>
-          <double>0.8651355851479905</double>
-          <double>0.18946687520111102</double>
-          <double>-5.740098413450115</double>
-          <double>3.224221386204192</double>
+          <double>0.6460396311477272</double>
+          <double>0.6653346836456386</double>
+          <double>0.9950897790667319</double>
+          <double>0.40698555410596593</double>
+          <double>0.2738687193472074</double>
+          <double>-0.8036982922810589</double>
+          <double>-0.5664416011268661</double>
+          <double>3.3425503913434667</double>
+          <double>-1.3766600909251911</double>
+          <double>0.41846018154938175</double>
+          <double>0.506636665336511</double>
+          <double>0.7042759492555534</double>
+          <double>0.7260195349950048</double>
+          <double>1.2568399226685623</double>
+          <double>0.3653987013151848</double>
+          <double>0.5718670916023031</double>
+          <double>1.7272827272037616</double>
+          <double>-0.5016453377089398</double>
+          <double>0.9505753135302565</double>
+          <double>0.2369742383661514</double>
+          <double>0.05342352860939766</double>
+          <double>-0.05319876865173782</double>
+          <double>2.064016696171934</double>
+          <double>0.24538663293962684</double>
+          <double>0.3582757797474654</double>
+          <double>2.2426751843392</double>
+          <double>2.4988979738313044</double>
+          <double>-0.49639802903748637</double>
+          <double>-0.0563672472517797</double>
+          <double>-0.2346709398812596</double>
+          <double>-0.6842650449170246</double>
+          <double>-0.6571168645164415</double>
+          <double>2.654001714497207</double>
+          <double>0.10502775567318803</double>
+          <double>0.23470209929515629</double>
+          <double>0.5436952331405596</double>
+          <double>0.6802296368544267</double>
+          <double>1.2555422190414134</double>
+          <double>-1.1307620139684922</double>
+          <double>-1.1835827456409356</double>
+          <double>-0.12438989492243666</double>
+          <double>-0.1868563076555299</double>
+          <double>2.005419905668708</double>
+          <double>0.4401811648011761</double>
+          <double>0.535667493089752</double>
+          <double>0.2381298641564501</double>
+          <double>0.33764151053911867</double>
+          <double>1.389214714912468</double>
+          <double>-0.21495708477089942</double>
+          <double>-0.4277106968938216</double>
+          <double>-1.211020954608755</double>
+          <double>-0.63756789621846</double>
+          <double>-1.4753920118249704</double>
+          <double>-1.6981865359049335</double>
+          <double>-3.7197300653082324</double>
+          <double>-1.2953707028077026</double>
+          <double>0.057051347016799585</double>
+          <double>-0.1573906100626555</double>
+          <double>-0.4706243373042905</double>
+          <double>-0.9666081522844103</double>
+          <double>0.6239805905767124</double>
+          <double>-1.468107802823172</double>
+          <double>0.6706157344282975</double>
+          <double>-1.4547503893891027</double>
+          <double>-0.6835546981140943</double>
+          <double>1.07211123330955</double>
+          <double>-8.421175857617692</double>
+          <double>2.0975788585129145</double>
         </double-array>
         <double-array>
-          <double>-0.7565167061482182</double>
-          <double>-0.796713802533929</double>
-          <double>2.403253855676111</double>
-          <double>-0.49849401313617536</double>
-          <double>-1.22343259989999</double>
-          <double>-0.08165361119105446</double>
-          <double>-0.08874810053984225</double>
-          <double>2.0779725432700094</double>
-          <double>0.33002993597493796</double>
-          <double>0.7473952210077496</double>
-          <double>-2.6757548548727708</double>
-          <double>-0.8104690066905545</double>
-          <double>4.568458128271981</double>
-          <double>-2.5933699221926476</double>
-          <double>-2.76244512130579</double>
-          <double>-2.0770426934918707</double>
-          <double>0.1467320327965063</double>
-          <double>2.0468268529648896</double>
-          <double>-1.1791627904328446</double>
-          <double>-1.6291560308752524</double>
-          <double>0.7299708903639179</double>
-          <double>0.7911296698788506</double>
-          <double>1.8256220776742607</double>
-          <double>-1.8623763262609416</double>
-          <double>-1.7059284894319515</double>
-          <double>2.071709273209793</double>
-          <double>2.0563597728277796</double>
-          <double>0.2587487004609878</double>
-          <double>0.1678965007800275</double>
-          <double>0.45450437756418055</double>
-          <double>1.8014127122662111</double>
-          <double>1.5093599867295644</double>
-          <double>0.9544229845655862</double>
-          <double>-0.8881305573496625</double>
-          <double>-0.758563184945784</double>
-          <double>0.6778439610182648</double>
-          <double>0.5228441098110693</double>
-          <double>1.826910006164251</double>
-          <double>-0.9110409553489587</double>
-          <double>-0.7339092631100271</double>
-          <double>1.1062480234182153</double>
-          <double>0.8882858605315468</double>
-          <double>1.619712336011324</double>
-          <double>-1.304915565607794</double>
-          <double>-1.0366611325308426</double>
-          <double>0.5385246961617742</double>
-          <double>0.28884879396360075</double>
-          <double>2.0579038756240613</double>
-          <double>-1.5156942098560837</double>
-          <double>-1.2667006887519936</double>
-          <double>-1.8854557152688103</double>
-          <double>-0.17324747099713333</double>
-          <double>-1.1666970882279322</double>
-          <double>-0.7731047235213176</double>
-          <double>-0.2220681725727358</double>
-          <double>-2.6497888177691027</double>
-          <double>2.439494727193764</double>
-          <double>-0.806683052825421</double>
-          <double>0.1945469182542788</double>
-          <double>0.13398012516399974</double>
-          <double>1.5951585601932752</double>
-          <double>-2.8185275980036733</double>
-          <double>1.0302776267316354</double>
-          <double>0.6369777488881802</double>
-          <double>0.4902005411989592</double>
-          <double>-0.40072462323633184</double>
-          <double>-3.9017040502647746</double>
-          <double>2.736098912334467</double>
+          <double>0.3279256832970004</double>
+          <double>0.2877285869112957</double>
+          <double>-2.431933286881837</double>
+          <double>2.5871571921642564</double>
+          <double>1.0838632063819427</double>
+          <double>0.20290211622931123</double>
+          <double>0.19580762688053263</double>
+          <double>-0.7385965662538536</double>
+          <double>0.25351663455430307</double>
+          <double>-1.3693443819477433</double>
+          <double>0.865063678796616</double>
+          <double>0.42757664408129975</double>
+          <double>-1.7340068846109475</double>
+          <double>1.7220581765977967</double>
+          <double>1.5758420963301858</double>
+          <double>0.3704423137263095</double>
+          <double>-0.35174267685002253</double>
+          <double>-0.7290277967705395</double>
+          <double>1.8697758760654708</double>
+          <double>1.5128871161829889</double>
+          <double>-1.3317184439706022</double>
+          <double>-1.2203641367023612</double>
+          <double>0.5584187879802732</double>
+          <double>0.4194221863916502</double>
+          <double>0.44543652735672384</double>
+          <double>-0.7521239984874323</double>
+          <double>-0.7388784531830043</double>
+          <double>-0.03517876426051697</double>
+          <double>1.1231296588081232</double>
+          <double>1.2888966753521442</double>
+          <double>0.5454096410897555</double>
+          <double>0.5309641942760734</double>
+          <double>-1.3206466381605533</double>
+          <double>0.039883529394885556</double>
+          <double>-0.08651468236223823</double>
+          <double>-1.0868455106080541</double>
+          <double>-1.032619040649096</double>
+          <double>0.3496572339146258</double>
+          <double>0.36856989837038523</double>
+          <double>0.39705962711215537</double>
+          <double>-1.0513118954011427</double>
+          <double>-0.9891353951054799</double>
+          <double>0.23882698175474867</double>
+          <double>0.16120732725301157</double>
+          <double>0.17165763919493768</double>
+          <double>-0.7621029175685137</double>
+          <double>-0.7062353443587642</double>
+          <double>0.01668552014996349</double>
+          <double>0.12493286148491083</double>
+          <double>0.1353884691184618</double>
+          <double>1.0375389219966737</double>
+          <double>1.1506578165340884</double>
+          <double>0.3880648613214353</double>
+          <double>0.6190627837743701</double>
+          <double>-1.430790135879148</double>
+          <double>2.088601079736732</double>
+          <double>0.3507787195643121</double>
+          <double>2.1505654302510053</double>
+          <double>-0.5923941786389908</double>
+          <double>1.5292951762699556</double>
+          <double>-0.7928533312771223</double>
+          <double>2.4362992811349593</double>
+          <double>-2.0893280918018613</double>
+          <double>0.49288026506056104</double>
+          <double>0.4454620461434232</double>
+          <double>1.2181785560142677</double>
+          <double>1.1204658659025335</double>
+          <double>-0.7944856724179676</double>
         </double-array>
       </weight>
       <delta>
         <double-array>
+          <double>5.827621820361696E-13</double>
+          <double>5.827621820361696E-13</double>
+          <double>0.0</double>
+          <double>2.039667637126594E-11</double>
+          <double>1.133148687292552E-12</double>
+          <double>1.5852339148652284E-12</double>
+          <double>1.5852339148652284E-12</double>
+          <double>1.5297507278449454E-11</double>
+          <double>1.1085150201774967E-13</double>
+          <double>3.654445121464275E-14</double>
+          <double>1.9641243913070903E-12</double>
+          <double>1.9641243913070903E-12</double>
+          <double>1.7771361590805966E-11</double>
+          <double>2.949791888157275E-14</double>
+          <double>2.2068813385472947E-14</double>
+          <double>3.1494867926219467E-12</double>
+          <double>3.1494867926219467E-12</double>
+          <double>1.615578326436906E-11</double>
+          <double>5.235670502341826E-14</double>
+          <double>3.888255299533268E-14</double>
+          <double>8.158670548506375E-13</double>
+          <double>8.158670548506375E-13</double>
+          <double>1.95808093164153E-11</double>
+          <double>3.263468219402553E-14</double>
+          <double>3.263468219402553E-14</double>
+          <double>3.26346821940255E-12</double>
+          <double>3.26346821940255E-12</double>
+          <double>1.7133208151863388E-11</double>
+          <double>1.483394645182978E-13</double>
+          <double>1.483394645182978E-13</double>
+          <double>1.6997230309388281E-12</double>
+          <double>1.6997230309388281E-12</double>
+          <double>1.869695334032711E-11</double>
+          <double>1.4164358591156908E-13</double>
+          <double>1.4164358591156908E-13</double>
+          <double>6.7988921237553124E-12</double>
+          <double>6.7988921237553124E-12</double>
+          <double>1.3597784247510625E-11</double>
+          <double>7.554324581950348E-13</double>
+          <double>7.554324581950348E-13</double>
+          <double>3.3994460618776562E-12</double>
+          <double>3.3994460618776562E-12</double>
+          <double>1.6997230309388283E-11</double>
+          <double>5.665743436462759E-13</double>
+          <double>5.665743436462759E-13</double>
+          <double>1.019833818563297E-11</double>
+          <double>1.019833818563297E-11</double>
+          <double>1.019833818563297E-11</double>
+          <double>2.5495845464082424E-12</double>
+          <double>2.5495845464082424E-12</double>
           <double>0.0</double>
           <double>0.0</double>
           <double>0.0</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-1.268892162897712E-28</double>
-          <double>-7.887900089433478E-12</double>
-          <double>-7.887900089433478E-12</double>
           <double>0.0</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-8.364641303630008E-12</double>
-          <double>-3.1392105280850476E-11</double>
-          <double>-3.1392105280850476E-11</double>
           <double>0.0</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-3.1392105280850476E-11</double>
-          <double>-3.2371427811385286E-11</double>
-          <double>-3.2371427811385286E-11</double>
           <double>0.0</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-3.2371427811385286E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
           <double>0.0</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
           <double>0.0</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
           <double>0.0</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
           <double>0.0</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
           <double>0.0</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
           <double>0.0</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
           <double>0.0</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
-          <double>-4.114499235839625E-11</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>2.039667637126594E-11</double>
         </double-array>
         <double-array>
+          <double>1.2564343843064427E-8</double>
+          <double>1.2564343843064427E-8</double>
+          <double>0.0</double>
+          <double>4.3975203450725497E-7</double>
+          <double>2.4430668583736384E-8</double>
+          <double>3.417761926222189E-8</double>
+          <double>3.417761926222189E-8</double>
+          <double>3.2981402588044125E-7</double>
+          <double>2.3899567092785594E-9</double>
+          <double>7.87897816245679E-10</double>
+          <double>4.234649221180974E-8</double>
+          <double>4.234649221180974E-8</double>
+          <double>3.8315028749146966E-7</double>
+          <double>6.359746855706219E-10</double>
+          <double>4.758032832787615E-10</double>
+          <double>6.790288768126731E-8</double>
+          <double>6.790288768126731E-8</double>
+          <double>3.4831844317406337E-7</double>
+          <double>1.1288097695455759E-9</double>
+          <double>8.383072553242879E-10</double>
+          <double>1.75900813802902E-8</double>
+          <double>1.75900813802902E-8</double>
+          <double>4.2216195312696474E-7</double>
+          <double>7.036032552116086E-10</double>
+          <double>7.036032552116086E-10</double>
+          <double>7.03603255211608E-8</double>
+          <double>7.03603255211608E-8</double>
+          <double>3.6939170898609416E-7</double>
+          <double>3.1981966145982192E-9</double>
+          <double>3.1981966145982192E-9</double>
+          <double>3.6646002875604576E-8</double>
+          <double>3.6646002875604576E-8</double>
+          <double>4.031060316316504E-7</double>
+          <double>3.0538335729670497E-9</double>
+          <double>3.0538335729670497E-9</double>
+          <double>1.465840115024183E-7</double>
+          <double>1.465840115024183E-7</double>
+          <double>2.931680230048366E-7</double>
+          <double>1.628711238915759E-8</double>
+          <double>1.628711238915759E-8</double>
+          <double>7.329200575120915E-8</double>
+          <double>7.329200575120915E-8</double>
+          <double>3.6646002875604584E-7</double>
+          <double>1.2215334291868192E-8</double>
+          <double>1.2215334291868192E-8</double>
+          <double>2.1987601725362748E-7</double>
+          <double>2.1987601725362748E-7</double>
+          <double>2.1987601725362748E-7</double>
+          <double>5.496900431340687E-8</double>
+          <double>5.496900431340687E-8</double>
           <double>0.0</double>
           <double>0.0</double>
           <double>0.0</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-1.1658973890746916E-34</double>
-          <double>-7.24764671770919E-18</double>
-          <double>-7.24764671770919E-18</double>
           <double>0.0</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-7.685691299548756E-18</double>
-          <double>-2.8844037858126326E-17</double>
-          <double>-2.8844037858126326E-17</double>
           <double>0.0</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-2.8844037858126326E-17</double>
-          <double>-2.974386970735542E-17</double>
-          <double>-2.974386970735542E-17</double>
           <double>0.0</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-2.974386970735542E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
           <double>0.0</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
           <double>0.0</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
           <double>0.0</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
           <double>0.0</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
           <double>0.0</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
           <double>0.0</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
           <double>0.0</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
-          <double>-3.780529233832091E-17</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>4.3975203450725497E-7</double>
         </double-array>
         <double-array>
+          <double>8.427657937365356E-12</double>
+          <double>8.427657937365356E-12</double>
+          <double>0.0</double>
+          <double>2.9496802780778746E-10</double>
+          <double>1.638711265598819E-11</double>
+          <double>2.2924976254491253E-11</double>
+          <double>2.2924976254491253E-11</double>
+          <double>2.2122602085584058E-10</double>
+          <double>1.6030871076510187E-12</double>
+          <double>5.284902552695667E-13</double>
+          <double>2.8404328603712866E-11</double>
+          <double>2.8404328603712866E-11</double>
+          <double>2.570018460107455E-10</double>
+          <double>4.265863123263145E-13</double>
+          <double>3.1914975959227973E-13</double>
+          <double>4.554653370561424E-11</double>
+          <double>4.554653370561424E-11</double>
+          <double>2.336380418279505E-10</double>
+          <double>7.571603207387284E-13</double>
+          <double>5.623028852544968E-13</double>
+          <double>1.1798721112311498E-11</double>
+          <double>1.1798721112311498E-11</double>
+          <double>2.8316930669547595E-10</double>
+          <double>4.719488444924603E-13</double>
+          <double>4.719488444924603E-13</double>
+          <double>4.7194884449245994E-11</double>
+          <double>4.7194884449245994E-11</double>
+          <double>2.4777314335854146E-10</double>
+          <double>2.1452220204202733E-12</double>
+          <double>2.1452220204202733E-12</double>
+          <double>2.4580668983982286E-11</double>
+          <double>2.4580668983982286E-11</double>
+          <double>2.7038735882380517E-10</double>
+          <double>2.048389081998525E-12</double>
+          <double>2.048389081998525E-12</double>
+          <double>9.832267593592915E-11</double>
+          <double>9.832267593592915E-11</double>
+          <double>1.966453518718583E-10</double>
+          <double>1.0924741770658794E-11</double>
+          <double>1.0924741770658794E-11</double>
+          <double>4.916133796796457E-11</double>
+          <double>4.916133796796457E-11</double>
+          <double>2.458066898398229E-10</double>
+          <double>8.193556327994095E-12</double>
+          <double>8.193556327994095E-12</double>
+          <double>1.4748401390389373E-10</double>
+          <double>1.4748401390389373E-10</double>
+          <double>1.4748401390389373E-10</double>
+          <double>3.687100347597343E-11</double>
+          <double>3.687100347597343E-11</double>
           <double>0.0</double>
           <double>0.0</double>
           <double>0.0</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-1.3698116350736156E-33</double>
-          <double>-8.515252623303655E-17</double>
-          <double>-8.515252623303655E-17</double>
           <double>0.0</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-9.029910748887942E-17</double>
-          <double>-3.388883020994061E-16</double>
-          <double>-3.388883020994061E-16</double>
           <double>0.0</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-3.388883020994061E-16</double>
-          <double>-3.4946041717774996E-16</double>
-          <double>-3.4946041717774996E-16</double>
           <double>0.0</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-3.4946041717774996E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
           <double>0.0</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
           <double>0.0</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
           <double>0.0</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
           <double>0.0</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
           <double>0.0</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
           <double>0.0</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
           <double>0.0</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
-          <double>-4.44173988188542E-16</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>2.9496802780778746E-10</double>
         </double-array>
         <double-array>
+          <double>1.0043869904144777E-13</double>
+          <double>1.0043869904144777E-13</double>
+          <double>0.0</double>
+          <double>3.515354466450672E-12</double>
+          <double>1.9529747035837065E-13</double>
+          <double>2.732140777034201E-13</double>
+          <double>2.732140777034201E-13</double>
+          <double>2.636515849838004E-12</double>
+          <double>1.9105187317666697E-14</double>
+          <double>6.298413401428581E-15</double>
+          <double>3.385156152878425E-13</double>
+          <double>3.385156152878425E-13</double>
+          <double>3.0628830994817735E-12</double>
+          <double>5.083947943470773E-15</double>
+          <double>3.803546239189245E-15</double>
+          <double>5.428120867313538E-13</double>
+          <double>5.428120867313538E-13</double>
+          <double>2.7844391813470672E-12</double>
+          <double>9.023645495106237E-15</double>
+          <double>6.701383786806838E-15</double>
+          <double>1.4061417865802688E-13</double>
+          <double>1.4061417865802688E-13</double>
+          <double>3.374740287792645E-12</double>
+          <double>5.6245671463210804E-15</double>
+          <double>5.6245671463210804E-15</double>
+          <double>5.624567146321075E-13</double>
+          <double>5.624567146321075E-13</double>
+          <double>2.9528977518185642E-12</double>
+          <double>2.5566214301459442E-14</double>
+          <double>2.5566214301459442E-14</double>
+          <double>2.9294620553755597E-13</double>
+          <double>2.9294620553755597E-13</double>
+          <double>3.2224082609131158E-12</double>
+          <double>2.4412183794796344E-14</double>
+          <double>2.4412183794796344E-14</double>
+          <double>1.1717848221502239E-12</double>
+          <double>1.1717848221502239E-12</double>
+          <double>2.3435696443004478E-12</double>
+          <double>1.301983135722471E-13</double>
+          <double>1.301983135722471E-13</double>
+          <double>5.858924110751119E-13</double>
+          <double>5.858924110751119E-13</double>
+          <double>2.9294620553755603E-12</double>
+          <double>9.764873517918531E-14</double>
+          <double>9.764873517918531E-14</double>
+          <double>1.757677233225336E-12</double>
+          <double>1.757677233225336E-12</double>
+          <double>1.757677233225336E-12</double>
+          <double>4.39419308306334E-13</double>
+          <double>4.39419308306334E-13</double>
           <double>0.0</double>
           <double>0.0</double>
           <double>0.0</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-7.155416173577484E-28</double>
-          <double>-4.448069704095526E-11</double>
-          <double>-4.448069704095526E-11</double>
           <double>0.0</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-4.716909081815586E-11</double>
-          <double>-1.7702337867410404E-10</double>
-          <double>-1.7702337867410404E-10</double>
           <double>0.0</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-1.7702337867410404E-10</double>
-          <double>-1.8254588127837187E-10</double>
-          <double>-1.8254588127837187E-10</double>
           <double>0.0</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-1.8254588127837187E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
           <double>0.0</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
           <double>0.0</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
           <double>0.0</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
           <double>0.0</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
           <double>0.0</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
           <double>0.0</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
           <double>0.0</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
-          <double>-2.3202093321363152E-10</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>3.515354466450672E-12</double>
         </double-array>
         <double-array>
+          <double>-6.420540376465912E-9</double>
+          <double>-6.420540376465912E-9</double>
+          <double>0.0</double>
+          <double>-2.247189131763069E-7</double>
+          <double>-1.2484384065350383E-8</double>
+          <double>-1.7465200505930588E-8</double>
+          <double>-1.7465200505930588E-8</double>
+          <double>-1.685391848822302E-7</double>
+          <double>-1.221298441175581E-9</double>
+          <double>-4.026258597282135E-10</double>
+          <double>-2.163959904660733E-8</double>
+          <double>-2.163959904660733E-8</double>
+          <double>-1.9579469662886148E-7</double>
+          <double>-3.249911971623087E-10</double>
+          <double>-2.431415623214309E-10</double>
+          <double>-3.469924394634151E-8</double>
+          <double>-3.469924394634151E-8</double>
+          <double>-1.7799517875351044E-7</double>
+          <double>-5.76836227441932E-10</double>
+          <double>-4.2838572773261125E-10</double>
+          <double>-8.988756527052277E-9</double>
+          <double>-8.988756527052277E-9</double>
+          <double>-2.1573015664925462E-7</double>
+          <double>-3.5955026108209135E-10</double>
+          <double>-3.5955026108209135E-10</double>
+          <double>-3.595502610820911E-8</double>
+          <double>-3.595502610820911E-8</double>
+          <double>-1.887638870680978E-7</double>
+          <double>-1.6343193685549598E-9</double>
+          <double>-1.6343193685549598E-9</double>
+          <double>-1.8726576098025575E-8</double>
+          <double>-1.8726576098025575E-8</double>
+          <double>-2.0599233707828132E-7</double>
+          <double>-1.5605480081687987E-9</double>
+          <double>-1.5605480081687987E-9</double>
+          <double>-7.49063043921023E-8</double>
+          <double>-7.49063043921023E-8</double>
+          <double>-1.498126087842046E-7</double>
+          <double>-8.322922710233589E-9</double>
+          <double>-8.322922710233589E-9</double>
+          <double>-3.745315219605115E-8</double>
+          <double>-3.745315219605115E-8</double>
+          <double>-1.8726576098025575E-7</double>
+          <double>-6.242192032675191E-9</double>
+          <double>-6.242192032675191E-9</double>
+          <double>-1.1235945658815345E-7</double>
+          <double>-1.1235945658815345E-7</double>
+          <double>-1.1235945658815345E-7</double>
+          <double>-2.8089864147038363E-8</double>
+          <double>-2.8089864147038363E-8</double>
           <double>0.0</double>
           <double>0.0</double>
           <double>0.0</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-5.0269532053712865E-30</double>
-          <double>-3.12493888745237E-13</double>
-          <double>-3.12493888745237E-13</double>
           <double>0.0</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-3.3138088202104805E-13</double>
-          <double>-1.2436568597330463E-12</double>
-          <double>-1.2436568597330463E-12</double>
           <double>0.0</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.2436568597330463E-12</double>
-          <double>-1.2824545501744613E-12</double>
-          <double>-1.2824545501744613E-12</double>
           <double>0.0</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.2824545501744613E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
           <double>0.0</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
           <double>0.0</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
           <double>0.0</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
           <double>0.0</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
           <double>0.0</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
           <double>0.0</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
           <double>0.0</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
-          <double>-1.6300356899413714E-12</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>0.0</double>
+          <double>-2.247189131763069E-7</double>
         </double-array>
       </delta>
       <outer-class reference="../../.."/>
@@ -875,31 +875,31 @@
     <smile.classification.NeuralNetwork_-Layer>
       <units>1</units>
       <output>
-        <double>5.678834109351763E-5</double>
+        <double>1.2782692558073035E-4</double>
         <double>1.0</double>
       </output>
       <error>
-        <double>-4.709860640398362E-5</double>
+        <double>9.099182449179288E-6</double>
         <double>0.0</double>
       </error>
       <weight>
         <double-array>
-          <double>3.6750459921337817</double>
-          <double>4.853820659034915</double>
-          <double>6.164887953579793</double>
-          <double>5.769010440573648</double>
-          <double>2.916388902297467</double>
-          <double>-9.963283100912209</double>
+          <double>4.331950425429607</double>
+          <double>5.219801251269656</double>
+          <double>2.5660259322815957</double>
+          <double>4.721818565749049</double>
+          <double>-4.607222549373982</double>
+          <double>-4.431145794870553</double>
         </double-array>
       </weight>
       <delta>
         <double-array>
-          <double>-1.1195802787848844E-11</double>
-          <double>-7.788769918396666E-18</double>
-          <double>-7.204899611150535E-17</double>
-          <double>-4.021884115340217E-11</double>
-          <double>-5.589226738911694E-13</double>
-          <double>-4.709860640398363E-6</double>
+          <double>9.099135364646463E-7</double>
+          <double>8.159715967976305E-7</double>
+          <double>9.098032790472153E-7</double>
+          <double>9.099175004255322E-7</double>
+          <double>5.171450856927391E-8</double>
+          <double>9.099182449179288E-7</double>
         </double-array>
       </delta>
       <outer-class reference="../../.."/>
@@ -911,6 +911,6 @@
   <alpha>0.0</alpha>
   <lambda>0.0</lambda>
   <target>
-    <double>0.0</double>
+    <double>1.0</double>
   </target>
 </smile.classification.NeuralNetwork>
