@@ -46,7 +46,7 @@ object TrainAndDiff {
     val matchesSet = matches.toSet
     discard(assert(matches.size ==== matchesSet.size))
     val metricsWithResult = metrics.map { m =>
-      val potentialMatch = WordMatch(m.leftWord, m.rightWord)
+      val potentialMatch = WordMatch(m.leftWord, m.rightWord)()
       MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))
     }
 

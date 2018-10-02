@@ -85,7 +85,7 @@ object WordMatch {
               val rightReader = Selection.reader(rightLines)
               val leftSelection = leftReader.read(left)
               val rightSelection = rightReader.read(right)
-              WordMatch(leftSelection, rightSelection)
+              WordMatch(leftSelection, rightSelection)()
             case _ => deserializationError(s"Couldn't fine either left or right fields. The fields: ${fields.keys}")
           }
         case other => deserializationError(s"Expected object got $other")
@@ -94,11 +94,10 @@ object WordMatch {
   }
   implicit val writer: RootJsonWriter[WordMatch] = ExtraFormats.jsonWriter[Selection, Selection, WordMatch]("left", "right")
 
-
 }
 
 @SuppressWarnings(Array(Warts.DefaultArguments))
-final case class WordMatch(left: Selection, right: Selection, probability: Option[Double] = None) {
+final case class WordMatch(left: Selection, right: Selection)(val probability: Option[Double] = None) {
   def readable: String = {
     s"${left.toText} - ${right.toText} ($probability)}"
   }

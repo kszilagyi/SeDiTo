@@ -22,11 +22,11 @@ class TrivialContextCollectorTest extends FreeSpecLike {
     val m1 = WordMatch(
       Selection.fromAbsolute(1, 8, left).getAssert,
       Selection.fromAbsolute(1, 8, right).getAssert
-    )
+    )()
     val m2 = WordMatch(
       Selection.fromAbsolute(0, 1, left).getAssert,
       Selection.fromAbsolute(0, 1, right).getAssert
-    )
+    )()
     TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set.empty)) shouldBe
       UnambiguousWordAlignment(Set(m1, m2))
   }
@@ -37,11 +37,11 @@ class TrivialContextCollectorTest extends FreeSpecLike {
     val m1 = WordMatch(
       Selection.fromAbsolute(1, 4, left).getAssert,
       Selection.fromAbsolute(1, 4, right).getAssert
-    )
+    )()
     val m2 = WordMatch(
       Selection.fromAbsolute(4, 5, left).getAssert,
       Selection.fromAbsolute(4, 5, right).getAssert
-    )
+    )()
     TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set(m1))) shouldBe
       UnambiguousWordAlignment(Set(m1, m2))
   }
@@ -52,11 +52,11 @@ class TrivialContextCollectorTest extends FreeSpecLike {
     val m1 = WordMatch(
       Selection.fromAbsolute(1, 8, left).getAssert,
       Selection.fromAbsolute(1, 8, right).getAssert
-    )
+    )()
     val m2 = WordMatch(
       Selection.fromAbsolute(8, 9, left).getAssert,
       Selection.fromAbsolute(8, 9, right).getAssert
-    )
+    )()
     TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set.empty)) shouldBe
       UnambiguousWordAlignment(Set(m1, m2))
   }
@@ -67,11 +67,11 @@ class TrivialContextCollectorTest extends FreeSpecLike {
     val m1 = WordMatch(
       Selection.fromAbsolute(4, 5, left).getAssert,
       Selection.fromAbsolute(4, 5, right).getAssert
-    )
+    )()
     val m2 = WordMatch(
       Selection.fromAbsolute(1, 4, left).getAssert,
       Selection.fromAbsolute(1, 4, right).getAssert
-    )
+    )()
     TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set(m1))) shouldBe
       UnambiguousWordAlignment(Set(m1, m2))
   }
@@ -82,11 +82,11 @@ class TrivialContextCollectorTest extends FreeSpecLike {
     val m1 = WordMatch(
       Selection.fromAbsolute(1, 4, left).getAssert,
       Selection.fromAbsolute(1, 4, right).getAssert
-    )
+    )()
     val m2 = WordMatch(
       Selection.fromAbsolute(4, 5, left).getAssert,
       Selection.fromAbsolute(5, 6, right).getAssert
-    )
+    )()
 
     TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set(m1, m2))) shouldBe
       UnambiguousWordAlignment(Set(m1, m2))
@@ -98,15 +98,15 @@ class TrivialContextCollectorTest extends FreeSpecLike {
     val m1 = WordMatch(
       Selection.fromAbsolute(1, 4, left).getAssert,
       Selection.fromAbsolute(1, 4, right).getAssert
-    )
+    )()
     val m2 = WordMatch(
       Selection.fromAbsolute(6, 10, left).getAssert,
       Selection.fromAbsolute(5, 9, right).getAssert
-    )
+    )()
     val m3 = WordMatch(
       Selection.fromAbsolute(4, 5, left).getAssert,
       Selection.fromAbsolute(4, 5, right).getAssert
-    )
+    )()
 
     TrivialContextCorrector.correct(left, right, UnambiguousWordAlignment(Set(m1, m2))) shouldBe
       UnambiguousWordAlignment(Set(m1, m2, m3))

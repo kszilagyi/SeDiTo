@@ -100,7 +100,7 @@ final class CharHighlightCalculatorTest extends FreeSpecLike {
             val rightSelection = Selection.create(rightLineText, rightLineIdx, rightLineCharIdxes._1, rightLineCharIdxes._2,
               sumChars(rightLines, rightLineIdx) + rightLineCharIdxes._1.i).getAssert("")
 
-            Some(WordMatch(leftSelection, rightSelection))
+            Some(WordMatch(leftSelection, rightSelection)())
           case other => fail(s"Bug in test, multiple matches for word: $other")
         }
         wordMatch.toList

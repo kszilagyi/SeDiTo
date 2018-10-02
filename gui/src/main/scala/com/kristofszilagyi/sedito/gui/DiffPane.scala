@@ -129,7 +129,7 @@ final class DiffPane extends StackPane {
           codeAreaRight.grabSelectionForMatch()
           (codeAreaLeft.selectedForMatch(), codeAreaRight.selectedForMatch()) match {
             case (Some(leftSelection), Some(rightSelection)) =>
-              val newMatches = wordAlignment.matches.filter(m => (m.left !=== leftSelection) && (m.right !=== rightSelection)) + WordMatch(leftSelection, rightSelection)
+              val newMatches = wordAlignment.matches.filter(m => (m.left !=== leftSelection) && (m.right !=== rightSelection)) + WordMatch(leftSelection, rightSelection)()
               val newAlignment = wordAlignment.copy(newMatches)
               logger.info(s"Adding new match. Old size: ${wordAlignment.matches.size}, new size: ${newMatches.size}")
               openTestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), newAlignment)

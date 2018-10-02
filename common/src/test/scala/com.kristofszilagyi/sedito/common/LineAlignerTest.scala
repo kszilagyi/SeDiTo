@@ -15,7 +15,7 @@ final class LineAlignerTest extends FreeSpecLike {
     LineAligner.align(UnambiguousWordAlignment(Set(WordMatch(
       selection("line0", 0, 0, 5),
       selection("line0", 0, 0, 5)
-    )))) shouldBe UnambiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+    )()))) shouldBe UnambiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
 
   /**
@@ -27,11 +27,11 @@ final class LineAlignerTest extends FreeSpecLike {
       WordMatch(
         selection("line0 {", lineIdx = 0, from = 0, to = 5),
         selection("line0", lineIdx = 0, from = 0, to = 5)
-      ),
+      )(),
       WordMatch(
         selection("line0 {", lineIdx = 0, from = 6, to = 7),
         selection("{", lineIdx = 1, from = 0, to = 1)
-      )
+      )()
     ))) shouldBe UnambiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
 
@@ -44,11 +44,11 @@ final class LineAlignerTest extends FreeSpecLike {
       WordMatch(
         selection("line0", lineIdx = 0, from = 0, to = 5),
         selection("line0 {", lineIdx = 0, from = 0, to = 5)
-      ),
+      )(),
       WordMatch(
         selection("{", lineIdx = 1, from = 0, to = 1),
         selection("line0 {", lineIdx = 0, from = 6, to = 7)
-      )
+      )()
     ))) shouldBe UnambiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
 
@@ -61,11 +61,11 @@ final class LineAlignerTest extends FreeSpecLike {
       WordMatch(
         selection("line0 line1", lineIdx = 0, from = 0, to = 5),
         selection("line0", lineIdx = 0, from = 0, to = 5)
-      ),
+      )(),
       WordMatch(
         selection("line0 line1", lineIdx = 0, from = 6, to = 11),
         selection("line1", lineIdx = 1, from = 0, to = 5)
-      )
+      )()
     ))).matches should have size 1
   }
 
@@ -78,15 +78,15 @@ final class LineAlignerTest extends FreeSpecLike {
       WordMatch(
         selection("map a b", lineIdx = 0, from = 0, to = 3),
         selection("map", lineIdx = 0, from = 0, to = 3)
-      ),
+      )(),
       WordMatch(
         selection("map a b", lineIdx = 0, from = 4, to = 5),
         selection("a b", lineIdx = 1, from = 0, to = 1)
-      ),
+      )(),
       WordMatch(
         selection("map a b", lineIdx = 0, from = 6, to = 7),
         selection("a b", lineIdx = 1, from = 2, to = 3)
-      )
+      )()
     ))) shouldBe UnambiguousLineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
   }
 }

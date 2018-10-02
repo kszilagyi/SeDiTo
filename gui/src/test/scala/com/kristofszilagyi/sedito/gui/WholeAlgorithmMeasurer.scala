@@ -72,7 +72,7 @@ object WholeAlgorithmMeasurer {
 
   def measureFast(aligner: Aligner, testCases: Seq[(Path, TestCase, IndexedSeq[Metrics])]): MultiResult = {
     MultiResult(testCases.map { case (path, testCase, metrics) =>
-      val actualWithoutPost = aligner.alignFastWithoutPost(metrics)
+      val actualWithoutPost = aligner.alignFastWithoutPost(metrics, log = false)
       val actualWithPost = TrivialContextCorrector.correct(testCase.left, testCase.right, actualWithoutPost)
       val expected = testCase.wordAlignment.toUnambigous.matches
       path ->

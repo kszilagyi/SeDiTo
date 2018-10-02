@@ -19,7 +19,7 @@ object TrivialContextCorrector {
       val left = leftWords(l)
       val right = rightWords(r)
       if (left.toText ==== right.toText && !leftOfMatches.contains(left) && !rightOfMatches.contains(right)) {
-        discard(builder += WordMatch(left, right))
+        discard(builder += WordMatch(left, right)())
       } else {
         done = true
       }
