@@ -49,7 +49,7 @@ object MetricCalculator {
     override def toString: String = s"ldSim = $ldSim, ldSimEdgeAdjusted = $ldSimEdgeAdjusted, " +
       s"normalizedLd = $normalizedLd, normalizedLdLenSim = $normalizedLdLenSim, ldLenSim = $ldLenSim"
 
-    def toDoubles: List[Double] = List(ldSim, ldSimEdgeAdjusted, normalizedLd, normalizedLdLenSim, ldLenSim)
+    def toDoubles: List[Double] = ldSim :: ldSimEdgeAdjusted :: normalizedLd :: normalizedLdLenSim :: ldLenSim :: Nil
   }
 
   object ContextMetrics {
@@ -122,10 +122,21 @@ object MetricCalculator {
     def leftLineIdx: LineIdx = phase1Metrics.leftLineIdx
     def rightLineIdx: LineIdx = phase1Metrics.rightLineIdx
 
+    @SuppressWarnings(Array(Warts.NonUnitStatement))
     lazy val doubles: Array[Double]= {
-      (word.toDoubles ++ line.toDoubles ++ contextFull.doubles ++ context4th.doubles ++
-        context8th.doubles ++ context16th.doubles ++ closestFull.doubles ++ closest4th.doubles
-        ++ closest8th.doubles ++ closest16th.doubles :+ (if (lineIsClosestMatchInText) 1.0 else 0.0)).toArray
+      val builder = Array.newBuilder[Double]
+      builder ++= word.toDoubles
+      builder ++= line.toDoubles
+      builder ++= contextFull.doubles
+      builder ++= context4th.doubles
+      builder ++= context8th.doubles
+      builder ++= context16th.doubles
+      builder ++= closestFull.doubles
+      builder ++= closest4th.doubles
+      builder ++= closest8th.doubles
+      builder ++= closest16th.doubles
+      builder += (if (lineIsClosestMatchInText) 1.0 else 0.0)
+      builder.result()
     }
 
     override def toString: String = {
