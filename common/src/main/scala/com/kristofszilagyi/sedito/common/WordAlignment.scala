@@ -146,9 +146,15 @@ object AmbiguousWordAlignment {
   }
 
   implicit val writer: RootJsonWriter[AmbiguousWordAlignment] = {
-    //need to lift here because there is no default writer for set just default format :(
-    implicit val format: RootJsonFormat[WordMatch] = lift(WordMatch.writer)
-    jsonWriter1[Set[WordMatch], AmbiguousWordAlignment]
+    new RootJsonWriter[AmbiguousWordAlignment] {
+      def write(obj: AmbiguousWordAlignment): JsValue = {
+        val sorted = obj.matches.toSeq.sortBy(_.left.absoluteFrom)
+        val jsons = sorted.map { m =>
+          WordMatch.writer.write(m)
+        }.toVector
+        JsObject("matches" -> JsArray(jsons))
+      }
+    }
   }
   def reader(leftLines: IndexedSeq[LineAndPos], rightLines: IndexedSeq[LineAndPos]) = {
     new JsonReader[AmbiguousWordAlignment] {
