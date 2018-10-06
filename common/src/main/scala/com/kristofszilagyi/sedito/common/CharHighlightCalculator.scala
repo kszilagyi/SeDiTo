@@ -70,8 +70,8 @@ object CharHighlightCalculator {
     }
   }
 
-  private def merge(edits1: Set[(LineIdx, Set[CharEdit])], edits2: Set[(LineIdx, Set[CharEdit])]) = {
-    (edits1.toSeq ++ edits2.toSeq).groupBy(_._1).map{ case (idx, idxesAndEdits) =>
+  private def merge(edits1: Vector[(LineIdx, Traversable[CharEdit])], edits2: Vector[(LineIdx, Vector[CharEdit])]) = {
+    (edits1 ++ edits2).groupBy(_._1).map { case (idx, idxesAndEdits) =>
       idx -> idxesAndEdits.flatMap { case (_, editsOnly) => editsOnly }.toSet
     }
   }
@@ -82,22 +82,22 @@ object CharHighlightCalculator {
   /**
     * determines if a match is a move or not
     */
-  private def moveOrSame(wordMatches: Set[WordMatch]): Set[(WordMatch, MoveOrSame)] = {
+  private def moveOrSame(wordMatches: Vector[WordMatch]): Vector[(WordMatch, MoveOrSame)] = {
     val leftOrdered = wordMatches.toSeq.sortBy(_.left.from.i)
     val rightStarts = leftOrdered.map(_.right.from.i)
     val lis = LongestIncreasingSubsequence.apply(rightStarts.toArray).asScala.toSet
-    val sames = wordMatches.filter(m => lis.contains(m.right.from.i))
-    val moved = wordMatches -- sames
+    val (sames, moved) = wordMatches.partition(m => lis.contains(m.right.from.i))
     sames.map((_, S)) ++ moved.map((_, M))
   }
 
   private def replaceSamesWithMoves(wm: WordMatch, leftEdits: Seq[DirectCharEdit], rightEdits: Seq[DirectCharEdit]): (Seq[CharEdit], Seq[CharEdit]) = {
 
     def keepActualEdits(edits: Seq[DirectCharEdit]): Seq[ActualCharEdit] = {
-      edits.collect{
+      edits.collect {
         case ActualCharEdit(a) => a
       }
     }
+
     val leftSame = leftEdits.filter(_.editType ==== CharsSame)
     val rightSame = rightEdits.filter(_.editType ==== CharsSame)
     //this must be wrong TODO!
@@ -113,55 +113,64 @@ object CharHighlightCalculator {
     from.filterNot(fromItem => overlapWith.exists(over => (over.from, over.to) ==== ((fromItem.from, fromItem.to))))
   }
 
+  private def vmCalc(lineMatch: LineMatch, wordMatches: Vector[WordMatch]) = {
+    val wordMatchesInEitherLine = wordMatches.map { wm =>
+      val matchSide = (wm.left.lineIdx ==== lineMatch.leftLineIdx, wm.right.lineIdx ==== lineMatch.rightLineIdx) match {
+        case (true, true) => Some(BothMatch)
+        case (true, false) => Some(LeftMatch)
+        case (false, true) => Some(RightMatch)
+        case (false, false) => None
+      }
+      (wm, matchSide)
+    }.collect { case (wm, Some(side)) => (wm, side) }
+    val wordMatchesInBothLine = wordMatchesInEitherLine.filter(_._2 ==== BothMatch).map(_._1)
+    (wordMatchesInEitherLine, wordMatchesInBothLine)
+  }
+
   //todo this generates extra sames
   def calc(left: IndexedSeq[Selection], right: IndexedSeq[Selection], wordAlignment: UnambiguousWordAlignment, lineAlignment: UnambiguousLineAlignment): CharHighlight = {
     val leftByLine = left.groupBy(_.lineIdx).mapValuesNow(_.toSet)
     val rightByLine = right.groupBy(_.lineIdx).mapValuesNow(_.toSet)
+    //toVector -> for performance
+    val wordMatches = wordAlignment.matches.toVector
+    val lineMatches = lineAlignment.matches.toVector
     val (leftHighlight, rightHighlight) = {
-      lineAlignment.matches.map { m =>
+      lineMatches.map { lineMatch =>
 
         val differ = new DiffMatchPatch()
 
-        val wordMatchesInEitherLine = wordAlignment.matches.map { wm =>
-          val matchSide = (wm.left.lineIdx ==== m.leftLineIdx, wm.right.lineIdx ==== m.rightLineIdx) match {
-            case (true, true) => Some(BothMatch)
-            case (true, false) => Some(LeftMatch)
-            case (false, true) => Some(RightMatch)
-            case (false, false) => None
-          }
-          (wm, matchSide)
-        }.collect { case (wm, Some(side)) => (wm, side) }
-        val wordMatchesInBothLine = wordMatchesInEitherLine.filter(_._2 ==== BothMatch).map(_._1)
+        val (wordMatchesInEitherLine, wordMatchesInBothLine) = vmCalc(lineMatch, wordMatches)
         val (leftEdits, rightEdits) = moveOrSame(wordMatchesInBothLine).map { case (wm, moveOrSame) =>
           val left = wm.left.toText
           val right = wm.right.toText
           val inWordDiff = differ.diffMain(left, right)
           differ.diffCleanupSemantic(inWordDiff)
 
-          val leftDiffs = inWordDiff.asScala.filter(d => d.operation ==== Operation.DELETE || d.operation ==== Operation.EQUAL)
-          val rightDiffs = inWordDiff.asScala.filter(d => d.operation ==== Operation.INSERT || d.operation ==== Operation.EQUAL)
+          //using eq here for peformance though probably red herring
+          val leftDiffs = inWordDiff.asScala.filter(d => d.operation.eq(Operation.DELETE) || d.operation.eq(Operation.EQUAL))
+          val rightDiffs = inWordDiff.asScala.filter(d => d.operation.eq(Operation.INSERT) || d.operation.eq(Operation.EQUAL))
           val leftEdits = toPositions(wm.left, leftDiffs)
           val rightEdits = toPositions(wm.right, rightDiffs)
-          if (moveOrSame ==== M) {
+          if (moveOrSame eq M) {
             replaceSamesWithMoves(wm, leftEdits, rightEdits)
           } else {
             (leftEdits.map(_.toCharEdit), rightEdits.map(_.toCharEdit))
           }
         }.unzip
 
-        val deletes = (leftByLine.getOrElse(m.leftLineIdx, Set.empty) -- wordMatchesInEitherLine.map(_._1.left)).map(range => CharEdit(range.from, range.toExcl, CharsDeleted))
-        val inserts = (rightByLine.getOrElse(m.rightLineIdx, Set.empty) -- wordMatchesInEitherLine.map(_._1.right)).map(range => CharEdit(range.from, range.toExcl, CharsInserted))
+        val deletes = (leftByLine.getOrElse(lineMatch.leftLineIdx, Set.empty) -- wordMatchesInEitherLine.map(_._1.left)).map(range => CharEdit(range.from, range.toExcl, CharsDeleted))
+        val inserts = (rightByLine.getOrElse(lineMatch.rightLineIdx, Set.empty) -- wordMatchesInEitherLine.map(_._1.right)).map(range => CharEdit(range.from, range.toExcl, CharsInserted))
         val leftEditsWithoutDeletes = removeOverlaps(leftEdits.flatten, deletes)
         val rightEditWithoutInserts = removeOverlaps(rightEdits.flatten, inserts)
-        (m.leftLineIdx -> (leftEditsWithoutDeletes.toSet ++ deletes), m.rightLineIdx -> (rightEditWithoutInserts.toSet ++ inserts))
+        (lineMatch.leftLineIdx -> (leftEditsWithoutDeletes ++ deletes), lineMatch.rightLineIdx -> (rightEditWithoutInserts ++ inserts))
       }.unzip
     }
 
-    val (leftCrossLineMoves, rightCrossLineMoves) = wordAlignment.matches.flatMap { wordMatch =>
-      val bothMatch = lineAlignment.matches.filter(l => l.leftLineIdx ==== wordMatch.left.lineIdx && (l.rightLineIdx ==== wordMatch.right.lineIdx))
+    val (leftCrossLineMoves, rightCrossLineMoves) = wordMatches.flatMap { wordMatch =>
+      val bothMatch = lineMatches.find(l => l.leftLineIdx ==== wordMatch.left.lineIdx && (l.rightLineIdx ==== wordMatch.right.lineIdx))
       (if (bothMatch.isEmpty) {
-        val left = wordMatch.left.lineIdx -> Set(CharEdit(wordMatch.left.from, wordMatch.left.toExcl, CharsMoved(wordMatch.right, Traversable.empty)))
-        val right = wordMatch.right.lineIdx -> Set(CharEdit(wordMatch.right.from, wordMatch.right.toExcl, CharsMoved(wordMatch.left, Traversable.empty)))
+        val left = wordMatch.left.lineIdx -> Vector(CharEdit(wordMatch.left.from, wordMatch.left.toExcl, CharsMoved(wordMatch.right, Traversable.empty)))
+        val right = wordMatch.right.lineIdx -> Vector(CharEdit(wordMatch.right.from, wordMatch.right.toExcl, CharsMoved(wordMatch.left, Traversable.empty)))
         Some((left, right))
       } else {
         None

@@ -237,7 +237,6 @@ final class Editor extends CodeArea {
       case None => fail(s"Bug in code: cannot have new char edits without line edit. $lineIdx")
     }
     editTypes += lineIdx -> newEdit
-    applyLineTypeCss(lineIdx, Some(newEdit))
   }
 
   private def highlightLine(lineIdx: LineIdx): Unit = {
