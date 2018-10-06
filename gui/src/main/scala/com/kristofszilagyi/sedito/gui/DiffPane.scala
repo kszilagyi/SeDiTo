@@ -21,6 +21,7 @@ import org.log4s.getLogger
 
 import scala.collection.JavaConverters._
 import scala.collection.immutable.TreeMap
+import scala.util.{Success, Try}
 
 object DiffPane {
   def offScreenY(on: LineIdx, off: LineIdx, height: Double, onY: Double): Double = {
@@ -89,27 +90,34 @@ final class DiffPane extends StackPane {
     this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
       val passes = 10
       (1 to passes).foreach { _ =>
-        val leftVisible = codeAreaLeft.lineIndicesOnScreen()
-        val rightVisible = codeAreaRight.lineIndicesOnScreen()
-        val topEdge = leftVisible.from.i ==== 0 || rightVisible.from.i ==== 0
-        val bottomEdge = leftVisible.to.i ==== codeAreaLeft.getParagraphs.size() ||
-          rightVisible.to.i ==== codeAreaRight.getParagraphs.size()
-        val up = e.getDeltaY > 0
+
+        val maybeLeftVisible = Try(codeAreaLeft.lineIndicesOnScreen())
+        val maybeRightVisible = Try(codeAreaRight.lineIndicesOnScreen())
         val delta = -e.getDeltaY / passes
-        val (leftScroll, rightScroll) =
-          if ((topEdge && up) || (bottomEdge && !up)) (delta, delta)
-          else {
-            val scrollAlignment = Scroller.calc(leftVisible,
-              rightVisible, notMovedLines)
-            scrollAlignment match {
-              case Aligned | NothingOnScreen => (delta, delta)
-              case LeftIsLower =>
-                if (up) (0.0, delta)
-                else (delta, 0.0)
-              case RightIsLower =>
-                if (!up) (0.0, delta)
-                else (delta, 0.0)
-          }
+        val (leftScroll, rightScroll) = (maybeLeftVisible, maybeRightVisible) match {
+          case (Success(leftVisible), Success(rightVisible)) =>
+            val topEdge = leftVisible.from.i ==== 0 || rightVisible.from.i ==== 0
+            val bottomEdge = leftVisible.to.i ==== codeAreaLeft.getParagraphs.size() ||
+              rightVisible.to.i ==== codeAreaRight.getParagraphs.size()
+            val up = e.getDeltaY > 0
+            if ((topEdge && up) || (bottomEdge && !up)) (delta, delta)
+            else {
+              val scrollAlignment = Scroller.calc(leftVisible,
+                rightVisible, notMovedLines)
+              scrollAlignment match {
+                case Aligned | NothingOnScreen => (delta, delta)
+                case LeftIsLower =>
+                  if (up) (0.0, delta)
+                  else (delta, 0.0)
+                case RightIsLower =>
+                  if (!up) (0.0, delta)
+                  else (delta, 0.0)
+              }
+            }
+          case other =>
+            // :( I couldn't find a better way
+            logger.info(s"Suppressing exception: $other")
+            (delta, delta)
         }
         codeAreaLeft.scrollYBy(leftScroll)
         codeAreaRight.scrollYBy(rightScroll)
