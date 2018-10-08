@@ -243,11 +243,20 @@ object MetricCalculator {
   }
 
   private object ClosestContext {
-    final case class ClosestContextMatches(beforeLeft: Set[Phase1Metrics], beforeRight: Set[Phase1Metrics],
-                                           afterLeft: Set[Phase1Metrics], afterRight: Set[Phase1Metrics]) {
+    final case class ClosestContextMatches(beforeLeft: Traversable[Phase1Metrics], beforeRight: Traversable[Phase1Metrics],
+                                           afterLeft: Traversable[Phase1Metrics], afterRight: Traversable[Phase1Metrics]) {
+      //for performance, hashcode is much faster
+      private def compress(metrics: Phase1Metrics) = {
+        (metrics.leftWord, metrics.rightWord)
+      }
+      private val beforeLeftLookup = beforeLeft.map(compress).toSet
+      private val beforeRightLookup = beforeRight.map(compress).toSet
+      private val afterLeftLookup = afterLeft.map(compress).toSet
+      private val afterRightLookup = afterRight.map(compress).toSet
       def in(phase1Metrics: Phase1Metrics): ContextIsClosest = {
-        ContextIsClosest(beforeFromLeft = beforeLeft.contains(phase1Metrics), beforeFromRight = beforeRight.contains(phase1Metrics),
-        afterFromLeft = afterLeft.contains(phase1Metrics), afterFromRight = afterRight.contains(phase1Metrics))
+        val metrics = compress(phase1Metrics)
+        ContextIsClosest(beforeFromLeft = beforeLeftLookup.contains(metrics), beforeFromRight = beforeRightLookup.contains(metrics),
+        afterFromLeft = afterLeftLookup.contains(metrics), afterFromRight = afterRightLookup.contains(metrics))
       }
     }
     private def findClosestContext(potentials: Map[_, Traversable[Phase1Metrics]], contextSelector: Phase1Metrics => Double) = {
@@ -278,8 +287,8 @@ object MetricCalculator {
       val (beforeLeft, beforeRight) = findClosestForSide(leftWordPotentials, rightWordPotentials, m => contextSelector(m).before)
       val (afterLeft, afterRight) = findClosestForSide(leftWordPotentials, rightWordPotentials, m => contextSelector(m).after)
       ClosestContextMatches(
-        beforeLeft = beforeLeft.toSet, beforeRight = beforeRight.toSet,
-        afterLeft = afterLeft.toSet, afterRight = afterRight.toSet
+        beforeLeft = beforeLeft, beforeRight = beforeRight,
+        afterLeft = afterLeft, afterRight = afterRight
       )
     }
 
