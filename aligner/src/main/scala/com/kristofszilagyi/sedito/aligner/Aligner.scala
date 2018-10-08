@@ -26,7 +26,7 @@ object Aligner {
     PartialResult(metricsAndProb._1.leftWord, metricsAndProb._1.rightWord, metricsAndProb._2)
   }
 
-  private def findPotentialMatches(classifier: SoftClassifier[Array[Double]], scaler: Scaler, metrics: IndexedSeq[Metrics]): Traversable[PartialResult] = {
+  private def findPotentialMatches(classifier: SoftClassifier[Array[Double]], scaler: Scaler, metrics: Traversable[Metrics]): Traversable[PartialResult] = {
     logger.debug("Debug metrics: \n" + metrics.mkString("\n"))
     val xs = metrics.map(m => m -> m.doubles).toArray
 
@@ -53,7 +53,7 @@ final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
     alignFast(metrics, left, right)
   }
 
-  def alignFastWithoutPost(metrics: IndexedSeq[Metrics], log: Boolean): UnambiguousWordAlignment = {
+  def alignFastWithoutPost(metrics: Traversable[Metrics], log: Boolean): UnambiguousWordAlignment = {
     val potentialMatches = findPotentialMatches(classifier, scaler, metrics)
     if (log) logger.info(s"Potentials: ${potentialMatches.size}")
     val leftResolved = resolveWithMostProbable(potentialMatches.groupBy(_.left))
@@ -62,7 +62,7 @@ final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
     UnambiguousWordAlignment(bothResolved.map(p => WordMatch(p.left, p.right)(Some(p.probability))).toSet)
   }
 
-  def alignFast(metrics: IndexedSeq[Metrics], left: FullText, right: FullText): UnambiguousWordAlignment = {
+  def alignFast(metrics: Traversable[Metrics], left: FullText, right: FullText): UnambiguousWordAlignment = {
     val wo = alignFastWithoutPost(metrics, log = true)
     TrivialContextCorrector.correct(left, right, wo)
   }

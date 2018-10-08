@@ -27,7 +27,7 @@ final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
 
   private def findClosestMatches(left: String, right: String) = {
     val result = MetricCalculator.calcAlignerMetrics(FullText(left), FullText(right)).map(m => (m.leftWord.from.i, m.rightWord.from.i, m.closest4th))
-    result.sortBy{case (l, r, _) => (l, r)}
+    result.toSeq.sortBy{case (l, r, _) => (l, r)}
   }
   @SuppressWarnings(Array(Warts.DefaultArguments))
   private def testBestMatchingLine(left: String, right: String, expectedClosestMatchesBefore: Set[(Int, Int)],

@@ -70,7 +70,7 @@ object WholeAlgorithmMeasurer {
     Results(tp = tp.toLong, fp = fp.toLong, fn = fn.toLong, actual.size.toLong, expected.size.toLong)
   }
 
-  def measureFast(aligner: Aligner, testCases: Seq[(Path, TestCase, IndexedSeq[Metrics])]): MultiResult = {
+  def measureFast(aligner: Aligner, testCases: Seq[(Path, TestCase, Traversable[Metrics])]): MultiResult = {
     MultiResult(testCases.map { case (path, testCase, metrics) =>
       val actualWithoutPost = aligner.alignFastWithoutPost(metrics, log = false)
       val actualWithPost = TrivialContextCorrector.correct(testCase.left, testCase.right, actualWithoutPost)

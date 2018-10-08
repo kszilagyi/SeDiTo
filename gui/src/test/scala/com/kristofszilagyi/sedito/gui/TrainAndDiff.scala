@@ -24,7 +24,7 @@ import scala.collection.JavaConverters._
 import scala.util.{Failure, Success}
 
 final case class MetricsWithResults(metrics: Metrics, matching: Boolean)
-final case class Samples(lostPositives: Int, metricsWithResults: IndexedSeq[MetricsWithResults])
+final case class Samples(lostPositives: Int, metricsWithResults: Traversable[MetricsWithResults])
 
 object TrainAndDiff {
   private val logger = getLogger
@@ -167,7 +167,7 @@ object TrainAndDiff {
     logger.info("opening finished")
   }
 
-  def calcNumOfAttributes(metrics: List[IndexedSeq[MetricsWithResults]]): Int = {
+  def calcNumOfAttributes(metrics: List[Traversable[MetricsWithResults]]): Int = {
     @SuppressWarnings(Array(Warts.OptionPartial))
     val nonEmpty = metrics.find(_.nonEmpty).get
     val num = nonEmpty.head.metrics.doubles.length
@@ -181,8 +181,11 @@ object TrainAndDiff {
 
       val (classifier, scaler) = Main.loadAI()
       val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp" +
+        "scala-2.12/test-classes/algorithm_tests/full_tests/modelexactlysame" +
         ""))
+//      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
+//        "scala-2.12/test-classes/algorithm_tests/too_slow/modelexactlysame" +
+//        ""))
 
       displayTestCase(testCase, classifier, scaler)
     }

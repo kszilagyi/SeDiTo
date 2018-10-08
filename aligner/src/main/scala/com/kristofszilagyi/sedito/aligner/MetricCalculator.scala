@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.aligner
 import com.kristofszilagyi.sedito.common._
 import info.debatty.java.stringsimilarity.Levenshtein
 import org.log4s.getLogger
-
+import TypeSafeEqualsOps._
 import scala.annotation.tailrec
 
 object MetricCalculator {
@@ -178,27 +178,25 @@ object MetricCalculator {
   private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int, lineAlignmentCacher: LineAlignmentCacher) = {
     val leftWordString = leftWord.word.toText
     val rightWordString = rightWord.word.toText
-    //if (leftWordString.length > 1 && rightWordString.length > 1) {
-      val wordMetrics = calcMetrics(leftWordString, rightWordString, math.max(leftWordString.length, rightWordString.length))
+    val wordMetrics = calcMetrics(leftWordString, rightWordString, math.max(leftWordString.length, rightWordString.length))
 
-      val contextMetrics = if (wordMetrics.ldLenSim >= 0.99) {
-        Some((
-          calcShortenedContextMetrics(leftWord, rightWord, contextSize / 4),
-          calcShortenedContextMetrics(leftWord, rightWord, contextSize / 8),
-          calcShortenedContextMetrics(leftWord, rightWord, contextSize / 16)
-        ))
-      } else {
-        None
-      }
-      contextMetrics.map { case (forth, eight, sixteenth) =>
-        val leftSelection = leftWord.word
-        val rightSelection = rightWord.word
-        val lineMetrics = lineAlignmentCacher.calcLineMetrics(leftSelection.lineIdx, rightSelection.lineIdx)
-        Phase1Metrics(leftSelection, rightSelection, word = wordMetrics, line = lineMetrics,
-          context4th = forth, context8th = eight, context16th = sixteenth, leftLineIdx = leftSelection.lineIdx,
-          rightLineIdx = rightSelection.lineIdx)
-      }
-   // } else None
+    val contextMetrics = if (wordMetrics.ldLenSim >= 0.99) {
+      Some((
+        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 4),
+        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 8),
+        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 16)
+      ))
+    } else {
+      None
+    }
+    contextMetrics.map { case (forth, eight, sixteenth) =>
+      val leftSelection = leftWord.word
+      val rightSelection = rightWord.word
+      val lineMetrics = lineAlignmentCacher.calcLineMetrics(leftSelection.lineIdx, rightSelection.lineIdx)
+      Phase1Metrics(leftSelection, rightSelection, word = wordMetrics, line = lineMetrics,
+        context4th = forth, context8th = eight, context16th = sixteenth, leftLineIdx = leftSelection.lineIdx,
+        rightLineIdx = rightSelection.lineIdx)
+    }
   }
 
   /**
@@ -225,7 +223,7 @@ object MetricCalculator {
     }
   }
 
-  private def calcClosestLineMatches(phase1Metrics: IndexedSeq[Phase1Metrics]) = {
+  private def calcClosestLineMatches(phase1Metrics: Traversable[Phase1Metrics]) = {
     val leftWordPotentials = phase1Metrics.groupBy(_.leftWord)
     val rightWordPotentials = phase1Metrics.groupBy(_.rightWord)
     val closestFromLeft = findClosestLines(leftWordPotentials)
@@ -272,7 +270,7 @@ object MetricCalculator {
       (closestFromLeft, closestFromRight)
     }
 
-    def calcClosestContextMatches(phase1Metrics: IndexedSeq[Phase1Metrics], contextSelector: Phase1Metrics => ContextMetrics): ClosestContextMatches = {
+    def calcClosestContextMatches(phase1Metrics: Traversable[Phase1Metrics], contextSelector: Phase1Metrics => ContextMetrics): ClosestContextMatches = {
       //So I found it too hard to do something I have done for line (resolving conflicts)
       //so I realised I could just not do that and do a feature based on both sides. It's simpler and potentially more info (or less, not sure)
       val leftWordPotentials = phase1Metrics.groupBy(_.leftWord)
@@ -287,40 +285,74 @@ object MetricCalculator {
 
   }
 
-  def calcAlignerMetrics(left: FullText, right: FullText): IndexedSeq[Metrics] = {
-    val contextSize = 100
+  @tailrec
+  private def findCandidates(contextSize: Int, lefts: Traversable[(WordWithContext, Candidacy)],
+                             shortenedRights: Traversable[WordWithContext]): Traversable[(WordWithContext, Candidacy)] = {
+    // 25 is because that's what we use inside too 100/4, should remove duplication
+    if (contextSize < 25) lefts
+    else {
+      val candidateCtxFinder = new CandidateFinder(shortenedRights.toSet)
+
+      val newLefts = lefts.map { case (word, candidates) =>
+        word -> (candidates match {
+          case exact: ExactMatches => exact
+          case AllTheRest =>
+            candidateCtxFinder.possibleMatches(word.shortedContext(contextSize))
+        })
+      }
+      findCandidates(contextSize / 2, newLefts, shortenedRights.map(_.shortedContext(contextSize / 2)))
+    }
+  }
+
+  def calcAlignerMetrics(left: FullText, right: FullText): Traversable[Metrics] = {
     val leftWords = Wordizer.toWordIndices(left.s).filter(_.length > 1)
     val rightWords = Wordizer.toWordIndices(right.s).filter(_.length > 1)
+
     logger.debug(s"leftWords: $leftWords")
     logger.debug(s"rightWords: $rightWords")
     logger.debug(s"Number of leftWords: ${leftWords.size}")
     logger.debug(s"Number of rightWords: ${rightWords.size}")
-    val leftContexts = leftWords.zipWithIndex map { case (word, leftIdx) =>
-      val leftBeforeContext = context(leftIdx, leftWords, -contextSize)
-      val leftAfterContext = context(leftIdx, leftWords, contextSize)
+    val maxContextSize = 800
+    val standardContextSize = 100
+    val maxLeftContexts = leftWords.zipWithIndex map { case (word, leftIdx) =>
+      val leftBeforeContext = context(leftIdx, leftWords, -maxContextSize)
+      val leftAfterContext = context(leftIdx, leftWords, maxContextSize)
       WordWithContext(leftBeforeContext, leftAfterContext, word)
     }
 
-    val rightContexts = rightWords.zipWithIndex map { case (word, rightIdx) =>
-      val rightBeforeContext = context(rightIdx, rightWords, -contextSize)
-      val rightAfterContext = context(rightIdx, rightWords, contextSize)
+    val maxRightContexts = rightWords.zipWithIndex map { case (word, rightIdx) =>
+      val rightBeforeContext = context(rightIdx, rightWords, -maxContextSize)
+      val rightAfterContext = context(rightIdx, rightWords, maxContextSize)
       WordWithContext(rightBeforeContext, rightAfterContext, word)
     }
+    val standardRightContexts = maxRightContexts.map(_.shortedContext(standardContextSize))
 
-    val candidateCtxFinder = new CandidateFinder(rightContexts.toSet)
+    val standardRightContextsByWord = maxRightContexts.map(_.shortedContext(standardContextSize)).groupBy(_.word)
+
+    //32 => 800/32 = 25 is because that's what we use inside too 100/4, should remove duplication
+    val candidates = findCandidates(maxContextSize, maxLeftContexts.map(l => l -> AllTheRest), maxRightContexts)
+
     val lineAlignmentCacher = new LineAlignmentCacher(left.s.lines.map(_.trim).toVector, right.s.lines.map(_.trim).toVector)
-    val phase1Metrics = leftContexts.flatMap { leftWord =>
-      val candidates = if (leftWord.beforeContext.length < contextSize) {
-        rightContexts
-      } else if (leftWord.afterContext.length < contextSize) {
-        rightContexts
-      } else {
-        candidateCtxFinder.possibleMatches(leftWord)
+
+    @SuppressWarnings(Array(Warts.TraversableOps))
+    val phase1Metrics =
+      candidates.flatMap { case (maxLeftWord, candidacy) =>
+        // this is always max so this is fine
+        val standardLeft = maxLeftWord.shortedContext(standardContextSize)
+        candidacy match {
+          case ExactMatches(matches) =>
+            matches.flatMap { candidate =>
+              val standardRight = standardRightContextsByWord.getOrElse(candidate.word, Traversable.empty)
+              assert(standardRight.size ==== 1, s"${standardRight.size}")
+              calcAllMetrics(standardLeft, standardRight.head, contextSize = standardContextSize, lineAlignmentCacher)
+            }
+          case AllTheRest =>
+            standardRightContexts.flatMap { standardRight =>
+              calcAllMetrics(standardLeft, standardRight, contextSize = standardContextSize, lineAlignmentCacher)
+            }
+        }
       }
-      candidates.flatMap { rightWord =>
-        calcAllMetrics(leftWord, rightWord, contextSize, lineAlignmentCacher)
-      }
-    }
+
     logger.debug(s"Metrics: ${phase1Metrics.mkString("\n")}")
     val closestLineMatches = calcClosestLineMatches(phase1Metrics)
     val closestContext4th = calcClosestContextMatches(phase1Metrics, _.context4th)
