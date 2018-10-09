@@ -180,12 +180,12 @@ object TrainAndDiff {
     def start(stage: Stage): Unit = {
 
       val (classifier, scaler) = Main.loadAI()
-      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/full_tests/modelexactlysame" +
-        ""))
 //      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-//        "scala-2.12/test-classes/algorithm_tests/too_slow/modelexactlysame" +
+//        "scala-2.12/test-classes/algorithm_tests/full_tests/modelexactlysame" +
 //        ""))
+      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
+        "scala-2.12/test-classes/algorithm_tests/too_slow/model" +
+        ""))
 
       displayTestCase(testCase, classifier, scaler)
     }

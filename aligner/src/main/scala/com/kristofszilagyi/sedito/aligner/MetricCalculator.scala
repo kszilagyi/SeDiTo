@@ -1,9 +1,11 @@
 package com.kristofszilagyi.sedito.aligner
 
+import com.kristofszilagyi.sedito.aligner.MetricCalculator.ContextIsClosest._
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common._
 import info.debatty.java.stringsimilarity.Levenshtein
 import org.log4s.getLogger
-import TypeSafeEqualsOps._
+
 import scala.annotation.tailrec
 
 object MetricCalculator {
@@ -49,7 +51,13 @@ object MetricCalculator {
     override def toString: String = s"ldSim = $ldSim, ldSimEdgeAdjusted = $ldSimEdgeAdjusted, " +
       s"normalizedLd = $normalizedLd, normalizedLdLenSim = $normalizedLdLenSim, ldLenSim = $ldLenSim"
 
-    def toDoubles: List[Double] = ldSim :: ldSimEdgeAdjusted :: normalizedLd :: normalizedLdLenSim :: ldLenSim :: Nil
+    def toDoubles(array: ArrayHolder): Unit = {
+      array.add(ldSim)
+      array.add(ldSimEdgeAdjusted)
+      array.add(normalizedLd)
+      array.add(normalizedLdLenSim)
+      array.add(ldLenSim)
+    }
   }
 
   object ContextMetrics {
@@ -59,8 +67,9 @@ object MetricCalculator {
   }
 
   final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics) {
-    def doubles: List[Double] = {
-      before.toDoubles ++ after.toDoubles
+    def doubles(array: ArrayHolder): Unit = {
+      before.toDoubles(array)
+      after.toDoubles(array)
     }
 
     override def toString: String = s"(b: $before,a: $after)"
@@ -76,11 +85,25 @@ object MetricCalculator {
     def columnNames: List[String] = {
       List("beforeFromLeft", "beforeFromRight", "afterFromLeft", "afterFromRight")
     }
+    private def toDouble(from: Boolean) = if(from) 1.0 else 0.0
   }
   final case class ContextIsClosest(beforeFromLeft: Boolean, beforeFromRight: Boolean, afterFromLeft: Boolean, afterFromRight: Boolean) {
     override def toString: String = s"CIC(bL: $beforeFromLeft, bR: $beforeFromRight, aL: $afterFromLeft, aR: $afterFromRight)"
 
-    def doubles: Seq[Double] = (beforeFromLeft :: beforeFromRight :: afterFromLeft :: afterFromRight :: Nil).map(if (_) 1.0 else 0.0)
+    def doubles(array: ArrayHolder): Unit = {
+      array.add(toDouble(beforeFromLeft))
+      array.add(toDouble(beforeFromRight))
+      array.add(toDouble(afterFromLeft))
+      array.add(toDouble(afterFromRight))
+    }
+  }
+  final class ArrayHolder(array: Array[Double]) {
+    @SuppressWarnings(Array(Warts.Var))
+    private var i = 0
+    def add(d: Double): Unit = {
+      array(i) = d
+      i += 1
+    }
   }
   object Metrics {
     def withChildren(parent: String, children: List[String]): List[String] = {
@@ -88,7 +111,7 @@ object MetricCalculator {
         s"$parent.$c"
       }
     }
-    def columnNames: List[String] = {
+    val columnNames: List[String] = {
       List(
         withChildren("word", PairwiseMetrics.columnNames),
         withChildren("line", PairwiseMetrics.columnNames),
@@ -101,6 +124,7 @@ object MetricCalculator {
         List("lineIsClosestMatchInText")
       ).flatten
     }
+    val numOfColumns = columnNames.size
   }
   final case class Metrics(phase1Metrics: Phase1Metrics,
                            lineIsClosestMatchInText: Boolean,
@@ -120,17 +144,21 @@ object MetricCalculator {
 
     @SuppressWarnings(Array(Warts.NonUnitStatement))
     def doubles: Array[Double]= {
-      val builder = Array.newBuilder[Double]
-      builder ++= word.toDoubles
-      builder ++= line.toDoubles
-      builder ++= context4th.doubles
-      builder ++= context8th.doubles
-      builder ++= context16th.doubles
-      builder ++= closest4th.doubles
-      builder ++= closest8th.doubles
-      builder ++= closest16th.doubles
-      builder += (if (lineIsClosestMatchInText) 1.0 else 0.0)
-      builder.result()
+      //I think System.arraycopy works equally well, just got sidetracked by other issues.
+      //currently this is fast enough arraycopy might be faster but can't tell now
+      val result = Array.ofDim[Double](Metrics.numOfColumns)
+      val holder = new ArrayHolder(result)
+      word.toDoubles(holder)
+      line.toDoubles(holder)
+      context4th.doubles(holder)
+      context8th.doubles(holder)
+      context16th.doubles(holder)
+      closest4th.doubles(holder)
+      closest8th.doubles(holder)
+      closest16th.doubles(holder)
+      holder.add(if (lineIsClosestMatchInText) 1.0 else 0.0)
+      //todo this is not thread safe! (it's fine as long as the results are only read by one thread)
+      result
     }
 
     override def toString: String = {
