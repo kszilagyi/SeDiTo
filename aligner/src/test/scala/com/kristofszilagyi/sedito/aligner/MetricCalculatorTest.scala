@@ -54,7 +54,7 @@ final class MetricCalculatorTest extends FreeSpecLike{
       """.stripMargin
 
     val right = left
-    testBestMatchingLine(left, right, expectedClosestMatches = Set((0, 0), (1,1), (2, 2)))
+    findClosestMatches(left, right) shouldBe Vector((0, 0, true), (1,1, true), (2, 2, true))
   }
 
   "best matching line test approximation" in {
@@ -150,8 +150,7 @@ final class MetricCalculatorTest extends FreeSpecLike{
 
     val right = left
     findClosestMatches(left, right) shouldBe
-      Vector((0,0,true), (0,0,true), (0,1,false), (0,2,false), (1,0,false), (1,1,true), (1,1,true),
-        (1,2,false), (2,0,false), (2,1,false), (2,2,true), (2,2,true))
+      Vector((0,0,true), (0,0,true), (1,1,true), (1,1,true), (2,2,true), (2,2,true))
   }
 
   "best matching line test 3 words (other words same)" in {
@@ -163,8 +162,8 @@ final class MetricCalculatorTest extends FreeSpecLike{
 
     val right = left
     findClosestMatches(left, right) shouldBe
-      Vector((0,0,true), (0,0,true), (0,0,true), (0,1,false), (0,2,false), (1,0,false), (1,1,true), (1,1,true), (1,1,true),
-        (1,2,false), (2,0,false), (2,1,false), (2,2,true), (2,2,true), (2,2,true))
+      Vector((0,0,true), (0,0,true), (0,0,true), (1,1,true), (1,1,true), (1,1,true),
+        (2,2,true), (2,2,true), (2,2,true))
   }
 
   "same word in line twice" in {
@@ -176,8 +175,6 @@ final class MetricCalculatorTest extends FreeSpecLike{
 
     val right = left
     findClosestMatches(left, right) shouldBe
-      Vector((0,0,true), (0,0,true), (0,0,true), (0,0,true), (0,1,false),(0,1,false), (0,2,false), (0,2,false),
-        (1,0,false), (1,0,false), (1,1,true), (1,1,true),
-        (1,2,false), (2,0,false), (2,0,false), (2,1,false), (2,2,true), (2,2,true))
+      Vector((0,0,true), (0,0,true), (1,1,true), (1,1,true), (2,2,true), (2,2,true))
   }
 }
