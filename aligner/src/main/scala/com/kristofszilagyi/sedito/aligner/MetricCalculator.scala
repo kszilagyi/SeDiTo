@@ -275,12 +275,14 @@ object MetricCalculator {
                                            afterLeft: Traversable[Phase1Metrics], afterRight: Traversable[Phase1Metrics]) {
       //for performance, hashcode is much faster
       private def compress(metrics: Phase1Metrics) = {
-        (metrics.leftWord, metrics.rightWord)
+        (metrics.leftWord.absoluteFrom, metrics.rightWord.absoluteFrom)
       }
+
       private val beforeLeftLookup = beforeLeft.map(compress).toSet
       private val beforeRightLookup = beforeRight.map(compress).toSet
       private val afterLeftLookup = afterLeft.map(compress).toSet
       private val afterRightLookup = afterRight.map(compress).toSet
+
       def in(phase1Metrics: Phase1Metrics): ContextIsClosest = {
         val metrics = compress(phase1Metrics)
         ContextIsClosest(beforeFromLeft = beforeLeftLookup.contains(metrics), beforeFromRight = beforeRightLookup.contains(metrics),
