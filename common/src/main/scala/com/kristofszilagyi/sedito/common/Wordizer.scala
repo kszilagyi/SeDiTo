@@ -20,10 +20,11 @@ object Wordizer {
   def toWordIndicesWithWhitespaces(s: String): IndexedSeq[Selection] = {
     if (s.isEmpty) IndexedSeq.empty
     else {
+      val regex = raw"((?<=[^\w])|(?=[^\w]))".r
       calculateLines(s).zipWithIndex.flatMap { case (LineAndPos(line, linePos), lineIdx) =>
-        val separatorIndexes = raw"((?<=[^\w])|(?=[^\w]))".r.findAllMatchIn(line).toList.map(_.start)
+        val separatorIndexes = regex.findAllMatchIn(line).toVector.map(_.start)
         val positions = (0 +: separatorIndexes :+ line.length).sliding(2).toVector.flatMap {
-          case List(a, b) =>
+          case Vector(a, b) =>
             if (a < b) Some((a, b)).toList
             else None.toList
           case _ => None.toList
