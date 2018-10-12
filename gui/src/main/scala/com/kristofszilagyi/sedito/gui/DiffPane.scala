@@ -217,15 +217,7 @@ final class DiffPane extends StackPane {
   def openTestCase(left: FullText, right: FullText, newWordAlignment: UnambiguousWordAlignment): Unit = {
     needToDraw = false
     //todo probably reset should recreate everything
-    codeAreaRight.reset()
-    codeAreaLeft.reset()
-    codeAreaLeft.replaceText(left.s)
-    codeAreaRight.replaceText(right.s)
 
-    codeAreaLeft.moveTo(0)
-    codeAreaLeft.requestFollowCaret()
-    codeAreaRight.moveTo(0)
-    codeAreaRight.requestFollowCaret()
     wordAlignment = newWordAlignment
     codeAreaLeft.wordAlignmentByLine = newWordAlignment.matches.map(m => MatchInfo(m.left, m.probability)).groupBy(_.selection.lineIdx)
     codeAreaRight.wordAlignmentByLine = newWordAlignment.matches.map(m => MatchInfo(m.right, m.probability)).groupBy(_.selection.lineIdx)
@@ -234,8 +226,8 @@ final class DiffPane extends StackPane {
 
     val lineAlignment = WhiteSpaceAligner.align(leftLines, rightLines, LineAligner.align(newWordAlignment))
 
-    val deleted = (0 until codeAreaLeft.getParagraphs.size()).map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.leftLineIdx).contains(l))
-    val inserted = (0 until codeAreaRight.getParagraphs.size()).map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.rightLineIdx).contains(l))
+    val deleted = leftLines.l.indices.map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.leftLineIdx).contains(l))
+    val inserted = rightLines.l.indices.map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.rightLineIdx).contains(l))
     val partitioned = lineAlignment.partition
     val moved = partitioned.moved
     notMovedLines = TreeMap(partitioned.notMoved.flatMap(LineMatch.unapply).toSeq: _*)
@@ -263,8 +255,14 @@ final class DiffPane extends StackPane {
     val highlight = CharHighlightCalculator.calc(leftWords, rightWords, newWordAlignment, lineAlignment)
     applyHighlight(codeAreaLeft, highlight.left)
     applyHighlight(codeAreaRight, highlight.right)
+    codeAreaLeft.applyLineEdits(left)
+    codeAreaRight.applyLineEdits(right)
     codeAreaLeft.applyCharEdits()
     codeAreaRight.applyCharEdits()
+    codeAreaLeft.moveTo(0)
+    codeAreaLeft.requestFollowCaret()
+    codeAreaRight.moveTo(0)
+    codeAreaRight.requestFollowCaret()
     layout()
     requestRedraw()
   }

@@ -16,7 +16,7 @@ import javafx.stage.Popup
 import org.fxmisc.flowless.{Cell, VirtualFlow}
 import org.fxmisc.richtext.event.MouseOverTextEvent
 import org.fxmisc.richtext.model.TwoDimensional.Bias
-import org.fxmisc.richtext.model.{StyleSpans, StyleSpansBuilder}
+import org.fxmisc.richtext.model._
 import org.fxmisc.richtext.{CodeArea, GenericStyledArea}
 
 import scala.collection.JavaConverters._
@@ -110,10 +110,31 @@ object Editor {
     }
     builder.create()
   }
+  type Par = Paragraph[util.Collection[String], String, util.Collection[String]]
+  type StyledDoc = StyledDocument[util.Collection[String], String, util.Collection[String]]
+}
+final class MyStyledDocument(paragraphs: Vector[Par])
+   extends StyledDoc {
+  def length(): Int = paragraphs.map(_.length()).sum
 
+  def getText: String = paragraphs.mkString
+
+  def getParagraphs: util.List[Par] = paragraphs.asJava
+
+  def concat(that: StyledDoc): StyledDoc = {
+    new MyStyledDocument(paragraphs ++ that.getParagraphs.asScala)
+  }
+
+  def subSequence(start: Int, end: Int): StyledDoc = {
+    ???
+  }
+
+  def position(major: Int, minor: Int): TwoDimensional.Position = ???
+
+  def offsetToPosition(offset: Int, bias: Bias): TwoDimensional.Position = ???
 }
 
-final case class LineEdits(line: LineEditType, charEdits: Traversable[CharEdit])
+final case class LineEdits(line: LineEditType, charEdits: Vector[CharEdit])
 
 final class Editor extends CodeArea {
   this.setUseInitialStyleForInsertion(true)
@@ -203,9 +224,9 @@ final class Editor extends CodeArea {
     otherEditor.foreach(_.resetHighlighting())
   })
 
+
   private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {
     val lineCssClass = getLineCssClass(editType.map(_.line)).s
-    setParagraphStyle(lineIdx.i, List(lineCssClass).asJava)
 
     {
       val lineNoStyle = lineNumberFactory.apply(lineIdx.i).getStyleClass
@@ -215,11 +236,21 @@ final class Editor extends CodeArea {
 
   }
 
+  def applyLineEdits(s: FullText): Unit = {
+    val lines = s.s.lines.toVector
+    val paragraphs = lines.zip(editTypes.toSeq.sortBy(_._1)).map { case (line, (_, lineEdits)) =>
+      val lineCssClass = getLineCssClass(Some(lineEdits.line)).s
+      new Paragraph[util.Collection[String], String, util.Collection[String]](List(lineCssClass).asJava,
+        SegmentOps.styledTextOps[util.Collection[String]](), line, List.empty[String].asJava)
+    }
+    replace(new MyStyledDocument(paragraphs)) //this is much faster than doing it incrementally
+  }
+
   def setLineType(lineIdx: LineIdx, editType: LineEditType): Unit = {
     val current = editTypes.get(lineIdx)
     val newEdit = current match {
       case Some(edit) => edit.copy(line = editType)
-      case None => LineEdits(editType, Traversable.empty)
+      case None => LineEdits(editType, Vector.empty)
     }
 
     editTypes += lineIdx -> newEdit
@@ -233,7 +264,7 @@ final class Editor extends CodeArea {
   def setCharEdit(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {
     val current = editTypes.get(lineIdx)
     val newEdit = current match {
-      case Some(edit) => edit.copy(charEdits = edit.charEdits ++ Traversable(CharEdit(from, to, editType)))
+      case Some(edit) => edit.copy(charEdits = edit.charEdits :+ CharEdit(from, to, editType))
       case None => fail(s"Bug in code: cannot have new char edits without line edit. $lineIdx")
     }
     editTypes += lineIdx -> newEdit
