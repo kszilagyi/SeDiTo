@@ -1,6 +1,8 @@
 package com.kristofszilagyi.sedito.common
 
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
+import com.kristofszilagyi.sedito.common.Warts.{discard}
+import TypeSafeEqualsOps._
 
 object Wordizer {
   final case class LineAndPos(line: String, pos: Int)
@@ -17,20 +19,36 @@ object Wordizer {
     toWordIndicesWithWhitespaces(s).filterNot{ sel => sel.toText.matches(raw"\s*")}
   }
 
+  private def isWord(c: Char) = c.isLetterOrDigit || c ==== '_'
+  // rewritten to be non-functional for performance
+  @SuppressWarnings(Array(Warts.Var, Warts.While))
   def toWordIndicesWithWhitespaces(s: String): IndexedSeq[Selection] = {
     if (s.isEmpty) IndexedSeq.empty
     else {
-      val regex = raw"((?<=[^\w])|(?=[^\w]))".r
       calculateLines(s).zipWithIndex.flatMap { case (LineAndPos(line, linePos), lineIdx) =>
-        val separatorIndexes = regex.findAllMatchIn(line).toVector.map(_.start)
-        val positions = (0 +: separatorIndexes :+ line.length).sliding(2).toVector.flatMap {
-          case Vector(a, b) =>
-            if (a < b) Some((a, b)).toList
-            else None.toList
-          case _ => None.toList
-        }
+        val positions = Vector.newBuilder[(Int, Int)]
 
-        positions.map { case (start, end) =>
+        if (line.nonEmpty) {
+          var i = 1
+          var wordStart = 0
+          var singleLetterWord = !isWord(line.charAt(0))
+          while (i < line.length) {
+            val currentChar = line.charAt(i)
+
+            if (!isWord(currentChar)) {
+              discard(positions += ((wordStart, i)))
+              wordStart = i
+              singleLetterWord = true
+            } else if (singleLetterWord) {
+              discard(positions += ((wordStart, i)))
+              wordStart = i
+              singleLetterWord = false
+            }
+            i += 1
+          }
+          discard(positions += ((wordStart, line.length)))
+        }
+        positions.result().map { case (start, end) =>
           Selection.create(line, LineIdx(lineIdx), from = CharIdxInLine(start), toExcl = CharIdxInLine(end),
             absoluteFrom = linePos + start).getAssert("invalid range")
         }

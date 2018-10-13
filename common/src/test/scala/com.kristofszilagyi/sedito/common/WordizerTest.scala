@@ -12,6 +12,10 @@ final class WordizerTest extends FreeSpecLike {
     Wordizer.toWords("apple") shouldBe Seq("apple")
   }
 
+  "1 word _" in {
+    Wordizer.toWords("apple_juice") shouldBe Seq("apple_juice")
+  }
+
   "2 words, 1 space" in {
     Wordizer.toWords("apple cheese") shouldBe Seq("apple", "cheese")
   }
