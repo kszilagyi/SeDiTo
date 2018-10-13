@@ -366,7 +366,7 @@ object MetricCalculator {
     }
     val standardRightContexts = maxRightContexts.map(_.shortedContext(standardContextSize))
 
-    val standardRightContextsByWord = maxRightContexts.map(_.shortedContext(standardContextSize)).groupBy(_.word)
+    val standardRightContextsByWord = maxRightContexts.map(_.shortedContext(standardContextSize)).groupBy(_.word.absoluteFrom) //absoluteFrom -> performance
 
     //32 => 800/32 = 25 is because that's what we use inside too 100/4, should remove duplication
     val candidates = findCandidates(maxContextSize, maxLeftContexts.map(l => l -> AllTheRest), maxRightContexts)
@@ -381,7 +381,7 @@ object MetricCalculator {
         candidacy match {
           case ExactMatches(matches) =>
             matches.flatMap { candidate =>
-              val standardRight = standardRightContextsByWord.getOrElse(candidate.word, Traversable.empty)
+              val standardRight = standardRightContextsByWord.getOrElse(candidate.word.absoluteFrom, Traversable.empty)
               assert(standardRight.size ==== 1, s"${standardRight.size}")
               calcAllMetrics(standardLeft, standardRight.head, contextSize = standardContextSize, lineAlignmentCacher)
             }

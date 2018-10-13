@@ -1,8 +1,10 @@
 package com.kristofszilagyi.sedito.common
 
 import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
-import com.kristofszilagyi.sedito.common.Warts.{discard}
+import com.kristofszilagyi.sedito.common.Warts.discard
 import TypeSafeEqualsOps._
+
+import scala.collection.mutable
 
 object Wordizer {
   final case class LineAndPos(line: String, pos: Int)
@@ -15,14 +17,16 @@ object Wordizer {
     }
     lines.zip(linePositions).map((LineAndPos.apply _).tupled)
   }
-  def toWordIndices(s: String): IndexedSeq[Selection] = {
-    toWordIndicesWithWhitespaces(s).filterNot{ sel => sel.toText.matches(raw"\s*")}
-  }
 
   private def isWord(c: Char) = c.isLetterOrDigit || c ==== '_'
+  private def addNonWhiteSpace(builder: mutable.Builder[(Int, Int), Vector[(Int, Int)]], start: Int, end: Int, line: String): Unit = {
+    if (end - start > 1 || !line.charAt(start).isWhitespace) {
+      discard(builder += ((start, end)))
+    }
+  }
   // rewritten to be non-functional for performance
   @SuppressWarnings(Array(Warts.Var, Warts.While))
-  def toWordIndicesWithWhitespaces(s: String): IndexedSeq[Selection] = {
+  def toWordIndices(s: String): IndexedSeq[Selection] = {
     if (s.isEmpty) IndexedSeq.empty
     else {
       calculateLines(s).zipWithIndex.flatMap { case (LineAndPos(line, linePos), lineIdx) =>
@@ -36,17 +40,17 @@ object Wordizer {
             val currentChar = line.charAt(i)
 
             if (!isWord(currentChar)) {
-              discard(positions += ((wordStart, i)))
+              addNonWhiteSpace(positions, wordStart, i, line)
               wordStart = i
               singleLetterWord = true
             } else if (singleLetterWord) {
-              discard(positions += ((wordStart, i)))
+              addNonWhiteSpace(positions, wordStart, i, line)
               wordStart = i
               singleLetterWord = false
             }
             i += 1
           }
-          discard(positions += ((wordStart, line.length)))
+          addNonWhiteSpace(positions, wordStart, line.length, line)
         }
         positions.result().map { case (start, end) =>
           Selection.create(line, LineIdx(lineIdx), from = CharIdxInLine(start), toExcl = CharIdxInLine(end),
@@ -61,8 +65,4 @@ object Wordizer {
     indices.map(_.toText)
   }
 
-  def toWordsAndWhiteSpaces(s: String): Seq[String] = {
-    val indices = toWordIndicesWithWhitespaces(s)
-    indices.map(_.toText)
-  }
 }
