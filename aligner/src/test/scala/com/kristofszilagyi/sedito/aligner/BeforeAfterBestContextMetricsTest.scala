@@ -56,18 +56,27 @@ final class BeforeAfterBestContextMetricsTest extends FreeSpecLike {
       leftWords = Wordizer.toWordIndices(left), rightWords = Wordizer.toWordIndices(right), differentLeftWords = differentLeftWords, differentRightWords = differentRightWords)
   }
 
+  private val allTrue = ContextIsClosest(beforeFromLeft = true, beforeFromRight = true, afterFromLeft = true, afterFromRight = true)
   "vanilla" in {
     val left = """alma alma1 alma2""".stripMargin
 
     val right = left
-    testBestMatchingLine(left, right, expectedClosestMatchesBefore = Set((0, 0), (1,1), (2, 2)), expectedClosestMatchesAfter = Set((0, 0), (1,1), (2, 2)))
+    findClosestMatches(left, right) shouldBe Vector(
+      (0, 0, allTrue),
+      (5, 5, allTrue),
+      (11, 11, allTrue)
+    )
   }
 
   "order changed" in {
     val left = """alma1 alma alma2""".stripMargin
 
     val right = left
-    testBestMatchingLine(left, right, expectedClosestMatchesBefore = Set((0, 0), (1,1), (2, 2)), expectedClosestMatchesAfter = Set((0, 0), (1,1), (2, 2)))
+    findClosestMatches(left, right) shouldBe Vector(
+      (0, 0, allTrue),
+      (6, 6, allTrue),
+      (11, 11, allTrue)
+    )
   }
 
   "first word deleted - alien word" in {
