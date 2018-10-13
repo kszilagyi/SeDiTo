@@ -1,10 +1,11 @@
 package com.kristofszilagyi.sedito.gui
 
+import java.nio.charset.StandardCharsets
 import java.nio.file.{Files, Path, Paths}
 import java.time.{Duration, Instant}
 
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
-import com.kristofszilagyi.sedito.aligner.{Aligner, MetricCalculator}
+import com.kristofszilagyi.sedito.aligner.{AccessibleScaler, Aligner, MetricCalculator}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
@@ -125,12 +126,12 @@ object TrainAndDiff {
 
   //todo try with more neurons
   def generateClassifier(nestedTraining: List[Samples], nestedTest: List[Samples],
-                         numOfAttributes: Int, idxesToExclude: Set[Int]): (NeuralNetwork, Scaler, TrainingData) = {
+                         numOfAttributes: Int, idxesToExclude: Set[Int]): (NeuralNetwork, AccessibleScaler, TrainingData) = {
     val training = nestedTraining.flatMap(_.metricsWithResults)
     val test = nestedTest.flatMap(_.metricsWithResults)
 
     val trainingSet = toAttributeDataSet(training, numOfAttributes, idxesToExclude)
-    val scaler = new Scaler(true)
+    val scaler = new AccessibleScaler(true)
     scaler.learn(trainingSet.attributes(), trainingSet.x())
     val transformedTrainingSet = scaler.transform(trainingSet.x())
     val trainingY = trainingSet.labels()
@@ -184,7 +185,7 @@ object TrainAndDiff {
 //        "scala-2.12/test-classes/algorithm_tests/full_tests/modelexactlysame" +
 //        ""))
       val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/too_slow/model" +
+        "scala-2.12/test-classes/algorithm_tests/too_slow/metricscalculatortest" +
         ""))
 
       displayTestCase(testCase, classifier, scaler)
@@ -219,7 +220,7 @@ object TrainAndDiff {
 object Train {
   private val logger = getLogger
 
-  def train(training: List[(Path, Samples)], test: List[(Path, Samples)], logStats: Boolean): (NeuralNetwork, Scaler) = {
+  def train(training: List[(Path, Samples)], test: List[(Path, Samples)], logStats: Boolean): (NeuralNetwork, AccessibleScaler) = {
     val samples = training ++ test
     val metricsWithResults = samples.map(_._2.metricsWithResults)
     val numOfAttributes = calcNumOfAttributes(metricsWithResults)
@@ -243,14 +244,32 @@ object Train {
     }
     (classifier, scaler)
   }
+
+  // This is necessary to avoid reading from xml (performance)
+  private def writeScaler(scaler: AccessibleScaler, path: Path)  {
+    val text =
+      s"""
+         |package com.kristofszilagyi.sedito.aligner;
+         |import smile.feature.Scaler;
+         |final public class HardcodedScaler extends Scaler {
+         |  public HardcodedScaler() {
+         |    super(true);
+         |    lo = new double[]{${scaler.getLo.mkString(", ")}};
+         |    hi = new double[]{${scaler.getHi.mkString(", ")}};
+         |  }
+         |}
+       """.stripMargin
+    discard(Files.write(path, text.getBytes(StandardCharsets.UTF_8)))
+  }
+
   def main(args: Array[String]) {
     logger.info("Start")
     val start = Instant.now()
     val samples = readDataSetAndMeasureMetrics()
     val (training, test) = samples.splitAt(samples.size / 2)
     val (classifier, scaler) = train(training, test, logStats = true)
-    write.xstream(classifier, "aligner/src/main/resources/model.model")
-    write.xstream(scaler, "aligner/src/main/resources/scaler.scaler")
+    write(classifier, "aligner/src/main/resources/model.model")
+    writeScaler(scaler, Paths.get("aligner/src/main/scala/com/kristofszilagyi/sedito/aligner/HardcodedScaler.java"))
     val duration = Duration.between(start, Instant.now())
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
   }

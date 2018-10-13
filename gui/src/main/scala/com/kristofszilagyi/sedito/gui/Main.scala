@@ -1,6 +1,8 @@
 package com.kristofszilagyi.sedito.gui
 
 
+import java.io.ObjectInputStream
+import com.kristofszilagyi.sedito.aligner.HardcodedScaler
 import com.kristofszilagyi.sedito.aligner.Aligner
 import com.kristofszilagyi.sedito.common.{FullText, Warts}
 import com.sun.javafx.css.CssError
@@ -13,7 +15,6 @@ import java.nio.file.Paths
 
 import Main._
 import com.kristofszilagyi.sedito.common.utils.Control.using
-import com.thoughtworks.xstream.XStream
 import smile.classification.NeuralNetwork
 import smile.feature.Scaler
 
@@ -55,12 +56,10 @@ object Main {
 
   @SuppressWarnings(Array(Warts.AsInstanceOf))
   def loadAI(): (NeuralNetwork, Scaler) = {
-    val classifier = using(getClass.getClassLoader.getResourceAsStream("model.model")) { classifierStream =>
-      new XStream().fromXML(classifierStream).asInstanceOf[NeuralNetwork]
+    val classifier = using(new ObjectInputStream(getClass.getClassLoader.getResourceAsStream("model.model"))) { stream =>
+      stream.readObject().asInstanceOf[NeuralNetwork]
     }
-    val scaler = using(getClass.getClassLoader.getResourceAsStream("scaler.scaler")) { scalerStream =>
-      new XStream().fromXML(scalerStream).asInstanceOf[Scaler]
-    }
+    val scaler = new HardcodedScaler();
     (classifier, scaler)
   }
 
