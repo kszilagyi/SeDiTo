@@ -11,11 +11,16 @@ object Wordizer {
 
   def calculateLines(s: String): IndexedSeq[LineAndPos] = {
     val lines = s.linesWithSeparators.toIndexedSeq
-    @SuppressWarnings(Array(Warts.TraversableOps))
-    val linePositions = lines.foldLeft(IndexedSeq(0)) { case (acc, line) =>
-      acc :+ (acc.last + line.length)
+    val linePositions = Vector.newBuilder[Int]
+    linePositions.sizeHint(lines.size)
+    discard(linePositions += 0)
+    @SuppressWarnings(Array(Warts.Var))
+    var lastPos = 0
+    lines.foreach { case (line) =>
+      lastPos += line.length
+      discard(linePositions += lastPos)
     }
-    lines.zip(linePositions).map((LineAndPos.apply _).tupled)
+    lines.zip(linePositions.result()).map((LineAndPos.apply _).tupled)
   }
 
   private def isWord(c: Char) = c.isLetterOrDigit || c ==== '_'
