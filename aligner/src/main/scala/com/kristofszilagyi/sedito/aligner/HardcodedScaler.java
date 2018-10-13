@@ -1,6 +1,6 @@
-
 package com.kristofszilagyi.sedito.aligner;
 import smile.feature.Scaler;
+
 final public class HardcodedScaler extends Scaler {
   public HardcodedScaler() {
     super(true);

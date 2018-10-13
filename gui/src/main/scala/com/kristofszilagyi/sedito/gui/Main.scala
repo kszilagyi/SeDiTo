@@ -1,21 +1,17 @@
 package com.kristofszilagyi.sedito.gui
 
 
-import java.io.ObjectInputStream
-import com.kristofszilagyi.sedito.aligner.HardcodedScaler
-import com.kristofszilagyi.sedito.aligner.Aligner
+import java.nio.charset.StandardCharsets
+import java.nio.file.{Files, Paths}
+
+import com.kristofszilagyi.sedito.aligner.{Aligner, HardcodedNeuralNetwork, HardcodedScaler}
 import com.kristofszilagyi.sedito.common.{FullText, Warts}
+import com.kristofszilagyi.sedito.gui.Main._
 import com.sun.javafx.css.CssError
 import javafx.application.{Application, Platform}
 import javafx.collections.ListChangeListener
 import org.log4s._
-import java.nio.charset.StandardCharsets
-import java.nio.file.Files
-import java.nio.file.Paths
-
-import Main._
-import com.kristofszilagyi.sedito.common.utils.Control.using
-import smile.classification.NeuralNetwork
+import smile.classification.SoftClassifier
 import smile.feature.Scaler
 
 import scala.collection.JavaConverters._
@@ -55,11 +51,9 @@ final class Main extends Application {
 object Main {
 
   @SuppressWarnings(Array(Warts.AsInstanceOf))
-  def loadAI(): (NeuralNetwork, Scaler) = {
-    val classifier = using(new ObjectInputStream(getClass.getClassLoader.getResourceAsStream("model.model"))) { stream =>
-      stream.readObject().asInstanceOf[NeuralNetwork]
-    }
-    val scaler = new HardcodedScaler();
+  def loadAI(): (SoftClassifier[Array[Double]], Scaler) = {
+    val classifier = HardcodedNeuralNetwork.nn
+    val scaler = new HardcodedScaler()
     (classifier, scaler)
   }
 

@@ -14,12 +14,12 @@ import com.kristofszilagyi.sedito.gui.TrainAndDiff._
 import javafx.application.Application
 import javafx.stage.Stage
 import org.log4s.getLogger
+import smile.classification
 import smile.classification.NeuralNetwork.{ActivationFunction, ErrorFunction}
 import smile.classification.{NeuralNetwork, SoftClassifier}
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
 import smile.feature.Scaler
 import smile.validation._
-import smile.{classification, write}
 
 import scala.collection.JavaConverters._
 import scala.util.{Failure, Success}
@@ -248,9 +248,9 @@ object Train {
   // This is necessary to avoid reading from xml (performance)
   private def writeScaler(scaler: AccessibleScaler, path: Path)  {
     val text =
-      s"""
-         |package com.kristofszilagyi.sedito.aligner;
+      s"""package com.kristofszilagyi.sedito.aligner;
          |import smile.feature.Scaler;
+         |
          |final public class HardcodedScaler extends Scaler {
          |  public HardcodedScaler() {
          |    super(true);
@@ -262,13 +262,31 @@ object Train {
     discard(Files.write(path, text.getBytes(StandardCharsets.UTF_8)))
   }
 
+  private def toString(dd: Array[Array[Double]]): String = {
+    "new double[][]{{" + dd.map(_.mkString(", ")).mkString("}, {") + "}}"
+  }
+  private def writeNN(nn: NeuralNetwork, path: Path)  {
+    val text =
+      s"""package com.kristofszilagyi.sedito.aligner;
+         |import smile.classification.LoadableNeuralNetwork;
+         |
+         |final public class HardcodedNeuralNetwork {
+         |  public static final LoadableNeuralNetwork nn = new LoadableNeuralNetwork(${Metrics.columnNames.length}, new double[][][]{
+         |    ${toString(nn.getWeight(1))},
+         |    ${toString(nn.getWeight(2))}
+         |  });
+         |}
+       """.stripMargin
+    discard(Files.write(path, text.getBytes(StandardCharsets.UTF_8)))
+  }
+
   def main(args: Array[String]) {
     logger.info("Start")
     val start = Instant.now()
     val samples = readDataSetAndMeasureMetrics()
     val (training, test) = samples.splitAt(samples.size / 2)
     val (classifier, scaler) = train(training, test, logStats = true)
-    write(classifier, "aligner/src/main/resources/model.model")
+    writeNN(classifier, Paths.get("aligner/src/main/scala/com/kristofszilagyi/sedito/aligner/HardcodedNeuralNetwork.java"))
     writeScaler(scaler, Paths.get("aligner/src/main/scala/com/kristofszilagyi/sedito/aligner/HardcodedScaler.java"))
     val duration = Duration.between(start, Instant.now())
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
