@@ -158,10 +158,10 @@ object TrainAndDiff {
   private def displayTestCase(testCase: TestCase, classifier: SoftClassifier[Array[Double]], scaler: Scaler) = {
     val calculatedAlignment = new Aligner(classifier, scaler).align(testCase.left, testCase.right)
     logger.info("Aligning finished")
-    val expected = new MainWindow()
-    expected.setTitle("Expected")
-    val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
-    expected.setContent(testCase.left, testCase.right, unambiguousWordAlignment)
+//    val expected = new MainWindow()
+//    expected.setTitle("Expected")
+//    val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
+//    expected.setContent(testCase.left, testCase.right, unambiguousWordAlignment)
     val actual = new MainWindow()
     actual.setTitle("Actual")
     actual.setContent(testCase.left, testCase.right, calculatedAlignment)
@@ -296,5 +296,7 @@ object Train {
 
 
 object Diff extends App {
+//  println("sleepy")
+//  Thread.sleep(10000)
   Application.launch(classOf[ShowOne])
 }

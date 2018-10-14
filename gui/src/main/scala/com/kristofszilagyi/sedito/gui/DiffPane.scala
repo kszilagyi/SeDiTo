@@ -140,7 +140,7 @@ final class DiffPane extends StackPane {
               val newMatches = wordAlignment.matches.filter(m => (m.left !=== leftSelection) && (m.right !=== rightSelection)) + WordMatch(leftSelection, rightSelection)()
               val newAlignment = wordAlignment.copy(newMatches)
               logger.info(s"Adding new match. Old size: ${wordAlignment.matches.size}, new size: ${newMatches.size}")
-              openTestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), newAlignment)
+              openTestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), newAlignment, showing = true)
             case other =>
               logger.info(s"No selection: $other")
           }
@@ -214,7 +214,7 @@ final class DiffPane extends StackPane {
     }
   }
 
-  def openTestCase(left: FullText, right: FullText, newWordAlignment: UnambiguousWordAlignment): Unit = {
+  def openTestCase(left: FullText, right: FullText, newWordAlignment: UnambiguousWordAlignment, showing: Boolean): Unit = {
     needToDraw = false
     //todo probably reset should recreate everything
 
@@ -263,7 +263,9 @@ final class DiffPane extends StackPane {
     codeAreaLeft.requestFollowCaret()
     codeAreaRight.moveTo(0)
     codeAreaRight.requestFollowCaret()
-    layout()
-    requestRedraw()
+    if (showing) {
+      layout()
+      requestRedraw()
+    }
   }
 }

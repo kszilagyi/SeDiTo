@@ -33,7 +33,7 @@ final class MainWindow {
         case Success(testCase) =>
           val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
           logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
-          diffPane.openTestCase(testCase.left, testCase.right, unambiguousWordAlignment)
+          diffPane.openTestCase(testCase.left, testCase.right, unambiguousWordAlignment, showing = true)
         case Failure(e) =>
           logger.error(e)("Failed to open test case")
           discard(new Alert(AlertType.ERROR, s"Failed to open test: $e").showAndWait())
@@ -88,11 +88,12 @@ final class MainWindow {
     discard(scene.getStylesheets().add(url))
     scene
   }
-  stage.show()
 
   def setTitle(title: String): Unit = stage.setTitle(title)
 
   def setContent(left: FullText, right: FullText, alignment: UnambiguousWordAlignment): Unit = {
-    diffPane.openTestCase(left, right, alignment)
+    val showing = stage.isShowing
+    diffPane.openTestCase(left, right, alignment, showing = showing)
+    if (!showing) stage.show()
   }
 }
