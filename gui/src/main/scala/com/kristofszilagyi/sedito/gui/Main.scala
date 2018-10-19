@@ -8,7 +8,7 @@ import com.kristofszilagyi.sedito.aligner.{Aligner, HardcodedNeuralNetwork, Hard
 import com.kristofszilagyi.sedito.common.{FullText, Warts}
 import com.kristofszilagyi.sedito.gui.Main._
 import com.sun.javafx.css.CssError
-import javafx.application.{Application, Platform}
+import javafx.application.{Application}
 import javafx.collections.ListChangeListener
 import org.log4s._
 import smile.classification.SoftClassifier
@@ -29,13 +29,11 @@ final class Main extends Application {
     val args = getParameters.getRaw
     logger.info(s"Args: $args")
     if (args.size() >= 2) {
-      Platform.runLater { () =>
-        val left = FullText(new String(Files.readAllBytes(Paths.get(args.get(0))), StandardCharsets.UTF_8))
-        val right = FullText(new String(Files.readAllBytes(Paths.get(args.get(1))), StandardCharsets.UTF_8))
-        val (classifier, scaler) = loadAI()
-        val calculatedAlignment = new Aligner(classifier, scaler).align(left, right)
-        mainWindow.setContent(left, right, calculatedAlignment)
-      }
+      val left = FullText(new String(Files.readAllBytes(Paths.get(args.get(0))), StandardCharsets.UTF_8))
+      val right = FullText(new String(Files.readAllBytes(Paths.get(args.get(1))), StandardCharsets.UTF_8))
+      val (classifier, scaler) = loadAI()
+      val calculatedAlignment = new Aligner(classifier, scaler).align(left, right)
+      mainWindow.setContent(left, right, calculatedAlignment)
     }
 
     com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {
