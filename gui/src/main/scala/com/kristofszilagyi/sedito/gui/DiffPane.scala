@@ -6,21 +6,20 @@ import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.common.utils.TupleOps.RichTuple
 import com.kristofszilagyi.sedito.gui.DiffPane._
+import com.kristofszilagyi.sedito.gui.JavaFxOps.schedule
 import com.kristofszilagyi.sedito.gui.ObservableOps.RichObservable
 import com.kristofszilagyi.sedito.gui.Scroller.{Aligned, LeftIsLower, NothingOnScreen, RightIsLower}
-import javafx.animation.{Animation, KeyFrame, Timeline}
-import javafx.event.ActionEvent
 import javafx.geometry.Insets
 import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
 import javafx.scene.layout._
 import javafx.scene.paint.{Color, CycleMethod, LinearGradient, Stop}
 import javafx.scene.shape.StrokeLineCap
-import javafx.util.Duration
 import org.fxmisc.flowless.VirtualizedScrollPane
 import org.log4s.getLogger
 
 import scala.collection.JavaConverters._
 import scala.collection.immutable.TreeMap
+import scala.concurrent.duration.DurationInt
 import scala.util.{Success, Try}
 
 object DiffPane {
@@ -81,11 +80,7 @@ final class DiffPane extends StackPane {
       Seq(hBox, canvas).asJava
     }))
 
-    val refreshLoop = new Timeline(new KeyFrame(Duration.millis(10), (_: ActionEvent) => {
-      drawEqPoints()
-    }))
-    refreshLoop.setCycleCount(Animation.INDEFINITE)
-    refreshLoop.play()
+    schedule(10.millis, () => drawEqPoints())
 
     this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
       val passes = 10
@@ -263,7 +258,7 @@ final class DiffPane extends StackPane {
     codeAreaLeft.requestFollowCaret()
     codeAreaRight.moveTo(0)
     codeAreaRight.requestFollowCaret()
-    if (showing) {
+    if (showing) { // just for speed
       layout()
       requestRedraw()
     }
