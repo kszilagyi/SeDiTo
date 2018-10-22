@@ -14,7 +14,7 @@ import com.kristofszilagyi.sedito.common.{FullText, Warts}
 import com.kristofszilagyi.sedito.gui.JavaFxOps.schedule
 import com.kristofszilagyi.sedito.gui.Main._
 import com.sun.javafx.css.CssError
-import javafx.application.Application
+import javafx.application.{Application, Platform}
 import javafx.collections.ListChangeListener
 import javafx.scene.control.Alert
 import javafx.scene.control.Alert.AlertType
@@ -33,6 +33,7 @@ final class Main extends Application {
       logger.error(e)("Exception in thread \"" + t.getName + "\"")
     })
 
+    Platform.setImplicitExit(false)
     val mainWindow = new MainWindow()
     val args = getParameters.getRaw
     val (classifier, scaler) = loadAI()
@@ -48,7 +49,6 @@ final class Main extends Application {
     })
     val openerQueue = new ConcurrentLinkedQueue[String]
     startNamedPipeReading(openerQueue)
-
     schedule(10.millis, () => {
       val maybeArgLine = Option(openerQueue.poll())
       maybeArgLine.foreach{ argline =>
@@ -83,9 +83,9 @@ object Main {
           try {
             using(new RandomAccessFile(filePath, "r")) { pipe =>
               //todo this doesn't work for non-ASCII filenames
-              val line = pipe.readLine()
+              val line = Option(pipe.readLine())
               logger.info(s"Received parameters: $line")
-              discard(openerQueue.add(line))
+              discard(line.foreach(openerQueue.add))
             }
           } catch {
             case _: FileNotFoundException => logger.info(s"$filePath not found")
@@ -95,6 +95,7 @@ object Main {
         }
       }
     )
+    thread.setDaemon(true)
     thread.start()
   }
   private def openFromArgs(args: List[String], mainWindow: MainWindow, classifier: SoftClassifier[Array[Double]], scaler: Scaler): Unit = {

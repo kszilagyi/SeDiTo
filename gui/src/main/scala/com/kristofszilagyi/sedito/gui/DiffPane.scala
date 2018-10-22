@@ -212,7 +212,8 @@ final class DiffPane extends StackPane {
   def openTestCase(left: FullText, right: FullText, newWordAlignment: UnambiguousWordAlignment, showing: Boolean): Unit = {
     needToDraw = false
     //todo probably reset should recreate everything
-
+    codeAreaLeft.reset()
+    codeAreaRight.reset()
     wordAlignment = newWordAlignment
     codeAreaLeft.wordAlignmentByLine = newWordAlignment.matches.map(m => MatchInfo(m.left, m.probability)).groupBy(_.selection.lineIdx)
     codeAreaRight.wordAlignmentByLine = newWordAlignment.matches.map(m => MatchInfo(m.right, m.probability)).groupBy(_.selection.lineIdx)

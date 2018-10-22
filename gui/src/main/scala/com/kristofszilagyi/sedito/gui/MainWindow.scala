@@ -33,7 +33,7 @@ final class MainWindow {
         case Success(testCase) =>
           val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
           logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
-          diffPane.openTestCase(testCase.left, testCase.right, unambiguousWordAlignment, showing = true)
+          setContent(testCase.left, testCase.right, unambiguousWordAlignment)
         case Failure(e) =>
           logger.error(e)("Failed to open test case")
           discard(new Alert(AlertType.ERROR, s"Failed to open test: $e").showAndWait())
