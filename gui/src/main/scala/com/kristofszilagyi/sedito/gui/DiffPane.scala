@@ -6,7 +6,7 @@ import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.common.utils.TupleOps.RichTuple
 import com.kristofszilagyi.sedito.gui.DiffPane._
-import com.kristofszilagyi.sedito.gui.JavaFxOps.schedule
+import com.kristofszilagyi.sedito.gui.JavaFxOps.scheduleOnJavaFxThread
 import com.kristofszilagyi.sedito.gui.ObservableOps.RichObservable
 import com.kristofszilagyi.sedito.gui.Scroller.{Aligned, LeftIsLower, NothingOnScreen, RightIsLower}
 import javafx.geometry.Insets
@@ -80,7 +80,7 @@ final class DiffPane extends StackPane {
       Seq(hBox, canvas).asJava
     }))
 
-    schedule(10.millis, () => drawEqPoints())
+    scheduleOnJavaFxThread(10.millis, () => drawEqPoints())
 
     this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
       val passes = 10

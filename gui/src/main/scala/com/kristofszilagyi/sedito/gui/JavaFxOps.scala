@@ -12,7 +12,7 @@ object JavaFxOps {
     i
   }
 
-  def schedule(period: scala.concurrent.duration.Duration, action: () => Unit): Unit = {
+  def scheduleOnJavaFxThread(period: scala.concurrent.duration.Duration, action: () => Unit): Unit = {
     val timeline = new Timeline(new KeyFrame(Duration.millis(period.toMillis.toDouble), (_: ActionEvent) => {
       action()
     }))

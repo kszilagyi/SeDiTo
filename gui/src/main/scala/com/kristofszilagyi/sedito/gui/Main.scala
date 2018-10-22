@@ -11,7 +11,7 @@ import com.kristofszilagyi.sedito.aligner.{Aligner, HardcodedNeuralNetwork, Hard
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common.utils.Control._
 import com.kristofszilagyi.sedito.common.{FullText, Warts}
-import com.kristofszilagyi.sedito.gui.JavaFxOps.schedule
+import com.kristofszilagyi.sedito.gui.JavaFxOps.scheduleOnJavaFxThread
 import com.kristofszilagyi.sedito.gui.Main._
 import com.sun.javafx.css.CssError
 import javafx.application.{Application, Platform}
@@ -49,7 +49,7 @@ final class Main extends Application {
     })
     val openerQueue = new ConcurrentLinkedQueue[String]
     startNamedPipeReading(openerQueue)
-    schedule(10.millis, () => {
+    scheduleOnJavaFxThread(10.millis, () => {
       val maybeArgLine = Option(openerQueue.poll())
       maybeArgLine.foreach{ argline =>
         val splitArgs = argline.split(" ").toList.map { arg =>
