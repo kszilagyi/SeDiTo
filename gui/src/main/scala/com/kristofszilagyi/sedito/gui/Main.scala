@@ -35,6 +35,7 @@ final class Main extends Application {
 
     Platform.setImplicitExit(false)
     val mainWindow = new MainWindow()
+    val warmStandbyManager = new WarmStandbyManager(mainWindow)
     val args = getParameters.getRaw
     val (classifier, scaler) = loadAI()
 
@@ -56,6 +57,7 @@ final class Main extends Application {
           val decodeByteArray = Base64.getDecoder.decode(arg.getBytes(UTF_8))
           new String(decodeByteArray, UTF_8)
         }
+        warmStandbyManager.extend()
         openFromArgs(splitArgs, mainWindow, classifier, scaler)
       }
     })

@@ -96,4 +96,6 @@ final class MainWindow {
     diffPane.openTestCase(left, right, alignment, showing = showing)
     if (!showing) stage.show()
   }
+
+  def isVisible: Boolean = diffPane.isVisible
 }

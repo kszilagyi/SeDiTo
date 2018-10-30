@@ -296,7 +296,7 @@ object Train {
 
 
 object Diff extends App {
-//  println("sleepy")
-//  Thread.sleep(10000)
+  println("sleepy")
+  Thread.sleep(10000)
   Application.launch(classOf[ShowOne])
 }
