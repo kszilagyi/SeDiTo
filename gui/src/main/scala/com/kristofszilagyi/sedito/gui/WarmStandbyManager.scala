@@ -14,10 +14,12 @@ object WarmStandbyManager {
 }
 // the creation of this call and every method call on it has to run on the JavaFx thread
 final class WarmStandbyManager(mainWindow: MainWindow) {
-  @SuppressWarnings(Array(Warts.Var))
-  private var durationUntilQuit = 1.day
   private val period = 5.seconds
-  private val standbyTime = 1.minutes
+  private val standbyTime = 10.minutes
+
+  @SuppressWarnings(Array(Warts.Var))
+  private var durationUntilQuit = standbyTime
+
   scheduleOnJavaFxThread(period, () => {
     if(mainWindow.isVisible) {
       logger.info(s"Window visible, extending")

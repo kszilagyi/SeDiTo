@@ -97,5 +97,5 @@ final class MainWindow {
     if (!showing) stage.show()
   }
 
-  def isVisible: Boolean = diffPane.isVisible
+  def isVisible: Boolean = stage.isShowing
 }
