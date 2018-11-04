@@ -80,35 +80,39 @@ object Editor {
     }
   }
 
-  private def toStylesSpans(highlight: Map[LineIdx, LineEdits], lines: IndexedSeq[String]): StyleSpans[util.Collection[String]] = {
-    val builder = new StyleSpansBuilder[util.Collection[String]]
-    highlight.toSeq.sortBy(_._1).foreach{ case (lineIdx, edits) =>
-      @SuppressWarnings(Array(Warts.Var))
-      var nextIdxInLine = 0
-      val lineClass = charClassForLineEdit(edits.line)
-      edits.charEdits.toSeq.sortBy(_.from).foreach { edit =>
+  private def toStylesSpans(highlight: Map[LineIdx, LineEdits], lines: IndexedSeq[String]): Option[StyleSpans[util.Collection[String]]] = {
+    if (highlight.isEmpty) None
+    else {
+      val builder = new StyleSpansBuilder[util.Collection[String]]
 
-        if (edit.from.i > nextIdxInLine) {
-          discard(builder.add(List(lineClass.s).asJava, edit.from.i - nextIdxInLine))
-        }
+      highlight.toSeq.sortBy(_._1).foreach { case (lineIdx, edits) =>
+        @SuppressWarnings(Array(Warts.Var))
+        var nextIdxInLine = 0
+        val lineClass = charClassForLineEdit(edits.line)
+        edits.charEdits.toSeq.sortBy(_.from).foreach { edit =>
 
-        val spans = edit.editType match {
-          case tpe: ApplicableCharEditType =>
-            Seq(Span(getCharCssClass(tpe, edits.line), edit.length))
-          case CharsMoved(_, minorEdits) =>
-            calculateMovedSpans(edits.line, edit, minorEdits.toSeq.sortBy(_.from))
+          if (edit.from.i > nextIdxInLine) {
+            discard(builder.add(List(lineClass.s).asJava, edit.from.i - nextIdxInLine))
+          }
+
+          val spans = edit.editType match {
+            case tpe: ApplicableCharEditType =>
+              Seq(Span(getCharCssClass(tpe, edits.line), edit.length))
+            case CharsMoved(_, minorEdits) =>
+              calculateMovedSpans(edits.line, edit, minorEdits.toSeq.sortBy(_.from))
+          }
+          spans.foreach { span =>
+            discard(builder.add(List(span.cssClass.s).asJava, span.length))
+          }
+          nextIdxInLine = edit.to.i
         }
-        spans.foreach { span =>
-          discard(builder.add(List(span.cssClass.s).asJava, span.length))
+        val maybeLine = lines.lift(lineIdx.i)
+        maybeLine.foreach { line =>
+          discard(builder.add(List(lineClass.s).asJava, line.length - nextIdxInLine))
         }
-        nextIdxInLine = edit.to.i
       }
-      val maybeLine = lines.lift(lineIdx.i)
-      maybeLine.foreach { line =>
-        discard(builder.add(List(lineClass.s).asJava, line.length - nextIdxInLine))
-      }
+      Some(builder.create())
     }
-    builder.create()
   }
   type Par = Paragraph[util.Collection[String], String, util.Collection[String]]
   type StyledDoc = StyledDocument[util.Collection[String], String, util.Collection[String]]
@@ -261,7 +265,9 @@ final class Editor extends CodeArea {
   }
 
   def applyCharEdits(): Unit = {
-    setStyleSpans(0, toStylesSpans(editTypes, this.getText().linesWithSeparators.toIndexedSeq))
+    toStylesSpans(editTypes, this.getText().linesWithSeparators.toIndexedSeq).foreach{ spans =>
+      setStyleSpans(0, spans)
+    }
   }
 
   def setCharEdit(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {
