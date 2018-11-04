@@ -238,12 +238,15 @@ final class Editor extends CodeArea {
 
   def applyLineEdits(s: FullText): Unit = {
     val lines = s.s.lines.toVector
-    val paragraphs = lines.zip(editTypes.toSeq.sortBy(_._1)).map { case (line, (_, lineEdits)) =>
-      val lineCssClass = getLineCssClass(Some(lineEdits.line)).s
-      new Paragraph[util.Collection[String], String, util.Collection[String]](List(lineCssClass).asJava,
-        SegmentOps.styledTextOps[util.Collection[String]](), line, List.empty[String].asJava)
+    if (lines.isEmpty) replaceText("")
+    else {
+      val paragraphs = lines.zip(editTypes.toSeq.sortBy(_._1)).map { case (line, (_, lineEdits)) =>
+        val lineCssClass = getLineCssClass(Some(lineEdits.line)).s
+        new Paragraph[util.Collection[String], String, util.Collection[String]](List(lineCssClass).asJava,
+          SegmentOps.styledTextOps[util.Collection[String]](), line, List.empty[String].asJava)
+      }
+      replace(new MyStyledDocument(paragraphs)) //this is much faster than doing it incrementally
     }
-    replace(new MyStyledDocument(paragraphs)) //this is much faster than doing it incrementally
   }
 
   def setLineType(lineIdx: LineIdx, editType: LineEditType): Unit = {
