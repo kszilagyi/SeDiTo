@@ -22,12 +22,12 @@ final class WarmStandbyManager(mainWindow: MainWindow) {
 
   scheduleOnJavaFxThread(period, () => {
     if(mainWindow.isVisible) {
-      logger.info(s"Window visible, extending")
+      logger.debug(s"Window visible, extending")
       extend()
     }
     else {
       durationUntilQuit -= period
-      logger.info(s"Window not visible, time remaining: $durationUntilQuit")
+      logger.debug(s"Window not visible, time remaining: $durationUntilQuit")
       if(durationUntilQuit < 0.second) {
         //todo this is not 100% correct: if an opening is just happening it will be lost. The impact is not too hight though.
         logger.info(s"Not used for $standbyTime, exiting.")

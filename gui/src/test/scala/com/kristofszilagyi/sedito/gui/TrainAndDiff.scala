@@ -181,12 +181,10 @@ object TrainAndDiff {
     def start(stage: Stage): Unit = {
 
       val (classifier, scaler) = Main.loadAI()
-//      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-//        "scala-2.12/test-classes/algorithm_tests/full_tests/modelexactlysame" +
-//        ""))
       val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/too_slow/metricscalculatortest" +
+        "scala-2.12/test-classes/algorithm_tests/full_tests/17_complex" +
         ""))
+
 
       displayTestCase(testCase, classifier, scaler)
     }
@@ -296,7 +294,5 @@ object Train {
 
 
 object Diff extends App {
-  println("sleepy")
-  Thread.sleep(10000)
   Application.launch(classOf[ShowOne])
 }

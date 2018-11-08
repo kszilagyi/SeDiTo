@@ -1,5 +1,8 @@
 package com.kristofszilagyi.sedito.gui
 
+import java.nio.charset.StandardCharsets
+import java.nio.file.{Files, Path}
+
 import com.kristofszilagyi.sedito.common.AssertionEx._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps.AnyOps
 import com.kristofszilagyi.sedito.common.Warts.discard
@@ -20,7 +23,7 @@ import org.log4s.getLogger
 import scala.collection.JavaConverters._
 import scala.collection.immutable.TreeMap
 import scala.concurrent.duration.DurationInt
-import scala.util.{Success, Try}
+import scala.util.{Failure, Success, Try}
 
 object DiffPane {
   def offScreenY(on: LineIdx, off: LineIdx, height: Double, onY: Double): Double = {
@@ -34,7 +37,6 @@ object DiffPane {
       (y1 - emptyLineWidth / 2, y2 + emptyLineWidth / 2)
     } else (y1, y2)
   }
-
 }
 
 final class DiffPane extends StackPane {
@@ -212,11 +214,8 @@ final class DiffPane extends StackPane {
   def openTestCase(left: FullText, right: FullText, newWordAlignment: UnambiguousWordAlignment, showing: Boolean): Unit = {
     needToDraw = false
     //todo probably reset should recreate everything
-    codeAreaLeft.reset()
-    codeAreaRight.reset()
+
     wordAlignment = newWordAlignment
-    codeAreaLeft.wordAlignmentByLine = newWordAlignment.matches.map(m => MatchInfo(m.left, m.probability)).groupBy(_.selection.lineIdx)
-    codeAreaRight.wordAlignmentByLine = newWordAlignment.matches.map(m => MatchInfo(m.right, m.probability)).groupBy(_.selection.lineIdx)
     val leftLines = Lines(left.s.lines.toIndexedSeq)
     val rightLines = Lines(right.s.lines.toIndexedSeq)
 
@@ -226,42 +225,36 @@ final class DiffPane extends StackPane {
     val inserted = rightLines.l.indices.map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.rightLineIdx).contains(l))
     val partitioned = lineAlignment.partition
     val moved = partitioned.moved
+    val movedLeft = moved.map(BiasedLineMatch.left)
+    val movedRight = moved.map(BiasedLineMatch.right)
     notMovedLines = TreeMap(partitioned.notMoved.flatMap(LineMatch.unapply).toSeq: _*)
     val notMovedLeft = partitioned.notMoved.map(_.leftLineIdx)
     val notMovedRight = partitioned.notMoved.map(_.rightLineIdx)
 
-    deleted.foreach(l => codeAreaLeft.setLineType(l, LineDeleted))
-    inserted.foreach(l => codeAreaRight.setLineType(l, LineInserted))
-    moved.foreach(m => codeAreaLeft.setLineType(m.leftLineIdx, LineMoved(m.rightLineIdx)))
-    moved.foreach(m => codeAreaRight.setLineType(m.rightLineIdx, LineMoved(m.leftLineIdx)))
-    notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, LineSame))
-    notMovedRight.foreach(l => codeAreaRight.setLineType(l, LineSame))
-
-    def applyHighlight(editor: Editor, highlight: Map[LineIdx, Traversable[CharEdit]]): Unit = {
-      highlight.foreach { case (line, edits) =>
-        edits.foreach { edit =>
-          editor.setCharEdit(line, edit.from, edit.to, edit.editType)
-        }
-      }
-    }
     eqPoints = InsertionPointCalculator.calc(partitioned.notMoved, moved, leftLineCount = leftLines.l.size,
       rightLineCount = rightLines.l.size)
     val leftWords = Wordizer.toWordIndices(left.s)
     val rightWords = Wordizer.toWordIndices(right.s)
     val highlight = CharHighlightCalculator.calc(leftWords, rightWords, newWordAlignment, lineAlignment)
-    applyHighlight(codeAreaLeft, highlight.left)
-    applyHighlight(codeAreaRight, highlight.right)
-    codeAreaLeft.applyLineEdits(left)
-    codeAreaRight.applyLineEdits(right)
-    codeAreaLeft.applyCharEdits()
-    codeAreaRight.applyCharEdits()
-    codeAreaLeft.moveTo(0)
-    codeAreaLeft.requestFollowCaret()
-    codeAreaRight.moveTo(0)
-    codeAreaRight.requestFollowCaret()
+
+    val leftGroupedWordAlignment = newWordAlignment.matches.map(m => MatchInfo(m.left, m.probability)).groupBy(_.selection.lineIdx)
+    val rightGroupedWordAlignment = newWordAlignment.matches.map(m => MatchInfo(m.right, m.probability)).groupBy(_.selection.lineIdx)
+    codeAreaLeft.setText(left, leftGroupedWordAlignment, deleted, LineDeleted, movedLeft, notMovedLeft, highlight.left)
+    codeAreaRight.setText(right, rightGroupedWordAlignment, inserted, LineInserted, movedRight, notMovedRight, highlight.right)
     if (showing) { // just for speed
       layout()
       requestRedraw()
+    }
+  }
+
+  def saveFiles(leftPath: Path, rightPath: Path): SaveResult = {
+    Try(Files.write(leftPath, codeAreaLeft.getText().getBytes(StandardCharsets.UTF_8))) match {
+      case Failure(t) => LeftFailed(t)
+      case Success(_) =>
+        Try(Files.write(rightPath, codeAreaRight.getText().getBytes(StandardCharsets.UTF_8))) match {
+          case Failure(t) => RightFailed(t)
+          case Success(_) => Saved
+        }
     }
   }
 }

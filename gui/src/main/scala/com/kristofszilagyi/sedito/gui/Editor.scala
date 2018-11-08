@@ -164,9 +164,12 @@ final class Editor extends CodeArea {
   @SuppressWarnings(Array(Warts.Var))
   var wordAlignmentByLine: Map[LineIdx, Traversable[MatchInfo]] = Map.empty
 
+  @SuppressWarnings(Array(Warts.Var))
+  var newLineType: String = System.lineSeparator()
+
   def selectedForMatch(): Option[Selection] = _selectedForMatch
 
-  def reset(): Unit = {
+  private def reset(): Unit = {
     editTypes = Map.empty
     highlightedLines = Traversable.empty
     highlightedChars = Traversable.empty
@@ -228,6 +231,30 @@ final class Editor extends CodeArea {
     otherEditor.foreach(_.resetHighlighting())
   })
 
+  private def applyHighlight(highlight: Map[LineIdx, Traversable[CharEdit]]): Unit = {
+    highlight.foreach { case (line, edits) =>
+      edits.foreach { edit =>
+        setCharEdit(line, edit.from, edit.to, edit.editType)
+      }
+    }
+  }
+
+  def setText(fullText: FullText, wordAlignment: Map[LineIdx, scala.Traversable[MatchInfo]], changed: IndexedSeq[LineIdx],
+              changeType: LineEditType, moved: Set[BiasedLineMatch], notMoved: Set[LineIdx],
+              highlight: Map[LineIdx, scala.Traversable[CharEdit]]): Unit = {
+    reset()
+    wordAlignmentByLine = wordAlignment
+
+    changed.foreach(l => setLineType(l, changeType))
+    moved.foreach(m => setLineType(m.thisSide, LineMoved(m.otherSide)))
+    notMoved.foreach(l => setLineType(l, LineSame))
+
+    applyHighlight(highlight)
+    applyLineEdits(fullText)
+    applyCharEdits()
+    moveTo(0)
+    requestFollowCaret()
+  }
 
   private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {
     val lineCssClass = getLineCssClass(editType.map(_.line)).s
@@ -240,7 +267,7 @@ final class Editor extends CodeArea {
 
   }
 
-  def applyLineEdits(s: FullText): Unit = {
+  private def applyLineEdits(s: FullText): Unit = {
     val lines = s.s.lines.toVector
     if (lines.isEmpty) replaceText("")
     else {
@@ -253,7 +280,7 @@ final class Editor extends CodeArea {
     }
   }
 
-  def setLineType(lineIdx: LineIdx, editType: LineEditType): Unit = {
+  private def setLineType(lineIdx: LineIdx, editType: LineEditType): Unit = {
     val current = editTypes.get(lineIdx)
     val newEdit = current match {
       case Some(edit) => edit.copy(line = editType)
@@ -264,13 +291,13 @@ final class Editor extends CodeArea {
     applyLineTypeCss(lineIdx, Some(newEdit))
   }
 
-  def applyCharEdits(): Unit = {
+  private def applyCharEdits(): Unit = {
     toStylesSpans(editTypes, this.getText().linesWithSeparators.toIndexedSeq).foreach{ spans =>
       setStyleSpans(0, spans)
     }
   }
 
-  def setCharEdit(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {
+  private def setCharEdit(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {
     val current = editTypes.get(lineIdx)
     val newEdit = current match {
       case Some(edit) => edit.copy(charEdits = edit.charEdits :+ CharEdit(from, to, editType))

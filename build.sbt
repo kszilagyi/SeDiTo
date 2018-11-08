@@ -1,7 +1,7 @@
 
 import sbt.Project.projectToRef
 import sbt.Keys._
-import sbt.librarymanagement
+import sbt.{Test, librarymanagement}
 
 name := "SeDiTo"
 
@@ -69,7 +69,7 @@ def commonSettings = Seq(
   publishArtifact in (Compile, packageDoc) := false,
   scalacOptions ++= customScalacOptions,
 
-  resolvers += librarymanagement.Resolver.mavenLocal
+  resolvers += librarymanagement.Resolver.mavenLocal,
 
 )
 
@@ -99,8 +99,18 @@ lazy val common = (project in file("common"))
 lazy val gui = (project in file("gui"))
   .settings(
     name := "gui",
-    libraryDependencies += "org.fxmisc.richtext" % "richtextfx" % "0.9.1",
-    commonSettings
+    libraryDependencies ++=
+      Seq("org.fxmisc.richtext" % "richtextfx" % "0.9.1",
+      "com.google.jimfs" % "jimfs" % "1.1" % "test",
+      "org.testfx" % "testfx-core" % "4.0.15-alpha" % "test",
+      "org.testfx" % "testfx-junit" % "4.0.15-alpha" % "test"
+      ),
+    commonSettings,
+    Test / fork := true, // javafx tests can't call launch multiple times in the same jvm
+    testGrouping in Test := (definedTests in Test).value map { test =>
+      Tests.Group(name = test.name, tests = Seq(test), runPolicy = Tests.SubProcess(
+        ForkOptions())) // this puts every test class into a separate jvm. This is slow but fast enough
+    }
   ).dependsOn(common % "compile->compile;test->test")
    .dependsOn(aligner % "compile->compile;test->test")
    .enablePlugins(JavaAppPackaging)
