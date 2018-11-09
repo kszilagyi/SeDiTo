@@ -47,3 +47,10 @@ final class TestLineEndingPreservationWindows extends FreeSpecLike {
     Application.launch(classOf[TestApp], "\r\n")
   }
 }
+
+final class TestLineEndingPreservationMac extends FreeSpecLike {
+
+  "Mac line endings should preserve" in {
+    Application.launch(classOf[TestApp], "\r")
+  }
+}

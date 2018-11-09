@@ -248,10 +248,10 @@ final class DiffPane extends StackPane {
   }
 
   def saveFiles(leftPath: Path, rightPath: Path): SaveResult = {
-    Try(Files.write(leftPath, codeAreaLeft.getText().getBytes(StandardCharsets.UTF_8))) match {
+    Try(Files.write(leftPath, codeAreaLeft.getTextWithGuessedLineEnding().getBytes(StandardCharsets.UTF_8))) match {
       case Failure(t) => LeftFailed(t)
       case Success(_) =>
-        Try(Files.write(rightPath, codeAreaRight.getText().getBytes(StandardCharsets.UTF_8))) match {
+        Try(Files.write(rightPath, codeAreaRight.getTextWithGuessedLineEnding().getBytes(StandardCharsets.UTF_8))) match {
           case Failure(t) => RightFailed(t)
           case Success(_) => Saved
         }

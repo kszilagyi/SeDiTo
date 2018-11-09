@@ -9,6 +9,7 @@ import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.gui.Editor._
+import com.kristofszilagyi.sedito.gui.utils.LineEndingUtils
 import javafx.geometry.{BoundingBox, Bounds}
 import javafx.scene.Node
 import javafx.scene.control.Label
@@ -254,6 +255,7 @@ final class Editor extends CodeArea {
     applyCharEdits()
     moveTo(0)
     requestFollowCaret()
+    newLineType = LineEndingUtils.guessLineEnding(fullText)
   }
 
   private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {
@@ -382,6 +384,10 @@ final class Editor extends CodeArea {
       discard(potentiallyBadResult) // bug in the framework
       val onScreenBounds = calcOnScreenBounds()
       onScreenBounds.map(convertToLocal)
+  }
+
+  def getTextWithGuessedLineEnding(): String = {
+    getText().replace("\n", newLineType)
   }
 
 }
