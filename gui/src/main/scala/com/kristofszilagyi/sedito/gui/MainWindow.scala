@@ -1,6 +1,7 @@
 package com.kristofszilagyi.sedito.gui
 
 import java.io.File
+import java.nio.file.Path
 
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common.{FullText, TestCase, UnambiguousWordAlignment}
@@ -28,12 +29,12 @@ final class MainWindow {
       if (testDir.isDirectory) {
         chooser.setInitialDirectory(new File(testDir.getPath))
       }
-      val directory: File = chooser.showDialog(stage)
-      TestCase.open(directory.toPath) match {
+      val directory = chooser.showDialog(stage).toPath
+      TestCase.open(directory) match {
         case Success(testCase) =>
           val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
           logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
-          setContent(testCase.left, testCase.right, unambiguousWordAlignment)
+          setContent(testCase.left, testCase.right, TestCase.leftPath(directory), TestCase.rightPath(directory), unambiguousWordAlignment)
         case Failure(e) =>
           logger.error(e)("Failed to open test case")
           discard(new Alert(AlertType.ERROR, s"Failed to open test: $e").showAndWait())
@@ -89,11 +90,27 @@ final class MainWindow {
     scene
   }
 
+  stage.setOnHidden { event =>
+    val (leftRes, rightRes) = diffPane.saveFiles()
+
+    val error = List(leftRes, rightRes).zip(List("left", "right")) flatMap { case (res, side) =>
+      res match {
+        case Saved => None
+        case SaveFailed(t) => Some(s"Save $side file failed. Error: $t")
+        case NoPath => Some(s"Couldn't save $side content as it has no corresponding file.") // todo ask for place to save
+      }
+    }
+    if (error.nonEmpty) {
+      val alert = new Alert(Alert.AlertType.ERROR, error.mkString("\n"))
+      discard(alert.showAndWait())
+    }
+  }
+
   def setTitle(title: String): Unit = stage.setTitle(title)
 
-  def setContent(left: FullText, right: FullText, alignment: UnambiguousWordAlignment): Unit = {
+  def setContent(left: FullText, right: FullText, leftPath: Path, rightPath: Path, alignment: UnambiguousWordAlignment): Unit = {
     val showing = stage.isShowing
-    diffPane.openTestCase(left, right, alignment, showing = showing)
+    diffPane.open(left, right, Some(leftPath), Some(rightPath), alignment, showing = showing)
     if (!showing) stage.show()
   }
 

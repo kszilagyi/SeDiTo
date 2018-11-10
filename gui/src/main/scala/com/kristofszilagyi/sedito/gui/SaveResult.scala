@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.gui
 
-trait SaveResult
+sealed trait SaveResult
 case object Saved extends SaveResult
-final case class LeftFailed(t: Throwable) extends SaveResult
-final case class RightFailed(t: Throwable) extends SaveResult
+final case class SaveFailed(t: Throwable) extends SaveResult
+case object NoPath extends SaveResult

@@ -26,6 +26,8 @@ import scala.concurrent.duration.DurationInt
 import scala.util.{Failure, Success, Try}
 
 object DiffPane {
+  private val logger = getLogger
+
   def offScreenY(on: LineIdx, off: LineIdx, height: Double, onY: Double): Double = {
     val diff = off.i - on.i
     onY + diff * height
@@ -37,11 +39,28 @@ object DiffPane {
       (y1 - emptyLineWidth / 2, y2 + emptyLineWidth / 2)
     } else (y1, y2)
   }
+
+  private def saveFile(maybePath: Option[Path], codeArea: Editor) = {
+    maybePath match {
+      case Some(path) =>
+        Try(discard(Files.write(path, codeArea.getTextWithGuessedLineEnding().getBytes(StandardCharsets.UTF_8)))) match {
+          case Success(_) =>
+            logger.info(s"Successfully saved $path")
+            Saved
+          case Failure(t) =>
+            logger.warn(t)(s"Failed to save $path")
+            SaveFailed(t)
+        }
+      case None =>
+        logger.info(s"No path while trying to save.")
+        NoPath
+    }
+  }
 }
 
 final class DiffPane extends StackPane {
+
   //fields
-  private val logger = getLogger
 
   private val codeAreaLeft = new Editor()
   private val codeAreaRight = new Editor()
@@ -55,6 +74,10 @@ final class DiffPane extends StackPane {
 
   @SuppressWarnings(Array(Warts.Var))
   private var notMovedLines: TreeMap[LineIdx, LineIdx] = TreeMap.empty
+  @SuppressWarnings(Array(Warts.Var))
+  private var maybeLeftPath: Option[Path] = None
+  @SuppressWarnings(Array(Warts.Var))
+  private var maybeRightPath: Option[Path] = None
 
   private def requestRedraw(): Unit = needToDraw = true
 
@@ -137,7 +160,7 @@ final class DiffPane extends StackPane {
               val newMatches = wordAlignment.matches.filter(m => (m.left !=== leftSelection) && (m.right !=== rightSelection)) + WordMatch(leftSelection, rightSelection)()
               val newAlignment = wordAlignment.copy(newMatches)
               logger.info(s"Adding new match. Old size: ${wordAlignment.matches.size}, new size: ${newMatches.size}")
-              openTestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), newAlignment, showing = true)
+              open(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), maybeLeftPath, maybeRightPath, newAlignment, showing = true)
             case other =>
               logger.info(s"No selection: $other")
           }
@@ -211,10 +234,11 @@ final class DiffPane extends StackPane {
     }
   }
 
-  def openTestCase(left: FullText, right: FullText, newWordAlignment: UnambiguousWordAlignment, showing: Boolean): Unit = {
+  def open(left: FullText, right: FullText, newMaybeLeftPath: Option[Path], newMaybeRightPath: Option[Path],
+           newWordAlignment: UnambiguousWordAlignment, showing: Boolean): Unit = {
     needToDraw = false
-    //todo probably reset should recreate everything
-
+    maybeLeftPath = newMaybeLeftPath
+    maybeRightPath = newMaybeRightPath
     wordAlignment = newWordAlignment
     val leftLines = Lines(left.s.lines.toIndexedSeq)
     val rightLines = Lines(right.s.lines.toIndexedSeq)
@@ -247,14 +271,9 @@ final class DiffPane extends StackPane {
     }
   }
 
-  def saveFiles(leftPath: Path, rightPath: Path): SaveResult = {
-    Try(Files.write(leftPath, codeAreaLeft.getTextWithGuessedLineEnding().getBytes(StandardCharsets.UTF_8))) match {
-      case Failure(t) => LeftFailed(t)
-      case Success(_) =>
-        Try(Files.write(rightPath, codeAreaRight.getTextWithGuessedLineEnding().getBytes(StandardCharsets.UTF_8))) match {
-          case Failure(t) => RightFailed(t)
-          case Success(_) => Saved
-        }
-    }
+  def saveFiles(): (SaveResult, SaveResult) = {
+    val leftResult = saveFile(maybeLeftPath, codeAreaLeft)
+    val rightResult = saveFile(maybeRightPath, codeAreaRight)
+    (leftResult, rightResult)
   }
 }

@@ -17,14 +17,16 @@ object TestCase {
   private val leftFileName = "left.txt"
   private val rightFileName = "right.txt"
   private val alignmentFileName = "alignment.json"
+  def leftPath(testDir: Path): Path = testDir.resolve(leftFileName)
+  def rightPath(testDir: Path): Path = testDir.resolve(rightFileName)
   def open(testDir: Path): Try[TestCase] = {
     logger.debug(s"Opening test case: $testDir")
 
     //todo handle line endings properly
     Try {
 
-      val left = FullText(Source.fromFile(testDir.resolve(leftFileName).toFile).mkString)
-      val right = FullText(Source.fromFile(testDir.resolve(rightFileName).toFile).mkString)
+      val left = FullText(Source.fromFile(leftPath(testDir).toFile).mkString)
+      val right = FullText(Source.fromFile(rightPath(testDir).toFile).mkString)
       implicit val jsonReader: JsonReader[AmbiguousWordAlignment] = AmbiguousWordAlignment.reader(Wordizer.calculateLines(left.s),
         Wordizer.calculateLines(right.s))
       val alignment = Source.fromFile(testDir.resolve(alignmentFileName).toFile).mkString.parseJson.convertTo[AmbiguousWordAlignment]

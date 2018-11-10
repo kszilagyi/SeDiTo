@@ -155,7 +155,7 @@ object TrainAndDiff {
     (classifier, scaler, trainingData)
   }
 
-  private def displayTestCase(testCase: TestCase, classifier: SoftClassifier[Array[Double]], scaler: Scaler) = {
+  private def displayTestCase(testCase: TestCase, leftPath: Path, rightPath: Path, classifier: SoftClassifier[Array[Double]], scaler: Scaler) = {
     val calculatedAlignment = new Aligner(classifier, scaler).align(testCase.left, testCase.right)
     logger.info("Aligning finished")
 //    val expected = new MainWindow()
@@ -164,7 +164,7 @@ object TrainAndDiff {
 //    expected.setContent(testCase.left, testCase.right, unambiguousWordAlignment)
     val actual = new MainWindow()
     actual.setTitle("Actual")
-    actual.setContent(testCase.left, testCase.right, calculatedAlignment)
+    actual.setContent(testCase.left, testCase.right, leftPath, rightPath, calculatedAlignment)
     logger.info("opening finished")
   }
 
@@ -181,12 +181,13 @@ object TrainAndDiff {
     def start(stage: Stage): Unit = {
 
       val (classifier, scaler) = Main.loadAI()
-      val testCase = readTestCase(Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/full_tests/17_complex" +
-        ""))
+      val path = Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
+        "scala-2.12/test-classes/algorithm_tests/full_tests/17_complex")
+      val testCase = readTestCase(path)
+      val leftPath = TestCase.leftPath(path)
+      val rightPath = TestCase.rightPath(path)
 
-
-      displayTestCase(testCase, classifier, scaler)
+      displayTestCase(testCase, leftPath, rightPath, classifier, scaler)
     }
   }
 

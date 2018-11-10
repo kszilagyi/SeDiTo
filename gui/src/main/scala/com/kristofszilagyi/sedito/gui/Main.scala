@@ -104,11 +104,13 @@ object Main {
     logger.info(s"Args: $args")
     args match {
       case leftFilename :: rightFilename :: Nil =>
+        val leftPath = Paths.get(leftFilename)
+        val rightPath = Paths.get(rightFilename)
         val left = FullText(new String(Files.readAllBytes(Paths.get(leftFilename)), UTF_8))
         val right = FullText(new String(Files.readAllBytes(Paths.get(rightFilename)), UTF_8))
         // todo this should not be on the main thread
         val calculatedAlignment = new Aligner(classifier, scaler).align(left, right)
-        mainWindow.setContent(left, right, calculatedAlignment)
+        mainWindow.setContent(left, right, leftPath, rightPath, calculatedAlignment)
       case Nil =>
       case other =>
         val msg = s"Unsupported argument format: $other"
