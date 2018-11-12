@@ -101,9 +101,7 @@ lazy val gui = (project in file("gui"))
     name := "gui",
     libraryDependencies ++=
       Seq("org.fxmisc.richtext" % "richtextfx" % "0.9.1",
-      "com.google.jimfs" % "jimfs" % "1.1" % "test",
-      "org.testfx" % "testfx-core" % "4.0.15-alpha" % "test",
-      "org.testfx" % "testfx-junit" % "4.0.15-alpha" % "test"
+      "com.google.jimfs" % "jimfs" % "1.1" % "test"
       ),
     commonSettings,
     Test / fork := true, // javafx tests can't call launch multiple times in the same jvm
@@ -126,4 +124,3 @@ lazy val aligner = (project in file("aligner"))
 
 lazy val root = (project in file("."))
   .aggregate(gui, common, aligner)
-
