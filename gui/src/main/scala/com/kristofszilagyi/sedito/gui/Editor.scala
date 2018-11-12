@@ -45,6 +45,7 @@ object Editor {
   private val insertedCharClass = CharCssClass("inserted_char")
   private val deletedCharClass = CharCssClass("deleted_char")
   private val movedCharClass = CharCssClass("moved_char")
+  private val highlightedCharClass = CharCssClass("highlighted_char")
 
   private def getCharCssClass(editType: CharEditType, lineEditType: LineEditType) = {
     editType match {
@@ -90,7 +91,7 @@ object Editor {
         @SuppressWarnings(Array(Warts.Var))
         var nextIdxInLine = 0
         val lineClass = charClassForLineEdit(edits.line)
-        edits.charEdits.toSeq.sortBy(_.from).foreach { edit =>
+        edits.charEdits.sortBy(_.from).foreach { edit =>
 
           if (edit.from.i > nextIdxInLine) {
             discard(builder.add(List(lineClass.s).asJava, edit.from.i - nextIdxInLine))
@@ -304,26 +305,39 @@ final class Editor extends CodeArea {
     editTypes += lineIdx -> newEdit
   }
 
-  private def highlightLine(lineIdx: LineIdx): Unit = {
-    highlightedLines ++= Traversable(lineIdx)
-    setParagraphStyle(lineIdx.i, List("highlighted").asJava)
+  private def highlightLine(line: LineIdx): Unit = {
+    highlightedLines ++= Traversable(line)
+    setParagraphStyle(line.i, List("highlighted").asJava)
+    setStyle(line.i, 0, getParagraph(line.i).length(), List(highlightedCharClass.s).asJava)
+
+    val maybeLineEdits = editTypes.get(line)
+    maybeLineEdits.foreach { lineEdits =>
+      lineEdits.charEdits.foreach { charEdit =>
+        charEdit.editType match {
+          case _: CharsMoved | CharsSame =>
+          case _ => setStyle (line.i, charEdit.from.i, charEdit.to.i, List (getCharCssClass(charEdit.editType, lineEdits.line).s).asJava)
+        }
+      }
+
+    }
+
   }
 
   private def highlightChar(selection: Selection): Unit = {
     highlightedChars ++= Traversable(selection)
-    setStyle(selection.lineIdx.i, selection.from.i, selection.toExcl.i, List("highlighted_char").asJava)
+    setStyle(selection.lineIdx.i, selection.from.i, selection.toExcl.i, List(highlightedCharClass.s).asJava)
   }
 
-  private def resetHighlightingForLine(line: LineIdx) = {
+  private def resetHighlightingForLine(line: LineIdx): Unit = {
     val maybeLineEdits = editTypes.get(line)
     applyLineTypeCssOnLineNumber(line, maybeLineEdits)
     maybeLineEdits.foreach { lineEdits =>
       setParagraphStyle(line.i, List(getLineCssClass(Some(lineEdits.line)).s).asJava)
+      setStyle(line.i, 0, getParagraph(line.i).length(), List(charClassForLineEdit(lineEdits.line).s).asJava)
+      lineEdits.charEdits.foreach { charEdit =>
+        setStyle(line.i, charEdit.from.i, charEdit.to.i, List(getCharCssClass(charEdit.editType, lineEdits.line).s).asJava)
 
-      lineEdits.charEdits.foreach { edit =>
-        setStyle(line.i, edit.from.i, edit.to.i, List(getCharCssClass(edit.editType, lineEdits.line).s).asJava)
-
-        edit.editType match {
+        charEdit.editType match {
           case CharsMoved(_, edits) =>
             edits.foreach { moveEdit =>
               setStyle(line.i, moveEdit.from.i, moveEdit.to.i, List(getCharCssClass(moveEdit.editType, lineEdits.line).s).asJava)
