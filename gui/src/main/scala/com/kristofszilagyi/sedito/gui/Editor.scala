@@ -318,9 +318,7 @@ final class Editor extends CodeArea {
           case _ => setStyle (line.i, charEdit.from.i, charEdit.to.i, List (getCharCssClass(charEdit.editType, lineEdits.line).s).asJava)
         }
       }
-
     }
-
   }
 
   private def highlightChar(selection: Selection): Unit = {
