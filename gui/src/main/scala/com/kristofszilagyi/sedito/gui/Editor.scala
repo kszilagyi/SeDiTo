@@ -322,6 +322,14 @@ final class Editor extends CodeArea {
 
       lineEdits.charEdits.foreach { edit =>
         setStyle(line.i, edit.from.i, edit.to.i, List(getCharCssClass(edit.editType, lineEdits.line).s).asJava)
+
+        edit.editType match {
+          case CharsMoved(_, edits) =>
+            edits.foreach { moveEdit =>
+              setStyle(line.i, moveEdit.from.i, moveEdit.to.i, List(getCharCssClass(moveEdit.editType, lineEdits.line).s).asJava)
+            }
+          case CharsInserted | CharsDeleted | CharsSame =>
+        }
       }
     }
   }
