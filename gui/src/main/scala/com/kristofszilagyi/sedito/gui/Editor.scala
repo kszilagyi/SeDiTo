@@ -324,6 +324,7 @@ final class Editor extends CodeArea {
   }
 
   private def highlightChar(selection: Selection): Unit = {
+    //todo this doesn't keep the color in the highlight (add/remove)
     highlightedChars ++= Traversable(selection)
     setStyle(selection.lineIdx.i, selection.from.i, selection.toExcl.i, List(highlightedCharClass.s).asJava)
   }
