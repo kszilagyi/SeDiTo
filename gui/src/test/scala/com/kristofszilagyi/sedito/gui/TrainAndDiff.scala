@@ -182,7 +182,7 @@ object TrainAndDiff {
 
       val (classifier, scaler) = Main.loadAI()
       val path = Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/full_tests/17_complex")
+        "scala-2.12/test-classes/algorithm_tests/full_tests/move_block")
       val testCase = readTestCase(path)
       val leftPath = TestCase.leftPath(path)
       val rightPath = TestCase.rightPath(path)

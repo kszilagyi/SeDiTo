@@ -10,7 +10,7 @@ import org.fxmisc.richtext.{GenericStyledArea, LineNumberFactory}
   * This wraps a linenumberfactory and remembers the elements. The point of this is that I can add css styles dynamically to
   * those nodes
   */
-final class CacheLineNumberFactory(area: GenericStyledArea[_, _, _]) extends IntFunction[Node]{
+final class CachedLineNumberFactory(area: GenericStyledArea[_, _, _]) extends IntFunction[Node]{
   private val factory = LineNumberFactory.get(area)
   @SuppressWarnings(Array(Warts.Var))
   private var cache: Map[Int, Node] = Map.empty

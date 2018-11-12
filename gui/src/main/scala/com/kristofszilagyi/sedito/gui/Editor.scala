@@ -144,7 +144,7 @@ final case class LineEdits(line: LineEditType, charEdits: Vector[CharEdit])
 final class Editor extends CodeArea {
   this.setUseInitialStyleForInsertion(true)
 
-  private val lineNumberFactory = new CacheLineNumberFactory(this)
+  private val lineNumberFactory = new CachedLineNumberFactory(this)
   setParagraphGraphicFactory(lineNumberFactory)
 
   @SuppressWarnings(Array(Warts.Var))
@@ -258,15 +258,11 @@ final class Editor extends CodeArea {
     newLineType = LineEndingUtils.guessLineEnding(fullText)
   }
 
-  private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {
+  private def applyLineTypeCssOnLineNumber(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {
     val lineCssClass = getLineCssClass(editType.map(_.line)).s
-
-    {
-      val lineNoStyle = lineNumberFactory.apply(lineIdx.i).getStyleClass
-      lineNoStyle.clear()
-      discard(lineNoStyle.add(lineCssClass))
-    }
-
+    val lineNoStyle = lineNumberFactory.apply(lineIdx.i).getStyleClass
+    lineNoStyle.clear()
+    discard(lineNoStyle.add(lineCssClass))
   }
 
   private def applyLineEdits(s: FullText): Unit = {
@@ -290,7 +286,7 @@ final class Editor extends CodeArea {
     }
 
     editTypes += lineIdx -> newEdit
-    applyLineTypeCss(lineIdx, Some(newEdit))
+    applyLineTypeCssOnLineNumber(lineIdx, Some(newEdit))
   }
 
   private def applyCharEdits(): Unit = {
@@ -318,16 +314,26 @@ final class Editor extends CodeArea {
     setStyle(selection.lineIdx.i, selection.from.i, selection.toExcl.i, List("highlighted_char").asJava)
   }
 
+  private def resetHighlightingForLine(line: LineIdx) = {
+    val maybeLineEdits = editTypes.get(line)
+    applyLineTypeCssOnLineNumber(line, maybeLineEdits)
+    maybeLineEdits.foreach { lineEdits =>
+      setParagraphStyle(line.i, List(getLineCssClass(Some(lineEdits.line)).s).asJava)
+
+      lineEdits.charEdits.foreach { edit =>
+        setStyle(line.i, edit.from.i, edit.to.i, List(getCharCssClass(edit.editType, lineEdits.line).s).asJava)
+      }
+    }
+  }
   private def resetHighlighting(): Unit = {
     highlightedLines.foreach { line =>
-      applyLineTypeCss(line, editTypes.get(line))
+      resetHighlightingForLine(line)
     }
     highlightedLines = Traversable.empty
 
     //todo this doesn't work anymore as applyLineTypeCss doesn't change the char css anymore
     highlightedChars.foreach { selection =>
-      val line = selection.lineIdx
-      applyLineTypeCss(line, editTypes.get(line))
+      resetHighlightingForLine(selection.lineIdx)
     }
     highlightedChars = Traversable.empty
   }
