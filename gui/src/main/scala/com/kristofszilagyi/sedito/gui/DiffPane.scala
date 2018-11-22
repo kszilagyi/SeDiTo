@@ -227,7 +227,8 @@ final class DiffPane extends StackPane {
               gc.fillPolygon(xs, ys, 4)
               gc.setFill(Color.BLACK)
             //gc.fillRect(firstLeftBounds.getMinX, firstLeftBounds.getMinY, firstLeftBounds.getWidth, firstLeftBounds.getHeight)
-            case other => fail(s"Should not happen: $other")
+            case other =>
+              fail(s"Should not happen: $other")
           }
         }
       }

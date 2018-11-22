@@ -22,7 +22,7 @@ import org.fxmisc.richtext.{CodeArea, GenericStyledArea}
 
 import scala.collection.JavaConverters._
 import scala.compat.java8.OptionConverters.RichOptionalGeneric
-
+import TypeSafeEqualsOps._
 final case class MatchInfo(selection: Selection, probability: Option[Double])
 
 object Editor {
@@ -118,6 +118,10 @@ object Editor {
   }
   type Par = Paragraph[util.Collection[String], String, util.Collection[String]]
   type StyledDoc = StyledDocument[util.Collection[String], String, util.Collection[String]]
+
+  private sealed trait Which
+  private case object First extends Which
+  private case object Last extends Which
 }
 final class MyStyledDocument(paragraphs: Vector[Par])
    extends StyledDoc {
@@ -190,7 +194,6 @@ final class Editor extends CodeArea {
 
   setMouseOverTextDelay(Duration.ofMillis(1))
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_BEGIN, (e: MouseOverTextEvent) => {
-
     val chIdx = e.getCharacterIndex
     val posOnScreen = e.getScreenPosition
     val posInText = offsetToPosition(chIdx, Bias.Forward)
@@ -225,6 +228,13 @@ final class Editor extends CodeArea {
       popupDebugMsg.setText(f"$probability%.2f")
       popupDebug.show(this, posOnScreen.getX, posOnScreen.getY + 30)
     }
+  })
+
+  new MouseOverLineDetector(this, onEnter = { line =>
+    //otherEditor.foreach(_.highlightLine(from))
+    highlightLine(line)
+  }, { () =>
+    resetHighlighting()
   })
 
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
@@ -346,7 +356,7 @@ final class Editor extends CodeArea {
       }
     }
   }
-  private def resetHighlighting(): Unit = {
+  def resetHighlighting(): Unit = {
     highlightedLines.foreach { line =>
       resetHighlightingForLine(line)
     }
@@ -371,14 +381,36 @@ final class Editor extends CodeArea {
     else _selectedForMatch = Some(newSelection)
   }
 
+  // my vague understanding of why the builtin version doesn't work:
+  // an edit/scroll causes the visible and the non-visible list get out of sync
+  // and then the first element is not the right one.
+  @SuppressWarnings(Array(Warts.Equals))
+  private def robustVisibleParToAllParIndex(which: Which): Option[Int] = {
+    def find[A](xs: Seq[A])(cond: A => Boolean) = {
+      which match {
+        case First => xs.find(cond)
+        case Last => xs.reverse.find(cond)
+      }
+    }
+
+    // we need to use eq here as the Java impl. does the same
+    find(getVisibleParagraphs().asScala)(visibleParagraph => getParagraphs().asScala.exists(_.eq(visibleParagraph))).flatMap { firstVisibleAndValid =>
+      val maybeIdx = find(getParagraphs.asScala.zipWithIndex){case (p, _) => p.eq(firstVisibleAndValid)}.map(_._2)
+      maybeIdx
+    }
+  }
+
   def lineIndicesOnScreen(): LineRange = {
     // this 2 lines trigger recalculation so from the next call the results are constant in this tick
     // (bug in the framework)
     //they are equal but has a difference memory address
-    allParToVisibleParIndex(firstVisibleParToAllParIndex()).asScala.foreach(getVisibleParagraphBoundsOnScreen(_))
-    allParToVisibleParIndex(lastVisibleParToAllParIndex()).asScala.foreach(getVisibleParagraphBoundsOnScreen(_))
-
-    LineRange(LineIdx(firstVisibleParToAllParIndex()), LineIdx(lastVisibleParToAllParIndex()) + 1)
+    List(First, Last) foreach { which =>
+      robustVisibleParToAllParIndex(which).foreach(idx => allParToVisibleParIndex(idx).asScala.foreach(getVisibleParagraphBoundsOnScreen(_)))
+    }
+    (robustVisibleParToAllParIndex(First), robustVisibleParToAllParIndex(Last)) match {
+      case (Some(first), Some(last)) => LineRange(LineIdx(first), LineIdx(last) + 1)
+      case _ => LineRange.empty
+    }
   }
 
   private def getBounds(line: LineIdx) = {

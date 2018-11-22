@@ -3,8 +3,12 @@ package com.kristofszilagyi.sedito.gui
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.{LineIdx, LineMatch}
+
+object LineRange {
+  def empty: LineRange = LineRange(LineIdx(0), LineIdx(0))
+}
 final case class LineRange(from: LineIdx, to: LineIdx) {
-  def positive: Boolean = to.i - from.i > 0
+  def positive: Boolean = size > 0
   def without(line: LineIdx): Seq[LineRange] = {
     if (line < from || line >= to) Seq(this)
     else Seq(LineRange(from, line), LineRange(line + 1, to)).filter(_.positive)
