@@ -24,7 +24,7 @@ final class TestApp extends Application() {
     val leftPath = jimfs.getPath("/left")
     val rightPath = jimfs.getPath("/right")
     diffPane.open(leftText, rightText, Some(leftPath), Some(rightPath), UnambiguousWordAlignment(Set.empty), showing = false)
-    discard(diffPane.saveFiles() shouldBe Saved)
+    discard(diffPane.saveFiles() shouldBe ((Saved, Saved)))
     val leftContent = Files.readAllBytes(leftPath)
     val rightContent = Files.readAllBytes(rightPath)
     discard(leftContent shouldBe leftText.s.getBytes(StandardCharsets.UTF_8))
