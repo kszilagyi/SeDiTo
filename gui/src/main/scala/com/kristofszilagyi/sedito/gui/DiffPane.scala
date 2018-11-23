@@ -62,8 +62,8 @@ final class DiffPane extends StackPane {
 
   //fields
 
-  private val codeAreaLeft = new Editor()
-  private val codeAreaRight = new Editor()
+  private val codeAreaLeft = new Editor(None)
+  private val codeAreaRight = codeAreaLeft.otherEditor
   @SuppressWarnings(Array(Warts.Var))
   private var wordAlignment: UnambiguousWordAlignment = UnambiguousWordAlignment(Set.empty)
   @SuppressWarnings(Array(Warts.Var))
@@ -90,8 +90,6 @@ final class DiffPane extends StackPane {
 
   //constructor
   {
-    codeAreaLeft.setOther(codeAreaRight)
-    codeAreaRight.setOther(codeAreaLeft)
 
     discard(getChildren.addAll({
       val left = new VirtualizedScrollPane(codeAreaLeft)

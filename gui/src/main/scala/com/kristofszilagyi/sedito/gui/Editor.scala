@@ -22,7 +22,6 @@ import org.fxmisc.richtext.{CodeArea, GenericStyledArea}
 
 import scala.collection.JavaConverters._
 import scala.compat.java8.OptionConverters.RichOptionalGeneric
-import TypeSafeEqualsOps._
 final case class MatchInfo(selection: Selection, probability: Option[Double])
 
 object Editor {
@@ -146,7 +145,7 @@ final class MyStyledDocument(paragraphs: Vector[Par])
 
 final case class LineEdits(line: LineEditType, charEdits: Vector[CharEdit])
 
-final class Editor extends CodeArea {
+final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
   this.setUseInitialStyleForInsertion(true)
 
   private val lineNumberFactory = new CachedLineNumberFactory(this)
@@ -155,8 +154,7 @@ final class Editor extends CodeArea {
   @SuppressWarnings(Array(Warts.Var))
   private var editTypes = Map.empty[LineIdx, LineEdits]
 
-  @SuppressWarnings(Array(Warts.Var))
-  private var otherEditor: Option[Editor] = None
+  val otherEditor: Editor = maybeOtherEditor.getOrElse(new Editor(Some(this)))
 
   @SuppressWarnings(Array(Warts.Var))
   private var highlightedLines: Traversable[LineIdx] = Traversable.empty
@@ -209,7 +207,7 @@ final class Editor extends CodeArea {
         case Some(fromTo) =>
           popupMsg.setText(s"Moved from/to line ${fromTo.lineIdx.i + 1}")
           popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
-          otherEditor.foreach(_.highlightChar(fromTo))
+          otherEditor.highlightChar(fromTo)
         case None =>
           edit.line match {
             case LineMoved(from) =>
@@ -369,9 +367,6 @@ final class Editor extends CodeArea {
     highlightedChars = Traversable.empty
   }
 
-  def setOther(other: Editor): Unit = {
-    otherEditor = Some(other)
-  }
 
   def grabSelectionForMatch(): Unit = {
     val indexRange = getSelection
