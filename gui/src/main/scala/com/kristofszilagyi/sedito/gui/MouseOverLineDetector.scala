@@ -6,7 +6,7 @@ import javafx.scene.input.MouseEvent
 import scala.compat.java8.OptionConverters.RichOptionalGeneric
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import scala.concurrent.duration.DurationInt
-final class MouseOverLineDetector(editor: Editor, onEnter: LineIdx => Unit, onExit: () => Unit) {
+final class MouseOverLineDetector(editor: Editor, onEnter: (MouseEvent, LineIdx) => Unit, onExit: () => Unit) {
   @SuppressWarnings(Array(Warts.Var))
   private var maybePreviousLine: Option[LineIdx] = None
 
@@ -32,7 +32,7 @@ final class MouseOverLineDetector(editor: Editor, onEnter: LineIdx => Unit, onEx
           }
         }
         maybePreviousLine = Some(currentLine)
-        onEnter(currentLine)
+        onEnter(e, currentLine)
       }
     }
     moveEvent = None

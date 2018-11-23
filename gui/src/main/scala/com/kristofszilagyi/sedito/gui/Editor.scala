@@ -203,20 +203,10 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
           fromTo
       }
       assert(moveUnderCursor.size <= 1, s"$moveUnderCursor")
-      moveUnderCursor.headOption match {
-        case Some(fromTo) =>
-          popupMsg.setText(s"Moved from/to line ${fromTo.lineIdx.i + 1}")
-          popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
-          otherEditor.highlightChar(fromTo)
-        case None =>
-          edit.line match {
-            case LineMoved(from) =>
-              popupMsg.setText(s"Moved from/to line ${from.i + 1}")
-              popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
-              otherEditor.foreach(_.highlightLine(from))
-            case LineInserted | LineDeleted | LineSame=>
-          }
-
+      moveUnderCursor.headOption map { fromTo =>
+        popupMsg.setText(s"Moved from/to line ${fromTo.lineIdx.i + 1}")
+        popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
+        otherEditor.highlightChar(fromTo)
       }
     }
 
@@ -228,17 +218,25 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
     }
   })
 
-  new MouseOverLineDetector(this, onEnter = { line =>
-    //otherEditor.foreach(_.highlightLine(from))
-    highlightLine(line)
+  new MouseOverLineDetector(this, onEnter = { case (e, line) =>
+    editTypes.get(line).foreach { edit =>
+      edit.line match {
+        case LineMoved(from) =>
+          popupMsg.setText(s"Moved from/to line ${from.i + 1}")
+          popup.show(this, e.getX, e.getY + 10)
+          otherEditor.highlightLine(from)
+          highlightLine(line)
+        case LineInserted | LineDeleted | LineSame =>
+      }
+    }
   }, { () =>
     resetHighlighting()
+    otherEditor.resetHighlighting()
   })
 
   addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
     popup.hide()
     popupDebug.hide()
-    otherEditor.foreach(_.resetHighlighting())
   })
 
   private def applyHighlight(highlight: Map[LineIdx, Traversable[CharEdit]]): Unit = {
