@@ -232,9 +232,10 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
   }, { () =>
     resetHighlighting()
     otherEditor.resetHighlighting()
+    popup.hide()
   })
 
-  addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, _ => {
+  addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (_: MouseOverTextEvent) => {
     popup.hide()
     popupDebug.hide()
   })
