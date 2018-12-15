@@ -32,7 +32,7 @@ final class MainWindow {
       val directory = chooser.showDialog(stage).toPath
       TestCase.open(directory) match {
         case Success(testCase) =>
-          val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
+          val unambiguousWordAlignment = testCase.wordAlignment.toUnambiguous
           logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
           setContent(testCase.left, testCase.right, TestCase.leftPath(directory), TestCase.rightPath(directory), unambiguousWordAlignment)
         case Failure(e) =>

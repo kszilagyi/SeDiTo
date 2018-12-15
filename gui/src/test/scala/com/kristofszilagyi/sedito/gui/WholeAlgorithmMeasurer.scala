@@ -74,7 +74,7 @@ object WholeAlgorithmMeasurer {
     MultiResult(testCases.map { case (path, testCase, metrics) =>
       val actualWithoutPost = aligner.alignFastWithoutPost(metrics, log = false)
       val actualWithPost = TrivialContextCorrector.correct(testCase.left, testCase.right, actualWithoutPost)
-      val expected = testCase.wordAlignment.toUnambigous.matches
+      val expected = testCase.wordAlignment.toUnambiguous.matches
       path ->
         TwoPassResults(
           calcResults(actual = actualWithoutPost.matches, expected = expected),

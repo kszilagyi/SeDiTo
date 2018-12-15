@@ -22,6 +22,7 @@ final public class LongestIncreasingSubsequence {
         return r;
     }
 
+    @SuppressWarnings("UnusedReturnValue") //intellj can't see scala
     public static List<Integer> apply(int[] input) {
         // Add boundary case, when array n is zero
         // Depend on smart pointers

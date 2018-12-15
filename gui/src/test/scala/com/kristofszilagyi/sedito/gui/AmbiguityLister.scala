@@ -13,7 +13,7 @@ object AmbiguityLister {
       path -> test.wordAlignment.rightAmbiguous
     }.filter(_._2.nonEmpty).mkString("\n")}")
     logger.info(s"ambig count = ${testCases.map{ case (_, test) =>
-      test.wordAlignment.matches.size - test.wordAlignment.toUnambigous.matches.size
+      test.wordAlignment.matches.size - test.wordAlignment.toUnambiguous.matches.size
     }.sum}")
 
   }

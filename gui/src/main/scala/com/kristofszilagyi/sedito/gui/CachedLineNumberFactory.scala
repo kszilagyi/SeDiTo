@@ -7,7 +7,7 @@ import javafx.scene.Node
 import org.fxmisc.richtext.{GenericStyledArea, LineNumberFactory}
 
 /**
-  * This wraps a linenumberfactory and remembers the elements. The point of this is that I can add css styles dynamically to
+  * This wraps a LineNumberFactory and remembers the elements. The point of this is that I can add css styles dynamically to
   * those nodes
   */
 final class CachedLineNumberFactory(area: GenericStyledArea[_, _, _]) extends IntFunction[Node]{

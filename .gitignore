@@ -1,5 +1,6 @@
 .idea/*
 !.idea/inspectionProfiles/
+!.idea/dictionaries/
 target/
 sedito.log
 scripts.iml

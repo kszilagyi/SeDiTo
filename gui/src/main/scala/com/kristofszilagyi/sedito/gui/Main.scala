@@ -52,8 +52,8 @@ final class Main extends Application {
     startNamedPipeReading(openerQueue)
     scheduleOnJavaFxThread(10.millis, () => {
       val maybeArgLine = Option(openerQueue.poll())
-      maybeArgLine.foreach{ argline =>
-        val splitArgs = argline.split(" ").toList.map { arg =>
+      maybeArgLine.foreach{ argLine =>
+        val splitArgs = argLine.split(" ").toList.map { arg =>
           val decodeByteArray = Base64.getDecoder.decode(arg.getBytes(UTF_8))
           new String(decodeByteArray, UTF_8)
         }

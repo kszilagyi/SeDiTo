@@ -2,6 +2,7 @@ package com.kristofszilagyi.sedito.aligner;
 import smile.feature.Scaler;
 
 final public class HardcodedScaler extends Scaler {
+  @SuppressWarnings("unused") //scala
   public HardcodedScaler() {
     super(true);
     lo = new double[]{2.0, 2.0, 0.0, 0.04, 0.9999999999999999, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};

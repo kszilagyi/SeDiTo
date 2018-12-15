@@ -155,7 +155,7 @@ object AmbiguousWordAlignment {
       }
     }
   }
-  def reader(leftLines: IndexedSeq[LineAndPos], rightLines: IndexedSeq[LineAndPos]) = {
+  def reader(leftLines: IndexedSeq[LineAndPos], rightLines: IndexedSeq[LineAndPos]): JsonReader[AmbiguousWordAlignment] = {
     new JsonReader[AmbiguousWordAlignment] {
       def read(json: JsValue): AmbiguousWordAlignment = {
         //need to lift here because there is no default reader for set just default format :(
@@ -172,7 +172,7 @@ final case class AmbiguousWordAlignment(matches: Set[WordMatch]) {
   def readable: String = matches.map(_.readable).mkString(", ")
 
   //todo remove: this is not doing anything now (I have an assert for that!)
-  def toUnambigous: UnambiguousWordAlignment = {
+  def toUnambiguous: UnambiguousWordAlignment = {
     //we assume no overlap. So every conflict is caused by a word being matched with multiple other words
     val leftMap = matches.groupBy(m => (m.left.lineIdx, m.left.from, m.left.toExcl))
     val leftResolved = resolveConflicts(leftMap)
