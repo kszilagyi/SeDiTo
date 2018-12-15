@@ -9,8 +9,8 @@ import java.util.*;
 final public class LongestIncreasingSubsequence {
 
     // Binary search
-    private static int getCeilIndex(int input[], int[] tailIndeices, int l, int r,
-                     int key) {
+    private static int getCeilIndex(int[] input, int[] tailIndeices, int l, int r,
+                                    int key) {
         while (r - l > 1) {
             int m = l + (r - l) / 2;
             if (input[tailIndeices[m]] >= key)
@@ -22,7 +22,7 @@ final public class LongestIncreasingSubsequence {
         return r;
     }
 
-    public static List<Integer> apply(int input[]) {
+    public static List<Integer> apply(int[] input) {
         // Add boundary case, when array n is zero
         // Depend on smart pointers
         if (input.length == 0) {
