@@ -29,7 +29,7 @@ public class LoadableNeuralNetwork implements SoftClassifier<double[]> {
     /**
      * The type of activation function in output layer.
      */
-    private NeuralNetwork.ActivationFunction activationFunction = NeuralNetwork.ActivationFunction.LOGISTIC_SIGMOID;
+    private final NeuralNetwork.ActivationFunction activationFunction = NeuralNetwork.ActivationFunction.LOGISTIC_SIGMOID;
 
     public LoadableNeuralNetwork(int inputSize, double[][][] weights) {
         net = new Layer[weights.length + 1];
@@ -52,15 +52,15 @@ public class LoadableNeuralNetwork implements SoftClassifier<double[]> {
     /**
      * layers of this net
      */
-    private LoadableNeuralNetwork.Layer[] net;
+    private final LoadableNeuralNetwork.Layer[] net;
     /**
      * input layer
      */
-    private LoadableNeuralNetwork.Layer inputLayer;
+    private final LoadableNeuralNetwork.Layer inputLayer;
     /**
      * output layer
      */
-    private LoadableNeuralNetwork.Layer outputLayer;
+    private final LoadableNeuralNetwork.Layer outputLayer;
 
 
     /**
