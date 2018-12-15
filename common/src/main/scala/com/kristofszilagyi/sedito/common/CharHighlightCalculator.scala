@@ -83,7 +83,7 @@ object CharHighlightCalculator {
     * determines if a match is a move or not
     */
   private def moveOrSame(wordMatches: Vector[WordMatch]): Vector[(WordMatch, MoveOrSame)] = {
-    val leftOrdered = wordMatches.toSeq.sortBy(_.left.from.i)
+    val leftOrdered = wordMatches.sortBy(_.left.from.i)
     val rightStarts = leftOrdered.map(_.right.from.i)
     val lis = LongestIncreasingSubsequence.apply(rightStarts.toArray).asScala.toSet
     val (sames, moved) = wordMatches.partition(m => lis.contains(m.right.from.i))

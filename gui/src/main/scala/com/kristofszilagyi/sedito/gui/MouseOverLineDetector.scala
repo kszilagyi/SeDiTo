@@ -16,7 +16,7 @@ final class MouseOverLineDetector(editor: Editor, onEnter: (MouseEvent, LineIdx)
   editor.addEventHandler(MouseEvent.MOUSE_MOVED, (e: MouseEvent) => {
     moveEvent = Some(e)
   })
-  editor.addEventHandler(MouseEvent.MOUSE_EXITED, (e: MouseEvent) => {
+  editor.addEventHandler(MouseEvent.MOUSE_EXITED, _ => {
     onExit()
     moveEvent = None
     maybePreviousLine = None

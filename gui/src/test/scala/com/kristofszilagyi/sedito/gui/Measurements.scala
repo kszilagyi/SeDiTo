@@ -9,7 +9,7 @@ import org.scalatest.FreeSpecLike
 import scala.util.Random
 
 class Measurements extends FreeSpecLike {
-  def measureSpeed(d: (String, String) => Any) = {
+  def measureSpeed(d: (String, String) => Any): Unit = {
     val r = new Random(0)
     val s: Traversable[String] = (200 to 400) map { len =>
       ((1 to len) map { _ => r.nextPrintableChar() }).mkString

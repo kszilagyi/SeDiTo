@@ -90,7 +90,7 @@ final class MainWindow {
     scene
   }
 
-  stage.setOnHidden { event =>
+  stage.setOnHidden { _ =>
     val (leftRes, rightRes) = diffPane.saveFiles()
 
     val error = List(leftRes, rightRes).zip(List("left", "right")) flatMap { case (res, side) =>

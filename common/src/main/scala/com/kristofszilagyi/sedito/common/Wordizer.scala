@@ -16,7 +16,7 @@ object Wordizer {
     discard(linePositions += 0)
     @SuppressWarnings(Array(Warts.Var))
     var lastPos = 0
-    lines.foreach { case (line) =>
+    lines.foreach { case line =>
       lastPos += line.length
       discard(linePositions += lastPos)
     }

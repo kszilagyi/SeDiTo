@@ -203,7 +203,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
           fromTo
       }
       assert(moveUnderCursor.size <= 1, s"$moveUnderCursor")
-      moveUnderCursor.headOption map { fromTo =>
+      moveUnderCursor.headOption foreach { fromTo =>
         popupMsg.setText(s"Moved from/to line ${fromTo.lineIdx.i + 1}")
         popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
         otherEditor.highlightChar(fromTo)
@@ -234,7 +234,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
     otherEditor.resetHighlighting()
   })
 
-  addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
+  addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, _ => {
     popup.hide()
     popupDebug.hide()
   })

@@ -4,6 +4,7 @@ import com.github.ghik.silencer.silent
 import com.kristofszilagyi.sedito.common.Warts
 import spray.json.{DefaultJsonProtocol, JsObject, JsValue, JsonReader, JsonWriter, RootJsonReader, RootJsonWriter}
 
+//noinspection ScalaDeprecation
 @silent //suppress deprecation warnings
 @SuppressWarnings(Array(Warts.Overloading, Warts.NonUnitStatement))
 object ExtraFormats extends DefaultJsonProtocol {
@@ -21,12 +22,12 @@ object ExtraFormats extends DefaultJsonProtocol {
     }
   }
 
-  def jsonReader1[P1: JsonReader, T <: Product :ClassManifest](construct: (P1) => T): RootJsonReader[T] = {
+  def jsonReader1[P1: JsonReader, T <: Product :ClassManifest](construct: P1 => T): RootJsonReader[T] = {
     val Array(p1) = extractFieldNames(classManifest[T])
     jsonReader1(construct, p1)
   }
-  def jsonReader1[P1: JsonReader, T <: Product](construct: (P1) => T, fieldName1: String): RootJsonReader[T] = new RootJsonReader[T]{
-    def read(value: JsValue) = {
+  def jsonReader1[P1: JsonReader, T <: Product](construct: P1 => T, fieldName1: String): RootJsonReader[T] = new RootJsonReader[T]{
+    def read(value: JsValue): T = {
       val p1V = fromField[P1](value, fieldName1)
       construct(p1V)
     }

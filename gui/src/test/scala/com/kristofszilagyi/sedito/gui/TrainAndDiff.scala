@@ -62,7 +62,7 @@ object TrainAndDiff {
     }
   }
 
-  def readDataSetAndMeasureMetrics() = {
+  def readDataSetAndMeasureMetrics(): List[(Path, Samples)] = {
 
     val metrics = testDirs.par.map { testDir =>
       val samples = readSingleDataSetAndMeasureMetrics(testDir)
@@ -155,7 +155,7 @@ object TrainAndDiff {
     (classifier, scaler, trainingData)
   }
 
-  private def displayTestCase(testCase: TestCase, leftPath: Path, rightPath: Path, classifier: SoftClassifier[Array[Double]], scaler: Scaler) = {
+  private def displayTestCase(testCase: TestCase, leftPath: Path, rightPath: Path, classifier: SoftClassifier[Array[Double]], scaler: Scaler): Unit = {
     val calculatedAlignment = new Aligner(classifier, scaler).align(testCase.left, testCase.right)
     logger.info("Aligning finished")
 //    val expected = new MainWindow()
@@ -198,7 +198,7 @@ object TrainAndDiff {
 
   @SuppressWarnings(Array(Warts.ToString))
   def performanceMetrics(files: List[(Path, Samples)], scaler: Scaler,
-                         classifier: NeuralNetwork, numOfAttributes: Int, idxesToExclude: Set[Int]) = {
+                         classifier: NeuralNetwork, numOfAttributes: Int, idxesToExclude: Set[Int]): List[(String, PerformanceMetrics)] = {
     files.map { case (path, singleTest) =>
       val singleDataSet = toAttributeDataSet(singleTest.metricsWithResults, numOfAttributes, idxesToExclude)
       val singleTestX = scaler.transform(singleDataSet.x())
