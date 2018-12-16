@@ -214,7 +214,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
       val maybeMatchUnderCursor = matches.find(m => m.selection.from <= cursorPosInLine && cursorPosInLine < m.selection.toExcl)
       val probability = maybeMatchUnderCursor.flatMap(_.probability).getOrElse(Double.NaN)
       popupDebugMsg.setText(f"$probability%.2f")
-      popupDebug.show(this, posOnScreen.getX, posOnScreen.getY + 30)
+      popupDebug.show(this, posOnScreen.getX, posOnScreen.getY + 10)
     }
   })
 
@@ -223,7 +223,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
       edit.line match {
         case LineMoved(from) =>
           popupMsg.setText(s"Moved from/to line ${from.i + 1}")
-          popup.show(this, e.getX, e.getY + 10)
+          popup.show(this, e.getX, e.getScreenY() - 40)
           otherEditor.highlightLine(from)
           highlightLine(line)
         case LineInserted | LineDeleted | LineSame =>
