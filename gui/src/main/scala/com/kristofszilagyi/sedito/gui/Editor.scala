@@ -223,7 +223,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
       edit.line match {
         case LineMoved(from) =>
           popupMsg.setText(s"Moved from/to line ${from.i + 1}")
-          popup.show(this, e.getX, e.getScreenY() - 40)
+          popup.show(this, e.getSceneX(), e.getScreenY() - 40)
           otherEditor.highlightLine(from)
           highlightLine(line)
         case LineInserted | LineDeleted | LineSame =>
