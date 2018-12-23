@@ -6,10 +6,12 @@ import java.nio.file.Path
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common.{FullText, TestCase, UnambiguousWordAlignment}
 import com.kristofszilagyi.sedito.gui.JavaFxOps.menuItem
+import com.kristofszilagyi.sedito.gui.utils.Buttons
 import javafx.scene.Scene
 import javafx.scene.control.Alert.AlertType
-import javafx.scene.control.{Alert, Menu, MenuBar}
-import javafx.scene.layout.BorderPane
+import javafx.scene.control._
+import javafx.scene.layout.{BorderPane, VBox}
+import javafx.scene.text.Font
 import javafx.stage.{DirectoryChooser, Stage}
 import org.log4s.getLogger
 
@@ -22,65 +24,80 @@ final class MainWindow {
   private val diffPane = new DiffPane
   private val testDir = new File("common/src/test/resources/algorithm_tests/full_tests")
 
-  private val openTestCase = menuItem("Open test case",
-    { _ =>
-      val chooser = new DirectoryChooser()
-      chooser.setTitle("Choose directory")
-      if (testDir.isDirectory) {
-        chooser.setInitialDirectory(new File(testDir.getPath))
-      }
-      val directory = chooser.showDialog(stage).toPath
-      TestCase.open(directory) match {
-        case Success(testCase) =>
-          val unambiguousWordAlignment = testCase.wordAlignment.toUnambiguous
-          logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
-          setContent(testCase.left, testCase.right, TestCase.leftPath(directory), TestCase.rightPath(directory), unambiguousWordAlignment)
-        case Failure(e) =>
-          logger.error(e)("Failed to open test case")
-          discard(new Alert(AlertType.ERROR, s"Failed to open test: $e").showAndWait())
-      }
-    }
-  )
+  assert(Font.loadFont(this.getClass.getResource("/fa-solid-900.ttf").toExternalForm, 12) != null, "Couldn't load font awesome")
 
-  private val saveTestCase = menuItem("Save test case",
-    { _ =>
-      val chooser = new DirectoryChooser()
-      chooser.setTitle("Choose directory")
-      if (testDir.isDirectory) {
-        chooser.setInitialDirectory(new File(testDir.getPath))
+  private def menuBar = {
+    val openTestCase = menuItem("Open test case",
+      { _ =>
+        val chooser = new DirectoryChooser()
+        chooser.setTitle("Choose directory")
+        if (testDir.isDirectory) {
+          chooser.setInitialDirectory(new File(testDir.getPath))
+        }
+        val directory = chooser.showDialog(stage).toPath
+        TestCase.open(directory) match {
+          case Success(testCase) =>
+            val unambiguousWordAlignment = testCase.wordAlignment.toUnambiguous
+            logger.info(s"Reducing conflict: ${testCase.wordAlignment.matches.size} to ${unambiguousWordAlignment.matches.size}")
+            setContent(testCase.left, testCase.right, TestCase.leftPath(directory), TestCase.rightPath(directory), unambiguousWordAlignment)
+          case Failure(e) =>
+            logger.error(e)("Failed to open test case")
+            discard(new Alert(AlertType.ERROR, s"Failed to open test: $e").showAndWait())
+        }
       }
-      val directory: File = chooser.showDialog(stage)
-      discard(diffPane.testCase.save(directory.toPath))
-    }
-  )
+    )
 
-  private val open =  menuItem("Open",
-    { _ =>
-      ()
+    val saveTestCase = menuItem("Save test case",
+      { _ =>
+        val chooser = new DirectoryChooser()
+        chooser.setTitle("Choose directory")
+        if (testDir.isDirectory) {
+          chooser.setInitialDirectory(new File(testDir.getPath))
+        }
+        val directory: File = chooser.showDialog(stage)
+        discard(diffPane.testCase.save(directory.toPath))
+      }
+    )
+
+    val open =  menuItem("Open",
+      { _ =>
+        ()
+      }
+    )
+    val fileMenu = {
+      val m = new Menu("File")
+      discard(m.getItems.addAll(List(open).asJava))
+      m
     }
-  )
-  private val fileMenu = {
-    val m = new Menu("File")
-    discard(m.getItems.addAll(List(open).asJava))
-    m
+    val devMenu = {
+      val m = new Menu("Dev")
+      discard(m.getItems.addAll(List(openTestCase, saveTestCase).asJava))
+      m
+    }
+    val menuBar = new MenuBar(fileMenu, devMenu)
+    menuBar.setUseSystemMenuBar(true)
+    menuBar
   }
-  private val devMenu = {
-    val m = new Menu("Dev")
-    discard(m.getItems.addAll(List(openTestCase, saveTestCase).asJava))
-    m
+
+  private def toolBar = {
+    val up = Buttons.awesome('\uf062')
+    val down = Buttons.awesome('\uf063')
+
+    val toolBar = new ToolBar(
+      up, down
+    )
+    toolBar
   }
+
 
   private val url = getClass.getClassLoader.getResource("simple.css").toExternalForm
   private val stage: Stage = new Stage
   stage.setMaximized(true)
   stage.setScene{
-    val menuBar = new MenuBar(fileMenu, devMenu)
-
-    menuBar.setUseSystemMenuBar(true)
+    val menuAndTools = new VBox(menuBar, toolBar)
 
     val borderPane = new BorderPane
-
-    borderPane.setTop(menuBar)
+    borderPane.setTop(menuAndTools)
     borderPane.setCenter(diffPane)
 
     val scene = new Scene(borderPane)
