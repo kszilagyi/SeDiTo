@@ -3,6 +3,7 @@ package com.kristofszilagyi.sedito.gui
 import java.io.File
 import java.nio.file.Path
 
+import com.kristofszilagyi.sedito.common.AssertionEx._
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common.{FullText, TestCase, UnambiguousWordAlignment}
 import com.kristofszilagyi.sedito.gui.JavaFxOps.menuItem
@@ -24,7 +25,7 @@ final class MainWindow {
   private val diffPane = new DiffPane
   private val testDir = new File("common/src/test/resources/algorithm_tests/full_tests")
 
-  assert(Font.loadFont(this.getClass.getResource("/fa-solid-900.ttf").toExternalForm, 12) != null, "Couldn't load font awesome")
+  failIfNull(Font.loadFont(this.getClass.getResource("/fa-solid-900.ttf").toExternalForm, 12), "Couldn't load font awesome")
 
   private def menuBar = {
     val openTestCase = menuItem("Open test case",

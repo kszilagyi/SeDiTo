@@ -250,7 +250,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
 
   def setText(fullText: FullText, wordAlignment: Map[LineIdx, scala.Traversable[MatchInfo]], changed: IndexedSeq[LineIdx],
               changeType: LineEditType, moved: Set[BiasedLineMatch], notMoved: Set[LineIdx],
-              highlight: Map[LineIdx, scala.Traversable[CharEdit]]): Unit = {
+              highlight: Map[LineIdx, scala.Traversable[CharEdit]], firstChangeLine: LineIdx): Unit = {
     reset()
     wordAlignmentByLine = wordAlignment
 
@@ -261,7 +261,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
     applyHighlight(highlight)
     applyLineEdits(fullText)
     applyCharEdits()
-    moveTo(0)
+    moveTo(math.max(firstChangeLine.i - 4, 0), 0)
     requestFollowCaret()
     newLineType = LineEndingUtils.guessLineEnding(fullText)
   }

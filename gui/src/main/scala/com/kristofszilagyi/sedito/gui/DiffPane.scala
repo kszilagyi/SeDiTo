@@ -262,8 +262,10 @@ final class DiffPane extends StackPane {
 
     val leftGroupedWordAlignment = newWordAlignment.matches.map(m => MatchInfo(m.left, m.probability)).groupBy(_.selection.lineIdx)
     val rightGroupedWordAlignment = newWordAlignment.matches.map(m => MatchInfo(m.right, m.probability)).groupBy(_.selection.lineIdx)
-    codeAreaLeft.setText(left, leftGroupedWordAlignment, deleted, LineDeleted, movedLeft, notMovedLeft, highlight.left)
-    codeAreaRight.setText(right, rightGroupedWordAlignment, inserted, LineInserted, movedRight, notMovedRight, highlight.right)
+    val leftFirstChangeLine = eqPoints.headOption.map(_.left.from).getOrElse(LineIdx(0))
+    val rightFirstChangeLine = eqPoints.headOption.map(_.right.from).getOrElse(LineIdx(0))
+    codeAreaLeft.setText(left, leftGroupedWordAlignment, deleted, LineDeleted, movedLeft, notMovedLeft, highlight.left, leftFirstChangeLine)
+    codeAreaRight.setText(right, rightGroupedWordAlignment, inserted, LineInserted, movedRight, notMovedRight, highlight.right, rightFirstChangeLine)
     if (showing) { // just for speed
       layout()
       requestRedraw()
