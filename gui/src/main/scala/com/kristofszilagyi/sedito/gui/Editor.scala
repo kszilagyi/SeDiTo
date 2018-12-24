@@ -9,7 +9,6 @@ import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.gui.Editor._
-import com.kristofszilagyi.sedito.gui.utils.LineEndingUtils
 import javafx.geometry.{BoundingBox, Bounds}
 import javafx.scene.Node
 import javafx.scene.control.Label
@@ -151,9 +150,6 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
   private val lineNumberFactory = new CachedLineNumberFactory(this)
   setParagraphGraphicFactory(lineNumberFactory)
 
-  @SuppressWarnings(Array(Warts.Var))
-  private var editTypes = Map.empty[LineIdx, LineEdits]
-
   val otherEditor: Editor = maybeOtherEditor.getOrElse(new Editor(Some(this)))
 
   @SuppressWarnings(Array(Warts.Var))
@@ -166,15 +162,11 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
   private var _selectedForMatch: Option[Selection] = None
 
   @SuppressWarnings(Array(Warts.Var))
-  var wordAlignmentByLine: Map[LineIdx, Traversable[MatchInfo]] = Map.empty
-
-  @SuppressWarnings(Array(Warts.Var))
-  var newLineType: String = System.lineSeparator()
+  private var session: EditorSession = EditorSession.empty
 
   def selectedForMatch(): Option[Selection] = _selectedForMatch
 
   private def reset(): Unit = {
-    editTypes = Map.empty
     highlightedLines = Traversable.empty
     highlightedChars = Traversable.empty
     lineNumberFactory.reset()
@@ -197,7 +189,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
     val posInText = offsetToPosition(chIdx, Bias.Forward)
     val line = LineIdx(posInText.getMajor)
     val cursorPosInLine = CharIdxInLine(posInText.getMinor)
-    editTypes.get(line).foreach { edit =>
+    session.editTypes.get(line).foreach { edit =>
       val moveUnderCursor = edit.charEdits.collect {
         case charEdit @ CharEdit(_, _, CharsMoved(fromTo, _)) if charEdit.contains(cursorPosInLine) =>
           fromTo
@@ -210,7 +202,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
       }
     }
 
-    wordAlignmentByLine.get(line).foreach{ matches =>
+    session.wordAlignmentByLine.get(line).foreach{ matches =>
       val maybeMatchUnderCursor = matches.find(m => m.selection.from <= cursorPosInLine && cursorPosInLine < m.selection.toExcl)
       val probability = maybeMatchUnderCursor.flatMap(_.probability).getOrElse(Double.NaN)
       popupDebugMsg.setText(f"$probability%.2f")
@@ -219,7 +211,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
   })
 
   new MouseOverLineDetector(this, onEnter = { case (e, line) =>
-    editTypes.get(line).foreach { edit =>
+    session.editTypes.get(line).foreach { edit =>
       edit.line match {
         case LineMoved(from) =>
           popupMsg.setText(s"Moved from/to line ${from.i + 1}")
@@ -240,30 +232,14 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
     popupDebug.hide()
   })
 
-  private def applyHighlight(highlight: Map[LineIdx, Traversable[CharEdit]]): Unit = {
-    highlight.foreach { case (line, edits) =>
-      edits.foreach { edit =>
-        setCharEdit(line, edit.from, edit.to, edit.editType)
-      }
-    }
-  }
-
-  def setText(fullText: FullText, wordAlignment: Map[LineIdx, scala.Traversable[MatchInfo]], changed: IndexedSeq[LineIdx],
-              changeType: LineEditType, moved: Set[BiasedLineMatch], notMoved: Set[LineIdx],
-              highlight: Map[LineIdx, scala.Traversable[CharEdit]], firstChangeLine: LineIdx): Unit = {
+  def setText(fullText: FullText, newSession: EditorSession, firstChangeLine: LineIdx): Unit = {
     reset()
-    wordAlignmentByLine = wordAlignment
-
-    changed.foreach(l => setLineType(l, changeType))
-    moved.foreach(m => setLineType(m.thisSide, LineMoved(m.otherSide)))
-    notMoved.foreach(l => setLineType(l, LineSame))
-
-    applyHighlight(highlight)
+    session = newSession
+    session.editTypes.foreach{ case (lineIdx, edits) => applyLineTypeCssOnLineNumber(lineIdx, Some(edits))}
     applyLineEdits(fullText)
     applyCharEdits()
     moveTo(math.max(firstChangeLine.i - 4, 0), 0)
     requestFollowCaret()
-    newLineType = LineEndingUtils.guessLineEnding(fullText)
   }
 
   private def applyLineTypeCssOnLineNumber(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {
@@ -277,7 +253,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
     val lines = s.s.lines.toVector
     if (lines.isEmpty) replaceText("")
     else {
-      val paragraphs = lines.zip(editTypes.toSeq.sortBy(_._1)).map { case (line, (_, lineEdits)) =>
+      val paragraphs = lines.zip(session.editTypes.toSeq.sortBy(_._1)).map { case (line, (_, lineEdits)) =>
         val lineCssClass = getLineCssClass(Some(lineEdits.line)).s
         new Paragraph[util.Collection[String], String, util.Collection[String]](List(lineCssClass).asJava,
           SegmentOps.styledTextOps[util.Collection[String]](), line, List.empty[String].asJava)
@@ -286,30 +262,10 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
     }
   }
 
-  private def setLineType(lineIdx: LineIdx, editType: LineEditType): Unit = {
-    val current = editTypes.get(lineIdx)
-    val newEdit = current match {
-      case Some(edit) => edit.copy(line = editType)
-      case None => LineEdits(editType, Vector.empty)
-    }
-
-    editTypes += lineIdx -> newEdit
-    applyLineTypeCssOnLineNumber(lineIdx, Some(newEdit))
-  }
-
   private def applyCharEdits(): Unit = {
-    toStylesSpans(editTypes, this.getText().linesWithSeparators.toIndexedSeq).foreach{ spans =>
+    toStylesSpans(session.editTypes, this.getText().linesWithSeparators.toIndexedSeq).foreach{ spans =>
       setStyleSpans(0, spans)
     }
-  }
-
-  private def setCharEdit(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: CharEditType): Unit = {
-    val current = editTypes.get(lineIdx)
-    val newEdit = current match {
-      case Some(edit) => edit.copy(charEdits = edit.charEdits :+ CharEdit(from, to, editType))
-      case None => fail(s"Bug in code: cannot have new char edits without line edit. $lineIdx")
-    }
-    editTypes += lineIdx -> newEdit
   }
 
   private def highlightLine(line: LineIdx): Unit = {
@@ -317,7 +273,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
     setParagraphStyle(line.i, List("highlighted").asJava)
     setStyle(line.i, 0, getParagraph(line.i).length(), List(highlightedCharClass.s).asJava)
 
-    val maybeLineEdits = editTypes.get(line)
+    val maybeLineEdits = session.editTypes.get(line)
     maybeLineEdits.foreach { lineEdits =>
       lineEdits.charEdits.foreach { charEdit =>
         charEdit.editType match {
@@ -335,7 +291,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
   }
 
   private def resetHighlightingForLine(line: LineIdx): Unit = {
-    val maybeLineEdits = editTypes.get(line)
+    val maybeLineEdits = session.editTypes.get(line)
     applyLineTypeCssOnLineNumber(line, maybeLineEdits)
     maybeLineEdits.foreach { lineEdits =>
       setParagraphStyle(line.i, List(getLineCssClass(Some(lineEdits.line)).s).asJava)
@@ -440,7 +396,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
   }
 
   def getTextWithGuessedLineEnding(): String = {
-    getText().replace("\n", newLineType)
+    getText().replace("\n", session.newLineType)
   }
 
 }

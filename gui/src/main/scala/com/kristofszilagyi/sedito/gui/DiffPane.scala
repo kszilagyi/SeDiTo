@@ -21,7 +21,6 @@ import org.fxmisc.flowless.VirtualizedScrollPane
 import org.log4s.getLogger
 
 import scala.collection.JavaConverters._
-import scala.collection.immutable.TreeMap
 import scala.concurrent.duration.DurationInt
 import scala.util.{Failure, Success, Try}
 
@@ -64,20 +63,13 @@ final class DiffPane extends StackPane {
 
   private val codeAreaLeft = new Editor(None)
   private val codeAreaRight = codeAreaLeft.otherEditor
-  @SuppressWarnings(Array(Warts.Var))
-  private var wordAlignment: UnambiguousWordAlignment = UnambiguousWordAlignment(Set.empty)
-  @SuppressWarnings(Array(Warts.Var))
-  private var eqPoints: Traversable[EquivalencePoint] = Traversable.empty
+
 
   @SuppressWarnings(Array(Warts.Var))
   private var needToDraw: Boolean = false
 
   @SuppressWarnings(Array(Warts.Var))
-  private var notMovedLines: TreeMap[LineIdx, LineIdx] = TreeMap.empty
-  @SuppressWarnings(Array(Warts.Var))
-  private var maybeLeftPath: Option[Path] = None
-  @SuppressWarnings(Array(Warts.Var))
-  private var maybeRightPath: Option[Path] = None
+  private var session: DiffPaneSession = DiffPaneSession.empty
 
   private def requestRedraw(): Unit = needToDraw = true
 
@@ -121,7 +113,7 @@ final class DiffPane extends StackPane {
             if ((topEdge && up) || (bottomEdge && !up)) (delta, delta)
             else {
               val scrollAlignment = Scroller.calc(leftVisible,
-                rightVisible, notMovedLines)
+                rightVisible, session.notMovedLines)
               scrollAlignment match {
                 case Aligned | NothingOnScreen => (delta, delta)
                 case LeftIsLower =>
@@ -155,10 +147,10 @@ final class DiffPane extends StackPane {
           codeAreaRight.grabSelectionForMatch()
           (codeAreaLeft.selectedForMatch(), codeAreaRight.selectedForMatch()) match {
             case (Some(leftSelection), Some(rightSelection)) =>
-              val newMatches = wordAlignment.matches.filter(m => (m.left !=== leftSelection) && (m.right !=== rightSelection)) + WordMatch(leftSelection, rightSelection)()
-              val newAlignment = wordAlignment.copy(newMatches)
-              logger.info(s"Adding new match. Old size: ${wordAlignment.matches.size}, new size: ${newMatches.size}")
-              open(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), maybeLeftPath, maybeRightPath, newAlignment, showing = true)
+              val newMatches = session.wordAlignment.matches.filter(m => (m.left !=== leftSelection) && (m.right !=== rightSelection)) + WordMatch(leftSelection, rightSelection)()
+              val newAlignment = session.wordAlignment.copy(newMatches)
+              logger.info(s"Adding new match. Old size: ${session.wordAlignment.matches.size}, new size: ${newMatches.size}")
+              open(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), session.maybeLeftPath, session.maybeRightPath, newAlignment, showing = true)
             case other =>
               logger.info(s"No selection: $other")
           }
@@ -171,7 +163,7 @@ final class DiffPane extends StackPane {
 
   def testCase: TestCase = {
     //todo this is not really correct as we loose data if the original AmbiguousWordAlignment was really ambiguous
-    TestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), AmbiguousWordAlignment(wordAlignment.matches))
+    TestCase(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), AmbiguousWordAlignment(session.wordAlignment.matches))
   }
 
   private def drawEqPoints(): Unit = {
@@ -181,7 +173,7 @@ final class DiffPane extends StackPane {
 
       val leftLinesOnScreen = codeAreaLeft.lineIndicesOnScreen()
       val rightLinesOnScreen = codeAreaRight.lineIndicesOnScreen()
-      val eqPointsOnScreen = eqPoints.filter(_.overlap(leftLinesOnScreen, rightLinesOnScreen))
+      val eqPointsOnScreen = session.eqPoints.filter(_.overlap(leftLinesOnScreen, rightLinesOnScreen))
 
       val maybeFirstLeft = leftLinesOnScreen.toLines.headOption
       val maybeFirstRight = rightLinesOnScreen.toLines.headOption
@@ -234,47 +226,24 @@ final class DiffPane extends StackPane {
   }
 
   def open(left: FullText, right: FullText, newMaybeLeftPath: Option[Path], newMaybeRightPath: Option[Path],
-           newWordAlignment: UnambiguousWordAlignment, showing: Boolean): Unit = {
+      newWordAlignment: UnambiguousWordAlignment, showing: Boolean) {
     needToDraw = false
-    maybeLeftPath = newMaybeLeftPath
-    maybeRightPath = newMaybeRightPath
-    wordAlignment = newWordAlignment
-    val leftLines = Lines(left.s.lines.toIndexedSeq)
-    val rightLines = Lines(right.s.lines.toIndexedSeq)
-
-    val lineAlignment = WhiteSpaceAligner.align(leftLines, rightLines, LineAligner.align(newWordAlignment))
-
-    val deleted = leftLines.l.indices.map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.leftLineIdx).contains(l))
-    val inserted = rightLines.l.indices.map(LineIdx.apply).filterNot(l => lineAlignment.matches.map(_.rightLineIdx).contains(l))
-    val partitioned = lineAlignment.partition
-    val moved = partitioned.moved
-    val movedLeft = moved.map(BiasedLineMatch.left)
-    val movedRight = moved.map(BiasedLineMatch.right)
-    notMovedLines = TreeMap(partitioned.notMoved.flatMap(LineMatch.unapply).toSeq: _*)
-    val notMovedLeft = partitioned.notMoved.map(_.leftLineIdx)
-    val notMovedRight = partitioned.notMoved.map(_.rightLineIdx)
-
-    eqPoints = InsertionPointCalculator.calc(partitioned.notMoved, moved, leftLineCount = leftLines.l.size,
-      rightLineCount = rightLines.l.size)
-    val leftWords = Wordizer.toWordIndices(left.s)
-    val rightWords = Wordizer.toWordIndices(right.s)
-    val highlight = CharHighlightCalculator.calc(leftWords, rightWords, newWordAlignment, lineAlignment)
-
-    val leftGroupedWordAlignment = newWordAlignment.matches.map(m => MatchInfo(m.left, m.probability)).groupBy(_.selection.lineIdx)
-    val rightGroupedWordAlignment = newWordAlignment.matches.map(m => MatchInfo(m.right, m.probability)).groupBy(_.selection.lineIdx)
-    val leftFirstChangeLine = eqPoints.headOption.map(_.left.from).getOrElse(LineIdx(0))
-    val rightFirstChangeLine = eqPoints.headOption.map(_.right.from).getOrElse(LineIdx(0))
-    codeAreaLeft.setText(left, leftGroupedWordAlignment, deleted, LineDeleted, movedLeft, notMovedLeft, highlight.left, leftFirstChangeLine)
-    codeAreaRight.setText(right, rightGroupedWordAlignment, inserted, LineInserted, movedRight, notMovedRight, highlight.right, rightFirstChangeLine)
+    val (newSession, leftSession, rightSession) = DiffPaneSession.create(left, right , newMaybeLeftPath, newMaybeRightPath, newWordAlignment)
+    session = newSession
+    val leftFirstChangeLine = newSession.eqPoints.headOption.map(_.left.from).getOrElse(LineIdx(0))
+    val rightFirstChangeLine = newSession.eqPoints.headOption.map(_.right.from).getOrElse(LineIdx(0))
+    codeAreaLeft.setText(left, leftSession, leftFirstChangeLine)
+    codeAreaRight.setText(right, rightSession, rightFirstChangeLine)
     if (showing) { // just for speed
       layout()
       requestRedraw()
     }
+
   }
 
   def saveFiles(): (SaveResult, SaveResult) = {
-    val leftResult = saveFile(maybeLeftPath, codeAreaLeft)
-    val rightResult = saveFile(maybeRightPath, codeAreaRight)
+    val leftResult = saveFile(session.maybeLeftPath, codeAreaLeft)
+    val rightResult = saveFile(session.maybeRightPath, codeAreaRight)
     (leftResult, rightResult)
   }
 }
