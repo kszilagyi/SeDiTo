@@ -112,5 +112,59 @@ class TrivialContextCollectorTest extends FreeSpecLike {
       UnambiguousWordAlignment(Set(m1, m2, m3))
   }
 
+  // this whole things perform poorly on the following examples:
+  /*
+    reset()
+    session = newSession
+    session.editTypes.foreach{ case (lineIdx, edits) => applyLineTypeCssOnLineNumber(lineIdx, Some(edits))}
+    applyLineEdits(fullText)
+    applyCharEdits()
+    moveTo(math.max(firstChangeLine.i - 4, 0), 0)
+    requestFollowCaret()
+  }
+
+   private def applyLineTypeCssOnLineNumber(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {
+
+  compared to
+
+  def setText(fullText: FullText, newSession: EditorSession): Unit = {
+    reset()
+    session = newSession
+    session.editTypes.foreach{ case (lineIdx, edits) => applyLineTypeCssOnLineNumber(lineIdx, Some(edits))}
+    applyLineEdits(fullText)
+    applyCharEdits()
+  }
+
+  def moveToLine(line: LineIdx): Unit = {
+    moveTo(line.i, 0)
+    showParagraphAtTop(line.i)
+  }
+
+  private def applyLineTypeCssOnLineNumber(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {
+
+  it starts from the behind and assumes the last } and ) is the same while they are not
+
+
+  OR here:
+
+  codeAreaRight.setText(right, rightSession, rightFirstChangeLine)
+  if (showing) { // just for speed
+    layout()
+    requestRedraw()
+  }
+
+  vs
+
+  updatePositionsBasedOnTracker()
+  if (showing) { // just for speed
+    layout()
+    requestRedraw()
+  }
+
+  it assumes the first line's ) is the same
+
+  see commit c09a73d6d8b6a48277bd1903eea8d41d17e927a4 for these example
+  and 4139283a201b87b63be1d5cd08e7fc3e8bc85ab6 for more example
+   */
   //spaces?
 }
