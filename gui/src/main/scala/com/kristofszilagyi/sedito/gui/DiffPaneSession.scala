@@ -29,7 +29,6 @@ object DiffPaneSession {
       lineMatchesWithLeftCharChanges.map(m => ChangePointStart(m.leftLineIdx, m.rightLineIdx)) ++
       lineMatchesWithRightCharChanges.map(m => ChangePointStart(m.leftLineIdx, m.rightLineIdx))
 
-
     val withoutSameFromLeft = allChanges.groupBy(_.left).values.flatMap(_.headOption)
     val withoutSameFromBoth = withoutSameFromLeft.groupBy(_.right).values.flatMap(_.headOption)
     withoutSameFromBoth
