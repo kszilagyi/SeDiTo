@@ -146,7 +146,7 @@ object CharHighlightCalculator {
           val inWordDiff = differ.diffMain(left, right)
           differ.diffCleanupSemantic(inWordDiff)
 
-          //using eq here for peformance though probably red herring
+          //using eq here for performance though probably red herring
           val leftDiffs = inWordDiff.asScala.filter(d => d.operation.eq(Operation.DELETE) || d.operation.eq(Operation.EQUAL))
           val rightDiffs = inWordDiff.asScala.filter(d => d.operation.eq(Operation.INSERT) || d.operation.eq(Operation.EQUAL))
           val leftEdits = toPositions(wm.left, leftDiffs)

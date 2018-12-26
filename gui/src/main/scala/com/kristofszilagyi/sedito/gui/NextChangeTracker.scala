@@ -6,8 +6,9 @@ sealed trait HaveMore
 case object StillHaveMore extends HaveMore
 case object ThereIsNoMore extends HaveMore
 
-final class NextChangeTracker(eqPoints: Traversable[EquivalencePoint]) {
-  private val orderedByLeft: Seq[EquivalencePoint] = eqPoints.toSeq.sortBy(_.left.from)
+final case class ChangePoint
+final class NextChangeTracker(eqPoints: Traversable[LineChangePoint]) {
+  private val orderedByLeft: Seq[LineChangePoint] = eqPoints.toSeq.sortBy(_.left.from)
   assert(eqPoints.forall(_.positive))
 
   @SuppressWarnings(Array(Warts.Var))

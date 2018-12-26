@@ -11,6 +11,10 @@ object DiffPaneSession {
     new DiffPaneSession(UnambiguousWordAlignment(Set.empty), Traversable.empty, notMovedLines = TreeMap.empty, maybeLeftPath = None, maybeRightPath = None)
   }
 
+  private def allChanges(eqPoints: Traversable[LineChangePoint], highlight: CharHighlight) = {
+
+  }
+
   def create(left: FullText, right: FullText, newMaybeLeftPath: Option[Path], newMaybeRightPath: Option[Path],
              newWordAlignment: UnambiguousWordAlignment): (DiffPaneSession, EditorSession, EditorSession) = {
     val leftLines = Lines(left.s.lines.toIndexedSeq)
@@ -38,17 +42,15 @@ object DiffPaneSession {
     val leftGroupedWordAlignment = newWordAlignment.matches.map(m => MatchInfo(m.left, m.probability)).groupBy(_.selection.lineIdx)
     val rightGroupedWordAlignment = newWordAlignment.matches.map(m => MatchInfo(m.right, m.probability)).groupBy(_.selection.lineIdx)
 
-
     val leftSession = EditorSession.create(left, leftGroupedWordAlignment, deleted, LineDeleted, movedLeft, notMovedLeft, highlight.left)
     val rightSession = EditorSession.create(right, rightGroupedWordAlignment, inserted, LineInserted, movedRight, notMovedRight, highlight.right)
-
 
     (new DiffPaneSession(newWordAlignment, eqPoints, notMovedLines, newMaybeLeftPath, newMaybeRightPath), leftSession, rightSession)
   }
 }
 
 private[gui] final class DiffPaneSession(val wordAlignment: UnambiguousWordAlignment,
-                                         val eqPoints: Traversable[EquivalencePoint],
+                                         val eqPoints: Traversable[LineChangePoint],
                                          val notMovedLines: TreeMap[LineIdx, LineIdx],
                                          val maybeLeftPath: Option[Path],
                                          val maybeRightPath: Option[Path]) {

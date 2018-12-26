@@ -35,9 +35,9 @@ final case class LineRange(from: LineIdx, to: LineIdx) {
 
   def size: Int = to.i - from.i
 }
-object EquivalencePoint {
+object LineChangePoint {
   def from(left: (Int, Int), right: (Int, Int)) =
-    EquivalencePoint(LineRange(LineIdx(left._1), LineIdx(left._2)), LineRange(LineIdx(right._1), LineIdx(right._2)))
+    LineChangePoint(LineRange(LineIdx(left._1), LineIdx(left._2)), LineRange(LineIdx(right._1), LineIdx(right._2)))
 }
 
 /**
@@ -45,17 +45,17 @@ object EquivalencePoint {
   *
   *
   */
-final case class EquivalencePoint(left: LineRange, right: LineRange) {
+final case class LineChangePoint(left: LineRange, right: LineRange) {
   def positive: Boolean = left.positive || right.positive
-  def withoutRight(line: LineIdx): Seq[EquivalencePoint] = {
-    right.without(line).map(EquivalencePoint(left, _))
+  def withoutRight(line: LineIdx): Seq[LineChangePoint] = {
+    right.without(line).map(LineChangePoint(left, _))
   }
-  def withoutLeft(line: LineIdx): Seq[EquivalencePoint] = {
-    left.without(line).map(EquivalencePoint(_, right))
+  def withoutLeft(line: LineIdx): Seq[LineChangePoint] = {
+    left.without(line).map(LineChangePoint(_, right))
   }
-  def intersect(oLeft: LineRange, oRight: LineRange): Option[EquivalencePoint] = {
+  def intersect(oLeft: LineRange, oRight: LineRange): Option[LineChangePoint] = {
     (left.intersect(oLeft), right.intersect(oRight)) match {
-      case (Some(l), Some(r)) => Some(EquivalencePoint(l, r))
+      case (Some(l), Some(r)) => Some(LineChangePoint(l, r))
       case _ => None
     }
   }
@@ -69,7 +69,7 @@ final case class EquivalencePoint(left: LineRange, right: LineRange) {
 object InsertionPointCalculator {
 
   private def handleRemains(leftUnmatched: Traversable[LineRange], rightUnmatched: Traversable[LineRange],
-                            allMatches: Traversable[LineMatch]): Traversable[EquivalencePoint] = {
+                            allMatches: Traversable[LineMatch]): Traversable[LineChangePoint] = {
 
     val allSortedLeft = allMatches.toSeq.sortBy(_.leftLineIdx)
     val allSortedRight = allMatches.toSeq.sortBy(_.rightLineIdx)
@@ -83,7 +83,7 @@ object InsertionPointCalculator {
 
     val leftEqs = leftBeforeMatches.map { case (lineMatch, leftRange) =>
       val nextRight = lineMatch.rightLineIdx + 1
-      EquivalencePoint(
+      LineChangePoint(
         leftRange,
         LineRange(nextRight, rightUnmatched.find(_.from ==== nextRight).map(_.to).getOrElse(nextRight))
       )
@@ -91,7 +91,7 @@ object InsertionPointCalculator {
 
     val rightEqs = rightBeforeMatches.map { case (lineMatch, rightRange) =>
       val nextLeft = lineMatch.leftLineIdx + 1
-      EquivalencePoint(
+      LineChangePoint(
         LineRange(nextLeft, leftUnmatched.find(_.from ==== nextLeft).map(_.to).getOrElse(nextLeft)),
         rightRange
       )
@@ -99,15 +99,15 @@ object InsertionPointCalculator {
     leftEqs ++ rightEqs
   }
 
-  def calc(notMoved: Traversable[LineMatch], moved: Traversable[LineMatch], leftLineCount: Int, rightLineCount: Int): Traversable[EquivalencePoint] = {
+  def calc(notMoved: Traversable[LineMatch], moved: Traversable[LineMatch], leftLineCount: Int, rightLineCount: Int): Traversable[LineChangePoint] = {
     // sorting by left imply sorting by right
     val notMovedSorted = notMoved.toList.sortBy(_.leftLineIdx) :+ LineMatch.create(leftLineCount, rightLineCount)
     @SuppressWarnings(Array(Var))
     var last = LineMatch.create(-1, -1)
-    val builder = Seq.newBuilder[EquivalencePoint]
+    val builder = Seq.newBuilder[LineChangePoint]
     // this could be done with sliding though I am not convinced it would be any better
     notMovedSorted.foreach { current =>
-      val eq = EquivalencePoint(LineRange(last.leftLineIdx + 1, current.leftLineIdx), LineRange(last.rightLineIdx + 1, current.rightLineIdx))
+      val eq = LineChangePoint(LineRange(last.leftLineIdx + 1, current.leftLineIdx), LineRange(last.rightLineIdx + 1, current.rightLineIdx))
       if (eq.positive)
         discard(builder += eq)
       last = current

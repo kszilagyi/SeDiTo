@@ -11,7 +11,7 @@ class NextChangeTrackerTest extends fixture.FreeSpecLike {
     test(createTracker())
   }
 
-  private def eqPoint(leftStart: Int) = EquivalencePoint.from((leftStart, leftStart + 1), (leftStart, leftStart + 1))
+  private def eqPoint(leftStart: Int) = LineChangePoint.from((leftStart, leftStart + 1), (leftStart, leftStart + 1))
   private val first = eqPoint(1)
   private val middle = eqPoint(2)
   private val last = eqPoint(3)
