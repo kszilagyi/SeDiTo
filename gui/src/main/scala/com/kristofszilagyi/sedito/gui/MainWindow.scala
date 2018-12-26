@@ -81,8 +81,8 @@ final class MainWindow {
   }
 
   private def toolBar = {
-    val up = Buttons.awesome('\uf062')
-    val down = Buttons.awesome('\uf063')
+    val up = Buttons.awesome('\uf062', _ => diffPane.prevChange())
+    val down = Buttons.awesome('\uf063', _ => diffPane.nextChange())
 
     val toolBar = new ToolBar(
       up, down

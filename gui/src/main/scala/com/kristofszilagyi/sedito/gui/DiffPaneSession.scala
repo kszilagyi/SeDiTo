@@ -51,6 +51,7 @@ private[gui] final class DiffPaneSession(val wordAlignment: UnambiguousWordAlign
                                          val eqPoints: Traversable[EquivalencePoint] = Traversable.empty,
                                          val notMovedLines: TreeMap[LineIdx, LineIdx] = TreeMap.empty,
                                          val maybeLeftPath: Option[Path] = None,
-                                         val maybeRightPath: Option[Path] = None)
-
+                                         val maybeRightPath: Option[Path] = None) {
+  val nextChangeTracker: NextChangeTracker = new NextChangeTracker(eqPoints)
+}
 

@@ -246,4 +246,10 @@ final class DiffPane extends StackPane {
     val rightResult = saveFile(session.maybeRightPath, codeAreaRight)
     (leftResult, rightResult)
   }
+
+  def nextChange(): Unit = session.nextChangeTracker.next()
+  def prevChange(): Unit = session.nextChangeTracker.prev()
+  def hasNextChange(): Boolean = session.nextChangeTracker.hasNext()
+  def hasPrevChange(): Boolean = session.nextChangeTracker.hasPrev()
+
 }
