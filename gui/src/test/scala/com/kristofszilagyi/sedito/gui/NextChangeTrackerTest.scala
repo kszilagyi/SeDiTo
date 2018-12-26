@@ -1,5 +1,6 @@
 package com.kristofszilagyi.sedito.gui
 
+import com.kristofszilagyi.sedito.common.LineIdx
 import org.scalatest.Matchers._
 import org.scalatest.{Outcome, fixture}
 
@@ -17,8 +18,12 @@ class NextChangeTrackerTest extends fixture.FreeSpecLike {
   private def createTracker() = new NextChangeTracker(List(first, middle, last))
 
   "first" - {
-    "starts with first" in { tracker =>
+    "starts with first (left)" in { tracker =>
       tracker.left() shouldBe first.left.from
+    }
+
+    "starts with first (right)" in { tracker =>
+      tracker.right() shouldBe first.right.from
     }
 
     "moving back stays with first" in { tracker =>
@@ -90,6 +95,18 @@ class NextChangeTrackerTest extends fixture.FreeSpecLike {
       tracker.next()
       tracker.prev()
       tracker.left() shouldBe middle.left.from
+    }
+  }
+
+  "empty" - {
+    "returns 0 for left" in { _ =>
+      val tracker = new NextChangeTracker(List())
+      tracker.left() shouldBe LineIdx(0)
+    }
+
+    "returns 0 for right" in { _ =>
+      val tracker = new NextChangeTracker(List())
+      tracker.right() shouldBe LineIdx(0)
     }
   }
 
