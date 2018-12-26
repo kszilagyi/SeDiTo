@@ -6,10 +6,10 @@ sealed trait HaveMore
 case object StillHaveMore extends HaveMore
 case object ThereIsNoMore extends HaveMore
 
-final case class ChangePoint
-final class NextChangeTracker(eqPoints: Traversable[LineChangePoint]) {
-  private val orderedByLeft: Seq[LineChangePoint] = eqPoints.toSeq.sortBy(_.left.from)
-  assert(eqPoints.forall(_.positive))
+final case class ChangePointStart(left: LineIdx, right: LineIdx)
+
+final class NextChangeTracker(changePointStarts: Traversable[ChangePointStart]) {
+  private val orderedByLeft: Seq[ChangePointStart] = changePointStarts.toSeq.sortBy(_.left)
 
   @SuppressWarnings(Array(Warts.Var))
   private var position = 0
@@ -18,11 +18,11 @@ final class NextChangeTracker(eqPoints: Traversable[LineChangePoint]) {
     orderedByLeft.lift(position)
   }
   def left(): LineIdx = {
-    current().map(_.left.from).getOrElse(LineIdx(0))
+    current().map(_.left).getOrElse(LineIdx(0))
   }
 
   def right(): LineIdx = {
-    current().map(_.right.from).getOrElse(LineIdx(0))
+    current().map(_.right).getOrElse(LineIdx(0))
   }
 
   def next(): Unit = {

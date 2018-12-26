@@ -11,7 +11,7 @@ object DiffPaneSession {
     new DiffPaneSession(UnambiguousWordAlignment(Set.empty), Traversable.empty, notMovedLines = TreeMap.empty, maybeLeftPath = None, maybeRightPath = None)
   }
 
-  private def allChanges(eqPoints: Traversable[LineChangePoint], highlight: CharHighlight) = {
+  private def allChanges(eqPoints: Traversable[LineChangePoint], highlight: CharHighlight): Unit = {
 
   }
 
@@ -32,7 +32,7 @@ object DiffPaneSession {
     val notMovedLeft = partitioned.notMoved.map(_.leftLineIdx)
     val notMovedRight = partitioned.notMoved.map(_.rightLineIdx)
 
-    val eqPoints = InsertionPointCalculator.calc(partitioned.notMoved, moved, leftLineCount = leftLines.l.size,
+    val eqPoints = LineChangePointCalculator.calc(partitioned.notMoved, moved, leftLineCount = leftLines.l.size,
       rightLineCount = rightLines.l.size)
 
     val leftWords = Wordizer.toWordIndices(left.s)

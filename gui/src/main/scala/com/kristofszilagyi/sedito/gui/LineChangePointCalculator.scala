@@ -66,7 +66,7 @@ final case class LineChangePoint(left: LineRange, right: LineRange) {
 }
 
 
-object InsertionPointCalculator {
+object LineChangePointCalculator {
 
   private def handleRemains(leftUnmatched: Traversable[LineRange], rightUnmatched: Traversable[LineRange],
                             allMatches: Traversable[LineMatch]): Traversable[LineChangePoint] = {

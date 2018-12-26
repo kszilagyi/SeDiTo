@@ -1,15 +1,15 @@
 package com.kristofszilagyi.sedito.gui
 
 import com.kristofszilagyi.sedito.common.{LineIdx, LineMatch}
-import com.kristofszilagyi.sedito.gui.InsertionPointCalculator.calc
-import com.kristofszilagyi.sedito.gui.InsertionPointCalculatorTest.pairs
+import com.kristofszilagyi.sedito.gui.LineChangePointCalculator.calc
+import com.kristofszilagyi.sedito.gui.LineChangePointCalculatorTest.pairs
 import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 
-object InsertionPointCalculatorTest {
+object LineChangePointCalculatorTest {
   private def pairs(matches: Map[Int, Int]) = matches.map(m => LineMatch(LineIdx(m._1), LineIdx(m._2)))
 }
-final class InsertionPointCalculatorTest extends FreeSpecLike {
+final class LineChangePointCalculatorTest extends FreeSpecLike {
   "empty" in {
     calc(notMoved = IndexedSeq.empty, moved = Seq.empty, leftLineCount = 0, rightLineCount = 0) shouldBe Traversable.empty
   }
