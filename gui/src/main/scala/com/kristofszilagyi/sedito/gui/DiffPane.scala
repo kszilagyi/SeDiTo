@@ -230,10 +230,9 @@ final class DiffPane extends StackPane {
     needToDraw = false
     val (newSession, leftSession, rightSession) = DiffPaneSession.create(left, right , newMaybeLeftPath, newMaybeRightPath, newWordAlignment)
     session = newSession
-    val leftFirstChangeLine = newSession.eqPoints.headOption.map(_.left.from).getOrElse(LineIdx(0))
-    val rightFirstChangeLine = newSession.eqPoints.headOption.map(_.right.from).getOrElse(LineIdx(0))
-    codeAreaLeft.setText(left, leftSession, leftFirstChangeLine)
-    codeAreaRight.setText(right, rightSession, rightFirstChangeLine)
+    codeAreaLeft.setText(left, leftSession)
+    codeAreaRight.setText(right, rightSession)
+    updatePositionsBasedOnTracker()
     if (showing) { // just for speed
       layout()
       requestRedraw()
@@ -247,8 +246,21 @@ final class DiffPane extends StackPane {
     (leftResult, rightResult)
   }
 
-  def nextChange(): Unit = session.nextChangeTracker.next()
-  def prevChange(): Unit = session.nextChangeTracker.prev()
+  private def updatePositionsBasedOnTracker(): Unit = {
+    val tracker = session.nextChangeTracker
+    val zero = LineIdx(0)
+    codeAreaLeft.moveToLine((tracker.left() - 4).max(zero))
+    codeAreaRight.moveToLine((tracker.right() - 4).max(zero))
+  }
+
+  def nextChange(): Unit = {
+    session.nextChangeTracker.next()
+    updatePositionsBasedOnTracker()
+  }
+  def prevChange(): Unit = {
+    session.nextChangeTracker.prev()
+    updatePositionsBasedOnTracker()
+  }
   def hasNextChange(): Boolean = session.nextChangeTracker.hasNext()
   def hasPrevChange(): Boolean = session.nextChangeTracker.hasPrev()
 

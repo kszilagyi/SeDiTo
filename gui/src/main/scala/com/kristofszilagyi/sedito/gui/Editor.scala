@@ -232,14 +232,17 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
     popupDebug.hide()
   })
 
-  def setText(fullText: FullText, newSession: EditorSession, firstChangeLine: LineIdx): Unit = {
+  def setText(fullText: FullText, newSession: EditorSession): Unit = {
     reset()
     session = newSession
     session.editTypes.foreach{ case (lineIdx, edits) => applyLineTypeCssOnLineNumber(lineIdx, Some(edits))}
     applyLineEdits(fullText)
     applyCharEdits()
-    moveTo(math.max(firstChangeLine.i - 4, 0), 0)
-    requestFollowCaret()
+  }
+
+  def moveToLine(line: LineIdx): Unit = {
+    moveTo(line.i, 0)
+    showParagraphAtTop(line.i)
   }
 
   private def applyLineTypeCssOnLineNumber(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {

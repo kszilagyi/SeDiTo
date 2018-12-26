@@ -160,8 +160,8 @@ object TrainAndDiff {
     logger.info("Aligning finished")
 //    val expected = new MainWindow()
 //    expected.setTitle("Expected")
-//    val unambiguousWordAlignment = testCase.wordAlignment.toUnambigous
-//    expected.setContent(testCase.left, testCase.right, unambiguousWordAlignment)
+//    val unambiguousWordAlignment = testCase.wordAlignment.toUnambiguous
+//    expected.setContent(testCase.left, testCase.right, leftPath, rightPath, unambiguousWordAlignment)
     val actual = new MainWindow()
     actual.setTitle("Actual")
     actual.setContent(testCase.left, testCase.right, leftPath, rightPath, calculatedAlignment)
@@ -182,7 +182,7 @@ object TrainAndDiff {
 
       val (classifier, scaler) = Main.loadAI()
       val path = Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/full_tests/move_block")
+        "scala-2.12/test-classes/algorithm_tests/full_tests/unnecessary_moves")
       val testCase = readTestCase(path)
       val leftPath = TestCase.leftPath(path)
       val rightPath = TestCase.rightPath(path)
