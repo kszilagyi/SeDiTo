@@ -47,11 +47,10 @@ object DiffPaneSession {
   }
 }
 
-private[gui] final class DiffPaneSession(val wordAlignment: UnambiguousWordAlignment = UnambiguousWordAlignment(Set.empty),
-                                         val eqPoints: Traversable[EquivalencePoint] = Traversable.empty,
-                                         val notMovedLines: TreeMap[LineIdx, LineIdx] = TreeMap.empty,
-                                         val maybeLeftPath: Option[Path] = None,
-                                         val maybeRightPath: Option[Path] = None) {
+private[gui] final class DiffPaneSession(val wordAlignment: UnambiguousWordAlignment,
+                                         val eqPoints: Traversable[EquivalencePoint],
+                                         val notMovedLines: TreeMap[LineIdx, LineIdx],
+                                         val maybeLeftPath: Option[Path],
+                                         val maybeRightPath: Option[Path]) {
   val nextChangeTracker: NextChangeTracker = new NextChangeTracker(eqPoints)
 }
-
