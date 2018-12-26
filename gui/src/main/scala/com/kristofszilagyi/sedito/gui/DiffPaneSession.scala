@@ -2,17 +2,37 @@ package com.kristofszilagyi.sedito.gui
 
 import java.nio.file.Path
 
+import com.kristofszilagyi.sedito.common.TraversableOps.RichTraversable
 import com.kristofszilagyi.sedito.common._
-
+import TypeSafeEqualsOps._
 import scala.collection.immutable.TreeMap
 
 object DiffPaneSession {
   def empty: DiffPaneSession = {
-    new DiffPaneSession(UnambiguousWordAlignment(Set.empty), Traversable.empty, notMovedLines = TreeMap.empty, maybeLeftPath = None, maybeRightPath = None)
+    new DiffPaneSession(UnambiguousWordAlignment(Set.empty), Traversable.empty, notMovedLines = TreeMap.empty,
+      maybeLeftPath = None, maybeRightPath = None, Traversable.empty)
   }
 
-  private def allChanges(eqPoints: Traversable[LineChangePoint], highlight: CharHighlight): Unit = {
+  private def changedLines(highlight: Map[LineIdx, Traversable[CharEdit]]) = {
+    highlight.filter { case (_, edits) =>
+      edits.exists(_.editType !=== CharsSame)
+    }
+  }
 
+  private def allChanges(eqPoints: Traversable[LineChangePoint], highlight: CharHighlight, lineAlignment: UnambiguousLineAlignment) = {
+    val laLeftLookup = lineAlignment.matches.groupBy(_.leftLineIdx)
+    val laRightLookup = lineAlignment.matches.groupBy(_.rightLineIdx)
+    val lineMatchesWithLeftCharChanges = changedLines(highlight.left).flatMap{case (lineIdx, _) => laLeftLookup.getOrElse(lineIdx, Set.empty).forceToOption}
+    val lineMatchesWithRightCharChanges = changedLines(highlight.right).flatMap{case (lineIdx, _) => laRightLookup.getOrElse(lineIdx, Set.empty).forceToOption}
+
+    val allChanges = eqPoints.map(e => ChangePointStart(e.left.from, e.right.from)) ++
+      lineMatchesWithLeftCharChanges.map(m => ChangePointStart(m.leftLineIdx, m.rightLineIdx)) ++
+      lineMatchesWithRightCharChanges.map(m => ChangePointStart(m.leftLineIdx, m.rightLineIdx))
+
+
+    val withoutSameFromLeft = allChanges.groupBy(_.left).values.flatMap(_.headOption)
+    val withoutSameFromBoth = withoutSameFromLeft.groupBy(_.right).values.flatMap(_.headOption)
+    withoutSameFromBoth
   }
 
   def create(left: FullText, right: FullText, newMaybeLeftPath: Option[Path], newMaybeRightPath: Option[Path],
@@ -45,14 +65,16 @@ object DiffPaneSession {
     val leftSession = EditorSession.create(left, leftGroupedWordAlignment, deleted, LineDeleted, movedLeft, notMovedLeft, highlight.left)
     val rightSession = EditorSession.create(right, rightGroupedWordAlignment, inserted, LineInserted, movedRight, notMovedRight, highlight.right)
 
-    (new DiffPaneSession(newWordAlignment, eqPoints, notMovedLines, newMaybeLeftPath, newMaybeRightPath), leftSession, rightSession)
+    (new DiffPaneSession(newWordAlignment, eqPoints, notMovedLines, newMaybeLeftPath, newMaybeRightPath,
+      allChanges(eqPoints, highlight, lineAlignment)), leftSession, rightSession)
   }
 }
 
 private[gui] final class DiffPaneSession(val wordAlignment: UnambiguousWordAlignment,
-                                         val eqPoints: Traversable[LineChangePoint],
+                                         val lineChangePoints: Traversable[LineChangePoint],
                                          val notMovedLines: TreeMap[LineIdx, LineIdx],
                                          val maybeLeftPath: Option[Path],
-                                         val maybeRightPath: Option[Path]) {
-  val nextChangeTracker: NextChangeTracker = new NextChangeTracker(eqPoints)
+                                         val maybeRightPath: Option[Path],
+                                         allChangePoints: Traversable[ChangePointStart]) {
+  val nextChangeTracker: NextChangeTracker = new NextChangeTracker(allChangePoints)
 }

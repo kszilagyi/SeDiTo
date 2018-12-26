@@ -173,7 +173,7 @@ final class DiffPane extends StackPane {
 
       val leftLinesOnScreen = codeAreaLeft.lineIndicesOnScreen()
       val rightLinesOnScreen = codeAreaRight.lineIndicesOnScreen()
-      val eqPointsOnScreen = session.eqPoints.filter(_.overlap(leftLinesOnScreen, rightLinesOnScreen))
+      val eqPointsOnScreen = session.lineChangePoints.filter(_.overlap(leftLinesOnScreen, rightLinesOnScreen))
 
       val maybeFirstLeft = leftLinesOnScreen.toLines.headOption
       val maybeFirstRight = rightLinesOnScreen.toLines.headOption

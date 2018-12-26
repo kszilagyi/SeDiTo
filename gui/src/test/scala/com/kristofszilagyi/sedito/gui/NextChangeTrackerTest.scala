@@ -11,24 +11,24 @@ class NextChangeTrackerTest extends fixture.FreeSpecLike {
     test(createTracker())
   }
 
-  private def eqPoint(leftStart: Int) = LineChangePoint.from((leftStart, leftStart + 1), (leftStart, leftStart + 1))
-  private val first = eqPoint(1)
-  private val middle = eqPoint(2)
-  private val last = eqPoint(3)
+  private def changePoint(leftStart: Int) = ChangePointStart(LineIdx(leftStart), LineIdx(leftStart))
+  private val first = changePoint(1)
+  private val middle = changePoint(2)
+  private val last = changePoint(3)
   private def createTracker() = new NextChangeTracker(List(first, middle, last))
 
   "first" - {
     "starts with first (left)" in { tracker =>
-      tracker.left() shouldBe first.left.from
+      tracker.left() shouldBe first.left
     }
 
     "starts with first (right)" in { tracker =>
-      tracker.right() shouldBe first.right.from
+      tracker.right() shouldBe first.right
     }
 
     "moving back stays with first" in { tracker =>
       tracker.prev()
-      tracker.left() shouldBe first.left.from
+      tracker.left() shouldBe first.left
     }
 
     "can't go back" in { tracker =>
@@ -43,7 +43,7 @@ class NextChangeTrackerTest extends fixture.FreeSpecLike {
   "middle" - {
     "moving works" in { tracker =>
       tracker.next()
-      tracker.left() shouldBe middle.left.from
+      tracker.left() shouldBe middle.left
     }
 
     "can go back" in { tracker =>
@@ -59,7 +59,7 @@ class NextChangeTrackerTest extends fixture.FreeSpecLike {
     "moving back works" in { tracker =>
       tracker.next()
       tracker.prev()
-      tracker.left() shouldBe first.left.from
+      tracker.left() shouldBe first.left
     }
   }
 
@@ -68,14 +68,14 @@ class NextChangeTrackerTest extends fixture.FreeSpecLike {
     "moving works" in { tracker =>
       tracker.next()
       tracker.next()
-      tracker.left() shouldBe last.left.from
+      tracker.left() shouldBe last.left
     }
 
     "moving too many times works" in { tracker =>
       tracker.next()
       tracker.next()
       tracker.next()
-      tracker.left() shouldBe last.left.from
+      tracker.left() shouldBe last.left
     }
 
     "can go back" in { tracker =>
@@ -94,7 +94,7 @@ class NextChangeTrackerTest extends fixture.FreeSpecLike {
       tracker.next()
       tracker.next()
       tracker.prev()
-      tracker.left() shouldBe middle.left.from
+      tracker.left() shouldBe middle.left
     }
   }
 

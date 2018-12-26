@@ -6,6 +6,9 @@ sealed trait HaveMore
 case object StillHaveMore extends HaveMore
 case object ThereIsNoMore extends HaveMore
 
+/**
+  * A change point contains both line changes (line add/remove/move) + char changes
+  */
 final case class ChangePointStart(left: LineIdx, right: LineIdx)
 
 final class NextChangeTracker(changePointStarts: Traversable[ChangePointStart]) {
