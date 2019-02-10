@@ -11,13 +11,12 @@ object TrainingData {
   private val logger = getLogger
 
 }
-final case class TrainingData(training: YAndPred, test: YAndPred, lostPositivesInTraining: Int, lostPositivesInTest: Int) {
+final case class TrainingData(training: YAndPred, test: YAndPred) {
   def printDetailedStats(): Unit = {
     val trainingY = training.y
     val trainingPred = training.pred
     val testY = test.y
     val testPred = test.pred
-    logger.info(s"training lost positives: $lostPositivesInTraining")
     logger.info("training accuracy: " + accuracy(trainingY, trainingPred).toString)
     logger.info("training recall: " + recall(trainingY, trainingPred).toString)
     logger.info("training sensitivity(TP / (TP + FN)): " + sensitivity(trainingY, trainingPred).toString)
@@ -33,7 +32,6 @@ final case class TrainingData(training: YAndPred, test: YAndPred, lostPositivesI
     logger.info(s"total mispred: ${trainFp + trainFn}")
     logger.info("training f1: " + f1(trainingY, trainingPred).toString)
 
-    logger.info(s"test lost positives: $lostPositivesInTest")
     logger.info("test accuracy: " + accuracy(testY, testPred).toString)
     logger.info("test recall: " + recall(testY, testPred).toString)
     logger.info("test sensitivity(TP / (TP + FN)): " + sensitivity(testY, testPred).toString)

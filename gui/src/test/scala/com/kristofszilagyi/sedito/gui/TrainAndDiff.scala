@@ -25,7 +25,7 @@ import scala.collection.JavaConverters._
 import scala.util.{Failure, Success}
 
 final case class MetricsWithResults(metrics: Metrics, matching: Boolean)
-final case class Samples(lostPositives: Int, metricsWithResults: Traversable[MetricsWithResults])
+final case class Samples(metricsWithResults: Traversable[MetricsWithResults])
 
 object TrainAndDiff {
   private val logger = getLogger
@@ -51,8 +51,7 @@ object TrainAndDiff {
       MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))
     }
 
-    val lost = matches.size - metricsWithResult.count(_.matching)
-    Samples(lost, metricsWithResult)
+    Samples(metricsWithResult)
   }
 
   def testDirs: Seq[Path] = {
@@ -143,14 +142,9 @@ object TrainAndDiff {
     val trainingPred = transformedTrainingSet.map(classifier.predict)
     val testPred = testX.map(classifier.predict)
 
-    val lostPositivesInTraining = nestedTraining.map(_.lostPositives).sum
-    val lostPositivesInTest = nestedTest.map(_.lostPositives).sum
-
     val trainingData = TrainingData(
       training = new YAndPred(trainingY, trainingPred),
-      test = new YAndPred(testY, testPred),
-      lostPositivesInTraining = lostPositivesInTraining,
-      lostPositivesInTest = lostPositivesInTest
+      test = new YAndPred(testY, testPred)
     )
     (classifier, scaler, trainingData)
   }
@@ -191,9 +185,9 @@ object TrainAndDiff {
     }
   }
 
-  final case class PerformanceMetrics(f1: Double, lostPositives: Int, fn: Int, fp: Int, tp: Int, selPos: Int, expectedPos: Int, sampleSize: Int) {
+  final case class PerformanceMetrics(f1: Double, fn: Int, fp: Int, tp: Int, selPos: Int, expectedPos: Int, sampleSize: Int) {
     override def toString: String = f"f1: $f1%.3f, tp: $tp%4d, fp: $fp%2d, fn: $fn%2d, selPos: $selPos%4d, " +
-      f"expectedPos: $expectedPos%4d, lost positives: $lostPositives, sample size: $sampleSize"
+      f"expectedPos: $expectedPos%4d, sample size: $sampleSize"
   }
 
   @SuppressWarnings(Array(Warts.ToString))
@@ -210,7 +204,7 @@ object TrainAndDiff {
       val tp = countTP(singleTestY, singlePred)
       val selPos = countSelPos(singleTestY, singlePred)
       val expectedPos = countExpectedPos(singleTestY, singlePred)
-      path.getFileName.toString.padTo(34, " ").mkString -> PerformanceMetrics(f1Score, singleTest.lostPositives, fn = fn,
+      path.getFileName.toString.padTo(34, " ").mkString -> PerformanceMetrics(f1Score, fn = fn,
         fp = fp, tp = tp, selPos = selPos, expectedPos = expectedPos,sampleSize = singleTestY.length)
     }.sortBy(_._2.f1)
   }
