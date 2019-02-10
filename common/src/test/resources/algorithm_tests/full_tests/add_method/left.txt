@@ -1,0 +1,11 @@
+  def setText(fullText: FullText, newSession: EditorSession): Unit = {
+    reset()
+    session = newSession
+    session.editTypes.foreach{ case (lineIdx, edits) => applyLineTypeCssOnLineNumber(lineIdx, Some(edits))}
+    applyLineEdits(fullText)
+    applyCharEdits()
+    moveTo(math.max(firstChangeLine.i - 4, 0), 0)
+    requestFollowCaret()
+  }
+
+  private def applyLineTypeCssOnLineNumber(lineIdx: LineIdx, editType: Option[LineEdits]): Unit = {
