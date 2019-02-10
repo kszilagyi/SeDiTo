@@ -22,7 +22,7 @@ object WholeAlgorithmMeasurer {
       s"  raw: ${raw.resultString}\n  end: ${withCorrection.resultString}"
     }
 
-    def f1: Double = withCorrection.f1
+    def finalF1: Double = withCorrection.f1
   }
   final case class Results(tp: Long, fp: Long, fn: Long, selPos: Long, expectedPos: Long) {
     def +(other: Results): Results = {
@@ -48,7 +48,7 @@ object WholeAlgorithmMeasurer {
 
     @SuppressWarnings(Array(Warts.ToString))
     def nestedResultString: String = {
-      val resultLines = results.sortBy(_._2.f1).map { case (path, result) =>
+      val resultLines = results.sortBy(_._2.finalF1).map { case (path, result) =>
         path.getFileName.toString + s":\n${result.resultString}"
       }
       resultLines.mkString("\n")
