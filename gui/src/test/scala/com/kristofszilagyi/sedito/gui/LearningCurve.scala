@@ -16,11 +16,11 @@ import scala.util.Random
 object LearningCurve{
   private val logger = getLogger
 
-  private def withMetrics(testCases: Seq[(Path, TestCase)], samples: List[(Path, Samples)]) = {
+  private def keepPathAndSamples(testCases: Seq[(Path, TestCase)], samples: List[(Path, Samples)]) = {
     assert(testCases.size ==== samples.size)
-    testCases.zip(samples).map{ case ((path1, testCase), (path2, sample)) =>
+    testCases.zip(samples).map{ case ((path1, _), (path2, sample)) =>
       assert(path1 ==== path2, s"$path1 == $path2")
-      (path1, testCase, sample.metricsWithResults.map(_.metrics))
+      (path1, sample)
     }
   }
   private def oneRandomCurve(random: Random, samples: List[(Path, Samples)], testCases: Seq[(Path, TestCase)]) = {
@@ -40,8 +40,8 @@ object LearningCurve{
       val aligner = new Aligner(classifier, scaler)
 
       //todo this is possibly wrong, does learning curves apply to joint algos?
-      val trainingResults = WholeAlgorithmMeasurer.measureFast(aligner, withMetrics(trainingTestCases, trainingSamples)).aggregate
-      val testResults = WholeAlgorithmMeasurer.measureFast(aligner, withMetrics(testTestCases, testSamples)).aggregate
+      val trainingResults = WholeAlgorithmMeasurer.measureFast(aligner, keepPathAndSamples(trainingTestCases, trainingSamples)).aggregate
+      val testResults = WholeAlgorithmMeasurer.measureFast(aligner, keepPathAndSamples(testTestCases, testSamples)).aggregate
       logger.info(s"Finished size: $size")
       size -> ((trainingResults.f1, testResults.f1))
     }).seq
