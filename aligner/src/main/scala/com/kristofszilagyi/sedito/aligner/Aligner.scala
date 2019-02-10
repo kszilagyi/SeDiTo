@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.Aligner.{findPotentialMatches, resolveWithMostProbable}
+import com.kristofszilagyi.sedito.aligner.Aligner.{resolveWithMostProbable}
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common._
@@ -26,7 +26,16 @@ object Aligner {
     PartialResult(metricsAndProb._1.leftWord, metricsAndProb._1.rightWord, metricsAndProb._2)
   }
 
-  private def findPotentialMatches(classifier: SoftClassifier[Array[Double]], scaler: Scaler, metrics: Traversable[Metrics]): Traversable[PartialResult] = {
+}
+
+final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
+  def align(left: FullText, right: FullText): UnambiguousWordAlignment = {
+    val metrics = MetricCalculator.calcAlignerMetrics(left, right)
+    logger.info(s"Number of metrics: ${metrics.size}")
+    alignFast(findPotentialMatches(metrics), log = true)
+  }
+
+  def findPotentialMatches(metrics: Traversable[Metrics]): Traversable[PartialResult] = {
     logger.debug("Debug metrics: \n" + metrics.mkString("\n"))
 
     val probabilitiesWithMetrics = metrics.flatMap { m =>
@@ -44,17 +53,8 @@ object Aligner {
     }
     probabilitiesWithMetrics.map(toPartialResult)
   }
-}
 
-final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
-  def align(left: FullText, right: FullText): UnambiguousWordAlignment = {
-    val metrics = MetricCalculator.calcAlignerMetrics(left, right)
-    logger.info(s"Number of metrics: ${metrics.size}")
-    alignFast(metrics, log = true)
-  }
-
-  def alignFast(metrics: Traversable[Metrics], log: Boolean): UnambiguousWordAlignment = {
-    val potentialMatches = findPotentialMatches(classifier, scaler, metrics)
+  def alignFast(potentialMatches: Traversable[PartialResult], log: Boolean): UnambiguousWordAlignment = {
     if (log) logger.info(s"Potentials: ${potentialMatches.size}")
     val leftResolved = resolveWithMostProbable(potentialMatches.groupBy(_.left))
     val bothResolved = resolveWithMostProbable(leftResolved.groupBy(_.right))

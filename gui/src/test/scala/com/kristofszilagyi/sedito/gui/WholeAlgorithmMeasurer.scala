@@ -3,13 +3,10 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.Path
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.{Aligner, MetricCalculator}
-import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
-import com.kristofszilagyi.sedito.common.{TestCase, Warts, WordMatch}
+import com.kristofszilagyi.sedito.aligner.Aligner
+import com.kristofszilagyi.sedito.common.{Warts, WordMatch}
 import com.kristofszilagyi.sedito.gui.TrainAndDiff._
 import org.log4s.getLogger
-
-import scala.collection.parallel.ParSeq
 
 //todo add cross-validation and maximum difference
 /**
@@ -59,10 +56,8 @@ object WholeAlgorithmMeasurer {
   }
   private val logger = getLogger
 
-  def measure(aligner: Aligner, testCases: ParSeq[(Path, TestCase)]): MultiResult = {
-    measureFast(aligner, testCases.map { case (path, testCase) =>
-      (path, testCase, MetricCalculator.calcAlignerMetrics(testCase.left, testCase.right))
-    }.seq)
+  def measure(aligner: Aligner, testCases: Seq[(Path, Samples)]): MultiResult = {
+    measureFast(aligner, testCases)
   }
 
   private def calcResults(actual: Set[WordMatch], expected: Set[WordMatch]) = {
@@ -72,13 +67,16 @@ object WholeAlgorithmMeasurer {
     Results(tp = tp.toLong, fp = fp.toLong, fn = fn.toLong, actual.size.toLong, expected.size.toLong)
   }
 
-  def measureFast(aligner: Aligner, testCases: Seq[(Path, TestCase, Traversable[Metrics])]): MultiResult = {
-    MultiResult(testCases.map { case (path, testCase, metrics) =>
-      val actual = aligner.alignFast(metrics, log = false)
-      val expected = testCase.wordAlignment.toUnambiguous.matches
+  def measureFast(aligner: Aligner, testCases: Seq[(Path, Samples)]): MultiResult = {
+    MultiResult(testCases.map { case (path, samples) =>
+      val rawActual = aligner.findPotentialMatches(samples.metricsWithResults.map(_.metrics)) //this is not resolved
+      val rawActualMatches = rawActual.map(res => WordMatch(res.left, res.right)(Some(res.probability))).toSet
+      val rawExpected = samples.metricsWithResults.filter(_.matching).map(word => WordMatch(word.metrics.leftWord, word.metrics.rightWord)()).toSet
+      val actual = aligner.alignFast(rawActual, log = false)
+      val expected = rawExpected
       path ->
-        TwoPassResults( //todo the results are the same now
-          calcResults(actual = actual.matches, expected = expected),
+        TwoPassResults(
+          calcResults(actual = rawActualMatches, expected = rawExpected),
           calcResults(actual = actual.matches, expected = expected)
         )
     })
@@ -87,7 +85,8 @@ object WholeAlgorithmMeasurer {
   def main(args: Array[String]): Unit = {
     logger.info("Start")
     val start = Instant.now()
-    val testCases = testDirs.map(dir => dir -> readTestCase(dir)).par
+
+    val testCases = readDataSetAndMeasureMetrics()
     val (classifier, scaler) = Main.loadAI()
     val aligner = new Aligner(classifier, scaler)
     val (training, test) = testCases.splitAt((testCases.size * Train.trainingRatio).toInt)
