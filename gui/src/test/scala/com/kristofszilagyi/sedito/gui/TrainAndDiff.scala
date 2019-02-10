@@ -237,12 +237,13 @@ object Train {
     (classifier, scaler)
   }
 
+  val trainingRatio = 0.7
 
   def main(args: Array[String]) {
     logger.info("Start")
     val start = Instant.now()
     val samples = readDataSetAndMeasureMetrics()
-    val (training, test) = samples.splitAt(samples.size / 2)
+    val (training, test) = samples.splitAt((samples.size * trainingRatio).toInt)
     val (classifier, scaler) = train(training, test, logStats = true)
     write.xstream(classifier, "aligner/src/main/resources/neuralnetwork.xml")
     write.xstream(scaler, "aligner/src/main/resources/scaler.xml")

@@ -25,14 +25,14 @@ object LearningCurve{
   }
   private def oneRandomCurve(random: Random, samples: List[(Path, Samples)], testCases: Seq[(Path, TestCase)]) = {
     assert(samples.size ==== testCases.size)
-    val half = samples.size / 2
+    val trainingSize = (samples.size * Train.trainingRatio).toInt
 
     val (shuffledSamples, shuffledTestCases) = random.shuffle(samples.zip(testCases)).unzip
 
-    val testSamples = shuffledSamples.takeRight(half)
-    val testTestCases = shuffledTestCases.takeRight(half)
+    val testSamples = shuffledSamples.takeRight(trainingSize)
+    val testTestCases = shuffledTestCases.takeRight(trainingSize)
 
-    val learningCurve = ((1 to (half, 6)).par map { size =>
+    val learningCurve = ((1 to (trainingSize, 6)).par map { size =>
       logger.info(s"Doing size: $size")
       val trainingSamples = shuffledSamples.take(size)
       val trainingTestCases = shuffledTestCases.take(size)

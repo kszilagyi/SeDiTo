@@ -90,7 +90,7 @@ object WholeAlgorithmMeasurer {
     val testCases = testDirs.map(dir => dir -> readTestCase(dir)).par
     val (classifier, scaler) = Main.loadAI()
     val aligner = new Aligner(classifier, scaler)
-    val (training, test) = testCases.splitAt(testCases.size / 2)
+    val (training, test) = testCases.splitAt((testCases.size * Train.trainingRatio).toInt)
     val nestedTrainingResults = measure(aligner, training)
     val trainingResults = nestedTrainingResults.aggregate
     val nestedTestResults = measure(aligner, test)
