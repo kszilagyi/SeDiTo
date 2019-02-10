@@ -20,8 +20,11 @@ import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
 import smile.feature.Scaler
 import smile.validation._
 
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.collection.JavaConverters._
-import scala.util.{Failure, Success}
+import scala.concurrent.duration.DurationDouble
+import scala.concurrent.{Await, Future}
+import scala.util.{Failure, Random, Success}
 
 final case class MetricsWithResults(metrics: Metrics, matching: Boolean)
 final case class Samples(metricsWithResults: Traversable[MetricsWithResults])
@@ -151,10 +154,10 @@ object TrainAndDiff {
   private def displayTestCase(testCase: TestCase, leftPath: Path, rightPath: Path, classifier: SoftClassifier[Array[Double]], scaler: Scaler): Unit = {
     val calculatedAlignment = new Aligner(classifier, scaler).align(testCase.left, testCase.right)
     logger.info("Aligning finished")
-//    val expected = new MainWindow()
-//    expected.setTitle("Expected")
-//    val unambiguousWordAlignment = testCase.wordAlignment.toUnambiguous
-//    expected.setContent(testCase.left, testCase.right, leftPath, rightPath, unambiguousWordAlignment)
+    val expected = new MainWindow()
+    expected.setTitle("Expected")
+    val unambiguousWordAlignment = testCase.wordAlignment.toUnambiguous
+    expected.setContent(testCase.left, testCase.right, leftPath, rightPath, unambiguousWordAlignment)
     val actual = new MainWindow()
     actual.setTitle("Actual")
     actual.setContent(testCase.left, testCase.right, leftPath, rightPath, calculatedAlignment)
@@ -175,7 +178,7 @@ object TrainAndDiff {
 
       val (classifier, scaler) = Main.loadAI()
       val path = Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/full_tests/unnecessary_moves")
+        "scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp")
       val testCase = readTestCase(path)
       val leftPath = TestCase.leftPath(path)
       val rightPath = TestCase.rightPath(path)
@@ -239,15 +242,25 @@ object Train {
 
   val trainingRatio = 0.7
 
+  private def crossValidate(samples: List[(Path, Samples)]) = {
+    (1 to 3) map { _ =>
+      val randomSamples = Random.shuffle(samples)
+      val (training, test) = randomSamples.splitAt((samples.size * trainingRatio).toInt)
+      Future { train(training, test, logStats = true) }
+    }
+  }
+
   def main(args: Array[String]) {
     logger.info("Start")
     val start = Instant.now()
     val samples = readDataSetAndMeasureMetrics()
+    val crossValidates = crossValidate(samples)
     val (training, test) = samples.splitAt((samples.size * trainingRatio).toInt)
     val (classifier, scaler) = train(training, test, logStats = true)
     write.xstream(classifier, "aligner/src/main/resources/neuralnetwork.xml")
     write.xstream(scaler, "aligner/src/main/resources/scaler.xml")
     val duration = Duration.between(start, Instant.now())
+    discard(Await.ready(Future.sequence(crossValidates), 10.minutes))
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
   }
 }
