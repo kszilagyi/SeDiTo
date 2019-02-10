@@ -7,7 +7,7 @@ import java.nio.file.{Files, Paths}
 import java.util.Base64
 import java.util.concurrent.ConcurrentLinkedQueue
 
-import com.kristofszilagyi.sedito.aligner.{Aligner, HardcodedNeuralNetwork, HardcodedScaler}
+import com.kristofszilagyi.sedito.aligner.Aligner
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common.utils.Control._
 import com.kristofszilagyi.sedito.common.{FullText, Warts}
@@ -21,6 +21,7 @@ import javafx.scene.control.Alert.AlertType
 import org.log4s._
 import smile.classification.SoftClassifier
 import smile.feature.Scaler
+import smile.read
 
 import scala.collection.JavaConverters._
 import scala.concurrent.duration.DurationInt
@@ -70,9 +71,9 @@ object Main {
 
   @SuppressWarnings(Array(Warts.AsInstanceOf))
   def loadAI(): (SoftClassifier[Array[Double]], Scaler) = {
-    val classifier = HardcodedNeuralNetwork.nn
-    val scaler = new HardcodedScaler()
-    (classifier, scaler)
+    val classifier = read.xstream("aligner/src/main/resources/neuralnetwork.xml")
+    val scaler = read.xstream("aligner/src/main/resources/scaler.xml")
+    (classifier.asInstanceOf[SoftClassifier[Array[Double]]], scaler.asInstanceOf[Scaler])
   }
 
   @SuppressWarnings(Array(Warts.While))
