@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.gui
 
-import com.kristofszilagyi.sedito.gui.TrainAndDiff.{countFN, countFP}
+import com.kristofszilagyi.sedito.gui.TrainAndDiff.{countFN, countFP, countTP}
 import org.log4s.getLogger
 import smile.validation._
 import TrainingData.logger
@@ -17,7 +17,7 @@ final case class TrainingData(training: YAndPred, test: YAndPred, lostPositivesI
     val trainingPred = training.pred
     val testY = test.y
     val testPred = test.pred
-    logger.info(s"test lost positives: $lostPositivesInTraining")
+    logger.info(s"training lost positives: $lostPositivesInTraining")
     logger.info("training accuracy: " + accuracy(trainingY, trainingPred).toString)
     logger.info("training recall: " + recall(trainingY, trainingPred).toString)
     logger.info("training sensitivity(TP / (TP + FN)): " + sensitivity(trainingY, trainingPred).toString)
@@ -25,7 +25,9 @@ final case class TrainingData(training: YAndPred, test: YAndPred, lostPositivesI
     logger.info("training fallout(FP / (FP + TN)): " + fallout(trainingY, trainingPred).toString)
     logger.info("training fdr(FP / (TP + FP)): " + fdr(trainingY, trainingPred).toString)
     val trainFp = countFP(trainingY, trainingPred)
+    val trainTp = countTP(trainingY, trainingPred)
     val trainFn = countFN(trainingY, trainingPred)
+    logger.info(s"training TP count: $trainTp")
     logger.info(s"training FP count: $trainFp")
     logger.info(s"training FN count: $trainFn")
     logger.info(s"total mispred: ${trainFp + trainFn}")
@@ -39,7 +41,9 @@ final case class TrainingData(training: YAndPred, test: YAndPred, lostPositivesI
     logger.info("test fallout(FP / (FP + TN)): " + fallout(testY, testPred).toString)
     logger.info("test fdr(FP / (TP + FP)): " + fdr(testY, testPred).toString)
     val testFp = countFP(testY, testPred)
+    val testTp = countTP(testY, testPred)
     val testFn = countFN(testY, testPred)
+    logger.info(s"test TP count: $testTp")
     logger.info(s"test FP count: $testFp")
     logger.info(s"test FN count: $testFn")
     logger.info(s"total mispred: ${testFp + testFn}")

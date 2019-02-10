@@ -12,7 +12,7 @@ import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
 import smile.write
 
 import scala.util.Random
-
+//todo probably should filter out the cases which I do not want to tackle yet and only teach with those which I want
 object LearningCurve{
   private val logger = getLogger
 

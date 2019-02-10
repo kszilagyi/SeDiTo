@@ -40,7 +40,6 @@ object MetricCalculator {
   }
   /**
     * @param normalizedLdLenSim 1 if they are the same.
-    * @param ldLenSim
     */
   final case class PairwiseMetrics(ldSim: Double, ldSimEdgeAdjusted: Double, normalizedLd: Double, normalizedLdLenSim: Double, ldLenSim: Double) {
     assert(ldSim >= 0)
@@ -76,9 +75,11 @@ object MetricCalculator {
   }
 
   final case class Phase1Metrics(leftWord: Selection, rightWord: Selection,
-                                         word: PairwiseMetrics, line: PairwiseMetrics,
-                                         context4th: ContextMetrics, context8th: ContextMetrics, context16th: ContextMetrics,
-                                         leftLineIdx: LineIdx, rightLineIdx: LineIdx)
+                                 word: PairwiseMetrics, line: PairwiseMetrics,
+                                 contextFull: ContextMetrics, contextHalf: ContextMetrics,
+                                 context4th: ContextMetrics, context8th: ContextMetrics, context16th: ContextMetrics,
+                                 context32th: ContextMetrics,
+                                 leftLineIdx: LineIdx, rightLineIdx: LineIdx)
 
 
   object ContextIsClosest {
@@ -115,28 +116,40 @@ object MetricCalculator {
       List(
         withChildren("word", PairwiseMetrics.columnNames),
         withChildren("line", PairwiseMetrics.columnNames),
+        withChildren("contextFull", ContextMetrics.columnNames),
+        withChildren("contextHalf", ContextMetrics.columnNames),
         withChildren("context4th", ContextMetrics.columnNames),
         withChildren("context8th", ContextMetrics.columnNames),
         withChildren("context16th", ContextMetrics.columnNames),
+        withChildren("context32th", ContextMetrics.columnNames),
+        withChildren("closestFull", ContextIsClosest.columnNames),
+        withChildren("closestHalf", ContextIsClosest.columnNames),
         withChildren("closest4th", ContextIsClosest.columnNames),
         withChildren("closest8th", ContextIsClosest.columnNames),
         withChildren("closest16th",   ContextIsClosest.columnNames),
+        withChildren("closest32th",   ContextIsClosest.columnNames),
         List("lineIsClosestMatchInText")
       ).flatten
     }
-    val numOfColumns = columnNames.size
+    val numOfColumns: Int = columnNames.size
   }
   final case class Metrics(phase1Metrics: Phase1Metrics,
                            lineIsClosestMatchInText: Boolean,
+                           closestFull: ContextIsClosest,
+                           closestHalf: ContextIsClosest,
                            closest4th: ContextIsClosest,
                            closest8th: ContextIsClosest,
-                           closest16th: ContextIsClosest) {
+                           closest16th: ContextIsClosest,
+                           closest32th: ContextIsClosest) {
 
     def word: PairwiseMetrics = phase1Metrics.word
     def line: PairwiseMetrics = phase1Metrics.line
+    def contextFull: ContextMetrics = phase1Metrics.contextFull
+    def contextHalf: ContextMetrics = phase1Metrics.contextHalf
     def context4th: ContextMetrics = phase1Metrics.context4th
     def context8th: ContextMetrics = phase1Metrics.context8th
     def context16th: ContextMetrics = phase1Metrics.context16th
+    def context32th: ContextMetrics = phase1Metrics.context32th
     def leftWord: Selection = phase1Metrics.leftWord
     def rightWord: Selection = phase1Metrics.rightWord
     def leftLineIdx: LineIdx = phase1Metrics.leftLineIdx
@@ -150,12 +163,18 @@ object MetricCalculator {
       val holder = new ArrayHolder(result)
       word.toDoubles(holder)
       line.toDoubles(holder)
+      contextFull.doubles(holder)
+      contextHalf.doubles(holder)
       context4th.doubles(holder)
       context8th.doubles(holder)
       context16th.doubles(holder)
+      context32th.doubles(holder)
+      closestFull.doubles(holder)
+      closestHalf.doubles(holder)
       closest4th.doubles(holder)
       closest8th.doubles(holder)
       closest16th.doubles(holder)
+      closest32th.doubles(holder)
       holder.add(if (lineIsClosestMatchInText) 1.0 else 0.0)
       //todo this is not thread safe! (it's fine as long as the results are only read by one thread)
       result
@@ -167,7 +186,7 @@ object MetricCalculator {
     }
   }
 
-  def calcMetrics(left: String, right: String, supposedMaxLength: Int) = {
+  def calcMetrics(left: String, right: String, supposedMaxLength: Int): PairwiseMetrics = {
     //todo edit this so we can set maximum
     //todo http://www.mit.edu/~andoni/papers/compEdit.pdf
     //try n-grams
@@ -210,19 +229,23 @@ object MetricCalculator {
 
     val contextMetrics = if (wordMetrics.ldLenSim >= 0.99) {
       Some((
+        calcShortenedContextMetrics(leftWord, rightWord, contextSize),
+        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 2),
         calcShortenedContextMetrics(leftWord, rightWord, contextSize / 4),
         calcShortenedContextMetrics(leftWord, rightWord, contextSize / 8),
-        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 16)
+        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 16),
+        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 32)
       ))
     } else {
       None
     }
-    contextMetrics.map { case (forth, eight, sixteenth) =>
+    contextMetrics.map { case (one, half, forth, eight, sixteenth, thirtyTwo) =>
       val leftSelection = leftWord.word
       val rightSelection = rightWord.word
       val lineMetrics = lineAlignmentCacher.calcLineMetrics(leftSelection.lineIdx, rightSelection.lineIdx)
       Phase1Metrics(leftSelection, rightSelection, word = wordMetrics, line = lineMetrics,
-        context4th = forth, context8th = eight, context16th = sixteenth, leftLineIdx = leftSelection.lineIdx,
+        contextFull = one, contextHalf = half, context4th = forth, context8th = eight, context16th = sixteenth,
+        context32th = thirtyTwo, leftLineIdx = leftSelection.lineIdx,
         rightLineIdx = rightSelection.lineIdx)
     }
   }
@@ -344,15 +367,15 @@ object MetricCalculator {
   }
 
   def calcAlignerMetrics(left: FullText, right: FullText): Traversable[Metrics] = {
-    val leftWords = Wordizer.toWordIndices(left.s).filter(_.length > 1)
-    val rightWords = Wordizer.toWordIndices(right.s).filter(_.length > 1)
+    val leftWords = Wordizer.toWordIndices(left.s)
+    val rightWords = Wordizer.toWordIndices(right.s)
 
     logger.debug(s"leftWords: $leftWords")
     logger.debug(s"rightWords: $rightWords")
     logger.debug(s"Number of leftWords: ${leftWords.size}")
     logger.debug(s"Number of rightWords: ${rightWords.size}")
     val maxContextSize = 800
-    val standardContextSize = 100
+    val standardContextSize = 200
     val maxLeftContexts = leftWords.zipWithIndex map { case (word, leftIdx) =>
       val leftBeforeContext = context(leftIdx, leftWords, -maxContextSize)
       val leftAfterContext = context(leftIdx, leftWords, maxContextSize)
@@ -394,13 +417,17 @@ object MetricCalculator {
 
     logger.debug(s"Metrics: ${phase1Metrics.mkString("\n")}")
     val closestLineMatches = calcClosestLineMatches(phase1Metrics)
+    val closestContextFull = calcClosestContextMatches(phase1Metrics, _.contextFull)
+    val closestContextHalf = calcClosestContextMatches(phase1Metrics, _.contextHalf)
     val closestContext4th = calcClosestContextMatches(phase1Metrics, _.context4th)
     val closestContext8th = calcClosestContextMatches(phase1Metrics, _.context8th)
     val closestContext16th = calcClosestContextMatches(phase1Metrics, _.context16th)
+    val closestContext32th = calcClosestContextMatches(phase1Metrics, _.context32th)
     phase1Metrics.map{m =>
       val closest = closestLineMatches.contains(m)
-      Metrics(m, lineIsClosestMatchInText = closest, closest4th = closestContext4th.in(m),
-        closest8th = closestContext8th.in(m), closest16th = closestContext16th.in(m))
+      Metrics(m, lineIsClosestMatchInText = closest, closestFull = closestContextFull.in(m), closestHalf = closestContextHalf.in(m),
+        closest4th = closestContext4th.in(m), closest8th = closestContext8th.in(m), closest16th = closestContext16th.in(m),
+        closest32th = closestContext32th.in(m))
     }
   }
 }

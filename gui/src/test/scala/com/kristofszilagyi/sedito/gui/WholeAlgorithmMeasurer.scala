@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.Path
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.{Aligner, MetricCalculator, TrivialContextCorrector}
+import com.kristofszilagyi.sedito.aligner.{Aligner, MetricCalculator}
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.common.{TestCase, Warts, WordMatch}
 import com.kristofszilagyi.sedito.gui.TrainAndDiff._
@@ -72,13 +72,12 @@ object WholeAlgorithmMeasurer {
 
   def measureFast(aligner: Aligner, testCases: Seq[(Path, TestCase, Traversable[Metrics])]): MultiResult = {
     MultiResult(testCases.map { case (path, testCase, metrics) =>
-      val actualWithoutPost = aligner.alignFastWithoutPost(metrics, log = false)
-      val actualWithPost = TrivialContextCorrector.correct(testCase.left, testCase.right, actualWithoutPost)
+      val actual = aligner.alignFast(metrics, log = false)
       val expected = testCase.wordAlignment.toUnambiguous.matches
       path ->
-        TwoPassResults(
-          calcResults(actual = actualWithoutPost.matches, expected = expected),
-          calcResults(actual = actualWithPost.matches, expected = expected)
+        TwoPassResults( //todo the results are the same now
+          calcResults(actual = actual.matches, expected = expected),
+          calcResults(actual = actual.matches, expected = expected)
         )
     })
   }

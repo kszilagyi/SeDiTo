@@ -281,6 +281,7 @@ object Train {
 
   def main(args: Array[String]) {
     logger.info("Start")
+    Thread.sleep(10*1000)
     val start = Instant.now()
     val samples = readDataSetAndMeasureMetrics()
     val (training, test) = samples.splitAt(samples.size / 2)
