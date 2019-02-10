@@ -35,7 +35,7 @@ object Aligner {
       val scaledX = scaler.transform(x)
       val prediction = classifier.predict(scaledX, probs)
       logger.debug(s"${m.leftWord.toText} - ${m.rightWord.toText}, x: ${x.mkString(", ")}, p(0): ${probs(0)}")
-      if(prediction ==== 1) {
+      if(prediction ==== 1) { //todo this could be fine tuned for optimal results
         val p = 1 - probs(0) //probs(0) is the probability of the 0 label
         assert(p >= 0.5, s"p = $p")
         Some(m -> p)

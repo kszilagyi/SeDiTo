@@ -9,6 +9,8 @@ import com.kristofszilagyi.sedito.common.{TestCase, Warts, WordMatch}
 import com.kristofszilagyi.sedito.gui.TrainAndDiff._
 import org.log4s.getLogger
 
+import scala.collection.parallel.ParSeq
+
 //todo add cross-validation and maximum difference
 /**
   * Measures overall performance not only classifier performance
@@ -57,10 +59,10 @@ object WholeAlgorithmMeasurer {
   }
   private val logger = getLogger
 
-  def measure(aligner: Aligner, testCases: Seq[(Path, TestCase)]): MultiResult = {
+  def measure(aligner: Aligner, testCases: ParSeq[(Path, TestCase)]): MultiResult = {
     measureFast(aligner, testCases.map { case (path, testCase) =>
       (path, testCase, MetricCalculator.calcAlignerMetrics(testCase.left, testCase.right))
-    })
+    }.seq)
   }
 
   private def calcResults(actual: Set[WordMatch], expected: Set[WordMatch]) = {
@@ -85,7 +87,7 @@ object WholeAlgorithmMeasurer {
   def main(args: Array[String]): Unit = {
     logger.info("Start")
     val start = Instant.now()
-    val testCases = testDirs.map(dir => dir -> readTestCase(dir))
+    val testCases = testDirs.map(dir => dir -> readTestCase(dir)).par
     val (classifier, scaler) = Main.loadAI()
     val aligner = new Aligner(classifier, scaler)
     val (training, test) = testCases.splitAt(testCases.size / 2)
