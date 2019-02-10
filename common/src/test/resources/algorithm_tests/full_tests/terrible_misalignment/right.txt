@@ -1,0 +1,64 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+plugins {
+    id("io.gitlab.arturbosch.detekt").version("1.0.0-RC12")
+    id 'org.jetbrains.intellij' version '0.4.1'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.11'
+}
+
+group 'com.kristofszilagyi'
+version '0.1-SNAPSHOT'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+intellij {
+    version '2018.3.2'
+    plugins 'Kotlin'
+}
+patchPluginXml {
+    changeNotes """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
+
+sourceSets {
+    main.kotlin.srcDirs += 'src/main/kotlin'
+    test.kotlin.srcDirs += 'src/test/kotlin'
+}
+
+compileKotlin {
+    kotlinOptions {
+        allWarningsAsErrors = true
+        freeCompilerArgs = ['-progressive']
+    }
+}
+
+def detektInputs = files("src/main/kotlin", "src/test/kotlin")
+def detektFilters = ".*/resources/.*,.*/build/.*"
+def detektConfig = files("detekt-config.yml")
+
+detekt {
+    toolVersion = "1.0.0-RC12"
+    input = detektInputs
+    filters = detektFilters
+    config = detektConfig
+}
+
+assemble.dependsOn "detekt"
