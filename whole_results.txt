@@ -1,87 +1,78 @@
-/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=9646805209484 -javaagent:/home/szkster/Programs/idea-IC-183.4588.61/lib/idea_rt.jar=42087:/home/szkster/Programs/idea-IC-183.4588.61/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.3.jar:/home/szkster/.ivy2/cache/com.google.jimfs/jimfs/bundles/jimfs-1.1.jar:/home/szkster/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/home/szkster/.sbt/boot/scala-2.12.6/lib/scala-reflect.jar:/home/szkster/.sbt/boot/scala-2.12.6/lib/scala-library.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.12/jars/scala-java8-compat_2.12-0.9.0.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-text/jars/commons-text-1.3.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.7.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.richtext/richtextfx/jars/richtextfx-0.9.1.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-2.1.0.jar com.kristofszilagyi.sedito.gui.WholeAlgorithmMeasurer
-179  [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Start
-54961 [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Training results:
-  raw: f1: 0.99538, tp: 35752, fp: 88, fn: 244, selPos: 35840, expectedPos: 35996, total mispred: 332
-  end: f1: 0.99538, tp: 35752, fp: 88, fn: 244, selPos: 35840, expectedPos: 35996, total mispred: 332
-54961 [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Test results:
-  raw: f1: 0.99572, tp: 65219, fp: 202, fn: 359, selPos: 65421, expectedPos: 65578, total mispred: 561
-  end: f1: 0.99572, tp: 65219, fp: 202, fn: 359, selPos: 65421, expectedPos: 65578, total mispred: 561
-54985 [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Training:
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=11496994112678 -javaagent:/home/szkster/Programs/idea-IC-183.4588.61/lib/idea_rt.jar=36169:/home/szkster/Programs/idea-IC-183.4588.61/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.3.jar:/home/szkster/.ivy2/cache/com.google.jimfs/jimfs/bundles/jimfs-1.1.jar:/home/szkster/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/home/szkster/.sbt/boot/scala-2.12.6/lib/scala-reflect.jar:/home/szkster/.sbt/boot/scala-2.12.6/lib/scala-library.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.12/jars/scala-java8-compat_2.12-0.9.0.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-text/jars/commons-text-1.3.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.7.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.richtext/richtextfx/jars/richtextfx-0.9.1.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-2.1.0.jar com.kristofszilagyi.sedito.gui.WholeAlgorithmMeasurer
+165  [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Start
+53710 [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Training results:
+  raw: f1: 0.99730, tp: 35829, fp: 27, fn: 167, selPos: 35856, expectedPos: 35996, total mispred: 194
+  end: f1: 0.99730, tp: 35829, fp: 27, fn: 167, selPos: 35856, expectedPos: 35996, total mispred: 194
+53711 [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Test results:
+  raw: f1: 0.99591, tp: 65204, fp: 162, fn: 374, selPos: 65366, expectedPos: 65578, total mispred: 536
+  end: f1: 0.99591, tp: 65204, fp: 162, fn: 374, selPos: 65366, expectedPos: 65578, total mispred: 536
+53731 [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Training:
 grid_py:
-  raw: f1: 0.90837, tp:  114, fp: 12, fn: 11, selPos:  126, expectedPos:  125, total mispred: 23
-  end: f1: 0.90837, tp:  114, fp: 12, fn: 11, selPos:  126, expectedPos:  125, total mispred: 23
+  raw: f1: 0.94694, tp:  116, fp:  4, fn:  9, selPos:  120, expectedPos:  125, total mispred: 13
+  end: f1: 0.94694, tp:  116, fp:  4, fn:  9, selPos:  120, expectedPos:  125, total mispred: 13
 17_complex:
-  raw: f1: 0.96611, tp:  841, fp: 22, fn: 37, selPos:  863, expectedPos:  878, total mispred: 59
-  end: f1: 0.96611, tp:  841, fp: 22, fn: 37, selPos:  863, expectedPos:  878, total mispred: 59
-good_cand_for_char_based_compare:
-  raw: f1: 0.97177, tp:  654, fp:  6, fn: 32, selPos:  660, expectedPos:  686, total mispred: 38
-  end: f1: 0.97177, tp:  654, fp:  6, fn: 32, selPos:  660, expectedPos:  686, total mispred: 38
-13_tough:
-  raw: f1: 0.97590, tp:  648, fp: 10, fn: 22, selPos:  658, expectedPos:  670, total mispred: 32
-  end: f1: 0.97590, tp:  648, fp: 10, fn: 22, selPos:  658, expectedPos:  670, total mispred: 32
+  raw: f1: 0.98152, tp:  850, fp:  4, fn: 28, selPos:  854, expectedPos:  878, total mispred: 32
+  end: f1: 0.98152, tp:  850, fp:  4, fn: 28, selPos:  854, expectedPos:  878, total mispred: 32
 9:
-  raw: f1: 0.98053, tp:  680, fp:  1, fn: 26, selPos:  681, expectedPos:  706, total mispred: 27
-  end: f1: 0.98053, tp:  680, fp:  1, fn: 26, selPos:  681, expectedPos:  706, total mispred: 27
-ambiguous_space_lines11:
-  raw: f1: 0.98179, tp:  539, fp: 10, fn: 10, selPos:  549, expectedPos:  549, total mispred: 20
-  end: f1: 0.98179, tp:  539, fp: 10, fn: 10, selPos:  549, expectedPos:  549, total mispred: 20
-add_method:
-  raw: f1: 0.98611, tp:   71, fp:  1, fn:  1, selPos:   72, expectedPos:   72, total mispred:  2
-  end: f1: 0.98611, tp:   71, fp:  1, fn:  1, selPos:   72, expectedPos:   72, total mispred:  2
+  raw: f1: 0.98420, tp:  685, fp:  1, fn: 21, selPos:  686, expectedPos:  706, total mispred: 22
+  end: f1: 0.98420, tp:  685, fp:  1, fn: 21, selPos:  686, expectedPos:  706, total mispred: 22
+good_cand_for_char_based_compare:
+  raw: f1: 0.98527, tp:  669, fp:  3, fn: 17, selPos:  672, expectedPos:  686, total mispred: 20
+  end: f1: 0.98527, tp:  669, fp:  3, fn: 17, selPos:  672, expectedPos:  686, total mispred: 20
 confusing_move:
-  raw: f1: 0.98645, tp:  655, fp:  0, fn: 18, selPos:  655, expectedPos:  673, total mispred: 18
-  end: f1: 0.98645, tp:  655, fp:  0, fn: 18, selPos:  655, expectedPos:  673, total mispred: 18
+  raw: f1: 0.98797, tp:  657, fp:  0, fn: 16, selPos:  657, expectedPos:  673, total mispred: 16
+  end: f1: 0.98797, tp:  657, fp:  0, fn: 16, selPos:  657, expectedPos:  673, total mispred: 16
+13_tough:
+  raw: f1: 0.98868, tp:  655, fp:  0, fn: 15, selPos:  655, expectedPos:  670, total mispred: 15
+  end: f1: 0.98868, tp:  655, fp:  0, fn: 15, selPos:  655, expectedPos:  670, total mispred: 15
 ambiguous_space_lines14:
-  raw: f1: 0.98660, tp:  184, fp:  1, fn:  4, selPos:  185, expectedPos:  188, total mispred:  5
-  end: f1: 0.98660, tp:  184, fp:  1, fn:  4, selPos:  185, expectedPos:  188, total mispred:  5
+  raw: f1: 0.98930, tp:  185, fp:  1, fn:  3, selPos:  186, expectedPos:  188, total mispred:  4
+  end: f1: 0.98930, tp:  185, fp:  1, fn:  3, selPos:  186, expectedPos:  188, total mispred:  4
+ambiguous_space_lines11:
+  raw: f1: 0.98990, tp:  539, fp:  1, fn: 10, selPos:  540, expectedPos:  549, total mispred: 11
+  end: f1: 0.98990, tp:  539, fp:  1, fn: 10, selPos:  540, expectedPos:  549, total mispred: 11
 cpp_complex:
-  raw: f1: 0.98707, tp:  916, fp:  8, fn: 16, selPos:  924, expectedPos:  932, total mispred: 24
-  end: f1: 0.98707, tp:  916, fp:  8, fn: 16, selPos:  924, expectedPos:  932, total mispred: 24
-include_problem:
-  raw: f1: 0.99018, tp:  605, fp:  2, fn: 10, selPos:  607, expectedPos:  615, total mispred: 12
-  end: f1: 0.99018, tp:  605, fp:  2, fn: 10, selPos:  607, expectedPos:  615, total mispred: 12
+  raw: f1: 0.99027, tp:  916, fp:  2, fn: 16, selPos:  918, expectedPos:  932, total mispred: 18
+  end: f1: 0.99027, tp:  916, fp:  2, fn: 16, selPos:  918, expectedPos:  932, total mispred: 18
 25:
-  raw: f1: 0.99252, tp:  199, fp:  1, fn:  2, selPos:  200, expectedPos:  201, total mispred:  3
-  end: f1: 0.99252, tp:  199, fp:  1, fn:  2, selPos:  200, expectedPos:  201, total mispred:  3
-ambiguous_space_lines16:
-  raw: f1: 0.99304, tp:  856, fp:  0, fn: 12, selPos:  856, expectedPos:  868, total mispred: 12
-  end: f1: 0.99304, tp:  856, fp:  0, fn: 12, selPos:  856, expectedPos:  868, total mispred: 12
-ambiguous_space_lines13:
-  raw: f1: 0.99367, tp:  628, fp:  1, fn:  7, selPos:  629, expectedPos:  635, total mispred:  8
-  end: f1: 0.99367, tp:  628, fp:  1, fn:  7, selPos:  629, expectedPos:  635, total mispred:  8
-5:
-  raw: f1: 0.99374, tp: 1112, fp:  5, fn:  9, selPos: 1117, expectedPos: 1121, total mispred: 14
-  end: f1: 0.99374, tp: 1112, fp:  5, fn:  9, selPos: 1117, expectedPos: 1121, total mispred: 14
+  raw: f1: 0.99500, tp:  199, fp:  0, fn:  2, selPos:  199, expectedPos:  201, total mispred:  2
+  end: f1: 0.99500, tp:  199, fp:  0, fn:  2, selPos:  199, expectedPos:  201, total mispred:  2
 equalcharcnt:
   raw: f1: 0.99517, tp:  206, fp:  1, fn:  1, selPos:  207, expectedPos:  207, total mispred:  2
   end: f1: 0.99517, tp:  206, fp:  1, fn:  1, selPos:  207, expectedPos:  207, total mispred:  2
-3:
-  raw: f1: 0.99527, tp:  421, fp:  0, fn:  4, selPos:  421, expectedPos:  425, total mispred:  4
-  end: f1: 0.99527, tp:  421, fp:  0, fn:  4, selPos:  421, expectedPos:  425, total mispred:  4
-grid_py4:
-  raw: f1: 0.99620, tp:  786, fp:  3, fn:  3, selPos:  789, expectedPos:  789, total mispred:  6
-  end: f1: 0.99620, tp:  786, fp:  3, fn:  3, selPos:  789, expectedPos:  789, total mispred:  6
+5:
+  raw: f1: 0.99554, tp: 1115, fp:  4, fn:  6, selPos: 1119, expectedPos: 1121, total mispred: 10
+  end: f1: 0.99554, tp: 1115, fp:  4, fn:  6, selPos: 1119, expectedPos: 1121, total mispred: 10
 6:
   raw: f1: 0.99634, tp:  136, fp:  0, fn:  1, selPos:  136, expectedPos:  137, total mispred:  1
   end: f1: 0.99634, tp:  136, fp:  0, fn:  1, selPos:  136, expectedPos:  137, total mispred:  1
-good_cand_for_char_based_compare2:
-  raw: f1: 0.99646, tp:  844, fp:  0, fn:  6, selPos:  844, expectedPos:  850, total mispred:  6
-  end: f1: 0.99646, tp:  844, fp:  0, fn:  6, selPos:  844, expectedPos:  850, total mispred:  6
-header_mod:
-  raw: f1: 0.99659, tp:  292, fp:  1, fn:  1, selPos:  293, expectedPos:  293, total mispred:  2
-  end: f1: 0.99659, tp:  292, fp:  1, fn:  1, selPos:  293, expectedPos:  293, total mispred:  2
-easy_h:
-  raw: f1: 0.99746, tp:  393, fp:  1, fn:  1, selPos:  394, expectedPos:  394, total mispred:  2
-  end: f1: 0.99746, tp:  393, fp:  1, fn:  1, selPos:  394, expectedPos:  394, total mispred:  2
+ambiguous_space_lines13:
+  raw: f1: 0.99685, tp:  632, fp:  1, fn:  3, selPos:  633, expectedPos:  635, total mispred:  4
+  end: f1: 0.99685, tp:  632, fp:  1, fn:  3, selPos:  633, expectedPos:  635, total mispred:  4
+ambiguous_space_lines16:
+  raw: f1: 0.99711, tp:  863, fp:  0, fn:  5, selPos:  863, expectedPos:  868, total mispred:  5
+  end: f1: 0.99711, tp:  863, fp:  0, fn:  5, selPos:  863, expectedPos:  868, total mispred:  5
+grid_py4:
+  raw: f1: 0.99747, tp:  787, fp:  2, fn:  2, selPos:  789, expectedPos:  789, total mispred:  4
+  end: f1: 0.99747, tp:  787, fp:  2, fn:  2, selPos:  789, expectedPos:  789, total mispred:  4
 extractor_cpp:
   raw: f1: 0.99752, tp:  805, fp:  2, fn:  2, selPos:  807, expectedPos:  807, total mispred:  4
   end: f1: 0.99752, tp:  805, fp:  2, fn:  2, selPos:  807, expectedPos:  807, total mispred:  4
-ambiguous_space_lines1:
-  raw: f1: 0.99813, tp:  534, fp:  0, fn:  2, selPos:  534, expectedPos:  536, total mispred:  2
-  end: f1: 0.99813, tp:  534, fp:  0, fn:  2, selPos:  534, expectedPos:  536, total mispred:  2
-empty_line_problems:
-  raw: f1: 0.99870, tp: 1150, fp:  0, fn:  3, selPos: 1150, expectedPos: 1153, total mispred:  3
-  end: f1: 0.99870, tp: 1150, fp:  0, fn:  3, selPos: 1150, expectedPos: 1153, total mispred:  3
+good_cand_for_char_based_compare2:
+  raw: f1: 0.99764, tp:  846, fp:  0, fn:  4, selPos:  846, expectedPos:  850, total mispred:  4
+  end: f1: 0.99764, tp:  846, fp:  0, fn:  4, selPos:  846, expectedPos:  850, total mispred:  4
+include_problem:
+  raw: f1: 0.99837, tp:  613, fp:  0, fn:  2, selPos:  613, expectedPos:  615, total mispred:  2
+  end: f1: 0.99837, tp:  613, fp:  0, fn:  2, selPos:  613, expectedPos:  615, total mispred:  2
+easy_h:
+  raw: f1: 0.99873, tp:  393, fp:  0, fn:  1, selPos:  393, expectedPos:  394, total mispred:  1
+  end: f1: 0.99873, tp:  393, fp:  0, fn:  1, selPos:  393, expectedPos:  394, total mispred:  1
+3:
+  raw: f1: 0.99882, tp:  424, fp:  0, fn:  1, selPos:  424, expectedPos:  425, total mispred:  1
+  end: f1: 0.99882, tp:  424, fp:  0, fn:  1, selPos:  424, expectedPos:  425, total mispred:  1
+grid_py2:
+  raw: f1: 0.99919, tp:  619, fp:  1, fn:  0, selPos:  620, expectedPos:  619, total mispred:  1
+  end: f1: 0.99919, tp:  619, fp:  1, fn:  0, selPos:  620, expectedPos:  619, total mispred:  1
 grid_master_py:
   raw: f1: 0.99927, tp:  680, fp:  0, fn:  1, selPos:  680, expectedPos:  681, total mispred:  1
   end: f1: 0.99927, tp:  680, fp:  0, fn:  1, selPos:  680, expectedPos:  681, total mispred:  1
@@ -89,8 +80,8 @@ grid_master_py:
   raw: f1: 0.99937, tp:  787, fp:  0, fn:  1, selPos:  787, expectedPos:  788, total mispred:  1
   end: f1: 0.99937, tp:  787, fp:  0, fn:  1, selPos:  787, expectedPos:  788, total mispred:  1
 1:
-  raw: f1: 0.99964, tp: 1377, fp:  0, fn:  1, selPos: 1377, expectedPos: 1378, total mispred:  1
-  end: f1: 0.99964, tp: 1377, fp:  0, fn:  1, selPos: 1377, expectedPos: 1378, total mispred:  1
+  raw: f1: 1.00000, tp: 1378, fp:  0, fn:  0, selPos: 1378, expectedPos: 1378, total mispred:  0
+  end: f1: 1.00000, tp: 1378, fp:  0, fn:  0, selPos: 1378, expectedPos: 1378, total mispred:  0
 11:
   raw: f1: 1.00000, tp:  271, fp:  0, fn:  0, selPos:  271, expectedPos:  271, total mispred:  0
   end: f1: 1.00000, tp:  271, fp:  0, fn:  0, selPos:  271, expectedPos:  271, total mispred:  0
@@ -133,6 +124,12 @@ grid_master_py:
 7:
   raw: f1: 1.00000, tp: 1284, fp:  0, fn:  0, selPos: 1284, expectedPos: 1284, total mispred:  0
   end: f1: 1.00000, tp: 1284, fp:  0, fn:  0, selPos: 1284, expectedPos: 1284, total mispred:  0
+add_method:
+  raw: f1: 1.00000, tp:   72, fp:  0, fn:  0, selPos:   72, expectedPos:   72, total mispred:  0
+  end: f1: 1.00000, tp:   72, fp:  0, fn:  0, selPos:   72, expectedPos:   72, total mispred:  0
+ambiguous_space_lines1:
+  raw: f1: 1.00000, tp:  536, fp:  0, fn:  0, selPos:  536, expectedPos:  536, total mispred:  0
+  end: f1: 1.00000, tp:  536, fp:  0, fn:  0, selPos:  536, expectedPos:  536, total mispred:  0
 ambiguous_space_lines10:
   raw: f1: 1.00000, tp:   59, fp:  0, fn:  0, selPos:   59, expectedPos:   59, total mispred:  0
   end: f1: 1.00000, tp:   59, fp:  0, fn:  0, selPos:   59, expectedPos:   59, total mispred:  0
@@ -187,6 +184,9 @@ easy_h4:
 easy_h5:
   raw: f1: 1.00000, tp:   65, fp:  0, fn:  0, selPos:   65, expectedPos:   65, total mispred:  0
   end: f1: 1.00000, tp:   65, fp:  0, fn:  0, selPos:   65, expectedPos:   65, total mispred:  0
+empty_line_problems:
+  raw: f1: 1.00000, tp: 1153, fp:  0, fn:  0, selPos: 1153, expectedPos: 1153, total mispred:  0
+  end: f1: 1.00000, tp: 1153, fp:  0, fn:  0, selPos: 1153, expectedPos: 1153, total mispred:  0
 everything_commented:
   raw: f1: 1.00000, tp:  198, fp:  0, fn:  0, selPos:  198, expectedPos:  198, total mispred:  0
   end: f1: 1.00000, tp:  198, fp:  0, fn:  0, selPos:  198, expectedPos:  198, total mispred:  0
@@ -199,12 +199,12 @@ feature_extractor_cpp:
 grid_master_py2:
   raw: f1: 1.00000, tp:  847, fp:  0, fn:  0, selPos:  847, expectedPos:  847, total mispred:  0
   end: f1: 1.00000, tp:  847, fp:  0, fn:  0, selPos:  847, expectedPos:  847, total mispred:  0
-grid_py2:
-  raw: f1: 1.00000, tp:  619, fp:  0, fn:  0, selPos:  619, expectedPos:  619, total mispred:  0
-  end: f1: 1.00000, tp:  619, fp:  0, fn:  0, selPos:  619, expectedPos:  619, total mispred:  0
 grid_py3:
   raw: f1: 1.00000, tp:  676, fp:  0, fn:  0, selPos:  676, expectedPos:  676, total mispred:  0
   end: f1: 1.00000, tp:  676, fp:  0, fn:  0, selPos:  676, expectedPos:  676, total mispred:  0
+header_mod:
+  raw: f1: 1.00000, tp:  293, fp:  0, fn:  0, selPos:  293, expectedPos:  293, total mispred:  0
+  end: f1: 1.00000, tp:  293, fp:  0, fn:  0, selPos:  293, expectedPos:  293, total mispred:  0
 ignore_file:
   raw: f1: 1.00000, tp:   68, fp:  0, fn:  0, selPos:   68, expectedPos:   68, total mispred:  0
   end: f1: 1.00000, tp:   68, fp:  0, fn:  0, selPos:   68, expectedPos:   68, total mispred:  0
@@ -220,106 +220,109 @@ include_change:
 empty_lines:
   raw: f1: NaN, tp:    0, fp:  0, fn:  0, selPos:    0, expectedPos:    0, total mispred:  0
   end: f1: NaN, tp:    0, fp:  0, fn:  0, selPos:    0, expectedPos:    0, total mispred:  0
-55004 [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Test:
+53743 [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Test:
 move_within_line:
   raw: f1: 0.66667, tp:    2, fp:  0, fn:  2, selPos:    2, expectedPos:    4, total mispred:  2
   end: f1: 0.66667, tp:    2, fp:  0, fn:  2, selPos:    2, expectedPos:    4, total mispred:  2
 textblocklinked1to1_cpp:
-  raw: f1: 0.86290, tp:  107, fp:  5, fn: 29, selPos:  112, expectedPos:  136, total mispred: 34
-  end: f1: 0.86290, tp:  107, fp:  5, fn: 29, selPos:  112, expectedPos:  136, total mispred: 34
+  raw: f1: 0.87449, tp:  108, fp:  3, fn: 28, selPos:  111, expectedPos:  136, total mispred: 31
+  end: f1: 0.87449, tp:  108, fp:  3, fn: 28, selPos:  111, expectedPos:  136, total mispred: 31
 this_needs_rename_info_to_work:
-  raw: f1: 0.87055, tp:  306, fp: 35, fn: 56, selPos:  341, expectedPos:  362, total mispred: 91
-  end: f1: 0.87055, tp:  306, fp: 35, fn: 56, selPos:  341, expectedPos:  362, total mispred: 91
-sided_feature_cpp:
-  raw: f1: 0.93548, tp:   58, fp:  4, fn:  4, selPos:   62, expectedPos:   62, total mispred:  8
-  end: f1: 0.93548, tp:   58, fp:  4, fn:  4, selPos:   62, expectedPos:   62, total mispred:  8
+  raw: f1: 0.89872, tp:  315, fp: 24, fn: 47, selPos:  339, expectedPos:  362, total mispred: 71
+  end: f1: 0.89872, tp:  315, fp: 24, fn: 47, selPos:  339, expectedPos:  362, total mispred: 71
 test_model_py2:
-  raw: f1: 0.93628, tp:  529, fp: 31, fn: 41, selPos:  560, expectedPos:  570, total mispred: 72
-  end: f1: 0.93628, tp:  529, fp: 31, fn: 41, selPos:  560, expectedPos:  570, total mispred: 72
+  raw: f1: 0.93345, tp:  526, fp: 31, fn: 44, selPos:  557, expectedPos:  570, total mispred: 75
+  end: f1: 0.93345, tp:  526, fp: 31, fn: 44, selPos:  557, expectedPos:  570, total mispred: 75
 space_problems:
-  raw: f1: 0.94737, tp:   54, fp:  2, fn:  4, selPos:   56, expectedPos:   58, total mispred:  6
-  end: f1: 0.94737, tp:   54, fp:  2, fn:  4, selPos:   56, expectedPos:   58, total mispred:  6
+  raw: f1: 0.93805, tp:   53, fp:  2, fn:  5, selPos:   55, expectedPos:   58, total mispred:  7
+  end: f1: 0.93805, tp:   53, fp:  2, fn:  5, selPos:   55, expectedPos:   58, total mispred:  7
+sided_feature_cpp:
+  raw: f1: 0.95161, tp:   59, fp:  3, fn:  3, selPos:   62, expectedPos:   62, total mispred:  6
+  end: f1: 0.95161, tp:   59, fp:  3, fn:  3, selPos:   62, expectedPos:   62, total mispred:  6
 nonlearningalignertestcpp:
-  raw: f1: 0.95710, tp:  435, fp: 15, fn: 24, selPos:  450, expectedPos:  459, total mispred: 39
-  end: f1: 0.95710, tp:  435, fp: 15, fn: 24, selPos:  450, expectedPos:  459, total mispred: 39
+  raw: f1: 0.95509, tp:  436, fp: 18, fn: 23, selPos:  454, expectedPos:  459, total mispred: 41
+  end: f1: 0.95509, tp:  436, fp: 18, fn: 23, selPos:  454, expectedPos:  459, total mispred: 41
 very_wrong:
   raw: f1: 0.95981, tp:  203, fp:  1, fn: 16, selPos:  204, expectedPos:  219, total mispred: 17
   end: f1: 0.95981, tp:  203, fp:  1, fn: 16, selPos:  204, expectedPos:  219, total mispred: 17
-very_wrong2:
-  raw: f1: 0.96310, tp:  757, fp: 23, fn: 35, selPos:  780, expectedPos:  792, total mispred: 58
-  end: f1: 0.96310, tp:  757, fp: 23, fn: 35, selPos:  780, expectedPos:  792, total mispred: 58
-really_changed:
-  raw: f1: 0.96774, tp:  495, fp: 18, fn: 15, selPos:  513, expectedPos:  510, total mispred: 33
-  end: f1: 0.96774, tp:  495, fp: 18, fn: 15, selPos:  513, expectedPos:  510, total mispred: 33
 utils_py:
-  raw: f1: 0.97248, tp:  159, fp:  1, fn:  8, selPos:  160, expectedPos:  167, total mispred:  9
-  end: f1: 0.97248, tp:  159, fp:  1, fn:  8, selPos:  160, expectedPos:  167, total mispred:  9
-similar_problems:
-  raw: f1: 0.97490, tp:  369, fp: 13, fn:  6, selPos:  382, expectedPos:  375, total mispred: 19
-  end: f1: 0.97490, tp:  369, fp: 13, fn:  6, selPos:  382, expectedPos:  375, total mispred: 19
-test_model_py:
-  raw: f1: 0.97933, tp:  379, fp: 12, fn:  4, selPos:  391, expectedPos:  383, total mispred: 16
-  end: f1: 0.97933, tp:  379, fp: 12, fn:  4, selPos:  391, expectedPos:  383, total mispred: 16
-trivial:
-  raw: f1: 0.97949, tp:  191, fp:  3, fn:  5, selPos:  194, expectedPos:  196, total mispred:  8
-  end: f1: 0.97949, tp:  191, fp:  3, fn:  5, selPos:  194, expectedPos:  196, total mispred:  8
+  raw: f1: 0.96594, tp:  156, fp:  0, fn: 11, selPos:  156, expectedPos:  167, total mispred: 11
+  end: f1: 0.96594, tp:  156, fp:  0, fn: 11, selPos:  156, expectedPos:  167, total mispred: 11
+very_wrong2:
+  raw: f1: 0.96675, tp:  756, fp: 16, fn: 36, selPos:  772, expectedPos:  792, total mispred: 52
+  end: f1: 0.96675, tp:  756, fp: 16, fn: 36, selPos:  772, expectedPos:  792, total mispred: 52
+problems:
+  raw: f1: 0.97698, tp:  191, fp:  1, fn:  8, selPos:  192, expectedPos:  199, total mispred:  9
+  end: f1: 0.97698, tp:  191, fp:  1, fn:  8, selPos:  192, expectedPos:  199, total mispred:  9
+really_changed:
+  raw: f1: 0.97738, tp:  497, fp: 10, fn: 13, selPos:  507, expectedPos:  510, total mispred: 23
+  end: f1: 0.97738, tp:  497, fp: 10, fn: 13, selPos:  507, expectedPos:  510, total mispred: 23
 test_model_py4:
   raw: f1: 0.98299, tp:  780, fp:  8, fn: 19, selPos:  788, expectedPos:  799, total mispred: 27
   end: f1: 0.98299, tp:  780, fp:  8, fn: 19, selPos:  788, expectedPos:  799, total mispred: 27
-lev_dist_cpp:
-  raw: f1: 0.98462, tp:  128, fp:  2, fn:  2, selPos:  130, expectedPos:  130, total mispred:  4
-  end: f1: 0.98462, tp:  128, fp:  2, fn:  2, selPos:  130, expectedPos:  130, total mispred:  4
-problems:
-  raw: f1: 0.98492, tp:  196, fp:  3, fn:  3, selPos:  199, expectedPos:  199, total mispred:  6
-  end: f1: 0.98492, tp:  196, fp:  3, fn:  3, selPos:  199, expectedPos:  199, total mispred:  6
-lots_of_pairings:
-  raw: f1: 0.98684, tp:   75, fp:  2, fn:  0, selPos:   77, expectedPos:   75, total mispred:  2
-  end: f1: 0.98684, tp:   75, fp:  2, fn:  0, selPos:   77, expectedPos:   75, total mispred:  2
-mlpipeline_cpp7:
-  raw: f1: 0.98839, tp: 1362, fp:  5, fn: 27, selPos: 1367, expectedPos: 1389, total mispred: 32
-  end: f1: 0.98839, tp: 1362, fp:  5, fn: 27, selPos: 1367, expectedPos: 1389, total mispred: 32
+similar_problems:
+  raw: f1: 0.98811, tp:  374, fp:  8, fn:  1, selPos:  382, expectedPos:  375, total mispred:  9
+  end: f1: 0.98811, tp:  374, fp:  8, fn:  1, selPos:  382, expectedPos:  375, total mispred:  9
 real_life_function_extraction:
-  raw: f1: 0.99320, tp:  584, fp:  1, fn:  7, selPos:  585, expectedPos:  591, total mispred:  8
-  end: f1: 0.99320, tp:  584, fp:  1, fn:  7, selPos:  585, expectedPos:  591, total mispred:  8
+  raw: f1: 0.98903, tp:  586, fp:  8, fn:  5, selPos:  594, expectedPos:  591, total mispred: 13
+  end: f1: 0.98903, tp:  586, fp:  8, fn:  5, selPos:  594, expectedPos:  591, total mispred: 13
+test_model_py:
+  raw: f1: 0.98961, tp:  381, fp:  6, fn:  2, selPos:  387, expectedPos:  383, total mispred:  8
+  end: f1: 0.98961, tp:  381, fp:  6, fn:  2, selPos:  387, expectedPos:  383, total mispred:  8
+trivial:
+  raw: f1: 0.98974, tp:  193, fp:  1, fn:  3, selPos:  194, expectedPos:  196, total mispred:  4
+  end: f1: 0.98974, tp:  193, fp:  1, fn:  3, selPos:  194, expectedPos:  196, total mispred:  4
+mlpipeline_cpp7:
+  raw: f1: 0.99059, tp: 1368, fp:  5, fn: 21, selPos: 1373, expectedPos: 1389, total mispred: 26
+  end: f1: 0.99059, tp: 1368, fp:  5, fn: 21, selPos: 1373, expectedPos: 1389, total mispred: 26
+mlsample:
+  raw: f1: 0.99284, tp:  416, fp:  0, fn:  6, selPos:  416, expectedPos:  422, total mispred:  6
+  end: f1: 0.99284, tp:  416, fp:  0, fn:  6, selPos:  416, expectedPos:  422, total mispred:  6
+mlpipeline_cpp5:
+  raw: f1: 0.99476, tp: 1709, fp:  0, fn: 18, selPos: 1709, expectedPos: 1727, total mispred: 18
+  end: f1: 0.99476, tp: 1709, fp:  0, fn: 18, selPos: 1709, expectedPos: 1727, total mispred: 18
 mlpipeline_cpp2:
-  raw: f1: 0.99374, tp: 1509, fp:  1, fn: 18, selPos: 1510, expectedPos: 1527, total mispred: 19
-  end: f1: 0.99374, tp: 1509, fp:  1, fn: 18, selPos: 1510, expectedPos: 1527, total mispred: 19
+  raw: f1: 0.99573, tp: 1516, fp:  2, fn: 11, selPos: 1518, expectedPos: 1527, total mispred: 13
+  end: f1: 0.99573, tp: 1516, fp:  2, fn: 11, selPos: 1518, expectedPos: 1527, total mispred: 13
+unnecessary_moves:
+  raw: f1: 0.99625, tp: 3324, fp:  2, fn: 23, selPos: 3326, expectedPos: 3347, total mispred: 25
+  end: f1: 0.99625, tp: 3324, fp:  2, fn: 23, selPos: 3326, expectedPos: 3347, total mispred: 25
 mlpipeline_cpp:
   raw: f1: 0.99636, tp: 1369, fp:  5, fn:  5, selPos: 1374, expectedPos: 1374, total mispred: 10
   end: f1: 0.99636, tp: 1369, fp:  5, fn:  5, selPos: 1374, expectedPos: 1374, total mispred: 10
-perfecto:
-  raw: f1: 0.99645, tp:  842, fp:  0, fn:  6, selPos:  842, expectedPos:  848, total mispred:  6
-  end: f1: 0.99645, tp:  842, fp:  0, fn:  6, selPos:  842, expectedPos:  848, total mispred:  6
-terrible_misalignment:
-  raw: f1: 0.99677, tp:  309, fp:  1, fn:  1, selPos:  310, expectedPos:  310, total mispred:  2
-  end: f1: 0.99677, tp:  309, fp:  1, fn:  1, selPos:  310, expectedPos:  310, total mispred:  2
-mlpipeline_h:
-  raw: f1: 0.99726, tp:  364, fp:  1, fn:  1, selPos:  365, expectedPos:  365, total mispred:  2
-  end: f1: 0.99726, tp:  364, fp:  1, fn:  1, selPos:  365, expectedPos:  365, total mispred:  2
+mix_imports:
+  raw: f1: 0.99674, tp:  153, fp:  0, fn:  1, selPos:  153, expectedPos:  154, total mispred:  1
+  end: f1: 0.99674, tp:  153, fp:  0, fn:  1, selPos:  153, expectedPos:  154, total mispred:  1
+mlpipeline_cpp6:
+  raw: f1: 0.99740, tp: 1727, fp:  1, fn:  8, selPos: 1728, expectedPos: 1735, total mispred:  9
+  end: f1: 0.99740, tp: 1727, fp:  1, fn:  8, selPos: 1728, expectedPos: 1735, total mispred:  9
 one_line2:
   raw: f1: 0.99744, tp:  390, fp:  0, fn:  2, selPos:  390, expectedPos:  392, total mispred:  2
   end: f1: 0.99744, tp:  390, fp:  0, fn:  2, selPos:  390, expectedPos:  392, total mispred:  2
-unnecessary_moves:
-  raw: f1: 0.99746, tp: 3333, fp:  3, fn: 14, selPos: 3336, expectedPos: 3347, total mispred: 17
-  end: f1: 0.99746, tp: 3333, fp:  3, fn: 14, selPos: 3336, expectedPos: 3347, total mispred: 17
 mlpipeline_h2:
   raw: f1: 0.99748, tp:  593, fp:  3, fn:  0, selPos:  596, expectedPos:  593, total mispred:  3
   end: f1: 0.99748, tp:  593, fp:  3, fn:  0, selPos:  596, expectedPos:  593, total mispred:  3
+perfecto:
+  raw: f1: 0.99764, tp:  844, fp:  0, fn:  4, selPos:  844, expectedPos:  848, total mispred:  4
+  end: f1: 0.99764, tp:  844, fp:  0, fn:  4, selPos:  844, expectedPos:  848, total mispred:  4
 test_pro_changes:
-  raw: f1: 0.99889, tp:  902, fp:  1, fn:  1, selPos:  903, expectedPos:  903, total mispred:  2
-  end: f1: 0.99889, tp:  902, fp:  1, fn:  1, selPos:  903, expectedPos:  903, total mispred:  2
+  raw: f1: 0.99778, tp:  900, fp:  1, fn:  3, selPos:  901, expectedPos:  903, total mispred:  4
+  end: f1: 0.99778, tp:  900, fp:  1, fn:  3, selPos:  901, expectedPos:  903, total mispred:  4
+terrible_misalignment:
+  raw: f1: 0.99838, tp:  309, fp:  0, fn:  1, selPos:  309, expectedPos:  310, total mispred:  1
+  end: f1: 0.99838, tp:  309, fp:  0, fn:  1, selPos:  309, expectedPos:  310, total mispred:  1
 sensidiff_txt:
-  raw: f1: 0.99918, tp: 1215, fp:  0, fn:  2, selPos: 1215, expectedPos: 1217, total mispred:  2
-  end: f1: 0.99918, tp: 1215, fp:  0, fn:  2, selPos: 1215, expectedPos: 1217, total mispred:  2
+  raw: f1: 0.99877, tp: 1214, fp:  0, fn:  3, selPos: 1214, expectedPos: 1217, total mispred:  3
+  end: f1: 0.99877, tp: 1214, fp:  0, fn:  3, selPos: 1214, expectedPos: 1217, total mispred:  3
 minor_changes:
   raw: f1: 0.99937, tp: 1589, fp:  2, fn:  0, selPos: 1591, expectedPos: 1589, total mispred:  2
   end: f1: 0.99937, tp: 1589, fp:  2, fn:  0, selPos: 1591, expectedPos: 1589, total mispred:  2
-mlpipeline_cpp6:
-  raw: f1: 0.99942, tp: 1734, fp:  1, fn:  1, selPos: 1735, expectedPos: 1735, total mispred:  2
-  end: f1: 0.99942, tp: 1734, fp:  1, fn:  1, selPos: 1735, expectedPos: 1735, total mispred:  2
-mlpipeline_cpp5:
-  raw: f1: 0.99971, tp: 1726, fp:  0, fn:  1, selPos: 1726, expectedPos: 1727, total mispred:  1
-  end: f1: 0.99971, tp: 1726, fp:  0, fn:  1, selPos: 1726, expectedPos: 1727, total mispred:  1
+mlpipeline_cpp3:
+  raw: f1: 0.99939, tp: 1643, fp:  1, fn:  1, selPos: 1644, expectedPos: 1644, total mispred:  2
+  end: f1: 0.99939, tp: 1643, fp:  1, fn:  1, selPos: 1644, expectedPos: 1644, total mispred:  2
+move_block:
+  raw: f1: 0.99976, tp: 2111, fp:  0, fn:  1, selPos: 2111, expectedPos: 2112, total mispred:  1
+  end: f1: 0.99976, tp: 2111, fp:  0, fn:  1, selPos: 2111, expectedPos: 2112, total mispred:  1
 indent_fixes:
   raw: f1: 1.00000, tp: 2659, fp:  0, fn:  0, selPos: 2659, expectedPos: 2659, total mispred:  0
   end: f1: 1.00000, tp: 2659, fp:  0, fn:  0, selPos: 2659, expectedPos: 2659, total mispred:  0
@@ -335,6 +338,9 @@ insertions:
 learning_curve_py:
   raw: f1: 1.00000, tp:  478, fp:  0, fn:  0, selPos:  478, expectedPos:  478, total mispred:  0
   end: f1: 1.00000, tp:  478, fp:  0, fn:  0, selPos:  478, expectedPos:  478, total mispred:  0
+lev_dist_cpp:
+  raw: f1: 1.00000, tp:  130, fp:  0, fn:  0, selPos:  130, expectedPos:  130, total mispred:  0
+  end: f1: 1.00000, tp:  130, fp:  0, fn:  0, selPos:  130, expectedPos:  130, total mispred:  0
 lib_svm_hack:
   raw: f1: 1.00000, tp: 2636, fp:  0, fn:  0, selPos: 2636, expectedPos: 2636, total mispred:  0
   end: f1: 1.00000, tp: 2636, fp:  0, fn:  0, selPos: 2636, expectedPos: 2636, total mispred:  0
@@ -347,27 +353,21 @@ line_pair_h:
 lot_of_empty_lines:
   raw: f1: 1.00000, tp: 1049, fp:  0, fn:  0, selPos: 1049, expectedPos: 1049, total mispred:  0
   end: f1: 1.00000, tp: 1049, fp:  0, fn:  0, selPos: 1049, expectedPos: 1049, total mispred:  0
+lots_of_pairings:
+  raw: f1: 1.00000, tp:   75, fp:  0, fn:  0, selPos:   75, expectedPos:   75, total mispred:  0
+  end: f1: 1.00000, tp:   75, fp:  0, fn:  0, selPos:   75, expectedPos:   75, total mispred:  0
 minor_changes2:
   raw: f1: 1.00000, tp:  130, fp:  0, fn:  0, selPos:  130, expectedPos:  130, total mispred:  0
   end: f1: 1.00000, tp:  130, fp:  0, fn:  0, selPos:  130, expectedPos:  130, total mispred:  0
-mix_imports:
-  raw: f1: 1.00000, tp:  154, fp:  0, fn:  0, selPos:  154, expectedPos:  154, total mispred:  0
-  end: f1: 1.00000, tp:  154, fp:  0, fn:  0, selPos:  154, expectedPos:  154, total mispred:  0
-mlpipeline_cpp3:
-  raw: f1: 1.00000, tp: 1644, fp:  0, fn:  0, selPos: 1644, expectedPos: 1644, total mispred:  0
-  end: f1: 1.00000, tp: 1644, fp:  0, fn:  0, selPos: 1644, expectedPos: 1644, total mispred:  0
 mlpipeline_cpp4:
   raw: f1: 1.00000, tp: 1644, fp:  0, fn:  0, selPos: 1644, expectedPos: 1644, total mispred:  0
   end: f1: 1.00000, tp: 1644, fp:  0, fn:  0, selPos: 1644, expectedPos: 1644, total mispred:  0
-mlsample:
-  raw: f1: 1.00000, tp:  422, fp:  0, fn:  0, selPos:  422, expectedPos:  422, total mispred:  0
-  end: f1: 1.00000, tp:  422, fp:  0, fn:  0, selPos:  422, expectedPos:  422, total mispred:  0
+mlpipeline_h:
+  raw: f1: 1.00000, tp:  365, fp:  0, fn:  0, selPos:  365, expectedPos:  365, total mispred:  0
+  end: f1: 1.00000, tp:  365, fp:  0, fn:  0, selPos:  365, expectedPos:  365, total mispred:  0
 modelexactlysame:
   raw: f1: 1.00000, tp: 9532, fp:  0, fn:  0, selPos: 9532, expectedPos: 9532, total mispred:  0
   end: f1: 1.00000, tp: 9532, fp:  0, fn:  0, selPos: 9532, expectedPos: 9532, total mispred:  0
-move_block:
-  raw: f1: 1.00000, tp: 2112, fp:  0, fn:  0, selPos: 2112, expectedPos: 2112, total mispred:  0
-  end: f1: 1.00000, tp: 2112, fp:  0, fn:  0, selPos: 2112, expectedPos: 2112, total mispred:  0
 one_line:
   raw: f1: 1.00000, tp:  572, fp:  0, fn:  0, selPos:  572, expectedPos:  572, total mispred:  0
   end: f1: 1.00000, tp:  572, fp:  0, fn:  0, selPos:  572, expectedPos:  572, total mispred:  0
@@ -437,6 +437,6 @@ utils_py2:
 utilstest_py:
   raw: f1: 1.00000, tp:  217, fp:  0, fn:  0, selPos:  217, expectedPos:  217, total mispred:  0
   end: f1: 1.00000, tp:  217, fp:  0, fn:  0, selPos:  217, expectedPos:  217, total mispred:  0
-55006 [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Took: 0 minutes, 54 seconds
+53745 [main] INFO  c.k.s.gui.WholeAlgorithmMeasurer - Took: 0 minutes, 53 seconds
 
 Process finished with exit code 0
