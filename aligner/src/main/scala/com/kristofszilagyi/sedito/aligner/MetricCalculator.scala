@@ -75,7 +75,8 @@ object MetricCalculator {
   }
 
   final case class Phase1Metrics(leftWord: Selection, rightWord: Selection,
-                                 word: PairwiseMetrics, line: PairwiseMetrics,
+                                 leftContainsRight: Boolean, rightContainsLeft: Boolean,
+                                 word: PairwiseMetrics, wordCaseInsensitive: PairwiseMetrics, line: PairwiseMetrics,
                                  contextFull: ContextMetrics, contextHalf: ContextMetrics,
                                  context4th: ContextMetrics, context8th: ContextMetrics, context16th: ContextMetrics,
                                  context32th: ContextMetrics,
@@ -115,6 +116,8 @@ object MetricCalculator {
     val columnNames: List[String] = {
       List(
         withChildren("word", PairwiseMetrics.columnNames),
+        withChildren("wordCaseInsensitive", PairwiseMetrics.columnNames),
+        List("leftContainsRight", "rightContainsLeft"),
         withChildren("line", PairwiseMetrics.columnNames),
         withChildren("contextFull", ContextMetrics.columnNames),
         withChildren("contextHalf", ContextMetrics.columnNames),
@@ -142,14 +145,17 @@ object MetricCalculator {
                            closest16th: ContextIsClosest,
                            closest32th: ContextIsClosest) {
 
-    def word: PairwiseMetrics = phase1Metrics.word
-    def line: PairwiseMetrics = phase1Metrics.line
-    def contextFull: ContextMetrics = phase1Metrics.contextFull
-    def contextHalf: ContextMetrics = phase1Metrics.contextHalf
-    def context4th: ContextMetrics = phase1Metrics.context4th
-    def context8th: ContextMetrics = phase1Metrics.context8th
-    def context16th: ContextMetrics = phase1Metrics.context16th
-    def context32th: ContextMetrics = phase1Metrics.context32th
+    private def word: PairwiseMetrics = phase1Metrics.word
+    private def wordCaseInsensitive: PairwiseMetrics = phase1Metrics.wordCaseInsensitive
+    private def leftContainsRight: Boolean = phase1Metrics.leftContainsRight
+    private def rightContainsLeft: Boolean = phase1Metrics.leftContainsRight
+    private def line: PairwiseMetrics = phase1Metrics.line
+    private def contextFull: ContextMetrics = phase1Metrics.contextFull
+    private def contextHalf: ContextMetrics = phase1Metrics.contextHalf
+    private def context4th: ContextMetrics = phase1Metrics.context4th
+    private def context8th: ContextMetrics = phase1Metrics.context8th
+    private def context16th: ContextMetrics = phase1Metrics.context16th
+    private def context32th: ContextMetrics = phase1Metrics.context32th
     def leftWord: Selection = phase1Metrics.leftWord
     def rightWord: Selection = phase1Metrics.rightWord
     def leftLineIdx: LineIdx = phase1Metrics.leftLineIdx
@@ -162,6 +168,9 @@ object MetricCalculator {
       val result = Array.ofDim[Double](Metrics.numOfColumns)
       val holder = new ArrayHolder(result)
       word.toDoubles(holder)
+      wordCaseInsensitive.toDoubles(holder)
+      holder.add(if (leftContainsRight) 1.0 else 0.0)
+      holder.add(if (rightContainsLeft) 1.0 else 0.0)
       line.toDoubles(holder)
       contextFull.doubles(holder)
       contextHalf.doubles(holder)
@@ -227,7 +236,11 @@ object MetricCalculator {
     val rightWordString = rightWord.word.toText
     val wordMetrics = calcMetrics(leftWordString, rightWordString, math.max(leftWordString.length, rightWordString.length))
 
-    val contextMetrics = if (wordMetrics.ldLenSim >= 0.99) {
+    val lowerLeft = leftWordString.toLowerCase
+    val lowerRight = rightWordString.toLowerCase
+    val leftContainsRight = lowerLeft.contains(lowerRight)
+    val rightContainsLeft = lowerRight.contains(lowerLeft)
+    val contextMetrics = if (wordMetrics.ldLenSim >= 0.99 || leftContainsRight || rightContainsLeft) {
       Some((
         calcShortenedContextMetrics(leftWord, rightWord, contextSize),
         calcShortenedContextMetrics(leftWord, rightWord, contextSize / 2),
@@ -243,7 +256,10 @@ object MetricCalculator {
       val leftSelection = leftWord.word
       val rightSelection = rightWord.word
       val lineMetrics = lineAlignmentCacher.calcLineMetrics(leftSelection.lineIdx, rightSelection.lineIdx)
-      Phase1Metrics(leftSelection, rightSelection, word = wordMetrics, line = lineMetrics,
+      val wordCaseInsensitiveMetrics = calcMetrics(lowerLeft, lowerRight, math.max(leftWordString.length, rightWordString.length))
+
+      Phase1Metrics(leftSelection, rightSelection, word = wordMetrics, wordCaseInsensitive = wordCaseInsensitiveMetrics,
+        line = lineMetrics, leftContainsRight = leftContainsRight, rightContainsLeft = rightContainsLeft,
         contextFull = one, contextHalf = half, context4th = forth, context8th = eight, context16th = sixteenth,
         context32th = thirtyTwo, leftLineIdx = leftSelection.lineIdx,
         rightLineIdx = rightSelection.lineIdx)

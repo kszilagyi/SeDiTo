@@ -1,11 +1,18 @@
 <com.kristofszilagyi.sedito.aligner.AccessibleScaler>
   <copy>true</copy>
   <lo>
+    <double>0.0</double>
+    <double>0.0</double>
+    <double>0.0</double>
+    <double>0.0</double>
+    <double>0.0</double>
     <double>1.0</double>
     <double>1.0</double>
     <double>0.0</double>
-    <double>0.04</double>
-    <double>0.9999999999999999</double>
+    <double>7.304601899196479E-4</double>
+    <double>0.027027027027026973</double>
+    <double>0.0</double>
+    <double>0.0</double>
     <double>0.0</double>
     <double>0.0</double>
     <double>0.0</double>
@@ -98,11 +105,18 @@
     <double>0.0</double>
   </lo>
   <hi>
+    <double>37.0</double>
+    <double>37.0</double>
+    <double>1.0</double>
+    <double>1.0</double>
+    <double>37.0</double>
     <double>36.0</double>
     <double>36.0</double>
-    <double>0.48</double>
-    <double>0.96</double>
-    <double>36.0</double>
+    <double>0.972972972972973</double>
+    <double>0.9992695398100804</double>
+    <double>36.972972972972975</double>
+    <double>1.0</double>
+    <double>1.0</double>
     <double>194.0</double>
     <double>194.0</double>
     <double>1.0</double>
