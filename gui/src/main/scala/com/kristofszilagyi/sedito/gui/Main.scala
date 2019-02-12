@@ -69,10 +69,12 @@ final class Main extends Application {
 object Main {
   private val logger = getLogger
 
+  val firstPhaseClassifierPath = "aligner/src/main/resources/first_phase_nn.xml"
+  val firstPhaseScalerPath = "aligner/src/main/resources/first_phase_scaler.xml"
   @SuppressWarnings(Array(Warts.AsInstanceOf))
   def loadAI(): (SoftClassifier[Array[Double]], Scaler) = {
-    val classifier = read.xstream("aligner/src/main/resources/neuralnetwork.xml")
-    val scaler = read.xstream("aligner/src/main/resources/scaler.xml")
+    val classifier = read.xstream(firstPhaseClassifierPath)
+    val scaler = read.xstream(firstPhaseScalerPath)
     (classifier.asInstanceOf[SoftClassifier[Array[Double]]], scaler.asInstanceOf[Scaler])
   }
 

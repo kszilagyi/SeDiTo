@@ -178,7 +178,7 @@ object TrainAndDiff {
 
       val (classifier, scaler) = Main.loadAI()
       val path = Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
-        "scala-2.12/test-classes/algorithm_tests/full_tests/textblocklinked1to1_cpp")
+        "scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py2")
       val testCase = readTestCase(path)
       val leftPath = TestCase.leftPath(path)
       val rightPath = TestCase.rightPath(path)
@@ -255,10 +255,11 @@ object Train {
     val start = Instant.now()
     val samples = readDataSetAndMeasureMetrics()
     val crossValidates = crossValidate(samples)
-    val (training, test) = samples.splitAt((samples.size * trainingRatio).toInt)
+    val random = new Random(124) //make it repeatable but avoid weird dependence on file structure
+    val (training, test) = random.shuffle(samples).splitAt((samples.size * trainingRatio).toInt)
     val (classifier, scaler) = train(training, test, logStats = true)
-    write.xstream(classifier, "aligner/src/main/resources/neuralnetwork.xml")
-    write.xstream(scaler, "aligner/src/main/resources/scaler.xml")
+    write.xstream(classifier, Main.firstPhaseClassifierPath)
+    write.xstream(scaler, Main.firstPhaseScalerPath)
     val duration = Duration.between(start, Instant.now())
     discard(Await.ready(Future.sequence(crossValidates), 10.minutes))
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
