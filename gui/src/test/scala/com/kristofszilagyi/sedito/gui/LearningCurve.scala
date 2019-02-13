@@ -16,14 +16,14 @@ import scala.util.Random
 object LearningCurve{
   private val logger = getLogger
 
-  private def keepPathAndSamples(testCases: Seq[(Path, TestCase)], samples: List[(Path, Samples)]) = {
+  private def keepPathAndSamples(testCases: Seq[(Path, TestCase)], samples: List[PathAndSamples]) = {
     assert(testCases.size ==== samples.size)
-    testCases.zip(samples).map{ case ((path1, _), (path2, sample)) =>
+    testCases.zip(samples).map{ case ((path1, _), PathAndSamples(path2, sample)) =>
       assert(path1 ==== path2, s"$path1 == $path2")
-      (path1, sample)
+      PathAndSamples(path1, sample)
     }
   }
-  private def oneRandomCurve(random: Random, samples: List[(Path, Samples)], testCases: Seq[(Path, TestCase)]) = {
+  private def oneRandomCurve(random: Random, samples: List[PathAndSamples], testCases: Seq[(Path, TestCase)]) = {
     assert(samples.size ==== testCases.size)
     val trainingSize = (samples.size * Train.trainingRatio).toInt
 
