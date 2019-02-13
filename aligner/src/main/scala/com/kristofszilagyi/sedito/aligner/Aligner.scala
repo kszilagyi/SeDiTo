@@ -1,13 +1,12 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.Aligner.{resolveWithMostProbable}
+import com.kristofszilagyi.sedito.aligner.Aligner.{resolveWithMostProbable, _}
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
-import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
+import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common._
 import org.log4s.getLogger
 import smile.classification.SoftClassifier
 import smile.feature.Scaler
-import Aligner._
 
 final case class PartialResult(left: Selection, right: Selection, probability: Double)
 object Aligner {
@@ -35,18 +34,17 @@ final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
     alignFast(findPotentialMatches(metrics), log = true)
   }
 
-  def findPotentialMatches(metrics: Traversable[Metrics]): Traversable[PartialResult] = {
+  def findPotentialMatches(metrics: Traversable[Metrics], minP: Double = 0.5): Traversable[PartialResult] = {
     logger.debug("Debug metrics: \n" + metrics.mkString("\n"))
 
     val probabilitiesWithMetrics = metrics.flatMap { m =>
       val x = m.doubles
       val probs = new Array[Double](1)
       val scaledX = scaler.transform(x)
-      val prediction = classifier.predict(scaledX, probs)
+      discard(classifier.predict(scaledX, probs))
       logger.debug(s"${m.leftWord.toText} - ${m.rightWord.toText}, x: ${x.mkString(", ")}, p(0): ${probs(0)}")
-      if(prediction ==== 1) { //todo this could be fine tuned for optimal results
-        val p = 1 - probs(0) //probs(0) is the probability of the 0 label
-        assert(p >= 0.5, s"p = $p")
+      val p = 1 - probs(0) //probs(0) is the probability of the 0 label
+      if(p >= minP) { //todo this could be fine tuned for optimal results
         Some(m -> p)
       } else None
 
