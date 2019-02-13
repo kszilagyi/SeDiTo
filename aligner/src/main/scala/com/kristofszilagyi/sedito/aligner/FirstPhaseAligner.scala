@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.Aligner.{resolveWithMostProbable, _}
+import com.kristofszilagyi.sedito.aligner.FirstPhaseAligner.{resolveWithMostProbable, _}
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common._
@@ -9,7 +9,7 @@ import smile.classification.SoftClassifier
 import smile.feature.Scaler
 
 final case class PartialResult(left: Selection, right: Selection, probability: Double)
-object Aligner {
+object FirstPhaseAligner {
   private val logger = getLogger
 
   private def resolveWithMostProbable(results: Map[Selection, Traversable[PartialResult]]): Traversable[PartialResult] = {
@@ -27,7 +27,7 @@ object Aligner {
 
 }
 
-final class Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
+final class FirstPhaseAligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
   def align(left: FullText, right: FullText): UnambiguousWordAlignment = {
     val metrics = MetricCalculator.calcAlignerMetrics(left, right)
     logger.info(s"Number of metrics: ${metrics.size}")

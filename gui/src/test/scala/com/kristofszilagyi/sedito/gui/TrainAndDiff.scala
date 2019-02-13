@@ -4,7 +4,7 @@ import java.nio.file.{Files, Path, Paths}
 import java.time.{Duration, Instant}
 
 import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
-import com.kristofszilagyi.sedito.aligner.{AccessibleScaler, Aligner, MetricCalculator}
+import com.kristofszilagyi.sedito.aligner.{AccessibleScaler, FirstPhaseAligner, MetricCalculator}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
@@ -152,7 +152,7 @@ object TrainAndDiff {
   }
 
   private def displayTestCase(testCase: TestCase, leftPath: Path, rightPath: Path, classifier: SoftClassifier[Array[Double]], scaler: Scaler): Unit = {
-    val calculatedAlignment = new Aligner(classifier, scaler).align(testCase.left, testCase.right)
+    val calculatedAlignment = new FirstPhaseAligner(classifier, scaler).align(testCase.left, testCase.right)
     logger.info("Aligning finished")
     val expected = new MainWindow()
     expected.setTitle("Expected")

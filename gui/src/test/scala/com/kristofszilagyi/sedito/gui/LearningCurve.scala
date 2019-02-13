@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.Path
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.Aligner
+import com.kristofszilagyi.sedito.aligner.FirstPhaseAligner
 import com.kristofszilagyi.sedito.common.TestCase
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.gui.TrainAndDiff.{readDataSetAndMeasureMetrics, readTestCase, testDirs}
@@ -37,7 +37,7 @@ object LearningCurve{
       val trainingSamples = shuffledSamples.take(size)
       val trainingTestCases = shuffledTestCases.take(size)
       val (classifier, scaler) = Train.train(trainingSamples, testSamples, logStats = false)
-      val aligner = new Aligner(classifier, scaler)
+      val aligner = new FirstPhaseAligner(classifier, scaler)
 
       val trainingResults = WholeAlgorithmMeasurer.measureFast(aligner, keepPathAndSamples(trainingTestCases, trainingSamples)).aggregate
       val testResults = WholeAlgorithmMeasurer.measureFast(aligner, keepPathAndSamples(testTestCases, testSamples)).aggregate

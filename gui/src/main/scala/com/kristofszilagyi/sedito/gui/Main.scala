@@ -7,7 +7,7 @@ import java.nio.file.{Files, Paths}
 import java.util.Base64
 import java.util.concurrent.ConcurrentLinkedQueue
 
-import com.kristofszilagyi.sedito.aligner.Aligner
+import com.kristofszilagyi.sedito.aligner.FirstPhaseAligner
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common.utils.Control._
 import com.kristofszilagyi.sedito.common.{FullText, Warts}
@@ -112,7 +112,7 @@ object Main {
         val left = FullText(new String(Files.readAllBytes(Paths.get(leftFilename)), UTF_8))
         val right = FullText(new String(Files.readAllBytes(Paths.get(rightFilename)), UTF_8))
         // todo this should not be on the main thread
-        val calculatedAlignment = new Aligner(classifier, scaler).align(left, right)
+        val calculatedAlignment = new FirstPhaseAligner(classifier, scaler).align(left, right)
         mainWindow.setContent(left, right, leftPath, rightPath, calculatedAlignment)
       case Nil =>
       case other =>
