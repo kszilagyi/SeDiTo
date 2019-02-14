@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.MetricCalculator.ContextIsClosest._
+import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.ContextIsClosest._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common._
 import info.debatty.java.stringsimilarity.Levenshtein
@@ -8,8 +8,8 @@ import org.log4s.getLogger
 
 import scala.annotation.tailrec
 
-object MetricCalculator {
-  import com.kristofszilagyi.sedito.aligner.MetricCalculator.ClosestContext._
+object Pass1MetricCalculator {
+  import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.ClosestContext._
 
   private val logger = getLogger
 
@@ -61,7 +61,7 @@ object MetricCalculator {
 
   object ContextMetrics {
     def columnNames: List[String] = {
-      Metrics.withChildren("before", PairwiseMetrics.columnNames) ++ Metrics.withChildren("after", PairwiseMetrics.columnNames)
+      Pass1Metrics.withChildren("before", PairwiseMetrics.columnNames) ++ Pass1Metrics.withChildren("after", PairwiseMetrics.columnNames)
     }
   }
 
@@ -107,7 +107,7 @@ object MetricCalculator {
       i += 1
     }
   }
-  object Metrics {
+  object Pass1Metrics {
     def withChildren(parent: String, children: List[String]): List[String] = {
       children.map { c =>
         s"$parent.$c"
@@ -136,14 +136,14 @@ object MetricCalculator {
     }
     val numOfColumns: Int = columnNames.size
   }
-  final case class Metrics(phase1Metrics: Phase1Metrics,
-                           lineIsClosestMatchInText: Boolean,
-                           closestFull: ContextIsClosest,
-                           closestHalf: ContextIsClosest,
-                           closest4th: ContextIsClosest,
-                           closest8th: ContextIsClosest,
-                           closest16th: ContextIsClosest,
-                           closest32th: ContextIsClosest) {
+  final case class Pass1Metrics(phase1Metrics: Phase1Metrics,
+                                lineIsClosestMatchInText: Boolean,
+                                closestFull: ContextIsClosest,
+                                closestHalf: ContextIsClosest,
+                                closest4th: ContextIsClosest,
+                                closest8th: ContextIsClosest,
+                                closest16th: ContextIsClosest,
+                                closest32th: ContextIsClosest) {
 
     private def word: PairwiseMetrics = phase1Metrics.word
     private def wordCaseInsensitive: PairwiseMetrics = phase1Metrics.wordCaseInsensitive
@@ -165,7 +165,7 @@ object MetricCalculator {
     def doubles: Array[Double]= {
       //I think System.arraycopy works equally well, just got sidetracked by other issues.
       //currently this is fast enough arraycopy might be faster but can't tell now
-      val result = Array.ofDim[Double](Metrics.numOfColumns)
+      val result = Array.ofDim[Double](Pass1Metrics.numOfColumns)
       val holder = new ArrayHolder(result)
       word.toDoubles(holder)
       wordCaseInsensitive.toDoubles(holder)
@@ -382,7 +382,7 @@ object MetricCalculator {
     }
   }
 
-  def calcAlignerMetrics(left: FullText, right: FullText): Traversable[Metrics] = {
+  def calcAlignerMetrics(left: FullText, right: FullText): Traversable[Pass1Metrics] = {
     val leftWords = Wordizer.toWordIndices(left.s)
     val rightWords = Wordizer.toWordIndices(right.s)
 
@@ -441,7 +441,7 @@ object MetricCalculator {
     val closestContext32th = calcClosestContextMatches(phase1Metrics, _.context32th)
     phase1Metrics.map{m =>
       val closest = closestLineMatches.contains(m)
-      Metrics(m, lineIsClosestMatchInText = closest, closestFull = closestContextFull.in(m), closestHalf = closestContextHalf.in(m),
+      Pass1Metrics(m, lineIsClosestMatchInText = closest, closestFull = closestContextFull.in(m), closestHalf = closestContextHalf.in(m),
         closest4th = closestContext4th.in(m), closest8th = closestContext8th.in(m), closest16th = closestContext16th.in(m),
         closest32th = closestContext32th.in(m))
     }

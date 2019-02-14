@@ -3,8 +3,8 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.{Files, Path, Paths}
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
-import com.kristofszilagyi.sedito.aligner.{AccessibleScaler, FirstPhaseAligner, MetricCalculator}
+import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Metrics
+import com.kristofszilagyi.sedito.aligner.{AccessibleScaler, FirstPassAligner, Pass1MetricCalculator}
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
@@ -26,7 +26,7 @@ import scala.concurrent.duration.DurationDouble
 import scala.concurrent.{Await, Future}
 import scala.util.{Failure, Random, Success}
 
-final case class MetricsWithResults(metrics: Metrics, matching: Boolean)
+final case class MetricsWithResults(metrics: Pass1Metrics, matching: Boolean)
 final case class Samples(metricsWithResults: Traversable[MetricsWithResults])
 
 final case class PathAndSamples(path: Path, samples: Samples)
@@ -45,7 +45,7 @@ object TrainAndDiff {
 
   private def readSingleDataSetAndMeasureMetrics(testDir: Path) = {
     val testCase = readTestCase(testDir)
-    val metrics = MetricCalculator.calcAlignerMetrics(testCase.left, testCase.right)
+    val metrics = Pass1MetricCalculator.calcAlignerMetrics(testCase.left, testCase.right)
 
     val matches = testCase.wordAlignment.matches.toSeq
     val matchesSet = matches.toSet
@@ -71,7 +71,7 @@ object TrainAndDiff {
       val samples = readSingleDataSetAndMeasureMetrics(testDir)
       if (samples.metricsWithResults.nonEmpty) {
         val metricsNumInSamples = calcNumOfAttributes(List(samples.metricsWithResults))
-        val columnCount = Metrics.columnNames.size
+        val columnCount = Pass1Metrics.columnNames.size
         assert(metricsNumInSamples ==== columnCount, s"$metricsNumInSamples != $columnCount")
       }
       PathAndSamples(testDir, samples)
@@ -154,7 +154,7 @@ object TrainAndDiff {
   }
 
   private def displayTestCase(testCase: TestCase, leftPath: Path, rightPath: Path, classifier: SoftClassifier[Array[Double]], scaler: Scaler): Unit = {
-    val calculatedAlignment = new FirstPhaseAligner(classifier, scaler).align(testCase.left, testCase.right)
+    val calculatedAlignment = new FirstPassAligner(classifier, scaler).align(testCase.left, testCase.right)
     logger.info("Aligning finished")
     val expected = new MainWindow()
     expected.setTitle("Expected")

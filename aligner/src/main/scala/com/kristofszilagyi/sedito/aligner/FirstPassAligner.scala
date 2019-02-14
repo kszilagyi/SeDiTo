@@ -1,7 +1,7 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.FirstPhaseAligner.{resolveWithMostProbable, _}
-import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
+import com.kristofszilagyi.sedito.aligner.FirstPassAligner.{resolveWithMostProbable, _}
+import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Metrics
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common._
 import org.log4s.getLogger
@@ -9,7 +9,7 @@ import smile.classification.SoftClassifier
 import smile.feature.Scaler
 
 final case class PartialResult(left: Selection, right: Selection, probability: Double)
-object FirstPhaseAligner {
+object FirstPassAligner {
   private val logger = getLogger
 
   private def resolveWithMostProbable(results: Map[Selection, Traversable[PartialResult]]): Traversable[PartialResult] = {
@@ -21,20 +21,20 @@ object FirstPhaseAligner {
     mostProbables
   }
 
-  private def toPartialResult(metricsAndProb: (Metrics, Double)) = {
+  private def toPartialResult(metricsAndProb: (Pass1Metrics, Double)) = {
     PartialResult(metricsAndProb._1.leftWord, metricsAndProb._1.rightWord, metricsAndProb._2)
   }
 
 }
 
-final class FirstPhaseAligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
+final class FirstPassAligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
   def align(left: FullText, right: FullText): UnambiguousWordAlignment = {
-    val metrics = MetricCalculator.calcAlignerMetrics(left, right)
+    val metrics = Pass1MetricCalculator.calcAlignerMetrics(left, right)
     logger.info(s"Number of metrics: ${metrics.size}")
     alignFast(findPotentialMatches(metrics), log = true)
   }
 
-  def findPotentialMatches(metrics: Traversable[Metrics], minP: Double = 0.5): Traversable[PartialResult] = {
+  def findPotentialMatches(metrics: Traversable[Pass1Metrics], minP: Double = 0.5): Traversable[PartialResult] = {
     logger.debug("Debug metrics: \n" + metrics.mkString("\n"))
 
     val probabilitiesWithMetrics = metrics.flatMap { m =>

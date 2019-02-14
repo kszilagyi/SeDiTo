@@ -2,7 +2,7 @@ package com.kristofszilagyi.sedito.gui
 
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.MetricCalculator.Metrics
+import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Metrics
 import com.kristofszilagyi.sedito.gui.TrainAndDiff.{calcNumOfAttributes, generateClassifier, readDataSetAndMeasureMetrics}
 import org.log4s.getLogger
 
@@ -12,13 +12,13 @@ object FeatureElimination extends App{
   logger.info("Start")
   val start = Instant.now()
   val samples = readDataSetAndMeasureMetrics()
-  val samplesWithoutFilenames = samples.map(_._2)
+  val samplesWithoutFilenames = samples.map(_.samples)
   val metricsWithResults = samplesWithoutFilenames.map(_.metricsWithResults)
   val numOfAttributes = calcNumOfAttributes(metricsWithResults)
   val (nestedTraining, nestedTest) = samplesWithoutFilenames.splitAt(samplesWithoutFilenames.size / 2)
 
   TrainAndDiff.logBasicStats(nestedTraining, nestedTest = nestedTest)
-  val results = Metrics.columnNames.zipWithIndex.map { case (metric, idx) =>
+  val results = Pass1Metrics.columnNames.zipWithIndex.map { case (metric, idx) =>
     val (_, _, trainingData) = generateClassifier(nestedTraining = nestedTraining, nestedTest = nestedTest, numOfAttributes, idxesToExclude = Set(idx))
     val f1s = trainingData.f1s
     logger.info(s"Excluded metric: $metric. F1s: $f1s")

@@ -5,28 +5,28 @@ import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 
-final class MetricCalculatorTest extends FreeSpecLike{
+final class Pass1MetricCalculatorTest extends FreeSpecLike{
   private val line = "How do you do, my darling? Have you had breakfast yet?"
   private val words = Wordizer.toWordIndices(line)
 
   "empty context" in {
-    MetricCalculator.context(7, words, 0) shouldBe ""
+    Pass1MetricCalculator.context(7, words, 0) shouldBe ""
   }
 
   "negative context works (word edge)" in {
-    MetricCalculator.context(6, words, -5) shouldBe "do,my"
+    Pass1MetricCalculator.context(6, words, -5) shouldBe "do,my"
   }
 
   "negative context works (not word edge)" in {
-    MetricCalculator.context(6, words, -6) shouldBe "youdo,my"
+    Pass1MetricCalculator.context(6, words, -6) shouldBe "youdo,my"
   }
 
   "positive context works (word edge)" in {
-    MetricCalculator.context(6, words, 5) shouldBe "?Have"
+    Pass1MetricCalculator.context(6, words, 5) shouldBe "?Have"
   }
 
   "positive context works (not word edge)" in {
-    MetricCalculator.context(6, words, 6) shouldBe "?Haveyou"
+    Pass1MetricCalculator.context(6, words, 6) shouldBe "?Haveyou"
   }
 
   private def constructResultFromMatching(matches: Set[(Int, Int)], leftNumOfLines: Int, rightNumOfLines: Int): Seq[(Int, Int, Boolean)] = {
@@ -39,7 +39,7 @@ final class MetricCalculatorTest extends FreeSpecLike{
   }
 
   private def findClosestMatches(left: String, right: String) = {
-    val result = MetricCalculator.calcAlignerMetrics(FullText(left), FullText(right)).map(m => (m.leftLineIdx, m.rightLineIdx, m.lineIsClosestMatchInText))
+    val result = Pass1MetricCalculator.calcAlignerMetrics(FullText(left), FullText(right)).map(m => (m.leftLineIdx, m.rightLineIdx, m.lineIsClosestMatchInText))
     result.map{case (l, r, m) => (l.i, r.i, m)}.toSeq.sorted
   }
   private def testBestMatchingLine(left: String, right: String, expectedClosestMatches: Set[(Int, Int)]) = {
