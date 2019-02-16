@@ -214,7 +214,7 @@ object TrainAndDiff {
   }
 
 }
-object Train {
+object Train1Pass {
   private val logger = getLogger
 
   def train(training: List[PathAndSamples], test: List[PathAndSamples], logStats: Boolean): (NeuralNetwork, AccessibleScaler) = {
