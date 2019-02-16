@@ -56,7 +56,7 @@ object WholeAlgorithmMeasurer {
   }
   private val logger = getLogger
 
-  def measure(aligner: FirstPassAligner, testCases: Seq[PathAndSamples]): MultiResult = {
+  def measure(aligner: FirstPassAligner, testCases: Seq[Pass1PathAndSamples]): MultiResult = {
     measureFast(aligner, testCases)
   }
 
@@ -67,8 +67,8 @@ object WholeAlgorithmMeasurer {
     Results(tp = tp.toLong, fp = fp.toLong, fn = fn.toLong, actual.size.toLong, expected.size.toLong)
   }
 
-  def measureFast(aligner: FirstPassAligner, testCases: Seq[PathAndSamples]): MultiResult = {
-    MultiResult(testCases.map { case PathAndSamples(path, samples) =>
+  def measureFast(aligner: FirstPassAligner, testCases: Seq[Pass1PathAndSamples]): MultiResult = {
+    MultiResult(testCases.map { case Pass1PathAndSamples(path, samples) =>
       val rawActual = aligner.findPotentialMatches(samples.metricsWithResults.map(_.metrics)) //this is not resolved
       val rawActualMatches = rawActual.map(res => WordMatch(res.left, res.right)(Some(res.probability))).toSet
       val rawExpected = samples.metricsWithResults.filter(_.matching).map(word => WordMatch(word.metrics.leftWord, word.metrics.rightWord)()).toSet

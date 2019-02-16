@@ -26,10 +26,10 @@ import scala.concurrent.duration.DurationDouble
 import scala.concurrent.{Await, Future}
 import scala.util.{Failure, Random, Success}
 
-final case class MetricsWithResults(metrics: Pass1Metrics, matching: Boolean)
-final case class Samples(metricsWithResults: Traversable[MetricsWithResults])
+final case class Pass1MetricsWithResults(metrics: Pass1Metrics, matching: Boolean)
+final case class Pass1Samples(metricsWithResults: Traversable[Pass1MetricsWithResults])
 
-final case class PathAndSamples(path: Path, samples: Samples)
+final case class Pass1PathAndSamples(path: Path, samples: Pass1Samples)
 
 object TrainAndDiff {
   private val logger = getLogger
@@ -52,10 +52,10 @@ object TrainAndDiff {
     discard(assert(matches.size ==== matchesSet.size))
     val metricsWithResult = metrics.map { m =>
       val potentialMatch = WordMatch(m.leftWord, m.rightWord)()
-      MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))
+      Pass1MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))
     }
 
-    Samples(metricsWithResult)
+    Pass1Samples(metricsWithResult)
   }
 
   def testDirs: Seq[Path] = {
@@ -65,7 +65,7 @@ object TrainAndDiff {
     }
   }
 
-  def readDataSetAndMeasureMetrics(): List[PathAndSamples] = {
+  def readDataSetAndMeasureMetrics(): List[Pass1PathAndSamples] = {
 
     val metrics = testDirs.par.map { testDir =>
       val samples = readSingleDataSetAndMeasureMetrics(testDir)
@@ -74,13 +74,13 @@ object TrainAndDiff {
         val columnCount = Pass1Metrics.columnNames.size
         assert(metricsNumInSamples ==== columnCount, s"$metricsNumInSamples != $columnCount")
       }
-      PathAndSamples(testDir, samples)
+      Pass1PathAndSamples(testDir, samples)
     }
     metrics.seq.toList
   }
 
 
-  private def toAttributeDataSet(metrics: Traversable[MetricsWithResults], numOfAttributes: Int, excludedIdxes: Set[Int]) = {
+  private def toAttributeDataSet(metrics: Traversable[Pass1MetricsWithResults], numOfAttributes: Int, excludedIdxes: Set[Int]) = {
     val idxesToKeep = (0 until numOfAttributes).filterNot(excludedIdxes.contains)
     val attributes = idxesToKeep.map { name =>
       new NumericAttribute(name.toString)
@@ -115,8 +115,8 @@ object TrainAndDiff {
     truth.zip(prediction).count{ case (t, _) => t ==== 1 }
   }
 
-  def logBasicStats(nestedTraining: List[Samples],
-                    nestedTest: List[Samples]): Unit = {
+  def logBasicStats(nestedTraining: List[Pass1Samples],
+                    nestedTest: List[Pass1Samples]): Unit = {
     val training = nestedTraining.flatMap(_.metricsWithResults)
     val test = nestedTest.flatMap(_.metricsWithResults)
     logger.info(s"Training size: ${training.size}")
@@ -127,8 +127,7 @@ object TrainAndDiff {
     logger.info(s"0s in test: ${test.count(_.matching ==== false)}")
   }
 
-  //todo try with more neurons
-  def generateClassifier(nestedTraining: List[Samples], nestedTest: List[Samples],
+  def generateClassifier(nestedTraining: List[Pass1Samples], nestedTest: List[Pass1Samples],
                          numOfAttributes: Int, idxesToExclude: Set[Int]): (NeuralNetwork, AccessibleScaler, TrainingData) = {
     val training = nestedTraining.flatMap(_.metricsWithResults)
     val test = nestedTest.flatMap(_.metricsWithResults)
@@ -166,7 +165,7 @@ object TrainAndDiff {
     logger.info("opening finished")
   }
 
-  def calcNumOfAttributes(metrics: List[Traversable[MetricsWithResults]]): Int = {
+  def calcNumOfAttributes(metrics: List[Traversable[Pass1MetricsWithResults]]): Int = {
     @SuppressWarnings(Array(Warts.OptionPartial))
     val nonEmpty = metrics.find(_.nonEmpty).get
     val num = nonEmpty.head.metrics.doubles.length
@@ -195,9 +194,9 @@ object TrainAndDiff {
   }
 
   @SuppressWarnings(Array(Warts.ToString))
-  def performanceMetrics(files: List[PathAndSamples], scaler: Scaler,
+  def performanceMetrics(files: List[Pass1PathAndSamples], scaler: Scaler,
                          classifier: NeuralNetwork, numOfAttributes: Int, idxesToExclude: Set[Int]): List[(String, PerformanceMetrics)] = {
-    files.map { case PathAndSamples(path, singleTest) =>
+    files.map { case Pass1PathAndSamples(path, singleTest) =>
       val singleDataSet = toAttributeDataSet(singleTest.metricsWithResults, numOfAttributes, idxesToExclude)
       val singleTestX = scaler.transform(singleDataSet.x())
       val singleTestY = singleDataSet.labels()
@@ -217,7 +216,7 @@ object TrainAndDiff {
 object Train1Pass {
   private val logger = getLogger
 
-  def train(training: List[PathAndSamples], test: List[PathAndSamples], logStats: Boolean): (NeuralNetwork, AccessibleScaler) = {
+  def train(training: List[Pass1PathAndSamples], test: List[Pass1PathAndSamples], logStats: Boolean): (NeuralNetwork, AccessibleScaler) = {
     val samples = training ++ test
     val metricsWithResults = samples.map(_.samples.metricsWithResults)
     val numOfAttributes = calcNumOfAttributes(metricsWithResults)
@@ -244,7 +243,7 @@ object Train1Pass {
 
   val trainingRatio = 0.7
 
-  private def crossValidate(samples: List[PathAndSamples]) = {
+  private def crossValidate(samples: List[Pass1PathAndSamples]) = {
     (1 to 3) map { _ =>
       val randomSamples = Random.shuffle(samples)
       val (training, test) = randomSamples.splitAt((samples.size * trainingRatio).toInt)
