@@ -3,8 +3,9 @@ package com.kristofszilagyi.sedito.gui
 import java.time.{Duration, Instant}
 
 import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Metrics
-import com.kristofszilagyi.sedito.gui.TrainAndDiff.{calcNumOfAttributes, generateClassifier, readDataSetAndMeasureMetrics}
+import com.kristofszilagyi.sedito.gui.TrainAndDiff.readDataSetAndMeasureMetrics
 import org.log4s.getLogger
+import Train._
 
 object FeatureElimination extends App{
   private val logger = getLogger
@@ -17,7 +18,7 @@ object FeatureElimination extends App{
   val numOfAttributes = calcNumOfAttributes(metricsWithResults)
   val (nestedTraining, nestedTest) = samplesWithoutFilenames.splitAt(samplesWithoutFilenames.size / 2)
 
-  TrainAndDiff.logBasicStats(nestedTraining, nestedTest = nestedTest)
+  Train.logBasicStats(nestedTraining, nestedTest = nestedTest)
   val results = Pass1Metrics.columnNames.zipWithIndex.map { case (metric, idx) =>
     val (_, _, trainingData) = generateClassifier(nestedTraining = nestedTraining, nestedTest = nestedTest, numOfAttributes, idxesToExclude = Set(idx))
     val f1s = trainingData.f1s

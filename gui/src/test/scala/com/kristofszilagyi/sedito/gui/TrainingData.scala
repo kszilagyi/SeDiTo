@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.gui
 
-import com.kristofszilagyi.sedito.gui.TrainAndDiff.{countFN, countFP, countTP}
+import com.kristofszilagyi.sedito.gui.Train.{countFN, countFP, countTP}
 import org.log4s.getLogger
 import smile.validation._
 import TrainingData.logger

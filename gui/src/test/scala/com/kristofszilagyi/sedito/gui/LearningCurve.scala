@@ -25,7 +25,7 @@ object LearningCurve{
   }
   private def oneRandomCurve(random: Random, samples: List[Pass1PathAndSamples], testCases: Seq[(Path, TestCase)]) = {
     assert(samples.size ==== testCases.size)
-    val trainingSize = (samples.size * Train1Pass.trainingRatio).toInt
+    val trainingSize = (samples.size * Train.trainingRatio).toInt
 
     val (shuffledSamples, shuffledTestCases) = random.shuffle(samples.zip(testCases)).unzip
 
@@ -36,7 +36,7 @@ object LearningCurve{
       logger.info(s"Doing size: $size")
       val trainingSamples = shuffledSamples.take(size)
       val trainingTestCases = shuffledTestCases.take(size)
-      val (classifier, scaler) = Train1Pass.train(trainingSamples, testSamples, logStats = false)
+      val (classifier, scaler) = Train.train(trainingSamples, testSamples, logStats = false)
       val aligner = new FirstPassAligner(classifier, scaler)
 
       val trainingResults = WholeAlgorithmMeasurer.measureFast(aligner, keepPathAndSamples(trainingTestCases, trainingSamples)).aggregate
