@@ -143,7 +143,7 @@ object Pass1MetricCalculator {
                                 closest4th: ContextIsClosest,
                                 closest8th: ContextIsClosest,
                                 closest16th: ContextIsClosest,
-                                closest32th: ContextIsClosest) {
+                                closest32th: ContextIsClosest) extends Metrics {
 
     private def word: PairwiseMetrics = phase1Metrics.word
     private def wordCaseInsensitive: PairwiseMetrics = phase1Metrics.wordCaseInsensitive
