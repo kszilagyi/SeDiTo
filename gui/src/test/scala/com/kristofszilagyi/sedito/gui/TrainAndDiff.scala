@@ -79,7 +79,7 @@ object TrainAndDiff {
   }
 
   private def displayTestCase(testCase: TestCase, leftPath: Path, rightPath: Path, classifier: SoftClassifier[Array[Double]], scaler: Scaler): Unit = {
-    val calculatedAlignment = new FirstPassAligner(classifier, scaler).align(testCase.left, testCase.right)
+    val calculatedAlignment = new Pass1Aligner(classifier, scaler).align(testCase.left, testCase.right)
     logger.info("Aligning finished")
     val expected = new MainWindow()
     expected.setTitle("Expected")

@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.FirstPassAligner.{resolveWithMostProbable, _}
+import com.kristofszilagyi.sedito.aligner.Pass1Aligner.{resolveWithMostProbable, _}
 import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Metrics
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common._
@@ -8,11 +8,11 @@ import org.log4s.getLogger
 import smile.classification.SoftClassifier
 import smile.feature.Scaler
 
-final case class PartialResult(left: Selection, right: Selection, probability: Double)
-object FirstPassAligner {
+final case class Pass1Result(left: Selection, right: Selection, probability: Double)
+object Pass1Aligner {
   private val logger = getLogger
 
-  private def resolveWithMostProbable(results: Map[Selection, Traversable[PartialResult]]): Traversable[PartialResult] = {
+  private def resolveWithMostProbable(results: Map[Selection, Traversable[Pass1Result]]): Traversable[Pass1Result] = {
     val mostProbables = results.map { case (_, conflictings) =>
       @SuppressWarnings(Array(Warts.TraversableOps))
       val best = conflictings.toSeq.maxBy(_.probability) //This should never fail because the map should never have empty list on the left side
@@ -22,19 +22,19 @@ object FirstPassAligner {
   }
 
   private def toPartialResult(metricsAndProb: (Pass1Metrics, Double)) = {
-    PartialResult(metricsAndProb._1.leftWord, metricsAndProb._1.rightWord, metricsAndProb._2)
+    Pass1Result(metricsAndProb._1.leftWord, metricsAndProb._1.rightWord, metricsAndProb._2)
   }
 
 }
 
-final class FirstPassAligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
+final class Pass1Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
   def align(left: FullText, right: FullText): UnambiguousWordAlignment = {
     val metrics = Pass1MetricCalculator.calcAlignerMetrics(left, right)
     logger.info(s"Number of metrics: ${metrics.size}")
     alignFast(findPotentialMatches(metrics), log = true)
   }
 
-  def findPotentialMatches(metrics: Traversable[Pass1Metrics], minP: Double = 0.5): Traversable[PartialResult] = {
+  def findPotentialMatches(metrics: Traversable[Pass1Metrics], minP: Double = 0.5): Traversable[Pass1Result] = {
     logger.debug("Debug metrics: \n" + metrics.mkString("\n"))
 
     val probabilitiesWithMetrics = metrics.flatMap { m =>
@@ -52,7 +52,7 @@ final class FirstPassAligner(classifier: SoftClassifier[Array[Double]], scaler: 
     probabilitiesWithMetrics.map(toPartialResult)
   }
 
-  def alignFast(potentialMatches: Traversable[PartialResult], log: Boolean): UnambiguousWordAlignment = {
+  def alignFast(potentialMatches: Traversable[Pass1Result], log: Boolean): UnambiguousWordAlignment = {
     if (log) logger.info(s"Potentials: ${potentialMatches.size}")
     val leftResolved = resolveWithMostProbable(potentialMatches.groupBy(_.left))
     val bothResolved = resolveWithMostProbable(leftResolved.groupBy(_.right))

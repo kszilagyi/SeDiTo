@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.Path
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.FirstPassAligner
+import com.kristofszilagyi.sedito.aligner.Pass1Aligner
 import com.kristofszilagyi.sedito.common.{Warts, WordMatch}
 import com.kristofszilagyi.sedito.gui.TrainAndDiff._
 import org.log4s.getLogger
@@ -56,7 +56,7 @@ object WholeAlgorithmMeasurer {
   }
   private val logger = getLogger
 
-  def measure(aligner: FirstPassAligner, testCases: Seq[Pass1PathAndSamples]): MultiResult = {
+  def measure(aligner: Pass1Aligner, testCases: Seq[Pass1PathAndSamples]): MultiResult = {
     measureFast(aligner, testCases)
   }
 
@@ -67,7 +67,7 @@ object WholeAlgorithmMeasurer {
     Results(tp = tp.toLong, fp = fp.toLong, fn = fn.toLong, actual.size.toLong, expected.size.toLong)
   }
 
-  def measureFast(aligner: FirstPassAligner, testCases: Seq[Pass1PathAndSamples]): MultiResult = {
+  def measureFast(aligner: Pass1Aligner, testCases: Seq[Pass1PathAndSamples]): MultiResult = {
     MultiResult(testCases.map { case Pass1PathAndSamples(path, samples) =>
       val rawActual = aligner.findPotentialMatches(samples.metricsWithResults.map(_.metrics)) //this is not resolved
       val rawActualMatches = rawActual.map(res => WordMatch(res.left, res.right)(Some(res.probability))).toSet
@@ -88,7 +88,7 @@ object WholeAlgorithmMeasurer {
 
     val testCases = readDataSetAndMeasureMetrics()
     val (classifier, scaler) = Main.loadAI()
-    val aligner = new FirstPassAligner(classifier, scaler)
+    val aligner = new Pass1Aligner(classifier, scaler)
     val (training, test) = testCases.splitAt((testCases.size * Train.trainingRatio).toInt)
     val nestedTrainingResults = measure(aligner, training)
     val trainingResults = nestedTrainingResults.aggregate
