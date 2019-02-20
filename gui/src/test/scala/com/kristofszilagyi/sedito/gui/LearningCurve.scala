@@ -36,7 +36,7 @@ object LearningCurve{
       logger.info(s"Doing size: $size")
       val trainingSamples = shuffledSamples.take(size)
       val trainingTestCases = shuffledTestCases.take(size)
-      val (classifier, scaler) = Train.train(trainingSamples, testSamples, logStats = false)
+      val (classifier, scaler) = Train.train(trainingSamples, testSamples, logStats = false, hiddenLayerSize = 50)
       val aligner = new Pass1Aligner(classifier, scaler)
 
       val trainingResults = WholeAlgorithmMeasurer.measureFast(aligner, keepPathAndSamples(trainingTestCases, trainingSamples)).aggregate

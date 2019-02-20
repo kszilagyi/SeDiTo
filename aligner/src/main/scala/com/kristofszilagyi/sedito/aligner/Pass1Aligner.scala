@@ -21,8 +21,8 @@ object Pass1Aligner {
     mostProbables
   }
 
-  private def toPartialResult(metricsAndProb: (Pass1Metrics, Double)) = {
-    Pass1Result(metricsAndProb._1.leftWord, metricsAndProb._1.rightWord, metricsAndProb._2)
+  private def toResult(metrics: Pass1Metrics, p: Double) = {
+    Pass1Result(metrics.leftWord, metrics.rightWord, p)
   }
 
 }
@@ -34,22 +34,23 @@ final class Pass1Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scal
     alignFast(findPotentialMatches(metrics), log = true)
   }
 
+  def measureProbability(metrics: Pass1Metrics): Pass1Result = {
+    val x = metrics.doubles
+    val probs = new Array[Double](1)
+    val scaledX = scaler.transform(x)
+    discard(classifier.predict(scaledX, probs))
+    val p = 1 - probs(0) //probs(0) is the probability of the 0 label
+    toResult(metrics, p)
+  }
+
   def findPotentialMatches(metrics: Traversable[Pass1Metrics], minP: Double = 0.5): Traversable[Pass1Result] = {
-    logger.debug("Debug metrics: \n" + metrics.mkString("\n"))
-
     val probabilitiesWithMetrics = metrics.flatMap { m =>
-      val x = m.doubles
-      val probs = new Array[Double](1)
-      val scaledX = scaler.transform(x)
-      discard(classifier.predict(scaledX, probs))
-      logger.debug(s"${m.leftWord.toText} - ${m.rightWord.toText}, x: ${x.mkString(", ")}, p(0): ${probs(0)}")
-      val p = 1 - probs(0) //probs(0) is the probability of the 0 label
-      if(p >= minP) { //todo this could be fine tuned for optimal results
-        Some(m -> p)
+      val result = measureProbability(m)
+      if(result.probability >= minP) { //todo this could be fine tuned for optimal results
+        Some(result)
       } else None
-
     }
-    probabilitiesWithMetrics.map(toPartialResult)
+    probabilitiesWithMetrics
   }
 
   def alignFast(potentialMatches: Traversable[Pass1Result], log: Boolean): UnambiguousWordAlignment = {

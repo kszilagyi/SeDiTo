@@ -89,7 +89,7 @@ object Train {
   }
 
   def generateClassifier(nestedTraining: List[Samples], nestedTest: List[Samples],
-                         numOfAttributes: Int, idxesToExclude: Set[Int]): (NeuralNetwork, AccessibleScaler, TrainingData) = {
+                         numOfAttributes: Int, idxesToExclude: Set[Int], hiddenLayerSize: Int): (NeuralNetwork, AccessibleScaler, TrainingData) = {
     val training = nestedTraining.flatMap(_.metricsWithResults)
     val test = nestedTest.flatMap(_.metricsWithResults)
 
@@ -98,7 +98,7 @@ object Train {
     scaler.learn(trainingSet.attributes(), trainingSet.x())
     val transformedTrainingSet = scaler.transform(trainingSet.x())
     val trainingY = trainingSet.labels()
-    val classifier = classification.mlp(transformedTrainingSet, trainingY, Array(numOfAttributes - idxesToExclude.size, 50, 1), ErrorFunction.CROSS_ENTROPY, ActivationFunction.LOGISTIC_SIGMOID)
+    val classifier = classification.mlp(transformedTrainingSet, trainingY, Array(numOfAttributes - idxesToExclude.size, hiddenLayerSize, 1), ErrorFunction.CROSS_ENTROPY, ActivationFunction.LOGISTIC_SIGMOID)
     logger.info("Classifier created, creating predictions.")
     val testSet = toAttributeDataSet(test, numOfAttributes, idxesToExclude)
     val testX = scaler.transform(testSet.x())
@@ -115,7 +115,7 @@ object Train {
 
   private val logger = getLogger
 
-  def train(training: List[PathAndSamples], test: List[PathAndSamples], logStats: Boolean): (NeuralNetwork, AccessibleScaler) = {
+  def train(training: List[PathAndSamples], test: List[PathAndSamples], logStats: Boolean, hiddenLayerSize: Int): (NeuralNetwork, AccessibleScaler) = {
     val samples = training ++ test
     val metricsWithResults = samples.map(_.samples.metricsWithResults)
     val numOfAttributes = calcNumOfAttributes(metricsWithResults)
@@ -126,7 +126,7 @@ object Train {
     }
 
     val (classifier, scaler, trainingData) = generateClassifier(nestedTraining = training.map(_.samples),
-      nestedTest = test.map(_.samples), numOfAttributes, idxesToExclude = Set.empty)
+      nestedTest = test.map(_.samples), numOfAttributes, idxesToExclude = Set.empty, hiddenLayerSize = hiddenLayerSize)
 
     if (logStats) {
       trainingData.printDetailedStats()

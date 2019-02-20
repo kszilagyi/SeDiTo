@@ -20,7 +20,8 @@ object FeatureElimination extends App{
 
   Train.logBasicStats(nestedTraining, nestedTest = nestedTest)
   val results = Pass1Metrics.columnNames.zipWithIndex.map { case (metric, idx) =>
-    val (_, _, trainingData) = generateClassifier(nestedTraining = nestedTraining, nestedTest = nestedTest, numOfAttributes, idxesToExclude = Set(idx))
+    val (_, _, trainingData) = generateClassifier(nestedTraining = nestedTraining, nestedTest = nestedTest, numOfAttributes,
+      idxesToExclude = Set(idx), hiddenLayerSize = Train1Pass.hiddenLayerSize)
     val f1s = trainingData.f1s
     logger.info(s"Excluded metric: $metric. F1s: $f1s")
     metric -> f1s

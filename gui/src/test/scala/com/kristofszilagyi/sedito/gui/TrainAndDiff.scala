@@ -116,12 +116,13 @@ object TrainAndDiff {
 }
 object Train1Pass {
   private val logger = getLogger
+  val hiddenLayerSize = 50
 
   private def crossValidate(samples: List[Pass1PathAndSamples]) = {
     (1 to 3) map { _ =>
       val randomSamples = Random.shuffle(samples)
       val (training, test) = randomSamples.splitAt((samples.size * trainingRatio).toInt)
-      Future { train(training, test, logStats = true) }
+      Future { train(training, test, logStats = true, hiddenLayerSize) }
     }
   }
 
@@ -132,7 +133,7 @@ object Train1Pass {
     val crossValidates = crossValidate(samples)
     val random = new Random(124) //make it repeatable but avoid weird dependence on file structure
     val (training, test) = random.shuffle(samples).splitAt((samples.size * trainingRatio).toInt)
-    val (classifier, scaler) = train(training, test, logStats = true)
+    val (classifier, scaler) = train(training, test, logStats = true, hiddenLayerSize)
     write.xstream(classifier, Main.firstPhaseClassifierPath)
     write.xstream(scaler, Main.firstPhaseScalerPath)
     val duration = Duration.between(start, Instant.now())
