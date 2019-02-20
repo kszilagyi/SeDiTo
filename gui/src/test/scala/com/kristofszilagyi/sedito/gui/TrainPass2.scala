@@ -8,8 +8,6 @@ import com.kristofszilagyi.sedito.gui.TrainAndDiff.readDataSetAndMeasureMetrics
 import org.log4s.getLogger
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 
-import scala.util.Random
-
 object TrainPass2 {
   private val logger = getLogger
 
@@ -67,7 +65,7 @@ object TrainPass2 {
 
 
     val firstPassResultsWithPath = calcFirstPass(samples)
-    logger.info(s"whole size: ${firstPassResultsWithPath.size}")
+    logger.info(s"First pass done")
 
     val groupsByPath = firstPassResultsWithPath.map { case PathAndPass1Results(path, pass1Resutls) =>
       PathAndLineGroups(path, groupOneFile(pass1Resutls))
@@ -81,8 +79,8 @@ object TrainPass2 {
       PathAndPass2Samples(path, Pass2Samples(metrics))
     }
 
-    val random = new Random(124) //make it repeatable but avoid weird dependence on file structure
-    val (trainingSamples, testSamples) = random.shuffle(samplesByPath).splitAt((samples.size * trainingRatio).toInt)
+    val (trainingSamples, testSamples) = Train1Pass.shuffle(samplesByPath).splitAt((samples.size * trainingRatio).toInt)
+    logger.info("Measuring pass 2 metrics is done")
     val _ = Train.train(trainingSamples, testSamples, logStats = true, hiddenLayerSize = 10)
   }
 }

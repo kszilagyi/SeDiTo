@@ -126,13 +126,17 @@ object Train1Pass {
     }
   }
 
+  def shuffle(samples: List[PathAndSamples]) = {
+    val random = new Random(124) //make it repeatable but avoid weird dependence on file structure
+    random.shuffle(samples)
+  }
+
   def main(args: Array[String]) {
     logger.info("Start")
     val start = Instant.now()
     val samples = readDataSetAndMeasureMetrics()
     val crossValidates = crossValidate(samples)
-    val random = new Random(124) //make it repeatable but avoid weird dependence on file structure
-    val (training, test) = random.shuffle(samples).splitAt((samples.size * trainingRatio).toInt)
+    val (training, test) = shuffle(samples).splitAt((samples.size * trainingRatio).toInt)
     val (classifier, scaler) = train(training, test, logStats = true, hiddenLayerSize)
     write.xstream(classifier, Main.firstPhaseClassifierPath)
     write.xstream(scaler, Main.firstPhaseScalerPath)
