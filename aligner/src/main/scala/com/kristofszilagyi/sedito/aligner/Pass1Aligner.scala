@@ -43,6 +43,7 @@ final class Pass1Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scal
     toResult(metrics, p)
   }
 
+  @SuppressWarnings(Array(Warts.DefaultArguments))
   def findPotentialMatches(metrics: Traversable[Pass1Metrics], minP: Double = 0.5): Traversable[Pass1Result] = {
     val probabilitiesWithMetrics = metrics.flatMap { m =>
       val result = measureProbability(m)
