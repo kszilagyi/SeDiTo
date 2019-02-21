@@ -69,7 +69,7 @@ final class Pass1MetricCalculatorTest extends FreeSpecLike{
                    |almaalma1
                  """.stripMargin
 
-    findClosestMatches(left, right) shouldBe Vector((0,0,true), (0,1,false), (1,0,false), (1,1,true), (1,2,false), (2,1,false), (2,2,true))
+    findClosestMatches(left, right) shouldBe Vector((0,0,true), (0,1,false), (1,0,false), (1,1,true), (1,2,false), (2,0,false), (2,1,false), (2,2,true))
   }
 
 
