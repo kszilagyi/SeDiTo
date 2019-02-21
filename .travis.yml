@@ -1,3 +1,3 @@
 language: scala
 
-script: sbt testOnly * -- -l com.kristofszilagyi.sedito.gui.NoCI
+script: sbt "testOnly * -- -l com.kristofszilagyi.sedito.gui.NoCI"
