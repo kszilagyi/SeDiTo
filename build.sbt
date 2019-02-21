@@ -7,7 +7,7 @@ name := "SeDiTo"
 
 version := "0.1"
 
-scalaVersion := "2.12.7"
+scalaVersion := "2.12.8"
 
 
 //Skeleton copied and modified from: https://github.com/ochrons/scalajs-spa-tutorial

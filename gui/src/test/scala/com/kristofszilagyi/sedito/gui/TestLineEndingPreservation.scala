@@ -8,11 +8,13 @@ import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.common.{FullText, UnambiguousWordAlignment}
 import javafx.application.{Application, Platform}
 import javafx.stage.Stage
-import org.scalatest.FreeSpecLike
+import org.scalatest.{FreeSpecLike, Tag}
 import org.scalatest.Matchers._
 
 import scala.collection.JavaConverters._
 
+//travis can't create gui stuff
+object NoCI extends Tag("com.kristofszilagyi.sedito.gui.NoCI")
 
 final class TestApp extends Application() {
   override def start(stage: Stage): Unit = {
@@ -36,21 +38,21 @@ final class TestApp extends Application() {
 
 final class TestLineEndingPreservationLinux extends FreeSpecLike {
 
-  "Linux line endings should preserve" in {
+  "Linux line endings should preserve" taggedAs(NoCI) in {
     Application.launch(classOf[TestApp], "\n")
   }
 }
 
 final class TestLineEndingPreservationWindows extends FreeSpecLike {
 
-  "Windows line endings should preserve" in {
+  "Windows line endings should preserve" taggedAs(NoCI)  in {
     Application.launch(classOf[TestApp], "\r\n")
   }
 }
 
 final class TestLineEndingPreservationMac extends FreeSpecLike {
 
-  "Mac line endings should preserve" in {
+  "Mac line endings should preserve" taggedAs(NoCI)  in {
     Application.launch(classOf[TestApp], "\r")
   }
 }
