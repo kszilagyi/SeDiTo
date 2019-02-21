@@ -22,29 +22,33 @@ object TrainPass2 {
     }
   }
 
-  private final case class LineMetrics(sum: Double, avg: Double)
+  final case class LineMetrics(sum: Double, avg: Double)
 
   /**
     * @param sameLine includes main as well
     */
-  private final case class LineGroup(main: Pass1ResultWithTruth, sameLine: Traversable[Pass1Result])
-  private final case class PathAndLineGroups(path: Path, group: Traversable[LineGroup])
-  private final case class Pass1ResultWithTruth(pass1Result: Pass1Result, shouldBeMatching: Boolean)
-  private final case class PathAndPass1Results(path: Path, pass1Results: Traversable[Pass1ResultWithTruth])
-  private final case class PathAndPass2Metrics(path: Path, pass2Metrics: Traversable[Pass2Metrics])
-  private final case class Pass2Metrics(main: Pass1Result, line: LineMetrics) extends Metrics {
+  final case class LineGroup(main: Pass1ResultWithTruth, sameLine: Set[Pass1Result])
+  final case class PathAndLineGroups(path: Path, group: Traversable[LineGroup])
+  final case class Pass1ResultWithTruth(pass1Result: Pass1Result, shouldBeMatching: Boolean)
+  final case class PathAndPass1Results(path: Path, pass1Results: Traversable[Pass1ResultWithTruth])
+  final case class PathAndPass2Metrics(path: Path, pass2Metrics: Traversable[Pass2Metrics])
+  final case class Pass2Metrics(main: Pass1Result, line: LineMetrics) extends Metrics {
     def doubles: Array[Double] = {
       (main.probability :: line.sum :: line.avg :: Nil).toArray
     }
   }
-  private final case class Pass2MetricsWithResults(metrics: Pass2Metrics, matching: Boolean) extends MetricsWithResults
-  private final case class Pass2Samples(metricsWithResults: Traversable[Pass2MetricsWithResults]) extends Samples
-  private final case class PathAndPass2Samples(path: Path, samples: Pass2Samples) extends PathAndSamples
+  final case class Pass2MetricsWithResults(metrics: Pass2Metrics, matching: Boolean) extends MetricsWithResults
+  final case class Pass2Samples(metricsWithResults: Traversable[Pass2MetricsWithResults]) extends Samples
+  final case class PathAndPass2Samples(path: Path, samples: Pass2Samples) extends PathAndSamples
 
-  private def calcLineMetrics(line: Traversable[Pass1Result]) = {
+  /**
+    * @param line This is only set for performance reasons: we need it as a set here and it was already a set so we don't
+    *             need to call .toSet here (this might not make a difference tbh...)
+    */
+  private def calcLineMetrics(line: Set[Pass1Result]) = {
     assert(line.nonEmpty)
-    val ps = line.map(_.probability)
-    val wordCount = line.map(_.left.absoluteFrom).toSet.size + line.map(_.right.absoluteFrom).toSet.size
+    val ps = line.toSeq.map(_.probability)
+    val wordCount = (line.map(_.left).size + line.map(_.right).size) / 2.0
     val sum = ps.sum
     val avg = sum / wordCount  //this is wordCount and not ps.size because the number of ps.size = wordCount^2
     LineMetrics(sum, avg)
@@ -55,10 +59,25 @@ object TrainPass2 {
     val byLeft = pass1Results.groupBy(_.pass1Result.left.lineIdx)
     val byRight  = pass1Results.groupBy(_.pass1Result.right.lineIdx)
     pass1Results.map { mainResult =>
-      val sameLine = byLeft.getOrElse(mainResult.pass1Result.left.lineIdx, Traversable.empty) ++
-                       byRight.getOrElse(mainResult.pass1Result.right.lineIdx, Traversable.empty)
+      val sameLine = byLeft.getOrElse(mainResult.pass1Result.left.lineIdx, Traversable.empty).toSet.intersect(
+                       byRight.getOrElse(mainResult.pass1Result.right.lineIdx, Traversable.empty).toSet)
       LineGroup(mainResult, sameLine.map(_.pass1Result))
     }
+  }
+
+  def calcPass2Metrics(firstPassResultsWithPath: List[TrainPass2.PathAndPass1Results]): List[PathAndPass2Samples] = {
+    val groupsByPath = firstPassResultsWithPath.map { case PathAndPass1Results(path, pass1Resutls) =>
+      PathAndLineGroups(path, groupOneFile(pass1Resutls))
+    }
+
+    val samplesByPath = groupsByPath.map{ case PathAndLineGroups(path, groups) =>
+      val metrics = groups.map { case LineGroup(main, others) =>
+        val lineMetrics = calcLineMetrics(others)
+        Pass2MetricsWithResults(Pass2Metrics(main.pass1Result, lineMetrics), main.shouldBeMatching)
+      }
+      PathAndPass2Samples(path, Pass2Samples(metrics))
+    }
+    samplesByPath
   }
 
   def main(args: Array[String]) {
@@ -69,18 +88,7 @@ object TrainPass2 {
 
     val firstPassResultsWithPath = calcFirstPass(samples)
     logger.info(s"First pass done")
-
-    val groupsByPath = firstPassResultsWithPath.map { case PathAndPass1Results(path, pass1Resutls) =>
-      PathAndLineGroups(path, groupOneFile(pass1Resutls))
-    }
-
-    val samplesByPath = groupsByPath.map{ case PathAndLineGroups(path, groups) =>
-      val metrics = groups.map { case LineGroup(main, others) =>
-        val lineMetrics = calcLineMetrics(others.toSeq)
-        Pass2MetricsWithResults(Pass2Metrics(main.pass1Result, lineMetrics), main.shouldBeMatching)
-      }
-      PathAndPass2Samples(path, Pass2Samples(metrics))
-    }
+    val samplesByPath = calcPass2Metrics(firstPassResultsWithPath)
 
     val (trainingSamples, testSamples) = Train1Pass.shuffle(samplesByPath).splitAt((samples.size * trainingRatio).toInt)
     logger.info("Measuring pass 2 metrics is done")
