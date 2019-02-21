@@ -6,7 +6,6 @@ import com.kristofszilagyi.sedito.aligner._
 import com.kristofszilagyi.sedito.gui.Train.trainingRatio
 import com.kristofszilagyi.sedito.gui.TrainAndDiff.readDataSetAndMeasureMetrics
 import org.log4s.getLogger
-import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 
 object TrainPass2 {
   private val logger = getLogger
@@ -24,7 +23,11 @@ object TrainPass2 {
   }
 
   private final case class LineMetrics(sum: Double, avg: Double)
-  private final case class LineGroup(main: Pass1ResultWithTruth, others: Traversable[Pass1Result])
+
+  /**
+    * @param sameLine includes main as well
+    */
+  private final case class LineGroup(main: Pass1ResultWithTruth, sameLine: Traversable[Pass1Result])
   private final case class PathAndLineGroups(path: Path, group: Traversable[LineGroup])
   private final case class Pass1ResultWithTruth(pass1Result: Pass1Result, shouldBeMatching: Boolean)
   private final case class PathAndPass1Results(path: Path, pass1Results: Traversable[Pass1ResultWithTruth])
@@ -41,20 +44,20 @@ object TrainPass2 {
   private def calcLineMetrics(line: Traversable[Pass1Result]) = {
     assert(line.nonEmpty)
     val ps = line.map(_.probability)
-    val wordCount = line.map(_.left).toSet.size + line.map(_.right).toSet.size
+    val wordCount = line.map(_.left.absoluteFrom).toSet.size + line.map(_.right.absoluteFrom).toSet.size
     val sum = ps.sum
     val avg = sum / wordCount  //this is wordCount and not ps.size because the number of ps.size = wordCount^2
     LineMetrics(sum, avg)
   }
 
-  private def sameLineButNotTheSame(main: Pass1Result, other: Pass1Result): Boolean = {
-    main != other && (main.left ==== other.left && main.right ==== other.right)
-  }
-
   private def groupOneFile(pass1Results: scala.Traversable[Pass1ResultWithTruth]) = {
-    pass1Results.map { singleResult =>
-      val related = pass1Results.filter(other => sameLineButNotTheSame(singleResult.pass1Result, other.pass1Result))
-      LineGroup(singleResult, related.map(_.pass1Result))
+    logger.info(s"Grouping: ${pass1Results.size}")
+    val byLeft = pass1Results.groupBy(_.pass1Result.left.lineIdx)
+    val byRight  = pass1Results.groupBy(_.pass1Result.right.lineIdx)
+    pass1Results.map { mainResult =>
+      val sameLine = byLeft.getOrElse(mainResult.pass1Result.left.lineIdx, Traversable.empty) ++
+                       byRight.getOrElse(mainResult.pass1Result.right.lineIdx, Traversable.empty)
+      LineGroup(mainResult, sameLine.map(_.pass1Result))
     }
   }
 
@@ -73,7 +76,7 @@ object TrainPass2 {
 
     val samplesByPath = groupsByPath.map{ case PathAndLineGroups(path, groups) =>
       val metrics = groups.map { case LineGroup(main, others) =>
-        val lineMetrics = calcLineMetrics(others)
+        val lineMetrics = calcLineMetrics(others.toSeq)
         Pass2MetricsWithResults(Pass2Metrics(main.pass1Result, lineMetrics), main.shouldBeMatching)
       }
       PathAndPass2Samples(path, Pass2Samples(metrics))
