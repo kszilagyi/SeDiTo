@@ -54,19 +54,19 @@ final class TestPass2 extends FreeSpecLike {
       Pass1ResultWithTruth(
         Pass1Result(selection(1, 0), selection(0, 0), probability = 0),
         shouldBeMatching = false
-      ) -> LineMetrics(sum = 0, avg = 0),
+      ) -> LineMetrics(sum = 0.5, avg = 1.0/3.0),
       Pass1ResultWithTruth(
         Pass1Result(selection(1, 0), selection(0, 1), probability = 0.5),
         shouldBeMatching = false
-      ) -> LineMetrics(sum = 0.5, avg = 0.5),
+      ) -> LineMetrics(sum = 0.5, avg = 1.0/3.0),
       Pass1ResultWithTruth(
         Pass1Result(selection(0, 0), selection(1, 0), probability = 0),
         shouldBeMatching = false
-      ) -> LineMetrics(sum = 0, avg = 0),
+      ) -> LineMetrics(sum = 0.5, avg = 1.0/3.0),
       Pass1ResultWithTruth(
         Pass1Result(selection(0, 1), selection(1, 0), probability = 0.5),
         shouldBeMatching = false
-      ) -> LineMetrics(sum = 0.5, avg = 0.5)
+      ) -> LineMetrics(sum = 0.5, avg = 1.0/3.0)
     )
 
     val (pass1Results, _) = combinedResults.unzip
