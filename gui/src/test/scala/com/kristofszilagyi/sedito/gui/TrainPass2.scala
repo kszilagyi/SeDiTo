@@ -48,7 +48,7 @@ object TrainPass2 {
   private def calcLineMetrics(line: Set[Pass1Result]) = {
     assert(line.nonEmpty)
     val ps = line.toSeq.map(_.probability)
-    val wordCount = (line.map(_.left).size + line.map(_.right).size) / 2.0
+    val wordCount = (line.map(_.left).size + line.map(_.right).size) / 2.0 //this make sense because they are sets
     val sum = ps.sum
     val avg = sum / wordCount  //this is wordCount and not ps.size because the number of ps.size = wordCount^2
     LineMetrics(sum, avg)
@@ -71,8 +71,8 @@ object TrainPass2 {
     }
 
     val samplesByPath = groupsByPath.map{ case PathAndLineGroups(path, groups) =>
-      val metrics = groups.map { case LineGroup(main, others) =>
-        val lineMetrics = calcLineMetrics(others)
+      val metrics = groups.map { case LineGroup(main, sameLine) =>
+        val lineMetrics = calcLineMetrics(sameLine)
         Pass2MetricsWithResults(Pass2Metrics(main.pass1Result, lineMetrics), main.shouldBeMatching)
       }
       PathAndPass2Samples(path, Pass2Samples(metrics))
