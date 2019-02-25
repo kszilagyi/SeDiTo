@@ -33,7 +33,7 @@ object Pass1MetricCalculator {
 
   private val ldCalculator = new Levenshtein()
 
-  object PairwiseMetrics {
+  object PairwiseFeatures {
     def columnNames: List[String] = {
       List("ldSim", "ldSimEdgeAdjusted", "normalizedLd", "normalizedLdLenSim", "ldLenSim")
     }
@@ -41,7 +41,7 @@ object Pass1MetricCalculator {
   /**
     * @param normalizedLdLenSim 1 if they are the same.
     */
-  final case class PairwiseMetrics(ldSim: Double, ldSimEdgeAdjusted: Double, normalizedLd: Double, normalizedLdLenSim: Double, ldLenSim: Double) {
+  final case class PairwiseFeatures(ldSim: Double, ldSimEdgeAdjusted: Double, normalizedLd: Double, normalizedLdLenSim: Double, ldLenSim: Double) {
     assert(ldSim >= 0)
     assert(ldSimEdgeAdjusted >= 0)
     assert(normalizedLd >= 0 && normalizedLd <= 1)
@@ -59,13 +59,13 @@ object Pass1MetricCalculator {
     }
   }
 
-  object ContextMetrics {
+  object ContextFeatures {
     def columnNames: List[String] = {
-      Pass1Metrics.withChildren("before", PairwiseMetrics.columnNames) ++ Pass1Metrics.withChildren("after", PairwiseMetrics.columnNames)
+      Pass1Features.withChildren("before", PairwiseFeatures.columnNames) ++ Pass1Features.withChildren("after", PairwiseFeatures.columnNames)
     }
   }
 
-  final case class ContextMetrics(before: PairwiseMetrics, after: PairwiseMetrics) {
+  final case class ContextFeatures(before: PairwiseFeatures, after: PairwiseFeatures) {
     def doubles(array: ArrayHolder): Unit = {
       before.toDoubles(array)
       after.toDoubles(array)
@@ -74,13 +74,13 @@ object Pass1MetricCalculator {
     override def toString: String = s"(b: $before,a: $after)"
   }
 
-  final case class Phase1Metrics(leftWord: Selection, rightWord: Selection,
-                                 leftContainsRight: Boolean, rightContainsLeft: Boolean,
-                                 word: PairwiseMetrics, wordCaseInsensitive: PairwiseMetrics, line: PairwiseMetrics,
-                                 contextFull: ContextMetrics, contextHalf: ContextMetrics,
-                                 context4th: ContextMetrics, context8th: ContextMetrics, context16th: ContextMetrics,
-                                 context32th: ContextMetrics,
-                                 leftLineIdx: LineIdx, rightLineIdx: LineIdx)
+  final case class Phase1Features(leftWord: Selection, rightWord: Selection,
+                                  leftContainsRight: Boolean, rightContainsLeft: Boolean,
+                                  word: PairwiseFeatures, wordCaseInsensitive: PairwiseFeatures, line: PairwiseFeatures,
+                                  contextFull: ContextFeatures, contextHalf: ContextFeatures,
+                                  context4th: ContextFeatures, context8th: ContextFeatures, context16th: ContextFeatures,
+                                  context32th: ContextFeatures,
+                                  leftLineIdx: LineIdx, rightLineIdx: LineIdx)
 
 
   object ContextIsClosest {
@@ -107,7 +107,7 @@ object Pass1MetricCalculator {
       i += 1
     }
   }
-  object Pass1Metrics {
+  object Pass1Features {
     def withChildren(parent: String, children: List[String]): List[String] = {
       children.map { c =>
         s"$parent.$c"
@@ -115,16 +115,16 @@ object Pass1MetricCalculator {
     }
     val columnNames: List[String] = {
       List(
-        withChildren("word", PairwiseMetrics.columnNames),
-        withChildren("wordCaseInsensitive", PairwiseMetrics.columnNames),
+        withChildren("word", PairwiseFeatures.columnNames),
+        withChildren("wordCaseInsensitive", PairwiseFeatures.columnNames),
         List("leftContainsRight", "rightContainsLeft"),
-        withChildren("line", PairwiseMetrics.columnNames),
-        withChildren("contextFull", ContextMetrics.columnNames),
-        withChildren("contextHalf", ContextMetrics.columnNames),
-        withChildren("context4th", ContextMetrics.columnNames),
-        withChildren("context8th", ContextMetrics.columnNames),
-        withChildren("context16th", ContextMetrics.columnNames),
-        withChildren("context32th", ContextMetrics.columnNames),
+        withChildren("line", PairwiseFeatures.columnNames),
+        withChildren("contextFull", ContextFeatures.columnNames),
+        withChildren("contextHalf", ContextFeatures.columnNames),
+        withChildren("context4th", ContextFeatures.columnNames),
+        withChildren("context8th", ContextFeatures.columnNames),
+        withChildren("context16th", ContextFeatures.columnNames),
+        withChildren("context32th", ContextFeatures.columnNames),
         withChildren("closestFull", ContextIsClosest.columnNames),
         withChildren("closestHalf", ContextIsClosest.columnNames),
         withChildren("closest4th", ContextIsClosest.columnNames),
@@ -136,36 +136,36 @@ object Pass1MetricCalculator {
     }
     val numOfColumns: Int = columnNames.size
   }
-  final case class Pass1Metrics(phase1Metrics: Phase1Metrics,
-                                lineIsClosestMatchInText: Boolean,
-                                closestFull: ContextIsClosest,
-                                closestHalf: ContextIsClosest,
-                                closest4th: ContextIsClosest,
-                                closest8th: ContextIsClosest,
-                                closest16th: ContextIsClosest,
-                                closest32th: ContextIsClosest) extends Metrics {
+  final case class Pass1Features(phase1Features: Phase1Features,
+                                 lineIsClosestMatchInText: Boolean,
+                                 closestFull: ContextIsClosest,
+                                 closestHalf: ContextIsClosest,
+                                 closest4th: ContextIsClosest,
+                                 closest8th: ContextIsClosest,
+                                 closest16th: ContextIsClosest,
+                                 closest32th: ContextIsClosest) extends Features {
 
-    private def word: PairwiseMetrics = phase1Metrics.word
-    private def wordCaseInsensitive: PairwiseMetrics = phase1Metrics.wordCaseInsensitive
-    private def leftContainsRight: Boolean = phase1Metrics.leftContainsRight
-    private def rightContainsLeft: Boolean = phase1Metrics.leftContainsRight
-    private def line: PairwiseMetrics = phase1Metrics.line
-    private def contextFull: ContextMetrics = phase1Metrics.contextFull
-    private def contextHalf: ContextMetrics = phase1Metrics.contextHalf
-    private def context4th: ContextMetrics = phase1Metrics.context4th
-    private def context8th: ContextMetrics = phase1Metrics.context8th
-    private def context16th: ContextMetrics = phase1Metrics.context16th
-    private def context32th: ContextMetrics = phase1Metrics.context32th
-    def leftWord: Selection = phase1Metrics.leftWord
-    def rightWord: Selection = phase1Metrics.rightWord
-    def leftLineIdx: LineIdx = phase1Metrics.leftLineIdx
-    def rightLineIdx: LineIdx = phase1Metrics.rightLineIdx
+    private def word: PairwiseFeatures = phase1Features.word
+    private def wordCaseInsensitive: PairwiseFeatures = phase1Features.wordCaseInsensitive
+    private def leftContainsRight: Boolean = phase1Features.leftContainsRight
+    private def rightContainsLeft: Boolean = phase1Features.leftContainsRight
+    private def line: PairwiseFeatures = phase1Features.line
+    private def contextFull: ContextFeatures = phase1Features.contextFull
+    private def contextHalf: ContextFeatures = phase1Features.contextHalf
+    private def context4th: ContextFeatures = phase1Features.context4th
+    private def context8th: ContextFeatures = phase1Features.context8th
+    private def context16th: ContextFeatures = phase1Features.context16th
+    private def context32th: ContextFeatures = phase1Features.context32th
+    def leftWord: Selection = phase1Features.leftWord
+    def rightWord: Selection = phase1Features.rightWord
+    def leftLineIdx: LineIdx = phase1Features.leftLineIdx
+    def rightLineIdx: LineIdx = phase1Features.rightLineIdx
 
     @SuppressWarnings(Array(Warts.NonUnitStatement))
     def doubles: Array[Double]= {
       //I think System.arraycopy works equally well, just got sidetracked by other issues.
       //currently this is fast enough arraycopy might be faster but can't tell now
-      val result = Array.ofDim[Double](Pass1Metrics.numOfColumns)
+      val result = Array.ofDim[Double](Pass1Features.numOfColumns)
       val holder = new ArrayHolder(result)
       word.toDoubles(holder)
       wordCaseInsensitive.toDoubles(holder)
@@ -195,7 +195,7 @@ object Pass1MetricCalculator {
     }
   }
 
-  def calcMetrics(left: String, right: String, supposedMaxLength: Int): PairwiseMetrics = {
+  def calcFeatures(left: String, right: String, supposedMaxLength: Int): PairwiseFeatures = {
     //todo edit this so we can set maximum
     //todo http://www.mit.edu/~andoni/papers/compEdit.pdf
     //try n-grams
@@ -216,25 +216,25 @@ object Pass1MetricCalculator {
     val ldSim = maxLen - ld // in theory this is better as it has more info than ld
     val maxPossibleLength = math.max(supposedMaxLength, maxLen)
     val ldSimEdgeAdjusted = maxPossibleLength - ld // the logic being that where there was no string they are the same
-    PairwiseMetrics(ldSim, ldSimEdgeAdjusted, normalizedLd, normalizedSim, ldLenSim)
+    PairwiseFeatures(ldSim, ldSimEdgeAdjusted, normalizedLd, normalizedSim, ldLenSim)
   }
 
-  private def calcContextMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
-    val beforeContextMetrics = calcMetrics(leftWord.beforeContext, rightWord.beforeContext, contextSize)
-    val afterContextMetrics = calcMetrics(leftWord.afterContext, rightWord.afterContext, contextSize)
-    ContextMetrics(beforeContextMetrics, afterContextMetrics)
+  private def calcContextFeatures(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
+    val beforeContextMetrics = calcFeatures(leftWord.beforeContext, rightWord.beforeContext, contextSize)
+    val afterContextMetrics = calcFeatures(leftWord.afterContext, rightWord.afterContext, contextSize)
+    ContextFeatures(beforeContextMetrics, afterContextMetrics)
   }
 
-  private def calcShortenedContextMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
-    calcContextMetrics(leftWord.shortedContext(contextSize), rightWord.shortedContext(contextSize), contextSize)
+  private def calcShortenedContextFeatures(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int) = {
+    calcContextFeatures(leftWord.shortedContext(contextSize), rightWord.shortedContext(contextSize), contextSize)
   }
 
   //concat all words
   //just arithmetic operation from the beginning to end, eithe substring or  CharBuffer.wrap(string).subSequence(from, to)
-  private def calcAllMetrics(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int, lineAlignmentCacher: LineAlignmentCacher) = {
+  private def calcAllFeatures(leftWord: WordWithContext, rightWord: WordWithContext, contextSize: Int, lineAlignmentCacher: LineAlignmentCacher) = {
     val leftWordString = leftWord.word.toText
     val rightWordString = rightWord.word.toText
-    val wordMetrics = calcMetrics(leftWordString, rightWordString, math.max(leftWordString.length, rightWordString.length))
+    val wordMetrics = calcFeatures(leftWordString, rightWordString, math.max(leftWordString.length, rightWordString.length))
 
     val lowerLeft = leftWordString.toLowerCase
     val lowerRight = rightWordString.toLowerCase
@@ -242,12 +242,12 @@ object Pass1MetricCalculator {
     val rightContainsLeft = lowerRight.contains(lowerLeft)
     val contextMetrics = if (wordMetrics.ldLenSim >= 0.99 || leftContainsRight || rightContainsLeft) {
       Some((
-        calcShortenedContextMetrics(leftWord, rightWord, contextSize),
-        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 2),
-        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 4),
-        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 8),
-        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 16),
-        calcShortenedContextMetrics(leftWord, rightWord, contextSize / 32)
+        calcShortenedContextFeatures(leftWord, rightWord, contextSize),
+        calcShortenedContextFeatures(leftWord, rightWord, contextSize / 2),
+        calcShortenedContextFeatures(leftWord, rightWord, contextSize / 4),
+        calcShortenedContextFeatures(leftWord, rightWord, contextSize / 8),
+        calcShortenedContextFeatures(leftWord, rightWord, contextSize / 16),
+        calcShortenedContextFeatures(leftWord, rightWord, contextSize / 32)
       ))
     } else {
       None
@@ -255,10 +255,10 @@ object Pass1MetricCalculator {
     contextMetrics.map { case (one, half, forth, eight, sixteenth, thirtyTwo) =>
       val leftSelection = leftWord.word
       val rightSelection = rightWord.word
-      val lineMetrics = lineAlignmentCacher.calcLineMetrics(leftSelection.lineIdx, rightSelection.lineIdx)
-      val wordCaseInsensitiveMetrics = calcMetrics(lowerLeft, lowerRight, math.max(leftWordString.length, rightWordString.length))
+      val lineMetrics = lineAlignmentCacher.calcLineFeatures(leftSelection.lineIdx, rightSelection.lineIdx)
+      val wordCaseInsensitiveMetrics = calcFeatures(lowerLeft, lowerRight, math.max(leftWordString.length, rightWordString.length))
 
-      Phase1Metrics(leftSelection, rightSelection, word = wordMetrics, wordCaseInsensitive = wordCaseInsensitiveMetrics,
+      Phase1Features(leftSelection, rightSelection, word = wordMetrics, wordCaseInsensitive = wordCaseInsensitiveMetrics,
         line = lineMetrics, leftContainsRight = leftContainsRight, rightContainsLeft = rightContainsLeft,
         contextFull = one, contextHalf = half, context4th = forth, context8th = eight, context16th = sixteenth,
         context32th = thirtyTwo, leftLineIdx = leftSelection.lineIdx,
@@ -277,7 +277,7 @@ object Pass1MetricCalculator {
     }
   }
 
-  private def findClosestLines(potentials: Map[_, Traversable[Phase1Metrics]]) = {
+  private def findClosestLines(potentials: Map[_, Traversable[Phase1Features]]) = {
     potentials flatMap { case (_, oneGroup) =>
       //we know this will never throw because it doesn't make sense to have empty collection on the right side of the map
       @SuppressWarnings(Array(Warts.TraversableOps))
@@ -290,7 +290,7 @@ object Pass1MetricCalculator {
     }
   }
 
-  private def calcClosestLineMatches(phase1Metrics: Traversable[Phase1Metrics]) = {
+  private def calcClosestLineMatches(phase1Metrics: Traversable[Phase1Features]) = {
     val leftWordPotentials = phase1Metrics.groupBy(_.leftWord)
     val rightWordPotentials = phase1Metrics.groupBy(_.rightWord)
     val closestFromLeft = findClosestLines(leftWordPotentials)
@@ -310,10 +310,10 @@ object Pass1MetricCalculator {
   }
 
   private object ClosestContext {
-    final case class ClosestContextMatches(beforeLeft: Traversable[Phase1Metrics], beforeRight: Traversable[Phase1Metrics],
-                                           afterLeft: Traversable[Phase1Metrics], afterRight: Traversable[Phase1Metrics]) {
+    final case class ClosestContextMatches(beforeLeft: Traversable[Phase1Features], beforeRight: Traversable[Phase1Features],
+                                           afterLeft: Traversable[Phase1Features], afterRight: Traversable[Phase1Features]) {
       //for performance, hashcode is much faster
-      private def compress(metrics: Phase1Metrics) = {
+      private def compress(metrics: Phase1Features) = {
         (metrics.leftWord.absoluteFrom, metrics.rightWord.absoluteFrom)
       }
 
@@ -322,13 +322,13 @@ object Pass1MetricCalculator {
       private val afterLeftLookup = afterLeft.map(compress).toSet
       private val afterRightLookup = afterRight.map(compress).toSet
 
-      def in(phase1Metrics: Phase1Metrics): ContextIsClosest = {
+      def in(phase1Metrics: Phase1Features): ContextIsClosest = {
         val metrics = compress(phase1Metrics)
         ContextIsClosest(beforeFromLeft = beforeLeftLookup.contains(metrics), beforeFromRight = beforeRightLookup.contains(metrics),
         afterFromLeft = afterLeftLookup.contains(metrics), afterFromRight = afterRightLookup.contains(metrics))
       }
     }
-    private def findClosestContext(potentials: Map[_, Traversable[Phase1Metrics]], contextSelector: Phase1Metrics => Double) = {
+    private def findClosestContext(potentials: Map[_, Traversable[Phase1Features]], contextSelector: Phase1Features => Double) = {
       potentials flatMap { case (_, oneGroup) =>
         //we know this will never throw because it doesn't make sense to have empty collection on the right side of the map
         @SuppressWarnings(Array(Warts.TraversableOps))
@@ -341,14 +341,14 @@ object Pass1MetricCalculator {
       }
     }
 
-    private def findClosestForSide(leftPotentials: Map[_, Traversable[Phase1Metrics]], rightPotentials: Map[_, Traversable[Phase1Metrics]],
-                                   contextSelector: Phase1Metrics => PairwiseMetrics) = {
+    private def findClosestForSide(leftPotentials: Map[_, Traversable[Phase1Features]], rightPotentials: Map[_, Traversable[Phase1Features]],
+                                   contextSelector: Phase1Features => PairwiseFeatures) = {
       val closestFromLeft = findClosestContext(leftPotentials, p => contextSelector(p).ldSimEdgeAdjusted)
       val closestFromRight = findClosestContext(rightPotentials, p => contextSelector(p).ldSimEdgeAdjusted)
       (closestFromLeft, closestFromRight)
     }
 
-    def calcClosestContextMatches(phase1Metrics: Traversable[Phase1Metrics], contextSelector: Phase1Metrics => ContextMetrics): ClosestContextMatches = {
+    def calcClosestContextMatches(phase1Metrics: Traversable[Phase1Features], contextSelector: Phase1Features => ContextFeatures): ClosestContextMatches = {
       //So I found it too hard to do something I have done for line (resolving conflicts)
       //so I realised I could just not do that and do a feature based on both sides. It's simpler and potentially more info (or less, not sure)
       val leftWordPotentials = phase1Metrics.groupBy(_.leftWord)
@@ -382,7 +382,7 @@ object Pass1MetricCalculator {
     }
   }
 
-  def calcAlignerMetrics(left: FullText, right: FullText): Traversable[Pass1Metrics] = {
+  def calcAlignerFeatures(left: FullText, right: FullText): Traversable[Pass1Features] = {
     val leftWords = Wordizer.toWordIndices(left.s)
     val rightWords = Wordizer.toWordIndices(right.s)
 
@@ -422,11 +422,11 @@ object Pass1MetricCalculator {
             matches.flatMap { candidate =>
               val standardRight = standardRightContextsByWord.getOrElse(candidate.word.absoluteFrom, Traversable.empty)
               assert(standardRight.size ==== 1, s"${standardRight.size}")
-              calcAllMetrics(standardLeft, standardRight.head, contextSize = standardContextSize, lineAlignmentCacher)
+              calcAllFeatures(standardLeft, standardRight.head, contextSize = standardContextSize, lineAlignmentCacher)
             }
           case AllTheRest =>
             standardRightContexts.flatMap { standardRight =>
-              calcAllMetrics(standardLeft, standardRight, contextSize = standardContextSize, lineAlignmentCacher)
+              calcAllFeatures(standardLeft, standardRight, contextSize = standardContextSize, lineAlignmentCacher)
             }
         }
       }
@@ -441,7 +441,7 @@ object Pass1MetricCalculator {
     val closestContext32th = calcClosestContextMatches(phase1Metrics, _.context32th)
     phase1Metrics.map{m =>
       val closest = closestLineMatches.contains(m)
-      Pass1Metrics(m, lineIsClosestMatchInText = closest, closestFull = closestContextFull.in(m), closestHalf = closestContextHalf.in(m),
+      Pass1Features(m, lineIsClosestMatchInText = closest, closestFull = closestContextFull.in(m), closestHalf = closestContextHalf.in(m),
         closest4th = closestContext4th.in(m), closest8th = closestContext8th.in(m), closest16th = closestContext16th.in(m),
         closest32th = closestContext32th.in(m))
     }

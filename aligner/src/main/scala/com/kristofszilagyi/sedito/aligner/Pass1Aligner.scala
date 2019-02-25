@@ -1,7 +1,7 @@
 package com.kristofszilagyi.sedito.aligner
 
 import com.kristofszilagyi.sedito.aligner.Pass1Aligner.{resolveWithMostProbable, _}
-import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Metrics
+import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Features
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common._
 import org.log4s.getLogger
@@ -21,7 +21,7 @@ object Pass1Aligner {
     mostProbables
   }
 
-  private def toResult(metrics: Metrics, p: Double) = {
+  private def toResult(metrics: Features, p: Double) = {
     Pass1Result(metrics.leftWord, metrics.rightWord, p)
   }
 
@@ -29,12 +29,12 @@ object Pass1Aligner {
 
 final class Pass1Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
   def align(left: FullText, right: FullText): UnambiguousWordAlignment = {
-    val metrics = Pass1MetricCalculator.calcAlignerMetrics(left, right)
+    val metrics = Pass1MetricCalculator.calcAlignerFeatures(left, right)
     logger.info(s"Number of metrics: ${metrics.size}")
     alignFast(findPotentialMatches(metrics), log = true)
   }
 
-  def measureProbability(metrics: Metrics): Pass1Result = {
+  def measureProbability(metrics: Features): Pass1Result = {
     val x = metrics.doubles
     val probs = new Array[Double](1)
     val scaledX = scaler.transform(x)
@@ -44,7 +44,7 @@ final class Pass1Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scal
   }
 
   @SuppressWarnings(Array(Warts.DefaultArguments))
-  def findPotentialMatches(metrics: Traversable[Pass1Metrics], minP: Double = 0.5): Traversable[Pass1Result] = {
+  def findPotentialMatches(metrics: Traversable[Pass1Features], minP: Double = 0.5): Traversable[Pass1Result] = {
     val probabilitiesWithMetrics = metrics.flatMap { m =>
       val result = measureProbability(m)
       if(result.probability >= minP) { //todo this could be fine tuned for optimal results

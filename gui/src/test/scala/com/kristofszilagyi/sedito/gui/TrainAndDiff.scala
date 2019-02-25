@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.{Files, Path, Paths}
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Metrics
+import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Features
 import com.kristofszilagyi.sedito.aligner._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
@@ -25,8 +25,8 @@ import scala.concurrent.{Await, Future}
 import scala.util.{Failure, Random, Success}
 
 
-final case class Pass1MetricsWithResults(metrics: Pass1Metrics, matching: Boolean) extends MetricsWithResults
-final case class Pass1Samples(metricsWithResults: Traversable[Pass1MetricsWithResults]) extends Samples
+final case class Pass1FeaturesWithResults(features: Pass1Features, matching: Boolean) extends FeaturesWithResults
+final case class Pass1Samples(featuresWithResults: Traversable[Pass1FeaturesWithResults]) extends Samples
 
 final case class Pass1PathAndSamples(path: Path, samples: Pass1Samples) extends PathAndSamples
 
@@ -42,16 +42,16 @@ object TrainAndDiff {
     }
   }
 
-  private def readSingleDataSetAndMeasureMetrics(testDir: Path) = {
+  private def readSingleDataSetAndMeasureFeatures(testDir: Path) = {
     val testCase = readTestCase(testDir)
-    val metrics = Pass1MetricCalculator.calcAlignerMetrics(testCase.left, testCase.right)
+    val metrics = Pass1MetricCalculator.calcAlignerFeatures(testCase.left, testCase.right)
 
     val matches = testCase.wordAlignment.matches.toSeq
     val matchesSet = matches.toSet
     discard(assert(matches.size ==== matchesSet.size))
     val metricsWithResult = metrics.map { m =>
       val potentialMatch = WordMatch(m.leftWord, m.rightWord)()
-      Pass1MetricsWithResults(m, matching = matchesSet.contains(potentialMatch))
+      Pass1FeaturesWithResults(m, matching = matchesSet.contains(potentialMatch))
     }
 
     Pass1Samples(metricsWithResult)
@@ -64,13 +64,13 @@ object TrainAndDiff {
     }
   }
 
-  def readDataSetAndMeasureMetrics(): List[Pass1PathAndSamples] = {
+  def readDataSetAndMeasureFeatures(): List[Pass1PathAndSamples] = {
 
     val metrics = testDirs.par.map { testDir =>
-      val samples = readSingleDataSetAndMeasureMetrics(testDir)
-      if (samples.metricsWithResults.nonEmpty) {
-        val metricsNumInSamples = calcNumOfAttributes(List(samples.metricsWithResults))
-        val columnCount = Pass1Metrics.columnNames.size
+      val samples = readSingleDataSetAndMeasureFeatures(testDir)
+      if (samples.featuresWithResults.nonEmpty) {
+        val metricsNumInSamples = calcNumOfAttributes(List(samples.featuresWithResults))
+        val columnCount = Pass1Features.columnNames.size
         assert(metricsNumInSamples ==== columnCount, s"$metricsNumInSamples != $columnCount")
       }
       Pass1PathAndSamples(testDir, samples)
@@ -134,7 +134,7 @@ object Train1Pass {
   def main(args: Array[String]) {
     logger.info("Start")
     val start = Instant.now()
-    val samples = readDataSetAndMeasureMetrics()
+    val samples = readDataSetAndMeasureFeatures()
     val crossValidates = crossValidate(samples)
     val (training, test) = shuffle(samples).splitAt((samples.size * trainingRatio).toInt)
     val (classifier, scaler) = train(training, test, logStats = true, hiddenLayerSize)

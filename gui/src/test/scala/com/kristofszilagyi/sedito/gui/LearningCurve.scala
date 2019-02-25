@@ -6,7 +6,7 @@ import java.time.{Duration, Instant}
 import com.kristofszilagyi.sedito.aligner.Pass1Aligner
 import com.kristofszilagyi.sedito.common.TestCase
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
-import com.kristofszilagyi.sedito.gui.TrainAndDiff.{readDataSetAndMeasureMetrics, readTestCase, testDirs}
+import com.kristofszilagyi.sedito.gui.TrainAndDiff.{readDataSetAndMeasureFeatures, readTestCase, testDirs}
 import org.log4s.getLogger
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
 import smile.write
@@ -72,7 +72,7 @@ object LearningCurve{
 
     val testCases = testDirs.map(dir => dir -> readTestCase(dir))
 
-    val samples = readDataSetAndMeasureMetrics()
+    val samples = readDataSetAndMeasureFeatures()
     val random = new Random(125)
     val learningCurves = (1 to 3).map { run =>
       logger.info(s"Doing run : $run")

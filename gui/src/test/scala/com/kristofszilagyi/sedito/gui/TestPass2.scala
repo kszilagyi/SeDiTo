@@ -19,12 +19,12 @@ final class TestPass2 extends FreeSpecLike {
 
   private val lineTexts = lines.map(_.mkString(" "))
   private val fullText = lineTexts.mkString("\n")
-  private val pairwiseMetrics = PairwiseMetrics(1, 1, 1, 1, 1)
-  private val contextMetrics = ContextMetrics(pairwiseMetrics, pairwiseMetrics)
+  private val pairwiseFeatures = PairwiseFeatures(1, 1, 1, 1, 1)
+  private val contextFeatures = ContextFeatures(pairwiseFeatures, pairwiseFeatures)
   private val contextIsClosest = ContextIsClosest(beforeFromLeft = true, beforeFromRight = true, afterFromLeft = true, afterFromRight = true)
-  private val pass1Metrics = Pass1Metrics(
-    Phase1Metrics(selection(0, 0), selection(0, 0), leftContainsRight = true, rightContainsLeft = true, pairwiseMetrics, pairwiseMetrics, pairwiseMetrics,
-      contextMetrics, contextMetrics, contextMetrics, contextMetrics, contextMetrics, contextMetrics, LineIdx(1), LineIdx(2)),
+  private val pass1Features = Pass1Features(
+    Phase1Features(selection(0, 0), selection(0, 0), leftContainsRight = true, rightContainsLeft = true, pairwiseFeatures, pairwiseFeatures, pairwiseFeatures,
+      contextFeatures, contextFeatures, contextFeatures, contextFeatures, contextFeatures, contextFeatures, LineIdx(1), LineIdx(2)),
     lineIsClosestMatchInText = true,
     contextIsClosest, contextIsClosest, contextIsClosest, contextIsClosest, contextIsClosest, contextIsClosest
   )
@@ -43,49 +43,49 @@ final class TestPass2 extends FreeSpecLike {
     val combinedResults = List(
       Pass1ResultWithTruth(
         Pass1Result(selection(0, 0), selection(0, 0), probability = 1),
-        pass1Metrics,
+        pass1Features,
         shouldBeMatching = true,
-      ) -> LineMetrics(sum = 2, avg = 1),
+      ) -> LineFeatures(sum = 2, avg = 1),
       Pass1ResultWithTruth(
         Pass1Result(selection(0, 1), selection(0, 0), probability = 0),
-        pass1Metrics,
+        pass1Features,
         shouldBeMatching = false
-      ) -> LineMetrics(sum = 2, avg = 1),
+      ) -> LineFeatures(sum = 2, avg = 1),
       Pass1ResultWithTruth(
         Pass1Result(selection(0, 0), selection(0, 1), probability = 0),
-        pass1Metrics,
+        pass1Features,
         shouldBeMatching = false
-      ) -> LineMetrics(sum = 2, avg = 1),
+      ) -> LineFeatures(sum = 2, avg = 1),
       Pass1ResultWithTruth(
         Pass1Result(selection(0, 1), selection(0, 1), probability = 1),
-        pass1Metrics,
+        pass1Features,
         shouldBeMatching = true
-      ) -> LineMetrics(sum = 2, avg = 1),
+      ) -> LineFeatures(sum = 2, avg = 1),
       Pass1ResultWithTruth(
         Pass1Result(selection(1, 0), selection(1, 0), probability = 1),
-        pass1Metrics,
+        pass1Features,
         shouldBeMatching = true
-      ) -> LineMetrics(sum = 1, avg = 1),
+      ) -> LineFeatures(sum = 1, avg = 1),
       Pass1ResultWithTruth(
         Pass1Result(selection(1, 0), selection(0, 0), probability = 0),
-        pass1Metrics,
+        pass1Features,
         shouldBeMatching = false
-      ) -> LineMetrics(sum = 0.5, avg = 1.0/3.0),
+      ) -> LineFeatures(sum = 0.5, avg = 1.0/3.0),
       Pass1ResultWithTruth(
         Pass1Result(selection(1, 0), selection(0, 1), probability = 0.5),
-        pass1Metrics,
+        pass1Features,
         shouldBeMatching = false
-      ) -> LineMetrics(sum = 0.5, avg = 1.0/3.0),
+      ) -> LineFeatures(sum = 0.5, avg = 1.0/3.0),
       Pass1ResultWithTruth(
         Pass1Result(selection(0, 0), selection(1, 0), probability = 0),
-        pass1Metrics,
+        pass1Features,
         shouldBeMatching = false
-      ) -> LineMetrics(sum = 0.5, avg = 1.0/3.0),
+      ) -> LineFeatures(sum = 0.5, avg = 1.0/3.0),
       Pass1ResultWithTruth(
         Pass1Result(selection(0, 1), selection(1, 0), probability = 0.5),
-        pass1Metrics,
+        pass1Features,
         shouldBeMatching = false
-      ) -> LineMetrics(sum = 0.5, avg = 1.0/3.0)
+      ) -> LineFeatures(sum = 0.5, avg = 1.0/3.0)
     )
 
     val (pass1Results, _) = combinedResults.unzip
@@ -102,10 +102,10 @@ final class TestPass2 extends FreeSpecLike {
         path,
         Pass2Samples(
           combinedResults.map { case (pass1, pass2) =>
-            Pass2MetricsWithResults(
-              Pass2Metrics(
+            Pass2FeaturesWithResults(
+              Pass2Features(
                 pass1.pass1Result,
-                pass1Metrics,
+                pass1Features,
                 pass2
               ),
               pass1.shouldBeMatching
@@ -114,6 +114,6 @@ final class TestPass2 extends FreeSpecLike {
         )
       )
     )
-    TrainPass2.calcPass2Metrics(pass1ResultsAndPath) shouldBe expected
+    TrainPass2.calcPass2Features(pass1ResultsAndPath) shouldBe expected
   }
 }

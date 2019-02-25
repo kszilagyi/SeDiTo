@@ -39,7 +39,7 @@ final class Pass1MetricCalculatorTest extends FreeSpecLike{
   }
 
   private def findClosestMatches(left: String, right: String) = {
-    val result = Pass1MetricCalculator.calcAlignerMetrics(FullText(left), FullText(right)).map(m => (m.leftLineIdx, m.rightLineIdx, m.lineIsClosestMatchInText))
+    val result = Pass1MetricCalculator.calcAlignerFeatures(FullText(left), FullText(right)).map(m => (m.leftLineIdx, m.rightLineIdx, m.lineIsClosestMatchInText))
     result.map{case (l, r, m) => (l.i, r.i, m)}.toSeq.sorted
   }
   private def testBestMatchingLine(left: String, right: String, expectedClosestMatches: Set[(Int, Int)]) = {

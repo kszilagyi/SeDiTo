@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.gui
 
-import com.kristofszilagyi.sedito.aligner.{AccessibleScaler, MetricsWithResults, PathAndSamples, Samples}
+import com.kristofszilagyi.sedito.aligner.{AccessibleScaler, FeaturesWithResults, PathAndSamples, Samples}
 import org.log4s.getLogger
 import smile.classification
 import smile.classification.NeuralNetwork
@@ -15,10 +15,10 @@ import smile.validation.f1
 object Train {
   val trainingRatio = 0.7
 
-  def calcNumOfAttributes(metrics: List[Traversable[MetricsWithResults]]): Int = {
+  def calcNumOfAttributes(metrics: List[Traversable[FeaturesWithResults]]): Int = {
     @SuppressWarnings(Array(Warts.OptionPartial))
     val nonEmpty = metrics.find(_.nonEmpty).get
-    val num = nonEmpty.head.metrics.doubles.length
+    val num = nonEmpty.head.features.doubles.length
     num
   }
 
@@ -26,7 +26,7 @@ object Train {
   private def performanceMetrics(files: List[PathAndSamples], scaler: Scaler,
                          classifier: NeuralNetwork, numOfAttributes: Int, idxesToExclude: Set[Int]): List[(String, PerformanceMetrics)] = {
     files.map { case Pass1PathAndSamples(path, singleTest) =>
-      val singleDataSet = toAttributeDataSet(singleTest.metricsWithResults, numOfAttributes, idxesToExclude)
+      val singleDataSet = toAttributeDataSet(singleTest.featuresWithResults, numOfAttributes, idxesToExclude)
       val singleTestX = scaler.transform(singleDataSet.x())
       val singleTestY = singleDataSet.labels()
       val singlePred = singleTestX.map(classifier.predict)
@@ -41,14 +41,14 @@ object Train {
     }.sortBy(_._2.f1)
   }
 
-  private def toAttributeDataSet(metrics: Traversable[MetricsWithResults], numOfAttributes: Int, excludedIdxes: Set[Int]) = {
+  private def toAttributeDataSet(metrics: Traversable[FeaturesWithResults], numOfAttributes: Int, excludedIdxes: Set[Int]) = {
     val idxesToKeep = (0 until numOfAttributes).filterNot(excludedIdxes.contains)
     val attributes = idxesToKeep.map { name =>
       new NumericAttribute(name.toString)
     }
     val attributeDataset = new AttributeDataset("matches", attributes.toArray, new NominalAttribute("doesMatch"))
     metrics.foreach { m =>
-      val doubles = m.metrics.doubles
+      val doubles = m.features.doubles
       assert(numOfAttributes ==== doubles.length, s"$numOfAttributes != ${doubles.length}")
       val valuesToKeep = idxesToKeep.map{idx => doubles(idx)}.toArray
       attributeDataset.add(new attributeDataset.Row(valuesToKeep, if (m.matching) 1.0 else 0.0))
@@ -78,8 +78,8 @@ object Train {
 
   def logBasicStats(nestedTraining: List[Samples],
                     nestedTest: List[Samples]): Unit = {
-    val training = nestedTraining.flatMap(_.metricsWithResults)
-    val test = nestedTest.flatMap(_.metricsWithResults)
+    val training = nestedTraining.flatMap(_.featuresWithResults)
+    val test = nestedTest.flatMap(_.featuresWithResults)
     logger.info(s"Training size: ${training.size}")
     logger.info(s"Test size: ${test.size}")
     logger.info(s"1s in training: ${training.count(_.matching)}")
@@ -90,8 +90,8 @@ object Train {
 
   def generateClassifier(nestedTraining: List[Samples], nestedTest: List[Samples],
                          numOfAttributes: Int, idxesToExclude: Set[Int], hiddenLayerSize: Int): (NeuralNetwork, AccessibleScaler, TrainingData) = {
-    val training = nestedTraining.flatMap(_.metricsWithResults)
-    val test = nestedTest.flatMap(_.metricsWithResults)
+    val training = nestedTraining.flatMap(_.featuresWithResults)
+    val test = nestedTest.flatMap(_.featuresWithResults)
 
     val trainingSet = toAttributeDataSet(training, numOfAttributes, idxesToExclude)
     val scaler = new AccessibleScaler(true)
@@ -117,7 +117,7 @@ object Train {
 
   def train(training: List[PathAndSamples], test: List[PathAndSamples], logStats: Boolean, hiddenLayerSize: Int): (NeuralNetwork, AccessibleScaler) = {
     val samples = training ++ test
-    val metricsWithResults = samples.map(_.samples.metricsWithResults)
+    val metricsWithResults = samples.map(_.samples.featuresWithResults)
     val numOfAttributes = calcNumOfAttributes(metricsWithResults)
 
     if (logStats) {

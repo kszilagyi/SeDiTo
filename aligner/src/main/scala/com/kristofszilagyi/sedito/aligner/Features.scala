@@ -4,17 +4,17 @@ import java.nio.file.Path
 
 import com.kristofszilagyi.sedito.common.Selection
 
-trait Metrics {
+trait Features {
   def doubles: Array[Double]
   def leftWord: Selection
   def rightWord: Selection
 }
-trait MetricsWithResults {
-  def metrics: Metrics
+trait FeaturesWithResults {
+  def features: Features
   def matching: Boolean
 }
 trait Samples {
-  def metricsWithResults: Traversable[MetricsWithResults]
+  def featuresWithResults: Traversable[FeaturesWithResults]
 }
 trait PathAndSamples {
   def path: Path

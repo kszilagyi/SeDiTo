@@ -2,8 +2,8 @@ package com.kristofszilagyi.sedito.gui
 
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Metrics
-import com.kristofszilagyi.sedito.gui.TrainAndDiff.readDataSetAndMeasureMetrics
+import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Features
+import com.kristofszilagyi.sedito.gui.TrainAndDiff.readDataSetAndMeasureFeatures
 import org.log4s.getLogger
 import Train._
 
@@ -12,14 +12,14 @@ object FeatureElimination extends App{
 
   logger.info("Start")
   val start = Instant.now()
-  val samples = readDataSetAndMeasureMetrics()
+  val samples = readDataSetAndMeasureFeatures()
   val samplesWithoutFilenames = samples.map(_.samples)
-  val metricsWithResults = samplesWithoutFilenames.map(_.metricsWithResults)
-  val numOfAttributes = calcNumOfAttributes(metricsWithResults)
+  val featuresWithResults = samplesWithoutFilenames.map(_.featuresWithResults)
+  val numOfAttributes = calcNumOfAttributes(featuresWithResults)
   val (nestedTraining, nestedTest) = samplesWithoutFilenames.splitAt(samplesWithoutFilenames.size / 2)
 
   Train.logBasicStats(nestedTraining, nestedTest = nestedTest)
-  val results = Pass1Metrics.columnNames.zipWithIndex.map { case (metric, idx) =>
+  val results = Pass1Features.columnNames.zipWithIndex.map { case (metric, idx) =>
     val (_, _, trainingData) = generateClassifier(nestedTraining = nestedTraining, nestedTest = nestedTest, numOfAttributes,
       idxesToExclude = Set(idx), hiddenLayerSize = Train1Pass.hiddenLayerSize)
     val f1s = trainingData.f1s

@@ -69,9 +69,9 @@ object WholeAlgorithmMeasurer {
 
   def measureFast(aligner: Pass1Aligner, testCases: Seq[Pass1PathAndSamples]): MultiResult = {
     MultiResult(testCases.map { case Pass1PathAndSamples(path, samples) =>
-      val rawActual = aligner.findPotentialMatches(samples.metricsWithResults.map(_.metrics)) //this is not resolved
+      val rawActual = aligner.findPotentialMatches(samples.featuresWithResults.map(_.features)) //this is not resolved
       val rawActualMatches = rawActual.map(res => WordMatch(res.left, res.right)(Some(res.probability))).toSet
-      val rawExpected = samples.metricsWithResults.filter(_.matching).map(word => WordMatch(word.metrics.leftWord, word.metrics.rightWord)()).toSet
+      val rawExpected = samples.featuresWithResults.filter(_.matching).map(word => WordMatch(word.features.leftWord, word.features.rightWord)()).toSet
       val actual = aligner.alignFast(rawActual, log = false)
       val expected = rawExpected
       path ->
@@ -86,7 +86,7 @@ object WholeAlgorithmMeasurer {
     logger.info("Start")
     val start = Instant.now()
 
-    val testCases = readDataSetAndMeasureMetrics()
+    val testCases = readDataSetAndMeasureFeatures()
     val (classifier, scaler) = Main.loadAI()
     val aligner = new Pass1Aligner(classifier, scaler)
     val (training, test) = testCases.splitAt((testCases.size * Train.trainingRatio).toInt)
