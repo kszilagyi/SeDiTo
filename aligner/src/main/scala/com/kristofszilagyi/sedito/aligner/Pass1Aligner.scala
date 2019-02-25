@@ -21,7 +21,7 @@ object Pass1Aligner {
     mostProbables
   }
 
-  private def toResult(metrics: Pass1Metrics, p: Double) = {
+  private def toResult(metrics: Metrics, p: Double) = {
     Pass1Result(metrics.leftWord, metrics.rightWord, p)
   }
 
@@ -34,7 +34,7 @@ final class Pass1Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scal
     alignFast(findPotentialMatches(metrics), log = true)
   }
 
-  def measureProbability(metrics: Pass1Metrics): Pass1Result = {
+  def measureProbability(metrics: Metrics): Pass1Result = {
     val x = metrics.doubles
     val probs = new Array[Double](1)
     val scaledX = scaler.transform(x)
