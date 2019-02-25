@@ -2,7 +2,9 @@ package com.kristofszilagyi.sedito.gui
 
 import java.nio.file.Path
 
+import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Metrics
 import com.kristofszilagyi.sedito.aligner._
+import com.kristofszilagyi.sedito.common.Selection
 import com.kristofszilagyi.sedito.gui.Train.trainingRatio
 import com.kristofszilagyi.sedito.gui.TrainAndDiff.readDataSetAndMeasureMetrics
 import org.log4s.getLogger
@@ -16,7 +18,7 @@ object TrainPass2 {
     pathAndSamples.map { case Pass1PathAndSamples(path, samples) =>
       val resultsWithTruth = samples.metricsWithResults.map { sample =>
         val results = firstPassAligner.measureProbability(sample.metrics)
-         Pass1ResultWithTruth(results, sample.matching)
+         Pass1ResultWithTruth(results, sample.metrics, sample.matching)
       }
       PathAndPass1Results(path, resultsWithTruth)
     }
@@ -29,13 +31,17 @@ object TrainPass2 {
     */
   final case class LineGroup(main: Pass1ResultWithTruth, sameLine: Set[Pass1Result])
   final case class PathAndLineGroups(path: Path, group: Traversable[LineGroup])
-  final case class Pass1ResultWithTruth(pass1Result: Pass1Result, shouldBeMatching: Boolean)
+  final case class Pass1ResultWithTruth(pass1Result: Pass1Result, pass1Metrics: Pass1Metrics, shouldBeMatching: Boolean)
   final case class PathAndPass1Results(path: Path, pass1Results: Traversable[Pass1ResultWithTruth])
   final case class PathAndPass2Metrics(path: Path, pass2Metrics: Traversable[Pass2Metrics])
-  final case class Pass2Metrics(main: Pass1Result, line: LineMetrics) extends Metrics {
+  final case class Pass2Metrics(main: Pass1Result, mainPass1Metrics: Pass1Metrics, line: LineMetrics) extends Metrics {
     def doubles: Array[Double] = {
-      (main.probability :: line.sum :: line.avg :: Nil).toArray
+      mainPass1Metrics.doubles ++ (main.probability :: line.sum :: line.avg :: Nil)
     }
+
+    def leftWord: Selection = main.left
+
+    def rightWord: Selection = main.right
   }
   final case class Pass2MetricsWithResults(metrics: Pass2Metrics, matching: Boolean) extends MetricsWithResults
   final case class Pass2Samples(metricsWithResults: Traversable[Pass2MetricsWithResults]) extends Samples
@@ -53,6 +59,7 @@ object TrainPass2 {
     val avg = sum / wordCount  //this is wordCount and not ps.size because the number of ps.size = wordCount^2
     LineMetrics(sum, avg)
   }
+
 
   private def groupOneFile(pass1Results: scala.Traversable[Pass1ResultWithTruth]) = {
     logger.info(s"Grouping: ${pass1Results.size}")
@@ -73,7 +80,7 @@ object TrainPass2 {
     val samplesByPath = groupsByPath.map{ case PathAndLineGroups(path, groups) =>
       val metrics = groups.map { case LineGroup(main, sameLine) =>
         val lineMetrics = calcLineMetrics(sameLine)
-        Pass2MetricsWithResults(Pass2Metrics(main.pass1Result, lineMetrics), main.shouldBeMatching)
+        Pass2MetricsWithResults(Pass2Metrics(main.pass1Result, main.pass1Metrics, lineMetrics), main.shouldBeMatching)
       }
       PathAndPass2Samples(path, Pass2Samples(metrics))
     }
@@ -92,6 +99,6 @@ object TrainPass2 {
 
     val (trainingSamples, testSamples) = Train1Pass.shuffle(samplesByPath).splitAt((samples.size * trainingRatio).toInt)
     logger.info("Measuring pass 2 metrics is done")
-    val _ = Train.train(trainingSamples, testSamples, logStats = true, hiddenLayerSize = 10)
+    val _ = Train.train(trainingSamples, testSamples, logStats = true, hiddenLayerSize = 50)
   }
 }
