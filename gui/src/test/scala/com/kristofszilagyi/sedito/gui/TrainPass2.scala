@@ -12,7 +12,7 @@ import org.log4s.getLogger
 object TrainPass2 {
   private val logger = getLogger
 
-  private def calcFirstPass(pathAndSamples: List[Pass1PathAndSamples]) = {
+  def calcFirstPass(pathAndSamples: List[Pass1PathAndSamples]): List[PathAndPass1Results] = {
     val (firstNN, firstScaler) = Main.loadAI()
     val firstPassAligner = new Pass1Aligner(firstNN, firstScaler)
     pathAndSamples.map { case Pass1PathAndSamples(path, samples) =>

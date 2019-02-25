@@ -126,7 +126,7 @@ object Train1Pass {
     }
   }
 
-  def shuffle[T <: PathAndSamples](samples: List[T]) = {
+  def shuffle[T](samples: List[T]): List[T] = {
     val random = new Random(124) //make it repeatable but avoid weird dependence on file structure
     random.shuffle(samples)
   }
