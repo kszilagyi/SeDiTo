@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.gui
 
-import java.nio.file.{Files, Paths}
+import java.nio.file.{Files, Path, Paths}
 
 import com.kristofszilagyi.sedito.common.Warts.discard
 import com.kristofszilagyi.sedito.gui.TrainAndDiff.readDataSetAndMeasureFeatures
@@ -18,12 +18,15 @@ object Write {
     discard(Files.write(Paths.get(s"$baseFileName-labels.csv"), labels.map(b => if (b) "1" else "0").asJava))
   }
 
+  def predictedPath(baseFileName: String): Path = Paths.get(s"$baseFileName-predicted.csv")
+  def expectedPath(baseFileName: String): Path = Paths.get(s"$baseFileName-expected.csv")
+
   def writeResults(baseFileName: String, resultsByPath: List[TrainPass2.PathAndPass1Results]): Unit = {
     val results = resultsByPath.flatMap(_.pass1Results)
     val predicted = results.map(_.pass1Result.probability.toString)
     val expected = results.map(res => if (res.shouldBeMatching) "1" else "0")
-    discard(Files.write(Paths.get(s"$baseFileName-predicted.csv"), predicted.asJava))
-    discard(Files.write(Paths.get(s"$baseFileName-expected.csv"), expected.asJava))
+    discard(Files.write(predictedPath(baseFileName), predicted.asJava))
+    discard(Files.write(expectedPath(baseFileName), expected.asJava))
   }
 }
 
