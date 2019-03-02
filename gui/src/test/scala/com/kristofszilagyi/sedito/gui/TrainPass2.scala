@@ -24,7 +24,9 @@ object TrainPass2 {
     }
   }
 
-  final case class LineFeatures(sum: Double, avg: Double)
+  final case class LineFeatures(sum: Double, avg: Double) {
+    def doubles: List[Double] = List(sum, avg)
+  }
 
   /**
     * @param sameLine includes main as well
@@ -36,7 +38,7 @@ object TrainPass2 {
   final case class PathAndPass2Features(path: Path, pass2Features: Traversable[Pass2Features])
   final case class Pass2Features(main: Pass1Result, mainPass1Features: Pass1Features, line: LineFeatures) extends Features {
     def doubles: Array[Double] = {
-      mainPass1Features.doubles ++ (main.probability :: line.sum :: line.avg :: Nil)
+      (main.probability +: mainPass1Features.doubles) ++ line.doubles
     }
 
     def leftWord: Selection = main.left
