@@ -5,6 +5,7 @@
     <inspection_tool class="ConvertExpressionToSAM" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="JavaAccessorEmptyParenCall" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="JavaAccessorMethodCalledAsEmptyParen" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="MapGetGet" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="NotImplementedCode" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ourVersions">

@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.Pass1Aligner.{resolveWithMostProbable, _}
+import com.kristofszilagyi.sedito.aligner.Pass1Aligner._
 import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Features
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common._
@@ -23,6 +23,14 @@ object Pass1Aligner {
 
   private def toResult(metrics: Features, p: Double) = {
     Pass1Result(metrics.leftWord, metrics.rightWord, p)
+  }
+
+  def alignFast(potentialMatches: Traversable[Pass1Result], log: Boolean): UnambiguousWordAlignment = {
+    if (log) logger.info(s"Potentials: ${potentialMatches.size}")
+    val leftResolved = resolveWithMostProbable(potentialMatches.groupBy(_.left))
+    val bothResolved = resolveWithMostProbable(leftResolved.groupBy(_.right))
+    if (log) logger.info(s"BothResolved: ${bothResolved.size}")
+    UnambiguousWordAlignment(bothResolved.map(p => WordMatch(p.left, p.right)(Some(p.probability))).toSet)
   }
 
 }
@@ -52,14 +60,6 @@ final class Pass1Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scal
       } else None
     }
     probabilitiesWithMetrics
-  }
-
-  def alignFast(potentialMatches: Traversable[Pass1Result], log: Boolean): UnambiguousWordAlignment = {
-    if (log) logger.info(s"Potentials: ${potentialMatches.size}")
-    val leftResolved = resolveWithMostProbable(potentialMatches.groupBy(_.left))
-    val bothResolved = resolveWithMostProbable(leftResolved.groupBy(_.right))
-    if (log) logger.info(s"BothResolved: ${bothResolved.size}")
-    UnambiguousWordAlignment(bothResolved.map(p => WordMatch(p.left, p.right)(Some(p.probability))).toSet)
   }
 
 }
