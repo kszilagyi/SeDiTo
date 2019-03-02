@@ -24,8 +24,8 @@ object TrainPass2 {
     }
   }
 
-  final case class LineFeatures(sum: Double, avg: Double, weightedSum: Double, weightedAvg: Double) {
-    def doubles: List[Double] = List(sum, avg, weightedSum, weightedAvg)
+  final case class LineFeatures(sum: Double, avg: Double, weightedSum: Double, weightedAvg: Double, numWordsMatching: Double, avgNumberOfWordsMatching: Double) {
+    def doubles: List[Double] = List(sum, avg, weightedSum, weightedAvg, numWordsMatching, avgNumberOfWordsMatching)
   }
 
   /**
@@ -56,7 +56,7 @@ object TrainPass2 {
     val weightedSum = matches.map(m => m.probability.get * (m.left.length + m.right.length)).sum
     val avg = sum / lineLength
     val weightedAvg = weightedSum / lineLength
-    LineFeatures(sum, avg, weightedSum, weightedAvg)
+    LineFeatures(sum, avg, weightedSum, weightedAvg, matches.size.toDouble, matches.size.toDouble / lineLength)
   }
 
   private def calcLineFeaturesFromResult(result: TrainPass2.Pass1ResultWithTruth,
@@ -71,7 +71,7 @@ object TrainPass2 {
       val rightLineLength = lineLength(firstMatch.right)
       calcLineFeaturesFromMatches(commonMatches, (leftLineLength + rightLineLength) / 2) //todo investigate if an nn can approximate sum + (leftline + rightline)
     } else {
-      LineFeatures(0, 0, 0, 0)
+      LineFeatures(0, 0, 0, 0, 0, 0)
     }
   }
 
