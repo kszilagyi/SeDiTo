@@ -8,7 +8,9 @@ import org.log4s.getLogger
 import smile.classification.SoftClassifier
 import smile.feature.Scaler
 
-final case class Pass1Result(left: Selection, right: Selection, probability: Double)
+final case class Pass1Result(left: Selection, right: Selection, probability: Double) {
+  def toMatch: WordMatch = WordMatch(left, right)(Some(probability))
+}
 object Pass1Aligner {
   private val logger = getLogger
 
@@ -30,7 +32,7 @@ object Pass1Aligner {
     val leftResolved = resolveWithMostProbable(potentialMatches.groupBy(_.left))
     val bothResolved = resolveWithMostProbable(leftResolved.groupBy(_.right))
     if (log) logger.info(s"BothResolved: ${bothResolved.size}")
-    UnambiguousWordAlignment(bothResolved.map(p => WordMatch(p.left, p.right)(Some(p.probability))).toSet)
+    UnambiguousWordAlignment(bothResolved.map(_.toMatch).toSet)
   }
 
 }

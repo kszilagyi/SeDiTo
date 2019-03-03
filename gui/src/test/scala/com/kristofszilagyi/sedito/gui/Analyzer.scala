@@ -2,6 +2,7 @@ package com.kristofszilagyi.sedito.gui
 
 import scala.io.Source
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
+import com.kristofszilagyi.sedito.common.Warts
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.gui.Analyzer.load
 import smile.plot
@@ -17,6 +18,7 @@ object Analyzer {
     }
   }
 
+  @SuppressWarnings(Array(Warts.ToString))
   def load(baseFilename: String): ResultToAnalyze = {
     val predictedLines = Source.fromFile(Write.predictedPath(baseFilename).toString).getLines().toVector
     val expectedLines = Source.fromFile(Write.expectedPath(baseFilename).toString).getLines().toVector
@@ -32,7 +34,7 @@ object ShowMisPredHistogram {
     val trainMisPred = train.misPredicted
     val testMisPred = test.misPredicted
     val wTrain = plot.hist(trainMisPred.map(_._1).toArray, 100)
-    wTrain.canvas.setTitle("Train")
+    discard(wTrain.canvas.setTitle("Train"))
     val wTest = plot.hist(testMisPred.map(_._1).toArray, 100)
     discard(wTest.canvas.setTitle("Test"))
   }
