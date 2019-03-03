@@ -63,10 +63,10 @@ object TrainPass2 {
   final case class Pass2Samples(featuresWithResults: Traversable[Pass2FeaturesWithResults]) extends Samples
   final case class PathAndPass2Samples(path: Path, samples: Pass2Samples) extends PathAndSamples
 
+  @SuppressWarnings(Array(Warts.OptionPartial))
   private def calcLineFeaturesFromMatches(matches: Set[WordMatch], lineLength: Int) = {
     assert(lineLength > 0)
     assert(matches.nonEmpty)
-    @SuppressWarnings(Array(Warts.OptionPartial))
     val sum = matches.map(_.probability.get).sum //.get if it's not there it's a bug!
     val weightedSum = matches.map(m => m.probability.get * (m.left.length + m.right.length)).sum
     val avg = sum / lineLength
