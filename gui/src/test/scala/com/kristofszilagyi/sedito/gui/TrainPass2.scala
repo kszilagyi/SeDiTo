@@ -90,29 +90,34 @@ object TrainPass2 {
     }
   }
 
-  private def withinContextSize(center: WordMatch, contextSize: Int, idx: Int, leftSortedMatches: Vector[WordMatch], absoluteFrom: WordMatch => Int): Boolean = {
-    absoluteFrom(center) - abs(contextSize) < absoluteFrom(leftSortedMatches(idx)) && absoluteFrom(leftSortedMatches(idx)) < absoluteFrom(center) + abs(contextSize)
+  private def withinContextSize(center: WordMatch, contextSize: Int, current: WordMatch,
+                                startInText: WordMatch => Int, endInText: WordMatch => Int): Boolean = {
+    startInText(center) - abs(contextSize) < endInText(current) &&
+      startInText(current) < endInText(center) + abs(contextSize)
   }
 
   // we only need one version of this (leftSortedMatches and not rightSortedMatches) because both end of a match has to be within
   // contextSize. So if we find all when it is within contextSize for left than we implicitly we all for right
-  private def extendContextToDirection(center: WordMatch, leftSortedMatches: Vector[WordMatch], startIdx: Int, step: Int, contextSize: Int) = {
+  private def extendContextToDirection(center: WordMatch, leftSortedMatches: Vector[WordMatch], idxInVectorStart: Int, step: Int, contextSize: Int) = {
     val builder = Vector.newBuilder[WordMatch]
     @SuppressWarnings(Array(Warts.Var))
-    var idx = startIdx + step
-    while (0 <= idx && idx < leftSortedMatches.size &&
-        withinContextSize(center, contextSize, idx, leftSortedMatches, _.left.absoluteFrom)) {
+    var idxInVector = idxInVectorStart + step
+    while (0 <= idxInVector && idxInVector < leftSortedMatches.size &&
+        withinContextSize(center, contextSize, leftSortedMatches(idxInVector), _.left.absoluteFrom,
+          m => m.left.absoluteFrom + m.left.length)) {
 
-      if (withinContextSize(center, contextSize, idx, leftSortedMatches, _.right.absoluteFrom)) {
-        discard(builder += leftSortedMatches(idx))
+      if (withinContextSize(center, contextSize, leftSortedMatches(idxInVector), _.right.absoluteFrom,
+            m => m.right.absoluteFrom + m.right.length)) {
+        discard(builder += leftSortedMatches(idxInVector))
       }
-      idx += step
+      idxInVector += step
     }
     builder.result()
   }
 
-  private def context(center: WordMatch, leftSortedMatches: Vector[WordMatch], ordering: Ordering[WordMatch], contextSize: Int) = {
-    leftSortedMatches.search(center)(ordering) match {
+  //not private due to test
+  def context(center: WordMatch, leftSortedMatches: Vector[WordMatch], contextSize: Int): Traversable[WordMatch] = {
+    leftSortedMatches.search(center)(Ordering.by(_.left.absoluteFrom)) match {
       case Found(idx) =>
         val extendLeft = extendContextToDirection(center, leftSortedMatches, idx, step = -1, contextSize = contextSize)
         val extendRight = extendContextToDirection(center, leftSortedMatches, idx, step = 1, contextSize = contextSize)
@@ -121,14 +126,14 @@ object TrainPass2 {
     }
   }
 
-  private def calcContextFeature(context: Vector[WordMatch]) = {
+  private def calcContextFeature(context: Traversable[WordMatch]) = {
     new SingleContextFeatures(context.size)
   }
 
   private def calcContextFeatures(center: WordMatch, alignment: UnambiguousWordAlignment): AllContextFeatures = {
     val leftSortedMatch = alignment.matches.toVector.sortBy(_.left.absoluteFrom)
     val featureForSizes = List(1, 2, 4, 8, 16, 32, 64, 128, 256) map { contextSize =>
-      calcContextFeature(context(center, leftSortedMatch, Ordering.by(_.left.absoluteFrom), contextSize))
+      calcContextFeature(context(center, leftSortedMatch, contextSize))
     }
     new AllContextFeatures(featureForSizes)
   }
