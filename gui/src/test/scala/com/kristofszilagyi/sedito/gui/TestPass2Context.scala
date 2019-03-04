@@ -16,11 +16,19 @@ final class TestPass2Context extends FreeSpecLike {
     m(20, 90)
   ))
 
+
   private val leftSortedMatches = alignment.matches.toVector.sortBy(_.left.absoluteFrom)
 
   "symmetric 1" in {
     TrainPass2.context(m(5, 5), leftSortedMatches, 5) shouldBe
       Traversable(m(0, 0), m(10, 10))
+  }
 
+  "100" in {
+    TrainPass2.context(m(5, 5), leftSortedMatches, 100) shouldBe
+      Vector(m(0, 0),
+        m(10, 10),
+        m(20, 90)
+      )
   }
 }
