@@ -31,4 +31,11 @@ final class TestPass2Context extends FreeSpecLike {
         m(20, 90)
       )
   }
+
+  "half out" in {
+    TrainPass2.context(m(5, 5), leftSortedMatches, 30) shouldBe
+      Vector(m(0, 0),
+        m(10, 10),
+      )
+  }
 }
