@@ -127,10 +127,9 @@ object TrainPass2 {
     new SingleContextFeatures(context.size)
   }
 
-  private def calcContextFeatures(center: WordMatch, alignment: UnambiguousWordAlignment): AllContextFeatures = {
-    val leftSortedMatch = alignment.matches.toVector.sortBy(_.left.absoluteFrom)
+  private def calcContextFeatures(center: WordMatch, leftSortedMatches: Vector[WordMatch]): AllContextFeatures = {
     val featureForSizes = List(1, 2, 4, 8, 16, 32, 64, 128, 256) map { contextSize =>
-      calcContextFeature(context(center, leftSortedMatch, contextSize))
+      calcContextFeature(context(center, leftSortedMatches, contextSize))
     }
     new AllContextFeatures(featureForSizes)
   }
@@ -144,9 +143,10 @@ object TrainPass2 {
       val alignment = Pass1Aligner.alignFast(pass1Results.map(_.pass1Result), log = false)
       val alignmentByLeft = alignment.matches.groupBy(_.left.lineIdx)
       val alignmentByRight = alignment.matches.groupBy(_.right.lineIdx)
+      val leftSortedMatches = alignment.matches.toVector.sortBy(_.left.absoluteFrom)
       val pass2FeaturesWithResults = pass1Results.map { result =>
         val lineFeatures = calcLineFeaturesFromResult(result, alignmentByLeft, alignmentByRight)
-        val contextFeatures = calcContextFeatures(result.pass1Result.toMatch, alignment)
+        val contextFeatures = calcContextFeatures(result.pass1Result.toMatch, leftSortedMatches)
         Pass2FeaturesWithResults(
           Pass2Features(result.pass1Result, result.pass1Features, lineFeatures, contextFeatures),
           matching = result.shouldBeMatching
