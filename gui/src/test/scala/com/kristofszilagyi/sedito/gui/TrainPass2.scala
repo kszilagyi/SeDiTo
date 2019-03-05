@@ -4,14 +4,13 @@ import java.nio.file.Path
 
 import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Features
 import com.kristofszilagyi.sedito.aligner._
-import com.kristofszilagyi.sedito.common.AssertionEx._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common._
 import com.kristofszilagyi.sedito.gui.Train.trainingRatio
 import com.kristofszilagyi.sedito.gui.TrainAndDiff.readDataSetAndMeasureFeatures
 import org.log4s.getLogger
 
-import scala.collection.Searching.{Found, search}
+import scala.collection.Searching.search
 import scala.math._
 
 object TrainPass2 {
@@ -117,13 +116,11 @@ object TrainPass2 {
 
   //not private due to test
   def context(center: WordMatch, leftSortedMatches: Vector[WordMatch], contextSize: Int): Traversable[WordMatch] = {
-    leftSortedMatches.search(center)(Ordering.by(_.left.absoluteFrom)) match {
-      case Found(idx) =>
-        val extendLeft = extendContextToDirection(center, leftSortedMatches, idx, step = -1, contextSize = contextSize)
-        val extendRight = extendContextToDirection(center, leftSortedMatches, idx, step = 1, contextSize = contextSize)
-        extendLeft ++ extendRight
-      case _ => fail(s"Bug: $center couldn't be found")
-    }
+    val idx = leftSortedMatches.search(center)(Ordering.by(_.left.absoluteFrom)).insertionPoint
+    //even if the center doesn't exist (got resolved in aligment) it still makes sense to do it in a best effort way
+    val extendLeft = extendContextToDirection(center, leftSortedMatches, idx, step = -1, contextSize = contextSize)
+    val extendRight = extendContextToDirection(center, leftSortedMatches, idx, step = 1, contextSize = contextSize)
+    extendLeft ++ extendRight
   }
 
   private def calcContextFeature(context: Traversable[WordMatch]) = {

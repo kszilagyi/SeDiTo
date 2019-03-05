@@ -67,4 +67,16 @@ final class TestPass2Context extends FreeSpecLike {
   "left after before - in" in {
     TrainPass2.context(m(200, 200), leftSortedMatches, contextSize = 86) shouldBe Vector(m(290, 220))
   }
+
+  "non-existent center 0" in {
+    TrainPass2.context(m(15,  15), leftSortedMatches, contextSize = 0) shouldBe Traversable.empty
+  }
+
+  "non-existent center 1" in {
+    TrainPass2.context(m(15,  15), leftSortedMatches, contextSize = 1) shouldBe Vector(m(10, 10))
+  }
+
+  "non-existent center - out" in {
+    TrainPass2.context(m(295,  295), leftSortedMatches, contextSize = 10) shouldBe Traversable.empty
+  }
 }
