@@ -41,13 +41,13 @@ object Train {
     }.sortBy(_._2.f1)
   }
 
-  private def toAttributeDataSet(metrics: Traversable[FeaturesWithResults], numOfAttributes: Int, excludedIdxes: Set[Int]) = {
+  private def toAttributeDataSet(featuresWithResults: Traversable[FeaturesWithResults], numOfAttributes: Int, excludedIdxes: Set[Int]) = {
     val idxesToKeep = (0 until numOfAttributes).filterNot(excludedIdxes.contains)
     val attributes = idxesToKeep.map { name =>
       new NumericAttribute(name.toString)
     }
     val attributeDataset = new AttributeDataset("matches", attributes.toArray, new NominalAttribute("doesMatch"))
-    metrics.foreach { m =>
+    featuresWithResults.foreach { m =>
       val doubles = m.features.doubles
       assert(numOfAttributes ==== doubles.length, s"$numOfAttributes != ${doubles.length}")
       val valuesToKeep = idxesToKeep.map{idx => doubles(idx)}.toArray
@@ -117,8 +117,8 @@ object Train {
 
   def train(training: List[PathAndSamples], test: List[PathAndSamples], logStats: Boolean, hiddenLayerSize: Int): (NeuralNetwork, AccessibleScaler) = {
     val samples = training ++ test
-    val metricsWithResults = samples.map(_.samples.featuresWithResults)
-    val numOfAttributes = calcNumOfAttributes(metricsWithResults)
+    val featuresWithResults = samples.map(_.samples.featuresWithResults)
+    val numOfAttributes = calcNumOfAttributes(featuresWithResults)
 
     if (logStats) {
       logBasicStats(training.map(_.samples), nestedTest = test.map(_.samples))
