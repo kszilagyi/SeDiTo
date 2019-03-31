@@ -1,10 +1,28 @@
 package com.kristofszilagyi.sedito.aligner
 
 import com.kristofszilagyi.sedito.aligner.IndentationCalculator._
+import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.ArrayHolder
 import com.kristofszilagyi.sedito.common.{LineIdx, Warts}
 
-final case class IndentationOneSide(indents: Seq[Int], lineIdx: LineIdx, lineIdxFromEnd: Int)
-final case class Indentation(left: IndentationOneSide, right: IndentationOneSide)
+object IndentationOneSide {
+  def columnNames: List[String] = {
+    ((-7 to 7) map {i => s"indent$i"}).toList ++ List("lineIdx", "lineIdxFromEnd")
+  }
+}
+final case class IndentationOneSide(indents: Seq[Int], lineIdx: LineIdx, lineIdxFromEnd: Int) {
+  def addTo(array: ArrayHolder): Unit = {
+    indents.foreach(i => array.add(i.toDouble))
+    array.add(lineIdx.i.toDouble)
+    array.add(lineIdxFromEnd.toDouble)
+  }
+}
+final case class Indentation(left: IndentationOneSide, right: IndentationOneSide) {
+  def addTo(array: ArrayHolder): Unit = {
+    left.addTo(array)
+    right.addTo(array)
+  }
+
+}
 
 object IndentationCalculator {
   @SuppressWarnings(Array(Warts.Var))

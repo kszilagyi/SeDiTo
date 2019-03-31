@@ -129,8 +129,10 @@ object Pass1FeatureCalculator {
         withChildren("closestHalf", ContextIsClosest.columnNames),
         withChildren("closest4th", ContextIsClosest.columnNames),
         withChildren("closest8th", ContextIsClosest.columnNames),
-        withChildren("closest16th",   ContextIsClosest.columnNames),
-        withChildren("closest32th",   ContextIsClosest.columnNames),
+        withChildren("closest16th", ContextIsClosest.columnNames),
+        withChildren("closest32th", ContextIsClosest.columnNames),
+        withChildren("indentationLeft", IndentationOneSide.columnNames),
+        withChildren("indentationRight", IndentationOneSide.columnNames),
         List("lineIsClosestMatchInText")
       ).flatten
     }
@@ -143,7 +145,8 @@ object Pass1FeatureCalculator {
                                  closest4th: ContextIsClosest,
                                  closest8th: ContextIsClosest,
                                  closest16th: ContextIsClosest,
-                                 closest32th: ContextIsClosest) extends Features {
+                                 closest32th: ContextIsClosest,
+                                 indentation: Indentation) extends Features {
 
     private def word: PairwiseFeatures = phase1Features.word
     private def wordCaseInsensitive: PairwiseFeatures = phase1Features.wordCaseInsensitive
@@ -184,6 +187,7 @@ object Pass1FeatureCalculator {
       closest8th.doubles(holder)
       closest16th.doubles(holder)
       closest32th.doubles(holder)
+      indentation.addTo(holder)
       holder.add(if (lineIsClosestMatchInText) 1.0 else 0.0)
       //todo this is not thread safe! (it's fine as long as the results are only read by one thread)
       result
@@ -410,7 +414,10 @@ object Pass1FeatureCalculator {
     //32 => 800/32 = 25 is because that's what we use inside too 100/4, should remove duplication
     val candidates = findCandidates(maxContextSize, maxLeftContexts.map(l => l -> AllTheRest), maxRightContexts)
 
-    val lineAlignmentCacher = new LineAlignmentCacher(left.s.lines.map(_.trim).toVector, right.s.lines.map(_.trim).toVector)
+    val leftLines = left.s.lines.map(_.trim).toVector
+    val rightLines = right.s.lines.map(_.trim).toVector
+    val lineAlignmentCacher = new LineAlignmentCacher(leftLines, rightLines)
+    val indentationCalculator = new IndentationCalculator(leftLines, rightLines)
 
     @SuppressWarnings(Array(Warts.TraversableOps))
     val phase1Metrics =
@@ -439,11 +446,12 @@ object Pass1FeatureCalculator {
     val closestContext8th = calcClosestContextMatches(phase1Metrics, _.context8th)
     val closestContext16th = calcClosestContextMatches(phase1Metrics, _.context16th)
     val closestContext32th = calcClosestContextMatches(phase1Metrics, _.context32th)
-    phase1Metrics.map{m =>
+    phase1Metrics.map{ m =>
       val closest = closestLineMatches.contains(m)
+      val indentation = indentationCalculator.calcIndentation(m.leftLineIdx, m.rightLineIdx)
       Pass1Features(m, lineIsClosestMatchInText = closest, closestFull = closestContextFull.in(m), closestHalf = closestContextHalf.in(m),
         closest4th = closestContext4th.in(m), closest8th = closestContext8th.in(m), closest16th = closestContext16th.in(m),
-        closest32th = closestContext32th.in(m))
+        closest32th = closestContext32th.in(m), indentation)
     }
   }
 }

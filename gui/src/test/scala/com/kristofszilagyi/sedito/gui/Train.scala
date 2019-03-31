@@ -80,6 +80,7 @@ object Train {
                     nestedTest: List[Samples]): Unit = {
     val training = nestedTraining.flatMap(_.featuresWithResults)
     val test = nestedTest.flatMap(_.featuresWithResults)
+    logger.info(s"Number of features: ${training.head.features.doubles.length}")
     logger.info(s"Training size: ${training.size}")
     logger.info(s"Test size: ${test.size}")
     logger.info(s"1s in training: ${training.count(_.matching)}")
