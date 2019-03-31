@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.ContextIsClosest._
+import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.ContextIsClosest._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common._
 import info.debatty.java.stringsimilarity.Levenshtein
@@ -8,8 +8,8 @@ import org.log4s.getLogger
 
 import scala.annotation.tailrec
 
-object Pass1MetricCalculator {
-  import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.ClosestContext._
+object Pass1FeatureCalculator {
+  import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.ClosestContext._
 
   private val logger = getLogger
 

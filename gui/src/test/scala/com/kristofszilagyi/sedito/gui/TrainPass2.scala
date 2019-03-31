@@ -2,7 +2,7 @@ package com.kristofszilagyi.sedito.gui
 
 import java.nio.file.Path
 
-import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Features
+import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.Pass1Features
 import com.kristofszilagyi.sedito.aligner._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common._

@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.ContextIsClosest
+import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.ContextIsClosest
 import com.kristofszilagyi.sedito.common.{FullText, Selection, Warts, Wordizer}
 import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
@@ -26,7 +26,7 @@ final class BeforeAfterBestContextFeaturesTest extends FreeSpecLike {
   }
 
   private def findClosestMatches(left: String, right: String) = {
-    val result = Pass1MetricCalculator.calcAlignerFeatures(FullText(left), FullText(right)).map(m => (m.leftWord.from.i, m.rightWord.from.i, m.closest4th))
+    val result = Pass1FeatureCalculator.calcAlignerFeatures(FullText(left), FullText(right)).map(m => (m.leftWord.from.i, m.rightWord.from.i, m.closest4th))
     result.toSeq.sortBy{case (l, r, _) => (l, r)}
   }
   @SuppressWarnings(Array(Warts.DefaultArguments))

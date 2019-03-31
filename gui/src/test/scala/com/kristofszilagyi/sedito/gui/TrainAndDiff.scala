@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.{Files, Path, Paths}
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Features
+import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.Pass1Features
 import com.kristofszilagyi.sedito.aligner._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
@@ -44,7 +44,7 @@ object TrainAndDiff {
 
   private def readSingleDataSetAndMeasureFeatures(testDir: Path) = {
     val testCase = readTestCase(testDir)
-    val metrics = Pass1MetricCalculator.calcAlignerFeatures(testCase.left, testCase.right)
+    val metrics = Pass1FeatureCalculator.calcAlignerFeatures(testCase.left, testCase.right)
 
     val matches = testCase.wordAlignment.matches.toSeq
     val matchesSet = matches.toSet

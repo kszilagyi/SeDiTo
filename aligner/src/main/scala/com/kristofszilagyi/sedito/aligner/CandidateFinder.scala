@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.{WordWithContext, WordWithContextPositionAgnostic}
+import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.{WordWithContext, WordWithContextPositionAgnostic}
 import com.kristofszilagyi.sedito.common.utils.MapOps.RichMap
 
 sealed trait Candidacy

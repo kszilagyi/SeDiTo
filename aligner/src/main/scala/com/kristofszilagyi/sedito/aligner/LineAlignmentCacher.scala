@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.aligner
 
-import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.PairwiseFeatures
+import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.PairwiseFeatures
 import com.kristofszilagyi.sedito.common.{LineIdx, Warts}
 
 // Vector: performance is important here
@@ -16,7 +16,7 @@ final class LineAlignmentCacher(leftLines: Vector[String], rightLines: Vector[St
       case Some(metrics) =>
         metrics
       case None =>
-        val metrics = Pass1MetricCalculator.calcFeatures(leftLine, rightLine, math.max(leftLine.length, rightLine.length))
+        val metrics = Pass1FeatureCalculator.calcFeatures(leftLine, rightLine, math.max(leftLine.length, rightLine.length))
         cache += ((leftLine, rightLine) -> metrics)
         metrics
     }

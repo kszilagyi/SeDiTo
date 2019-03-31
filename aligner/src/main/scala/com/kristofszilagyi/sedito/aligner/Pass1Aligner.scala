@@ -1,7 +1,7 @@
 package com.kristofszilagyi.sedito.aligner
 
 import com.kristofszilagyi.sedito.aligner.Pass1Aligner._
-import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Features
+import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.Pass1Features
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common._
 import org.log4s.getLogger
@@ -39,7 +39,7 @@ object Pass1Aligner {
 
 final class Pass1Aligner(classifier: SoftClassifier[Array[Double]], scaler: Scaler) {
   def align(left: FullText, right: FullText): UnambiguousWordAlignment = {
-    val metrics = Pass1MetricCalculator.calcAlignerFeatures(left, right)
+    val metrics = Pass1FeatureCalculator.calcAlignerFeatures(left, right)
     logger.info(s"Number of metrics: ${metrics.size}")
     alignFast(findPotentialMatches(metrics), log = true)
   }

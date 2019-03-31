@@ -2,7 +2,7 @@ package com.kristofszilagyi.sedito.gui
 
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.Pass1MetricCalculator.Pass1Features
+import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.Pass1Features
 import com.kristofszilagyi.sedito.gui.TrainAndDiff.readDataSetAndMeasureFeatures
 import org.log4s.getLogger
 import Train._
