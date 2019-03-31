@@ -1,7 +1,6 @@
-package com.kristofszilagyi.sedito.gui
+package com.kristofszilagyi.sedito.common
 
-import com.kristofszilagyi.sedito.common.{LineIdx, Warts}
-import IndentationCalculator._
+import com.kristofszilagyi.sedito.common.IndentationCalculator._
 
 final case class IndentationOneSide(indents: Seq[Int], lineIdx: LineIdx, lineIdxFromEnd: Int)
 final case class Indentation(left: IndentationOneSide, right: IndentationOneSide)
