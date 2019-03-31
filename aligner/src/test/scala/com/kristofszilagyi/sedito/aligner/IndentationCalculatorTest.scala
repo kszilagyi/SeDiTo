@@ -1,5 +1,6 @@
-package com.kristofszilagyi.sedito.common
+package com.kristofszilagyi.sedito.aligner
 
+import com.kristofszilagyi.sedito.common.LineIdx
 import com.kristofszilagyi.sedito.common.Warts._
 import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
