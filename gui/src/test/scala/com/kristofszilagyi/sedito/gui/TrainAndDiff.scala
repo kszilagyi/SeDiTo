@@ -22,7 +22,7 @@ import scala.collection.JavaConverters._
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.DurationDouble
 import scala.concurrent.{Await, Future}
-import scala.util.{Failure, Random, Success}
+import scala.util.{Failure, Success}
 
 
 final case class Pass1FeaturesWithResults(features: Pass1Features, matching: Boolean) extends FeaturesWithResults
@@ -115,34 +115,51 @@ object TrainAndDiff {
 
 }
 object Train1Pass {
+  def order[T <: WithPath](samplesByPath: List[T]): List[T] = {
+    samplesByPath.sortBy(_.path.getFileName)
+  }
+
   private val logger = getLogger
   val hiddenLayerSize = 50
 
-  private def crossValidate(samples: List[Pass1PathAndSamples]) = {
-    (1 to 3) map { _ =>
-      val randomSamples = Random.shuffle(samples)
-      val (training, test) = randomSamples.splitAt((samples.size * trainingRatio).toInt)
-      Future { train(training, test, logStats = true, hiddenLayerSize) }
+  private def crossValidate(orderedSamples: List[Pass1PathAndSamples]) = {
+    val trainingSize = (orderedSamples.size * trainingRatio).toInt
+    val testSize = orderedSamples.size - trainingSize
+    (0 to 3) map { i => //4-5 is the default (outside this method), that's why we omit here
+      val testStart = i * testSize
+      val testEnd = testStart + testSize
+      logger.info(s"testStart: $testStart, testEnd: $testEnd")
+      val training = orderedSamples.slice(0, testStart) ++ orderedSamples.drop(testEnd)
+      val test = orderedSamples.slice(testStart, testEnd)
+      assert(training.size ==== trainingSize)
+      assert(test.size ==== testSize)
+      Future { train(training, test, logStats = false, hiddenLayerSize)._3 }
     }
   }
 
-  def shuffle[T](samples: List[T]): List[T] = {
-    val random = new Random(124) //make it repeatable but avoid weird dependence on file structure
-    random.shuffle(samples)
-  }
 
   def main(args: Array[String]) {
     logger.info("Start")
     val start = Instant.now()
-    val samples = readDataSetAndMeasureFeatures()
-    val crossValidates = crossValidate(samples)
-    val (training, test) = shuffle(samples).splitAt((samples.size * trainingRatio).toInt)
-    val (classifier, scaler) = train(training, test, logStats = true, hiddenLayerSize)
+    val orderedSamples = order(readDataSetAndMeasureFeatures())
+    val crossValidates = crossValidate(orderedSamples)
+    val trainingSize = (orderedSamples.size * trainingRatio).toInt
+    val testSize = orderedSamples.size - trainingSize
+
+    val (training, test) = orderedSamples.splitAt(testSize * 4)
+    logger.info(s"trainingSize: ${training.size}, testSize: ${test.size}")
+    val (classifier, scaler, mainF1s) = train(training, test, logStats = true, hiddenLayerSize)
     write.xstream(classifier, Main.firstPhaseClassifierPath)
     write.xstream(scaler, Main.firstPhaseScalerPath)
     val duration = Duration.between(start, Instant.now())
-    discard(Await.ready(Future.sequence(crossValidates), 10.minutes))
+    val crossF1s = Await.result(Future.sequence(crossValidates), 10.minutes)
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
+
+    logger.info(s"Main f1s: $mainF1s")
+    logger.info(s"Cross f1s: ${crossF1s.map(_.toString).mkString("\n")}")
+    val allF1s = mainF1s +: crossF1s
+    val avg = allF1s.reduce(_ + _) / allF1s.size
+    logger.info(s"Avg: $avg")
   }
 }
 

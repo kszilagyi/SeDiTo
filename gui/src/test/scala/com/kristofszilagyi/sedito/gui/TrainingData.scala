@@ -6,13 +6,31 @@ import smile.validation._
 import TrainingData.logger
 
 final class YAndPred(val y: Array[Int],val pred: Array[Int])
-final case class F1s(training: Double, test: Double)
+final case class F1s(training: Double, test: Double) {
+  override def toString: String = {
+    s"Training: $training, test: $test"
+  }
+
+  def +(f1s: F1s): F1s = {
+    F1s(training = training + f1s.training, test = test + f1s.test)
+  }
+
+  def /(i: Int): F1s = {
+    F1s(training = training / i, test = test / i)
+  }
+}
 object TrainingData {
   private val logger = getLogger
 
 }
 final case class TrainingData(training: YAndPred, test: YAndPred) {
-  def printDetailedStats(): Unit = {
+  def f1s: F1s = {
+    val trainingF1 = f1(training.y, training.pred)
+    val testF1 = f1(test.y, test.pred)
+    F1s(training = trainingF1, test = testF1)
+  }
+
+  def printDetailedStats(f1s: F1s): Unit = {
     val trainingY = training.y
     val trainingPred = training.pred
     val testY = test.y
@@ -30,7 +48,7 @@ final case class TrainingData(training: YAndPred, test: YAndPred) {
     logger.info(s"training FP count: $trainFp")
     logger.info(s"training FN count: $trainFn")
     logger.info(s"total mispred: ${trainFp + trainFn}")
-    logger.info("training f1: " + f1(trainingY, trainingPred).toString)
+    logger.info(s"training f1: ${f1s.training}")
 
     logger.info("test accuracy: " + accuracy(testY, testPred).toString)
     logger.info("test recall: " + recall(testY, testPred).toString)
@@ -45,18 +63,6 @@ final case class TrainingData(training: YAndPred, test: YAndPred) {
     logger.info(s"test FP count: $testFp")
     logger.info(s"test FN count: $testFn")
     logger.info(s"total mispred: ${testFp + testFn}")
-    logger.info("test f1: " + f1(testY, testPred).toString)
-  }
-
-  def f1s: F1s = {
-    val trainingY = training.y
-    val trainingPred = training.pred
-    val testY = test.y
-    val testPred = test.pred
-
-    val trainingF1 = f1(trainingY, trainingPred)
-
-    val testF1 = f1(testY, testPred)
-    F1s(training = trainingF1, test = testF1)
+    logger.info(s"test f1: ${f1s.test}")
   }
 }

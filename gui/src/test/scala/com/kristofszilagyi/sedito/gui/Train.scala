@@ -13,7 +13,7 @@ import smile.feature.Scaler
 import smile.validation.f1
 
 object Train {
-  val trainingRatio = 0.7
+  val trainingRatio = 0.8
 
   def calcNumOfAttributes(metrics: List[Traversable[FeaturesWithResults]]): Int = {
     @SuppressWarnings(Array(Warts.OptionPartial))
@@ -116,7 +116,7 @@ object Train {
 
   private val logger = getLogger
 
-  def train(training: List[PathAndSamples], test: List[PathAndSamples], logStats: Boolean, hiddenLayerSize: Int): (NeuralNetwork, AccessibleScaler) = {
+  def train(training: List[PathAndSamples], test: List[PathAndSamples], logStats: Boolean, hiddenLayerSize: Int) = {
     val samples = training ++ test
     val featuresWithResults = samples.map(_.samples.featuresWithResults)
     val numOfAttributes = calcNumOfAttributes(featuresWithResults)
@@ -129,8 +129,9 @@ object Train {
     val (classifier, scaler, trainingData) = generateClassifier(nestedTraining = training.map(_.samples),
       nestedTest = test.map(_.samples), numOfAttributes, idxesToExclude = Set.empty, hiddenLayerSize = hiddenLayerSize)
 
+    val f1s = trainingData.f1s
     if (logStats) {
-      trainingData.printDetailedStats()
+      trainingData.printDetailedStats(f1s)
       val trainingMetrics = performanceMetrics(training, scaler, classifier, numOfAttributes, idxesToExclude = Set.empty)
 
       logger.info("Training f1s: \n" + trainingMetrics.mkString("\n"))
@@ -138,6 +139,6 @@ object Train {
       val testMetrics = performanceMetrics(test, scaler, classifier, numOfAttributes, idxesToExclude = Set.empty)
       logger.info("Test f1s: \n" + testMetrics.mkString("\n"))
     }
-    (classifier, scaler)
+    (classifier, scaler, f1s)
   }
 }

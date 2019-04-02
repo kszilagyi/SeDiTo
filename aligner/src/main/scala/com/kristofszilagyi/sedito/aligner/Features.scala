@@ -16,7 +16,12 @@ trait FeaturesWithResults {
 trait Samples {
   def featuresWithResults: Traversable[FeaturesWithResults]
 }
-trait PathAndSamples {
+
+trait WithPath {
+  def path: Path
+}
+
+trait PathAndSamples extends WithPath{
   def path: Path
   def samples: Samples
 }

@@ -35,7 +35,7 @@ object WriteFeatures {
     val samples = readDataSetAndMeasureFeatures()
 
     val (_, firstScaler) = Main.loadAI()
-    val (trainingSamples, testSamples) = Train1Pass.shuffle(samples).splitAt((samples.size * Train.trainingRatio).toInt)
+    val (trainingSamples, testSamples) = Train1Pass.order(samples).splitAt((samples.size * Train.trainingRatio).toInt)
     Write.writeSamplesCSV("training", firstScaler, trainingSamples)
     Write.writeSamplesCSV("test", firstScaler, testSamples)
   }
@@ -45,7 +45,7 @@ object WritePass1Results {
   def main(args: Array[String]): Unit = {
     val samples = readDataSetAndMeasureFeatures()
     val firstPassResultsWithPath = calcFirstPass(samples)
-    val (training, test) = Train1Pass.shuffle(firstPassResultsWithPath).splitAt((samples.size * Train.trainingRatio).toInt)
+    val (training, test) = Train1Pass.order(firstPassResultsWithPath).splitAt((samples.size * Train.trainingRatio).toInt)
     Write.writeResults("training", training)
     Write.writeResults("test", test)
   }

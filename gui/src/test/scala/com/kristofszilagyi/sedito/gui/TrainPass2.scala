@@ -47,7 +47,7 @@ object TrainPass2 {
   final case class LineGroup(main: Pass1ResultWithTruth, sameLine: Set[Pass1Result])
   final case class PathAndLineGroups(path: Path, group: Traversable[LineGroup])
   final case class Pass1ResultWithTruth(pass1Result: Pass1Result, pass1Features: Pass1Features, shouldBeMatching: Boolean)
-  final case class PathAndPass1Results(path: Path, pass1Results: Traversable[Pass1ResultWithTruth])
+  final case class PathAndPass1Results(path: Path, pass1Results: Traversable[Pass1ResultWithTruth]) extends WithPath
   final case class PathAndPass2Features(path: Path, pass2Features: Traversable[Pass2Features])
   final case class Pass2Features(main: Pass1Result, mainPass1Features: Pass1Features, line: LineFeatures, contextFeatures: AllContextFeatures) extends Features {
     def doubles: Array[Double] = {
@@ -166,7 +166,7 @@ object TrainPass2 {
     logger.info(s"First pass done")
     val samplesByPath = calcPass2Features(firstPassResultsWithPath)
 
-    val (trainingSamples, testSamples) = Train1Pass.shuffle(samplesByPath).splitAt((samples.size * trainingRatio).toInt)
+    val (trainingSamples, testSamples) = Train1Pass.order(samplesByPath).splitAt((samples.size * trainingRatio).toInt)
     logger.info("Measuring pass 2 metrics is done")
     val _ = Train.train(trainingSamples, testSamples, logStats = true, hiddenLayerSize = 50)
   }
