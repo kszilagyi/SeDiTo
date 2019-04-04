@@ -1,0 +1,78 @@
+
+object TrainAndDiff {
+
+
+  final class ShowOne extends Application {
+    def start(stage: Stage): Unit = {
+
+      val (classifier, scaler) = Main.loadAI()
+      val path = Paths.get("//home/szkster/IdeaProjects/SeDiTo/common/target/" +
+        "scala-2.12/test-classes/algorithm_tests/full_tests/test_model_py2")
+      val testCase = readTestCase(path)
+      val leftPath = TestCase.leftPath(path)
+      val rightPath = TestCase.rightPath(path)
+
+      displayTestCase(testCase, leftPath, rightPath, classifier, scaler)
+    }
+  }
+
+  final case class PerformanceMetrics(f1: Double, fn: Int, fp: Int, tp: Int, selPos: Int, expectedPos: Int, sampleSize: Int) {
+    override def toString: String = f"f1: $f1%.3f, tp: $tp%4d, fp: $fp%2d, fn: $fn%2d, selPos: $selPos%4d, " +
+      f"expectedPos: $expectedPos%4d, sample size: $sampleSize"
+  }
+
+
+
+}
+object Train1Pass {
+  def order[T <: WithPath](samplesByPath: List[T]): List[T] = {
+    samplesByPath.sortBy(_.path.getFileName)
+  }
+
+  private val logger = getLogger
+  val hiddenLayerSize = 50
+
+  private def crossValidate(orderedSamples: List[Pass1PathAndSamples]) = {
+    val trainingSize = (orderedSamples.size * trainingRatio).toInt
+    val testSize = orderedSamples.size - trainingSize
+    (0 to 3) map { i => //4-5 is the default (outside this method), that's why we omit here
+      val testStart = i * testSize
+      val testEnd = testStart + testSize
+      logger.info(s"testStart: $testStart, testEnd: $testEnd")
+      val training = orderedSamples.slice(0, testStart) ++ orderedSamples.drop(testEnd)
+      val test = orderedSamples.slice(testStart, testEnd)
+      assert(training.size ==== trainingSize)
+      assert(test.size ==== testSize)
+      Future { train(training, test, logStats = false, hiddenLayerSize)._3 }
+    }
+  }
+
+
+  def main(args: Array[String]) {
+    logger.info("Start")
+    val start = Instant.now()
+    val orderedSamples = order(readDataSetAndMeasureFeatures())
+    val crossValidates = crossValidate(orderedSamples)
+    val trainingSize = (orderedSamples.size * trainingRatio).toInt
+    val testSize = orderedSamples.size - trainingSize
+
+    val (training, test) = orderedSamples.splitAt(testSize * 4)
+    logger.info(s"trainingSize: ${training.size}, testSize: ${test.size}")
+    val (classifier, scaler, mainF1s) = train(training, test, logStats = true, hiddenLayerSize)
+    write.xstream(classifier, Main.firstPhaseClassifierPath)
+    write.xstream(scaler, Main.firstPhaseScalerPath)
+    val duration = Duration.between(start, Instant.now())
+    val crossF1s = Await.result(Future.sequence(crossValidates), 10.minutes)
+    logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
+
+    logger.info(s"Main f1s: $mainF1s")
+    logger.info(s"Cross f1s: ${crossF1s.map(_.toString).mkString("\n")}")
+    val allF1s = mainF1s +: crossF1s
+    val avg = allF1s.reduce(_ + _) / allF1s.size
+    logger.info(s"Avg: $avg")
+  }
+}
+
+object Diff extends App {
+  Application.launch(classOf[ShowOne])
+}

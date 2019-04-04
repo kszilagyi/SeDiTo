@@ -1,0 +1,15 @@
+
+object FeatureElimination extends App{
+  logger.info("Results sorted by test")
+  results.sortBy(_._2.testF1).foreach { case (metric, f1) =>
+    logger.info(s"$metric: ${f1.testF1}")
+  }
+
+  logger.info("Results sorted by training")
+  results.sortBy(_._2.trainingF1).foreach { case (metric, f1) =>
+    logger.info(s"$metric: ${f1.trainingF1}")
+  }
+
+  val duration = Duration.between(start, Instant.now())
+  logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis/1000 - duration.toMinutes * 60} seconds")
+}
