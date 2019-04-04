@@ -1,0 +1,27 @@
+
+
+object Main {
+  private val logger = getLogger
+
+
+  val firstPhaseClassifierName = "first_phase_nn.xml"
+  val firstPhaseScalerName = "first_phase_scaler.xml"
+
+  private def loadXStream(stream: InputStream) = {
+    val xstream = new XStream
+    xstream.fromXML(stream)
+
+  }
+  @SuppressWarnings(Array(Warts.AsInstanceOf))
+  def loadAI(): (SoftClassifier[Array[Double]], Scaler) = {
+    val loader = getClass.getClassLoader
+
+    val classifier = using(loader.getResourceAsStream(firstPhaseClassifierName)) { stream =>
+      loadXStream(stream)
+    }
+    val scaler = using(loader.getResourceAsStream(firstPhaseScalerName)) { stream =>
+      loadXStream(stream)
+    }
+    (classifier.asInstanceOf[SoftClassifier[Array[Double]]], scaler.asInstanceOf[Scaler])
+  }
+}
