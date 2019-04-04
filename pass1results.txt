@@ -1,43 +1,43 @@
-/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=8417137623850 -Xmx8G -javaagent:/home/szkster/Programs/idea-IC-183.4588.61/lib/idea_rt.jar=45337:/home/szkster/Programs/idea-IC-183.4588.61/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.3.jar:/home/szkster/.sbt/boot/scala-2.12.7/lib/scala-reflect.jar:/home/szkster/.sbt/boot/scala-2.12.7/lib/scala-library.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-2.1.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.richtext/richtextfx/jars/richtextfx-0.9.1.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.7.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-text/jars/commons-text-1.3.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.12/jars/scala-java8-compat_2.12-0.9.0.jar:/home/szkster/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/home/szkster/.ivy2/cache/com.google.jimfs/jimfs/bundles/jimfs-1.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar com.kristofszilagyi.sedito.gui.Train1Pass
-148  [main] INFO  c.k.sedito.gui.Train1Pass - Start
-testStart: 0, testEnd: 29
-testStart: 29, testEnd: 58
-testStart: 58, testEnd: 87
-testStart: 87, testEnd: 116
-116, 27
-62721 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Number of features: 136
-62724 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Training size: 329554
-62725 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Test size: 197390
-62739 [main] INFO  com.kristofszilagyi.sedito.gui.Train - 1s in training: 86078
-62755 [main] INFO  com.kristofszilagyi.sedito.gui.Train - 0s in training: 243476
-62764 [main] INFO  com.kristofszilagyi.sedito.gui.Train - 1s in test: 15454
-62774 [main] INFO  com.kristofszilagyi.sedito.gui.Train - 0s in test: 181936
-62774 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Starting training
-418985 [main] INFO  smile.util.package$ - runtime: 346384.395087 ms
-418986 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Classifier created, creating predictions.
-431237 [main] INFO  c.k.sedito.gui.TrainingData - training accuracy: 0.9991807109001863
-431238 [main] INFO  c.k.sedito.gui.TrainingData - training recall: 0.998675619786705
-431245 [main] INFO  c.k.sedito.gui.TrainingData - training sensitivity(TP / (TP + FN)): 0.998675619786705
-431251 [main] INFO  c.k.sedito.gui.TrainingData - training specificity(TN / (FP + TN)): 0.9993592797647407
-431258 [main] INFO  c.k.sedito.gui.TrainingData - training fallout(FP / (FP + TN)): 6.407202352592956E-4
-431265 [main] INFO  c.k.sedito.gui.TrainingData - training fdr(FP / (TP + FP)): 0.0018114259173246632
-431356 [main] INFO  c.k.sedito.gui.TrainingData - training TP count: 85964
-431357 [main] INFO  c.k.sedito.gui.TrainingData - training FP count: 156
-431357 [main] INFO  c.k.sedito.gui.TrainingData - training FN count: 114
-431357 [main] INFO  c.k.sedito.gui.TrainingData - total mispred: 270
-431357 [main] INFO  c.k.sedito.gui.TrainingData - training f1: 0.9984320375381828
-431361 [main] INFO  c.k.sedito.gui.TrainingData - test accuracy: 0.9976746542378033
-431361 [main] INFO  c.k.sedito.gui.TrainingData - test recall: 0.9881584055907856
-431366 [main] INFO  c.k.sedito.gui.TrainingData - test sensitivity(TP / (TP + FN)): 0.9881584055907856
-431370 [main] INFO  c.k.sedito.gui.TrainingData - test specificity(TN / (FP + TN)): 0.9984829830269984
-431375 [main] INFO  c.k.sedito.gui.TrainingData - test fallout(FP / (FP + TN)): 0.0015170169730015504
-431376 [main] INFO  c.k.sedito.gui.TrainingData - test fdr(FP / (TP + FP)): 0.017752621084453593
-431396 [main] INFO  c.k.sedito.gui.TrainingData - test TP count: 15271
-431396 [main] INFO  c.k.sedito.gui.TrainingData - test FP count: 276
-431397 [main] INFO  c.k.sedito.gui.TrainingData - test FN count: 183
-431397 [main] INFO  c.k.sedito.gui.TrainingData - total mispred: 459
-431397 [main] INFO  c.k.sedito.gui.TrainingData - test f1: 0.9851940259991614
-441150 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Training f1s:
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dvisualvm.id=2802523392489 -Xmx8G -javaagent:/home/szkster/Programs/idea-IC-183.4588.61/lib/idea_rt.jar=43989:/home/szkster/Programs/idea-IC-183.4588.61/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/gui/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.fxmisc.wellbehaved/wellbehavedfx/jars/wellbehavedfx-0.3.3.jar:/home/szkster/.sbt/boot/scala-2.12.7/lib/scala-reflect.jar:/home/szkster/.sbt/boot/scala-2.12.7/lib/scala-library.jar:/home/szkster/.ivy2/cache/org.fxmisc.undo/undofx/jars/undofx-2.1.0.jar:/home/szkster/.ivy2/cache/org.fxmisc.richtext/richtextfx/jars/richtextfx-0.9.1.jar:/home/szkster/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar:/home/szkster/.ivy2/cache/info.debatty/java-string-similarity/jars/java-string-similarity-1.1.0.jar:/home/szkster/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.25.jar:/home/szkster/.ivy2/cache/org.scalatest/scalatest_2.12/bundles/scalatest_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scalactic/scalactic_2.12/bundles/scalactic_2.12-3.0.4.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-xml_2.12/bundles/scala-xml_2.12-1.0.5.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/bundles/scala-parser-combinators_2.12-1.0.4.jar:/home/szkster/.ivy2/cache/org.log4s/log4s_2.12/jars/log4s_2.12-1.4.0.jar:/home/szkster/.ivy2/cache/org.bitbucket.cowwoc/diff-match-patch/jars/diff-match-patch-1.1.jar:/home/szkster/.ivy2/cache/io.spray/spray-json_2.12/bundles/spray-json_2.12-1.3.4.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum_2.12/jars/enumeratum_2.12-1.5.12.jar:/home/szkster/.ivy2/cache/com.beachape/enumeratum-macros_2.12/jars/enumeratum-macros_2.12-1.5.9.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.2.3.jar:/home/szkster/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.2.3.jar:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/common/target/scala-2.12/classes:/home/szkster/.ivy2/cache/org.reactfx/reactfx/jars/reactfx-2.0-M5.jar:/home/szkster/.ivy2/cache/org.fxmisc.flowless/flowless/jars/flowless-0.6.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-core_2.12/jars/cats-core_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-kernel_2.12/jars/cats-kernel_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/cats-macros_2.12/jars/cats-macros_2.12-1.0.1.jar:/home/szkster/.ivy2/cache/org.typelevel/machinist_2.12/jars/machinist_2.12-0.6.2.jar:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/test-classes:/home/szkster/IdeaProjects/SeDiTo/aligner/target/scala-2.12/classes:/home/szkster/.ivy2/cache/com.jhlabs/filters/jars/filters-2.0.235.jar:/home/szkster/.ivy2/cache/com.thoughtworks.xstream/xstream/jars/xstream-1.4.8.jar:/home/szkster/.ivy2/cache/org.swinglabs/swing-worker/jars/swing-worker-1.1.jar:/home/szkster/.ivy2/cache/org.swinglabs/swingx/jars/swingx-1.6.1.jar:/home/szkster/.ivy2/cache/xmlpull/xmlpull/jars/xmlpull-1.1.3.1.jar:/home/szkster/.ivy2/cache/xpp3/xpp3_min/jars/xpp3_min-1.1.4c.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.7.jar:/home/szkster/.ivy2/cache/org.apache.commons/commons-text/jars/commons-text-1.3.jar:/home/szkster/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.12/jars/scala-java8-compat_2.12-0.9.0.jar:/home/szkster/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/home/szkster/.ivy2/cache/com.google.jimfs/jimfs/bundles/jimfs-1.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-core/jars/smile-core-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-data/jars/smile-data-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-graph/jars/smile-graph-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-interpolation/jars/smile-interpolation-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-math/jars/smile-math-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-nlp/jars/smile-nlp-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-plot/jars/smile-plot-1.5.1.jar:/home/szkster/.ivy2/cache/com.github.haifengl/smile-scala_2.12/jars/smile-scala_2.12-1.5.1.jar com.kristofszilagyi.sedito.gui.Train1Pass
+154  [main] INFO  c.k.sedito.gui.Train1Pass - Start
+61822 [main] INFO  c.k.sedito.gui.Train1Pass - testStart: 0, testEnd: 29
+61833 [main] INFO  c.k.sedito.gui.Train1Pass - testStart: 29, testEnd: 58
+61850 [main] INFO  c.k.sedito.gui.Train1Pass - testStart: 58, testEnd: 87
+61851 [main] INFO  c.k.sedito.gui.Train1Pass - testStart: 87, testEnd: 116
+61864 [main] INFO  c.k.sedito.gui.Train1Pass - trainingSize: 116, testSize: 27
+61904 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Number of features: 136
+61911 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Training size: 329554
+61921 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Test size: 197390
+61986 [main] INFO  com.kristofszilagyi.sedito.gui.Train - 1s in training: 86078
+62123 [main] INFO  com.kristofszilagyi.sedito.gui.Train - 0s in training: 243476
+62185 [main] INFO  com.kristofszilagyi.sedito.gui.Train - 1s in test: 15454
+62264 [main] INFO  com.kristofszilagyi.sedito.gui.Train - 0s in test: 181936
+62274 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Starting training
+362584 [main] INFO  smile.util.package$ - runtime: 288296.665875 ms
+362585 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Classifier created, creating predictions.
+380165 [main] INFO  c.k.sedito.gui.TrainingData - training accuracy: 0.9991807109001863
+380166 [main] INFO  c.k.sedito.gui.TrainingData - training recall: 0.998675619786705
+380170 [main] INFO  c.k.sedito.gui.TrainingData - training sensitivity(TP / (TP + FN)): 0.998675619786705
+380174 [main] INFO  c.k.sedito.gui.TrainingData - training specificity(TN / (FP + TN)): 0.9993592797647407
+380189 [main] INFO  c.k.sedito.gui.TrainingData - training fallout(FP / (FP + TN)): 6.407202352592956E-4
+380193 [main] INFO  c.k.sedito.gui.TrainingData - training fdr(FP / (TP + FP)): 0.0018114259173246632
+380291 [main] INFO  c.k.sedito.gui.TrainingData - training TP count: 85964
+380291 [main] INFO  c.k.sedito.gui.TrainingData - training FP count: 156
+380291 [main] INFO  c.k.sedito.gui.TrainingData - training FN count: 114
+380291 [main] INFO  c.k.sedito.gui.TrainingData - total mispred: 270
+380291 [main] INFO  c.k.sedito.gui.TrainingData - training f1: 0.9984320375381828
+380297 [main] INFO  c.k.sedito.gui.TrainingData - test accuracy: 0.9976746542378033
+380298 [main] INFO  c.k.sedito.gui.TrainingData - test recall: 0.9881584055907856
+380298 [main] INFO  c.k.sedito.gui.TrainingData - test sensitivity(TP / (TP + FN)): 0.9881584055907856
+380298 [main] INFO  c.k.sedito.gui.TrainingData - test specificity(TN / (FP + TN)): 0.9984829830269984
+380299 [main] INFO  c.k.sedito.gui.TrainingData - test fallout(FP / (FP + TN)): 0.0015170169730015504
+380299 [main] INFO  c.k.sedito.gui.TrainingData - test fdr(FP / (TP + FP)): 0.017752621084453593
+380341 [main] INFO  c.k.sedito.gui.TrainingData - test TP count: 15271
+380341 [main] INFO  c.k.sedito.gui.TrainingData - test FP count: 276
+380341 [main] INFO  c.k.sedito.gui.TrainingData - test FN count: 183
+380341 [main] INFO  c.k.sedito.gui.TrainingData - total mispred: 459
+380341 [main] INFO  c.k.sedito.gui.TrainingData - test f1: 0.9851940259991614
+391059 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Training f1s:
 (grid_py                           ,f1: 0.965, tp:  125, fp:  9, fn:  0, selPos:  134, expectedPos:  125, sample size: 1676)
 (nonlearningalignertestcpp         ,f1: 0.968, tp:  444, fp: 14, fn: 15, selPos:  458, expectedPos:  459, sample size: 3179)
 (25                                ,f1: 0.975, tp:  199, fp:  8, fn:  2, selPos:  207, expectedPos:  201, sample size: 680)
@@ -154,7 +154,7 @@ testStart: 87, testEnd: 116
 (qstringutils_cpp                  ,f1: 1.000, tp:  109, fp:  0, fn:  0, selPos:  109, expectedPos:  109, sample size: 185)
 (qstringutils_h                    ,f1: 1.000, tp:  319, fp:  0, fn:  0, selPos:  319, expectedPos:  319, sample size: 596)
 (empty_lines                       ,f1: NaN, tp:    0, fp:  0, fn:  0, selPos:    0, expectedPos:    0, sample size: 0)
-447382 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Test f1s:
+396733 [main] INFO  com.kristofszilagyi.sedito.gui.Train - Test f1s:
 (textblocklinked1to1_cpp           ,f1: 0.860, tp:  111, fp: 11, fn: 25, selPos:  122, expectedPos:  136, sample size: 2532)
 (this_needs_rename_info_to_work    ,f1: 0.905, tp:  337, fp: 46, fn: 25, selPos:  383, expectedPos:  362, sample size: 8252)
 (test_model_py2                    ,f1: 0.919, tp:  532, fp: 56, fn: 38, selPos:  588, expectedPos:  570, sample size: 19399)
@@ -182,20 +182,20 @@ testStart: 87, testEnd: 116
 (test_model_py3                    ,f1: 1.000, tp:  911, fp:  0, fn:  0, selPos:  911, expectedPos:  911, sample size: 5528)
 (utils_py2                         ,f1: 1.000, tp:  363, fp:  0, fn:  0, selPos:  363, expectedPos:  363, sample size: 1957)
 (utilstest_py                      ,f1: 1.000, tp:  217, fp:  0, fn:  0, selPos:  217, expectedPos:  217, sample size: 743)
-481527 [scala-execution-context-global-13] INFO  smile.util.package$ - runtime: 408814.152015 ms
-481528 [scala-execution-context-global-13] INFO  com.kristofszilagyi.sedito.gui.Train - Classifier created, creating predictions.
-511472 [scala-execution-context-global-12] INFO  smile.util.package$ - runtime: 435315.628964 ms
-511472 [scala-execution-context-global-12] INFO  com.kristofszilagyi.sedito.gui.Train - Classifier created, creating predictions.
-521169 [scala-execution-context-global-10] INFO  smile.util.package$ - runtime: 441769.316636 ms
-521169 [scala-execution-context-global-10] INFO  com.kristofszilagyi.sedito.gui.Train - Classifier created, creating predictions.
-527417 [scala-execution-context-global-11] INFO  smile.util.package$ - runtime: 447891.306801 ms
-527417 [scala-execution-context-global-11] INFO  com.kristofszilagyi.sedito.gui.Train - Classifier created, creating predictions.
-533215 [main] INFO  c.k.sedito.gui.Train1Pass - Took: 7 minutes, 27 seconds
-533216 [main] INFO  c.k.sedito.gui.Train1Pass - Main f1s: Training: 0.9984320375381828, test: 0.9851940259991614
-533216 [main] INFO  c.k.sedito.gui.Train1Pass - Cross f1s: Training: 0.9981581150580074, test: 0.9921461594162535
-Training: 0.9979563619938414, test: 0.9928898867995135
-Training: 0.997473750195894, test: 0.9976985040276181
-Training: 0.9970728443589528, test: 0.9978028129592051
-533217 [main] INFO  c.k.sedito.gui.Train1Pass - Avg: Training: 0.9978186218289757, test: 0.9931462778403504
+428083 [scala-execution-context-global-12] INFO  smile.util.package$ - runtime: 352579.635145 ms
+428083 [scala-execution-context-global-12] INFO  com.kristofszilagyi.sedito.gui.Train - Classifier created, creating predictions.
+462005 [scala-execution-context-global-13] INFO  smile.util.package$ - runtime: 382917.837137 ms
+462006 [scala-execution-context-global-13] INFO  com.kristofszilagyi.sedito.gui.Train - Classifier created, creating predictions.
+471792 [scala-execution-context-global-11] INFO  smile.util.package$ - runtime: 396005.873769 ms
+471792 [scala-execution-context-global-11] INFO  com.kristofszilagyi.sedito.gui.Train - Classifier created, creating predictions.
+476147 [scala-execution-context-global-10] INFO  smile.util.package$ - runtime: 397054.25065 ms
+476147 [scala-execution-context-global-10] INFO  com.kristofszilagyi.sedito.gui.Train - Classifier created, creating predictions.
+483040 [main] INFO  c.k.sedito.gui.Train1Pass - Took: 6 minutes, 36 seconds
+483040 [main] INFO  c.k.sedito.gui.Train1Pass - Main f1s: Training: 0.9984320375381828, test: 0.9851940259991614, training size: 329554 (0.2611954338287504 positive), test size: 197390 (0.07829170677339277 positive),
+483043 [main] INFO  c.k.sedito.gui.Train1Pass - Cross f1s: Training: 0.9980488855904814, test: 0.9930245535714286, training size: 460436 (0.18159961427864024 positive), test size: 66508 (0.26939616286762497 positive),
+Training: 0.9980002534114134, test: 0.9934536612737305, training size: 467012 (0.19445967127183028 positive), test size: 59932 (0.17881932857238203 positive),
+Training: 0.9973840218311847, test: 0.9974916580370499, training size: 450166 (0.17730126220105472 positive), test size: 76778 (0.2828544635181953 positive),
+Training: 0.9967513941616389, test: 0.997955640192674, training size: 400608 (0.1642628205128205 positive), test size: 126336 (0.28279350303951367 positive),
+483044 [main] INFO  c.k.sedito.gui.Train1Pass - Avg: Training: 0.9977233185065802, test: 0.9934239078148088
 
 Process finished with exit code 0

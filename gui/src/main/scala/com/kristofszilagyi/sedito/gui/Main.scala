@@ -1,7 +1,7 @@
 package com.kristofszilagyi.sedito.gui
 
 
-import java.io.{FileNotFoundException, RandomAccessFile}
+import java.io.{FileNotFoundException, InputStream, RandomAccessFile}
 import java.nio.charset.StandardCharsets.UTF_8
 import java.nio.file.{Files, Paths}
 import java.util.Base64
@@ -14,6 +14,7 @@ import com.kristofszilagyi.sedito.common.{FullText, Warts}
 import com.kristofszilagyi.sedito.gui.JavaFxOps.scheduleOnJavaFxThread
 import com.kristofszilagyi.sedito.gui.Main._
 import com.sun.javafx.css.CssError
+import com.thoughtworks.xstream.XStream
 import javafx.application.{Application, Platform}
 import javafx.collections.ListChangeListener
 import javafx.scene.control.Alert
@@ -21,7 +22,6 @@ import javafx.scene.control.Alert.AlertType
 import org.log4s._
 import smile.classification.SoftClassifier
 import smile.feature.Scaler
-import smile.read
 
 import scala.collection.JavaConverters._
 import scala.concurrent.duration.DurationInt
@@ -69,12 +69,25 @@ final class Main extends Application {
 object Main {
   private val logger = getLogger
 
-  val firstPhaseClassifierPath = "aligner/src/main/resources/first_phase_nn.xml"
-  val firstPhaseScalerPath = "aligner/src/main/resources/first_phase_scaler.xml"
+
+  val firstPhaseClassifierName = "first_phase_nn.xml"
+  val firstPhaseScalerName = "first_phase_scaler.xml"
+
+  private def loadXStream(stream: InputStream) = {
+    val xstream = new XStream
+    xstream.fromXML(stream)
+
+  }
   @SuppressWarnings(Array(Warts.AsInstanceOf))
   def loadAI(): (SoftClassifier[Array[Double]], Scaler) = {
-    val classifier = read.xstream(firstPhaseClassifierPath)
-    val scaler = read.xstream(firstPhaseScalerPath)
+    val loader = getClass.getClassLoader
+
+    val classifier = using(loader.getResourceAsStream(firstPhaseClassifierName)) { stream =>
+      loadXStream(stream)
+    }
+    val scaler = using(loader.getResourceAsStream(firstPhaseScalerName)) { stream =>
+      loadXStream(stream)
+    }
     (classifier.asInstanceOf[SoftClassifier[Array[Double]]], scaler.asInstanceOf[Scaler])
   }
 

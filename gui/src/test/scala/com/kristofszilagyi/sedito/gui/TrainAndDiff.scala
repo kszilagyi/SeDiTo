@@ -9,6 +9,7 @@ import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
 import com.kristofszilagyi.sedito.common.{TestCase, WordMatch}
+import com.kristofszilagyi.sedito.gui.Main.{firstPhaseClassifierName, firstPhaseScalerName}
 import com.kristofszilagyi.sedito.gui.Train._
 import com.kristofszilagyi.sedito.gui.TrainAndDiff._
 import javafx.application.Application
@@ -149,8 +150,10 @@ object Train1Pass {
     val (training, test) = orderedSamples.splitAt(testSize * 4)
     logger.info(s"trainingSize: ${training.size}, testSize: ${test.size}")
     val (classifier, scaler, mainF1s) = train(training, test, logStats = true, hiddenLayerSize)
-    write.xstream(classifier, Main.firstPhaseClassifierPath)
-    write.xstream(scaler, Main.firstPhaseScalerPath)
+    val firstPhaseClassifierPath = s"aligner/src/main/resources/$firstPhaseClassifierName"
+    val firstPhaseScalerPath = s"aligner/src/main/resources/$firstPhaseScalerName"
+    write.xstream(classifier, firstPhaseClassifierPath)
+    write.xstream(scaler, firstPhaseScalerPath)
     val duration = Duration.between(start, Instant.now())
     val crossF1s = Await.result(Future.sequence(crossValidates), 10.minutes)
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
