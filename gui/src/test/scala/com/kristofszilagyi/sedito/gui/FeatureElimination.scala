@@ -27,13 +27,13 @@ object FeatureElimination extends App{
     metric -> f1s
   }
   logger.info("Results sorted by test")
-  results.sortBy(_._2.test).foreach { case (metric, f1) =>
-    logger.info(s"$metric: ${f1.test}")
+  results.sortBy(_._2.testF1).foreach { case (metric, f1) =>
+    logger.info(s"$metric: ${f1.testF1}")
   }
 
   logger.info("Results sorted by training")
-  results.sortBy(_._2.training).foreach { case (metric, f1) =>
-    logger.info(s"$metric: ${f1.training}")
+  results.sortBy(_._2.trainingF1).foreach { case (metric, f1) =>
+    logger.info(s"$metric: ${f1.trainingF1}")
   }
 
   val duration = Duration.between(start, Instant.now())

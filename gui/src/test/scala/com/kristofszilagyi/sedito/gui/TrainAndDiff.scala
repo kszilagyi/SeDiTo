@@ -155,11 +155,11 @@ object Train1Pass {
     val crossF1s = Await.result(Future.sequence(crossValidates), 10.minutes)
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
 
-    logger.info(s"Main f1s: $mainF1s")
-    logger.info(s"Cross f1s: ${crossF1s.map(_.toString).mkString("\n")}")
+    logger.info(s"Main f1s: ${mainF1s.all}")
+    logger.info(s"Cross f1s: ${crossF1s.map(_.all).mkString("\n")}")
     val allF1s = mainF1s +: crossF1s
     val avg = allF1s.reduce(_ + _) / allF1s.size
-    logger.info(s"Avg: $avg")
+    logger.info(s"Avg: ${avg.f1s}")
   }
 }
 
