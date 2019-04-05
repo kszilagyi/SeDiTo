@@ -1,0 +1,15 @@
+
+  def main(args: Array[String]) {
+    logger.info("Start")
+    val start = Instant.now()
+    val samples = readDataSetAndMeasureMetrics()
+    val crossValidates = crossValidate(samples)
+    val (training, test) = samples.splitAt((samples.size * trainingRatio).toInt)
+    val (classifier, scaler) = train(training, test, logStats = true)
+    write.xstream(classifier, "aligner/src/main/resources/neuralnetwork.xml")
+    write.xstream(scaler, "aligner/src/main/resources/scaler.xml")
+    val duration = Duration.between(start, Instant.now())
+    discard(Await.ready(Future.sequence(crossValidates), 10.minutes))
+    logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
+  }
+}
