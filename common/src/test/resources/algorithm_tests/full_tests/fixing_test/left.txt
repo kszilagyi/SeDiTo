@@ -1,0 +1,24 @@
+
+
+final class TestPass2 extends FreeSpecLike {
+
+  "creating metrics work" in {
+    val path = Paths.get(".")
+
+    val combinedResults = List(
+      ) -> LineMetrics(sum = 0, avg = 0),
+      Pass1ResultWithTruth(
+        Pass1Result(selection(1, 0), selection(0, 1), probability = 0.5),
+        shouldBeMatching = false
+      ) -> LineMetrics(sum = 0.5, avg = 0.5),
+      Pass1ResultWithTruth(
+        Pass1Result(selection(0, 0), selection(1, 0), probability = 0),
+        shouldBeMatching = false
+      ) -> LineMetrics(sum = 0, avg = 0),
+      Pass1ResultWithTruth(
+        Pass1Result(selection(0, 1), selection(1, 0), probability = 0.5),
+        shouldBeMatching = false
+      ) -> LineMetrics(sum = 0.5, avg = 0.5)
+    )
+  }
+}
