@@ -1,0 +1,11 @@
+
+object Main {
+  private val logger = getLogger
+
+  @SuppressWarnings(Array(Warts.AsInstanceOf))
+  def loadAI(): (SoftClassifier[Array[Double]], Scaler) = {
+    val classifier = read.xstream("aligner/src/main/resources/neuralnetwork.xml")
+    val scaler = read.xstream("aligner/src/main/resources/scaler.xml")
+    (classifier.asInstanceOf[SoftClassifier[Array[Double]]], scaler.asInstanceOf[Scaler])
+  }
+}
