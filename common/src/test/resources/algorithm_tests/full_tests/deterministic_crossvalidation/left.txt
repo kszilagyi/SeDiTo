@@ -1,0 +1,37 @@
+
+
+object Train1Pass {
+  private val logger = getLogger
+  val hiddenLayerSize = 50
+
+  private def crossValidate(samples: List[Pass1PathAndSamples]) = {
+    (1 to 3) map { _ =>
+      val randomSamples = Random.shuffle(samples)
+      val (training, test) = randomSamples.splitAt((samples.size * trainingRatio).toInt)
+      Future { train(training, test, logStats = true, hiddenLayerSize) }
+    }
+  }
+
+  def shuffle[T](samples: List[T]): List[T] = {
+    val random = new Random(124) //make it repeatable but avoid weird dependence on file structure
+    random.shuffle(samples)
+  }
+
+  def main(args: Array[String]) {
+    logger.info("Start")
+    val start = Instant.now()
+    val samples = readDataSetAndMeasureFeatures()
+    val crossValidates = crossValidate(samples)
+    val (training, test) = shuffle(samples).splitAt((samples.size * trainingRatio).toInt)
+    val (classifier, scaler) = train(training, test, logStats = true, hiddenLayerSize)
+    write.xstream(classifier, Main.firstPhaseClassifierPath)
+    write.xstream(scaler, Main.firstPhaseScalerPath)
+    val duration = Duration.between(start, Instant.now())
+    discard(Await.ready(Future.sequence(crossValidates), 10.minutes))
+    logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
+  }
+}
+
+object Diff extends App {
+  Application.launch(classOf[ShowOne])
+}
