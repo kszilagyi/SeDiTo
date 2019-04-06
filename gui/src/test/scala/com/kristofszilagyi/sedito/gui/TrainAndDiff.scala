@@ -3,7 +3,7 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.{Files, Path, Paths}
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator._
+import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.Pass1Features
 import com.kristofszilagyi.sedito.aligner._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
@@ -43,16 +43,11 @@ object TrainAndDiff {
     }
   }
 
-  private def readSingleDataSetAndMeasureFeatures(testDir: Path, reverse: Boolean) = {
+  private def readSingleDataSetAndMeasureFeatures(testDir: Path) = {
     val testCase = readTestCase(testDir)
-    val metrics =
-      if (!reverse) calcAlignerFeatures(testCase.left, testCase.right)
-      else calcAlignerFeatures(testCase.right, testCase.left)
+    val metrics = Pass1FeatureCalculator.calcAlignerFeatures(testCase.left, testCase.right)
 
-    val matches =
-      if (!reverse) testCase.wordAlignment.matches.toSeq
-      else testCase.wordAlignment.matches.toSeq.map(_.reverse)
-
+    val matches = testCase.wordAlignment.matches.toSeq
     val matchesSet = matches.toSet
     discard(assert(matches.size ==== matchesSet.size))
     val metricsWithResult = metrics.map { m =>
@@ -70,23 +65,16 @@ object TrainAndDiff {
     }
   }
 
-  private def readSingleOneWay(testDir: Path, reverse: Boolean) = {
-    val samples = readSingleDataSetAndMeasureFeatures(testDir, reverse = reverse)
-    if (samples.featuresWithResults.nonEmpty) {
-      val metricsNumInSamples = calcNumOfAttributes(List(samples.featuresWithResults))
-      val columnCount = Pass1Features.columnNames.size
-      assert(metricsNumInSamples ==== columnCount, s"$metricsNumInSamples != $columnCount")
-    }
-    val path =
-      if (!reverse) testDir
-      else Paths.get(testDir.toString + "_reverse")
-    Pass1PathAndSamples(path, samples)
-  }
-
   def readDataSetAndMeasureFeatures(): List[Pass1PathAndSamples] = {
 
-    val metrics = testDirs.par.flatMap { testDir =>
-      List(readSingleOneWay(testDir, reverse = false), readSingleOneWay(testDir, reverse = true))
+    val metrics = testDirs.par.map { testDir =>
+      val samples = readSingleDataSetAndMeasureFeatures(testDir)
+      if (samples.featuresWithResults.nonEmpty) {
+        val metricsNumInSamples = calcNumOfAttributes(List(samples.featuresWithResults))
+        val columnCount = Pass1Features.columnNames.size
+        assert(metricsNumInSamples ==== columnCount, s"$metricsNumInSamples != $columnCount")
+      }
+      Pass1PathAndSamples(testDir, samples)
     }
     metrics.seq.toList
   }

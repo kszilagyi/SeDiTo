@@ -101,7 +101,6 @@ final case class WordMatch(left: Selection, right: Selection)(val probability: O
   def readable: String = {
     s"${left.toText} - ${right.toText} ($probability)}"
   }
-  def reverse: WordMatch = WordMatch(right, left)(probability)
 }
 
 object AmbiguousWordAlignment {
