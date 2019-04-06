@@ -1,0 +1,41 @@
+
+  def open(left: FullText, right: FullText, newMaybeLeftPath: Option[Path], newMaybeRightPath: Option[Path],
+      newWordAlignment: UnambiguousWordAlignment, showing: Boolean) {
+    needToDraw = false
+    val (newSession, leftSession, rightSession) = DiffPaneSession.create(left, right , newMaybeLeftPath, newMaybeRightPath, newWordAlignment)
+    session = newSession
+    codeAreaLeft.setText(left, leftSession)
+    codeAreaRight.setText(right, rightSession)
+    updatePositionsBasedOnTracker()
+    if (showing) { // just for speed
+      layout()
+      requestRedraw()
+    }
+
+  }
+
+  def saveFiles(): (SaveResult, SaveResult) = {
+    val leftResult = saveFile(session.maybeLeftPath, codeAreaLeft)
+    val rightResult = saveFile(session.maybeRightPath, codeAreaRight)
+    (leftResult, rightResult)
+  }
+
+  private def updatePositionsBasedOnTracker(): Unit = {
+    val tracker = session.nextChangeTracker
+    val zero = LineIdx(0)
+    codeAreaLeft.moveToLine((tracker.left() - 4).max(zero))
+    codeAreaRight.moveToLine((tracker.right() - 4).max(zero))
+  }
+
+  def nextChange(): Unit = {
+    session.nextChangeTracker.next()
+    updatePositionsBasedOnTracker()
+  }
+  def prevChange(): Unit = {
+    session.nextChangeTracker.prev()
+    updatePositionsBasedOnTracker()
+  }
+  def hasNextChange(): Boolean = session.nextChangeTracker.hasNext()
+  def hasPrevChange(): Boolean = session.nextChangeTracker.hasPrev()
+
+}

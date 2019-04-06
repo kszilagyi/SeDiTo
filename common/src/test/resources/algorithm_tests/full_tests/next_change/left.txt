@@ -1,0 +1,29 @@
+
+  def open(left: FullText, right: FullText, newMaybeLeftPath: Option[Path], newMaybeRightPath: Option[Path],
+      newWordAlignment: UnambiguousWordAlignment, showing: Boolean) {
+    needToDraw = false
+    val (newSession, leftSession, rightSession) = DiffPaneSession.create(left, right , newMaybeLeftPath, newMaybeRightPath, newWordAlignment)
+    session = newSession
+    val leftFirstChangeLine = newSession.eqPoints.headOption.map(_.left.from).getOrElse(LineIdx(0))
+    val rightFirstChangeLine = newSession.eqPoints.headOption.map(_.right.from).getOrElse(LineIdx(0))
+    codeAreaLeft.setText(left, leftSession, leftFirstChangeLine)
+    codeAreaRight.setText(right, rightSession, rightFirstChangeLine)
+    if (showing) { // just for speed
+      layout()
+      requestRedraw()
+    }
+
+  }
+
+  def saveFiles(): (SaveResult, SaveResult) = {
+    val leftResult = saveFile(session.maybeLeftPath, codeAreaLeft)
+    val rightResult = saveFile(session.maybeRightPath, codeAreaRight)
+    (leftResult, rightResult)
+  }
+
+  def nextChange(): Unit = session.nextChangeTracker.next()
+  def prevChange(): Unit = session.nextChangeTracker.prev()
+  def hasNextChange(): Boolean = session.nextChangeTracker.hasNext()
+  def hasPrevChange(): Boolean = session.nextChangeTracker.hasPrev()
+
+}
