@@ -1,0 +1,42 @@
+object Main extends JFXApp {
+  private val logger = getLogger
+  logger.info("SeDiTo GUI started")
+  val codeArea1 = PaddableEditor.test()
+  codeArea1.setPadding(1, 1)
+  val codeArea2 = PaddableEditor.test()
+  val hbox = new HBox {
+    children = Seq(codeArea1, codeArea2)
+    spacing = 10
+  }
+  HBox.setHgrow(codeArea1, Priority.Always)
+  HBox.setHgrow(codeArea2, Priority.Always)
+
+  val openTestCase = new MenuItem("Open test case") {
+    onAction = { _ =>
+      val chooser = new DirectoryChooser()
+      chooser.setTitle("Choose directory")
+      val _ = chooser.showDialog(stage)
+    }
+  }
+
+  val fileMenu = new Menu("File") {
+    items = List(openTestCase)
+  }
+
+
+  val url = getClass.getClassLoader.getResource("simple.css").toExternalForm
+  stage = new PrimaryStage {
+    maximized = true
+    scene = new Scene {
+      
+      discard(stylesheets += url )
+      root = new BorderPane {
+        top = new MenuBar {
+          useSystemMenuBar = true
+          menus = List(fileMenu)
+        }
+        center = hbox
+      }
+    }
+  }
+}
