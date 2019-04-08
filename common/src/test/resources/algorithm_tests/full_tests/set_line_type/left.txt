@@ -1,0 +1,46 @@
+
+
+object Main extends JFXApp {
+  private val logger = getLogger
+  logger.info("SeDiTo GUI started")
+  val codeAreaLeft = PaddableEditor.test()
+  codeAreaLeft.setPadding(1, 1)
+  val codeAreaRight = PaddableEditor.test()
+  val hbox = new HBox {
+    children = Seq(codeAreaLeft, codeAreaRight)
+    spacing = 10
+  }
+  HBox.setHgrow(codeAreaLeft, Priority.Always)
+  HBox.setHgrow(codeAreaRight, Priority.Always)
+
+  val openTestCase = new MenuItem("Open test case") {
+    onAction = { _ =>
+      val chooser = new DirectoryChooser()
+      chooser.setTitle("Choose directory")
+      val directory = chooser.showDialog(stage)
+      //TODO error handling
+      val left = Source.fromFile(new File(directory, "left.txt")).mkString
+      val right = Source.fromFile(new File(directory, "right.txt")).mkString
+      val alignment = Source.fromFile(new File(directory, "alignment.json")).mkString.parseJson.convertTo[Alignment]
+      codeAreaLeft.replaceText(left)
+      codeAreaRight.replaceText(right)
+      val deleted = (0 until codeAreaLeft.getParagraphs.size()).map(LineIdx.apply).filterNot(l => alignment.matches.map(_.leftLineIdx).contains(l))
+      val inserted = (0 until codeAreaRight.getParagraphs.size()).map(LineIdx.apply).filterNot(l => alignment.matches.map(_.rightLineIdx).contains(l))
+      val partitioned = alignment.partition
+      val movedLeft = partitioned.moved.map(_.leftLineIdx)
+      val movedRight = partitioned.moved.map(_.rightLineIdx)
+      val notMovedLeft = partitioned.notMoved.map(_.leftLineIdx)
+      val notMovedRight = partitioned.notMoved.map(_.rightLineIdx)
+      deleted.foreach(l => codeAreaLeft.setLineType(l, Deleted))
+      inserted.foreach(l => codeAreaRight.setLineType(l, Inserted))
+      movedLeft.foreach(l => codeAreaLeft.setLineType(l, Moved))
+      movedRight.foreach(l => codeAreaRight.setLineType(l, Moved))
+      notMovedLeft.foreach(l => codeAreaLeft.setLineType(l, Same))
+      notMovedRight.foreach(l => codeAreaRight.setLineType(l, Same))
+    }
+  }
+
+  val fileMenu = new Menu("File") {
+    items = List(openTestCase)
+  }
+}
