@@ -1,0 +1,16 @@
+object PaddableEditor {
+  def test(): PaddableEditor = {
+    val editor = new PaddableEditor
+    editor.appendText("that's a lot\n of text\n so many\ntext")
+    editor
+  }
+}
+
+final class PaddableEditor extends SCodeArea {
+  delegate.setParagraphGraphicFactory(LineNumberFactory.get(delegate))
+  def setPadding(line: Int, paddingSizeInNumberOfLines: Int): Unit = {
+    val height = this.delegate.getParagraphBoxHeight(line)
+    this.setParagraphBoxStyle(line, s"-fx-padding: ${height * paddingSizeInNumberOfLines} 0 0 0;")
+  }
+
+}
