@@ -1,0 +1,25 @@
+object SCodeArea {
+  implicit def toDelegate(sCodeArea: SCodeArea): CodeArea = sCodeArea.delegate
+  def createCustom(): SCodeArea = { //todo extract to different type?
+    val codeArea = new SCodeArea()
+    codeArea.setParagraphGraphicFactory(LineNumberFactory.get(codeArea))
+    codeArea.appendText("that's a lot\n of text\n so many\ntext")
+    //codeArea.setParagraphStyle(1, List("red").asJava)
+    codeArea.setParagraphBoxStyle(1, "-fx-padding: 20 0 0 0;")
+    codeArea
+  }
+}
+
+@SuppressWarnings(Array(DefaultArguments))
+final class SCodeArea(override val delegate: CodeArea = new CodeArea) extends Node(delegate)
+
+object Main extends JFXApp {
+  private val logger = getLogger
+  logger.info("SeDiTo GUI started")
+  val codeArea1 = SCodeArea.createCustom()
+  val codeArea2 = SCodeArea.createCustom()
+  val hbox = new HBox {
+    children = Seq(codeArea1, codeArea2)
+    spacing = 10
+  }
+}

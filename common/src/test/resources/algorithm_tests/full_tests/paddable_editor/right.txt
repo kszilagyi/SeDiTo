@@ -1,0 +1,11 @@
+object Main extends JFXApp {
+  private val logger = getLogger
+  logger.info("SeDiTo GUI started")
+  val codeArea1 = PaddableEditor.test()
+  codeArea1.setPadding(1, 1)
+  val codeArea2 = PaddableEditor.test()
+  val hbox = new HBox {
+    children = Seq(codeArea1, codeArea2)
+    spacing = 10
+  }
+}
