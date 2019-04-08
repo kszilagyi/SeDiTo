@@ -1,0 +1,19 @@
+package com.kristofszilagyi.sedito.gui
+
+
+import java.io.File
+
+import com.kristofszilagyi.sedito.common._
+import com.kristofszilagyi.sedito.common.Warts._
+import com.kristofszilagyi.sedito.gui.SCodeArea.toDelegate
+import com.sun.javafx.css.CssError
+import javafx.collections.ListChangeListener
+import javafx.stage.DirectoryChooser
+import org.log4s._
+import scalafx.Includes._
+import scalafx.application.JFXApp
+import scalafx.application.JFXApp.PrimaryStage
+import scalafx.scene.Scene
+import scalafx.scene.control.{Menu, MenuBar, MenuItem}
+import scalafx.scene.layout.{BorderPane, HBox, Priority}
+import spray.json.enrichString
