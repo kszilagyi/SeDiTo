@@ -1,0 +1,100 @@
+final class PaddableEditor extends SCodeArea {
+
+  setParagraphGraphicFactory(LineNumberFactory.get(this))
+
+  import java.time.Duration
+
+  import org.fxmisc.richtext.event.MouseOverTextEvent
+
+  @SuppressWarnings(Array(Warts.Var))
+  private var editTypes = Map.empty[LineIdx, EditType]
+
+  @SuppressWarnings(Array(Warts.Var))
+  private var paddings = Map.empty[LineIdx, NumberOfLinesPadding]
+
+  @SuppressWarnings(Array(Warts.Var))
+  private var otherEditor: Option[PaddableEditor] = None
+
+  @SuppressWarnings(Array(Warts.Var))
+  private var highlightedLines: Traversable[LineIdx] = Traversable.empty
+
+  def reset(): Unit = {
+    editTypes = Map.empty
+    paddings = Map.empty
+    highlightedLines = Traversable.empty
+  }
+  private val popup = new Popup
+  private val popupMsg = new Label
+  popupMsg.setStyle("-fx-background-color: black;" + "-fx-text-fill: white;" + "-fx-padding: 5;")
+  discard(popup.getContent.add(popupMsg))
+  setMouseOverTextDelay(Duration.ofMillis(1))
+  addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_BEGIN, (e: MouseOverTextEvent) => {
+
+    val chIdx = e.getCharacterIndex
+    val posOnScreen = e.getScreenPosition
+    val posInText = offsetToPosition(chIdx, Bias.Forward)
+    editTypes.get(LineIdx(posInText.getMajor)) match {
+      case Some(edit) =>
+        edit match {
+          case Moved(from) =>
+            popupMsg.setText(s"Moved from line ${from.i + 1}")
+            popup.show(this, posOnScreen.getX, posOnScreen.getY + 10)
+            otherEditor.foreach(_.highlightLine(from))
+          case Inserted | Deleted | Same=>
+        }
+      case None =>
+    }
+  })
+
+  discard(plainTextChanges.subscribe(_ => applyAllPadding()))
+
+  addEventHandler(MouseOverTextEvent.MOUSE_OVER_TEXT_END, (e: MouseOverTextEvent) => {
+    popup.hide()
+    otherEditor.foreach(_.resetHighlighting())
+  })
+
+  private def applyPaddingCss(line: LineIdx, padding: NumberOfLinesPadding): Unit = {
+    val height = 16
+    this.setParagraphBoxStyle(line.i, s"-fx-padding: ${height * padding.i} 0 0 0;")
+  }
+
+  def setLinePadding(line: LineIdx, padding: NumberOfLinesPadding): Unit = {
+    paddings += line -> padding
+    applyPaddingCss(line, padding)
+  }
+
+  def applyAllPadding(): Unit = {
+    paddings.foreach((applyPaddingCss _).tupled)
+  }
+
+  private def applyLineTypeCss(lineIdx: LineIdx, editType: Option[EditType]): Unit = {
+    setParagraphStyle(lineIdx.i, List(getLineCssClass(editType).s).asJava)
+    paddings.get(lineIdx).foreach(applyPaddingCss(lineIdx, _))
+  }
+
+  def setLineType(lineIdx: LineIdx, editType: EditType): Unit = {
+    editTypes += lineIdx -> editType
+    applyLineTypeCss(lineIdx, Some(editType))
+  }
+
+  def setCharCss(lineIdx: LineIdx, from: CharIdxInLine, to: CharIdxInLine, editType: EditType): Unit = {
+    setStyle(lineIdx.i, from.i, to.i, List(getCharCssClass(Some(editType)).s).asJava)
+  }
+
+  def highlightLine(lineIdx: LineIdx): Unit = {
+    highlightedLines ++= Traversable(lineIdx)
+    setParagraphStyle(lineIdx.i, List("highlighted").asJava)
+  }
+
+  def resetHighlighting(): Unit = {
+    highlightedLines.foreach { line =>
+      applyLineTypeCss(line, editTypes.get(line))
+    }
+    highlightedLines = Traversable.empty
+  }
+
+  def setOther(other: PaddableEditor): Unit = {
+    otherEditor = Some(other)
+  }
+
+}
