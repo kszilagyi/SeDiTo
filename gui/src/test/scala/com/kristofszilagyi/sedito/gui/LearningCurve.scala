@@ -1,48 +1,23 @@
 package com.kristofszilagyi.sedito.gui
 
-import java.nio.file.Path
 import java.time.{Duration, Instant}
 
-import com.kristofszilagyi.sedito.aligner.Pass1Aligner
-import com.kristofszilagyi.sedito.common.TestCase
-import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
-import com.kristofszilagyi.sedito.gui.TrainAndDiff.{readDataSetAndMeasureFeatures, readTestCase, testDirs}
+import com.kristofszilagyi.sedito.gui.Train1Pass.{hiddenLayerSize, order}
+import com.kristofszilagyi.sedito.gui.TrainAndDiff.readDataSetAndMeasureFeatures
 import org.log4s.getLogger
 import smile.data.{AttributeDataset, NominalAttribute, NumericAttribute}
 import smile.write
-
-import scala.util.Random
 //todo probably should filter out the cases which I do not want to tackle yet and only teach with those which I want
 object LearningCurve{
   private val logger = getLogger
 
-  private def keepPathAndSamples(testCases: Seq[(Path, TestCase)], samples: List[Pass1PathAndSamples]) = {
-    assert(testCases.size ==== samples.size)
-    testCases.zip(samples).map{ case ((path1, _), Pass1PathAndSamples(path2, sample)) =>
-      assert(path1 ==== path2, s"$path1 == $path2")
-      Pass1PathAndSamples(path1, sample)
-    }
-  }
-  private def oneRandomCurve(random: Random, samples: List[Pass1PathAndSamples], testCases: Seq[(Path, TestCase)]) = {
-    assert(samples.size ==== testCases.size)
-    val trainingSize = (samples.size * Train.trainingRatio).toInt
-
-    val (shuffledSamples, shuffledTestCases) = random.shuffle(samples.zip(testCases)).unzip
-
-    val testSamples = shuffledSamples.takeRight(trainingSize)
-    val testTestCases = shuffledTestCases.takeRight(trainingSize)
-
-    val learningCurve = ((1 to (trainingSize, 6)).par map { size =>
+  private def oneCurve(training: List[Pass1PathAndSamples], test: List[Pass1PathAndSamples]) = {
+    val learningCurve = ((1 to (training.size, 6)).par map { size =>
       logger.info(s"Doing size: $size")
-      val trainingSamples = shuffledSamples.take(size)
-      val trainingTestCases = shuffledTestCases.take(size)
-      val (classifier, scaler, _) = Train.train(trainingSamples, testSamples, logStats = false, hiddenLayerSize = 50)
-      val aligner = new Pass1Aligner(classifier, scaler)
+      val (_, _, basicMetrics) = Train.train(training.take(size), test, logStats = false, hiddenLayerSize = hiddenLayerSize)
 
-      val trainingResults = WholeAlgorithmMeasurer.measureFast(aligner, keepPathAndSamples(trainingTestCases, trainingSamples)).aggregate
-      val testResults = WholeAlgorithmMeasurer.measureFast(aligner, keepPathAndSamples(testTestCases, testSamples)).aggregate
       logger.info(s"Finished size: $size")
-      size -> ((trainingResults.raw.f1, testResults.raw.f1)) //we don't measure the joint algo just the nn
+      size -> ((basicMetrics.trainingF1, basicMetrics.testF1)) //we don't measure the joint algo just the nn
     }).seq
 
     learningCurve
@@ -70,13 +45,19 @@ object LearningCurve{
     logger.info("Start")
     val start = Instant.now()
 
-    val testCases = testDirs.map(dir => dir -> readTestCase(dir))
-
-    val samples = readDataSetAndMeasureFeatures()
-    val random = new Random(125)
-    val learningCurves = (1 to 3).map { run =>
+    val orderedSamples = order(readDataSetAndMeasureFeatures())
+    val trainingSize = (orderedSamples.size * Train.trainingRatio).toInt
+    val testSize = orderedSamples.size - trainingSize
+    val learningCurves = (0 to 4) map { run =>
       logger.info(s"Doing run : $run")
-      oneRandomCurve(random, samples, testCases)
+
+      val testStart = run * testSize
+      val testEnd = testStart + testSize
+      logger.info(s"testStart: $testStart, testEnd: $testEnd")
+      val training = orderedSamples.slice(0, testStart) ++ orderedSamples.drop(testEnd)
+      val test = orderedSamples.slice(testStart, testEnd)
+
+      oneCurve(training, test)
     }
 
     val flattenedLearningCurves = learningCurves.flatten

@@ -154,8 +154,9 @@ object Train1Pass {
     val firstPhaseScalerPath = s"aligner/src/main/resources/$firstPhaseScalerName"
     write.xstream(classifier, firstPhaseClassifierPath)
     write.xstream(scaler, firstPhaseScalerPath)
-    val duration = Duration.between(start, Instant.now())
     val crossF1s = Await.result(Future.sequence(crossValidates), 10.minutes)
+    val duration = Duration.between(start, Instant.now())
+
     logger.info(s"Took: ${duration.toMinutes} minutes, ${duration.toMillis / 1000 - duration.toMinutes * 60} seconds")
 
     logger.info(s"Main f1s: ${mainF1s.all}")
