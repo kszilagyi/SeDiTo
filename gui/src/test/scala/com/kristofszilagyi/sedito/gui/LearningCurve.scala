@@ -12,7 +12,7 @@ object LearningCurve{
   private val logger = getLogger
 
   private def oneCurve(training: List[Pass1PathAndSamples], test: List[Pass1PathAndSamples]) = {
-    val learningCurve = ((1 to (training.size, 6)).par map { size =>
+    val learningCurve = ((1 to training.size).par map { size =>
       logger.info(s"Doing size: $size")
       val (_, _, basicMetrics) = Train.train(training.take(size), test, logStats = false, hiddenLayerSize = hiddenLayerSize)
 
