@@ -3,6 +3,7 @@ package com.kristofszilagyi.sedito.gui
 import java.nio.file.{Files, Path, Paths}
 import java.time.{Duration, Instant}
 
+import com.google.common.hash.Hashing
 import com.kristofszilagyi.sedito.aligner.Pass1FeatureCalculator.Pass1Features
 import com.kristofszilagyi.sedito.aligner._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
@@ -117,7 +118,7 @@ object TrainAndDiff {
 }
 object Train1Pass {
   def order[T <: WithPath](samplesByPath: List[T]): List[T] = {
-    samplesByPath.sortBy(_.path.getFileName)
+    samplesByPath.sortBy(s => Hashing.md5.hashUnencodedChars(s.path.toString).toString)
   }
 
   private val logger = getLogger
@@ -143,6 +144,7 @@ object Train1Pass {
     logger.info("Start")
     val start = Instant.now()
     val orderedSamples = order(readDataSetAndMeasureFeatures())
+    logger.info(s"Sample order: ${orderedSamples.map(_.path).mkString("\n")}")
     val crossValidates = crossValidate(orderedSamples)
     val trainingSize = (orderedSamples.size * trainingRatio).toInt
     val testSize = orderedSamples.size - trainingSize
