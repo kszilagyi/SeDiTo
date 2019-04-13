@@ -1,0 +1,15 @@
+package com.kristofszilagyi.sedito.common
+
+import org.scalatest.FreeSpecLike
+import org.scalatest.Matchers._
+
+final class NewAlignmentTest extends FreeSpecLike{
+  val alignmentX = Alignment(Set(Match(LineIdx(0), LineIdx(0))))
+
+  private def mX(leftX: String, rightX: String, leftStartX: Int, leftEndX: Int, rightStartX: Int, rightEndX: Int): NewMatch = {
+    NewMatch(
+      Selection(leftX, LineIdx(0), fromX = CharIdxInLine(leftStartX), toExclX = CharIdxInLine(leftEndX)),
+      Selection(rightX, LineIdx(0), fromX = CharIdxInLine(rightStartX), toExclX = CharIdxInLine(rightEndX))
+    )
+  }
+}
