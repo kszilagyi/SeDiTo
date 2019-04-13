@@ -17,7 +17,7 @@ object LearningCurve{
       val (_, _, basicMetrics) = Train.train(training.take(size), test, logStats = false, hiddenLayerSize = hiddenLayerSize)
 
       logger.info(s"Finished size: $size")
-      size -> ((basicMetrics.trainingF1, basicMetrics.testF1)) //we don't measure the joint algo just the nn
+      size -> ((basicMetrics.trainingF1, basicMetrics.testF1))
     }).seq
 
     learningCurve
