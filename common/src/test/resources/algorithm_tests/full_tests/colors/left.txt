@@ -1,0 +1,41 @@
+.deleted {
+  -fx-background-color: pink;
+}
+
+.inserted {
+  -fx-background-color: lightgreen;
+}
+
+.moved {
+  -fx-background-color: lightblue;
+}
+
+.same {
+  -fx-background-color: lightgrey;
+}
+
+
+.moved:hover {
+  -fx-background-color: yellow;
+}
+
+.highlighted {
+  -fx-background-color: yellow
+}
+
+
+.white {
+  -fx-background-color: white;
+}
+
+.deleted_char {
+  -fx-fill: red;
+}
+
+.inserted_char {
+  -fx-fill: green;
+}
+
+.same_char {
+  -fx-fill: black;
+}
