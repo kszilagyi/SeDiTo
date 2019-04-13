@@ -1,0 +1,47 @@
+package com.kristofszilagyi.sedito.common
+
+import org.scalatest.FreeSpecLike
+import org.scalatest.Matchers._
+
+final class LineAlignerTest extends FreeSpecLike {
+  "empty" in {
+    LineAligner.align(WordAlignment(Set.empty)) shouldBe LineAlignment(Set.empty)
+  }
+
+  private def selection(line: String, lineIdx: Int, from: Int, to: Int) = {
+    Selection.create(line, LineIdx(lineIdx), CharIdxInLine(from), CharIdxInLine(to)).getOrElse(fail("wrong test data"))
+  }
+  "one" in {
+    LineAligner.align(WordAlignment(Set(WordMatch(
+      selection("line0", 0, 0, 5),
+      selection("line0", 0, 0, 5)
+    )))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+  }
+  //todo test if 2 1 character match stronger than 1 3 character match
+
+  "slip line into two" in {
+    LineAligner.align(WordAlignment(Set(
+      WordMatch(
+        selection("line0 {", lineIdx = 0, from = 0, to = 5),
+        selection("line0", lineIdx = 0, from = 0, to = 5)
+      ),
+      WordMatch(
+        selection("line0 {", lineIdx = 0, from = 6, to = 7),
+        selection("{", lineIdx = 1, from = 0, to = 1)
+      )
+    ))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+  }
+
+  "merge lines" in {
+    LineAligner.align(WordAlignment(Set(
+      WordMatch(
+        selection("line0", lineIdx = 0, from = 0, to = 5),
+        selection("line0 {", lineIdx = 0, from = 0, to = 5)
+      ),
+      WordMatch(
+        selection("{", lineIdx = 1, from = 0, to = 1),
+        selection("line0 {", lineIdx = 0, from = 6, to = 7)
+      )
+    ))) shouldBe LineAlignment(Set(LineMatch(LineIdx(0), LineIdx(0))))
+  }
+}
