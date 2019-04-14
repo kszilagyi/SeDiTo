@@ -9,7 +9,7 @@ import com.kristofszilagyi.sedito.aligner._
 import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common.Warts._
 import com.kristofszilagyi.sedito.common.utils.Control._
-import com.kristofszilagyi.sedito.common.{TestCase, WordMatch}
+import com.kristofszilagyi.sedito.common.{TestCase, Warts, WordMatch}
 import com.kristofszilagyi.sedito.gui.Main.{firstPhaseClassifierName, firstPhaseScalerName}
 import com.kristofszilagyi.sedito.gui.Train._
 import com.kristofszilagyi.sedito.gui.TrainAndDiff._
@@ -117,6 +117,7 @@ object TrainAndDiff {
 
 }
 object Train1Pass {
+  @SuppressWarnings(Array(Warts.ToString))
   def order[T <: WithPath](samplesByPath: List[T]): List[T] = {
     samplesByPath.sortBy(s => Hashing.md5.hashUnencodedChars(s.path.toString).toString)
   }
