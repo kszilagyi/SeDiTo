@@ -1,0 +1,71 @@
+package com.kristofszilagyi.sedito.common
+
+import org.scalatest.FreeSpecLike
+import TypeSafeEqualsOps._
+import com.kristofszilagyi.sedito.common.TraversableOps.RichTraversable
+import com.kristofszilagyi.sedito.common.ValidatedOps.RichValidated
+import com.kristofszilagyi.sedito.common.Warts.discard
+import org.scalatest.Matchers._
+final class CharHighlightCalculatorTest extends FreeSpecLike {
+
+    def toHighlight(lines: List[(Line, LineIdx)]): Map[LineIdx, Traversable[CharEdit]] = {
+      lines.map { case (line, idx) =>
+        val prodLine = line.prodLine
+        val charEdits = line.words.map { word =>
+          val (from, to) = charIdxes(prodLine, word)
+          CharEdit(from, to, word.desiredEdit)
+        }
+        idx -> charEdits.toSet //only for testing equality
+      }.toMap
+    }
+
+    println(s"prodLeftLines: $prodLeftLines\nprodRightLines: $prodRightLines\nwords: $wordMatches\nlines: $lineAlignment\n")
+    CharHighlightCalculator.calc(prodLeftLines, prodRightLines, WordAlignment(wordMatches.toSet), LineAlignment(lineAlignment.toSet)) shouldBe
+        CharHighlight(toHighlight(indexedLeftLines), toHighlight(indexedRightLines))
+
+  }
+
+  "empty" in {
+    test(List.empty, List.empty)
+  }
+
+  "all the same - 1 words" in {
+    val left = List(
+      Line(1, Word(1, "one", Same))
+    )
+    val right = List(
+      Line(1, Word(1, "one", Same))
+    )
+    test(left, right)
+  }
+
+  "all same - 2 words" in {
+    val left = List(
+      Line(1, Word(1, "one", Same), Word(2, "two", Same))
+    )
+    val right = List(
+      Line(1, Word(1, "one", Same), Word(2, "two", Same))
+    )
+    test(left, right)
+  }
+
+  "all same - 3 words" in {
+    val left = List(
+      Line(1, Word(1, "one", Same), Word(2, "two", Same), Word(3, "three", Same))
+    )
+    val right = List(
+      Line(1, Word(1, "one", Same), Word(2, "two", Same), Word(3, "three", Same))
+    )
+    test(left, right)
+  }
+
+  "1 word inserted" in {
+    val left = List(
+      Line(1, Word(1, "one", Same), Word(3, "three", Same))
+    )
+    val right = List(
+      Line(1, Word(1, "one", Same), Word(2, "two", Inserted), Word(3, "three", Same))
+    )
+    test(left, right)
+  }
+}
