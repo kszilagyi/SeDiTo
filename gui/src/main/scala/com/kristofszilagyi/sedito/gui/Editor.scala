@@ -253,7 +253,7 @@ final class Editor(maybeOtherEditor: Option[Editor]) extends CodeArea {
   }
 
   private def applyLineEdits(s: FullText): Unit = {
-    val lines = s.s.lines.toVector
+    val lines = s.s.linesIterator.toVector
     if (lines.isEmpty) replaceText("")
     else {
       val paragraphs = lines.zip(session.editTypes.toSeq.sortBy(_._1)).map { case (line, (_, lineEdits)) =>

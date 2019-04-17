@@ -5,7 +5,6 @@ import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
 import com.kristofszilagyi.sedito.common._
 import info.debatty.java.stringsimilarity.Levenshtein
 import org.log4s.getLogger
-
 import scala.annotation.tailrec
 
 object Pass1FeatureCalculator {
@@ -414,8 +413,8 @@ object Pass1FeatureCalculator {
     //32 => 800/32 = 25 is because that's what we use inside too 100/4, should remove duplication
     val candidates = findCandidates(maxContextSize, maxLeftContexts.map(l => l -> AllTheRest), maxRightContexts)
 
-    val leftLines = left.s.lines.map(_.trim).toVector
-    val rightLines = right.s.lines.map(_.trim).toVector
+    val leftLines = left.s.linesIterator.map(_.trim).toVector
+    val rightLines = right.s.linesIterator.map(_.trim).toVector
     val lineAlignmentCacher = new LineAlignmentCacher(leftLines, rightLines)
     val indentationCalculator = new IndentationCalculator(leftLines, rightLines)
 

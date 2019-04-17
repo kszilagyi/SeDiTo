@@ -113,8 +113,6 @@ object TrainAndDiff {
       f"expectedPos: $expectedPos%4d, sample size: $sampleSize"
   }
 
-
-
 }
 object Train1Pass {
   @SuppressWarnings(Array(Warts.ToString))

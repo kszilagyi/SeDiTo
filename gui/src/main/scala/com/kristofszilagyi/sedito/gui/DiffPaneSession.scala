@@ -36,8 +36,8 @@ object DiffPaneSession {
 
   def create(left: FullText, right: FullText, newMaybeLeftPath: Option[Path], newMaybeRightPath: Option[Path],
              newWordAlignment: UnambiguousWordAlignment): (DiffPaneSession, EditorSession, EditorSession) = {
-    val leftLines = Lines(left.s.lines.toIndexedSeq)
-    val rightLines = Lines(right.s.lines.toIndexedSeq)
+    val leftLines = Lines(left.s.linesIterator.toIndexedSeq)
+    val rightLines = Lines(right.s.linesIterator.toIndexedSeq)
 
     val lineAlignment = WhiteSpaceAligner.align(leftLines, rightLines, LineAligner.align(newWordAlignment))
 

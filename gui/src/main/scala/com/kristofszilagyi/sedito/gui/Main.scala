@@ -13,10 +13,10 @@ import com.kristofszilagyi.sedito.common.utils.Control._
 import com.kristofszilagyi.sedito.common.{FullText, Warts}
 import com.kristofszilagyi.sedito.gui.JavaFxOps.scheduleOnJavaFxThread
 import com.kristofszilagyi.sedito.gui.Main._
-import com.sun.javafx.css.CssError
 import com.thoughtworks.xstream.XStream
 import javafx.application.{Application, Platform}
 import javafx.collections.ListChangeListener
+import javafx.css.CssParser.ParseError
 import javafx.scene.control.Alert
 import javafx.scene.control.Alert.AlertType
 import org.log4s._
@@ -42,8 +42,8 @@ final class Main extends Application {
 
     openFromArgs(args.asScala.toList, mainWindow, classifier, scaler)
 
-    com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[CssError] {
-      def onChanged(change: ListChangeListener.Change[_ <: CssError]): Unit = {
+    com.sun.javafx.css.StyleManager.errorsProperty().addListener(new ListChangeListener[ParseError] {
+      def onChanged(change: ListChangeListener.Change[_ <: ParseError]): Unit = {
         change.getList.asScala.foreach { error =>
           logger.info(s"Css error: $error")
         }

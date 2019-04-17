@@ -96,6 +96,15 @@ lazy val common = (project in file("common"))
     commonSettings
   )
 
+lazy val osName = System.getProperty("os.name") match {
+  case n if n.startsWith("Linux")   => "linux"
+  case n if n.startsWith("Mac")     => "mac"
+  case n if n.startsWith("Windows") => "win"
+  case _ => throw new Exception("Unknown platform!")
+}
+
+lazy val javaFXModules = Seq("base", "controls", "fxml", "graphics", "media", "swing", "web")
+
 lazy val gui = (project in file("gui"))
   .settings(
     name := "gui",
@@ -108,7 +117,10 @@ lazy val gui = (project in file("gui"))
     testGrouping in Test := (definedTests in Test).value map { test =>
       Tests.Group(name = test.name, tests = Seq(test), runPolicy = Tests.SubProcess(
         ForkOptions())) // this puts every test class into a separate jvm. This is slow but fast enough
-    }
+    },
+    libraryDependencies ++= javaFXModules.map( m =>
+      "org.openjfx" % s"javafx-$m" % "11" classifier osName
+    )
   ).dependsOn(common % "compile->compile;test->test")
    .dependsOn(aligner % "compile->compile;test->test")
    .enablePlugins(JavaAppPackaging)

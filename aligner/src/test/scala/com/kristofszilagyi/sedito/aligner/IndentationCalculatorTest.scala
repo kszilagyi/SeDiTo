@@ -68,7 +68,7 @@ final class IndentationCalculatorTest extends FreeSpecLike {
                         |    ResultToAnalyze(predicted = predictedLines.map(_.toDouble), expected = expectedLines.map(_.toInt))23
                         |  }24
                         |
-                        |}26""".stripMargin.lines.toVector
+                        |}26""".stripMargin.linesIterator.toVector
 
   private val rightLines = """import scala.io.Source0
                             |import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._1
@@ -96,7 +96,7 @@ final class IndentationCalculatorTest extends FreeSpecLike {
                             |    ResultToAnalyze(predicted = predictedLines.map(_.toDouble), expected = expectedLines.map(_.toInt))23
                             |  }24
                             |
-                            |}26""".stripMargin.lines.toVector
+                            |}26""".stripMargin.linesIterator.toVector
 
   "middle non-trivial" in {
     val leftIdx = LineIdx(15)
