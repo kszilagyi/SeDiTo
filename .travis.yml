@@ -1,7 +1,7 @@
 language: scala
 
 jdk:
-  - openjdk11
+  - oraclejdk11
 
 
 script: sbt "testOnly * -- -l com.kristofszilagyi.sedito.gui.NoCI"
