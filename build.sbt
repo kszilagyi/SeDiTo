@@ -1,6 +1,6 @@
 
 import sbt.Project.projectToRef
-import sbt.Keys._
+import sbt.Keys.{javacOptions, _}
 import sbt.{Test, librarymanagement}
 
 name := "SeDiTo"
@@ -74,7 +74,7 @@ def commonSettings = Seq(
 )
 
 val silencerVersion = "1.2"
-
+//todo the dependency structure is completely wrong. There should be 2 projects: prod and tools
 lazy val common = (project in file("common"))
   .settings(
     name := "common",
@@ -89,6 +89,7 @@ lazy val common = (project in file("common"))
     libraryDependencies += "org.typelevel" %% "cats-core" % "1.0.1",
     libraryDependencies += "org.apache.commons" % "commons-text" % "1.3",
     libraryDependencies += "org.scala-lang.modules" % "scala-java8-compat_2.12" % "0.9.0",
+    libraryDependencies += "org.eclipse.jgit" % "org.eclipse.jgit" % "5.3.0.201903130848-r",
     libraryDependencies ++= Seq(
       compilerPlugin("com.github.ghik" %% "silencer-plugin" % silencerVersion),
       "com.github.ghik" %% "silencer-lib" % silencerVersion % Provided
