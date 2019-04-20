@@ -1,6 +1,6 @@
 package com.kristofszilagyi.sedito.gui
 
-import java.io.{File, PrintWriter}
+import java.io.{File, FileWriter}
 
 import com.kristofszilagyi.sedito.aligner.{Pass1Aligner, Pass1FeatureCalculator}
 import com.kristofszilagyi.sedito.common.FullText
@@ -29,7 +29,7 @@ object FindUncertainFiles {
     val commits = git.log().all().call().iterator().asScala.toVector
     val (classifier, scaler) = Main.loadAI()
     val aligner = new Pass1Aligner(classifier, scaler)
-    val writer = new PrintWriter(new File("uncertain.txt"))
+    val writer = new FileWriter(new File("uncertain.txt"), true)
     commits.foreach { commit =>
       val currentTree = new CanonicalTreeParser()
       currentTree.resetRoot(reader, commit.getTree)
