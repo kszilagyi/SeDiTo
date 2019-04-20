@@ -1,8 +1,8 @@
-package com.kristofszilagyi.sedito.common
+package com.kristofszilagyi.sedito.gui
 
 import java.io.File
 
-import TypeSafeEqualsOps._
+import com.kristofszilagyi.sedito.aligner.Pass1Aligner
 import org.eclipse.jgit.api.Git
 import org.eclipse.jgit.diff.DiffEntry.ChangeType
 import org.eclipse.jgit.lib.{ObjectId, ObjectReader}
@@ -10,6 +10,8 @@ import org.eclipse.jgit.storage.file.FileRepositoryBuilder
 import org.eclipse.jgit.treewalk.CanonicalTreeParser
 
 import scala.collection.JavaConverters._
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
+
 object FindUncertainFiles {
   private def idToFileString(reader: ObjectReader, objectId: ObjectId) = {
     val data = reader.open(objectId.toObjectId).getBytes
@@ -24,6 +26,9 @@ object FindUncertainFiles {
     val git = new Git(repository)
     val reader = repository.newObjectReader()
     val commits = git.log().all().call().iterator().asScala.toVector
+    val (classifier, scaler) = Main.loadAI()
+    val aligner = new Pass1Aligner(classifier, scaler)
+
     commits.foreach { commit =>
       println(commit.getId)
       val currentTree = new CanonicalTreeParser()
@@ -37,6 +42,7 @@ object FindUncertainFiles {
           println(diff.getNewPath)
           println(idToFileString(reader, diff.getOldId.toObjectId))
           println(idToFileString(reader, diff.getNewId.toObjectId))
+          aligner
         }
 
       }
