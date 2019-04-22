@@ -157,6 +157,24 @@ final class DiffPane extends StackPane {
             case other =>
               logger.info(s"No selection: $other")
           }
+        } else if(e.getCode ==== KeyCode.H) {
+          val leftSelection = codeAreaLeft.getSelection
+          val rightSelection = codeAreaRight.getSelection
+          val leftIndices = Wordizer.toWordIndices(codeAreaLeft.getText)
+          val rightIndices = Wordizer.toWordIndices(codeAreaRight.getText)
+          var leftI = leftIndices.indexWhere(_.absoluteFrom > leftSelection.getStart)
+          var rightI = rightIndices.indexWhere(_.absoluteFrom > rightSelection.getStart)
+          var assignedMatches = Vector.empty[WordMatch]
+          while(leftI < leftIndices.size && rightI < rightIndices.size && leftIndices(leftI).toText ==== rightIndices(rightI).toText
+                && leftIndices(leftI).absoluteFrom < leftSelection.getEnd && rightIndices(rightI).absoluteFrom < rightSelection.getEnd) {
+            assignedMatches :+= WordMatch(leftIndices(leftI), rightIndices(rightI))()
+            leftI += 1
+            rightI += 1
+          }
+          val withoutNewConflict = session.wordAlignment.matches.filter(m => !assignedMatches.exists(am => am.left ==== m.left || am.right ==== m.right))
+          val newAlignment = session.wordAlignment.copy(withoutNewConflict ++ assignedMatches)
+          logger.info(s"Adding new matches. Old size: ${session.wordAlignment.matches.size}, new size: ${newAlignment.matches.size}")
+          open(FullText(codeAreaLeft.getText), FullText(codeAreaRight.getText), session.maybeLeftPath, session.maybeRightPath, newAlignment, showing = true)
         }
       }
     )
