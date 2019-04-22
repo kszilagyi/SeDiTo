@@ -35,7 +35,12 @@ object FindUncertainFiles {
     val (classifier, scaler) = Main.loadAI()
     val aligner = new Pass1Aligner(classifier, scaler)
     val file = new File("uncertain.txt")
-    val commitAndFilenames = using(Source.fromFile(file)){_.getLines().map(_.split(";").head).toSet}
+    val finishedCommitAndFilename = using(Source.fromFile(file)){_.getLines().map(_.split(";").head).toSet}
+    val blacklistedFilenames = Set("whole_results.txt", "results.txt", "aligner/src/main/scala/com/kristofszilagyi/sedito/aligner/HardcodedNeuralNetwork.java",
+    "aligner/src/main/resources/model.model", "linear_regression.model", "common/src/test/resources/algorithm_tests/full_tests/grid_py/alignment.json",
+    "common/src/test/resources/algorithm_tests/full_tests/18/alignment.json", "common/src/test/resources/algorithm_tests/full_tests/24/alignment.json")
+
+    val blacklistedFragments = Set("alignment.json")
     val writer = new FileWriter(file, true)
 
     commits.foreach { commit =>
@@ -48,7 +53,9 @@ object FindUncertainFiles {
       git.diff().setNewTree(currentTree).setOldTree(parentTree).call().asScala.foreach{ diff =>
         if (diff.getChangeType ==== ChangeType.MODIFY) {
           val commitAndFilename = s"${commit.getId.name}/${diff.getNewPath}"
-          if (!commitAndFilenames.contains(commitAndFilename)) {
+          val noFragments = !blacklistedFragments.exists(fragment => diff.getNewPath.contains(fragment))
+          if (!finishedCommitAndFilename.contains(commitAndFilename) && !blacklistedFilenames.contains(diff.getNewPath)
+              && noFragments){
             logger.info(s"Doing $commitAndFilename")
             val left = FullText(idToFileString(reader, diff.getOldId.toObjectId))
             val right = FullText(idToFileString(reader, diff.getNewId.toObjectId))
