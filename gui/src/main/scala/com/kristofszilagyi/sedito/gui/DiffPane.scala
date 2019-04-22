@@ -95,7 +95,10 @@ final class DiffPane extends StackPane {
       Seq(hBox, canvas).asJava
     }))
 
-    scheduleOnJavaFxThread(10.millis, () => drawEqPoints())
+    // this should be a lot less. It was 10.ms but that resulted in freeze basically. I am not sure but I guess
+    // the timeline behaviour might have changed or I just hit the critical point. The theory is that once the calculation is
+    // bigger than the scheduled time it doesn't do anything else. The fix would be to have a fix wait between repeats.
+    scheduleOnJavaFxThread(100.millis, () => drawEqPoints())
 
     this.addEventFilter(ScrollEvent.ANY, (e: ScrollEvent) => {
       val passes = 10
@@ -178,10 +181,10 @@ final class DiffPane extends StackPane {
       val maybeFirstLeft = leftLinesOnScreen.toLines.headOption
       val maybeFirstRight = rightLinesOnScreen.toLines.headOption
       (maybeFirstLeft, maybeFirstRight).sequence.foreach { case (firstLeft, firstRight) =>
+        val maybeFirstLeftBounds = codeAreaLeft.boundsInLocal(firstLeft, screenToLocal)
+        val maybeFirstRightBounds = codeAreaRight.boundsInLocal(firstRight, screenToLocal)
         eqPointsOnScreen.foreach { eqPoint =>
           //todo fix this for text wrapping
-          val maybeFirstLeftBounds = codeAreaLeft.boundsInLocal(firstLeft, screenToLocal)
-          val maybeFirstRightBounds = codeAreaRight.boundsInLocal(firstRight, screenToLocal)
           (maybeFirstLeftBounds, maybeFirstRightBounds) match {
             case (Some(firstLeftBounds), Some(firstRightBounds)) =>
               val rightOffset = 0 //todo remove?
