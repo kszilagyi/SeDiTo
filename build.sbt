@@ -110,7 +110,7 @@ lazy val gui = (project in file("gui"))
   .settings(
     name := "gui",
     libraryDependencies ++=
-      Seq("org.fxmisc.richtext" % "richtextfx" % "0.9.1",
+      Seq("org.fxmisc.richtext" % "richtextfx" % "0.10.0",
       "com.google.jimfs" % "jimfs" % "1.1" % "test"
       ),
     commonSettings,
@@ -121,7 +121,8 @@ lazy val gui = (project in file("gui"))
     },
     libraryDependencies ++= javaFXModules.map( m =>
       "org.openjfx" % s"javafx-$m" % "11" classifier osName
-    )
+    ),
+    javaOptions in Universal ++= Seq("-J--module-path=/usr/share/openjfx/lib", "-J--add-modules=javafx.controls")
   ).dependsOn(common % "compile->compile;test->test")
    .dependsOn(aligner % "compile->compile;test->test")
    .enablePlugins(JavaAppPackaging)
