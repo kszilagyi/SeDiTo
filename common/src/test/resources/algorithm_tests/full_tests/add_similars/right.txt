@@ -1,0 +1,49 @@
+.deleted {
+  -fx-background-color: pink;
+}
+
+.inserted {
+  -fx-background-color: lightgreen;
+}
+
+.moved {
+  -fx-background-color: lightblue;
+}
+
+.same {
+  -fx-background-color: lightgrey;
+}
+
+
+.moved:hover {
+  -fx-background-color: yellow;
+}
+
+.highlighted {
+  -fx-background-color: yellow
+}
+
+
+.white {
+  -fx-background-color: white;
+}
+
+.deleted_char {
+  -rtfx-background-color: pink;
+}
+
+.inserted_char {
+  -rtfx-background-color: lightgreen;
+}
+
+.moved_char {
+  -rtfx-background-color: lightblue;
+}
+
+.same_char {
+  -rtfx-background-color: lightgrey;
+}
+
+.white_char {
+  -rtfx-background-color: white;
+}
