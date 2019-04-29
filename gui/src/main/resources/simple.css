@@ -32,7 +32,8 @@
 }
 
 .moved_char {
-  -rtfx-background-color: lightsteelblue;
+  -fx-fill: white;
+  -fx-font-weight: bold;
 }
 
 .same_char_in_moved_line {
