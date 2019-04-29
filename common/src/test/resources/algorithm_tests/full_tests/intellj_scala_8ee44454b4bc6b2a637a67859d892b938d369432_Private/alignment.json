@@ -1,0 +1,168 @@
+{
+  "matches": [{
+    "left": {
+      "from": 0,
+      "lineIdx": 0,
+      "to": 6
+    },
+    "right": {
+      "from": 0,
+      "lineIdx": 0,
+      "to": 6
+    }
+  }, {
+    "left": {
+      "from": 7,
+      "lineIdx": 0,
+      "to": 13
+    },
+    "right": {
+      "from": 7,
+      "lineIdx": 0,
+      "to": 13
+    }
+  }, {
+    "left": {
+      "from": 13,
+      "lineIdx": 0,
+      "to": 14
+    },
+    "right": {
+      "from": 13,
+      "lineIdx": 0,
+      "to": 14
+    }
+  }, {
+    "left": {
+      "from": 14,
+      "lineIdx": 0,
+      "to": 25
+    },
+    "right": {
+      "from": 35,
+      "lineIdx": 0,
+      "to": 46
+    }
+  }, {
+    "left": {
+      "from": 0,
+      "lineIdx": 2,
+      "to": 7
+    },
+    "right": {
+      "from": 8,
+      "lineIdx": 3,
+      "to": 15
+    }
+  }, {
+    "left": {
+      "from": 7,
+      "lineIdx": 2,
+      "to": 8
+    },
+    "right": {
+      "from": 15,
+      "lineIdx": 3,
+      "to": 16
+    }
+  }, {
+    "left": {
+      "from": 8,
+      "lineIdx": 2,
+      "to": 9
+    },
+    "right": {
+      "from": 16,
+      "lineIdx": 3,
+      "to": 17
+    }
+  }, {
+    "left": {
+      "from": 9,
+      "lineIdx": 2,
+      "to": 10
+    },
+    "right": {
+      "from": 17,
+      "lineIdx": 3,
+      "to": 18
+    }
+  }, {
+    "left": {
+      "from": 11,
+      "lineIdx": 2,
+      "to": 19
+    },
+    "right": {
+      "from": 19,
+      "lineIdx": 3,
+      "to": 27
+    }
+  }, {
+    "left": {
+      "from": 19,
+      "lineIdx": 2,
+      "to": 20
+    },
+    "right": {
+      "from": 27,
+      "lineIdx": 3,
+      "to": 28
+    }
+  }, {
+    "left": {
+      "from": 21,
+      "lineIdx": 2,
+      "to": 26
+    },
+    "right": {
+      "from": 29,
+      "lineIdx": 3,
+      "to": 34
+    }
+  }, {
+    "left": {
+      "from": 27,
+      "lineIdx": 2,
+      "to": 28
+    },
+    "right": {
+      "from": 35,
+      "lineIdx": 3,
+      "to": 36
+    }
+  }, {
+    "left": {
+      "from": 28,
+      "lineIdx": 2,
+      "to": 29
+    },
+    "right": {
+      "from": 36,
+      "lineIdx": 3,
+      "to": 37
+    }
+  }, {
+    "left": {
+      "from": 30,
+      "lineIdx": 2,
+      "to": 41
+    },
+    "right": {
+      "from": 38,
+      "lineIdx": 3,
+      "to": 49
+    }
+  }, {
+    "left": {
+      "from": 41,
+      "lineIdx": 2,
+      "to": 42
+    },
+    "right": {
+      "from": 49,
+      "lineIdx": 3,
+      "to": 50
+    }
+  }]
+}

@@ -1,0 +1,23 @@
+import scala.util.{Failure, Success, Try}
+import scala.concurrent.duration.DurationInt
+import scala.collection.JavaConverters._
+
+import org.log4s.getLogger
+import org.fxmisc.flowless.VirtualizedScrollPane
+import javafx.scene.shape.StrokeLineCap
+import javafx.scene.paint.{Color, CycleMethod, LinearGradient, Stop}
+import javafx.scene.layout._
+import javafx.scene.input.{KeyCode, KeyEvent, ScrollEvent}
+import javafx.geometry.Insets
+import com.kristofszilagyi.sedito.gui.Scroller.{Aligned, LeftIsLower, NothingOnScreen, RightIsLower}
+import com.kristofszilagyi.sedito.gui.ObservableOps.RichObservable
+import com.kristofszilagyi.sedito.gui.JavaFxOps.scheduleOnJavaFxThread
+import com.kristofszilagyi.sedito.gui.DiffPane._
+import com.kristofszilagyi.sedito.common.utils.TupleOps.RichTuple
+import com.kristofszilagyi.sedito.common._
+import com.kristofszilagyi.sedito.common.Warts.discard
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps.AnyOps
+import com.kristofszilagyi.sedito.common.AssertionEx._
+
+import java.nio.file.{Files, Path}
+import java.nio.charset.StandardCharsets

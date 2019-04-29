@@ -1,0 +1,21 @@
+package com.kristofszilagyi.sedito.gui
+
+import java.io.{File, FileWriter}
+
+import com.kristofszilagyi.sedito.aligner.{Pass1Aligner, Pass1FeatureCalculator}
+import com.kristofszilagyi.sedito.common.{FullText}
+import com.kristofszilagyi.sedito.common.TypeSafeEqualsOps._
+import com.kristofszilagyi.sedito.common.Warts._
+import com.kristofszilagyi.sedito.common.utils.Control._
+import org.eclipse.jgit.api.Git
+import org.eclipse.jgit.diff.DiffEntry.ChangeType
+import org.eclipse.jgit.lib.{ObjectId, ObjectReader}
+import org.eclipse.jgit.storage.file.FileRepositoryBuilder
+import org.eclipse.jgit.treewalk.CanonicalTreeParser
+import org.log4s.getLogger
+
+import scala.collection.JavaConverters._
+import scala.io.Source
+
+object FindUncertainFiles {
+}
