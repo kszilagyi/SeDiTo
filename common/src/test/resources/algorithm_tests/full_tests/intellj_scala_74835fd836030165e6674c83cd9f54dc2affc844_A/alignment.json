@@ -1,0 +1,47 @@
+{
+  "matches": [{
+    "left": {
+      "from": 0,
+      "lineIdx": 0,
+      "to": 7
+    },
+    "right": {
+      "from": 0,
+      "lineIdx": 0,
+      "to": 7
+    }
+  }, {
+    "left": {
+      "from": 8,
+      "lineIdx": 0,
+      "to": 11
+    },
+    "right": {
+      "from": 8,
+      "lineIdx": 0,
+      "to": 11
+    }
+  }, {
+    "left": {
+      "from": 0,
+      "lineIdx": 4,
+      "to": 5
+    },
+    "right": {
+      "from": 0,
+      "lineIdx": 2,
+      "to": 5
+    }
+  }, {
+    "left": {
+      "from": 6,
+      "lineIdx": 4,
+      "to": 7
+    },
+    "right": {
+      "from": 6,
+      "lineIdx": 2,
+      "to": 7
+    }
+  }]
+}

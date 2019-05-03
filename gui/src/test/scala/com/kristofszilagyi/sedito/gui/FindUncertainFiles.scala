@@ -25,7 +25,7 @@ object FindUncertainFiles {
     new String(data, "utf-8")
   }
   def main(args: Array[String]): Unit = {
-    val repoLocation = "/media/szkster/bcdcdec7-58f3-4db4-b3b5-a49d3ffe12f9/intellij-community"
+    val repoLocation = "/media/szkster/bcdcdec7-58f3-4db4-b3b5-a49d3ffe12f9/freebsd"
     val builder = new FileRepositoryBuilder
     val repository = builder.setWorkTree(new File(repoLocation).getAbsoluteFile)
       .build
@@ -34,7 +34,7 @@ object FindUncertainFiles {
     val commits = git.log().all().call().iterator().asScala.toVector
     val (classifier, scaler) = Main.loadAI()
     val aligner = new Pass1Aligner(classifier, scaler)
-    val file = new File("uncertain_intellj_base.csv")
+    val file = new File("freebsd.csv")
     val finishedCommitAndFilename = using(Source.fromFile(file)){_.getLines().map(_.split(";").head).toSet}
     val blacklistedFilenames = Set.empty[String]
 
