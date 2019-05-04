@@ -162,8 +162,8 @@ final class DiffPane extends StackPane {
           val rightSelection = codeAreaRight.getSelection
           val leftIndices = Wordizer.toWordIndices(codeAreaLeft.getText)
           val rightIndices = Wordizer.toWordIndices(codeAreaRight.getText)
-          var leftI = leftIndices.indexWhere(_.absoluteFrom > leftSelection.getStart)
-          var rightI = rightIndices.indexWhere(_.absoluteFrom > rightSelection.getStart)
+          var leftI = leftIndices.indexWhere(_.absoluteFrom >= leftSelection.getStart)
+          var rightI = rightIndices.indexWhere(_.absoluteFrom >= rightSelection.getStart)
           var assignedMatches = Vector.empty[WordMatch]
           while(leftI < leftIndices.size && rightI < rightIndices.size && leftIndices(leftI).toText ==== rightIndices(rightI).toText
                 && leftIndices(leftI).absoluteFrom < leftSelection.getEnd && rightIndices(rightI).absoluteFrom < rightSelection.getEnd) {
