@@ -16,7 +16,6 @@ import org.log4s.getLogger
 
 import scala.collection.JavaConverters._
 import scala.io.Source
-
 object FindUncertainFiles {
   private val logger = getLogger
 
@@ -39,7 +38,7 @@ object FindUncertainFiles {
     val blacklistedFilenames = Set.empty[String]
 
     val blacklistedFragments = Set.empty[String]
-    val goodExtensions = Set(".java", ".scala", ".c", ".py", ".kt", ".html", ".js", ".css", ".xml", ".yml", ".yaml", ".cpp")
+    val goodExtensions = Set(".java", ".scala", ".c", ".py", ".kt", ".html", ".js", ".css", ".xml", ".yml", ".yaml", ".cpp", ".cc", ".hh", ".h", ".sh")
     val writer = new FileWriter(file, true)
 
     commits.foreach { commit =>
