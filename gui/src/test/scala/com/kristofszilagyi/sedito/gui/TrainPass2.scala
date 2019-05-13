@@ -22,7 +22,7 @@ object TrainPass2 {
     pathAndSamples.map { case Pass1PathAndSamples(path, samples) =>
       val resultsWithTruth = samples.featuresWithResults.map { sample =>
         val results = firstPassAligner.measureProbability(sample.features)
-         Pass1ResultWithTruth(results, sample.features, sample.matching)
+        Pass1ResultWithTruth(results, sample.features, sample.matching)
       }
       PathAndPass1Results(path, resultsWithTruth)
     }
