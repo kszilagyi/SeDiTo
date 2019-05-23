@@ -1,0 +1,18 @@
+train:
+file;
+1 - similar expressions with small significant difference, expressions also broken apart(should weight significant parts);
+2 - inserted comment/meta into line is confusing;
+3 - similar block - the right one is identified by most matches but not all;
+4 - on the edge/near of difference same text is thought to be different
+5 - braces attached to the next function not the previous
+6 - same expression, ordering should be taken into account
+                                                                    ;1; 2;3;4;5
+intellj_242c3ed9167c9f117f7b005b2495fac478c0218f_Joiner             ;3; 2;0;0;0
+intellj_scala_f6da3bdff977a632e1e632f83b585b7d59b79c36_hydra        ;0; 0;8;0;0
+intellj_44be591eeb3998a35a8e845dffbd0276347f631ac_constantonlhs     ;0; 8;0;2;0
+intellj_44be591eeb3998a35a8e845dffbd0276347f631a_finalprivatemethod ;0;10;0;0;0
+intellj_415c587619c02b1b4108d589c8980c3faa460724_featureusagelogger ;0; 0;2;9;1
+intellj_scala_da2d6508c53e77dd8923348e4ff6aa71332528c3_clash2       ;0; 0;0;0;2
+textblocklinked1to1_cpp                                             ;0; 0;0;6;0
+deterministic_crossvalidation                                       ;0; 0;0;3;0
+intellj_be8356c102a25c583355bc8be14661355e5e03d8_kotlinscriptxml    ;0; 0;0;0;0
