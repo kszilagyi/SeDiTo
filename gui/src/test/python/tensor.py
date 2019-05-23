@@ -8,9 +8,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 
-def load_csv(filename, size):
-    # dataset = tf.data.experimental.CsvDataset(filename, [tf.float32] * size)
-    # dataset.map(lambda x: tf.stack(list(x.values())))
+def load_csv(filename):
+    print('loading csv: %s' % filename)
     res = []
     with open(filename) as csvfile:
       reader = csv.reader(csvfile, delimiter=',', quoting=csv.QUOTE_NONNUMERIC)
@@ -20,9 +19,6 @@ def load_csv(filename, size):
 
 # tf.enable_eager_execution()
 #
-def print_tensor(t):
-    tf.print(t, [t])  # Here we are using the value returned by tf.Print
-
 
 def count(results, reference_results, condition):
     res = 0
@@ -60,10 +56,10 @@ def calc_metrics(results, reference_results):
     f1 = calc_f1(precision, recall)
     return {'tp': tp, 'fp': fp, 'fn': fn, 'precision': precision, 'recall': recall, 'f1': f1}
 
-test_features = load_csv('test-features.csv', 102)
-test_labels = load_csv('test-labels.csv', 1)
-train_features = load_csv('training-features.csv', 102)
-train_labels = load_csv('training-labels.csv', 1)
+test_features = load_csv('test-features.csv')
+test_labels = load_csv('test-labels.csv')
+train_features = load_csv('training-features.csv')
+train_labels = load_csv('training-labels.csv')
 print('Loaded csvs')
 print(test_features.shape)
 print(test_labels.shape)
@@ -87,7 +83,7 @@ print(train_labels.shape)
 # print('Test accuracy:', test_acc)
 # model.save_weights('model.h5')
 model = Sequential()
-model.add(Dense(units=128, activation='relu', input_dim=102))
+model.add(Dense(units=128, activation='relu', input_dim=136))
 model.add(Dense(units=128, activation='relu'))
 model.add(Dense(units=128, activation='relu'))
 model.add(Dense(units=1, activation='sigmoid'))
@@ -95,7 +91,7 @@ model.add(Dense(units=1, activation='sigmoid'))
 model.compile(optimizer="sgd",
                          loss='binary_crossentropy',
                          metrics=['binary_accuracy'])
-model.fit(train_features, train_labels, epochs=15, shuffle=False)
+model.fit(train_features, train_labels, epochs=50, shuffle=False)
 
 # model.load_weights('model.h5')
 train_predict = model.predict(train_features)
