@@ -51,12 +51,12 @@ public class LongestSubstring {
         }
 
         // allocate space for the longest common substring 
-        String resultStr = "";
+        StringBuilder resultStr = new StringBuilder();
 
         // traverse up diagonally form the (row, col) cell 
         // until LCSuff[row][col] != 0 
         while (LCSuff[row][col] != 0) {
-            resultStr = X.charAt(row - 1) + resultStr; // or Y[col-1]
+            resultStr.insert(0, X.charAt(row - 1)); // or Y[col-1]
             --len;
 
             // move diagonally up to previous cell 
@@ -64,8 +64,7 @@ public class LongestSubstring {
             col--;
         }
 
-        // required longest common substring 
-        return resultStr;
+        return resultStr.toString();
     }
 }
 // This code is contributed by Sumit Ghosh
