@@ -10,7 +10,7 @@ object LongestCommonSubstringTest {
     val res = LongestCommonSubstring.apply[Character](ArrayUtils.toObject(left.toCharArray), ArrayUtils.toObject(right.toCharArray))
     val leftRes = left.substring(res.leftStart, res.leftStart + res.length)
     val rightRes = right.substring(res.rightStart, res.rightStart + res.length)
-    leftRes shouldBe expected
+    discard(leftRes shouldBe expected)
     discard(rightRes shouldBe expected)
   }
 }
