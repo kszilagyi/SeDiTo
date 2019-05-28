@@ -1,12 +1,13 @@
 package com.kristofszilagyi.sedito.aligner
 
-import org.scalatest.{FreeSpecLike}
+import org.scalatest.FreeSpecLike
 import org.scalatest.Matchers._
 import LongestCommonSubstringTest._
 import com.kristofszilagyi.sedito.common.Warts.discard
+import org.apache.commons.lang3.ArrayUtils
 object LongestCommonSubstringTest {
   def test(left: String, right: String, expected: String): Unit = {
-    val res = LongestCommonSubstring.apply(left, right)
+    val res = LongestCommonSubstring.apply[Character](ArrayUtils.toObject(left.toCharArray), ArrayUtils.toObject(right.toCharArray))
     val leftRes = left.substring(res.leftStart, res.leftStart + res.length)
     val rightRes = right.substring(res.rightStart, res.rightStart + res.length)
     leftRes shouldBe expected

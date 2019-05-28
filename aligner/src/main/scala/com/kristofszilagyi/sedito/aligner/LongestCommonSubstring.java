@@ -5,10 +5,10 @@ public class LongestCommonSubstring {
 
     /* function to find the longest common
        substring of X[0..m-1] and Y[0..n-1] */
-    static LongestCommonSubstringResult apply(String X, String Y)
+    static <T> LongestCommonSubstringResult apply(T[] X, T[] Y)
     {
-        int m = X.length();
-        int n = Y.length();
+        int m = X.length;
+        int n = Y.length;
         // Create a table to store lengths of longest common 
         // suffixes of substrings.   Note that LCSuff[i][j] 
         // contains length of longest common suffix of X[0..i-1] 
@@ -32,7 +32,7 @@ public class LongestCommonSubstring {
                 if (i == 0 || j == 0)
                     LCSuff[i][j] = 0;
 
-                else if (X.charAt(i - 1) == Y.charAt(j - 1)) {
+                else if (X[i - 1] == Y[j - 1]) {
                     LCSuff[i][j] = LCSuff[i - 1][j - 1] + 1;
                     if (maxLength < LCSuff[i][j]) {
                         maxLength = LCSuff[i][j];
